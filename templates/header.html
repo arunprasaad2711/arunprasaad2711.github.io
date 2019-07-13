@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}} | Fluidic Colours</title>
+
+    {% if L1 %}
+	<link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../assets/css/prism.css"-->
+
+    {% elif L2 %}
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    {% else %}
+	<link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="assets/css/prism.css"-->
+    {% endif %}
+
+    <!-- Code highlight using Highlighter JS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css">
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>

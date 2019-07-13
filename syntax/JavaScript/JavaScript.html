@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Development | JavaScript | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    
+
+    <!-- Code highlight using Highlighter JS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css">
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="javascript">JavaScript</h1>
+<p>It is a scripting language used for programming webpages and doing arithmetic in webpages and for including interactions!.</p>
+<p>There are several scripting languages for the purpose, like PHP. JavaScript is one of them!</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before picking up JavaScript, it is required to know,</p>
+<ul>
+<li>Knowledge in HTML</li>
+<li>Knowledge in CSS</li>
+</ul>
+<p>If these are missing, then picking up JavaScript becomes difficult!</p>
+<p>As far as softwares are concerned, you need</p>
+<ul>
+<li>One nice text editor
+<ul>
+<li>Notepad, Notepad++, geany, gedit, textmate, Eclipse, Webstorm, Netbeans, Aptana, etc.,</li>
+</ul></li>
+<li>One or more web browser
+<ul>
+<li>Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer etc.,</li>
+</ul></li>
+</ul>
+<h2 id="writing-javascript-code-inside-html-pages">Writing JavaScript code inside HTML pages</h2>
+<p>You can include the javascript code inside HTML pages via the <code>&lt;script&gt;</code> tag or by including the javascript using some inclusion tags.</p>
+<p>To write a javascript command inside html page, use the <code>&lt;script&gt;</code> tag as below. The type attribute defines the scripting language used.</p>
+<pre class="html"><code>
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    // This is a single line comment
+    /* This is a multi-line comment */
+    &lt;!--
+        document.write(&quot;Hey There!&quot;);
+    //--&gt;
+    // This is a print statement!
+    &lt;/script&gt;</code></pre>
+<p><code>document.write();</code> is a print statement! The <code>&lt;!--</code> and <code>//--&gt;</code> is just a safety check!</p>
+<h2 id="safety-check">Safety Check!</h2>
+<p>Some older browsers may not work nicely with javascript. Instead of executing the code, they might just print them. A safety check is used, so that the code is either ignored (in case of older browsers) or execute them (in the case of newer browsers.). Enclose the javascript code inside the code as above!</p>
+<h2 id="comments">Comments</h2>
+<p>To include comments, use <code>//</code> for a single line of comment. Use <code>/*</code> and <code>*/</code> for multi-line comments.</p>
+<h2 id="variables">Variables</h2>
+<p>To include a variable, use the syntax.</p>
+<pre class="javascript"><code>    var var_name = value</code></pre>
+<p>eg:</p>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+
+    var v1 = 45;        // Integer
+    var v2 = 45.28;     // Decimal
+    var v3 = -45.8;     // Negative
+    var str1 = &quot;String&quot; // Strings
+    var str2 = &quot; Jon said \&quot; Be Brave man! \&quot; to Sam&quot;;
+    var str3 = &quot; Jon said &#39; Be Brave man! &#39; to Sam&quot;;
+    // Escape Sequences. Use \ for beginning an Escape Sequence!
+    var bool = true;    // Boolean
+    var bool1 = false;  // Boolean
+    var v4 = null;      // Null or empty variable!
+    // No value is assigned to v4
+
+// Quotation marks are not needed, but it is needed for clarity and differentiation.
+
+    document.write(str2 + &quot; Is he not write? He has proved it &quot; + v1 + &quot; times!&quot;);
+    // Will join strings and numbers, and print them in a line!
+    
+    document.write(v1+v2);
+    // If plain numbers are used, then they are added normally!
+
+&lt;/script&gt;</code></pre>
+<p>** Variables are case sensitive! **</p>
+<h2 id="functions">Functions</h2>
+<p>It is a mini-program!</p>
+<pre class="html"><code>
+&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    // Functions!
+
+    // This is the function definition!
+    function func_name()
+    {
+        alert(&quot;This is an alert!&quot;);
+        // This will put a pop-up on the screen!
+    }
+
+    function func_name1(x)
+    {
+        // It takes an argument X and uses it!
+        alert(&quot;This is an alert! by &quot;+ x);
+        // This will put a pop-up on the screen!
+    }
+
+    func_name();
+    /* This is the function call!  When called, there will be a 
+    pop-up indicating the message!*/
+
+    func_name1(&quot;Arun&quot;);
+    /* This is also a function call */
+
+    &lt;/script&gt;
+
+    &lt;form&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Alert!&quot; onclick=func_name() /&gt;
+        &lt;!-- This will create an button with the name Alert!.
+        On clicking the button, the function will be invoked and 
+        the pop-up will display! --&gt;
+    &lt;/form&gt;
+
+&lt;/body&gt;
+</code></pre>
+<h2 id="advanced-function-operations">Advanced function operations</h2>
+<p><strong>Functions with multiple input arguments</strong></p>
+<p><strong>Functions with return values</strong></p>
+<p><strong>Function called inside another function</strong></p>
+<pre class="html"><code>&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        function power(x, y)
+        {
+            document.write(&quot;We are inside power function! &quot;+&quot;&lt;br /&gt;&quot;);
+            document.write(&quot;The received values are :&quot; + &quot;&lt;br /&gt;&quot; + x + &quot; and &quot; + y +&quot;&lt;br /&gt;&quot;);
+            // This function receives 2 arguments/parameters
+            // using &lt;br /&gt; inside quotes serves as a line break!
+            var p = Math.pow(x,y); // Power function in JavaScript!
+            document.write(&quot;The value of &quot;+x+&quot; ^ &quot;+y+&quot; is: &quot;+p+&quot;&lt;br /&gt;&quot;);
+        }
+
+        function fahren_2_cel(f)
+        {
+            document.write(&quot;We are inside fahren_2_cel function! &quot;+&quot;&lt;br /&gt;&quot;);
+            var c = (f-32.0)*(5.0/9.0);
+            return c;
+            // Function that returns a value!
+        }
+
+        function print(f)
+        {
+            document.write(&quot;The value of &quot; + f + &quot; degree Fahrenheit is &quot; + fahren_2_cel(f) + &quot; degree Celsius!&quot;+&quot;&lt;br /&gt;&quot;);
+            // Calling functions inside another functions!
+            document.write(&quot;We are inside print function! &lt;br /&gt;&quot;);
+        }
+
+        function start()
+        {
+            document.write(&quot;We are inside start function! &lt;br /&gt;&quot;);
+            power(5.01, 1.20);
+            print(212.0);
+            document.write(&quot;We are back to start function! &lt;br /&gt;&quot;);
+        }
+
+    &lt;/script&gt;
+
+    &lt;form&gt;
+        &lt;input type=&quot;button&quot; value=&quot;start&quot; onclick=&quot;start()&quot; /&gt;
+    &lt;/form&gt;
+
+&lt;/body&gt;</code></pre>
+<p>The output on pressing the button is:</p>
+<pre><code>
+We are inside start function! 
+We are inside power function! 
+The received values are :
+5.01 and 1.2
+The value of 5.01 ^ 1.2 is: 6.915208372830329
+We are inside fahren_2_cel function! 
+The value of 212 degree Fahrenheit is 100 degree Celsius!
+We are inside print function! 
+We are back to start function! 
+</code></pre>
+<h2 id="global-and-local-variables">Global and Local Variables</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+            
+    var var1 = &quot;global &quot;; // Global variable!
+
+    function print1()
+    {
+        var var1 = &quot;local &quot;;  // Local Variable!
+        document.write(var1); // Local usage!
+    }
+
+    function print2()
+    {
+        document.write(var1); // Global usage
+    }
+
+    print1();
+    print2();
+
+    document.write(var1); // Global usage
+
+&lt;/script&gt;</code></pre>
+<p>The output is</p>
+<pre><code>local global global</code></pre>
+<h2 id="mathematical-operations">Mathematical Operations</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+            
+    var a = 5+6;            //Addition
+    var b = 8-9;            //Subtraction
+    var c = 8*9;            //Multiplication
+    var d = 8/9;            //Division
+    var e = 25%9;           //Modulus Operation
+    var f = Math.pow(2,3);  //Power Operation
+    var g = 10;
+    g++;                    // Increment Operation
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g--;                    // Decrement Operation
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g = 10;
+    g += 10;                // Add and assign operator
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g = 10;
+    g -= 10;                // Subtract and assign operator
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g = 10;
+    g *= 10;                // Multiply and assign operator
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g = 10;
+    g /= 10;                // Divide and assign operator
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    g = 10;
+    g %= 10;                // Modulus and assign operator
+    document.write(g + &quot;&lt;br /&gt;&quot;);
+    document.write(&quot;The calculated values are &lt;br /&gt;&quot;);
+    document.write(a + &quot;&lt;br /&gt;&quot; + b + &quot;&lt;br /&gt;&quot; + c + &quot;&lt;br /&gt;&quot; + d + &quot;&lt;br /&gt;&quot; + e + &quot;&lt;br /&gt;&quot;)
+
+&lt;/script&gt;</code></pre>
+<p>The output is:</p>
+<pre><code>11
+10
+20
+0
+100
+1
+0
+The calculated values are 
+11
+-1
+72
+0.8888888888888888
+7
+</code></pre>
+<h2 id="if-statement-and-relational-operators">If statement and Relational Operators</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+
+    var a = 7;
+    var b = 7;
+
+    if( a &gt; b)
+    {
+        document.write(a + &quot; is greater than &quot; + b + &quot;&lt;br /&gt;&quot;);
+    }
+    else if( a &lt; b)
+    {
+        document.write(a + &quot; is less than &quot; + b + &quot;&lt;br /&gt;&quot;);
+    }
+    else
+    {
+        document.write(a + &quot; is equal to &quot; + b + &quot;&lt;br /&gt;&quot;);
+    }
+
+    // Relational Operators
+    // &gt;    Greater than,
+    // &lt;    Less than,
+    // ==   equals,
+    // &gt;=   Greater than or equal to
+    // &lt;=   Less than or equal to
+    // !=   Not Equal to
+    
+    // Logical Operators
+    // &amp;&amp;   AND
+    // ||   OR
+
+&lt;/script&gt;</code></pre>
+<p>The output is :</p>
+<pre><code>7 is equal to 7</code></pre>
+<p><strong>Nesting is possible!</strong></p>
+<h2 id="switch-case">Switch Case:</h2>
+<p>It is given as follows:</p>
+<pre class="html"><code>
+&lt;script type=&quot;text/javascript&quot;&gt;
+            
+    var a = 7;
+
+    switch(a)
+    {
+        case 0:
+        case 1:     // Multiple common cases!
+            document.write(&quot;a is 0 or 1&quot;);
+            break; // break to stop checking the next cases.
+        case 2:
+        case 3:
+        case 4:
+            document.write(&quot;a is 2 or 3 or 4&quot;);
+            break;
+        case 5:
+        case 6:
+        case 7:
+            document.write(&quot;a is 5 or 6 or 7&quot;);
+            break;
+        case 8:
+        case 9:
+            document.write(&quot;a is 8 or 9&quot;);
+            break;
+        default:
+            document.write(&quot;a is something else!&quot;);
+            // break; // break not needed!
+    }
+
+&lt;/script&gt;
+</code></pre>
+<h2 id="for-and-while-loops">For and While loops</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+
+    // This is a for loop!
+    // initialization, ending condition, increment/decrement
+    for(i=0; i&lt;10; i++)
+    {
+        document.write(&quot;The value of i is &quot;+i+&quot; &lt;br /&gt;&quot;);
+    }
+
+    // This is a while loop condition variable
+    var x = 1;
+
+    // This is a while loop
+    while(x&lt;10) // This is the condition
+    {
+        // Set of statements to be executed
+        document.write(&quot;The value of x is &quot;+x+&quot; &lt;br /&gt;&quot;);
+        // This is a condition breaker statement!
+        x++;
+    }
+
+    // This is a do while loop condition variable now!
+    x = 1;
+
+    // This is a do while loop
+    // Run the code (regardless of the condition) and then check the condition!
+    do
+    {
+        // Set of statements to be executed
+        document.write(&quot;The value of x is &quot;+x+&quot; &lt;br /&gt;&quot;);
+        // This is a condition breaker statement!
+        x++;
+    }
+    while(x&lt;10); // This is the condition!
+
+&lt;/script&gt;</code></pre>
+<h2 id="event-handlers">Event Handlers</h2>
+<p>These are used for doing a specific job when a certain <strong>event</strong> happens, like press of a button, entering a value, etc.,</p>
+<p>Event handler codes need not be written inside <code>&lt;script&gt;</code> tags!.</p>
+<pre class="html"><code>&lt;body onload=&quot;alert(&#39;Loading complete!&#39;);&quot; onUnload=&quot;alert(&#39;See you!&#39;);&quot;&gt;
+        
+     &lt;!-- This is an On Load and On Unload Event handlers. When the webpage is loaded, the onload event happens. When the wepage is closed, refreshed or terminated, the onUnload event happens. Use either one, not both!--&gt;
+        
+    &lt;!-- On click Event handler! --&gt;
+    &lt;form&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Press&quot; onClick=&quot;alert(&#39;Nice!&#39;);alert(&#39;Nice again!&#39;)&quot;/&gt;
+        &lt;!-- You have a button, with the name &quot;Press&quot;. On clicking
+        the button, the javascript code alert(&#39;Nice!&#39;); is executed.
+        Single quotes are used for user convenience and to avoid 
+        string termination. --&gt;
+
+        &lt;!-- You can add multiple statements! After alert(&#39;Nice!&#39;),
+        alert(&#39;Nice again!&#39;); is executed. So, if you have a function,
+        you can execute a series of statements. --&gt;
+    &lt;/form&gt;
+
+    &lt;!-- on mouse over even handler! --&gt;
+
+    &lt;a HrEf=&quot;http://google.com&quot; onmouseover=&quot;alert(&#39;Going to Google!&#39;);&quot;&gt; Click to go to Google! &lt;/a&gt;
+
+    &lt;!-- Note that the attributes are case-insensitive! --&gt;
+
+    &lt;!-- When the mouse cursor comes on top of the link, an alert
+    box is displayed. This can be annoying!--&gt;
+
+    &lt;br /&gt;
+
+    &lt;!-- on mouse out even handler! --&gt;
+
+    &lt;a href=&quot;http://google.com&quot; onmouseout=&quot;alert(&#39;Going to Google!&#39;);&quot;&gt; Click to go to Google! &lt;/a&gt;
+
+    &lt;!-- When the mouse cursor moves to the link, and then leaves
+    away, an alert box pops up! This can be annoying!--&gt;
+
+&lt;/body&gt;</code></pre>
+<h2 id="objects-in-javascript">Objects in JavaScript</h2>
+<pre class="html"><code>
+&lt;body&gt;
+
+    &lt;!-- Object is a peculiar datatype which has a few properties and methods associated with it!
+
+    Eg: Book
+
+    A book has various properties that can be quantified:
+    * Title
+    * No. of Pages
+    * Price
+    * Topic
+    * Publisher
+    * Authors
+
+    A book has several functions or methods that can be done:
+    * Reading
+    * Pillow?!
+    * Get a degree
+    * Teach a class
+
+    These properties are like variables. These functions that are
+    done by and using the object and it&#39;s properties are methods!
+
+    Usage:
+
+    object.method();
+    object.variable;
+    --&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        var t = &quot;hey there!&quot;;
+        // t itself is an object!
+        document.write(t.length+&quot;&lt;br /&gt;&quot;); // This is a property of t!
+        document.write(&quot;Hey!&quot;);   // This is a &quot;method&quot; of the object &quot;document&quot;!
+    &lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre>
+<h2 id="creating-objects-using-constructor-functions">Creating Objects Using Constructor Functions</h2>
+<p>There are different methods! This is one long way!</p>
+<pre class="html"><code>
+&lt;head&gt;
+
+    &lt;title&gt;Object Creation!&lt;/title&gt;
+
+    &lt;!-- To make an object, create a constructor function in the head tag.--&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        // This is a constructor function. This function is 
+        // a blueprint of what an object has! This function
+        // assigns values to objects.
+        function person(name, age)
+        {
+            this.name = name;
+            this.age = age;
+            // This is a syntax for passing object details
+        }
+
+        // Creating an object or creating a new instance of an object!
+        /* Syntax:
+            var object_name = new object_constructor_function(values); */
+        var obj1 = new person(&quot;Arun Prasaad&quot;, 24);
+        var obj2 = new person(&quot;ChetanKumar&quot;, 23);
+
+    &lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        document.write(obj1.name);
+        // Using an object variable or property!
+    &lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre>
+<h2 id="object-creation-using-object-initializers">Object Creation Using Object Initializers</h2>
+<pre class="html"><code>&lt;head&gt;
+
+    &lt;title&gt;Object Initializers!&lt;/title&gt;
+
+    &lt;!-- This is a faster way to create an object --&gt;
+    &lt;!-- Used for creating just one or more objects --&gt;
+    &lt;!-- Constructor function is for creating multiple objects! --&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        /* To create an object, use the following syntax 
+        Syntax:
+        obj_name = {var1 : value1, var2 : value2, ...};
+        */
+        Arun = {name:&quot;Arun Prasaad&quot;, age:24};
+        Chetan = {name:&quot;ChetanKumar&quot;, age:23};
+    &lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        document.write(Arun.name + &quot; of age &quot; + Arun.age + &quot; plus a few days and &quot; + Chetan.name + &quot; of age &quot; + Chetan.age + &quot; plus 10 months are friends! &lt;br /&gt;&quot; );
+    &lt;/script&gt;
+
+&lt;/body&gt;</code></pre>
+<h2 id="adding-methods-into-objects">Adding Methods into Objects</h2>
+<pre class="html"><code>
+&lt;head&gt;
+
+    &lt;title&gt;Adding Object Methods&lt;/title&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        // let&#39;s create a constructor function first!
+        function people(name, age)
+        {
+            this.name = name;
+            this.age = age;
+            this.age_after_phd_end = age_after_phd;
+            // This way, the method is plugged into the object.
+            // You need not need the () !
+            // age_after_phd_end is the name of the method age_after_phd inside the object!
+        }
+
+        // This is a method for the object to be plugged into it!
+        function age_after_phd()
+        {
+            var phd_years = 3;
+            var age = phd_years + this.age;
+            // Here, &quot;this&quot; means the object into which the function/method is plugged into.
+            return age;
+        }
+        // An object is also ready!
+        var Arun = new people(&quot;Arun Prasaad&quot;, 24);
+
+    &lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        document.write(Arun.age_after_phd_end());
+
+    &lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre>
+<h2 id="arrays-in-javascript">Arrays in JavaScript</h2>
+<pre class="html"><code>
+&lt;body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        /* This is how you create a 1D array */
+        /* Index starts from 0 */
+        var names = new Array (&quot;Arun&quot;, &quot;Chetan&quot;, &quot;Dipankar&quot;, &quot;Senthil&quot;, &quot;Gowtham&quot;, &quot;Keethi&quot;, &quot;Kevin&quot;);
+
+        /* This is another way! */
+        var name1 = new Array(4);
+        // Here, the array has 4 values!
+        // To assign the values, use as follows.
+        name1[0] = &quot;JRR Tolkien&quot;;
+        name1[1] = &quot;GRR Martin&quot;;
+        name1[2] = &quot;JK Rowling&quot;;
+        name1[3] = &quot;Sidney Sheldon&quot;;
+
+        // This is another way of making arrays - This is dynamic!
+        var books = new Array();
+        // Now, this array &quot;books&quot; is dynamic!
+
+        // To assign the values, use them this way!
+        books[0] = &quot;Lord of the Rings&quot;;
+        books[1] = &quot;A Song of Ice and Fire&quot;;
+        books[2] = &quot;Harry Potter Series&quot;;
+        books[3] = &quot;Crime/Murder/Suspense/Thriller&quot;;
+
+        // To access any indivual value!
+        document.write(names[3]);
+
+        // To print all values
+        document.write(names);
+
+        // Some Array Properties and Methods!
+        document.write(name1.length); // length of the array
+
+        var new_array1 = name1 + books; // Merges Array Elements
+        // May have a small difference!
+        var new_array2 = name1.concat(books);
+        // Concatenation of 2 arrays
+
+        document.write(&quot;&lt;br /&gt;&quot;+new_array1);
+        document.write(&quot;&lt;br /&gt;&quot;+new_array2);
+        
+        var names = new Array (&quot;Arun&quot;, &quot;Chetan&quot;, &quot;Dipankar&quot;, &quot;Senthil&quot;, &quot;Gowtham&quot;, &quot;Keethi&quot;, &quot;Kevin&quot;);
+
+        var string1 = names.join();
+        // Joins all strings, with commas in between
+        var string2 = names.join(&quot; - &quot;);
+        // Joins all strings, with hypen in between
+
+        document.write(string1 + &quot;&lt;br /&gt;&quot;);
+        document.write(string2 + &quot;&lt;br /&gt;&quot;);
+
+        var string3 = names.pop();
+        // Removes the last element in names array and saves it inside string3
+
+        document.write(names + &quot;&lt;br /&gt;&quot;);
+        document.write(string3 + &quot;&lt;br /&gt;&quot;);
+        
+        // To add the element back, use push method
+        names.push(&quot;Kevin&quot;);
+
+        // Reverses the elements in reverse index order
+        names.reverse();
+
+        document.write(names + &quot;&lt;br /&gt;&quot;);
+
+        names.reverse();
+
+        // This sorts out all the entries in the array!
+        names.sort();
+
+        document.write(names + &quot;&lt;br /&gt;&quot;);
+            
+    &lt;/script&gt;
+
+&lt;/body&gt;</code></pre>
+<h2 id="multi-dimensional-arrays">Multi-Dimensional Arrays</h2>
+<p>Creating multi-dimensional arrays is easy!</p>
+<p>Source : <a href="http://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript">stackoverflow question</a></p>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var items = [[1,2],[3,4],[5,6]]; // Static Array
+    alert(items[0][0]); // 1
+    
+    var xx = [[]]; xx[0][1] = 5; // Dynamic Array
+    
+    var x = new Array(10);
+    for (var i = 0; i &lt; 10; i++)
+    {
+      x[i] = new Array(20);
+    }
+    x[5][12] = 3.0; // Creating a 2D array
+    
+    // In a similar manner, you can extend it to a 3D, 4D array!
+    
+&lt;/script&gt;</code></pre>
+<h2 id="getting-user-input-using-prompt-feature-and-entering-data-for-2d-arrays">Getting User Input using prompt feature and entering data for 2D arrays</h2>
+<pre class="html"><code>
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+    // Opens a pop-up box with a prompt to enter data
+    var pie = prompt(&quot;Enter a value for Pie!&quot;);
+    document.write(&quot;The value of Pie is : &quot;+pie+&quot;&lt;br /&gt;&quot;);
+
+    // Defining a 2D Array!
+    // Defining the number of rows and columns!
+    var r = 3, c = 2;
+    // Making an array with r elements
+    var array1 = new Array(r);
+
+    // Making each of the r elements as arrays with c elements
+    for(i=0; i&lt;r; i++)
+    {
+        array1[i] = new Array(c);
+    }
+
+    // Essentially, array1 is a r time c 2D array or a matrix!
+    // Using Prompt option to get each and every array entry value!
+
+    for(i=0; i&lt;r; i++)
+    {
+        for(j=0; j&lt;c; j++)
+        {
+            array1[i][j] = prompt(&quot;Enter the value for array1[&quot;+(i+1)+&quot;][&quot;+(j+1)+&quot;]:&quot;);
+        }
+    }
+    
+    // Printing the entire array!
+    document.write(&quot;&lt;br /&gt; The Array entered is : &lt;br /&gt;&quot;);
+    
+    // Printing the entire array in proper format!
+    document.write(array1+&quot;&lt;br /&gt;&quot;);
+
+    for(i=0; i&lt;r; i++)
+    {
+        for(j=0; j&lt;c; j++)
+        {
+            document.write(array1[i][j]+&quot;  &quot;);
+        }
+        document.write(&quot;&lt;br /&gt;&quot;);
+    }
+
+&lt;/script&gt;
+</code></pre>
+<h2 id="associative-arrays">Associative Arrays</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+
+    // These associative arrays are similar to
+    // Dictionaries in Python!
+
+    var asso = new Array();
+    asso[&quot;one&quot;]=1;
+    asso[&quot;two&quot;]=2;
+
+    document.write(asso[&quot;one&quot;]);
+
+&lt;/script&gt;</code></pre>
+<p>The output is</p>
+<pre><code>    1</code></pre>
+<h2 id="mathematical-object">Mathematical Object</h2>
+<p>JavaScript has a lot of mathematical constants and functions.</p>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+
+    var n = prompt(&quot;Enter a number&quot;, &quot;&quot;);
+    // This will prompt the user for a number.
+    // The default value is nothing, set by &quot;&quot;
+
+    // Has a lot of constants and in-built functions!
+    // Pi
+    document.write(Math.PI+&quot;&lt;br /&gt;&quot;);
+    // e
+    document.write(Math.E+&quot;&lt;br /&gt;&quot;);
+    // Square root
+    var sqrt_n = Math.sqrt(n);
+    alert(&quot;The Square Root of &quot; + n + &quot; is &quot; + sqrt_n);
+&lt;/script&gt;</code></pre>
+<h2 id="date-and-time-objects">Date and Time Objects</h2>
+<p>JavaScript has in-built modules to get the date and time.</p>
+<pre class="html"><code>
+&lt;body&gt;
+
+    &lt;!-- This tag acts as a place holder for the time to be displayed! --&gt;
+
+    &lt;!-- id name is used to address this element --&gt;
+    &lt;div id=&quot;time&quot;&gt; &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        // Some simple function
+        function print()
+        {
+            document.write(&quot;Hello!&quot;);
+        }
+
+        // This function will execute the print function continuously after every 2000 milliseconds or 2 seconds.
+        // setInterval(&quot;print()&quot;, 2000);
+
+        function print_time_date()
+        {
+            var now = new Date();       // Grabs the date
+            var hours = now.getHours();  // Grabs the hour in 24-hr
+            var mins = now.getMinutes(); // Grabs the minutes
+            var secs = now.getSeconds(); // Grabs the seconds
+
+            document.getElementById(&quot;time&quot;).innerHTML=hours+&quot;:&quot;+mins+&quot;:&quot;+secs;
+
+            /* 
+                This big command
+                * Searches the entire document,
+                * Finds the element with the ID namely, &quot;time&quot;,
+                * And, inside the ID, it will display the time
+                in the prescribed format.
+            */
+        }
+
+        // This function will execute the print_time_date function continuously after every 1000 milliseconds or 1 second(s).
+        setInterval(&quot;print_time_date()&quot;, 1000);
+
+    &lt;/script&gt;
+
+      &lt;!-- Start of example
+         &lt;script&gt;
+           var myDate         = new Date();               // returns the date object
+           var myMonth        = myDate.getMonth();        // 0 through 11
+           var myDay          = myDate.getDate();         // 1 through 31
+           var myDayOfWeek    = myDate.getDay();          // 0 through 6 -  0 = Sunday
+           var myYear         = myDate.getFullYear();     // 4 digit year
+           var myHour         = myDate.getHours();        // 0 through 23
+           var myMinutes      = myDate.getMinutes();      // 0 through 59
+           var mySeconds      = myDate.getSeconds();      // 0 through 59
+           var myMillSec      = myDate.getMilliseconds(); // 0 through 999
+           var months  = new Array(&quot;January&quot;,   &quot;February&quot;, &quot;March&quot;,    &quot;April&quot;,
+                                    &quot;May&quot;,       &quot;June&quot;,     &quot;July&quot;,     &quot;August&quot;,
+                                  &quot;September&quot;, &quot;October&quot;,  &quot;November&quot;, &quot;December&quot;);
+           var days    = new Array(&quot;Sunday&quot;,   &quot;Monday&quot;, &quot;Tuesday&quot;,&quot;Wednesday&quot;,
+                                   &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;);
+         &lt;/script&gt;
+
+         &lt;p&gt;&lt;mark&gt; var myDate = new Date();&lt;/mark&gt;&lt;/p&gt;
+         &lt;p&gt;&lt;mark&gt; var myMillSec = myDate.getMilliseconds();&lt;/mark&gt;&lt;/p&gt;
+         &lt;script&gt;
+            document.write(&quot;&lt;p&gt;The date is &lt;mark&gt; &quot;, myDate, &quot; &lt;/mark&gt;&lt;/p&gt;&quot;);
+            document.write(&quot;&lt;p&gt;The Milli seconds is &lt;mark&gt; &quot;, myMillSec, &quot;&lt;/mark&gt;&lt;/p&gt;&quot;);
+         &lt;/script&gt;
+
+         &lt;p&gt;&lt;mark&gt;The getMilliseconds() method returns 0 to 999. &lt;/mark&gt;&lt;/p&gt;
+
+        End of example --&gt;
+
+&lt;/body&gt;
+    </code></pre>
+<h2 id="form-validation">Form Validation</h2>
+<pre class="html"><code>
+&lt;head&gt;
+
+    &lt;title&gt; Forms and JavaScript! &lt;/title&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function validator()
+        {
+            if(document.sample.box.checked) // True of box is checked
+            {
+                alert(&quot;Yes Checked!&quot;);
+            }
+            else
+            {
+                alert(&quot;Check the box!&quot;);
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- A Sample Form! --&gt;
+    &lt;form name=&quot;sample&quot;&gt;
+        Username: &lt;input type=&quot;text&quot; name=&quot;uname&quot; /&gt;
+        &lt;br/&gt;
+        Password: &lt;input type=&quot;password&quot; name=&quot;pword&quot; /&gt;
+        &lt;br/&gt;
+        Want colour(s)? : &lt;input type=&quot;checkbox&quot; name=&quot;box&quot;/&gt;
+        &lt;br/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Check!&quot; onClick=&quot;validator()&quot;/&gt;
+        &lt;!-- On clicking the button, the validator function is invoked! --&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+    &lt;/form&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        // JavaScripts automatically creates a form array, if a 
+        // form field is present! First form will be form 0, next
+        // is form 1, form 2 etc.,
+
+        var x = document.forms[0].length;
+        // This will access the first form!
+        // length is the number of inputs in the form, here it is 3.
+        // x = 3
+        var y = document.forms[0].elements[0].name; // Accessess uname!
+        var z = document.forms[0].elements[1].name; // Accessess pword!
+
+        // Using Form name
+        var a = document.sample.uname.name; // Accessess uname!
+        var b = document.sample.pword.name; // Accessess pword!
+
+        // document.write(x+&quot; &quot;+y+&quot; &quot;+z+&quot;&lt;br/&gt;&quot;);
+        // document.write(a+&quot; &quot;+b+&quot;&lt;br/&gt;&quot;);
+
+    &lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

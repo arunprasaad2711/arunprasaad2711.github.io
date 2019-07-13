@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Python and Web Programming | Jinja2 | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    
+
+    <!-- Code highlight using Highlighter JS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css">
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="jinja2-notes">Jinja2 Notes</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p>Jinja is a template engine (it is like a language on its own) that helps to place strings in documents. Essentially, you have a document with placeholders or variables called template. The data to be placed is provided by another file or from user.</p>
+<p>Jinja takes the data from the user and places it at the placeholders in the template to give you the desired document.</p>
+<p>This is more powerful than the built-in string formatter of Python.</p>
+<p>It is used with Flask and Django web frameworks for making web pages.</p>
+<p>However, it is generic in nature and can be used in many ways.</p>
+<p>These notes are taken from <a href="https://www.youtube.com/watch?v=bxhXQG1qJPM">a YouTube Tutorial on Jinja2 by Jason Rigden</a></p>
+<h2 id="example">Example</h2>
+<p>Let’s say that the template file had a sentence like this:</p>
+<pre><code>{{name}} had a little {{animal}}</code></pre>
+<p>Here, <code>name</code> is a variable and it is placed within backticks. Same with <code>animal</code>. The curly brackets are placeholders for the variables.</p>
+<p>Suppose <code>name = 'Mary'</code> and <code>animal = 'Lamb'</code> are the values provided by the user.</p>
+<p>Then Jinja will take these values and replace the variables in the template to give this file:</p>
+<pre><code>Mary had a little Lamb</code></pre>
+<h2 id="where-is-it-used">Where is it used?</h2>
+<ul>
+<li>Websites.</li>
+<li>Making large text documents.</li>
+</ul>
+<h2 id="how-to-go-about-it">How to go about it?</h2>
+<ul>
+<li>Create a template document with placeholders.</li>
+<li>Write python code to generate the output file.</li>
+<li>Give data to the python file either as a text file or as direct input.</li>
+<li>Run the code to generate the output file.</li>
+</ul>
+<h2 id="how-to-start">How to start?</h2>
+<p>The following examples go from a simplistic case to an advanced case step-by-step.</p>
+<h3 id="example-1-read-and-print-a-text-file.">Example 1: Read and Print a text file.</h3>
+<p>Note: This is a preliminary “Hello, World!” program to sort out the basics!</p>
+<ul>
+<li>Open a Python file and write this line first in it.</li>
+</ul>
+<pre class="python"><code>from jinja2 import Environment, FileSystemLoader</code></pre>
+<ul>
+<li>Create a file loader variable and pass the folder name where the template files are present.</li>
+</ul>
+<pre class="python"><code>file_loader = FileSystemLoader(&#39;templates&#39;)</code></pre>
+<ul>
+<li><p>Note that the directory/folder name here can by anything!</p></li>
+<li><p>Create an enviroment variable and pass the file loader variable to it.</p></li>
+</ul>
+<pre class="python"><code>env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li><p>Now, the environment is ready.</p></li>
+<li><p>Now, create an input text file and write contents into it. We’ll call it “hello_world.txt”</p></li>
+</ul>
+<pre><code>Hello, world!</code></pre>
+<ul>
+<li>In the python file, create a template variable and pass the text to it.</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;hello_world.txt&#39;)</code></pre>
+<ul>
+<li>Now, create an output variable by rendering the template variable and print it.</li>
+</ul>
+<pre class="python"><code>output = template.render()
+print(output)</code></pre>
+<ul>
+<li><p>You can pass variables to the <code>render()</code> method. But, that is for a future example.</p></li>
+<li><p>Run the python file and the output will be:</p></li>
+</ul>
+<pre><code>Hello, World!</code></pre>
+<p>This is the full code:</p>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)
+
+# Create a template variable via environment
+template = env.get_template(&#39;hello_world.txt&#39;)
+
+# Render the template and create an output variable.
+output = template.render()
+
+# Print it out to see or export it to a new file as you see fit.
+print(output)</code></pre>
+<h3 id="example-2-adding-variables.">Example 2: Adding Variables.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Create a template file and place variables with curly bracket placeholders. Let’s call it <code>lamb.txt</code></li>
+</ul>
+<pre><code>{{name}} had a little {{animal}}.</code></pre>
+<ul>
+<li>Load the template and render it with variables.</li>
+</ul>
+<pre class="python"><code># Create a template variable via environment
+template = env.get_template(&#39;lamb.txt&#39;)
+
+# Render the template and create an output variable.
+output = template.render(name=&#39;Mary&#39;, animal=&#39;Lamb&#39;)
+
+# Print it out to see or export it to a new file as you see fit.
+print(output)</code></pre>
+<ul>
+<li>The output is</li>
+</ul>
+<pre><code>Mary had a little Lamb.</code></pre>
+<h3 id="example-3-using-dictionaries">Example 3: Using Dictionaries</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Create a template file and place variables with curly bracket placeholders. Let’s call it <code>lamb.txt</code></li>
+</ul>
+<pre><code>{{data.name}} had a little {{data.animal}}.</code></pre>
+<ul>
+<li>Load the template and render it with a dictionary.</li>
+</ul>
+<pre class="python"><code># Create a template variable via environment
+template = env.get_template(&#39;lamb.txt&#39;)
+
+# Create a dictionary
+person = {}
+person[&#39;name&#39;] = &#39;Mary&#39;
+person[&#39;animal&#39;] = &#39;Lamb&#39;
+
+# Render the template and create an output variable.
+output = template.render(data=person)
+
+# Print it out to see or export it to a new file as you see fit.
+print(output)</code></pre>
+<ul>
+<li>The output is</li>
+</ul>
+<pre><code>Mary had a little Lamb.</code></pre>
+<h3 id="example-4-using-if-else-statements.">Example 4: Using if-else statements.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Template file: <code>truth.txt</code></li>
+</ul>
+<pre class="python"><code>{% if truth %}
+    This is true
+{% else %}
+    This is false
+{% endif %}</code></pre>
+<ul>
+<li>Modifications 1: Set truth variable to be True</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;truth.txt&#39;)
+output = template.render(truth=True)
+print(output)</code></pre>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>This is true</code></pre>
+<ul>
+<li>Modifications 2: Set truth variable to be False</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;truth.txt&#39;)
+output = template.render(truth=False)
+print(output)</code></pre>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>This is false</code></pre>
+<h3 id="example-5-for-loops-using-liststuples">Example 5: For loops using lists/tuples</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Template file: <code>rainbow.txt</code></li>
+</ul>
+<pre class="python"><code>{% for colour in colours %}
+    {{colour}}
+{% endfor %}</code></pre>
+<ul>
+<li>Modifications: Pass a list/tuple</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;rainbow.txt&#39;)
+
+colours = [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;]
+output = template.render(colours=colours)
+print(output)</code></pre>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>red
+
+green
+
+blue</code></pre>
+<h3 id="example-6-template-inheritance---combine-blocks-from-multiple-places.">Example 6: Template inheritance - combine blocks from multiple places.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Include file: <code>header.html</code> - Has the title. It will be included in the template.</li>
+</ul>
+<pre class="html"><code>&lt;head&gt;
+    &lt;title&gt;{{title}}&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+<ul>
+<li>Base file: <code>base.html</code> - This is the base file.</li>
+</ul>
+<pre class="html"><code>&lt;html&gt;
+    {% include &#39;header.html&#39; %}
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li>Modifications</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;base.html&#39;)
+
+output = template.render(title=&quot;Hey, there!&quot;)
+print(output)</code></pre>
+<ul>
+<li>Output</li>
+</ul>
+<pre class="html"><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hey, there!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Observation: Here, the <code>base.html</code> file automatically called <code>header.html</code> file. And inside it, the title variable was automatically placed.</p>
+<h3 id="example-7-template-rendering-placing-data-in-body-tag">Example 7: Template rendering + Placing data in body tag</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<pre class="python"><code># Import the required methods
+from jinja2 import Environment, FileSystemLoader
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader(&#39;templates&#39;)
+env = Environment(loader=file_loader)</code></pre>
+<ul>
+<li>Include file: <code>header.html</code> - Has the title. It will be included in the template.</li>
+</ul>
+<pre class="html"><code>&lt;head&gt;
+    &lt;title&gt;{{title}}&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+<ul>
+<li>Base file: <code>base.html</code> - This is the base file with content!</li>
+</ul>
+<pre class="html"><code>&lt;html&gt;
+    {% include &#39;header.html&#39; %}
+    &lt;body&gt;
+    {% block content %}
+    {% endblock %}
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li>Template file: <code>child.html</code> - Contents of this file fill be placed.</li>
+</ul>
+<pre class="html"><code>{% extends &quot;base.html&quot; %}
+
+{% block content %}
+
+    &lt;p&gt;
+        {{body}}
+    &lt;/p&gt;
+
+{% endblock %}</code></pre>
+<ul>
+<li>Modifications</li>
+</ul>
+<pre class="python"><code>template = env.get_template(&#39;child.html&#39;)
+
+output = template.render(title=&quot;Hey, there!&quot;, body=&quot;Brown cow!&quot;)
+print(output)</code></pre>
+<ul>
+<li>Output</li>
+</ul>
+<pre class="html"><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hey, there!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Brown cow!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

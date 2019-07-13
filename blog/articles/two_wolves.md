@@ -1,0 +1,294 @@
+Realising the two Wolves inside us
+==================================
+
+**Are we missing something?**
+-----------------------------
+
+From the very moment we, the humans began our existence in this world,
+we faced so many issues. While on the one hand, we are remarkably
+intelligent and we evolved far better than other species in this planet,
+the animal nature existing in ourselves, despite so much progressive
+development is hard to comprehend.
+
+Looking at human history, episodes of savage killings, sufferings,
+warfare, domination, oppression etc., are plenty. While nature and other
+external factors were responsible for the survival of species, for
+humans, however, the ironical situation was (and is) that our species
+was responsible for controlling our population. What is more ironic is
+that unlike other less intelligent species, we, the "intelligent"
+species are fighting among ourselves in manners that are sometimes more
+vicious, cruel and cold-blooded than what other species do. On paper,
+one would argue that intelligent species would live in harmony, with
+fewer quarrels. With this failing dramatically, it is evident that
+apparently, something else drives us deep down.
+
+The Human Mind and its conflicts.
+---------------------------------
+
+Several people share the view that we humans are complex creatures
+emotionally. We all have wants and drives. One simplified way of looking
+at human behaviour is to understand that every human has an inner
+conflict. When the battle to deal with is simple, rationality, logic and
+emotions are well within control, and it is easy to make choices. It is
+when we deal with more significant, more complicated and convoluted
+conflicts, is when we realise that in such cases, the conflict and its
+connection with morality is weak; in such situation, the conflict is not
+about right or wrong, but rather what people feel it is right or wrong
+in their Point of View (POV), however right or wrong their POV might be.
+
+For instance, with all conditions ideal, the act of stealing is
+considered immoral. If one wants something or wants to achieve
+something, the ideal way to do is to earn the way through: work hard,
+work smart, plan well and reach the goal. This is a hard way no doubt.
+And the sincere efforts put by one in this process makes it a noble
+attempt, regardless of the outcome it can fetch. Another way to do is
+stealing. Although there are many ways, given these two options, why do
+some people chose to cheat, while some prefer the hard way? It is the
+consequence and the aftermaths and the compromises/sacrifices one has to
+make along the way. Added to that, **\*what drives even harder is the
+tenacity to deal with the consequences and aftermaths to be followed. It
+should not be surprising that the options we have, the alternatives we
+can, the price to be paid, the uncertainty, and how emotionally healthy
+we are all critical**\*.
+
+One Example:
+
+To explain this clearly, let narrate an episode in the US TV series
+called as House MD (House (TV Series 2004--2012)) Although this entire
+episode revolves around honesty and its virtue, it narrates the essence
+of the conflicting nature of our human mind, the choices we make, what
+we think is right/wrong in our POV, the consequences/aftermath one can
+face/will face, the price/sacrifice one has to make etc.,
+
+> In one episode, a lady is brought to the hospital after a car
+> accident. She was having some form of involuntary jerks in her hands
+> and legs which caused the accident. At the end of the episode, it was
+> found that the involuntary jerks that almost killed her, were a
+> symptom of a more significant health issue that gradually developed
+> due to her medications and habits. She was undergoing a steady
+> physical and mental degradation.
+>
+> It turns out she was suffering from Ritalin abuse and hepatocellular
+> adenoma.
+>
+> Although her disease is not the prime concern here, what is important
+> is how she acquired it.
+>
+> She has a five-year-old daughter from a previous marriage. She
+> divorced and married another person. With her new husband, she was a
+> full-time housewife and a very active one. She had a lot of energy to
+> take care of the house and do so many extra activities altogether that
+> kept her thoroughly busy. The couple were loving each other truly, and
+> they settle any issue they have peacefully. The guy was understanding
+> and caring, and he treated and loved her daughter as his own.
+>
+> Sounds like a happy story so far right? Here comes the twist.
+>
+> The lady's husband wants to have a biological child with her. (The guy
+> is her husband, and so this is not wrong right?).
+>
+> So what did she do? She agreed to his request. And, since they were in
+> their 30's, they decided to take fertility treatments to increase the
+> chances of conception. And, behind his back and intentionally, she was
+> taking contraceptives to avoid conception at any cost.
+>
+> These polar opposite actions took a toll on her physically, and the
+> guilt was wearing her mentally. To keep herself preoccupied so that
+> she does not think about this, she became a Ritalin abuser. That gave
+> her the energy to do so much stuff and kept her problems at bay.
+> However, the combined actions of all three medications caused her
+> physical and mental degradation and the hepatocellular adenoma.
+>
+> The doctors finally figured out all of this after so many painstaking
+> efforts. When the doctors confronted her in person, she honestly
+> confessed her emotions. Honestly, she was not willing to have another
+> child at all!
+>
+> She was so happy to be married to her new husband. He was perfect,
+> caring, understanding and a great guy. But, she was very firm and
+> stern not to have any children with him or anyone else. She wanted
+> that for her reason and also believed that having a biological child
+> with him would make him care more for the new baby (since it will be
+> his blood) and care less about her already existing daughter.
+>
+> But, she did not want to confront him and tell the truth. She feared
+> that if she says so, then,
+>
+> -   They might fight, and the marriage might break apart
+> -   He will not at all be happy and will never forgive her
+> -   He might divorce her.
+>
+> She did not want to lose him, and at the same time, she did not want
+> him to have another child. Hence, she agreed to his request to have
+> another child and still intentionally did not grant him that wish.
+>
+> When the doctors asked her as to how long she intended to play along
+> like this, she said that for a few more years till they both reach
+> their 40's.
+>
+> Her rationalisation is as follows: Since they are in their thirties,
+> they would try to get pregnant until they reach about forties. Beyond
+> that, their fertility would drop gradually with age to the point that
+> the fertility treatments would be of no use. Besides, she will reach
+> menopause, and beyond that, it is of no use. She was willing to bet on
+> the fact that, with the years of continuous failure to get pregnant
+> would gradually put him down, curb his enthusiasm and eventually, he
+> will accept the fact that they can't have babies and stop trying
+> altogether. And, in this process, the guilt of not having a child of
+> his own would make him accept her daughter as his own more firmly
+> because he was a great guy.
+>
+> Well, at this point, both the viewers and doctors were taken aback by
+> her reasoning.
+>
+> The story for that episode ends with the lady persisting to her
+> initial ideas despite the agony she suffered and pledging honestly to
+> the doctors that she will not let her health degrade like this. The
+> husband, on the other hand, is kept in the dark about the deception.
+
+Such is the complexity of some conflicts that runs in ourselves
+sometimes.
+
+**\*Honesty is, sometimes, a bitter pill to swallow.**\*
+
+Dissecting the example:
+-----------------------
+
+If you look at the point of view of the lady in the story, she is partly
+right and partly wrong. The price she and her husband have to pay is a
+lot. Had she taken a leap of faith and confessed her true intentions,
+then yes, there is a chance that things would go bad as she feared. But
+then there is at least a probability that he would understand. Or, there
+was a chance that they could have a baby, and still, everything can end
+happily.
+
+On her part, she might feel that being dishonest is the best thing to do
+to keep the marriage safe. But, if she has to be dishonest to have the
+marriage stay strong, then she is not in a stable marriage in the first
+place.
+
+I felt sympathy for the character. By not confronting the situation
+(however bitter or sweet it might turn out to be), and following up with
+the deception, she is merely refusing to face reality. Her insecurity of
+her child may not be having a loving father genuinely out weighted an
+alternate reality wherein her husband would understand her. I felt that
+she should have opened the box to see if the Schrödinger\'s cat is alive
+or not instead of letting her insecurity overwhelm her to believe that
+the cat is dead.
+
+The power of negative emotions:
+-------------------------------
+
+> Luke: Come with me. Leave everything behind.
+>
+> Darth Vader: Obi-Wan once thought as you do. You don\'t know the power
+> of the Dark Side. I must obey my master.
+>
+> \-- Star Wars: Episode VI - Return of the Jedi (1983)
+
+We all have tough decisions to make in various stages of life. Negative
+drives such as fear of rejection/losing/embarrassment, have great
+convincing powers over our decisions. They tend to force, cheat, trick
+or manipulate you to do something as if the price one pays for it is
+nothing. They comfort us, feeds our insecurity, do gets us what we want
+sometimes. But in the process, it makes us unfit for the things we
+aimed. The things we get through these emotions do not last long. There
+is a strong irony with this. You get what you want, but you become unfit
+to have it. You get it, but you lose so many things knowingly or
+unknowingly in the long run. You get it, and you later might throw that
+away because you missed the importance, You might get the short-term
+benefit, but the long-term benefit is gone. It gives so many material
+things to you, but takes away your soul. By the time you realise the
+price you paid is too much, things would be way out of hand to turn
+back.
+
+The power of positive emotions:
+-------------------------------
+
+The value of honesty, in contrast to the above, is that it respects your
+free will and makes you aware that one is accountable. It makes you
+stronger by letting you face your fears, pushing you out of your comfort
+zone by telling you the issues on your face and making you strive for
+those despite that. It gives you courage. There is no manipulation, just
+plain facts. It is not a significant driving force, but honesty is a
+quality that makes one appreciates his/her limits and capacities. It
+grows trust, compassion and reliability and makes strong connections
+within yourself and with the people around you. It helps you to
+eliminate bad influences and bad people. Most importantly, the most
+critical value of honesty is that it enables you to see the reality as
+it is, free from fantasies and delusions.
+
+That leads to another important concept: honesty alone is never
+sufficient. Honesty provides a foundation of trust and reliability.
+Aided by truth and other good qualities and strong positive motivation,
+life will be peaceful, no matter what happens in your life.
+
+The two wolves:
+---------------
+
+This will concur with the teachings told throughout the world such as
+the Yin and Yang, The Teachings of Bhagavad Gita of Hinduism, etc.,
+
+The Two Wolves is a Cherokee legend which goes as below,
+
+> An old Cherokee is teaching his grandson about life. "A fight is going
+> on inside me," he said to the boy.
+>
+> "It is a terrible fight, and it is between two wolves. One is evil --
+> It is anger, envy, sorrow, regret, greed, arrogance, self-pity, guilt,
+> resentment, inferiority, lies, false pride, superiority, and ego." He
+> continued, "The other is good -- he is joy, peace, love, hope,
+> serenity, humility, kindness, benevolence, empathy, generosity, truth,
+> compassion, and faith. The same fight is going on inside you -- and
+> inside every other person, too."
+>
+> The grandson thought about it for a minute and then asked his
+> grandfather, "Which wolf will win?"
+>
+> The old Cherokee simply replied, "The one you feed."
+
+Here, clearly "We" are the "Feeders" of the wolves.
+
+Why we need it more than ever?
+------------------------------
+
+Delving deeper into these lines and looking at all the worldly problems
+we face, all of them are because we feed the evil wolf among us.
+
+Unlike the world several years ago, the world is more connected and
+accessible today, and it will continue to be more of it in the future
+years. While this is good, it comes with a price. It has become more
+sensitive.
+
+A long time ago, the power vested in us humans is limited. Hence, when
+we had a massive flood or an outbreak of disease etc., we had nothing in
+our means to fight against them or do anything. All we could do is
+accept it as a bitter fact of life and move on.
+
+Now, with our every growing power, more and more of the constraints we
+faced earlier are vanishing. The authority and freedom vested in us is
+so large these days that it is near impossibility for humans several
+centuries ago. While the removal of constraints is good, it also causes
+significant ramifications because this can lead to the misuse of freedom
+and power if there is no moral support. Also, due to such a stance,
+having the power and yet not using it properly (or worse making a
+mistake) can be even more costly.
+
+As a consequence, in contrast to the past, it is easier to wage war,
+easier to offend, easier to get cheated etc., While the ever-growing
+powers make us comfortable and civilised, removing that makes many of us
+more barbaric and uncivilised in greater proportions than before due to
+the lack of morality.
+
+Who can forget the amount of destruction caused by World War II - the
+most expensive war (by the human lives lost, countries involved, money
+invested) of the human kind? Is it not much easier to form major
+terrorist groups in this era than before? Global warming could not be
+possible a long time ago, and now it is real!
+
+While the future is wide open with so many exciting possibilities and
+challenges, one can find it easy to imagine the lives of so many people
+can change for the worse at the press of a button. This is scary ---
+terrifying, and it is sending chills down the spine.
+
+Let us all feed the good wolf inside us!

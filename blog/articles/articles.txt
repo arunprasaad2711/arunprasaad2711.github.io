@@ -1,0 +1,13 @@
+blog/articles/enough_is_enough.md
+blog/articles/in_the_shoes_of_a_gay_person.md
+blog/articles/late_night_ride_and_coffee_with_a_friend.md
+blog/articles/lessons_from_entropy.md
+blog/articles/lessons_on_being_vulnerable.md
+blog/articles/life_s_purpose.md
+blog/articles/monkeys_humans_modernlife_and_socialMedia.md
+blog/articles/paralysis_of_choice_the_modern_day_challenge.md
+blog/articles/pda_and_changing_times.md
+blog/articles/some_realisations_from_a_broken_finger.md
+blog/articles/staying_foolish_and_writing.md
+blog/articles/two_wolves.md
+blog/articles/you_are_not_alone_dealing_with_loss.md

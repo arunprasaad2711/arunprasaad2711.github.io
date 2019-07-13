@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Programming | Java_programming | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    
+
+    <!-- Code highlight using Highlighter JS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css">
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="java-programming">Java Programming</h1>
+<pre class="java"><code>
+/* Program to print hello world in Java */
+
+// In Java, everything begins with a class
+class hello
+{
+    // method - function inside a class
+    // main is the primary method! All other methods must run through
+    // main method
+    public static void main(String args[])
+    {
+        System.out.println(&quot;Hello World!&quot;);
+        // A versatile print line statement. (can print in file/output)
+        // print line has a return statement
+        
+        double x, y, z; // Double variables
+        x = 7.8;
+        y = 9.4;
+        // simple initializations
+        z = x + y; // addition
+        
+        // ASMD + - * /
+        // modulus %
+        // increment decrement ++a, a++, --a, a--,
+        // assignment operators: a += 6, b -=5, c *= 1, d /=2, e %= 2
+        
+        // int a, b, c; // Integer variables
+        
+        System.out.print(&quot;The sum of x = &quot;);
+        // Prints a string or a variable as it is without any return
+        System.out.print(x);
+        System.out.print(&quot; and y = &quot;);
+        System.out.print(y);
+        System.out.print(&quot; is z = &quot;);
+        System.out.println(z);
+    }
+    // to compile, use javac &lt;filename.java&gt;
+    // to run, use java &lt;classname.class&gt;
+}
+</code></pre>
+<pre class="java"><code>
+/* Program for getting user input via scanner */
+
+import java.util.Scanner;
+// to import methods/classes/objects from library files
+// This is used for getting user input.
+
+class scan
+{
+    // method - function inside a class
+    // main is the primary method! All other methods must run through
+    // main method
+    public static void main(String args[])
+    {
+        
+        Scanner x = new Scanner(System.in);
+        // prepares a scanner variable to get data from the user!
+        
+        System.out.println(x.nextLine());
+        // x.nextLine() invokes the scanner call. The data is received
+        // as a string due to nextLine() method
+        // println method prints the result
+        
+    }
+    // to compile, use javac &lt;filename.java&gt;
+    // to run, use java &lt;classname.class&gt;
+}
+
+</code></pre>
+<pre class="java"><code>
+/* Calculator Program */
+
+import java.util.Scanner;
+// Scanner method for getting data from user
+
+class calculator
+{
+    public static void main(String args[])
+    {
+        double num1, num2, ans;
+        
+        Scanner x = new Scanner(System.in);
+        // Setting a Scanner variable to get data from user!
+        
+        System.out.println(&quot;Enter number 1:&quot;);
+        // for user clarity
+        num1 = x.nextDouble();
+        // This invokes the scanner call to get a value
+        // value of x gets converted into a double and assigned to num1
+        
+        System.out.println(&quot;Enter number 2:&quot;);
+        // for user clarity
+        num2 = x.nextDouble();
+        // This invokes the scanner call to get a value
+        // the old value is replaced by the new user value
+        // value of x gets converted into a double and assigned to num2
+        
+        ans = num1 + num2;
+        System.out.print(&quot;The answer is &quot;);
+        System.out.println(ans);
+    }
+}
+
+</code></pre>
+<pre class="java"><code>
+/* Program to demonstrate if clause and switch case */
+
+class constructs
+{
+    public static void main(String args[])
+    {
+        int test = 4;
+        
+        // Relational operators == &gt; &lt; &gt;= &lt;= !=
+        // Logical operators &amp;&amp; || !
+        
+        if (test == 9)
+        {
+            System.out.println(&quot;test is 9&quot;);
+        }
+        else if (test &gt;= 9)
+        {
+            if (test &gt; 9)
+            {
+                System.out.println(&quot;test is greater than 9&quot;);
+            }
+            else
+            {
+                System.out.println(&quot;test is 9&quot;);
+            }
+        }
+        else if (test &lt;= 9)
+        {
+            if (test &lt; 9)
+            {
+                System.out.println(&quot;test is less than 9&quot;);
+            }
+            else
+            {
+                System.out.println(&quot;test is 9&quot;);
+            }
+        }
+        else
+        {
+            System.out.println(&quot;test is not at all 9&quot;);
+        }
+        
+        switch(test)
+        {
+            case 0:
+                System.out.println(&quot;You got 0!&quot;);
+            break;
+            case 1:
+                System.out.println(&quot;You got 1!&quot;);
+            break;
+            case 2:
+                System.out.println(&quot;You got 2!&quot;);
+            break;
+            case 3:
+                System.out.println(&quot;You got 3!&quot;);
+            break;
+            case 4:
+                System.out.println(&quot;You got 4!&quot;);
+            break;
+            case 5:
+                System.out.println(&quot;You got 5!&quot;);
+            break;
+            default:
+                System.out.println(&quot;You got something else!&quot;);
+            break;
+        }
+    }
+}
+</code></pre>
+<p>Nesting is possible with if statements</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 15
+ */
+
+public class nested_if
+{
+    public static void main(String args[])
+    {
+        int age = 20;
+
+        if(age &lt; 10)
+        {
+            System.out.println(&quot;You are too young!&quot;);
+        }
+        else
+        {
+            System.out.println(&quot;You are of good age!&quot;);
+            if(age &gt; 75)
+            {
+                System.out.println(&quot;Hello Grandpa / Grandma!&quot;);
+            }
+            else
+            {
+                System.out.println(&quot;You&#39;re younger than 75&quot;);
+            }
+        }
+
+        // if there is just a statement followed by if or else of or else, then
+        // {} are not needed!
+        if(age &lt;= 10)
+        {
+            System.out.println(&quot;You are too young!&quot;);
+        }
+        else if(age &gt;10 &amp;&amp; age &lt;= 18)
+        {
+            System.out.println(&quot;You are an adolescent teen!&quot;);
+        }
+        else if(age &gt; 18 &amp;&amp; age &lt;= 50)
+        {
+            System.out.println(&quot;You are on your own!&quot;);
+        }
+        else
+        {
+            System.out.println(&quot;You&#39;re a senior citizen!&quot;);
+        }
+    }
+}
+
+</code></pre>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 10
+ * This explains the while loop
+ */
+
+public class while_loop
+{
+    public static void main(String args[])
+    {
+        int counter = 0;
+
+        // simple while loop explanation
+        while(counter&lt;10)
+        {
+            System.out.println(counter);
+            counter++;
+        }
+    }
+}
+</code></pre>
+<p>Using Multiple classes is easy</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 11 part 1
+ * part 2 is classes2.java
+ */
+
+public class classes1
+{
+    public static void main(String args[])
+    {
+        // class name, object name = new class name
+        classes2 classes2_obj = new classes2();
+
+        classes2_obj.simple_message();
+    }
+}
+
+/**
+ * Created by arun on 17/07/2016.
+ * program 11 part 2
+ * part 1 is classes1.java
+ */
+
+public class classes2
+{
+   public void simple_message()
+   {
+       System.out.println(&quot;Hello from simple message method in class classes2&quot;);
+   }
+}
+</code></pre>
+<p>Methods can have arguments/parameters too …</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 12 part 1
+ * part 2 meth_params.java
+ */
+
+import java.util.Scanner;
+
+public class methods_parameters
+{
+    public static void main(String args[])
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println(&quot;Enter your name&quot;);
+
+        String name = input.nextLine();
+        // simple_message(name); // this also works
+        methods_parameters.simple_message(name);
+
+        // creating a new class object
+        meth_params params1 = new meth_params();
+
+        params1.sim_mess(name);
+    }
+
+    // method with an argument
+    public static void simple_message(String name)
+    {
+        System.out.println(&quot;Hello &quot;+name);
+    }
+}
+
+/**
+ * Created by arun on 17/07/2016.
+ * program 12 part 2
+ * part 1 methods_parameters.java
+ */
+
+public class meth_params
+{
+    public void sim_mess(String name)
+    {
+        System.out.println(&quot;Hello &quot;+name+&quot;! Nice to meet you!&quot;);
+    }
+}
+</code></pre>
+<p>It is possible to have variables inside classes. These are instance variables. They are accessible to the methods inside the class.</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 13 part 2
+ * part 1 methods_instances1.java
+ */
+
+public class methods_instances2
+{
+    // this is a private variable.
+    // it is accessible to and can be modified only by the methods in the parent class!
+    // Also, this is an instance variable: a variable used outside
+    // methods and inside classes
+    private String progname;
+
+    public void setName(String name)
+    {
+        // this method sets the progname to be the specified name
+        progname = name;
+    }
+
+    // this method returns a String
+    public String getName()
+    {
+        return progname;
+    }
+
+    // printing method
+    public void saying()
+    {
+        // this is a print statement with a format!
+        // %s is for a string format
+        System.out.printf(&quot;Your first programming language was %s&quot;, getName());
+    }
+}
+
+/**
+ * Created by arun on 17/07/2016.
+ * program 13 part 1
+ * part 2 methods_instances2.java
+ */
+
+import java.util.Scanner;
+
+public class methods_instances1
+{
+    public static void main(String args[])
+    {
+        Scanner input = new Scanner(System.in);
+
+        methods_instances2 mi_obj = new methods_instances2();
+
+        System.out.println(&quot;Enter your first programming language:&quot;);
+        String var = input.nextLine();
+
+        mi_obj.setName(var);
+        mi_obj.saying();
+    }
+}
+</code></pre>
+<p>Constructors are used for initializing the instance variables inside the objects during the time of creation. If these variables are used without prior initialization, then they would show “null” as output.</p>
+<p>Constructor has the same name as that of the class.</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 17/07/2016.
+ * program 14 part 2
+ * part 1 constructor1.java
+ */
+public class constructor2
+{
+    // this is a private variable.
+    // it is accessible to and can be modified only by the methods in the parent class!
+    // Also, this is an instance variable: a variable used outside
+    // methods and inside classes
+    private String progname;
+
+    // this is a constructor!
+    // constructor is used for initializing instance variables
+    // when the objects are immediately created.
+    // constructor has the same name as that of the class
+    public constructor2(String name)
+    {
+        progname = name;
+    }
+
+    public void setName(String name)
+    {
+        // this method sets the progname to be the specified name
+        progname = name;
+    }
+
+    // this method returns a String
+    public String getName()
+    {
+        return progname;
+    }
+
+    // printing method
+    public void saying()
+    {
+        // this is a print statement with a format!
+        // %s is for a string format. \n for new line
+        System.out.printf(&quot;Your first programming language was %s\n&quot;, getName());
+    }
+}
+
+
+/**
+ * Created by arun on 17/07/2016.
+ * program 14 part 1
+ * part 2 constructor2.java
+ */
+public class constructor1
+{
+    public static void main(String args[])
+    {
+        // constructor is used for initializing instance variables
+        // when the objects are immediately created.
+        // Now, we are passing the value &quot;C&quot; for the instance variable
+        // inside the class object
+        constructor2 cons = new constructor2(&quot;C&quot;);
+
+        cons.saying();
+
+    }
+}
+
+</code></pre>
+<p>You have conditional operator in Java. It is a short-hand if else statement.</p>
+<pre class="java"><code>public class conditional_ops
+{
+    public static void main(String args[])
+    {
+        int age = 61;
+
+        // Conditional operator. condition? statement if yes: statement if no
+        System.out.println(age&gt;50?&quot;You&#39;re old!&quot;:&quot;You&#39;re young!&quot;);
+    }
+}</code></pre>
+<p>Simple for loop demonstration.</p>
+<pre class="java"><code>public static void main(String args[])
+    {
+        for(int i=0; i&lt;10; i++) // i += 1
+        {
+            System.out.println(&quot;The value of i is &quot;+i);
+        }
+    }</code></pre>
+<p>Simple do-while loop demonstration</p>
+<pre class="java"><code>
+    public static void main(String args[])
+    {
+        // do while loop executes the body, even without checking the
+        // condition once.
+
+        int counter = 12;
+
+        do
+        {
+            System.out.println(counter);
+            counter++;
+        }
+        while(counter&lt;=10);
+
+    }</code></pre>
+<p>Mathematical methods in Java</p>
+<pre class="java"><code>// random class for random number functions
+import java.util.Random;
+
+public class math_class
+{
+    public static void maths_1()
+    {
+        System.out.println(Math.abs(-26.7));
+        System.out.println(Math.ceil(26.7));
+        System.out.println(Math.floor(26.7));
+        System.out.println(Math.max(8.6, 5.3));
+        System.out.println(Math.min(8.6, 5.3));
+        System.out.println(Math.pow(4.1, 5.3));
+        System.out.println(Math.sqrt(4.1));
+
+    }
+    public static void maths_2()
+    {
+        Random dice = new Random();
+        int number;
+
+        for(int counter=1; counter&lt;=10; counter+=1)
+        {
+            // generates a random integer between 0 and
+            // n-1 inclusive of 0 and n-1 if option is n.
+            // since result is between 0 and n-1, we add
+            // 1 to them to set the limits between 1 and n
+            number = 1 + dice.nextInt(6);
+            System.out.println(&quot;Number = &quot;+number);
+        }
+    }
+    public static void main(String args[])
+    {
+        maths_1();
+        maths_2();
+    }
+}</code></pre>
+<p>Arrays are available in Java</p>
+<pre class="java"><code>
+/**
+ * Created by arun on 18/07/2016.
+ * program 21
+ */
+public class arrays1
+{
+    public static void main(String args[])
+    {
+        // empty integer array with 10 entries
+        int ar_var[] = new int[10];
+
+        // declare and initialize the array and its size!
+        // array initializer
+        int var[] = {1, 2, 3, 4, 5, 6};
+
+        // index starts from 0 and goes to n-1
+        // uninitialised array entries are set to zero.
+        ar_var[0] = 56;
+        ar_var[1] = 5896;
+        ar_var[9] = 5896;
+
+        // display individual values
+        System.out.println(var[3]);
+        System.out.println(ar_var[9]);
+
+        // printing in a standard array table manner.
+        // \t creates a 4-6 space tab
+        System.out.println(&quot;Index\tValue&quot;);
+
+        // var.length is the array length
+        for(int counter = 0; counter &lt;var.length; counter++)
+        {
+            System.out.println(counter+&quot;\t\t&quot;+var[counter]);
+        }
+
+        // sum all the elements in an array
+        int sum = 0;
+        for(int counter = 0; counter &lt;var.length; counter++)
+        {
+            sum += var[counter];
+        }
+        System.out.println(&quot;The sum of the array is: &quot;+sum);
+    }
+}
+
+public class arrays2
+{
+    public static void main(String args[])
+    {
+        int var[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        System.out.println(&quot;Before change:&quot;);
+
+        for(int y: var)
+        {
+            System.out.println(y);
+        }
+
+        // calling the method
+        change(var);
+        // alternate call
+        // arrays2.change(var);
+
+        System.out.println(&quot;After change:&quot;);
+
+        for(int y: var)
+        {
+            System.out.println(y);
+        }
+    }
+    // creating a new method with an integer array parameter
+    public static void change(int x[])
+    {
+        // increment each entry of the array by 5
+        for(int counter = 0; counter &lt;x.length; counter++)
+        {
+            x[counter] += 5;
+        }
+    }
+}
+
+public class arrays3
+{
+    public static void main(String args[])
+    {
+        // creating a 2D array. first [] for row, the next for column
+        // indices start from 1
+        // 00,01,02,03,10,11,12,13 - index order
+        int array1[][] = {{8,9,10,11},{12,13,14,15}};
+        // Arrays with uneven rows
+        // 00,01,10,11,20,21,22,30 - index order
+        int array2[][] = {{8,9},{10,11},{12,13,14},{15}};
+
+        System.out.println(&quot;This is array1:&quot;);
+        display(array1);
+        System.out.println(&quot;This is array2:&quot;);
+        display(array2);
+
+        System.out.println(average(45,67,78,24,12,34,56));
+    }
+
+    public static void display(int arr[][])
+    {
+        // row length
+        for(int row = 0; row &lt; arr.length; row++)
+        {
+            // column length = any row.length
+            for(int column = 0; column &lt; arr[row].length; column++)
+            {
+                System.out.print(arr[row][column]+&quot;\t&quot;);
+            }
+            System.out.println();
+        }
+    }
+
+    /// ... means many arguments
+    public static double average(double ... numbers)
+    {
+        double total = 0;
+        for(double x:numbers)
+        {
+            total += x;
+        }
+        return total/numbers.length;
+    }
+}
+</code></pre>
+<p>Java has enhanced for loops. These progress element-wise in arrays instead of using the indices.</p>
+<pre class="java"><code>
+public class enhanced_loop
+{
+    public static void main(String args[])
+    {
+        int var[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int total = 0;
+
+        // this is similar to &quot;for x in var&quot;.
+        // x will be one value during one iteration
+        for(int x: var)
+        {
+            total += x;
+        }
+
+        System.out.println(&quot;The total of the array is: &quot;+total);
+    }
+}
+</code></pre>
+<p>Examples for string formats and “this” keyword</p>
+<pre class="java"><code>/**
+ * Created by arun on 20/07/2016.
+ * program 26
+ */
+public class time_class
+{
+    // instance variables for the class
+    // private keyword makes them exclusive to the this
+    // class methods.
+    private int hour  = 2;
+    private int minute = 2;
+    private int second = 2;
+
+    public void setTime(int h, int m, int s)
+    {
+        // get the value of hour, minute and second from the
+        // user and assign it to the instance variables.
+        // If there is any error, then the instance variables
+        // are set to zero
+        hour   = ((h&gt;=0 &amp;&amp; h&lt;24)?h:0);
+        minute = ((m&gt;=0 &amp;&amp; m&lt;60)?m:0);
+        second = ((s&gt;=0 &amp;&amp; s&lt;60)?s:0);
+    }
+
+    // used for explaining &quot;this&quot; keyword
+    // If the constructor or the method uses variable names
+    // identical to the instance variables, then the method
+    // will refer to the instance variables.
+    // to make sure that the local variables are used, use
+    // &quot;this&quot; keyword
+    public void setTime2(int hour, int minute, int second)
+    {
+        this.hour   = 4;
+        this.minute = 20;
+        this.second = 20;
+    }
+
+    public String military_fmt()
+    {
+        // prints time in military or 24 hour format.
+        // the format method defines the format in which the data
+        // should be placed inside the string
+        // %d is for int. 02 means two spaces to print the integer
+        return String.format(&quot;%02d:%02d:%02d&quot;,hour, minute, second);
+    }
+
+    public String normal_fmt()
+    {
+        // prints time in normal or 12 hour format.
+        // the format method defines the format in which the data
+        // should be placed inside the string
+        // %d is for int. 02 means two spaces to print the integer
+        return String.format(&quot;%02d:%02d:%02d %s&quot;,((hour==0||hour==12)?12:hour%12),
+                minute, second, (hour&lt;12?&quot;AM&quot;:&quot;PM&quot;));
+    }
+}</code></pre>
+<p>There can be multiple constructors for a class. However, the constructors can be replicated on the basis of how many arguments they take.</p>
+<pre class="java"><code>/**
+ * Created by arun on 20/07/2016.
+ * program 28 part 2
+ * part 1 multi_cons.java
+ */
+public class multiple_constructors
+{
+    private int hour;
+    private int minute;
+    private int second;
+
+    // you can define multiple constructors having different
+    // set of argument list. It is called as constructor overloading
+
+    // a constructor with zero arguments
+    // if the user entered no argument(s), then this constructor is used
+    public multiple_constructors()
+    {
+        // this() means the same constructor with the full argument list!
+        // so, for this example,
+        // this(0,0,0) means multiple_constructors(int h, int m, int s)
+        // with h = 0, m = 0 and s = 0
+        this(0,0,0);
+    }
+
+    // a constructor with one arguments
+    // if the user entered 1 argument(s), then this constructor is used
+    public multiple_constructors(int h)
+    {
+        this(h,0,0);
+    }
+
+    // a constructor with two arguments
+    // if the user entered 2 argument(s), then this constructor is used
+    public multiple_constructors(int h, int m)
+    {
+        this(h,m,0);
+    }
+
+    // a constructor with three arguments
+    // if the user entered 3 argument(s), then this constructor is used
+    public multiple_constructors(int h, int m, int s)
+    {
+        setTime(h,m,s);
+    }
+
+    // this method will set the time
+    public void setTime(int h, int m, int s)
+    {
+        setHour(h);
+        setMinute(m);
+        setSecond(s);
+    }
+
+    public void setHour(int h)
+    {
+        hour   = ((h&gt;=0 &amp;&amp; h&lt;24)?h:0);
+    }
+
+    public void setMinute(int m)
+    {
+        minute   = ((m&gt;=0 &amp;&amp; m&lt;60)?m:0);
+    }
+
+    public void setSecond(int s)
+    {
+        second   = ((s&gt;=0 &amp;&amp; s&lt;60)?s:0);
+    }
+
+    public int getHour()
+    {
+        return hour;
+    }
+
+    public int getMinute()
+    {
+        return minute;
+    }
+
+    public int getSecond()
+    {
+        return second;
+    }
+
+    public String military_fmt()
+    {
+        // prints time in military or 24 hour format.
+        // the format method defines the format in which the data
+        // should be placed inside the string
+        // %d is for int. 02 means two spaces to print the integer
+        return String.format(&quot;%02d:%02d:%02d&quot;,getHour(), getMinute(), getSecond());
+    }
+}
+
+public class multi_cons
+{
+    public static void main(String args[])
+    {
+        multiple_constructors mc1 = new multiple_constructors();
+        multiple_constructors mc2 = new multiple_constructors(5);
+        multiple_constructors mc3 = new multiple_constructors(5,13);
+        multiple_constructors mc4 = new multiple_constructors(5,13,43);
+
+        System.out.printf(&quot;%s\n&quot;, mc1.military_fmt());
+        System.out.printf(&quot;%s\n&quot;, mc2.military_fmt());
+        System.out.printf(&quot;%s\n&quot;, mc3.military_fmt());
+        System.out.printf(&quot;%s\n&quot;, mc4.military_fmt());
+    }
+}</code></pre>
+<p>Composition, string description for the class</p>
+<pre class="java"><code>
+public class app3_1
+{
+    public static void main(String args[])
+    {
+        app3_3 obj1 = new app3_3(20,7,2016);
+
+        // passing a string and an object
+        // this is an example for composition:
+        // passing objects as members
+        app3_2 obj2 = new app3_2(&quot;Arun&quot;, obj1);
+
+        System.out.println(obj2);
+    }
+}
+
+public class app3_2
+{
+    private String name;
+
+    // this is a composition: a reference or a link to the
+    // objects of some other class
+    private app3_3 day;
+
+    public app3_2(String theName, app3_3 theDay)
+    {
+        name = theName;
+        day = theDay;
+    }
+
+    public String toString()
+    {
+        return String.format(&quot;My name is %s, my birthday is %s&quot;, name, day);
+        // since day is a reference to a value inside the object. Since, there is
+        // no string inside the object, because of the toString method, the usage
+        // &quot;day&quot; brings the string used in the toString method from the object and
+        // uses it here.
+    }
+}
+
+public class app3_3
+{
+    private int date;
+    private int month;
+    private int year;
+
+    public app3_3(int d, int m, int y)
+    {
+        date = d;
+        month = m;
+        year = y;
+
+        // here, the keyword &quot;this&quot; is a reference to the object built in this class
+        // so, you need a method that returns a string for this object.
+        System.out.printf(&quot;The constructor for this is %s\n&quot;, this);
+    }
+
+    // this returns the string for the constructor. This has to be named as mentioned
+    public String toString()
+    {
+        return String.format(&quot;%d/%d/%d&quot;, date, month, year);
+    }
+}
+</code></pre>
+<p>Enumeration is a type of pre-defined constant objects in Java</p>
+<pre class="java"><code>
+// this is used for accessing the enum arrays
+import java.util.EnumSet;
+
+public class enum_example
+{
+    public static void main(String args[])
+    {
+        // .values() is a static method that gives an array
+        // for the enum class
+        for(enum_ex languages: enum_ex.values())
+        {
+            // using the methods, we get the language description, the age
+            System.out.printf(&quot;%s\t\t%s\t\t%d\n&quot;,languages, languages.getDesc(), languages.getAge());
+        }
+
+        System.out.println(&quot;\n And now for the range of constants!!!\n&quot;);
+
+        // get only a range between a starting and an ending point
+        for(enum_ex languages: EnumSet.range(enum_ex.c, enum_ex.fortran))
+        {
+            // using the methods, we get the language description, the age
+            System.out.printf(&quot;%s\t\t%s\t\t%d\n&quot;,languages, languages.getDesc(), languages.getAge());
+        }
+    }
+}
+
+// enum stands for enumeration and it is used for creating constants
+// it is kind of like class
+public enum enum_ex
+{
+    // these constants are objects of type enum and have their own
+    // set of variables
+    python(&quot;Awesome&quot;, 23),
+    java(&quot;Procedures&quot;, 24),
+    c(&quot;Challenging&quot;, 15),
+    cpp(&quot;Confusing&quot;, 16),
+    matlab(&quot;Mix_feelings&quot;, 18),
+    fortran(&quot;Easy&quot;,23),
+    shell(&quot;Powerful&quot;, 22);
+
+    // final keyword sets the final value of the constants
+    // these instance variables set the variable names
+    // and variable type and attributes for the constants
+    // desc is the description variable for the objects
+    // age is the age variable for the objects
+
+    private final String desc;
+    private final int age;
+    
+    // Also, if you want to have constants inside classes
+    // then add &quot;final&quot; keyword to the instance variables
+
+    // creating an enumeration constructor
+    enum_ex(String description, int start_age)
+    {
+        desc = description;
+        age = start_age;
+    }
+
+    public String getDesc()
+    {
+        return desc;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+}
+</code></pre>
+<h4 id="static-variables">Static Variables</h4>
+<pre class="java"><code>public class static_var2
+{
+    public static void main(String args[])
+    {
+        // Able to get static variable data even without having objects
+        // and directly from the class
+        System.out.println(static_var1.getmember());
+
+        // Creating a few objects
+        static_var1 member1 = new static_var1(&quot;AR&quot;, &quot;Rahman&quot;);
+        static_var1 member2 = new static_var1(&quot;Abdul&quot;, &quot;Kalam&quot;);
+        static_var1 member3 = new static_var1(&quot;Albert&quot;, &quot;Einstein&quot;);
+        static_var1 member4 = new static_var1(&quot;Sachin&quot;, &quot;Tendulkar&quot;);
+
+        System.out.println();
+        System.out.println(member1.getfirst_name());
+        System.out.println(member1.getlast_name());
+        System.out.println(member1.getmember());
+        System.out.println();
+        System.out.println(member2.getfirst_name());
+        System.out.println(member2.getlast_name());
+        System.out.println(member2.getmember());
+        System.out.println();
+        System.out.println(member3.getfirst_name());
+        System.out.println(member3.getlast_name());
+        System.out.println(member3.getmember());
+        System.out.println();
+        System.out.println(member4.getfirst_name());
+        System.out.println(member4.getlast_name());
+        System.out.println(member4.getmember());
+    }
+}
+
+
+// static variables are used for updating common information for all objects under the same class.
+// if certain information is common to all objects, then instead of creating a variable
+// inside the class and updating all the objects one after the other, defining one
+// static variable is sufficient. If done, then if one of the objects modify the value of this variable,
+// then that change is reflected in all the objects.
+// example: mathematical constants across mathematical class objects
+
+public class static_var1
+{
+    // instance variables
+    private String first_name;
+    private String last_name;
+
+    // defining a static variable with a pre-set value
+    private static int member = 0;
+
+    public static_var1(String fn, String ln)
+    {
+        first_name = fn;
+        last_name = ln;
+        member++;
+
+        System.out.println(&quot;The new person in my wishlist is: &quot;+first_name+&quot; &quot;+last_name);
+        System.out.println(&quot;No. of persons in my wishlist is: &quot;+member);
+    }
+
+    public String getfirst_name()
+    {
+        return first_name;
+    }
+
+    public String getlast_name()
+    {
+        return last_name;
+    }
+
+    public static int getmember()
+    {
+        return member;
+    }
+}
+</code></pre>
+<h3 id="inheritance">Inheritance</h3>
+<p>If you want to include all the <code>public</code> methods and variables into a new class, then inheritance is useful. Instead of writing and replicating the same methods and variables into new classes, the new classes can “inherit” them.</p>
+<p>To inherit them, the new class should be written with the keyword <code>extends</code></p>
+<p>example:</p>
+<pre class="java"><code>public class children extends parents
+{
+    ...........
+}</code></pre>
+<p>Here, all the public methods and variables of <em><em>parents</em></em> class is inherited by the children class. The <strong><em>parent</em></strong> class is the <strong><em>super</em></strong> Class or the <strong><em>parent</em></strong> because it is stand-alone. The <strong><em>children</em></strong> class is the <strong><em>sub-class</em></strong> or the <strong><em>child</em></strong> because it depends on the super class.</p>
+<p>Inside the sub-class, you can over-write the definitions of the methods and variables inherited from the super class. However, this over-writing does not affect the super class.</p>
+<p>Only <code>public</code> methods and variables can be inherited. Private methods and variables are not inheritable.</p>
+<p>Also, chain/successive inheritance is possible, consistent with the above rules and conditions.</p>
+<pre class="java"><code>// intro to Graphical User Interfaces
+
+// This class has a lot of GUI methods
+import javax.swing.JOptionPane;
+
+public class gui1
+{
+    public static void main(String args[])
+    {
+        // addition program
+        String fn = JOptionPane.showInputDialog(&quot;Enter number1:&quot;);
+        String sn = JOptionPane.showInputDialog(&quot;Enter number2:&quot;);
+        // this dialog box gets the input value as strings!
+
+        // converting string to int using explicit conversion
+        int num1 = Integer.parseInt(fn);
+        int num2 = Integer.parseInt(sn);
+
+        int sum = num1 + num2;
+
+        // Displays output on the screen
+        // It takes 4 parameters: position parameter, the message to display
+        // title of the window, a system icon message
+        // null means no specific position for the GUI. So it will
+        // be in the centre.
+        // As of now, we are using no specific icon - hence plain message
+        JOptionPane.showMessageDialog(null, &quot;The answer is &quot;+sum, &quot;Addition Program&quot;, JOptionPane.PLAIN_MESSAGE);
+    }
+}
+</code></pre>
+<pre class="java"><code>// this is a better, more enhanced and complex GUI example
+
+// manages the &quot;placement&quot; of the icons and items. It places
+// items to the right of the previous item and on the next line
+// if space runs out in the current line
+import java.awt.FlowLayout;
+
+// inherits the feel, features and looks of the OS on which it is run on.
+import javax.swing.JFrame;
+
+// allows output of text and images on the screen.
+import javax.swing.JLabel;
+
+// inheriting all the methods from JFrame class
+public class gui21 extends JFrame
+{
+    // a JLabel object for placing a label/image
+    private JLabel item1;
+
+    public gui21()
+    {
+        // title for the window
+        super(&quot;Title of Window&quot;);
+        // setting a layout for the window
+        // new flowlayout sets a default layout for the window
+        setLayout(new FlowLayout());
+
+        // initializing the item
+        item1 = new JLabel(&quot;This is a sentence&quot;);
+        // this message shows up when the mouse pointer comes over
+        // the label
+        item1.setToolTipText(&quot;This will show on hover&quot;);
+        // adding the item to the window
+        add(item1);
+    }
+}
+
+// inherits the feel, features and looks of the OS on which it is run on.
+import javax.swing.JFrame;
+
+public class gui22
+{
+    public static void main(String args[])
+    {
+        // creating a GUI object
+        gui21 g1 = new gui21();
+        // sets how the program has to terminate.
+        // this tells that the program terminates by clicking the
+        // close/exit button
+        g1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // set the size of the window width, height
+        g1.setSize(275,180);
+        // sets the visibility of the window.
+        // if set false, then it appears and vanishes instantly
+        g1.setVisible(true);
+    }
+}</code></pre>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

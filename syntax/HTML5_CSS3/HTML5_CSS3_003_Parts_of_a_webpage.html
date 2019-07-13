@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Development | HTML5_CSS3_003_Parts_of_a_webpage | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    
+
+    <!-- Code highlight using Highlighter JS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css">
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="parts-of-a-webpage">Parts of a Webpage</h1>
+<p>Arun Prasaad Gunasekaran</p>
+<h2 id="structure-of-a-webpage">Structure of a Webpage</h2>
+<p>The structure of any webpage looks like this.</p>
+<?prettify?>
+<pre class="html"><code>&lt;!DOCTYPE html&gt; &lt;!-- This tells the type of the HTML version used --&gt;
+&lt;html&gt;
+
+    &lt;head&gt;
+        &lt;!-- Head of the file. Has metadata for search.
+        Also has scripts and script links for CSS,
+        JavaScript --&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt; Title of the Page &lt;/title&gt;
+        &lt;!-- Other contents --&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;!-- This is the body of the file! --&gt;
+        &lt;!-- All the contents here are displayed in the browser. --&gt;
+        &lt;!-- Other contents --&gt;
+    &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>Using “Emmet” extension in <strong>VSCode</strong>, you just have to type <code>!&lt;tab&gt;</code> to get the structure ready.</p>
+<h2 id="sandwich-method.">Sandwich method.</h2>
+<p>Almost all the features of a web-page is built based on tags. HTML tags follow a sandwich method, wherein all features are placed in pair-tags and all subsequent lower-order pair-tags are placed within other higher-order pair-tags. Also called as “tag-embedding”.  Apparently, the tags appear case-insensitive. The HTML5 standard does not require lowercase tags, but W3C recommends lowercase in HTML4, and demands lowercase for stricter document types like XHTML.</p>
+<p>Source: W3 Schools</p>
+<h3 id="doctype-tag">Doctype tag</h3>
+<?prettify?>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;</code></pre>
+<p>Short for Document Tag. Not a tag, but a declaration. Tells the web browser what definitions or version the website uses. This is the default doctype for <strong>HTML5</strong> and future versions. This tag is optional, but it is a good practice to put it. This has to be the first tag on the webpage.</p>
+<p>Older versions of websites had various definitions and had different versions. Hence, some tags might not be common or available.</p>
+<p><strong>HTML 4.01 Strict</strong></p>
+<?prettify?>
+<pre class="html"><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code></pre>
+<p><strong>HTML 4.01 Transitional</strong></p>
+<?prettify?>
+<pre class="html"><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code></pre>
+<p><strong>HTML 4.01 Frameset</strong> <?prettify?></p>
+<pre class="html"><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</code></pre>
+<p><strong>XHTML 1.0 Strict</strong> <?prettify?></p>
+<pre class="html"><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</code></pre>
+<p><strong>XHTML 1.0 Transitional</strong></p>
+<?prettify?>
+<pre class="html"><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</code></pre>
+<p><strong>XHTML 1.0 Frameset</strong> <?prettify?></p>
+<pre class="html"><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</code></pre>
+<p><strong>XHTML 1.1</strong> <?prettify?></p>
+<pre class="html"><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</code></pre>
+<h2 id="rules-in-tags">Rules in Tags</h2>
+<?prettify?>
+<pre class="html"><code>&lt;tagname&gt; content &lt;/tagname&gt;
+
+&lt;title&gt; Home page &lt;/title&gt;
+
+&lt;img&gt;
+</code></pre>
+<ul>
+<li>Contents are enveloped in tags.</li>
+<li>Tags are commands enveloped in angle brackets (or less than, greater than signs).</li>
+<li>Most tags are in pairs. Closing tag has a forward slash.</li>
+<li>Some tags are single.</li>
+</ul>
+<h3 id="html-tag">HTML TAG</h3>
+<p>This is the starting and the ending of the webpage. Every webpage should begin in this manner. <?prettify?></p>
+<pre class="html"><code>&lt;html&gt;
+    
+    &lt;head&gt;
+    
+        &lt;!-- Write the important details for the webpage here. Eg: JavaScript links/code, Stylesheets/rules, title and meta-information. --&gt;
+    
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+    
+        &lt;!-- Write the body of the webpage here. All the contents you write here will be displayed to the user. --&gt;
+    
+    &lt;/body&gt;
+    
+&lt;/html&gt;</code></pre>
+<h2 id="youtube-video">YouTube Video</h2>
+<iframe width="540" height="315" src="https://www.youtube.com/embed/wPMACUPgYJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h3 id="html-html"><code>&lt;html&gt; &lt;/html&gt;</code></h3>
+<p>This is the wrapper tag for the entire webpage. It starts and ends the webpage. This is compulsory.</p>
+<h3 id="head-head"><code>&lt;head&gt; &lt;/head&gt;</code></h3>
+<p>This is the head tag. It contains metadata that is useful for getting information while searching for webpages in the internet. The contents of the head tag are not displayed in the website. It has provisions to include JavaScript functions, CSS code and links to JavaScript and CSS files located externally.</p>
+<h3 id="body-body"><code>&lt;body&gt; &lt;/body&gt;</code></h3>
+<p>This is the body tag. All the contents written and displayed on the webpage goes here. You write whatever you want to inside here. Also, you can include small JavaScript functions and code snippets here.</p>
+<h3 id="comments">Comments</h3>
+<?prettify?>
+<pre class="html"><code>&lt;!-- Write your comment here! --&gt;</code></pre>
+<p>Comments are ignored. Used for displaying information. They are ignored by default by the browser. It helps the user to write notes and to block code.</p>
+<h3 id="title">Title</h3>
+<?prettify?>
+<pre class="html"><code>&lt;title&gt; Hello, World!&lt;/title&gt;</code></pre>
+<p>Title of the webpage. Written in the head tag.</p>
+<h3 id="paragraph">Paragraph</h3>
+<?prettify?>
+<pre class="html"><code>&lt;p&gt;
+    Hello, World! My name is Arun and this is my website. I love it! :)
+&lt;/p&gt;</code></pre>
+<p>Write paragraphs using <code>&lt;p&gt; ... &lt;/p&gt;</code> tag. Long written contents are recommended to be written here.</p>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>
