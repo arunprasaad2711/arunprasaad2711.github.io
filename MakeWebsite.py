@@ -1,5 +1,6 @@
 # Import md2html function from support function
 from jinja_support_functions import md2html_conv, file_loader, env
+from os import system as sys
 
 main_pages = ['index.html', 
               'faq.html', 
@@ -79,3 +80,10 @@ for page in main_pages:
     print("Created {} page!".format(page))
     i += 1
 
+# Updating the git repository and loading the files to github pages
+
+commit_message = input("Enter the commit message:")
+sys("git status")
+sys("git add .")
+sys("git status")
+sys("git commit -m {}".format(commit_message))
