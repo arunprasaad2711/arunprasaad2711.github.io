@@ -69,26 +69,93 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="introduction">Introduction</h1>
-<p>Python is a high-level programming language written by Dutch Programmer Guido van Rossum.</p>
-<h2 id="why-python">Why Python?</h2>
+                <h1 id="introduction-to-python">Introduction to Python</h1>
+<p>Python is a programming language written by Dutch Programmer Guido van Rossum. Python as of 2019, is one of the most commonly used programming languages, having its reach expanded to a variety of fields.</p>
+<p>Learning Python can be quite useful for a variety of purposes. So, it is quite recommended.</p>
+<!-- TOC -->
 <ul>
-<li>Simple to use</li>
-<li>Free and Open Source</li>
-<li>High Level Programming Language</li>
-<li>Fast to learn and implement</li>
-<li>Interoperatability with the linux shell</li>
-<li>Interoperatability with other programming languages</li>
+<li><a href="#Introduction-to-Python">Introduction to Python</a>
+<ul>
+<li><a href="#Features-of-Python">Features of Python</a>
+<ul>
+<li><a href="#It-is-an-Interpreted-Programming-Language">It is an Interpreted Programming Language.</a></li>
+<li><a href="#It-is-a-general-purpose-programming-language">It is a general purpose programming language</a></li>
+<li><a href="#It-is-object-oriented">It is object oriented</a></li>
+<li><a href="#The-design-of-the-language-is-simple">The design of the language is simple</a></li>
+</ul></li>
+<li><a href="#Why-Python">Why Python?</a></li>
+<li><a href="#Is-it-undisputed">Is it undisputed?</a></li>
+<li><a href="#Different-Versions-of-Python">Different Versions of Python</a>
+<ul>
+<li><a href="#Python-2">Python 2</a></li>
+<li><a href="#Python-3">Python 3</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="features-of-python">Features of Python</h2>
+<p>Python programming language has a lot of features that make in versatile.</p>
+<h3 id="it-is-an-interpreted-programming-language.">It is an Interpreted Programming Language.</h3>
+<p>What this means is that each and every line of code written by the programmer is interpreted into its corresponding machine or assembly level programming immediately and executed immediately. The advantage of this kind of architecture is that the programmer can see if his/her code is working well on a line-by-line basis and execute each and every line on their own. So, this architecture is user-friendly to work with. However, this method is inefficient when it comes to using resources. Hence, the speed of execution is quite slow, often taking anywhere between 2-200+ times the speed of a code written in a compiled programming language like C or C++ for the same purpose. However, one of the pragmatic reasons such interpreted languages exist is because such languages are easier to learn and get things done on the fly. In comparison to compiled programming languages, the development time to generate a program for some purposes is quite small. So in a trade-off between Development time versus Execution time, if Execution time is not a big bother, speed is not a major requirement, and the freedom to run commands on the fly is more important, then in such places, Python and other interpreted programming languages are the clear winner. Learning programming using python or interpreted programming language is a gentler way to introduce people into programming by concentrating on the end goal without worrying about the specifics.</p>
+<p>Just for an example, look at the simple <code>hello, world</code> program looks like in <code>Java</code> - a compiled programming language vs <code>Python</code> - an interpreted programming language. The simplicity you see with Python is quite evident. Granted, this is a simple program and it might look like this example is nitpicked. However, when a programmer tries to write a program in a compiled programming language versus any other interpreted language, the latter one will usually look simpler and easy to read.</p>
+<pre class="java"><code>/* This is a simple &quot;Hello, world&quot; program written in Java. */
+class hello 
+{ 
+    public static void main(String args[]) 
+    { 
+        System.out.println(&quot;Hello, World&quot;); 
+    } 
+} </code></pre>
+<pre class="python"><code># This is a simple &quot;Hello, world&quot; program written in Python
+print(&quot;Hello, world&quot;)</code></pre>
+<p>In contrast to this, we have compiled programming languages like C, C++, Java etc., in which the entire program gets converted into machine or assembly level programming at the end and executed together. This makes compiled programming languages fast and quite efficient. However, the architecture is not user-friendly. You don’t have the freedom to run each and every line one-by-one. So, this makes the programming difficult for the programmer. For the purpose of speed and efficiency, compiled programming languages take the cake by a land-slide. If execution time has to be as small as possible, and programming resources such as availability of processors, memory are of vital importance, then in these situations the compiled programming languages win. These reasons enable them to be used as the foundations of interpreted programming languages and even the architectures of operating systems. Due to the complexities involved, learning programming using such compiled programming languages is a harder way to introduce people to learn programming languages by enforcing the need for good programming practices and systematic thinking.</p>
+<h3 id="it-is-a-general-purpose-programming-language">It is a general purpose programming language</h3>
+<p>What this means is that the programming language can be used for a variety of purposes. Most programming languages can be used only for one or two applications. For instance, C, C++, are used for making OS and software. They are also used for scientific computation.</p>
+<p>Python is developed in such a manner that it can be used for any sort of programming. It can be used as a teaching tool, as a programming language for scientific computation, for web development, for making software, for making websites, etc., With time, the number of applications for the language will keep on increasing.</p>
+<p>Infact, the creator of Python, Guido van Rossum intended and created Python for the same reason: to be able to be used by anyone for any purpose.</p>
+<h3 id="it-is-object-oriented">It is object oriented</h3>
+<p>What this means is that the entire language is built on the concept of objects. In the context of a programming language, an object is an entity that has some data or information with it along with some procedures that work on these data. These data are often known as <code>attributes</code> and these procedures that work on these <code>attributes</code> is often known as <code>methods</code>.</p>
+<p>This feature can be quite difficult to comprehend for a beginner if not explained correctly. However, in the long run, for a user who is looking for better ways to handle data and make easier procedures, such <code>objects</code> in the language prove quite useful.</p>
+<p>As of now, the context is not well-established here to explain what <code>objects</code> fully mean. It will be established and explained quite well and in-detail in the subsequent pages.</p>
+<h3 id="the-design-of-the-language-is-simple">The design of the language is simple</h3>
+<p>The core philosophy of python is to make the programming experience simple for anyone who uses it. To summarize the philosophy behind the language in the best possible way, the Python Enhancement Proposal 20 - shortly known as <a href="https://www.python.org/dev/peps/pep-0020/">PEP-20</a> has a set of 19 instructions listed down in the document - <a href="https://www.python.org/dev/peps/pep-0020/"><em>The Zen of Python</em></a>. To access this set of instructions, all one has to do is type the command:</p>
+<pre class="python"><code>import this</code></pre>
+<p>… in the terminal to get the instructions as shown.</p>
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
+<h2 id="why-python">Why Python?</h2>
+<p>If you were to ask me “why should I learn Python when there are many many languages out there?” - I’ll simply list-out the following details.</p>
+<ul>
+<li>Simple to use,</li>
+<li>Free and Open Source,</li>
+<li>High Level Programming Language,</li>
+<li>Fast to learn and implement,</li>
+<li>Interoperatability with the linux and unix operating systems,</li>
+<li>Interoperatability with other programming languages,</li>
 <li>Used for General Purpose Programming, Software Development, GUI, Web Design, Scientific Computation, OS etc.,</li>
 </ul>
 <h2 id="is-it-undisputed">Is it undisputed?</h2>
-<p>No! Every language has it’s ups and downs. Python is not a perfect programming language. You should choose it for one or many of the following reasons:</p>
-<ul>
-<li>Love learning programming languages</li>
-<li>Useful for your work</li>
-<li>One programming language for multi-purpose use</li>
-<li>You like it</li>
-</ul>
+<p>By telling all the good parts of the language, It might seem that Python is an undisputed language triumphing over other languages.</p>
+<p>To answer the question, No! Python has its own fair share of advantages and disadvantages. Infact, every language has it’s ups and downs. Python is not a perfect programming language.</p>
 <h2 id="different-versions-of-python">Different Versions of Python</h2>
 <h3 id="python-2">Python 2</h3>
 <ul>
