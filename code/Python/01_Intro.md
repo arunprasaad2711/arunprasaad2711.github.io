@@ -15,8 +15,9 @@ Learning Python can be quite useful for a variety of purposes. So, it is quite r
   - [Why Python?](#Why-Python)
   - [Is it undisputed?](#Is-it-undisputed)
   - [Different Versions of Python](#Different-Versions-of-Python)
-    - [Python 2](#Python-2)
-    - [Python 3](#Python-3)
+    - [Python 2 - Legacy](#Python-2---Legacy)
+    - [Python 3 - Future](#Python-3---Future)
+  - [Which one should I use?](#Which-one-should-I-use)
 
 <!-- /TOC -->
 
@@ -115,20 +116,29 @@ To answer the question, No! Python has its own fair share of advantages and disa
 
 ## Different Versions of Python
 
+As of 2019, there are two versions of the Python Language: The Legacy 2.x series and the future 3.x series. Python 3.x came to existence because the founder of Python, Guido van Rossum wanted to add more features to the language. The problem was that adding those features meant dismantling the major framework of Python 2.x and rewrite a significant portion of the language. Consequently, to make sure that the already exisiting programs work well and to make sure the new features get implemented, the old version of python, namely 2.x remained as it is for backward compatibility, while the newer version of python namely 3.x has the new features added to it.
 
+The result of this decision is the exisitence of 2 distinct versions of python with a lot of similarities on the top, with many differences underneath.
 
-### Python 2
+### Python 2 - Legacy
 
 * Old version of Python
 * Legacy Codes built on it
 * No new version anymore
 * Library Migration going on
 
-### Python 3
+### Python 3 - Future
 
 * Newer version of Python
 * The future of Python
 * Revamped internal architecture - supports future technological implementations
 * (Almost all) libraries are translated
 
-We are in the **transition** period. In the future, Python 2 will be obsolete.
+We are in the **transition** period wherein we have access to use both the versions of Python. In the future, Python 2 will be obsolete, and in this transition period, almost all the libraries are being converted from Python 2 to Python 3. Infact, new libraries are being made in Python 3 extensively.
+
+Consequently, as of 2019, Python 2.x series is stopping all major releases and releasing only sub releases for maintenance purposes. Other than that, the most active development is focussed on Python 3. The support and maintenance is only for people to transition from python 2.x to 3.x soon.
+
+## Which one should I use?
+
+If you're a beginner, do not worry about python 2.x. Go ahead with learning python from 3.x series. If you already have worked with Python 2 for a while, then you can still use python 2, but do transition to python 3 soon to get all the features.
+
