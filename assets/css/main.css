@@ -1,5 +1,6 @@
 @import url(./font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i&display=swap");
 /*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
@@ -236,7 +237,7 @@ blockquote {
 code {
   background: #ffffff;
   color: #000000;
-  font-family: "Courier New", monospace;
+  font-family: "Ubuntu", "Courier New", monospace;
   font-size: 1.0em;
   margin: 0 0.25em;
   padding: 0.25em 0.65em;
@@ -244,7 +245,7 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Courier New", monospace;
+  font-family: "Ubuntu", "Courier New", monospace;
   font-size: 1.0em;
   margin: 0 0 2em 0;
 }
