@@ -27,6 +27,7 @@ blog/poems/curse_of_being_strong.md
 blog/poems/dance_of_ecstasy.md
 blog/poems/depression.md
 blog/poems/detached.md
+blog/poems/ebb_and_flow.md
 blog/poems/excelsior.md
 blog/poems/far_cry.md
 blog/poems/feeling_infinite.md

@@ -40,7 +40,6 @@ You can save the current document to a file by clicking <i class="icon-hdd"></i>
 
 > **Tip:** Check out the [<i class="icon-upload"></i> Publish a document](#publish-a-document) section for a description of the different output formats.
 
-
 ----------
 
 
@@ -119,7 +118,6 @@ StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with so
 
 > **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].
 
-
 ### Tables
 
 **Markdown Extra** has a special syntax for tables:
@@ -178,7 +176,7 @@ var bar = 0;
 
 You can create footnotes like this[^footnote].
 
-  [^footnote]: Here is the *text* of the **footnote**.
+[^footnote]: Here is the *text* of the **footnote**.
 
 
 ### SmartyPants
@@ -249,14 +247,14 @@ cond(no)->op
 
 [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)
 
-  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+[^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
 
-  [1]: http://math.stackexchange.com/
-  [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
-  [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
-  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-  [5]: https://code.google.com/p/google-code-prettify/
-  [6]: http://highlightjs.org/
-  [7]: http://bramp.github.io/js-sequence-diagrams/
-  [8]: http://adrai.github.io/flowchart.js/
+[1]: http://math.stackexchange.com/
+[2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
+[3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
+[4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+[5]: https://code.google.com/p/google-code-prettify/
+[6]: http://highlightjs.org/
+[7]: http://bramp.github.io/js-sequence-diagrams/
+[8]: http://adrai.github.io/flowchart.js/
