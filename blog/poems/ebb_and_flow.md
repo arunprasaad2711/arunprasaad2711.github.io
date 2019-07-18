@@ -3,7 +3,7 @@ Ebb and Flow
 
 | There we were, on that one fine day,
 | Our stars aligned, and we saw a glimmer,
-| Is this real? our hearts yearned to know,
+| Is this real? Our hearts yearned to know,
 | This can be, our hearts thought so.
 | 
 | There were moments, that were quite hopeful,
@@ -21,8 +21,8 @@ Ebb and Flow
 | In search of a meaningful banter,
 | Did we forget, the sweetness of malarkey?
 | 
-| Is it time? the culprit behind the change?
-| Did we change? and ran out of words?
+| Is it time? The culprit behind the change?
+| Did we change? And ran out of words?
 | Is it fear? That holds us back now?
 | Did we stop? When the glimmer left us?
 | 
