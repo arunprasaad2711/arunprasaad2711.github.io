@@ -1,6 +1,6 @@
 # Import md2html function from support function
 from jinja_support_functions import md2html_conv, file_loader, env
-from os import system as sys
+from sh import git
 
 main_pages = ['index.html', 
               'faq.html', 
@@ -81,10 +81,12 @@ for page in main_pages:
     i += 1
 
 # Updating the git repository and loading the files to github pages
+commit = input("Should Commit? Y/N: ")
 
-commit_message = input("Enter the commit message:")
-sys("git status")
-sys("git add .")
-sys("git status")
-sys("git commit -m {}".format(commit_message))
-sys("git push -u origin master")
+if(commit == "Y" or commit == 'y'):
+	commit_message = input("Enter the commit message:")
+	git.status()
+	git.add(".")
+	git.status()
+	git.commit("-m", "{}".format(commit_message))
+	git.push("-u", "origin", "master")
