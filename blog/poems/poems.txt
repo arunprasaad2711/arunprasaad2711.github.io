@@ -35,6 +35,7 @@ blog/poems/festival_of_lights.md
 blog/poems/fighting_life.md
 blog/poems/flamboyant_dance_of_a_phoenix.md
 blog/poems/fluidic_colours.md
+blog/poems/future_of_the_past.md
 blog/poems/gamble_of_waiting.md
 blog/poems/game_planner.md
 blog/poems/gold_need_not_glitter.md
@@ -55,6 +56,7 @@ blog/poems/magi.md
 blog/poems/maybe_its_not_meant_to_be.md
 blog/poems/mental_health.md
 blog/poems/midnight_dreams.md
+blog/poems/missing_words.md
 blog/poems/moonlight.md
 blog/poems/more_than_what_meets_the_eye.md
 blog/poems/my_time_has_come.md
