@@ -1,9 +1,3 @@
-# Introduction to Python
-
-Python is a programming language written by Dutch Programmer Guido van Rossum. Python as of 2019, is one of the most commonly used programming languages, having its reach expanded to a variety of fields.
-
-Learning Python can be quite useful for a variety of purposes. So, it is quite recommended.
-
 <!-- TOC -->
 
 - [Introduction to Python](#Introduction-to-Python)
@@ -20,6 +14,12 @@ Learning Python can be quite useful for a variety of purposes. So, it is quite r
   - [Which one should I use?](#Which-one-should-I-use)
 
 <!-- /TOC -->
+
+# Introduction to Python
+
+Python is a programming language written by Dutch Programmer Guido van Rossum. Python as of 2019, is one of the most commonly used programming languages, having its reach expanded to a variety of fields.
+
+Learning Python can be quite useful for a variety of purposes. So, it is quite recommended.
 
 ## Features of Python
 

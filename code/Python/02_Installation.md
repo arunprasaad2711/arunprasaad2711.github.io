@@ -1,11 +1,31 @@
+<!-- TOC -->
+
+- [Installation](#Installation)
+  - [Using a Basic Installer](#Using-a-Basic-Installer)
+    - [Using pip installer](#Using-pip-installer)
+    - [Installing from scratch](#Installing-from-scratch)
+    - [Using Linux/Unix installers](#Using-LinuxUnix-installers)
+    - [Using Python Distribution Bundles](#Using-Python-Distribution-Bundles)
+
+<!-- /TOC -->
 # Installation
 
-Python is cross platform. And hence, it can be installed in all operating systems namely Linux, Windows, Unix, and MacOS.
+Python is cross platform. And hence, it can be installed in all operating systems namely Linux, Windows, Unix, and MacOS. Python is an interpreted programming language. So, it is required to download an interpreter for the installation. There are many ways to download python.
 
-## Installation in different OS
+## Using a Basic Installer
 
-### Using basic installer
-Install by using the basic installer from ``python.org``. This installer is the basic one. Comes with an IDE called IDLE for writing and testing code. Needs more libraries for full functionality. Those are installed by using ``pip`` and ``setuptools``. Also, ``easy_install`` is useful. Multiple installer environments are possible using ``virtualenv`` package.
+One of the simplest way to install python is by downloading a basic installer from the [Python Software Foundation](python.org). This option is available for Windows, Linux, Mac OS and even other platforms. The installer files are present in the [Downloads page](https://www.python.org/downloads/) of the website. 
+
+This installer comes with an ``Interactive Development Environment`` also known as ``IDE`` called IDLE for writing and testing code. With IDLE and some bare minimum libraries, the set-up gives the user a bare-minimum starting point to use Python. To make python versatile and to be able to use it for many many other functionalities, It needs more libraries. 
+
+To install libraries, the python installer comes with a basic package manager called ``pip``. ``pip`` is a recursive acronym for "Pip installs Python". This is the basic requirement to install python libraries and packages.
+
+<hr>
+This part below needs rework! Work in progress!
+<!-- use this link for details: https://realpython.com/installing-python/-->
+<hr>
+
+Python Installer Program Those are installed by using ``pip`` and ``setuptools``. Also, ``easy_install`` is useful. Multiple installer environments are possible using ``virtualenv`` package.
 
 Works in Windows.
 
