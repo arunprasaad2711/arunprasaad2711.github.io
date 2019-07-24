@@ -45,6 +45,8 @@ BannerImages = [
 
 # Coding
 md2html_conv("Python and Web Programming", "syntax", "code", "Jinja2", 12, -3)
+md2html_conv("Python and Web Programming", "syntax", "code", "Bokeh", 11, -3)
+md2html_conv("Python and Web Programming", "syntax", "code", "Plotly", 12, -3)
 md2html_conv("C Programming", "syntax", "code", "C", 7, -3)
 md2html_conv("Fortran Programming", "syntax", "code", "Fortran", 13, -3)
 md2html_conv("CPP Programming", "syntax", "code", "CPP", 9, -3)
@@ -80,13 +82,13 @@ for page in main_pages:
 	print("Created {} page!".format(page))
 	i += 1
 
-# Updating the git repository and loading the files to github pages
-commit = input("Should Commit? Y/N: ")
+# # Updating the git repository and loading the files to github pages
+# commit = input("Should Commit? Y/N: ")
 
-if(commit == "Y" or commit == 'y'):
-	commit_message = input("Enter the commit message:")
-	sys("git status")
-	sys("git add .")
-	sys("git status")
-	sys("git commit -m {}".format(commit_message))
-	sys("git push -u origin master")
+# if(commit == "Y" or commit == 'y'):
+# 	commit_message = input("Enter the commit message:")
+# 	sys("git status")
+# 	sys("git add .")
+# 	sys("git status")
+# 	sys("git commit -m {}".format(commit_message))
+# 	sys("git push -u origin master")

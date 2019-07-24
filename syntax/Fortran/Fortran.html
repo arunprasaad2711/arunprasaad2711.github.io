@@ -27,6 +27,13 @@
     <script>
         moment().format();
     </script>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css" type="text/css" />
+    
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
    
     
     <!-- <script>
@@ -948,7 +955,7 @@ elapsed_time = time2 - time1</code></pre>
 <h2 id="blas-lapack">BLAS LAPACK</h2>
 <p>BLAS (Basic Linear Algebra Subroutines) and LAPACK (LA Pack or Linear Algebra Package) are linear algebra and scientific packages used by Fortran, Matlab, Python, Scilab and many other programs. LAPACK kind of depends on BLAS for some of it’s functions.</p>
 <p>They provide functions and sub-routine definitions for performing the above mentioned operations. They are made in both C and Fortran.</p>
-<p>Fortran does not have an equivalent of Matlab’s Alinear algebra operation. This is done using LAPACK. Under the hood, Matlab and Numpy also need LAPACK to do these!</p>
+Fortran does not have an equivalent of Matlab’s A
 
             </div>
         </section>
@@ -978,6 +985,12 @@ elapsed_time = time2 - time1</code></pre>
 
 <!-- McAfee Trust mark -->
 <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting -->
 <!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->

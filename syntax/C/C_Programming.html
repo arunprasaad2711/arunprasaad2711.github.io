@@ -27,6 +27,13 @@
     <script>
         moment().format();
     </script>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css" type="text/css" />
+    
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
    
     
     <!-- <script>
@@ -297,7 +304,7 @@ label1:
 <p>The opposite (higher type data to a lower type variable) is not possible. When done so, the data get’s truncated.</p>
 <p>eg: <code>integer</code> (lower)  data can be promoted to a <code>float</code>(higher) data but a <code>float</code> data can not be demoted to an <code>integer</code>. Implicit type conversion occurs when integers are assigned to floats etc., and the variables take care of the conversion.</p>
 <p>Explicit type conversion occurs when intentional conversions are introduced, using float() or int() etc.,</p>
-<p><code>&quot;&quot;</code> is used for string input.</p>
+<p><code>""</code> is used for string input.</p>
 <p><code>''</code> is used for character input.</p>
 <p>eg:</p>
 <pre class="c"><code>c = &#39;A&#39;;
@@ -323,7 +330,7 @@ name = &quot;Arun&quot;;</code></pre>
 <p>Escape Sequences are used for re-arranging/formatting the output properly. They are also used for placing key symbols inside strings. </p>
 <p>They have to be placed within string quotes.</p>
 <p><code>\</code> symbol is for escaping a reserved symbol and using it in print statement or other places.</p>
-<p>eg: <code>C \' \\ \&quot; \&amp;</code> etc.,</p>
+<p>eg: <code>C \' \\ \" \&amp;</code> etc.,</p>
 <p>The default escape sequences are</p>
 <pre class="c"><code>\n (newline)
 \t (tab)
@@ -505,6 +512,12 @@ while(condition)</code></pre>
 
 <!-- McAfee Trust mark -->
 <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting -->
 <!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->

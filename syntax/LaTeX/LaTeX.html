@@ -27,6 +27,13 @@
     <script>
         moment().format();
     </script>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css" type="text/css" />
+    
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
    
     
     <!-- <script>
@@ -226,7 +233,7 @@ extra contents</code></pre>
 <p>this is the first command and should be present in each and every document at the first line. It goes like this:  </p>
 <pre class="latex"><code>\documentclass[font_size]{document_type,specs}</code></pre>
 <p>there are several kinds of document types: 1. article (most common article format) 2. chapter 3. report 4. beamer (for power point presentations) 5. letter 6. and many more…   specs are some document specifications such as   font_size defines the font size to be specified. there are 3 default font sizes namely,</p>
-<p>10pt, 11pt and 12 pt.</p>
+<p>10pt, 11pt and 12 pt. </p>
 <p>while mentioning them in LaTeX, you need to mention as follows.</p>
 <pre class="latex"><code>\documentclass[10pt]{document_type,specs}</code></pre>
 <p>note that ‘pt’ is mandatory.</p>
@@ -518,8 +525,14 @@ x_{45} will type it in proper mode.</code></pre>
 <p><strong>Functions:</strong>   For trigonometric functions,   type  followed by the function name in English (exactly or equivalently depending on the case)</p>
 <pre class="latex"><code>eg \cos{} for the cosine function, \cosh{} for hyperbolic cosine. similar methods exist for other functions and inverse functions.</code></pre>
 <p><strong>For log functions</strong>:</p>
-<p><code>latex type \log{} for base 10 log function without 10 at the base type \ln{} for natural log function without e at the base type \log_{sub}{} for base sub log function with subscript eg: log base 3 or log base 4.5 etc.,</code>  <strong>for square roots and other roots,</strong></p>
-<pre class="latex"><code>type \sqrt{} for regular square roots
+<pre class="latex"><code>type \log{} for base 10 log function without 10 at the base
+type \ln{} for natural log function without e at the base
+type \log_{sub}{} for base sub log function with subscript eg: log base 3 or log base 4.5 etc.,
+``` 
+**for square roots and other roots,**
+
+```latex
+type \sqrt{} for regular square roots
 type \sqrt[root]{} for other roots. eg: cube root, 4.5th root, etc.,</code></pre>
 <p>chain functions are possible. Use {} and endings properly.   similarly, definitions exists for other functions.   <strong>Fractions:</strong>   To type a fraction,   go to maths mode,</p>
 <p>use    if used in the in-line maths mode, the fraction will look smaller in font.</p>
@@ -1248,8 +1261,8 @@ This is repeatable using enumerate as well, but there is a difference!
 
 
 \end{document}</code></pre>
-<p>$ % # { &amp; _ are special symbols. G&quot;ottingen</p>
-
+<p>$ % # { &amp; _ are special symbols. G"ottingen</p>
+<p></p>
 <p></p>
 <p></p>
 <p><span class="math inline">\(\pi \ \Pi\)</span></p>
@@ -1583,6 +1596,12 @@ Put your code here.
 
 <!-- McAfee Trust mark -->
 <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting -->
 <!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
