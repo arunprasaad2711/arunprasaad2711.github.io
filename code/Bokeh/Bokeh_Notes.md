@@ -1,29 +1,14 @@
 # Bokeh Notes
 
-<!-- TOC -->
 
-- [Bokeh Notes](#bokeh-notes)
-  - [What is it?](#what-is-it)
-  - [Installation](#installation)
-  - [Getting started](#getting-started)
-    - [Simple example](#simple-example)
-    - [Bar graph with ``pandas``](#bar-graph-with-pandas)
-  - [Advanced settings](#advanced-settings)
-    - [Tweaking plot tools](#tweaking-plot-tools)
-    - [Using column data](#using-column-data)
-    - [Save command](#save-command)
-    - [Tool tips](#tool-tips)
-    - [Colour maps](#colour-maps)
-    - [Legend for Plots](#legend-for-plots)
-    - [Components](#components)
-  - [Full program with all advanced details](#full-program-with-all-advanced-details)
-  - [Output of the final program](#output-of-the-final-program)
-
-<!-- /TOC -->
 
 ## What is it?
 
 Bokeh is a python library useful for plotting and data visualisation. Unlike other libraries, bokeh creates the plot in a webpage. So, one of the main advantages of bokeh is that you can make plots that can be displayed on a website. This tutorial is taken from [Brad Traversy video on bokeh][1] from YouTube.
+
+Additional notes were taken from the YouTube tutorial on [Bokeh: Interactive Web Plots & Dashboards][5]
+
+Bokeh is powerful in the sense, that it can be used to create poweful interactive graphics that can run with or without a server. It automatically generates JavaScript for you and so you can directly embed the script into other applications.
 
 ## Installation
 
@@ -378,6 +363,7 @@ For more details, you can refer [Bokeh Online Reference][2]
 [2]: https://bokeh.pydata.org/en/latest/docs/reference.html
 [3]: https://bokeh.pydata.org/en/latest/docs/user_guide/tools.html
 [4]: https://bokeh.pydata.org/en/latest/docs/reference/palettes.html
+[5]: https://www.youtube.com/watch?v=GkysOB8_xsE
 
 
 
