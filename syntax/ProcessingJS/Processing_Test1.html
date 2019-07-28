@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Development | Processing_Test1 | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    
+
+    <!-- Code highlight using Highlighter JS -->
+    <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/ocean.min.css">
+
+    <!--
+        For source code, go here: https://github.com/highlightjs/highlight.js
+    -->
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+
+    <!-- BokehJS-->
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+
+    <!-- ProcessingJS p5.js -->
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.dom.min.js"></script>
+   
+    
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="processing-test-1">Processing Test 1</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#processing-test-1">Processing Test 1</a>
+<ul>
+<li><a href="#what-is-this">What is this?</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#formula">Formula</a></li>
+<li><a href="#source-code">Source Code</a></li>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#status">Status</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="what-is-this">What is this?</h2>
+<p>This is a test page for checking out <code>processingJS</code> animation. Here, the fourier series summation of a square wave is tested.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Mm2eYfj0SgA">Coding Challenge #125: Fourier Series video on YouTube by Daniel Shiffman</a></li>
+<li><a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">W3Schools tutorial on creating slider</a></li>
+</ul>
+<h2 id="formula">Formula</h2>
+<p>The square wave used here <span class="math inline">\(f(t)\)</span> defined here is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
+<p><span class="math display">\[ f(t) = \begin{cases} 
+               60  &amp; 0 &lt; t &lt; \pi\\
+               -60  &amp; \pi &lt; t &lt; 2\pi
+          \end{cases} \]</span></p>
+<p>The Fourier series representation of this is given by</p>
+<p><span class="math display">\[
+\begin{align*}
+    f(t) &amp;= \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
+         &amp;= \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
+\end{align*}
+\]</span></p>
+<h2 id="source-code">Source Code</h2>
+<pre class="html"><code>&lt;div class=&quot;box&quot; id=&quot;p5js__sketch&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;slidecontainer&quot;&gt;
+&lt;p&gt;Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] &lt;span&gt;Number of terms: &lt;span id=&quot;demo&quot;&gt;&lt;/span&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;input type=&quot;range&quot; min=&quot;1&quot; max=&quot;200&quot; value=&quot;10&quot; class=&quot;slider&quot; id=&quot;myRange&quot;&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    let time = 0;
+    let wave = [];
+    let border = [];
+
+    function setup() {
+        var canvas = createCanvas(1150, 400);
+        canvas.parent(&#39;p5js__sketch&#39;);
+    //  wSlider = createSlider(0, 200, 10);
+    //  wSlider.position(30, 30);
+    //  wSlider.style(&#39;width&#39;, &#39;80px&#39;);
+    }
+
+    function draw() {
+
+        background(0);
+        translate(200, 200);
+        
+        // const n1 = wSlider.value();
+        var slider = document.getElementById(&quot;myRange&quot;);
+        var output = document.getElementById(&quot;demo&quot;);
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+        const n1 = slider.value;
+
+        fill(255);
+        text(&#39;Fourier Series Representation of a Square Wave&#39;, 250, -180);
+        text(&#39;number of terms = &#39;+n1, 325, -160);
+        
+        let x = 0;
+        let y = 0;
+        
+        for (let i = 0; i &lt; n1; i++){
+            
+            prev_x = x;
+            prev_y = y;
+            
+            let n = 2 * i + 1;
+            let radius = 60 * (4 /(n * PI));
+            x += radius * cos(n * time);
+            y += radius * sin(n * time);
+        
+            stroke(255, 100);
+            noFill();
+            ellipse(prev_x, prev_y, radius*2);
+            
+            fill(255);
+            stroke(255);
+            line(prev_x, prev_y, x, y);
+            // point(prev_x, prev_y);
+        }
+        wave.unshift(y);
+        border.unshift(y);
+
+        fill(255, 255, 255);
+        stroke(255);
+        // ellipse(x, y, 8);
+        
+        translate(200, 0);
+        line(x-200, y, 0, wave[0]);
+        
+        beginShape();
+        noFill();
+        for (let i = 0; i &lt; wave.length; i++){
+            vertex(i, wave[i]);
+        }
+        endShape();
+        
+        time += 0.05;
+        
+        if (wave.length &gt; 1500){
+            wave.pop();
+        }
+    }
+&lt;/script&gt;</code></pre>
+<h2 id="animation">Animation</h2>
+<div id="p5js__sketch" class="box">
+
+</div>
+<div class="slidecontainer">
+<p>
+Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] <span>Number of terms: <span id="demo"></span> </span>
+</p>
+<p><input type="range" min="1" max="200" value="10" class="slider" id="myRange"></p>
+</div>
+<script>
+    let time = 0;
+    let wave = [];
+    let border = [];
+
+    function setup() {
+        var canvas = createCanvas(1150, 400);
+        canvas.parent('p5js__sketch');
+    //  wSlider = createSlider(0, 200, 10);
+    //  wSlider.position(30, 30);
+    //  wSlider.style('width', '80px');
+    }
+
+    function draw() {
+
+        background(0);
+        translate(200, 200);
+        
+        // const n1 = wSlider.value();
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+        const n1 = slider.value;
+
+        fill(255);
+        text('Fourier Series Representation of a Square Wave', 250, -180);
+        text('number of terms = '+n1, 325, -160);
+        
+        let x = 0;
+        let y = 0;
+        
+        for (let i = 0; i < n1; i++){
+            
+            prev_x = x;
+            prev_y = y;
+            
+            let n = 2 * i + 1;
+            let radius = 60 * (4 /(n * PI));
+            x += radius * cos(n * time);
+            y += radius * sin(n * time);
+        
+            stroke(255, 100);
+            noFill();
+            ellipse(prev_x, prev_y, radius*2);
+            
+            fill(255);
+            stroke(255);
+            line(prev_x, prev_y, x, y);
+            // point(prev_x, prev_y);
+        }
+        wave.unshift(y);
+        border.unshift(y);
+
+        fill(255, 255, 255);
+        stroke(255);
+        // ellipse(x, y, 8);
+        
+        translate(200, 0);
+        line(x-200, y, 0, wave[0]);
+        
+        beginShape();
+        noFill();
+        for (let i = 0; i < wave.length; i++){
+            vertex(i, wave[i]);
+        }
+        endShape();
+        
+        time += 0.05;
+        
+        if (wave.length > 1500){
+            wave.pop();
+        }
+    }
+</script>
+<h2 id="status">Status</h2>
+<p>It works! The slider has some issues as the default <code>p5.js</code> slider is not working. So, added a custom slider. One minor tweak is that the shape of the outer ring is not coming properly. Will try to bring that in a future edit. For reference, it looks like this <a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a>.</p>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>
