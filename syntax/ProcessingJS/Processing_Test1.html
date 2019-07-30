@@ -12,7 +12,14 @@
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
     <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
 
+    <!-- p5.js local copy -->
+    <script type="text/javascript" src="../../assets/js/p5js/p5.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.sound.min.js"></script>
+
     
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
     <!-- Code highlight using Highlighter JS -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/railscasts.min.css"-->
@@ -36,11 +43,6 @@
         Bokeh.set_log_level("info");
     </script>
 
-    <!-- ProcessingJS p5.js -->
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.dom.min.js"></script>
-   
-    
     <!-- <script>
 		
 		window.onload = function() {
@@ -108,7 +110,7 @@
 <li><a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">W3Schools tutorial on creating slider</a></li>
 </ul>
 <h2 id="formula">Formula</h2>
-<p>The square wave used here <span class="math inline">\(f(t)\)</span> defined here is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
+<p>The square wave defined here <span class="math inline">\(f(t)\)</span> is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
 <p><span class="math display">\[ f(t) = \begin{cases} 
                60  &amp; 0 &lt; t &lt; \pi\\
                -60  &amp; \pi &lt; t &lt; 2\pi
@@ -116,8 +118,8 @@
 <p>The Fourier series representation of this is given by</p>
 <p><span class="math display">\[
 \begin{align*}
-    f(t) &amp;= \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
-         &amp;= \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
+    f(t) &amp;= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
+         &amp;= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
 \end{align*}
 \]</span></p>
 <h2 id="source-code">Source Code</h2>

@@ -21,7 +21,7 @@ This is a test page for checking out ``processingJS`` animation. Here, the fouri
 
 ## Formula
 
-The square wave used here $f(t)$ defined here is a periodic function defined between the period $0 < t < 2\pi$. It's definition is
+The square wave defined here $f(t)$ is a periodic function defined between the period $0 < t < 2\pi$. It's definition is
 
 $$ f(t) = \begin{cases} 
                60  & 0 < t < \pi\\
@@ -32,8 +32,8 @@ The Fourier series representation of this is given by
 
 $$
 \begin{align*}
-    f(t) &= \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
-         &= \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
+    f(t) &= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
+         &= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
 \end{align*}
 $$
 
