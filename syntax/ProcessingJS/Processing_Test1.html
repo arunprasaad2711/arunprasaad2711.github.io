@@ -88,17 +88,117 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processing-test-1">Processing Test 1</h1>
+                <h1 id="processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</h1>
+<h2 id="animation">Animation</h2>
+<div class="box", id="p5js__sketch"></div>
+<div class="slidecontainer">
+<p>
+Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] <span>Number of terms: <span id="demo"></span> </span>
+</p>
+<p><input type="range" min="1" max="200" value="10" class="slider" id="myRange"></p>
+</div>
+<script>
+let time = 0;
+let wave = [];
+let border = [];
+var slider;
+var p5slider;
+
+// var ABS_position = getOffset( document.getElementById('p5js__sketch') );
+
+function setup() {
+    var canvas = createCanvas(displayWidth*0.84, displayHeight*0.5);
+    canvas.parent('p5js__sketch');
+
+    // code for internal (problematic) slider to work
+    // p5slider = createSlider(0, 200, 10);
+    // p5slider.position(width*0.3, 400);
+    // p5slider.style('width', '80px');
+}
+
+    function draw() {
+
+    background(0);
+    translate(200, 200);
+
+    // code for external slider to work
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+    const n1 = slider.value;
+    
+    // code for internal (problematic) slider to work
+    // var val = p5slider.value();
+    // const n1 = val;
+
+    fill(255);
+    text('hello', 250, -280);
+    text('Fourier Series Representation of a Square Wave', 250, -180);
+    text('number of terms = '+n1, 325, -160);
+    text('Move the slider below to adjust the number of terms in the fourier series.', 185, -140);
+    // text(ABS_position, 400 -180);
+
+    let x = 0;
+    let y = 0;
+
+    for (let i = 0; i < n1; i++){
+        
+        prev_x = x;
+        prev_y = y;
+        
+        let n = 2 * i + 1;
+        let radius = 60 * (4 /(n * PI));
+        x += radius * cos(n * time);
+        y += radius * sin(n * time);
+
+        stroke(255, 100);
+        noFill();
+        ellipse(prev_x, prev_y, radius*2);
+        
+        fill(255);
+        stroke(255);
+        line(prev_x, prev_y, x, y);
+        // point(prev_x, prev_y);
+    }
+    wave.unshift(y);
+    border.unshift(y);
+
+    fill(255, 255, 255);
+    stroke(255);
+    // ellipse(x, y, 8);
+
+    translate(200, 0);
+    line(x-200, y, 0, wave[0]);
+
+    beginShape();
+    noFill();
+    for (let i = 0; i < wave.length; i++){
+        vertex(i, wave[i]);
+    }
+    endShape();
+
+    time += 0.05;
+
+    if (wave.length > 1500){
+        wave.pop();
+    }
+}
+</script>
 <!-- TOC -->
 <ul>
-<li><a href="#processing-test-1">Processing Test 1</a>
+<li><a href="#processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</a>
 <ul>
+<li><a href="#animation">Animation</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#references">References</a></li>
 <li><a href="#formula">Formula</a></li>
 <li><a href="#source-code">Source Code</a></li>
-<li><a href="#animation">Animation</a></li>
 <li><a href="#status">Status</a></li>
+<li><a href="#acknowledgement">Acknowledgement</a></li>
 </ul></li>
 </ul>
 <!-- /TOC -->
@@ -123,182 +223,101 @@
 \end{align*}
 \]</span></p>
 <h2 id="source-code">Source Code</h2>
-<pre class="html"><code>&lt;div class=&quot;box&quot; id=&quot;p5js__sketch&quot;&gt;
-&lt;/div&gt;
+<pre class="html"><code>&lt;script&gt;
+let time = 0;
+let wave = [];
+let border = [];
+var slider;
+var p5slider;
 
-&lt;div class=&quot;slidecontainer&quot;&gt;
-&lt;p&gt;Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] &lt;span&gt;Number of terms: &lt;span id=&quot;demo&quot;&gt;&lt;/span&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;input type=&quot;range&quot; min=&quot;1&quot; max=&quot;200&quot; value=&quot;10&quot; class=&quot;slider&quot; id=&quot;myRange&quot;&gt;
-&lt;/div&gt;
+// var ABS_position = getOffset( document.getElementById(&#39;p5js__sketch&#39;) );
 
-&lt;script&gt;
-    let time = 0;
-    let wave = [];
-    let border = [];
+function setup() {
+    var canvas = createCanvas(displayWidth*0.84, displayHeight*0.5);
+    canvas.parent(&#39;p5js__sketch&#39;);
 
-    function setup() {
-        var canvas = createCanvas(1150, 400);
-        canvas.parent(&#39;p5js__sketch&#39;);
-    //  wSlider = createSlider(0, 200, 10);
-    //  wSlider.position(30, 30);
-    //  wSlider.style(&#39;width&#39;, &#39;80px&#39;);
-    }
+    // code for internal (problematic) slider to work
+    // p5slider = createSlider(0, 200, 10);
+    // p5slider.position(width*0.3, 400);
+    // p5slider.style(&#39;width&#39;, &#39;80px&#39;);
+}
 
     function draw() {
 
-        background(0);
-        translate(200, 200);
-        
-        // const n1 = wSlider.value();
-        var slider = document.getElementById(&quot;myRange&quot;);
-        var output = document.getElementById(&quot;demo&quot;);
-        output.innerHTML = slider.value;
+    background(0);
+    translate(200, 200);
 
-        slider.oninput = function() {
+    // code for external slider to work
+    var slider = document.getElementById(&quot;myRange&quot;);
+    var output = document.getElementById(&quot;demo&quot;);
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
         output.innerHTML = this.value;
-        }
-        const n1 = slider.value;
-
-        fill(255);
-        text(&#39;Fourier Series Representation of a Square Wave&#39;, 250, -180);
-        text(&#39;number of terms = &#39;+n1, 325, -160);
-        
-        let x = 0;
-        let y = 0;
-        
-        for (let i = 0; i &lt; n1; i++){
-            
-            prev_x = x;
-            prev_y = y;
-            
-            let n = 2 * i + 1;
-            let radius = 60 * (4 /(n * PI));
-            x += radius * cos(n * time);
-            y += radius * sin(n * time);
-        
-            stroke(255, 100);
-            noFill();
-            ellipse(prev_x, prev_y, radius*2);
-            
-            fill(255);
-            stroke(255);
-            line(prev_x, prev_y, x, y);
-            // point(prev_x, prev_y);
-        }
-        wave.unshift(y);
-        border.unshift(y);
-
-        fill(255, 255, 255);
-        stroke(255);
-        // ellipse(x, y, 8);
-        
-        translate(200, 0);
-        line(x-200, y, 0, wave[0]);
-        
-        beginShape();
-        noFill();
-        for (let i = 0; i &lt; wave.length; i++){
-            vertex(i, wave[i]);
-        }
-        endShape();
-        
-        time += 0.05;
-        
-        if (wave.length &gt; 1500){
-            wave.pop();
-        }
     }
+    const n1 = slider.value;
+    
+    // code for internal (problematic) slider to work
+    // var val = p5slider.value();
+    // const n1 = val;
+
+    fill(255);
+    text(&#39;hello&#39;, 250, -280);
+    text(&#39;Fourier Series Representation of a Square Wave&#39;, 250, -180);
+    text(&#39;number of terms = &#39;+n1, 325, -160);
+    text(&#39;Move the slider below to adjust the number of terms in the fourier series.&#39;, 185, -140);
+    // text(ABS_position, 400 -180);
+
+    let x = 0;
+    let y = 0;
+
+    for (let i = 0; i &lt; n1; i++){
+        
+        prev_x = x;
+        prev_y = y;
+        
+        let n = 2 * i + 1;
+        let radius = 60 * (4 /(n * PI));
+        x += radius * cos(n * time);
+        y += radius * sin(n * time);
+
+        stroke(255, 100);
+        noFill();
+        ellipse(prev_x, prev_y, radius*2);
+        
+        fill(255);
+        stroke(255);
+        line(prev_x, prev_y, x, y);
+        // point(prev_x, prev_y);
+    }
+    wave.unshift(y);
+    border.unshift(y);
+
+    fill(255, 255, 255);
+    stroke(255);
+    // ellipse(x, y, 8);
+
+    translate(200, 0);
+    line(x-200, y, 0, wave[0]);
+
+    beginShape();
+    noFill();
+    for (let i = 0; i &lt; wave.length; i++){
+        vertex(i, wave[i]);
+    }
+    endShape();
+
+    time += 0.05;
+
+    if (wave.length &gt; 1500){
+        wave.pop();
+    }
+}
 &lt;/script&gt;</code></pre>
-<h2 id="animation">Animation</h2>
-<div id="p5js__sketch" class="box">
-
-</div>
-<div class="slidecontainer">
-<p>
-Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] <span>Number of terms: <span id="demo"></span> </span>
-</p>
-<p><input type="range" min="1" max="200" value="10" class="slider" id="myRange"></p>
-</div>
-<script>
-    let time = 0;
-    let wave = [];
-    let border = [];
-
-    function setup() {
-        var canvas = createCanvas(1150, 400);
-        canvas.parent('p5js__sketch');
-    //  wSlider = createSlider(0, 200, 10);
-    //  wSlider.position(30, 30);
-    //  wSlider.style('width', '80px');
-    }
-
-    function draw() {
-
-        background(0);
-        translate(200, 200);
-        
-        // const n1 = wSlider.value();
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
-
-        slider.oninput = function() {
-        output.innerHTML = this.value;
-        }
-        const n1 = slider.value;
-
-        fill(255);
-        text('Fourier Series Representation of a Square Wave', 250, -180);
-        text('number of terms = '+n1, 325, -160);
-        
-        let x = 0;
-        let y = 0;
-        
-        for (let i = 0; i < n1; i++){
-            
-            prev_x = x;
-            prev_y = y;
-            
-            let n = 2 * i + 1;
-            let radius = 60 * (4 /(n * PI));
-            x += radius * cos(n * time);
-            y += radius * sin(n * time);
-        
-            stroke(255, 100);
-            noFill();
-            ellipse(prev_x, prev_y, radius*2);
-            
-            fill(255);
-            stroke(255);
-            line(prev_x, prev_y, x, y);
-            // point(prev_x, prev_y);
-        }
-        wave.unshift(y);
-        border.unshift(y);
-
-        fill(255, 255, 255);
-        stroke(255);
-        // ellipse(x, y, 8);
-        
-        translate(200, 0);
-        line(x-200, y, 0, wave[0]);
-        
-        beginShape();
-        noFill();
-        for (let i = 0; i < wave.length; i++){
-            vertex(i, wave[i]);
-        }
-        endShape();
-        
-        time += 0.05;
-        
-        if (wave.length > 1500){
-            wave.pop();
-        }
-    }
-</script>
 <h2 id="status">Status</h2>
 <p>It works! The slider has some issues as the default <code>p5.js</code> slider is not working. So, added a custom slider. One minor tweak is that the shape of the outer ring is not coming properly. Will try to bring that in a future edit. For reference, it looks like this <a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a>.</p>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
 
             </div>
         </section>
@@ -352,6 +371,7 @@ Move the slider value below to adjust the number of terms. [Min = 0, Default = 1
     <script src="../../assets/js/breakpoints.min.js"></script>
     <script src="../../assets/js/util.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/my_functions/helpers.js"></script>
 
 
 

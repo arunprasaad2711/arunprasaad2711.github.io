@@ -88,59 +88,103 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processing-test-2">Processing Test 2</h1>
+                <h1 id="processing-test-2---rose-curves">Processing Test 2 - Rose Curves</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#processing-test-2">Processing Test 2</a>
+<li><a href="#processing-test-2---rose-curves">Processing Test 2 - Rose Curves</a>
 <ul>
-<li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#animation">Animation</a></li>
+<li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#issue">Issue</a></li>
 </ul></li>
 </ul>
 <!-- /TOC -->
-<h2 id="what-is-this">What is this?</h2>
-<p>This is a test page for checking out <code>processingJS</code> animation. Here, the fourier series summation of a square wave is tested.</p>
 <h2 id="animation">Animation</h2>
-<div id="container">
-
-</div>
-<div id="p5js__sketch">
-
+<div class="box", id="p5js__sketch"></div>
+<div class="slidecontainer">
+<p>
+Move the sliders below to adjust the numerator <span class="math inline">\(n\)</span> and the denominator <span class="math inline">\(d\)</span> of the <span class="math inline">\(k\)</span> term. Where, <span class="math inline">\(k = \displaystyle{\frac{n}{d}}\)</span>.<br/>Numerator (<span class="math inline">\(n\)</span>):<span id="numerator"></span> [Min = 0, Default = 2, Max = 10]
+</p>
+<input type="range" min="0" max="10" value="2" class="slider" id="numeratorRange">
+<p>
+Denominator (<span class="math inline">\(d\)</span>):<span id="denominator"> </span> [Min = 0, Default = 2, Max = 10]
+</p>
+<p><input type="range" min="0" max="10" value="2" class="slider" id="denominatorRange"></p>
 </div>
 <script>
-//     let sketch = function(p) 
-//     {
-//         var slider;
-//         p.setup = function()
-//         {
-//             canvas = createCanvas(200, 200);
-//             slider = createSlider(0, 255, 250);
-//             slider.position(20, 200);
-//             slider.style('width', '80px');
-//         }
-//         p.draw() = function()
-//         {
-//             var val = slider.value();
-//             background(val);
-//         }
-//     };
-//   new p5(sketch, 'container');
-    var slider;
-    function setup() {
-        var canvas = createCanvas(windowHeight, windowHeight);
-        canvas.parent("p5js__sketch");
-        slider = createSlider(0, 255, 250);
-        slider.position(200, 200);
-        slider.style('width', '80px');
+let time = 0;
+let wave = [];
+let border = [];
+
+function setup() {
+    var canvas = createCanvas(displayWidth*0.84, displayHeight*0.5);
+    canvas.parent('p5js__sketch');
+}
+
+function draw() {
+
+    background(225);
+    strokeWeight(1);
+    translate(200, 200);
+
+    // code for external slider to work
+    var slider_n = document.getElementById("numeratorRange");
+    var slider_d = document.getElementById("denominatorRange");
+    var numerator = document.getElementById("numerator");
+    var denominator = document.getElementById("denominator");
+    numerator.innerHTML = slider_n.value;
+    denominator.innerHTML = slider_d.value;
+
+    slider_n.oninput = function() {
+        numerator.innerHTML = this.value;
     }
-    function draw() {
-        var val = slider.value();
-        background(val);
+    
+    slider_d.oninput = function() {
+        denominator.innerHTML = this.value;
     }
+    
+    const n = slider_n.value;
+    const d = slider_d.value;
+    const k = n/d;
+    const radius = 20;
+
+    fill(25);
+    stroke(0);
+    text('hello', 250, -280);
+    text('Rose Curves or Rhodonea Curves', 250, -180);
+    text('Numerator = '+n+'; Denominator = '+d+'; k = n/d = '+k, 225, -160);
+    text('Move the slider below to adjust the numerator and denonimator.', 185, -140);
+
+    translate(350, 0);
+
+    let x = 0;
+    let y = 0;
+    let prev_x = 0;
+    let prev_y = 0;
+
+    fill(255, 0, 0);
+    circle(x, y, 10);
+
+    // while (true)
+    //{
+        prev_x = x;
+        prev_y = y;
+        
+        x += radius * cos(k * time)*sin(time);
+        y += radius * sin(k * time)*sin(time);
+
+        fill(0, 0, 255);
+        stroke(0, 0, 255);
+        line(prev_x, prev_y, x, y);
+
+        time += 0.05;
+    // }
+}
 </script>
+<h2 id="what-is-this">What is this?</h2>
+<p>This is a <code>p5JS</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
 <h2 id="issue">Issue</h2>
-<p>While animation <strong>can</strong> work, the slider is pushed to the top of the page. It has absolute position.</p>
+<p>Work in Progress. Stuck with the array and tracing.</p>
 
             </div>
         </section>
@@ -194,6 +238,7 @@
     <script src="../../assets/js/breakpoints.min.js"></script>
     <script src="../../assets/js/util.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/my_functions/helpers.js"></script>
 
 
 
