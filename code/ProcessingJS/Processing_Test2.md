@@ -22,8 +22,8 @@
 
 <script>
 let time = 0;
-let wave = [];
-let border = [];
+let wave_x = [];
+let wave_y = [];
 
 function setup() {
     var canvas = createCanvas(displayWidth*0.84, displayHeight*0.5);
@@ -46,16 +46,20 @@ function draw() {
 
     slider_n.oninput = function() {
         numerator.innerHTML = this.value;
+        wave_x = [];
+        wave_y = [];
     }
     
     slider_d.oninput = function() {
         denominator.innerHTML = this.value;
+        wave_x = [];
+        wave_y = [];
     }
     
     const n = slider_n.value;
     const d = slider_d.value;
     const k = n/d;
-    const radius = 20;
+    const radius = 100;
 
     fill(25);
     stroke(0);
@@ -74,20 +78,32 @@ function draw() {
     fill(255, 0, 0);
     circle(x, y, 10);
 
-    // while (true)
-    //{
-        prev_x = x;
-        prev_y = y;
-        
-        x += radius * cos(k * time)*sin(time);
-        y += radius * sin(k * time)*sin(time);
+    prev_x = x;
+    prev_y = y;
+    
+    x += radius * cos(k * time - 0.5*HALF_PI)*sin(time - 0.5*HALF_PI);
+    y += radius * sin(k * time - 0.5*HALF_PI)*sin(time - 0.5*HALF_PI);
 
-        fill(0, 0, 255);
-        stroke(0, 0, 255);
-        line(prev_x, prev_y, x, y);
+    wave_x.push(x);
+    wave_y.push(y);
+    
+    fill(0, 0, 255);
+    stroke(0, 0, 255);
+    line(prev_x, prev_y, x, y);
 
-        time += 0.05;
-    // }
+    beginShape();
+    noFill();
+    for (let i = 0; i < wave_x.length; i++){
+        vertex(wave_x[i], wave_y[i]);
+    }
+    endShape();
+
+    time += 0.05;
+
+    if (wave_x.length > 1000){
+        wave_x = [];
+        wave_y = [];
+    }
 }
 </script>
 

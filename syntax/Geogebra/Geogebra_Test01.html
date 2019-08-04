@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Web Development | Processing_Test2 | Fluidic Colours</title>
+    <title>Geogebra Programming | Geogebra_Test01 | Fluidic Colours</title>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -88,119 +88,35 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processing-test-2---rose-curves">Processing Test 2 - Rose Curves</h1>
+                <h1 id="geogebra-test-01">Geogebra Test 01</h1>
+<h2 id="animation---01---sine-curve">Animation - 01 - Sine Curve</h2>
+<iframe scrolling="no" title="Sine_curve" src="https://www.geogebra.org/material/iframe/id/sgcvtb4h/width/1364/height/658/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="658px" style="border:0px;">
+</iframe>
+<h2 id="animation---02---taylor-series-expansion">Animation - 02 - Taylor Series Expansion</h2>
+<iframe scrolling="no" title="TaylorSeries_Demo" src="https://www.geogebra.org/material/iframe/id/kuxfxgtw/width/1366/height/687/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="687px" style="border:0px;">
+</iframe>
+<h2 id="table-of-contents">Table of Contents</h2>
 <!-- TOC -->
 <ul>
-<li><a href="#processing-test-2---rose-curves">Processing Test 2 - Rose Curves</a>
+<li><a href="#geogebra-test-01">Geogebra Test 01</a>
 <ul>
-<li><a href="#animation">Animation</a></li>
+<li><a href="#animation---01---sine-curve">Animation - 01 - Sine Curve</a></li>
+<li><a href="#animation---02---taylor-series-expansion">Animation - 02 - Taylor Series Expansion</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
-<li><a href="#issue">Issue</a></li>
+<li><a href="#status">Status</a></li>
 </ul></li>
 </ul>
 <!-- /TOC -->
-<h2 id="animation">Animation</h2>
-<div class="box", id="p5js__sketch"></div>
-<div class="slidecontainer">
-<p>
-Move the sliders below to adjust the numerator <span class="math inline">\(n\)</span> and the denominator <span class="math inline">\(d\)</span> of the <span class="math inline">\(k\)</span> term. Where, <span class="math inline">\(k = \displaystyle{\frac{n}{d}}\)</span>.<br/>Numerator (<span class="math inline">\(n\)</span>):<span id="numerator"></span> [Min = 0, Default = 2, Max = 10]
-</p>
-<input type="range" min="0" max="10" value="2" class="slider" id="numeratorRange">
-<p>
-Denominator (<span class="math inline">\(d\)</span>):<span id="denominator"> </span> [Min = 0, Default = 2, Max = 10]
-</p>
-<p><input type="range" min="0" max="10" value="2" class="slider" id="denominatorRange"></p>
-</div>
-<script>
-let time = 0;
-let wave_x = [];
-let wave_y = [];
-
-function setup() {
-    var canvas = createCanvas(displayWidth*0.84, displayHeight*0.5);
-    canvas.parent('p5js__sketch');
-}
-
-function draw() {
-
-    background(225);
-    strokeWeight(1);
-    translate(200, 200);
-
-    // code for external slider to work
-    var slider_n = document.getElementById("numeratorRange");
-    var slider_d = document.getElementById("denominatorRange");
-    var numerator = document.getElementById("numerator");
-    var denominator = document.getElementById("denominator");
-    numerator.innerHTML = slider_n.value;
-    denominator.innerHTML = slider_d.value;
-
-    slider_n.oninput = function() {
-        numerator.innerHTML = this.value;
-        wave_x = [];
-        wave_y = [];
-    }
-    
-    slider_d.oninput = function() {
-        denominator.innerHTML = this.value;
-        wave_x = [];
-        wave_y = [];
-    }
-    
-    const n = slider_n.value;
-    const d = slider_d.value;
-    const k = n/d;
-    const radius = 100;
-
-    fill(25);
-    stroke(0);
-    text('hello', 250, -280);
-    text('Rose Curves or Rhodonea Curves', 250, -180);
-    text('Numerator = '+n+'; Denominator = '+d+'; k = n/d = '+k, 225, -160);
-    text('Move the slider below to adjust the numerator and denonimator.', 185, -140);
-
-    translate(350, 0);
-
-    let x = 0;
-    let y = 0;
-    let prev_x = 0;
-    let prev_y = 0;
-
-    fill(255, 0, 0);
-    circle(x, y, 10);
-
-    prev_x = x;
-    prev_y = y;
-    
-    x += radius * cos(k * time - 0.5*HALF_PI)*sin(time - 0.5*HALF_PI);
-    y += radius * sin(k * time - 0.5*HALF_PI)*sin(time - 0.5*HALF_PI);
-
-    wave_x.push(x);
-    wave_y.push(y);
-    
-    fill(0, 0, 255);
-    stroke(0, 0, 255);
-    line(prev_x, prev_y, x, y);
-
-    beginShape();
-    noFill();
-    for (let i = 0; i < wave_x.length; i++){
-        vertex(wave_x[i], wave_y[i]);
-    }
-    endShape();
-
-    time += 0.05;
-
-    if (wave_x.length > 1000){
-        wave_x = [];
-        wave_y = [];
-    }
-}
-</script>
 <h2 id="what-is-this">What is this?</h2>
-<p>This is a <code>p5JS</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
-<h2 id="issue">Issue</h2>
-<p>Work in Progress. Stuck with the array and tracing.</p>
+<p>Essentially, this is a test run to see if geogebra files work directly in the website. Also, once the files are made offline, I import them to the geogebra server (I made an account) and embed the animation in the website as an interactive frame.</p>
+<h2 id="status">Status</h2>
+<p>This works much much better than what was initially expected!</p>
+<ul>
+<li>It does not need any javascript embedding.</li>
+<li>Placing the frame in the webpage is already taken care of.</li>
+<li>Hardly any coding! Works like a charm.</li>
+</ul>
 
             </div>
         </section>
