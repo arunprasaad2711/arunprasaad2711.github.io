@@ -27,5 +27,6 @@ This works much much better than what was initially expected!
 
 * It does not need any javascript embedding.
 * Placing the frame in the webpage is already taken care of.
+  * Minor inconvenience is that the height adjustment. That is a WIP.
 * Hardly any coding! Works like a charm.
 
