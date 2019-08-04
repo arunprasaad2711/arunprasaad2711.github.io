@@ -6,7 +6,7 @@
   - [Animation](#animation)
   - [What is this?](#what-is-this)
   - [Source Code](#source-code)
-  - [Issue](#issue)
+  - [Status](#status)
 
 <!-- /TOC -->
 
@@ -27,7 +27,6 @@ var slider_n;
 var slider_d;
 
 function setup() {
-    
     var canvas = createCanvas(600, 400);
     var button = createButton("reset");
     button.mousePressed(resetSketch);
@@ -69,9 +68,9 @@ function draw() {
     let oy = 0;
 
     fill(255, 0, 0);
-    circle(x, y, 10);
+    circle(ox, oy, 10);
     noFill();
-    circle(x, y, 2*radius);
+    circle(ox, oy, 2*radius);
   
     let phase = 0.0*HALF_PI;
     
@@ -109,5 +108,5 @@ function resetSketch() {
 }
 ```
 
-## Issue
-Work in Progress. Stuck with the array and tracing.
+## Status
+All done! Works like a charm!.

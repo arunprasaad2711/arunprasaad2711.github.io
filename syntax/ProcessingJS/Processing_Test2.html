@@ -97,7 +97,7 @@
 <li><a href="#animation">Animation</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#source-code">Source Code</a></li>
-<li><a href="#issue">Issue</a></li>
+<li><a href="#status">Status</a></li>
 </ul></li>
 </ul>
 <!-- /TOC -->
@@ -114,7 +114,6 @@ var slider_n;
 var slider_d;
 
 function setup() {
-    
     var canvas = createCanvas(600, 400);
     var button = createButton(&quot;reset&quot;);
     button.mousePressed(resetSketch);
@@ -156,9 +155,9 @@ function draw() {
     let oy = 0;
 
     fill(255, 0, 0);
-    circle(x, y, 10);
+    circle(ox, oy, 10);
     noFill();
-    circle(x, y, 2*radius);
+    circle(ox, oy, 2*radius);
   
     let phase = 0.0*HALF_PI;
     
@@ -194,8 +193,8 @@ function resetSketch() {
     wave_x = [];
     wave_y = [];
 }</code></pre>
-<h2 id="issue">Issue</h2>
-<p>Work in Progress. Stuck with the array and tracing.</p>
+<h2 id="status">Status</h2>
+<p>All done! Works like a charm!.</p>
 
             </div>
         </section>
