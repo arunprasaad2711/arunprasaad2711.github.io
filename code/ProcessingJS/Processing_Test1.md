@@ -54,8 +54,7 @@ In the latest method, I am writing the code in the online ``p5.js editor`` and e
 
 ## Source Code
 
-```html
-<script>
+```javascript
 // Some variables
 let time = 0;
 let wave = [];
