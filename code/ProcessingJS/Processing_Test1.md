@@ -22,11 +22,11 @@
 <!-- /TOC -->
 
 ## What is this?
-This is a test page for checking out ``processingJS`` animation. Here, the fourier series summation of a square wave is tested.
+This is a test page for checking out ``p5.js`` animation. This is the 5th javascript export version of ``processing`` programming language. Here, the fourier series summation of a square wave is tested.
 
 ## References
 * [Coding Challenge #125: Fourier Series video on YouTube by Daniel Shiffman](https://www.youtube.com/watch?v=Mm2eYfj0SgA)
-* [W3Schools tutorial on creating slider](https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+* [d3js program on fourier series](https://bl.ocks.org/jinroh/7524988)
 
 ## Formula
 
@@ -59,7 +59,6 @@ In the latest method, I am writing the code in the online ``p5.js editor`` and e
 let time = 0;
 let wave = [];
 let border = [];
-var slider;
 var p5slider;
 
 function setup() {
@@ -68,12 +67,12 @@ function setup() {
     // Slider variables
     p5slider = createSlider(0, 100, 10);
     p5slider.position(250, 25);
-    p5slider.style('width', '80px');
+    p5slider.style('width', '200px');
 }
 
     function draw() {
 
-    background(0);
+    background(245);
     translate(200, 200);
     
     // Lines to extract the slider value to the program
@@ -81,10 +80,12 @@ function setup() {
     const n1 = val;
 
     // Text info
-    fill(255);
+    stroke(50,50,50);
+    strokeWeight(1);
+    fill(50);
     text('Fourier Series Representation of a Square Wave', -100, -180);
     text('number of terms = '+n1, -100, -160);
-    text('Move the slider below to adjust the number of terms in the fourier series.', -100, -140);
+    text('Move the slider above to adjust the number of terms in the fourier series.', -100, -140);
       
     let x = 0;
     let y = 0;
@@ -99,48 +100,56 @@ function setup() {
         x += radius * cos(n * time);
         y += radius * sin(n * time);
 
-        stroke(255, 100);
+        stroke(60,79,118);
+        strokeWeight(1);
         noFill();
         ellipse(prev_x, prev_y, radius*2);
         
         fill(255);
-        stroke(255);
+        stroke(171,159,157);
+        strokeWeight(2);
         line(prev_x, prev_y, x, y);
-        // point(prev_x, prev_y);
     }
     wave.unshift(y);
-    border.unshift(y);
+    border.unshift(x);
+      
+    beginShape();
+    strokeWeight(0.5);
+    stroke(0,0,128);
+    noFill();
+    for (let i = 0; i < border.length; i++){
+        vertex(border[i], wave[i]);
+    }
+    endShape();
 
     fill(255, 255, 255);
-    stroke(255);
-    // ellipse(x, y, 8);
+    stroke(0,0,0); 
 
     translate(200, 0);
     line(x-200, y, 0, wave[0]);
 
+    stroke(128,0,0);
+    strokeWeight(2);
     beginShape();
     noFill();
     for (let i = 0; i < wave.length; i++){
         vertex(i, wave[i]);
     }
     endShape();
-
+    
     time += 0.05;
 
-    if (wave.length > 1500){
+    if (wave.length > 600){
         wave.pop();
+        border.pop();
     }
 }
 ```
 
 ## Status
 
-It works like a charm! The embedding method used sorts out the slider issue quite well!
-
-One minor development to be added is to plot the shape of the locus of the last point.
-
-Will try to bring that in a future edit. For reference, it looks like this [d3js program on fourier series](https://bl.ocks.org/jinroh/7524988).
+It works like a charm! The embedding method used sorts out the slider issue quite well! Even the locus of the last point was brought out quite well due to a slight tweak to the code.
 
 ## Acknowledgement
 
-Special thanks to [Daniel Shiffman](https://shiffman.net/) for his phenomenal enthusiasm in getting interested in ``p5.js``. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and in his website - [The Coding Train](https://thecodingtrain.com/)
+Special thanks to [Daniel Shiffman](https://shiffman.net/) for his phenomenal enthusiasm in getting me interested in ``p5.js``. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and in his website - [The Coding Train](https://thecodingtrain.com/)

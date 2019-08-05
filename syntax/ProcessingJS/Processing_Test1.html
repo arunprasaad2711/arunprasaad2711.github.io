@@ -111,11 +111,11 @@
 </ul>
 <!-- /TOC -->
 <h2 id="what-is-this">What is this?</h2>
-<p>This is a test page for checking out <code>processingJS</code> animation. Here, the fourier series summation of a square wave is tested.</p>
+<p>This is a test page for checking out <code>p5.js</code> animation. This is the 5th javascript export version of <code>processing</code> programming language. Here, the fourier series summation of a square wave is tested.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mm2eYfj0SgA">Coding Challenge #125: Fourier Series video on YouTube by Daniel Shiffman</a></li>
-<li><a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">W3Schools tutorial on creating slider</a></li>
+<li><a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a></li>
 </ul>
 <h2 id="formula">Formula</h2>
 <p>The square wave defined here <span class="math inline">\(f(t)\)</span> is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
@@ -138,7 +138,6 @@
 let time = 0;
 let wave = [];
 let border = [];
-var slider;
 var p5slider;
 
 function setup() {
@@ -147,12 +146,12 @@ function setup() {
     // Slider variables
     p5slider = createSlider(0, 100, 10);
     p5slider.position(250, 25);
-    p5slider.style(&#39;width&#39;, &#39;80px&#39;);
+    p5slider.style(&#39;width&#39;, &#39;200px&#39;);
 }
 
     function draw() {
 
-    background(0);
+    background(245);
     translate(200, 200);
     
     // Lines to extract the slider value to the program
@@ -160,10 +159,12 @@ function setup() {
     const n1 = val;
 
     // Text info
-    fill(255);
+    stroke(50,50,50);
+    strokeWeight(1);
+    fill(50);
     text(&#39;Fourier Series Representation of a Square Wave&#39;, -100, -180);
     text(&#39;number of terms = &#39;+n1, -100, -160);
-    text(&#39;Move the slider below to adjust the number of terms in the fourier series.&#39;, -100, -140);
+    text(&#39;Move the slider above to adjust the number of terms in the fourier series.&#39;, -100, -140);
       
     let x = 0;
     let y = 0;
@@ -178,44 +179,54 @@ function setup() {
         x += radius * cos(n * time);
         y += radius * sin(n * time);
 
-        stroke(255, 100);
+        stroke(60,79,118);
+        strokeWeight(1);
         noFill();
         ellipse(prev_x, prev_y, radius*2);
         
         fill(255);
-        stroke(255);
+        stroke(171,159,157);
+        strokeWeight(2);
         line(prev_x, prev_y, x, y);
-        // point(prev_x, prev_y);
     }
     wave.unshift(y);
-    border.unshift(y);
+    border.unshift(x);
+      
+    beginShape();
+    strokeWeight(0.5);
+    stroke(0,0,128);
+    noFill();
+    for (let i = 0; i &lt; border.length; i++){
+        vertex(border[i], wave[i]);
+    }
+    endShape();
 
     fill(255, 255, 255);
-    stroke(255);
-    // ellipse(x, y, 8);
+    stroke(0,0,0); 
 
     translate(200, 0);
     line(x-200, y, 0, wave[0]);
 
+    stroke(128,0,0);
+    strokeWeight(2);
     beginShape();
     noFill();
     for (let i = 0; i &lt; wave.length; i++){
         vertex(i, wave[i]);
     }
     endShape();
-
+    
     time += 0.05;
 
-    if (wave.length &gt; 1500){
+    if (wave.length &gt; 600){
         wave.pop();
+        border.pop();
     }
 }</code></pre>
 <h2 id="status">Status</h2>
-<p>It works like a charm! The embedding method used sorts out the slider issue quite well!</p>
-<p>One minor development to be added is to plot the shape of the locus of the last point.</p>
-<p>Will try to bring that in a future edit. For reference, it looks like this <a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a>.</p>
+<p>It works like a charm! The embedding method used sorts out the slider issue quite well! Even the locus of the last point was brought out quite well due to a slight tweak to the code.</p>
 <h2 id="acknowledgement">Acknowledgement</h2>
-<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
+<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting me interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
 
             </div>
         </section>
