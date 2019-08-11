@@ -17,6 +17,7 @@ Video 2 : Meta Information and Basics
     - [Python 2 - Legacy](#python-2---legacy)
     - [Python 3 - Future](#python-3---future)
   - [So, what to look for in any programming language?](#so-what-to-look-for-in-any-programming-language)
+  - [Let's write our first program](#lets-write-our-first-program)
   - [Program to ask the name, temperature, and rainfall of a place and print it](#program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it)
   - [Comments and Docstrings](#comments-and-docstrings)
   - [Input Command](#input-command)
@@ -119,7 +120,7 @@ This is a (personal) checklist to keep in mind to pick a programing language for
 - Executing multiple files simultaneously
 - Plotting and visualization facility,
 
- ## Let's write our first program
+## Let's write our first program
 
 Open up a Text Editor and save a file with the extension ``.py``
 
