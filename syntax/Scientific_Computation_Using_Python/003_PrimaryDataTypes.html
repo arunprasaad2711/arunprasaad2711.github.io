@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Python Programming | 003_PrimaryDataTypes | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <!--link rel="stylesheet" href="../../assets/css/prism.css"-->
+
+    <!-- p5.js local copy -->
+    <!-- commenting them out as they are being rendered externally. -->
+    <!-- <script type="text/javascript" src="../../assets/js/p5js/p5.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.sound.min.js"></script> -->
+
+    <!-- Sequence Diagram Files local copy -->
+    <script type="text/javascript" src="../../assets/js/sequence_diagrams/webfont.js"></script>
+    <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
+    <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
+    <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+
+    
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
+
+    <!-- Code highlight using Highlighter JS -->
+    <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+
+    <!--
+        For source code, go here: https://github.com/highlightjs/highlight.js
+    -->
+
+    <!-- Moment.js - This is used for time difference calculations and time displays. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+
+    <!-- BokehJS-->
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+
+    <!-- <script>
+		
+		window.onload = function() {
+			$("pre").addClass("prettyprint");
+			$("code").addClass("prettyprint");
+		};
+
+	</script> -->
+
+</head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./../../index.html">Home</a></li>
+		<li><a href="./../../blogs.html">Blogs</a></li>
+		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./../../science.html">Science Notes</a></li>
+		<li><a href="./../../maths.html">Mathematics Notes</a></li>
+		<li><a href="./../../apps.html">Useful Apps</a></li>
+		<li><a href="./../../faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
+<p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
+<p>Video 3 : Primary Data Types in Python</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<!-- TOC -->
+<ul>
+<li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#what-is-a-data-type">What is a data type?</a></li>
+<li><a href="#primary-data-types">Primary Data Types</a></li>
+<li><a href="#string-data-type">String Data type</a></li>
+<li><a href="#program-to-test-out-different-types-of-variables">Program to Test out different types of variables.</a>
+<ul>
+<li><a href="#code">Code</a></li>
+<li><a href="#output">Output</a></li>
+</ul></li>
+<li><a href="#some-simple-data-functions">Some simple data-functions</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="what-is-a-data-type">What is a data type?</h2>
+<p>Simply put, it is the nature of the information.</p>
+<h2 id="primary-data-types">Primary Data Types</h2>
+<p>These are the primary data types available in python</p>
+<pre class="python"><code>i = 1 # Integer. Stores integers
+r = 5.78 # Floats. Stores numbers with decimal parts.
+c = &#39;h&#39; # Characters. Stores single characters. It is a string in python!
+s = &#39;Strings&#39; # Strings. Stores a series of characters
+l = True/False # Logical. Stores binary values
+cm = 6.0+5.6j  # Complex. Stores complex values</code></pre>
+<h2 id="string-data-type">String Data type</h2>
+<p>Strings are long chain of letters, numbers, symbols, and special characters. You can use both single and double quotes, but must end accordingly. Use slash to place quotes if needed.</p>
+<p>In python, there is no equivalent for <code>char</code> type.</p>
+<pre class="python"><code>&quot;Hello&quot;, 
+&#39;Hello&#39;, 
+&#39;My name is Arun&#39;, 
+&quot;I asked, &#39;what is for lunch?&#39;&quot;
+&#39;I exclaimed, &quot;This tree is big!&quot;&#39;
+&quot;I used slash \&quot; to type a double quote symbol&quot;</code></pre>
+<h2 id="program-to-test-out-different-types-of-variables.">Program to Test out different types of variables.</h2>
+<h3 id="code">Code</h3>
+<pre class="python"><code>a = 1.5     # Float/Real
+print(a, id(a), type(a))
+a = &quot;hello&quot; # String/Character
+print(a, id(a), type(a))
+a = 5       # Integer
+print(a, id(a), type(a))
+a = True    # Logical
+print(a, id(a), type(a))
+a = 6.0+7.8j    # Complex
+print(a, id(a), type(a))
+a = [7, 8.9, 10] # List
+print(a, id(a), type(a))
+a = (5.2, 4, 12) # Tuple
+print(a, id(a), type(a))
+a = {&#39;v1&#39;: 6, &#39;v2&#39; : 10} # Dictionary
+print(a, id(a), type(a))
+# Get the ASCII/unicode value of a character
+print(ord(&#39;z&#39;))
+# Get the character for the ASCII/unicode
+print(chr(98))
+print(chr(32250))</code></pre>
+<h3 id="output">Output</h3>
+<pre><code>1.5 140048331680624 &lt;class &#39;float&#39;&gt;
+hello 140048284573232 &lt;class &#39;str&#39;&gt;
+5 140048501217856 &lt;class &#39;int&#39;&gt;
+True 140048500811040 &lt;class &#39;bool&#39;&gt;
+(6+7.8j) 140048284294832 &lt;class &#39;complex&#39;&gt;
+[7, 8.9, 10] 140048284073544 &lt;class &#39;list&#39;&gt;
+(5.2, 4, 12) 140048284133416 &lt;class &#39;tuple&#39;&gt;
+{&#39;v1&#39;: 6, &#39;v2&#39;: 10} 140048284066872 &lt;class &#39;dict&#39;&gt;
+122
+b
+緺</code></pre>
+<h2 id="some-simple-data-functions">Some simple data-functions</h2>
+<ul>
+<li><code>id()</code> : returns the memory location ID of the variable.</li>
+<li><code>type()</code> - returns the datatype of the variable.</li>
+<li><code>ord()</code> - returns the ASCII/Unicode value of the symbol.</li>
+<li><code>chr()</code> - returns the symbol of the ASCII/Unicode value.</li>
+</ul>
+
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- PrettifyJS for syntax highlighting -->
+<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+
+<!-- Code highlight using Highlighter JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/my_functions/helpers.js"></script>
+
+
+
+</body>
+</html>

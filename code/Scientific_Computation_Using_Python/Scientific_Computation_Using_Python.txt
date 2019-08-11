@@ -1,2 +1,3 @@
 code/Scientific_Computation_Using_Python/001_Introduction.md
 code/Scientific_Computation_Using_Python/002_MetaInfo.md
+code/Scientific_Computation_Using_Python/003_PrimaryDataTypes.md
