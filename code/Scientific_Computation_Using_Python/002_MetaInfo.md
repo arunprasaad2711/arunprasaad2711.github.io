@@ -169,9 +169,9 @@ Docstrings - Document strings. Multi-line comments. But more useful for includin
 
 Input command - Used for getting input from user to a variable.
 ```python
-n = input('Enter the value for n') # Dynamic input
+n = input('Enter the value for n') # Default string input
 n = float(input('Enter the value for n')) # Type casted input
 ```
 
-* Dynamic input - that is, the function analyzes the data and assumes data type automatically.
+* Default string input - that is, the function assumes data type to be string automatically.
 * Explicit type casting (manually changing the data type) is used to control data types.
