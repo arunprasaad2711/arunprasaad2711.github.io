@@ -7,10 +7,10 @@
 <!-- Plotly.js for plotting -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<!-- PrettifyJS for syntax highlighting -->
-<!--script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=default"></script-->
+<!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
-<!-- Code highlight using Highlighter JS -->
+<!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
@@ -25,6 +25,7 @@
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/my_functions/helpers.js"></script>
+    <!-- <script src="../assets/css/prism.js"></script> -->
 
 {% elif L2 %}
     <script src="../../assets/js/jquery.min.js"></script>
@@ -35,6 +36,7 @@
     <script src="../../assets/js/util.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/my_functions/helpers.js"></script>
+    <!-- <script src="../../assets/css/prism.js"></script> -->
 
 {% else %}
     <script src="assets/js/jquery.min.js"></script>
@@ -45,5 +47,6 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/my_functions/helpers.js"></script>
+    <!-- <script src="assets/css/prism.js"></script> -->
 
 {% endif %}

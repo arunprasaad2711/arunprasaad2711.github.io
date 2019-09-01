@@ -4,6 +4,9 @@ from jinja2 import Environment, FileSystemLoader
 # Import OS file for terminal operations
 from os import system
 
+# Beautiful Soup
+from bs4 import BeautifulSoup
+
 # Specify the template directory and environment 
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
@@ -48,32 +51,59 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 	# Open the template file
 	# Render the template to get the output
 	# Push the output to the HTML filename created above
+
 	for title in md:
 		print(title)
-		
+
 		# Converts! - but stuffs a html page inside the template. No JS needed! Provides Syntax highligh codes for themes! - useful for extracting themes out!
+		## Not working! can't fully understand it. The previous error did not come, but something odd is happening.
 		# system("pandoc --from markdown --to html5 --mathjax --highlight-style=haddock --css=assets/css/main.css {} > temp.html".format(title))
-		# Simple Markdown to HTML convert command. For code highlight to work, include the code.css file in the main.css file.
-		# Used to work, but now some trouble! Surrounds every line by a link
+
+		# This is working well now thanks to the extracted codehilite.css files. Will work to full capacity when the css definition is full.
 		# system("pandoc --from markdown --to html5 --mathjax {} > temp.html".format(title))
+		# same as above with the option to specify the highlight style. If activated, then the corresponding css should be included in main.scss.
+		# system("pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {} > temp.html".format(title))
+
+		# This was the standard pandoc fix. Syntax highlight pushed to highlight.js
 		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
-		# system("pandoc --from=markdown --to=html5 --highlight-style=haddock --mathjax {} > temp.html".format(title))
-		
-		# A new attempt!
-		# system("python -m markdown -x codehilite {} > temp.html".format(title))
-		# system("pygmentize -S default -f html > codehilite.css")
-		
+
+		# This is the new one! It works similar to pandoc. syntax highlight pushed to prism.js or google prettify. Prefer the later.
+		# system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
+
+		# by far, the slowest one! it ignores html tags. but surprisingly catches the syntax highlights
+		## DO NOT USE THIS!
+		# system("markdown {} -h -d > temp.html".format(title))
+
+		# A new attempt! - trying to use pandoc alone for syntax highlight! - FULL PANDOC PROTOCOL
+		# It is working! Some minor TOC comment issues, but other than that, it is working alright.
+		# Needs the full css to extract all the css pre and code classes.
+		# system("pandoc {} -f markdown -s --highlight-style pygments --mathjax --metadata pagetitle=\"sample\" -o temp.html".format(title))
+
+		# Read the data from the first temporary file.
 		with open("temp.html", "r") as p:
+			# change this to bcontent if using the FULL PANDOC PROTOCOL
 			content = p.read()
+
+		# # convert the html contents into a bs object
+		# soup = BeautifulSoup(bcontent, 'html.parser')
+
+		# # save only the body content elements into a new temp file
+		# with open('temp2.html', 'w') as f:
+		# 	for line in soup.body:
+		# 		print(line, file=f)
+
+		# with open("temp2.html", "r") as p:
+		# 	content = p.read()
+
 		# system("cp templates/blog_template.html templates/blog_template_temp.html")
-		
+
 		template = env.get_template('writeup_template.html')
 		output = template.render(content=content,  L2=True, title=category+" | "+name[i])
-		
+
 		# Create Page
 		with open(html[i], 'w') as f:
 			print(output, file=f)
-		
+
 		print("Created {} page!".format(html[i]))
 		i += 1
 
