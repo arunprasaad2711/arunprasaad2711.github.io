@@ -237,6 +237,8 @@ blockquote {
 }
 
 code {
+  background: #333333;
+  color: #ffffff;
   font-family: "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
   font-size: 1.0em;
   margin: 0 0.25em;
