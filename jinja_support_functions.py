@@ -11,14 +11,6 @@ from bs4 import BeautifulSoup
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 
-def add_img_class2(img_tag):
-    if img_tag.has_attr('class'):
-        img_tag['class'] = img_tag['class']+' prettify'
-    else:
-        img_tag['class'] = 'prettify'
-    return img_tag
-
-
 # Function to convert md files to html snippets using pandoc. 
 # Then uses jinja to render them into proper html files.
 # This is the active one!
@@ -68,24 +60,13 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 		# system("pandoc --from markdown --to html5 --mathjax --highlight-style=haddock --css=assets/css/main.css {} > temp.html".format(title))
 
 		# This is working well now thanks to the extracted codehilite.css files. Will work to full capacity when the css definition is full.
+		# ABANDONED THE PANDOC HIGHLIGHT AS IT IS ONLY RUDIMENTARY! SWITCHING PERMANENTLY TO GOOGLE PRETTYTYPE!
 		# system("pandoc --from markdown --to html5 --mathjax {} > temp.html".format(title))
 		# same as above with the option to specify the highlight style. If activated, then the corresponding css should be included in main.scss.
 		# system("pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {} > temp.html".format(title))
 
-		# This was the standard pandoc fix. Syntax highlight pushed to highlight.js / google pretty type.
+		# This was the standard pandoc fix. Syntax highlight pushed permanently google pretty type.
 		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
-
-		# This is the new one! It works similar to pandoc. syntax highlight pushed to prism.js or google prettify. Prefer the later.
-		# system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
-
-		# by far, the slowest one! it ignores html tags. but surprisingly catches the syntax highlights
-		## DO NOT USE THIS!
-		# system("markdown {} -h -d > temp.html".format(title))
-
-		# A new attempt! - trying to use pandoc alone for syntax highlight! - FULL PANDOC PROTOCOL
-		# It is working! Some minor TOC comment issues, but other than that, it is working alright.
-		# Needs the full css to extract all the css pre and code classes.
-		# system("pandoc {} -f markdown -s --highlight-style pygments --mathjax --metadata pagetitle=\"sample\" -o temp.html".format(title))
 
 		# Read the data from the first temporary file.
 		with open("temp.html", "r") as p:
@@ -94,12 +75,6 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 
 		# convert the html contents into a bs object
 		# soup = BeautifulSoup(bcontent, 'html.parser')
-
-		# for img_tag in soup.find_all('pre'):
-		# 	img_tag = add_img_class2(img_tag)
-		
-		# for img_tag in soup.find_all('code'):
-		# 	img_tag = add_img_class2(img_tag)
 
 		# # # save only the body content elements into a new temp file
 		# with open('temp2.html', 'w') as f:
