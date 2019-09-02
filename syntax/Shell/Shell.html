@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,14 +124,19 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="shell-programming">Shell Programming</h1>
-<h2 id="source">Source</h2>
+                <h1>Shell Programming</h1>
+
+<h2>Source</h2>
+
 <ul>
-<li>Shell Scripting Tutorials - “The Bad Tutorials” - YouTube channel.</li>
-<li>Unix and Shell Programming - “Fuzicast” - YouTube channel.</li>
+<li>Shell Scripting Tutorials - &quot;The Bad Tutorials&quot; - YouTube channel.</li>
+<li>Unix and Shell Programming - &quot;Fuzicast&quot; - YouTube channel.</li>
 </ul>
+
 <p>Basic programming language for Unix. Applicable for Linux as well. Shell is the interface between the linux kernel and the user. The kernel makes the hardware do the job!</p>
+
 <p>There are different types of shell.</p>
+
 <ul>
 <li>Bash</li>
 <li>sh</li>
@@ -139,35 +144,68 @@
 <li>tcsh</li>
 <li>ksh</li>
 </ul>
+
 <p>All of them are similar and have some small differences.</p>
+
 <p>To access a shell, start a terminal.</p>
-<h2 id="inside-the-terminal">Inside the terminal</h2>
+
+<h2>Inside the terminal</h2>
+
 <p>On opening the terminal, there will be a line like below.</p>
-<pre><code>arun@hpdv6:~$</code></pre>
-<p>It stands for username followed by machine name. The ~ sign shows the path and <code>$</code> is the command prompt. All commands are in lowercase.</p>
-<h2 id="basic-commands">Basic commands</h2>
+
+<pre><code class="prettyprint">arun@hpdv6:~$
+</code></pre>
+
+<p>It stands for username followed by machine name. The ~ sign shows the path and <code class="prettyprint">$</code> is the command prompt. All commands are in lowercase.</p>
+
+<h2>Basic commands</h2>
+
 <p><strong>clear</strong> - clears the terminal screen</p>
+
 <p><strong>who am i</strong> - Prints the username, terminal id and the time/date of logging in</p>
+
 <p><strong>pwd</strong> - prints the present working directory</p>
+
 <p><strong>mkdir</strong> - make a directory.</p>
-<pre class="bash"><code>mkdir folder1 folder2
-mkdir path/of/folder/folder_name</code></pre>
+
+<pre><code class="prettyprint lang-bash">mkdir folder1 folder2
+mkdir path/of/folder/folder_name
+</code></pre>
+
 <p><strong>rmdir</strong> - delete a directory.</p>
-<pre class="bash"><code>rmdir folder1 folder2
-rmdir path/of/folder/folder_name</code></pre>
+
+<pre><code class="prettyprint lang-bash">rmdir folder1 folder2
+rmdir path/of/folder/folder_name
+</code></pre>
+
 <p><strong>ls</strong> - list the contents of the present working directory</p>
-<p><strong>cal</strong> - prints the calendar month and highlights the current day. To print the calendar of some other month and year, use</p>
-<pre class="bash"><code>cal month_number year
-cal month_name(short/long) year</code></pre>
+
+<p><strong>cal</strong> - prints the calendar month and highlights the current day. To print the calendar of some other month and year, use </p>
+
+<pre><code class="prettyprint lang-bash">cal month_number year
+cal month_name(short/long) year
+</code></pre>
+
 <p><strong>date</strong> - prints the day, month, date, year, full 24-hour time and time zone. To custom represent time, use the format.</p>
-<pre class="bash"><code>date +&#39;DATE:%m-%y%nTIME:%H:%M%S&#39;</code></pre>
+
+<pre><code class="prettyprint lang-bash">date +&#39;DATE:%m-%y%nTIME:%H:%M%S&#39;
+</code></pre>
+
 <p>m - month, y - year, n - new line, H - hour, M - minute, S- seconds</p>
+
 <p><strong>touch</strong> - used to create empty text files.</p>
-<pre class="bash"><code>touch test1 test2 test3</code></pre>
+
+<pre><code class="prettyprint lang-bash">touch test1 test2 test3
+</code></pre>
+
 <p><strong>cd</strong> - change directory</p>
-<pre class="bash"><code>cd new/path</code></pre>
+
+<pre><code class="prettyprint lang-bash">cd new/path
+</code></pre>
+
 <p><strong>cat</strong> - used to write contents inside the text files. Also used to read the contents.</p>
-<pre class="bash"><code>cat &gt; filename #Press enter
+
+<pre><code class="prettyprint lang-bash">cat &gt; filename #Press enter
 # write contents # terminate using CTRL+D
 
 cat &lt; filename #press enter. 
@@ -175,24 +213,40 @@ cat &lt; filename #press enter.
 #The lesser than symbol is optional, but use it as a practice.
 
 cat file1 file2 &gt; file3
-# merges file1 and file2 into file3</code></pre>
+# merges file1 and file2 into file3
+</code></pre>
+
 <p><strong>mv</strong> - move file/folder. Also, used for renaming file/folder</p>
-<pre class="bash"><code>mv path/to/filename1 path/to/filename2</code></pre>
+
+<pre><code class="prettyprint lang-bash">mv path/to/filename1 path/to/filename2
+</code></pre>
+
 <p><strong>rm</strong> - removes file/folder. Use -r flag to remove folders.</p>
-<pre class="bash"><code>rm file</code></pre>
+
+<pre><code class="prettyprint lang-bash">rm file
+</code></pre>
+
 <p><strong>cp</strong> - copy files</p>
-<pre class="bash"><code>cp path/to/source path/to/destination</code></pre>
+
+<pre><code class="prettyprint lang-bash">cp path/to/source path/to/destination
+</code></pre>
+
 <p><strong>ln</strong> - link files</p>
-<pre class="bash"><code>ln source_file target_file.
+
+<pre><code class="prettyprint lang-bash">ln source_file target_file.
 # now, if any modification is done to &quot;source_file&quot;, then the 
 # modifications are reflected in &quot;target_file&quot; - hard link
 # Now, if the source file is deleted, then the target file will
 # be intact.
 ln -s source_file target_file
-# This creates a short-cut.</code></pre>
-<h2 id="comments">Comments</h2>
+# This creates a short-cut.
+</code></pre>
+
+<h2>Comments</h2>
+
 <p>Use <strong>#</strong> to start a single line comment.</p>
-<pre class="bash"><code># this is a single-line comment
+
+<pre><code class="prettyprint lang-bash"># this is a single-line comment
 &lt;&lt;COMMENT
 This is a multi-line
 comment. It extends for several lines.
@@ -202,24 +256,38 @@ COMMENT
 This is another multi-line
 comment. It extends for several lines.
 This is another way using manual delimiters.
-!</code></pre>
-<h2 id="file-permissions">File permissions</h2>
+!
+</code></pre>
+
+<h2>File permissions</h2>
+
 <p>Files and folders have certain permissions: read, write and execute. The permissions have numerical values: read-4, write-2, execute-1. Based on the permissions, a file that is created or modified has a numerical value which is the sum of the numerical values associated with the permissions. A file will have the numeric values 4(read-only), 5(read and execute), 6(read and write), 7(read,write,execute).</p>
+
 <p>And there are three categories of users: owner(the one who created the file), group(the group of users in the system/network) and others(users outside the system/network). And depending on the category of the users, the permission privileges vary.</p>
-<p>The command <strong><code>umask</code></strong> tells what kind of permissions exist for the files and folders when created.</p>
-<p>On typing the command <strong><code>umask</code></strong>, a 4 digit number like <strong>0022</strong> or <strong>0002</strong> might show up. The first zero on the left is for indicating Octal numbers. The second digit is for the owner, the third digit for group and the fourth digit for others.</p>
+
+<p>The command <strong><code class="prettyprint">umask</code></strong> tells what kind of permissions exist for the files and folders when created.</p>
+
+<p>On typing the command <strong><code class="prettyprint">umask</code></strong>, a 4 digit number like <strong>0022</strong> or <strong>0002</strong> might show up. The first zero on the left is for indicating Octal numbers. The second digit is for the owner, the third digit for group and the fourth digit for others.</p>
+
 <p>Whenever a file/folder is created, the Linux/Unix OS subtracts the <strong>umask</strong> value from <strong>0777</strong> for the files and <strong>0666</strong> for the folders. So, for a file, if the resulting number turns out to be <strong>0755</strong>, it means the owner has all three premissions, while others and group can only read and execute.</p>
+
 <p><strong>Folders need execution permission! Otherwise, they cannot be accessed!</strong></p>
-<h2 id="ls-command">ls command</h2>
+
+<h2>ls command</h2>
+
 <p><strong>ls</strong> lists all the files and folders in the folder.</p>
-<pre class="bash"><code>ls path/to/folder 
+
+<pre><code class="prettyprint lang-bash">ls path/to/folder 
 # lists all the files and folders in the path specified.
 
 ls -l             # l - long listing flag
 # lists all the files and folders with permissions
-# , user details, date/time of modifications</code></pre>
-<p>On typing <code>ls -l</code>, one might get an output like this:</p>
-<pre class="bash"><code>total 100
+# , user details, date/time of modifications
+</code></pre>
+
+<p>On typing <code class="prettyprint">ls -l</code>, one might get an output like this:</p>
+
+<pre><code class="prettyprint lang-bash">total 100
 drwxrwxrwx  8 arun arun  4096 Sep 28 21:55 Academic_Stuff
 drwxrwxr-x 18 arun arun  4096 Oct 10 05:50 anaconda3
 drwxr-xr-x  9 arun arun  4096 Oct  7 03:49 Desktop
@@ -239,21 +307,36 @@ drwxr-xr-x  2 arun arun  4096 Aug 21 03:31 Public
 drwxrwxrwx  8 arun arun  4096 Aug 21 21:27 Software
 drwxr-xr-x  2 arun arun  4096 Aug 21 03:31 Templates
 drwxr-xr-x  3 arun arun  4096 Oct 15 16:09 Videos
-drwxrwxr-x  3 arun arun  4096 Oct 16 14:45 VirtualBox VMs</code></pre>
-<p>The value <code>total 100</code> indicates the total number of blocks occupied by all the files and folders in the directory. Here, it is 100 blocks. 1 block is a unit of memory for file allocation in unix/linux which is equal to a certain amount of bytes.</p>
+drwxrwxr-x  3 arun arun  4096 Oct 16 14:45 VirtualBox VMs
+</code></pre>
+
+<p>The value <code class="prettyprint">total 100</code> indicates the total number of blocks occupied by all the files and folders in the directory. Here, it is 100 blocks. 1 block is a unit of memory for file allocation in unix/linux which is equal to a certain amount of bytes.</p>
+
 <p>The first column is a 10 units long string. For a file, the first unit of the string is a <strong>-</strong>, whereas for a folder, it is <strong>d</strong> indicating that it is a directory.</p>
+
 <p>Units 2-4, 5-7 and 8-10 indicate the permissions for the owner, group and others. <strong>r</strong> means read, <strong>w</strong> means write and <strong>x</strong> means execute. Here, <strong>-</strong> means that permission is absent.</p>
+
 <p>Column 2 (i guess) indicates the number of blocks occupied by the file or folder.</p>
+
 <p>Column 3 and 4 indicated the owner and the group name.</p>
+
 <p>Column 5 indicates the size of the file in bytes. For folders, it indicates the size of the parent folder alone without any of the contents inside it.</p>
+
 <p>Column 6-8 indicate the date and time of creation/last modification/access of the file or folder.</p>
+
 <p>Column 9 indicates the file/folder name.</p>
-<h3 id="creating-hidden-files">Creating hidden files</h3>
+
+<h3>Creating hidden files</h3>
+
 <p>Put a dot infront of the file name to hide it.</p>
-<p>Use <code>ls -a</code> to list ALL files, including hidden files.</p>
-<h2 id="chmod-command">chmod command</h2>
+
+<p>Use <code class="prettyprint">ls -a</code> to list ALL files, including hidden files.</p>
+
+<h2>chmod command</h2>
+
 <p>Changes the file/folder permissions manually.</p>
-<pre class="bash"><code>chmod 777 filename
+
+<pre><code class="prettyprint lang-bash">chmod 777 filename
 # makes the permission string for the file as -rwxrwxrwx
 chmod 444 filename
 # makes the permission string for the file as -r--r--r--
@@ -262,21 +345,35 @@ chmod 755 filename
 chmod -w filename
 # Removes write permissions for the file
 chmod +x filename
-# Adds write permissions for the file</code></pre>
+# Adds write permissions for the file
+</code></pre>
+
 <p>Minus sign <strong>-</strong> is used to remove a permission. Plus sign <strong>+</strong> is used to add permission. The permissions are read, write and execute <strong>r,w,x</strong>.</p>
+
 <p>Executable files are displayed in <strong>green</strong> colour inside the terminal.</p>
-<h2 id="uname-command">uname command</h2>
+
+<h2>uname command</h2>
+
 <p>Prints the kernel and some system details of the OS.</p>
-<pre class="bash"><code>uname
-uname -a # list all details</code></pre>
+
+<pre><code class="prettyprint lang-bash">uname
+uname -a # list all details
+</code></pre>
+
 <p>The output is:</p>
-<pre><code>Linux
+
+<pre><code class="prettyprint">Linux
 Linux hpdv6 4.4.0-42-generic #62-Ubuntu SMP Fri Oct 7 23:11:45 UTC 2016
-x86_64 x86_64 x86_64 GNU/Linux</code></pre>
+x86_64 x86_64 x86_64 GNU/Linux
+</code></pre>
+
 <p>The details are in order: Kernel name, device name, Kernel version, OS name with some specification, Memory Architecture - SMP means Shared memory Processor, Date and time of installing/updating the kernel, Assembly language of the system for owner(x86_64 - assembly language for 64 bit systems), group and others, Kind of Unix/Linux.</p>
-<h2 id="file-and-wc-command">File and wc command</h2>
+
+<h2>File and wc command</h2>
+
 <p>File command mentions the file type/directory in a given path.</p>
-<pre class="bash"><code>arun@hpdv6:~/Desktop/Python_Session/main$ file *
+
+<pre><code class="prettyprint lang-bash">arun@hpdv6:~/Desktop/Python_Session/main$ file *
 demo.ipynb:                 ASCII text, with very long lines
 eVSes.png:                  PNG image data, 1200 x 800, 8-bit/color RGBA, 
                             non-interlaced
@@ -302,39 +399,66 @@ sample.ipynb:               ASCII text, with very long lines
 sample.slides.html:         HTML document, ASCII text, with very long lines
 swiss_knife.jpg:            JPEG image data, Exif standard: [TIFF image 
                             data, little-endian, direntries=0], baseline, 
-                            precision 8, 2908x2248, frames 3</code></pre>
+                            precision 8, 2908x2248, frames 3
+</code></pre>
+
 <p><strong>wc</strong> shows the number of lines, words and characters in a file.</p>
-<pre class="bash"><code>arun@hpdv6:~/Desktop$ wc simulation_group.txt # use -l, -w, -c to display
+
+<pre><code class="prettyprint lang-bash">arun@hpdv6:~/Desktop$ wc simulation_group.txt # use -l, -w, -c to display
                                          # only lines, words or characters
- 31  76 468 simulation_group.txt</code></pre>
-<h2 id="sort-command">Sort command</h2>
+ 31  76 468 simulation_group.txt
+</code></pre>
+
+<h2>Sort command</h2>
+
 <p>Extracts all the words and sorts the contents in a file.</p>
-<pre class="bash"><code>sort filename.ext</code></pre>
+
+<pre><code class="prettyprint lang-bash">sort filename.ext
+</code></pre>
+
 <p>Typing plain sort opens the terminal to write words. When pressing Ctrl+D, the words are sorted and displayed.</p>
-<h2 id="cut-command">Cut command</h2>
+
+<h2>Cut command</h2>
+
 <p>Used to cut the contents in the file and separates them.</p>
-<pre class="bash"><code>cut -d&quot;-&quot; -f 1,3 filename
+
+<pre><code class="prettyprint lang-bash">cut -d&quot;-&quot; -f 1,3 filename
 # -d means explaining other characters are used to separate the data.
 # &quot;-&quot; is used for specifying the separator here
 # -f means the fields
 # 1, 3 column numbers in the file
-# filename</code></pre>
-<h2 id="dd-command">dd command</h2>
+# filename
+</code></pre>
+
+<h2>dd command</h2>
+
 <p>Used to convert and copy files from one format to another.</p>
-<pre class="bash"><code>dd if=&quot;test&quot; of=&quot;out&quot; conv=ucase
+
+<pre><code class="prettyprint lang-bash">dd if=&quot;test&quot; of=&quot;out&quot; conv=ucase
 ## if = input file
 ## of = output file
 ## conv = type of conversion, here, the contents become uppercase.
 dd if=&quot;test&quot; of=&quot;out&quot; conv=ebcdic
-## here, the contents get converted into European format.</code></pre>
+## here, the contents get converted into European format.
+</code></pre>
+
 <p>dd is used for formatting drives, extracting data from drives, copy files to drives, convert files from/to drives.</p>
-<h2 id="man-command">man command</h2>
+
+<h2>man command</h2>
+
 <p>Used for displaying the manual for a command.</p>
-<pre class="bash"><code>man command-name</code></pre>
-<p>Opens a reference manual with all flags, syntax, options, details etc., Press <strong>q</strong> to quit the manual.</p>
-<h2 id="banner-command">Banner command</h2>
+
+<pre><code class="prettyprint lang-bash">man command-name
+</code></pre>
+
+<p>Opens a reference manual with all flags, syntax, options, details etc.,
+Press <strong>q</strong> to quit the manual.</p>
+
+<h2>Banner command</h2>
+
 <p>Creates a banner</p>
-<pre class="bash"><code>arun@hpdv6:~$ banner text # can use &quot;&quot; for using a single string
+
+<pre><code class="prettyprint lang-bash">arun@hpdv6:~$ banner text # can use &quot;&quot; for using a single string
 
   #####  ######  #    #   #####
     #    #        #  #      #
@@ -343,54 +467,96 @@ dd if=&quot;test&quot; of=&quot;out&quot; conv=ebcdic
     #    #        #  #      #
     #    ######  #    #     #
 
-arun@hpdv6:~$ </code></pre>
+arun@hpdv6:~$ 
+</code></pre>
+
 <p>Only 10 characters (including whitespaces) will be displayed per line.</p>
-<h2 id="compress-command">Compress command</h2>
+
+<h2>Compress command</h2>
+
 <p>Used to compress files.</p>
-<pre class="bash"><code>compress -v filename
-# output will be filename.Z</code></pre>
+
+<pre><code class="prettyprint lang-bash">compress -v filename
+# output will be filename.Z
+</code></pre>
+
 <p>To read the compressed file inside terminal, use <strong>zcat</strong></p>
-<pre class="bash"><code>zcat filename.Z</code></pre>
+
+<pre><code class="prettyprint lang-bash">zcat filename.Z
+</code></pre>
+
 <p>To uncompress the file, use <strong>uncompress</strong> command.</p>
-<pre class="bash"><code>uncompress filename.Z</code></pre>
-<h2 id="echo-command">echo command</h2>
+
+<pre><code class="prettyprint lang-bash">uncompress filename.Z
+</code></pre>
+
+<h2>echo command</h2>
+
 <p>Used to print contents in the terminal. Echo automatically puts a newline character at the end.</p>
-<pre class="bash"><code>echo &quot;Hello World!&quot;</code></pre>
-<h2 id="running-shell-scripts">Running shell scripts</h2>
+
+<pre><code class="prettyprint lang-bash">echo &quot;Hello World!&quot;
+</code></pre>
+
+<h2>Running shell scripts</h2>
+
 <ul>
 <li>Create shell scripts with the extension *.sh</li>
 <li>Write the code inside the shell script one after the other</li>
 <li>Run them in the terminal using the command</li>
 </ul>
-<pre class="bash"><code>sh filename.sh
-bash filename.sh</code></pre>
-<h2 id="creating-variables">Creating Variables</h2>
-<p>Variables are case sensitive. They can’t start with numbers. Only underscores are allowed. Variables can start with an underscore.</p>
+
+<pre><code class="prettyprint lang-bash">sh filename.sh
+bash filename.sh
+</code></pre>
+
+<h2>Creating Variables</h2>
+
+<p>Variables are case sensitive. They can&#39;t start with numbers. Only underscores are allowed. Variables can start with an underscore.</p>
+
 <p><strong>Shell stores the values as strings by default! So, we need to specify the data type to the variables for mathematical computation.</strong></p>
-<pre class="bash"><code># local variable - available only in the file
+
+<pre><code class="prettyprint lang-bash"># local variable - available only in the file
 a=25
 # global/environment variable - available as long as the terminal is active
-export b=50</code></pre>
+export b=50
+</code></pre>
+
 <p><strong>There should be no <em>space</em> between the variable, the equal sign and value</strong></p>
-<h2 id="read-command">Read command</h2>
+
+<h2>Read command</h2>
+
 <p>Used to read variable data from the user.</p>
-<pre class="bash"><code>echo &quot;Please enter a name:&quot;
+
+<pre><code class="prettyprint lang-bash">echo &quot;Please enter a name:&quot;
 read my_name # this is a variable to read the user data
 echo &quot;Hello $my_name! How are you?&quot;
 # To use the variable data, put a dollar infront of the variable.
-# Also, the info is taken as a string in this context.</code></pre>
-<h2 id="assigning-variables-and-values-in-the-terminal.">Assigning variables and values in the terminal.</h2>
-<p>When you open the terminal, if you create an assignment expression like ** a = 25<strong>, or </strong> b = “hello”<strong>, then the variables are created with the values assigned to them. On typing </strong>echo $a ** or ** echo $b**, it is going to display the values. Variables can be re-assigned with new values.</p>
-<h2 id="position-parameters.">Position Parameters.</h2>
+# Also, the info is taken as a string in this context.
+</code></pre>
+
+<h2>Assigning variables and values in the terminal.</h2>
+
+<p>When you open the terminal, if you create an assignment expression like ** a = 25<strong>, or ** b = &quot;hello&quot;</strong>, then the variables are created with the values assigned to them. On typing <strong>echo \$a ** or ** echo \$b</strong>, it is going to display the values. Variables can be re-assigned with new values.</p>
+
+<h2>Position Parameters.</h2>
+
 <p>Position parameters are run-time data provided by the user while running the file.</p>
-<pre class="bash"><code># program name : ssh5.sh
+
+<pre><code class="prettyprint lang-bash"># program name : ssh5.sh
 mv $1 $2
-cat $2</code></pre>
+cat $2
+</code></pre>
+
 <p>This file is executed as follows.</p>
-<pre class="bash"><code>:~$ ssh5.sh filename1.txt filename2.txt</code></pre>
+
+<pre><code class="prettyprint lang-bash">:~$ ssh5.sh filename1.txt filename2.txt
+</code></pre>
+
 <p>Here, <strong>filename1.txt</strong> is taken as the first position parameter, while <strong>filename2.txt</strong> is taken as the positional parameter 2. So, this file ** ssh5.sh**, in this line will rename filename1.txt as filename2.txt and shows the contents of filename2.txt in the terminal.</p>
+
 <p>Using the <strong>set</strong> command, multiple positional parameters can be set!</p>
-<pre class="bash"><code>:~$ set Hello there everyone!
+
+<pre><code class="prettyprint lang-bash">:~$ set Hello there everyone!
 :~$ echo $1
 Hello
 :~$ echo $2
@@ -400,15 +566,25 @@ everyone
 :~$ echo $* # Prints all the positional parameter values
 Hello there everyone!
 :~$ echo $# # Prints the number of positional parameter values
-3</code></pre>
-<h2 id="reverse-quotesaccent-graves">Reverse quotes/Accent graves</h2>
+3
+</code></pre>
+
+<h2>Reverse quotes/Accent graves</h2>
+
 <p>Used for writing/passing a command as an argument/positional parameter/data to another command. <strong>If you want the output of a command or a statement to be passed to some other command or variable, then use reverse quotes</strong></p>
-<pre class="bash"><code>:~$ set `cat filename`</code></pre>
+
+<pre><code class="prettyprint lang-bash">:~$ set `cat filename`
+</code></pre>
+
 <p>In this example, because of the reverse quote, the contents of the filename are passed as data to the set command to create positional parameters.</p>
+
 <p><strong>Reverse quotes are useful for creating subshells with output return</strong></p>
-<h2 id="subshells">Subshells</h2>
+
+<h2>Subshells</h2>
+
 <p>Subshell is like a shell within a shell. Used for executing statements and get their results passed to some other command or variable. Subshells inherit all the enivironment/global variables from the parent shell.</p>
-<pre class="bash"><code># Creating a subshell and executing ls command inside it.
+
+<pre><code class="prettyprint lang-bash"># Creating a subshell and executing ls command inside it.
 filename=(ls -ltr)
 
 # Creating a subshell and executing ls command inside it.
@@ -417,10 +593,14 @@ filename=(ls -ltr)
 filename=$(ls -ltr)
 
 # Same as above!
-filename=`ls -ltr`</code></pre>
-<h2 id="arithmetic-operations">Arithmetic Operations</h2>
+filename=`ls -ltr`
+</code></pre>
+
+<h2>Arithmetic Operations</h2>
+
 <p>The command <strong>expr</strong> is used for doing arithmetic calculations/operations using the values. Use <strong>echo</strong> keyword and reverse quote to print the results. <strong>expr works only for integers!</strong> Another way is the usage of square brackets and circular brackets.</p>
-<pre class="bash"><code>a=20 b=30  # Creating two variables
+
+<pre><code class="prettyprint lang-bash">a=20 b=30  # Creating two variables
 echo `expr $a + $b`    # Addition
 echo $[ $a + $b ]      # Addition
 echo `expr $a - $b`    # Subtraction
@@ -439,50 +619,73 @@ echo $[ $a * (( $b + $c )) / $d ]   # Alternate safe way 2
 let &quot;c=$a+$b&quot;
 echo $c
 ((c=$a+$b))
-echo $c</code></pre>
+echo $c
+</code></pre>
+
 <p>Parenthesis and asterix are reserved symbols. So, you need to escape them out using escape sequences!. But, when using square brackets, you do not have to escape them out! When circular brackets are used, then the comparison operators are escaped out!</p>
-<p><strong>While evaluating with $[] or ((…)), space is not a problem around brackets</strong></p>
+
+<p><strong>While evaluating with \$[] or ((...)), space is not a problem around brackets</strong></p>
+
 <p>Operator precedence : Parenthesis, Division, Multiplication, Modulus operation, Addition, Subtraction.</p>
+
 <p>For working with floating point numbers/operations, we need to use the <strong>bc</strong> command/program. Use the pipe symbol, <strong>|</strong> to re-direct the output of the mathematical expression to the command/program <strong>bc</strong>.</p>
-<pre class="bash"><code>a=20.5 b=30.4  # Creating two variables
+
+<pre><code class="prettyprint lang-bash">a=20.5 b=30.4  # Creating two variables
 c=`echo $a + $b  | bc`   # Addition
 d=`echo $a - $b  | bc`  # Subtraction
 e=`echo $a \* $b | bc`  # Multiplication
-f=`echo $a / $b  | bc`  # Division</code></pre>
-<h2 id="escape-sequence">Escape Sequence</h2>
-<pre><code>\n - newline
+f=`echo $a / $b  | bc`  # Division
+</code></pre>
+
+<h2>Escape Sequence</h2>
+
+<pre><code class="prettyprint">\n - newline
 \r - carriage return - overwrites the previous line.
 \t - tab character
 \b - backspace - clears one previous printed character
 \c - continue - cancels newline escape sequence
 \033[1m ....... \033[0m- To make the printed text bold
-\033[7m ....... \033[0m- To make the printed text have reverse fg and bg colours.</code></pre>
-<h2 id="tput-command">tput command</h2>
+\033[7m ....... \033[0m- To make the printed text have reverse fg and bg colours.
+</code></pre>
+
+<h2>tput command</h2>
+
 <p><strong>tput</strong> is used for doing a wide variety of operations.</p>
-<pre class="bash"><code>tput clear # clear terminal
+
+<pre><code class="prettyprint lang-bash">tput clear # clear terminal
 tput lines # prints the number of rows/lines in terminal
 tput cols # prints the number of columns in terminal
 tput cup 15 20 # Move the cursor to line 15, column 20
 tput bold # prints the next lines bold
-# use echo \033[0m ..... to deactivate the bold effect from tput.</code></pre>
-<h2 id="exit-status">Exit status</h2>
+# use echo \033[0m ..... to deactivate the bold effect from tput.
+</code></pre>
+
+<h2>Exit status</h2>
+
 <p>Whenever a command is executed, a value is associated. If the command is successful, then the value is 0, else it is 1. These values are exit status values. To see if the command is successful check the status variable <strong>?</strong>. If an illegal condition is given, then the exit status is 2.</p>
-<pre class="bash"><code>arun@hpdv6:~$ mkdir sample
+
+<pre><code class="prettyprint lang-bash">arun@hpdv6:~$ mkdir sample
 arun@hpdv6:~$ echo $?
 0
 arun@hpdv6:~$ mkdir sample
 mkdir: cannot create directory ‘sample’: File exists
 arun@hpdv6:~$ echo $?
-1</code></pre>
-<h2 id="if-else-statements">If else statements</h2>
-<pre class="bash"><code>if &lt;condition1/command1&gt; 
+1
+</code></pre>
+
+<h2>If else statements</h2>
+
+<pre><code class="prettyprint lang-bash">if &lt;condition1/command1&gt; 
 then
     statement_set1
 else
     statements_set_final
-fi</code></pre>
+fi
+</code></pre>
+
 <p>Example</p>
-<pre class="bash"><code># space after the starting square bracket and 
+
+<pre><code class="prettyprint lang-bash"># space after the starting square bracket and 
 # before the  closing square bracket
 # is necessary
 # -gt - greater than
@@ -516,27 +719,44 @@ elif (( $[ $num1 + $num2 ] &gt; 20 )); then
     echo &quot;Number greater than 10&quot;
 else
     echo &quot;Number between 10 and 20&quot;
-fi</code></pre>
+fi
+</code></pre>
+
 <p>Use the keyword <strong>exit</strong> to terminate programs. Use <strong>exit</strong> to terminate any program anywhere abruptly. Use <strong>exit 0</strong> to indicate successful termination to get a <strong>0</strong> exit status.</p>
+
 <p>Use the keyword <strong>break</strong> to terminate loops.</p>
+
 <p>Use the keyword <strong>continue</strong> to skip the current loop.</p>
-<h2 id="meta-characters">Meta characters</h2>
+
+<h2>Meta characters</h2>
+
 <p>Semi-colon <strong>;</strong> is used for displaying multiple commands in a single line.</p>
-<pre class="bash"><code>ls ; cal ; banner &quot;hello&quot;</code></pre>
+
+<pre><code class="prettyprint lang-bash">ls ; cal ; banner &quot;hello&quot;
+</code></pre>
+
 <p>Avoiding if else in some cases. Here, if the word was found in the file, then the lines would be copied to a new file. And if the entire process is successful, it will print the <strong>echo</strong> statement. For that, use <strong>&amp;&amp;</strong>. If the first statement fails, then the <strong>echo</strong> statement does not work. If the second command has to work irrespective of the outcome of the first statement, use <strong>||</strong> operator.</p>
-<pre class="bash"><code>grep -i word filename &gt; patterns &amp;&amp; echo &quot;The task was completed&quot;
-grep -i word filename &gt; patterns || echo &quot;The task may be completed&quot;</code></pre>
+
+<pre><code class="prettyprint lang-bash">grep -i word filename &gt; patterns &amp;&amp; echo &quot;The task was completed&quot;
+grep -i word filename &gt; patterns || echo &quot;The task may be completed&quot;
+</code></pre>
+
 <p><strong>&amp;&amp;</strong> and <strong>||</strong> are logical <strong>and</strong> and logical <strong>or</strong> operators for multiple expressions. <strong><em>They can be used with if else constructs</em></strong></p>
-<h2 id="file-types">File types</h2>
+
+<h2>File types</h2>
+
 <p>There are a few types of files</p>
+
 <ul>
 <li>Character special files - normal character files</li>
 <li>Block special files - have binary code - eg: images, videos, special files</li>
 <li>Directory special files - folders</li>
 <li>Empty files - zero byte file</li>
 </ul>
+
 <p>Program to check if a specified file exists or not</p>
-<pre class="bash"><code>echo &quot; Enter a file name:\c&quot;
+
+<pre><code class="prettyprint lang-bash">echo &quot; Enter a file name:\c&quot;
 read fname
 if [ -f $fname ] # if the file exists
 then
@@ -572,9 +792,12 @@ fi
 if [ -s $fname ] # if the file has non-zero size
 then
     echo &quot;This file has non-zero size&quot;
-fi</code></pre>
-<h2 id="string-comparisons">String comparisons</h2>
-<pre class="bash"><code>
+fi
+</code></pre>
+
+<h2>String comparisons</h2>
+
+<pre><code class="prettyprint lang-bash">
 str1=&quot;Hey there!&quot;
 str2=&quot;What is up?&quot;
 str3=
@@ -597,20 +820,29 @@ echo $?
 # check the length of a string is zero
 [ -z &quot;$str3&quot; ]
 echo $?
+
 </code></pre>
-<h2 id="logical-operators">Logical Operators</h2>
-<pre class="bash"><code>
+
+<h2>Logical Operators</h2>
+
+<pre><code class="prettyprint lang-bash">
 ! not operator
 -a and operator
 -o or operator
 
 # Checks if a number is between 50 and 100
-if [ $num -le 100 -a $num -ge 50 ]</code></pre>
-<h2 id="user-inputs">User inputs</h2>
+if [ $num -le 100 -a $num -ge 50 ]
+</code></pre>
+
+<h2>User inputs</h2>
+
 <p>The user input has one additional character than what is entered by the user, namely the return key.</p>
+
 <p><strong>So, if the user enters just <em>one</em> character/symbol, then the return key gets attached to it like an EOL character</strong></p>
-<h2 id="a-counting-program">A counting program</h2>
-<pre class="bash"><code>
+
+<h2>A counting program</h2>
+
+<pre><code class="prettyprint lang-bash">
 echo &quot;Enter a file name:\c&quot;
 read var
 # Prints Variable var. The result is pipelined to wc command which
@@ -621,10 +853,14 @@ then
     echo &quot;You entered a character&quot;
 else
     echo &quot;You entered something else&quot;
-fi</code></pre>
-<h2 id="case-statement">Case statement</h2>
+fi
+</code></pre>
+
+<h2>Case statement</h2>
+
 <p>This program gets a variable and checks its type</p>
-<pre class="bash"><code>echo &quot;Enter a variable:\c&quot;
+
+<pre><code class="prettyprint lang-bash">echo &quot;Enter a variable:\c&quot;
 read var
 case $var in
 [a-z]) # Checks if the character lies between a and z
@@ -641,8 +877,10 @@ case $var in
 *)     # Substitution for more than one character
     echo &quot;You entered multiple characters&quot;
     ;;
-esac</code></pre>
-<pre class="bash"><code>echo &quot;Enter a word:\c&quot;
+esac
+</code></pre>
+
+<pre><code class="prettyprint lang-bash">echo &quot;Enter a word:\c&quot;
 read word
 case $word in
 [aeiou]* | [AEIOU]* ) # Checks if the first letter of the word is a Vowel
@@ -660,30 +898,42 @@ case $word in
 *)     # Some other condition
     echo &quot;Some other n/a word&quot;
     ;;
-esac</code></pre>
-<h2 id="while-loop">While loop</h2>
+esac
+</code></pre>
+
+<h2>While loop</h2>
+
 <p>While loop executes instruction till the condition becomes false.</p>
-<pre class="bash"><code>
+
+<pre><code class="prettyprint lang-bash">
 count=1
 while [ $count -le 10]
 do
     echo $count
     count=`expr $count + 1`
 done
+
 </code></pre>
-<h2 id="until-loop">Until loop</h2>
+
+<h2>Until loop</h2>
+
 <p>Untill loop executes instruction till the condition becomes true.</p>
-<pre class="bash"><code>
+
+<pre><code class="prettyprint lang-bash">
 count=1
 until [ $count -ge 10]
 do
     echo $count
     count=`expr $count + 1`
 done
+
 </code></pre>
-<h2 id="for-loop">For loop</h2>
+
+<h2>For loop</h2>
+
 <p>This program scans the folders/files in the present working directory and display the name of the folders only.</p>
-<pre class="bash"><code>
+
+<pre><code class="prettyprint lang-bash">
 # item takes one value in each iteration
 for item in *
 do
@@ -691,24 +941,35 @@ do
     then
         echo $item
     fi
-done</code></pre>
-<h2 id="command-line-arguments">Command line arguments</h2>
-<p><code>@</code> is useful for extracting command line arguments.</p>
-<pre class="bash"><code># filename is args1.sh
+done
+</code></pre>
+
+<h2>Command line arguments</h2>
+
+<p><code class="prettyprint">@</code> is useful for extracting command line arguments.</p>
+
+<pre><code class="prettyprint lang-bash"># filename is args1.sh
 for args in $@
 do
     echo $args
-done</code></pre>
-<pre><code>arun@hpdv6:~$ bash args1.sh hello there i am arun
+done
+</code></pre>
+
+<pre><code class="prettyprint">arun@hpdv6:~$ bash args1.sh hello there i am arun
 hello
 there
 i
 am
-arun</code></pre>
-<h2 id="grep-command">grep command</h2>
+arun
+</code></pre>
+
+<h2>grep command</h2>
+
 <p>grep = globally search a regular expression and print.</p>
+
 <p>Used to search for patterns in text files.</p>
-<pre class="bash"><code># searches for the word &quot;money&quot; in the file &quot;filename&quot;
+
+<pre><code class="prettyprint lang-bash"># searches for the word &quot;money&quot; in the file &quot;filename&quot;
 grep money filename
 
 # searches for the word &quot;money&quot; in the file &quot;filename&quot;
@@ -737,11 +998,16 @@ grep -i -n -c -v money filename
 # -i means case insensitive
 # -n means line numbers
 # -v prints the lines not having the pattern
-grep -i -n -v money filename</code></pre>
-<h2 id="passwd-file">passwd file</h2>
+grep -i -n -v money filename
+</code></pre>
+
+<h2>passwd file</h2>
+
 <p>This file is present in <strong>/etc/</strong> folder. It has many useful and vital info about the users and account details. You have read permissions, but you cannot modify it. <strong>DO NOT MESS WITH THIS FILE</strong>. The system uses this file for many operations. If tampered or deleted, then depending on the level of tampering, the system programs may stop working or the OS might not boot up.</p>
+
 <p>It has user information and information about system programs and other special programs that have vital functions. This is an example of how a passwd file looks like.</p>
-<pre class="bash"><code>arun@hpdv6:~$ cat /etc/passwd
+
+<pre><code class="prettyprint lang-bash">arun@hpdv6:~$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -783,21 +1049,38 @@ saned:x:119:127::/var/lib/saned:/bin/false
 usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
 arun:x:1000:1000:Arun,,,:/home/arun:/bin/bash
 sddm:x:122:130:Simple Desktop Display Manager:/var/lib/sddm:/bin/false
-nvidia-persistenced:x:121:129:NVIDIA Persistence Daemon,,,:/:/sbin/nologin</code></pre>
+nvidia-persistenced:x:121:129:NVIDIA Persistence Daemon,,,:/:/sbin/nologin
+</code></pre>
+
 <p>Taking one entry and dissecting the 7 fields (separated by :),</p>
-<pre class="bash"><code>root:x:0:0:root:/root:/bin/bash</code></pre>
+
+<pre><code class="prettyprint lang-bash">root:x:0:0:root:/root:/bin/bash
+</code></pre>
+
 <p>First field is the user name or the program name.</p>
+
 <p>Second field is the password. If there is a <strong>x</strong>, then it means that the information is encrypted. Passwords are stored in the <strong>shadow</strong> file in the same folder and we do not have permissions to open/read that file.</p>
+
 <p>Third field is the User ID or UID. For root user, it is 0. UID 1-99 are pre-defined/reserved for system accounts that were created at the time of installation of OS. Beyond 99, the UIDs are defined for system accounts created afterwards.</p>
+
 <p>Fourth field is the group ID. Name ID notations as above.</p>
+
 <p>Fifth field is the name of the program/pc/user name etc., Also known as comment field.</p>
+
 <p>sixth field is the home folder or the folder where the program is present</p>
+
 <p>Seventh field is the default binary file (or shell) for doing stuff with the program/user</p>
-<h2 id="internal-file-separator">Internal file separator</h2>
+
+<h2>Internal file separator</h2>
+
 <p>If there are multiple parameters in a command, the internal file separator is used by the shell to differentiate the parameters. Usually the IFS is <strong>space</strong> and <strong>return</strong>. IFS can be modified manually. If modified, it presists till the terminal is active.</p>
-<pre class="bash"><code>IFS=: # modifies the IFS with :</code></pre>
-<h2 id="read-and-display-info-from-passwd-file">Read and display info from passwd file</h2>
-<pre class="bash"><code>
+
+<pre><code class="prettyprint lang-bash">IFS=: # modifies the IFS with :
+</code></pre>
+
+<h2>Read and display info from passwd file</h2>
+
+<pre><code class="prettyprint lang-bash">
 echo &quot;Enter user name:\c&quot;
 read logname
 IFS=:
@@ -809,9 +1092,12 @@ echo &quot;User ID = $3&quot;
 echo &quot;Group ID = $4&quot;
 echo &quot;Comment = $5&quot;
 echo &quot;Home folder = $6&quot;
-echo &quot;Shell folder = $7&quot;</code></pre>
-<h2 id="read-from-a-file-use-file-as-input">Read from a file / Use file as input</h2>
-<pre class="bash"><code>
+echo &quot;Shell folder = $7&quot;
+</code></pre>
+
+<h2>Read from a file / Use file as input</h2>
+
+<pre><code class="prettyprint lang-bash">
 echo &quot;enter a file name:\c&quot;
 read filename
 
@@ -839,12 +1125,19 @@ done
 
 # Return the input stream to the keyboard
 
-exec &lt; $terminal</code></pre>
-<h2 id="sleep-command">Sleep command</h2>
+exec &lt; $terminal
+</code></pre>
+
+<h2>Sleep command</h2>
+
 <p>Used to produce time delay in seconds.</p>
-<pre class="bash"><code>sleep 5 # 5 second delay</code></pre>
-<h2 id="program-to-count-the-number-of-words-and-lines-in-a-file">Program to count the number of words and lines in a file</h2>
-<pre class="bash"><code>
+
+<pre><code class="prettyprint lang-bash">sleep 5 # 5 second delay
+</code></pre>
+
+<h2>Program to count the number of words and lines in a file</h2>
+
+<pre><code class="prettyprint lang-bash">
 echo &quot;Enter the filename:\c&quot;
 read fname
 
@@ -866,45 +1159,74 @@ echo &quot;Number of lines:$nol&quot;
 echo &quot;Number of words:$now&quot;
 
 exec &lt; $terminal
+
 </code></pre>
-<h2 id="device-null">Device null</h2>
+
+<h2>Device null</h2>
+
 <p>If a command returns a lot of output and the output has to be suppressed without losing or modifying the exit status, then device null is useful. The output of the command can be redirected to this file. This file will take the output and removes it and helps the command execute successfully.</p>
-<pre class="bash"><code>who | grep &quot;$logname&quot; &gt; /dev/null
+
+<pre><code class="prettyprint lang-bash">who | grep &quot;$logname&quot; &gt; /dev/null
 # the output of command who is pipelined to grep.
 # the output of grep is sent to the null file.
 # the output of grep file gets deleted by the null file and
-# grep terminates safely without any error.</code></pre>
-<h2 id="log-in-another-user">Log in another user</h2>
+# grep terminates safely without any error.
+</code></pre>
+
+<h2>Log in another user</h2>
+
 <p>If there are multiple users in the system, then one user can login through another using the login command.</p>
-<pre class="bash"><code>sudo login
+
+<pre><code class="prettyprint lang-bash">sudo login
 [sudo] password for mainuser
 &lt;OS&gt; login: newuser_name
-password: password_newuser</code></pre>
+password: password_newuser
+</code></pre>
+
 <p>For the user to logout, use the keyword <strong>logout/exit</strong>.</p>
-<h2 id="send-receive-messages-to-users">Send / Receive messages to user(s)</h2>
+
+<h2>Send / Receive messages to user(s)</h2>
+
 <p>Users can send/receive messages via terminal.</p>
+
 <p>To enable users sending/receiving messages, use the keyword <strong>mesg</strong>. To write a message to the user, use the <strong>write</strong> command.</p>
-<pre class="bash"><code>mesg y # enable message
+
+<pre><code class="prettyprint lang-bash">mesg y # enable message
 mesg n # disable message
 
 write user2
 [write contents]
-[Terminate with Ctrl+D]</code></pre>
+[Terminate with Ctrl+D]
+</code></pre>
+
 <p>On pressing <strong>Enter</strong> key, the information is sent to user2 and the message gets displayed on the terminal of user2 with a timestamp. When user1 types <strong>Ctrl+D</strong>, the message to user2 terminates with an <strong>EOF</strong>, indicating the end of message and user2 can press <strong>Ctrl+D</strong> to close the message.</p>
+
 <p>Command <strong>finger</strong> is useful for displaying the users who have enabled/disabled messages. Those who have disabled the service have an asterix * on the <strong>Tty</strong>.</p>
-<h2 id="functions">Functions</h2>
+
+<h2>Functions</h2>
+
 <p>One can create own commands using functions.</p>
-<pre class="bash"><code>function_name()
+
+<pre><code class="prettyprint lang-bash">function_name()
 {
     # commands
-}</code></pre>
+}
+</code></pre>
+
 <p>Create a file with all the functions you need. Make that file executable (using <strong>chmod</strong>) and run that file first. When successful, the functions can be called in the terminal or any other shell script afterwards. The functions are available as long as the terminal is open.</p>
-<pre class="bash"><code>chmod +x func_file.sh
+
+<pre><code class="prettyprint lang-bash">chmod +x func_file.sh
 . func_file.sh # execute the file
-./func_file.sh # execute the file, Alternate way</code></pre>
+./func_file.sh # execute the file, Alternate way
+</code></pre>
+
 <p>To remove a particular function from the terminal in that instant, use <strong>unset</strong> command.</p>
-<pre class="bash"><code>unset function_name</code></pre>
-<h2 id="running-multiple-shell-files">Running Multiple Shell Files</h2>
+
+<pre><code class="prettyprint lang-bash">unset function_name
+</code></pre>
+
+<h2>Running Multiple Shell Files</h2>
+
 <p>Use the line <strong>bash filename.sh</strong> inside another shell file.</p>
 
             </div>
@@ -943,10 +1265,10 @@ write user2
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

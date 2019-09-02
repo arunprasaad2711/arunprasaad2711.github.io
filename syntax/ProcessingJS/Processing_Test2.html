@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,10 +124,13 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processing-test-2---rose-curves">Processing Test 2 - Rose Curves</h1>
+                <h1>Processing Test 2 - Rose Curves</h1>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#processing-test-2---rose-curves">Processing Test 2 - Rose Curves</a>
+
 <ul>
 <li><a href="#animation">Animation</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
@@ -135,14 +138,20 @@
 <li><a href="#status">Status</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="animation">Animation</h2>
-<iframe src="https://editor.p5js.org/arunprasaad2711/embed/cbzzwsqj1" width="100%" height="400px" style="border:0px;">
-</iframe>
-<h2 id="what-is-this">What is this?</h2>
-<p>This is a <code>p5js</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
-<h2 id="source-code">Source Code</h2>
-<pre class="javascript"><code>let time = 0;
+
+<h2>Animation</h2>
+
+<iframe src="https://editor.p5js.org/arunprasaad2711/embed/cbzzwsqj1" width="100%" height="400px" style="border:0px;"></iframe>
+
+<h2>What is this?</h2>
+
+<p>This is a <code class="prettyprint">p5js</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
+
+<h2>Source Code</h2>
+
+<pre><code class="prettyprint lang-javascript">let time = 0;
 let wave_x = [];
 let wave_y = [];
 var slider_n;
@@ -154,12 +163,12 @@ function setup() {
     button.mousePressed(resetSketch);
     button.position(35, 35);
 
-  
+
     // Numerator Slider variables
     slider_n = createSlider(0, 10, 2);
     slider_n.position(100, 25);
     slider_n.style(&#39;width&#39;, &#39;80px&#39;);
-  
+
     // Denominator Slider variables
     slider_d = createSlider(0, 10, 1);
     slider_d.position(100, 50);
@@ -171,7 +180,7 @@ function draw() {
     background(125);
     strokeWeight(1);
     translate(200, 200);
-  
+
     const n = slider_n.value();
     const d = slider_d.value();
     const k = n/d;
@@ -193,17 +202,17 @@ function draw() {
     circle(ox, oy, 10);
     noFill();
     circle(ox, oy, 2*radius);
-  
+
     let phase = 0.0*HALF_PI;
-    
+
     x += radius * cos(k * time - phase)*cos(time - phase);
     y += radius * cos(k * time - phase)*sin(time - phase);
 
     wave_x.push(x);
     wave_y.push(y);
-  
+
     var last = wave_x.length - 1;
-    
+
     fill(0, 0, 255);
     stroke(0, 0, 255);
     fill(0, 255, 0);
@@ -227,8 +236,11 @@ function draw() {
 function resetSketch() {
     wave_x = [];
     wave_y = [];
-}</code></pre>
-<h2 id="status">Status</h2>
+}
+</code></pre>
+
+<h2>Status</h2>
+
 <p>All done! Works like a charm!.</p>
 
             </div>
@@ -267,10 +279,10 @@ function resetSketch() {
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

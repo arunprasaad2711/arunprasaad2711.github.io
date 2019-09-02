@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,44 +124,55 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processing-test-3---fourier-transformation-demo">Processing Test 3 - Fourier Transformation Demo</h1>
-<h2 id="animation">Animation</h2>
-<iframe src="https://editor.p5js.org/arunprasaad2711/embed/0mXXIEAvE" width="100%" height="800px" style="border:0px;">
-</iframe>
-<h2 id="table-of-contents">Table of Contents</h2>
+                <h1>Processing Test 3 - Fourier Transformation Demo</h1>
+
+<h2>Animation</h2>
+
+<iframe src="https://editor.p5js.org/arunprasaad2711/embed/0mXXIEAvE" width="100%" height="800px" style="border:0px;"></iframe>
+
+<h2>Table of Contents</h2>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#processing-test-3---fourier-transformation-demo">Processing Test 3 - Fourier Transformation Demo</a>
+
 <ul>
 <li><a href="#animation">Animation</a></li>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#references">References</a></li>
-<li><a href="#how-is-this-done">How is this done?</a>
-<ul>
+<li><a href="#how-is-this-done">How is this done?</a></li>
 <li><a href="#step-1--extract-the-points-using-python-opencv">Step 1 : Extract the points using Python OpenCV</a></li>
-<li><a href="#step-2---write-the-dft-function-using-p5js">Step 2 - Write the DFT function using <code>p5.js</code></a></li>
+<li><a href="#step-2---write-the-dft-function-using-p5js">Step 2 - Write the DFT function using <code class="prettyprint">p5.js</code></a></li>
 <li><a href="#step-3---write-the-main-code">Step 3 - Write the main code</a></li>
-</ul></li>
 <li><a href="#status">Status</a></li>
 <li><a href="#acknowledgement">Acknowledgement</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="what-is-this">What is this?</h2>
-<p>This is a test page for checking out <code>p5.js</code> animation. This is the 5th javascript export version of <code>processing</code> programming language. Here, the fourier transformation of the boundary points of the eight note is taken and using the discrete fourier transformation of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates, a set of epicycles is used to recreate the figure.</p>
-<h2 id="references">References</h2>
+
+<h2>What is this?</h2>
+
+<p>This is a test page for checking out <code class="prettyprint">p5.js</code> animation. This is the 5th javascript export version of <code class="prettyprint">processing</code> programming language. Here, the fourier transformation of the boundary points of the eight note is taken and using the discrete fourier transformation of the $x$ and $y$ coordinates, a set of epicycles is used to recreate the figure.</p>
+
+<h2>References</h2>
+
 <ul>
 <li><a href="https://www.youtube.com/watch?v=MY4luNgGfms">Coding Challenge #130.1: Drawing with Fourier Transform and Epicycles video on YouTube by Daniel Shiffman</a></li>
 <li>Random google search</li>
 </ul>
-<h2 id="how-is-this-done">How is this done?</h2>
+
+<h2>How is this done?</h2>
+
 <p>This is the image</p>
-<div class="box align-center">
-<img src="eight_note.jpg" title="fig:" alt="Eight Note" />
-</div>
-<h3 id="step-1-extract-the-points-using-python-opencv">Step 1 : Extract the points using Python OpenCV</h3>
-<pre class="python"><code>import cv2
+
+<div class="box align-center">![Eight Note](eight_note.jpg)</div>
+
+<h3>Step 1 : Extract the points using Python OpenCV</h3>
+
+<pre><code class="prettyprint lang-python">import cv2
 import numpy as np
 
 # Load the image
@@ -194,9 +205,12 @@ with open(file_path, &#39;w&#39;) as f:
     f.write(&quot;%s\n&quot; % &#39;let drawing = [&#39;)
     for item in points:
         f.write(&quot;%s,\n&quot; % item)
-    f.write(&quot;%s\n&quot; % &#39;];&#39;)</code></pre>
-<p>The <code>logo.js</code> file will look like this:</p>
-<pre class="javascript"><code>let drawing = [
+    f.write(&quot;%s\n&quot; % &#39;];&#39;)
+</code></pre>
+
+<p>The <code class="prettyprint">logo.js</code> file will look like this:</p>
+
+<pre><code class="prettyprint lang-javascript">let drawing = [
 {&#39;x&#39;: 197, &#39;y&#39;: 21},
 {&#39;x&#39;: 196, &#39;y&#39;: 22},
 {&#39;x&#39;: 195, &#39;y&#39;: 22},
@@ -207,22 +221,28 @@ with open(file_path, &#39;w&#39;) as f:
 {&#39;x&#39;: 200, &#39;y&#39;: 21},
 {&#39;x&#39;: 199, &#39;y&#39;: 21},
 {&#39;x&#39;: 198, &#39;y&#39;: 21},
-];</code></pre>
-<h3 id="step-2---write-the-dft-function-using-p5.js">Step 2 - Write the DFT function using <code>p5.js</code></h3>
-<p>The Discrete Fourier Transform (DFT) of <span class="math inline">\(N\)</span> complex numbers <span class="math inline">\(\{x_n\} := x_0, x_1, \dots, x_{n-1}\)</span> is another sequence of <span class="math inline">\(N\)</span> complex numbers <span class="math inline">\(\{X_n\} := X_0, X_1, \dots, X_{n-1}\)</span> given by</p>
-<p><span class="math display">\[
-\begin{align*}
-X_k &amp;= \sum_{n=0}^{N-1}x_n.e^{-\frac{i2\pi}{N}kn}\\
-    &amp;= \sum_{n=0}^{N-1}x_n.[cos(2\pi kn/N) - i.sin(2\pi kn/N)]
-\end{align*}
-\]</span></p>
-<p>The equivalent source code is written in the file <code>fourier.js</code>.</p>
-<pre class="javascript"><code>function dft(x)
+];
+</code></pre>
+
+<h3>Step 2 - Write the DFT function using <code class="prettyprint">p5.js</code></h3>
+
+<p>The Discrete Fourier Transform (DFT) of $N$ complex numbers ${x<em>n} := x</em>0, x<em>1, \dots, x</em>{n-1}$ is another sequence of $N$ complex numbers ${X<em>n} := X</em>0, X<em>1, \dots, X</em>{n-1}$ given by</p>
+
+<p>$$
+\begin{align<em>}
+X<em>k &amp;= \sum</em>{n=0}^{N-1}x<em>n.e^{-\frac{i2\pi}{N}kn}\
+    &amp;= \sum</em>{n=0}^{N-1}x_n.[cos(2\pi kn/N) - i.sin(2\pi kn/N)]
+\end{align</em>}
+$$</p>
+
+<p>The equivalent source code is written in the file <code class="prettyprint">fourier.js</code>.</p>
+
+<pre><code class="prettyprint lang-javascript">function dft(x)
 {
-    
+
     let X = [];
     const N = x.length;
-  
+
     for (let k = 0; k &lt; N; k++)
     {
         let re = 0;
@@ -233,20 +253,23 @@ X_k &amp;= \sum_{n=0}^{N-1}x_n.e^{-\frac{i2\pi}{N}kn}\\
             re += x[n] * cos(phi);
             im -= x[n] * sin(phi);
         }
-      
+
         re = re / N;
         im = im / N;
-      
+
         let freq = k;
         let amp = sqrt(re * re + im * im);
         let phase = atan2(im, re);
-        
+
         X[k] = {re, im, freq, amp, phase};
     }
     return X;
-}</code></pre>
-<h3 id="step-3---write-the-main-code">Step 3 - Write the main code</h3>
-<pre class="javascript"><code>let x = [];
+}
+</code></pre>
+
+<h3>Step 3 - Write the main code</h3>
+
+<pre><code class="prettyprint lang-javascript">let x = [];
 let y = [];
 let fourierX = [];
 let fourierY = [];
@@ -260,15 +283,15 @@ function setup() {
     x[i] = drawing[i].x;
     y[i] = drawing[i].y;
   }
-  
+
   // for(let i = 0; i &lt; 100; i+= skip){
   //   x[i] = i;
   //   y[i] = i;
   // }
-  
+
   fourierX = dft(x);
   fourierY = dft(y);
-  
+
   fourierX.sort((a, b) =&gt; b.amp - a.amp);
   fourierY.sort((a, b) =&gt; b.amp - a.amp);
 }
@@ -279,13 +302,13 @@ function epiCycle(x, y, rotation, fourier)
   {
     let prev_x = x;
     let prev_y = y;
-    
+
     let freq = fourier[i].freq;
     let radius = fourier[i].amp;
     let angle = rotation + freq * time + fourier[i].phase;
     x += radius * cos(angle);
     y += radius * sin(angle);
-    
+
     stroke(255, 100);
     noFill();
     ellipse(prev_x, prev_y, radius * 2);
@@ -297,13 +320,13 @@ function epiCycle(x, y, rotation, fourier)
 
 function draw() {
   background(0);
-  
+
   let vx = epiCycle(300, 50, 0, fourierX);
   let vy = epiCycle(50, 200, HALF_PI, fourierY);
   let v = createVector(vx.x, vy.y);
-  
+
   path.unshift(v);
-  
+
   // translate(200, 0);
   line(vx.x, vx.y, v.x, v.y);
   line(vy.x, vy.y, v.x, v.y);
@@ -313,20 +336,25 @@ function draw() {
     vertex(path[i].x, path[i].y);
   }
   endShape();
-  
+
   const dt = TWO_PI / fourierY.length;
   time += dt;
-  
+
   if (time &gt; TWO_PI)
   {
     time = 0;
     path.pop();
   }
-}</code></pre>
-<h2 id="status">Status</h2>
-<p>It works pretty slowly! The code is quite slow as it calculates more than 1700 components for <span class="math inline">\(x\)</span> coordinates and another 1700+ components for <span class="math inline">\(y\)</span> coordinates respectively.</p>
-<h2 id="acknowledgement">Acknowledgement</h2>
-<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting me interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
+}
+</code></pre>
+
+<h2>Status</h2>
+
+<p>It works pretty slowly! The code is quite slow as it calculates more than 1700 components for $x$ coordinates and another 1700+ components for $y$ coordinates respectively.</p>
+
+<h2>Acknowledgement</h2>
+
+<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting me interested in <code class="prettyprint">p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
 
             </div>
         </section>
@@ -364,10 +392,10 @@ function draw() {
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

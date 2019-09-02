@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,10 +124,13 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="plotly">Plotly</h1>
+                <h1>Plotly</h1>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#plotly">Plotly</a>
+
 <ul>
 <li><a href="#what-is-it">What is it?</a></li>
 <li><a href="#how-to-get-started">How to get started?</a></li>
@@ -135,23 +138,39 @@
 <li><a href="#how-to-plot-using-plotly">How to Plot using plotly</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="what-is-it">What is it?</h2>
+
+<h2>What is it?</h2>
+
 <p>It is a plotting library made for python for making interactive plots in python displayed in html files.</p>
-<h2 id="how-to-get-started">How to get started?</h2>
-<p>Install plotly using <code>pip</code>.</p>
-<pre class="bash"><code>pip install plotly</code></pre>
-<p>You can also use <code>conda</code> as well.</p>
-<pre class="bash"><code>conda install -c conda-forge plotly</code></pre>
-<h2 id="to-remember">To remember</h2>
+
+<h2>How to get started?</h2>
+
+<p>Install plotly using <code class="prettyprint">pip</code>.</p>
+
+<pre><code class="prettyprint lang-bash">pip install plotly
+</code></pre>
+
+<p>You can also use <code class="prettyprint">conda</code> as well.</p>
+
+<pre><code class="prettyprint lang-bash">conda install -c conda-forge plotly
+</code></pre>
+
+<h2>To remember</h2>
+
 <p>Plotly has two variants:</p>
+
 <ul>
 <li>An offline variant</li>
 <li>An online variant</li>
 </ul>
+
 <p>Both of them are used for making plots. The difference is that the offline version does not the data to be stored in the plotly account.</p>
-<h2 id="how-to-plot-using-plotly">How to Plot using plotly</h2>
-<pre class="python"><code># Imports
+
+<h2>How to Plot using plotly</h2>
+
+<pre><code class="prettyprint lang-python"># Imports
 import numpy as np
 import plotly.graph_objs as go
 import plotly.offline as ply
@@ -213,7 +232,8 @@ data = [trace1, trace2, trace3]
 fig = dict(data = data, layout = layout)
 
 ### Plot the figure in a html file
-ply.plot(data, filename=&quot;plotly_test1.html&quot;)</code></pre>
+ply.plot(data, filename=&quot;plotly_test1.html&quot;)
+</code></pre>
 
             </div>
         </section>
@@ -251,10 +271,10 @@ ply.plot(data, filename=&quot;plotly_test1.html&quot;)</code></pre>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

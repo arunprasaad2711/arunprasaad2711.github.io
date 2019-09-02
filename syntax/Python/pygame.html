@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,12 +124,23 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="pygame">Pygame</h1>
+                <h1>Pygame</h1>
+
 <p>It is a simple gaming library framework for Python.</p>
-<h2 id="installation">Installation</h2>
-<p>Use anyone of the following: * Conda * pip * wheel packages</p>
-<h2 id="mandatory-requirement">Mandatory requirement</h2>
-<pre class="python"><code>import pygame
+
+<h2>Installation</h2>
+
+<p>Use anyone of the following:</p>
+
+<ul>
+<li>Conda</li>
+<li>pip</li>
+<li>wheel packages</li>
+</ul>
+
+<h2>Mandatory requirement</h2>
+
+<pre><code class="prettyprint lang-Python">import pygame
 
 # This initializes all the functions inside the module
 # this init function returns a tuple if the initialization is successful
@@ -148,9 +159,13 @@ pygame.display.update()
 # closes the functions
 pygame.quit()
 # quit the screen
-quit()</code></pre>
-<h2 id="title">Title</h2>
-<pre class="python"><code>pygame.display.set_caption(&quot;title&quot;)</code></pre>
+quit()
+</code></pre>
+
+<h2>Title</h2>
+
+<pre><code class="prettyprint lang-Python">pygame.display.set_caption(&quot;title&quot;)
+</code></pre>
 
             </div>
         </section>
@@ -188,10 +203,10 @@ quit()</code></pre>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

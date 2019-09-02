@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,13 +124,19 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
+                <h1>Introduction to Scientific Computation Using Python</h1>
+
 <p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
+
 <p>Video 4 : Operations Part 1</p>
-<h2 id="table-of-contents">Table of Contents</h2>
+
+<h2>Table of Contents</h2>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
+
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#basic-arithmetic-operations-in-python">Basic Arithmetic Operations in Python</a></li>
@@ -138,80 +144,82 @@
 <li><a href="#output">Output</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="basic-arithmetic-operations-in-python">Basic Arithmetic Operations in Python</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Operator</th>
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Operation</th>
-<th style="text-align: center;">Example</th>
-<th style="text-align: center;">Result</th>
-<th style="text-align: center;">Remark</th>
+
+<h2>Basic Arithmetic Operations in Python</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Operator</th>
+<th style="text-align: center">Name</th>
+<th style="text-align: center">Operation</th>
+<th style="text-align: center">Example</th>
+<th style="text-align: center">Result</th>
+<th style="text-align: center">Remark</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">+</td>
-<td style="text-align: center;">Addition</td>
-<td style="text-align: center;"><code>a + b</code></td>
-<td style="text-align: center;">5 + 6</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">Normal Addition</td>
+</thead><tbody>
+<tr>
+<td style="text-align: center">+</td>
+<td style="text-align: center">Addition</td>
+<td style="text-align: center"><code class="prettyprint">a + b</code></td>
+<td style="text-align: center">5 + 6</td>
+<td style="text-align: center">11</td>
+<td style="text-align: center">Normal Addition</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Subtraction</td>
-<td style="text-align: center;"><code>a - b</code></td>
-<td style="text-align: center;">5 - 6</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">Normal Subtraction</td>
+<tr>
+<td style="text-align: center">-</td>
+<td style="text-align: center">Subtraction</td>
+<td style="text-align: center"><code class="prettyprint">a - b</code></td>
+<td style="text-align: center">5 - 6</td>
+<td style="text-align: center">-1</td>
+<td style="text-align: center">Normal Subtraction</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">*</td>
-<td style="text-align: center;">Multiplication</td>
-<td style="text-align: center;"><code>a * b</code></td>
-<td style="text-align: center;">5 * 6</td>
-<td style="text-align: center;">30</td>
-<td style="text-align: center;">Normal Multiplication</td>
+<tr>
+<td style="text-align: center">*</td>
+<td style="text-align: center">Multiplication</td>
+<td style="text-align: center"><code class="prettyprint">a * b</code></td>
+<td style="text-align: center">5 * 6</td>
+<td style="text-align: center">30</td>
+<td style="text-align: center">Normal Multiplication</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">/</td>
-<td style="text-align: center;">Division</td>
-<td style="text-align: center;"><code>a / b</code></td>
-<td style="text-align: center;">6 / 4</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">Normal Division</td>
+<tr>
+<td style="text-align: center">/</td>
+<td style="text-align: center">Division</td>
+<td style="text-align: center"><code class="prettyprint">a / b</code></td>
+<td style="text-align: center">6 / 4</td>
+<td style="text-align: center">1.5</td>
+<td style="text-align: center">Normal Division</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">//</td>
-<td style="text-align: center;">Floor Division</td>
-<td style="text-align: center;"><code>a // b</code></td>
-<td style="text-align: center;">15 // 4</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">Division + removes decimal part</td>
+<tr>
+<td style="text-align: center">//</td>
+<td style="text-align: center">Floor Division</td>
+<td style="text-align: center"><code class="prettyprint">a // b</code></td>
+<td style="text-align: center">15 // 4</td>
+<td style="text-align: center">3</td>
+<td style="text-align: center">Division + removes decimal part</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">%</td>
-<td style="text-align: center;">Modulus</td>
-<td style="text-align: center;"><code>a % b</code></td>
-<td style="text-align: center;">22 % 4</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">Returns the Remainder of Division</td>
+<tr>
+<td style="text-align: center">%</td>
+<td style="text-align: center">Modulus</td>
+<td style="text-align: center"><code class="prettyprint">a % b</code></td>
+<td style="text-align: center">22 % 4</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">Returns the Remainder of Division</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">**</td>
-<td style="text-align: center;">Exponentiation</td>
-<td style="text-align: center;"><code>a ** b</code></td>
-<td style="text-align: center;">2 ** 4</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">Same as <code>2*2*2*2</code>. Exponent</td>
+<tr>
+<td style="text-align: center">**</td>
+<td style="text-align: center">Exponentiation</td>
+<td style="text-align: center"><code class="prettyprint">a ** b</code></td>
+<td style="text-align: center">2 ** 4</td>
+<td style="text-align: center">16</td>
+<td style="text-align: center">Same as <code class="prettyprint">2*2*2*2</code>. Exponent</td>
 </tr>
-</tbody>
-</table>
-<h2 id="program-to-test-all-basic-operations">Program to test all Basic Operations</h2>
-<pre class="python"><code>
+</tbody></table>
+
+<h2>Program to test all Basic Operations</h2>
+
+<pre><code class="prettyprint lang-python">
 a = 11
 b = 2
 
@@ -231,16 +239,20 @@ print(&quot;a // b = &quot;, a // b)
 print(&quot;a % b = &quot;, a % b)
 # Exponentiation
 print(&quot;a ** b = &quot;, a ** b)
+
 </code></pre>
-<h2 id="output">Output</h2>
-<pre><code>a =  11  and b =  2
+
+<h2>Output</h2>
+
+<pre><code class="prettyprint">a =  11  and b =  2
 a + b =  13
 a - b =  9
 a * b =  22
 a / b =  5.5
 a // b =  5
 a % b =  1
-a ** b =  121</code></pre>
+a ** b =  121
+</code></pre>
 
             </div>
         </section>
@@ -278,10 +290,10 @@ a ** b =  121</code></pre>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

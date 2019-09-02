@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,26 +124,36 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="processingjs-games-and-simulations">ProcessingJS Games, and Simulations</h1>
+                <h1>ProcessingJS Games, and Simulations</h1>
+
 <p>ProcessingJS can be used for making games and visualizations. And as a consequence, you can make illustrations as well!</p>
-<h2 id="sources">Sources:</h2>
+
+<h2>Sources:</h2>
+
 <ul>
 <li>Khan Academy computer programming course on Advanced JS: Games and Visualizations, and Advanced JS: Natural Simulations</li>
 </ul>
-<h2 id="scenes-and-buttons">Scenes and buttons</h2>
-<p>Scenes are snapshots in a game.</p>
+
+<h2>Scenes and buttons</h2>
+
+<p>Scenes are snapshots in a game. </p>
+
 <ul>
-<li>You can use functions to generate scenes and call them one by one by using <code>if</code> statement logics and mouse pressed keywords.</li>
+<li>You can use functions to generate scenes and call them one by one by using <code class="prettyprint">if</code> statement logics and mouse pressed keywords.</li>
 <li>Creating buttons and clicking them can generate function calls.
+
 <ul>
 <li>For buttons to work, create a button and use logics to see if the mouse click happens on the mouse region. If true, invoke a function call.</li>
 <li>If possible, make the buttons generic so that they can be produced from a function given with an input object. This makes the creation easier.</li>
 </ul></li>
 <li>Interactive scenes can be made by creating functions and executing them whenever a mouse is pressed or a button is pressed.</li>
 </ul>
-<h2 id="randomness">Randomness</h2>
+
+<h2>Randomness</h2>
+
 <p>A random walker code:</p>
-<pre class="javascript"><code>
+
+<pre><code class="prettyprint lang-JavaScript">
 // Adapted from Dan Shiffman, natureofcode.com
 
 var Walker = function() {
@@ -176,6 +186,7 @@ var draw = function() {
     w.walk();
     w.display();
 };
+
 </code></pre>
 
             </div>
@@ -214,10 +225,10 @@ var draw = function() {
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,13 +124,19 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
+                <h1>Introduction to Scientific Computation Using Python</h1>
+
 <p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
+
 <p>Video 5 : Area of a Triangle using Heron Formula.</p>
-<h2 id="table-of-contents">Table of Contents</h2>
+
+<h2>Table of Contents</h2>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
+
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#area-of-a-triangle">Area of a Triangle</a></li>
@@ -139,17 +145,26 @@
 <li><a href="#output">Output</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="area-of-a-triangle">Area of a Triangle</h2>
-<p>A triangle has many formulae to find its area. One formulae that involves only the sides of the triangle is the Heron’s formula or the Hero’s formula.</p>
-<p>If <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are the sides of a triangle ABC, then the area of the triangle <span class="math inline">\(\Delta\)</span> is given by</p>
-<p><span class="math display">\[\Delta = \sqrt{s(s-a)(s-b)(s-c)}\]</span></p>
-<p>where <span class="math inline">\(s = \displaystyle{\frac{a + b + c}{2}}\)</span> is the semi-perimeter of the triangle.</p>
-<h2 id="interactive-animation-using-geogebra">Interactive animation using Geogebra</h2>
-<iframe scrolling="no" title="TaylorSeries_Demo" src="https://www.geogebra.org/material/iframe/id/n4pxcth2/width/1366/height/687/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="600px" style="border:0px;">
-</iframe>
-<h2 id="program">Program</h2>
-<pre class="python"><code>&#39;&#39;&#39;
+
+<h2>Area of a Triangle</h2>
+
+<p>A triangle has many formulae to find its area. One formulae that involves only the sides of the triangle is the Heron&#39;s formula or the Hero&#39;s formula.</p>
+
+<p>If $a$, $b$, and $c$ are the sides of a triangle ABC, then the area of the triangle $\Delta$ is given by</p>
+
+<p>$$\Delta = \sqrt{s(s-a)(s-b)(s-c)}$$</p>
+
+<p>where $s = \displaystyle{\frac{a + b + c}{2}}$ is the semi-perimeter of the triangle.</p>
+
+<h2>Interactive animation using Geogebra</h2>
+
+<iframe scrolling="no" title="TaylorSeries_Demo" src="https://www.geogebra.org/material/iframe/id/n4pxcth2/width/1366/height/687/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="600px" style="border:0px;"> </iframe>
+
+<h2>Program</h2>
+
+<pre><code class="prettyprint lang-python">&#39;&#39;&#39;
 Program to calculate the area of a triangle using Heron&#39;s formulae
 &#39;&#39;&#39;
 
@@ -165,12 +180,16 @@ s = (a + b + c)*0.5
 Area = (s*(s-a)*(s-b)*(s-c))**0.5
 
 # Print the result
-print(&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;.format(a, b, c, Area))</code></pre>
-<h2 id="output">Output</h2>
-<pre><code>Enter the side &#39;a&#39; of the triangle:3
+print(&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;.format(a, b, c, Area))
+</code></pre>
+
+<h2>Output</h2>
+
+<pre><code class="prettyprint">Enter the side &#39;a&#39; of the triangle:3
 Enter the side &#39;b&#39; of the triangle:4
 Enter the side &#39;c&#39; of the triangle:5
-The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</code></pre>
+The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0
+</code></pre>
 
             </div>
         </section>
@@ -208,10 +227,10 @@ The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</code><
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

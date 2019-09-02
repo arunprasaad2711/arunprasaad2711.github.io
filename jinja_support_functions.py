@@ -65,10 +65,10 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 		# system("pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {} > temp.html".format(title))
 
 		# This was the standard pandoc fix. Syntax highlight pushed to highlight.js
-		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
+		# system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
 
 		# This is the new one! It works similar to pandoc. syntax highlight pushed to prism.js or google prettify. Prefer the later.
-		# system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
+		system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
 
 		# by far, the slowest one! it ignores html tags. but surprisingly catches the syntax highlights
 		## DO NOT USE THIS!

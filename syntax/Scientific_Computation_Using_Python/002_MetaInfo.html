@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,35 +124,43 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
+                <h1>Introduction to Scientific Computation Using Python</h1>
+
 <p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
+
 <p>Video 2 : Meta Information and Basics</p>
-<h2 id="table-of-contents">Table of Contents</h2>
+
+<h2>Table of Contents</h2>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
+
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#benefits-of-these-videos">Benefits of these Videos</a></li>
 <li><a href="#why-python---funny-note">Why Python? - Funny Note</a></li>
 <li><a href="#why-python---serious-note">Why Python? - Serious note</a></li>
 <li><a href="#is-python-absolutely-advantageous">Is Python absolutely advantageous?</a></li>
-<li><a href="#different-versions-of-python">Different Versions of Python</a>
-<ul>
+<li><a href="#different-versions-of-python">Different Versions of Python</a></li>
 <li><a href="#python-2---legacy">Python 2 - Legacy</a></li>
 <li><a href="#python-3---future">Python 3 - Future</a></li>
-</ul></li>
 <li><a href="#so-what-to-look-for-in-any-programming-language">So, what to look for in any programming language?</a></li>
-<li><a href="#lets-write-our-first-program">Let’s write our first program</a></li>
+<li><a href="#lets-write-our-first-program">Let&#39;s write our first program</a></li>
 <li><a href="#program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program to ask the name, temperature, and rainfall of a place and print it</a></li>
 <li><a href="#comments-and-docstrings">Comments and Docstrings</a></li>
 <li><a href="#input-command">Input Command</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="benefits-of-these-videos">Benefits of these Videos</h2>
+
+<h2>Benefits of these Videos</h2>
+
 <ul>
 <li><strong>Short term benefits:</strong>
+
 <ul>
 <li>Useful for Assignments</li>
 <li>Learning programming in a simpler way</li>
@@ -161,6 +169,7 @@
 <li>Have a tool to solve simple and complex problems</li>
 </ul></li>
 <li><strong>Long term benefits:</strong>
+
 <ul>
 <li>Skills are directly applicable in research</li>
 <li>Helpful to cut-down pre-research timing (Finding fixes, looking for solutions etc.,)</li>
@@ -168,11 +177,17 @@
 <li>You can almost all the fundamental tools</li>
 </ul></li>
 </ul>
+
 <p>All the examples here are chosen carefully so that you all get a broad exposure to a variety of programming tools and useful functions and libraries.</p>
-<h2 id="why-python---funny-note">Why Python? - Funny Note</h2>
+
+<h2>Why Python? - Funny Note</h2>
+
 <p><img src="images/python.png" height="300" width="300"></p>
-<p>Source: http://xkcd.com/353/</p>
-<h2 id="why-python---serious-note">Why Python? - Serious note</h2>
+
+<p>Source: <a href="http://xkcd.com/353/">http://xkcd.com/353/</a></p>
+
+<h2>Why Python? - Serious note</h2>
+
 <ul>
 <li>Free, open source, cross platform</li>
 <li><strong>Object Oriented</strong>, <strong>modern</strong>, <strong>interpreted</strong> Programming Language</li>
@@ -186,41 +201,61 @@
 <li>Can be used for making GUI apps, OS, web frame works etc.,</li>
 <li>Most importantly, you get to avoid <strong>Software Piracy Issues</strong></li>
 </ul>
-<h2 id="is-python-absolutely-advantageous">Is Python absolutely advantageous?</h2>
-<p><strong>No!</strong> Beacuse no programming language is perfect. Then why to choose Python?,</p>
+
+<h2>Is Python absolutely advantageous?</h2>
+
+<p><strong>No!</strong>
+Beacuse no programming language is perfect.
+Then why to choose Python?,</p>
+
 <ul>
 <li>You love programming in general and want to explore a lot,</li>
 <li>You like the language,</li>
 <li>You want to do a variety of programming with a single main language,
+
 <ul>
 <li>eg: Webcrawling, Machine Learning, Data Analysis, Software development, Web development etc.,</li>
 </ul></li>
 <li>Not many licensing restrictions,</li>
 <li>Work demands,</li>
 </ul>
+
 <p>Bottom line : Python is good, but not undisputed.</p>
+
 <p>Other programming languages that are good : R, Julia, Sage, Mathematica, Maple, Matlab, Fortran, C, C++, IDL, Java, JavaScript, etc,</p>
-<h2 id="different-versions-of-python">Different Versions of Python</h2>
+
+<h2>Different Versions of Python</h2>
+
 <p>As of 2019, there are two versions of the Python Language: The Legacy 2.x series and the future 3.x series. Python 3.x came to existence because the founder of Python, Guido van Rossum wanted to add more features to the language. The problem was that adding those features meant dismantling the major framework of Python 2.x and rewrite a significant portion of the language. Consequently, to make sure that the already exisiting programs work well and to make sure the new features get implemented, the old version of python, namely 2.x remained as it is for backward compatibility, while the newer version of python namely 3.x has the new features added to it.</p>
+
 <p>The result of this decision is the exisitence of 2 distinct versions of python with a lot of similarities on the top, with many differences underneath.</p>
-<h3 id="python-2---legacy">Python 2 - Legacy</h3>
+
+<h3>Python 2 - Legacy</h3>
+
 <ul>
 <li>Old version of Python</li>
 <li>Legacy Codes built on it</li>
 <li>No new version anymore</li>
 <li>Library Migration going on</li>
 </ul>
-<h3 id="python-3---future">Python 3 - Future</h3>
+
+<h3>Python 3 - Future</h3>
+
 <ul>
 <li>Newer version of Python</li>
 <li>The future of Python</li>
 <li>Revamped internal architecture - supports future technological implementations</li>
 <li>(Almost all) libraries are translated</li>
 </ul>
+
 <p>We are in the <strong>transition</strong> period wherein we have access to use both the versions of Python. In the future, Python 2 will be obsolete, and in this transition period, almost all the libraries are being converted from Python 2 to Python 3. Infact, new libraries are being made in Python 3 extensively.</p>
+
 <p>Consequently, as of 2019, Python 2.x series is stopping all major releases and releasing only sub releases for maintenance purposes. Other than that, the most active development is focussed on Python 3. The support and maintenance is only for people to transition from python 2.x to 3.x soon.</p>
-<h2 id="so-what-to-look-for-in-any-programming-language">So, what to look for in any programming language?</h2>
+
+<h2>So, what to look for in any programming language?</h2>
+
 <p>This is a (personal) checklist to keep in mind to pick a programing language for scientific computation.</p>
+
 <ul>
 <li>Basic data types, data conversions,</li>
 <li>Machine Scalability,</li>
@@ -238,10 +273,14 @@
 <li>Executing multiple files simultaneously</li>
 <li>Plotting and visualization facility,</li>
 </ul>
-<h2 id="lets-write-our-first-program">Let’s write our first program</h2>
-<p>Open up a Text Editor and save a file with the extension <code>.py</code></p>
-<h2 id="program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program to ask the name, temperature, and rainfall of a place and print it</h2>
-<pre class="python"><code>&quot;&quot;&quot;
+
+<h2>Let&#39;s write our first program</h2>
+
+<p>Open up a Text Editor and save a file with the extension <code class="prettyprint">.py</code></p>
+
+<h2>Program to ask the name, temperature, and rainfall of a place and print it</h2>
+
+<pre><code class="prettyprint lang-python">&quot;&quot;&quot;
 Program to ask the name, temperature, and rainfall of a place and print it.
 &quot;&quot;&quot;
 
@@ -255,26 +294,39 @@ rainfall = input(&quot;Enter the rainfall recorded today in mm:&quot;)
 temperature = float(input(&quot;Enter the temperature recorded today in Celsius:&quot;))
 
 # Print statement
-print(&quot;In &quot;, place, &quot; today it rained &quot;, rainfall, &quot; mm  and the temperature is&quot;, temperature, &quot; degree celsius&quot;)</code></pre>
-<h2 id="comments-and-docstrings">Comments and Docstrings</h2>
+print(&quot;In &quot;, place, &quot; today it rained &quot;, rainfall, &quot; mm  and the temperature is&quot;, temperature, &quot; degree celsius&quot;)
+</code></pre>
+
+<h2>Comments and Docstrings</h2>
+
 <p>Comment - Lines that are ignored when the program is run. Used for excluding codes and for including messages.</p>
-<pre class="python"><code>
+
+<pre><code class="prettyprint lang-python">
 # This is a single line comment
 # Comment begins with a hash # symbol
+
 </code></pre>
+
 <p>Docstrings - Document strings. Multi-line comments. But more useful for including help/direction messages that appear when help utilities are called. In libraries, this is used as a documentation/help message for functions and classes.</p>
-<pre class="python"><code>&quot;&quot;&quot;
+
+<pre><code class="prettyprint lang-python">&quot;&quot;&quot;
     This is a Docstring. It starts and ends with 
     triple &quot; or triple &#39; quotes. Mix and match does not work!
 &quot;&quot;&quot;
 
 &#39;&#39;&#39;
     This is also a DocString
-&#39;&#39;&#39;</code></pre>
-<h2 id="input-command">Input Command</h2>
+&#39;&#39;&#39;
+</code></pre>
+
+<h2>Input Command</h2>
+
 <p>Input command - Used for getting input from user to a variable.</p>
-<pre class="python"><code>n = input(&#39;Enter the value for n&#39;) # Default string input
-n = float(input(&#39;Enter the value for n&#39;)) # Type casted input</code></pre>
+
+<pre><code class="prettyprint lang-python">n = input(&#39;Enter the value for n&#39;) # Default string input
+n = float(input(&#39;Enter the value for n&#39;)) # Type casted input
+</code></pre>
+
 <ul>
 <li>Default string input - that is, the function assumes data type to be string automatically.</li>
 <li>Explicit type casting (manually changing the data type) is used to control data types.</li>
@@ -316,10 +368,10 @@ n = float(input(&#39;Enter the value for n&#39;)) # Type casted input</code></pr
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

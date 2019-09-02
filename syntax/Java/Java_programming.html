@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,8 +124,9 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="java-programming">Java Programming</h1>
-<pre class="java"><code>
+                <h1>Java Programming</h1>
+
+<pre><code class="prettyprint lang-Java">
 /* Program to print hello world in Java */
 
 // In Java, everything begins with a class
@@ -139,20 +140,20 @@ class hello
         System.out.println(&quot;Hello World!&quot;);
         // A versatile print line statement. (can print in file/output)
         // print line has a return statement
-        
+
         double x, y, z; // Double variables
         x = 7.8;
         y = 9.4;
         // simple initializations
         z = x + y; // addition
-        
+
         // ASMD + - * /
         // modulus %
         // increment decrement ++a, a++, --a, a--,
         // assignment operators: a += 6, b -=5, c *= 1, d /=2, e %= 2
-        
+
         // int a, b, c; // Integer variables
-        
+
         System.out.print(&quot;The sum of x = &quot;);
         // Prints a string or a variable as it is without any return
         System.out.print(x);
@@ -164,8 +165,10 @@ class hello
     // to compile, use javac &lt;filename.java&gt;
     // to run, use java &lt;classname.class&gt;
 }
+
 </code></pre>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /* Program for getting user input via scanner */
 
 import java.util.Scanner;
@@ -179,22 +182,24 @@ class scan
     // main method
     public static void main(String args[])
     {
-        
+
         Scanner x = new Scanner(System.in);
         // prepares a scanner variable to get data from the user!
-        
+
         System.out.println(x.nextLine());
         // x.nextLine() invokes the scanner call. The data is received
         // as a string due to nextLine() method
         // println method prints the result
-        
+
     }
     // to compile, use javac &lt;filename.java&gt;
     // to run, use java &lt;classname.class&gt;
 }
 
+
 </code></pre>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /* Calculator Program */
 
 import java.util.Scanner;
@@ -205,31 +210,33 @@ class calculator
     public static void main(String args[])
     {
         double num1, num2, ans;
-        
+
         Scanner x = new Scanner(System.in);
         // Setting a Scanner variable to get data from user!
-        
+
         System.out.println(&quot;Enter number 1:&quot;);
         // for user clarity
         num1 = x.nextDouble();
         // This invokes the scanner call to get a value
         // value of x gets converted into a double and assigned to num1
-        
+
         System.out.println(&quot;Enter number 2:&quot;);
         // for user clarity
         num2 = x.nextDouble();
         // This invokes the scanner call to get a value
         // the old value is replaced by the new user value
         // value of x gets converted into a double and assigned to num2
-        
+
         ans = num1 + num2;
         System.out.print(&quot;The answer is &quot;);
         System.out.println(ans);
     }
 }
 
+
 </code></pre>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /* Program to demonstrate if clause and switch case */
 
 class constructs
@@ -237,10 +244,10 @@ class constructs
     public static void main(String args[])
     {
         int test = 4;
-        
+
         // Relational operators == &gt; &lt; &gt;= &lt;= !=
         // Logical operators &amp;&amp; || !
-        
+
         if (test == 9)
         {
             System.out.println(&quot;test is 9&quot;);
@@ -271,7 +278,7 @@ class constructs
         {
             System.out.println(&quot;test is not at all 9&quot;);
         }
-        
+
         switch(test)
         {
             case 0:
@@ -298,9 +305,12 @@ class constructs
         }
     }
 }
+
 </code></pre>
+
 <p>Nesting is possible with if statements</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 15
@@ -350,8 +360,10 @@ public class nested_if
     }
 }
 
+
 </code></pre>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 10
@@ -372,9 +384,12 @@ public class while_loop
         }
     }
 }
+
 </code></pre>
+
 <p>Using Multiple classes is easy</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 11 part 1
@@ -405,9 +420,12 @@ public class classes2
        System.out.println(&quot;Hello from simple message method in class classes2&quot;);
    }
 }
+
 </code></pre>
-<p>Methods can have arguments/parameters too …</p>
-<pre class="java"><code>
+
+<p>Methods can have arguments/parameters too ...</p>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 12 part 1
@@ -453,9 +471,12 @@ public class meth_params
         System.out.println(&quot;Hello &quot;+name+&quot;! Nice to meet you!&quot;);
     }
 }
+
 </code></pre>
+
 <p>It is possible to have variables inside classes. These are instance variables. They are accessible to the methods inside the class.</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 13 part 2
@@ -514,10 +535,14 @@ public class methods_instances1
         mi_obj.saying();
     }
 }
+
 </code></pre>
-<p>Constructors are used for initializing the instance variables inside the objects during the time of creation. If these variables are used without prior initialization, then they would show “null” as output.</p>
+
+<p>Constructors are used for initializing the instance variables inside the objects during the time of creation. If these variables are used without prior initialization, then they would show &quot;null&quot; as output.</p>
+
 <p>Constructor has the same name as that of the class.</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 17/07/2016.
  * program 14 part 2
@@ -582,9 +607,12 @@ public class constructor1
     }
 }
 
+
 </code></pre>
+
 <p>You have conditional operator in Java. It is a short-hand if else statement.</p>
-<pre class="java"><code>public class conditional_ops
+
+<pre><code class="prettyprint lang-Java">public class conditional_ops
 {
     public static void main(String args[])
     {
@@ -593,17 +621,23 @@ public class constructor1
         // Conditional operator. condition? statement if yes: statement if no
         System.out.println(age&gt;50?&quot;You&#39;re old!&quot;:&quot;You&#39;re young!&quot;);
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>Simple for loop demonstration.</p>
-<pre class="java"><code>public static void main(String args[])
+
+<pre><code class="prettyprint lang-Java">public static void main(String args[])
     {
         for(int i=0; i&lt;10; i++) // i += 1
         {
             System.out.println(&quot;The value of i is &quot;+i);
         }
-    }</code></pre>
+    }
+</code></pre>
+
 <p>Simple do-while loop demonstration</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
     public static void main(String args[])
     {
         // do while loop executes the body, even without checking the
@@ -618,9 +652,12 @@ public class constructor1
         }
         while(counter&lt;=10);
 
-    }</code></pre>
+    }
+</code></pre>
+
 <p>Mathematical methods in Java</p>
-<pre class="java"><code>// random class for random number functions
+
+<pre><code class="prettyprint lang-Java">// random class for random number functions
 import java.util.Random;
 
 public class math_class
@@ -656,9 +693,12 @@ public class math_class
         maths_1();
         maths_2();
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>Arrays are available in Java</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 /**
  * Created by arun on 18/07/2016.
  * program 21
@@ -785,9 +825,12 @@ public class arrays3
         return total/numbers.length;
     }
 }
+
 </code></pre>
+
 <p>Java has enhanced for loops. These progress element-wise in arrays instead of using the indices.</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 public class enhanced_loop
 {
     public static void main(String args[])
@@ -805,9 +848,12 @@ public class enhanced_loop
         System.out.println(&quot;The total of the array is: &quot;+total);
     }
 }
+
 </code></pre>
-<p>Examples for string formats and “this” keyword</p>
-<pre class="java"><code>/**
+
+<p>Examples for string formats and &quot;this&quot; keyword</p>
+
+<pre><code class="prettyprint lang-Java">/**
  * Created by arun on 20/07/2016.
  * program 26
  */
@@ -862,9 +908,12 @@ public class time_class
         return String.format(&quot;%02d:%02d:%02d %s&quot;,((hour==0||hour==12)?12:hour%12),
                 minute, second, (hour&lt;12?&quot;AM&quot;:&quot;PM&quot;));
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>There can be multiple constructors for a class. However, the constructors can be replicated on the basis of how many arguments they take.</p>
-<pre class="java"><code>/**
+
+<pre><code class="prettyprint lang-Java">/**
  * Created by arun on 20/07/2016.
  * program 28 part 2
  * part 1 multi_cons.java
@@ -972,9 +1021,12 @@ public class multi_cons
         System.out.printf(&quot;%s\n&quot;, mc3.military_fmt());
         System.out.printf(&quot;%s\n&quot;, mc4.military_fmt());
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>Composition, string description for the class</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 public class app3_1
 {
     public static void main(String args[])
@@ -1037,9 +1089,12 @@ public class app3_3
         return String.format(&quot;%d/%d/%d&quot;, date, month, year);
     }
 }
+
 </code></pre>
+
 <p>Enumeration is a type of pre-defined constant objects in Java</p>
-<pre class="java"><code>
+
+<pre><code class="prettyprint lang-Java">
 // this is used for accessing the enum arrays
 import java.util.EnumSet;
 
@@ -1088,7 +1143,7 @@ public enum enum_ex
 
     private final String desc;
     private final int age;
-    
+
     // Also, if you want to have constants inside classes
     // then add &quot;final&quot; keyword to the instance variables
 
@@ -1109,9 +1164,12 @@ public enum enum_ex
         return age;
     }
 }
+
 </code></pre>
-<h4 id="static-variables">Static Variables</h4>
-<pre class="java"><code>public class static_var2
+
+<h4>Static Variables</h4>
+
+<pre><code class="prettyprint lang-Java">public class static_var2
 {
     public static void main(String args[])
     {
@@ -1186,20 +1244,32 @@ public class static_var1
         return member;
     }
 }
+
 </code></pre>
-<h3 id="inheritance">Inheritance</h3>
-<p>If you want to include all the <code>public</code> methods and variables into a new class, then inheritance is useful. Instead of writing and replicating the same methods and variables into new classes, the new classes can “inherit” them.</p>
-<p>To inherit them, the new class should be written with the keyword <code>extends</code></p>
+
+<h3>Inheritance</h3>
+
+<p>If you want to include all the <code class="prettyprint">public</code> methods and variables into a new class, then inheritance is useful. Instead of writing and replicating the same methods and variables into new classes, the new classes can &quot;inherit&quot; them.</p>
+
+<p>To inherit them, the new class should be written with the keyword <code class="prettyprint">extends</code></p>
+
 <p>example:</p>
-<pre class="java"><code>public class children extends parents
+
+<pre><code class="prettyprint lang-Java">public class children extends parents
 {
     ...........
-}</code></pre>
+}
+</code></pre>
+
 <p>Here, all the public methods and variables of <em><em>parents</em></em> class is inherited by the children class. The <strong><em>parent</em></strong> class is the <strong><em>super</em></strong> Class or the <strong><em>parent</em></strong> because it is stand-alone. The <strong><em>children</em></strong> class is the <strong><em>sub-class</em></strong> or the <strong><em>child</em></strong> because it depends on the super class.</p>
+
 <p>Inside the sub-class, you can over-write the definitions of the methods and variables inherited from the super class. However, this over-writing does not affect the super class.</p>
-<p>Only <code>public</code> methods and variables can be inherited. Private methods and variables are not inheritable.</p>
+
+<p>Only <code class="prettyprint">public</code> methods and variables can be inherited. Private methods and variables are not inheritable.</p>
+
 <p>Also, chain/successive inheritance is possible, consistent with the above rules and conditions.</p>
-<pre class="java"><code>// intro to Graphical User Interfaces
+
+<pre><code class="prettyprint lang-Java">// intro to Graphical User Interfaces
 
 // This class has a lot of GUI methods
 import javax.swing.JOptionPane;
@@ -1228,8 +1298,10 @@ public class gui1
         JOptionPane.showMessageDialog(null, &quot;The answer is &quot;+sum, &quot;Addition Program&quot;, JOptionPane.PLAIN_MESSAGE);
     }
 }
+
 </code></pre>
-<pre class="java"><code>// this is a better, more enhanced and complex GUI example
+
+<pre><code class="prettyprint lang-Java">// this is a better, more enhanced and complex GUI example
 
 // manages the &quot;placement&quot; of the icons and items. It places
 // items to the right of the previous item and on the next line
@@ -1285,7 +1357,8 @@ public class gui22
         // if set false, then it appears and vanishes instantly
         g1.setVisible(true);
     }
-}</code></pre>
+}
+</code></pre>
 
             </div>
         </section>
@@ -1323,10 +1396,10 @@ public class gui22
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>

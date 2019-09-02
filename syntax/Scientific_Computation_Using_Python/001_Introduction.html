@@ -32,7 +32,7 @@
 
     <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
 
     <!--
         For source code, go here: https://github.com/highlightjs/highlight.js
@@ -124,12 +124,17 @@
         
         <section>
             <div class="inner align-justify">
-                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
+                <h1>Introduction to Scientific Computation Using Python</h1>
+
 <p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
-<h2 id="table-of-contents">Table of Contents</h2>
+
+<h2>Table of Contents</h2>
+
 <!-- TOC -->
+
 <ul>
 <li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
+
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#what-is-this-playlist-about">What is this playlist about?</a></li>
@@ -137,62 +142,82 @@
 <li><a href="#why-am-i-making-this---part-2">Why am I making this? - Part 2</a></li>
 <li><a href="#reference-books">Reference Books</a></li>
 <li><a href="#note-about-references">Note about references</a></li>
-<li><a href="#software-requirements">Software Requirements</a>
-<ul>
+<li><a href="#software-requirements">Software Requirements</a></li>
 <li><a href="#my-setup">My setup</a></li>
-</ul></li>
 <li><a href="#ideology">Ideology</a></li>
-<li><a href="#well-be-dealing-with">We’ll be dealing with</a></li>
+<li><a href="#well-be-dealing-with">We&#39;ll be dealing with</a></li>
 <li><a href="#final-note-before-we-get-started">Final note before we get started,</a></li>
 <li><a href="#are-you-ready">Are you ready?</a></li>
 </ul></li>
 </ul>
+
 <!-- /TOC -->
-<h2 id="what-is-this-playlist-about">What is this playlist about?</h2>
+
+<h2>What is this playlist about?</h2>
+
 <ul>
 <li>A reference guide for people who wants to learn and use Python for scientific computation.</li>
 <li>A personal initiative to address a lot of concepts and make programming feasible to a lot of students.</li>
 </ul>
-<h2 id="why-am-i-making-this---part-1">Why am I making this? - Part 1</h2>
+
+<h2>Why am I making this? - Part 1</h2>
+
 <ul>
 <li>To help people break their fear of programming.</li>
 <li>To equip people with sufficient tools for their scientific or engineering or mathematical requirements.</li>
 </ul>
-<h2 id="why-am-i-making-this---part-2">Why am I making this? - Part 2</h2>
+
+<h2>Why am I making this? - Part 2</h2>
+
 <ul>
 <li>A <strong><em>challenge</em></strong> to myself to write and practice code for scientific computation.</li>
 <li>An attempt for me to go back to the basics and re-emerge to the advanced concepts with a lot of applications.</li>
 <li>To break my fear of failure.</li>
 </ul>
-<h2 id="reference-books">Reference Books</h2>
+
+<h2>Reference Books</h2>
+
 <p>For now, a majority of the ideas will be inspired from the two books below:</p>
+
 <ul>
 <li>Computational Physics - Problem Solving with Python, Third Edition, Rubin H. Landau, Manuel J, Paez, and Cristian C. Boudeianu, Wiley Publications</li>
 <li>A Primer on Scientific Programming with Python, Third Edition, Hans Petter Langtangen, Springer</li>
 </ul>
-<h2 id="note-about-references">Note about references</h2>
+
+<h2>Note about references</h2>
+
 <ul>
-<li>In the future, I’ll add more references and examples.</li>
+<li>In the future, I&#39;ll add more references and examples.</li>
 <li>You need not have the references! :D. If you have it, then its a bonus!</li>
-<li>I’ll provide any additional references if content were taken outside of these books.</li>
+<li>I&#39;ll provide any additional references if content were taken outside of these books.</li>
 </ul>
-<h2 id="software-requirements">Software Requirements</h2>
+
+<h2>Software Requirements</h2>
+
 <ul>
 <li>Must have a working installation of Python 3 installed in Windows/Linux/MacOS.</li>
 </ul>
+
 <p><strong>Personal Recommendation</strong>: Python from <a href="https://www.anaconda.com/distribution/">Anaconda/Miniconda</a> or from Python from <a href="https://www.enthought.com/product/canopy/">Enthought Canopy</a> Distributions.</p>
+
 <p>These distributions of python are designed specifically for scientific computation and have a collection of many commonly used packages and software at your disposal.</p>
+
 <ul>
 <li>One good Interactive Development Environment (IDE) for coding.</li>
 </ul>
+
 <p><strong>Personal Recommendation</strong>: <a href="https://www.spyder-ide.org/">Spyder</a>, <a href="https://www.jetbrains.com/pycharm/">Pycharm</a></p>
-<h3 id="my-setup">My setup</h3>
+
+<h3>My setup</h3>
+
 <ul>
 <li>Linux - Ubuntu 18.04 LTS 64-bit</li>
 <li>Python - Anaconda Python Distribution - Python 3.7+</li>
 <li>IDE - PyCharm</li>
 </ul>
-<h2 id="ideology">Ideology</h2>
+
+<h2>Ideology</h2>
+
 <!-- <div class="diagram">
 Science->Scientific Programming: Laws, Rules, Applications
 Mathematics->Scientific Programming: Laws, Techniques
@@ -200,20 +225,23 @@ Computer Science->Scientific Programming: Algorithms, Software</div>
 <script>
 $(".diagram").sequenceDiagram({theme: 'simple'});
 </script> -->
+
 <!-- <div id="diagram"></div>
 <script>
   var diagram = Diagram.parse("[\"Science->Scientific Programming: Laws, Rules, Applications\" \"Mathematics->Scientific Programming: Laws, Techniques\", \"Computer Science->Scientific Programming: Algorithms, Software\"]");
   diagram.drawSVG("diagram", {theme: 'simple'});
 </script> -->
+
 <!-- <div class="diagram">A->B: Message</div>
 <script>
   var options = {theme: 'simple'};
   $(".diagram").sequenceDiagram(options);
 </script> -->
-<figure>
-<img src="flowchart.png" alt="" /><figcaption>Ideology: Scientific Programming is an Amalgamation of Science, Mathematics, and Computer Science</figcaption>
-</figure>
-<h2 id="well-be-dealing-with">We’ll be dealing with</h2>
+
+<p><img src="flowchart.png" alt="Ideology: Scientific Programming is an Amalgamation of Science, Mathematics, and Computer Science"></p>
+
+<h2>We&#39;ll be dealing with</h2>
+
 <ul>
 <li>Data Visualisation,</li>
 <li>Making simple models,</li>
@@ -222,14 +250,18 @@ $(".diagram").sequenceDiagram({theme: 'simple'});
 <li>Analysis of Experimental data,</li>
 <li>Inferences from the data</li>
 </ul>
-<h2 id="final-note-before-we-get-started">Final note before we get started,</h2>
+
+<h2>Final note before we get started,</h2>
+
 <ul>
 <li>Do experiment!</li>
 <li>Point-out mistakes if I made!</li>
-<li>Feel free to give suggestions (I’ll try my best to incorporate them)</li>
+<li>Feel free to give suggestions (I&#39;ll try my best to incorporate them)</li>
 </ul>
-<h2 id="are-you-ready">Are you ready?</h2>
-<p>Let’s start then! :D</p>
+
+<h2>Are you ready?</h2>
+
+<p>Let&#39;s start then! :D</p>
 
             </div>
         </section>
@@ -267,10 +299,10 @@ $(".diagram").sequenceDiagram({theme: 'simple'});
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?&skin=sunburst"></script>
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
-</script>
+</script> -->
 
 
     <script src="../../assets/js/jquery.min.js"></script>
