@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,23 +127,12 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Pygame</h1>
-
+                <h1 id="pygame">Pygame</h1>
 <p>It is a simple gaming library framework for Python.</p>
-
-<h2>Installation</h2>
-
-<p>Use anyone of the following:</p>
-
-<ul>
-<li>Conda</li>
-<li>pip</li>
-<li>wheel packages</li>
-</ul>
-
-<h2>Mandatory requirement</h2>
-
-<pre><code class="prettyprint lang-Python">import pygame
+<h2 id="installation">Installation</h2>
+<p>Use anyone of the following: * Conda * pip * wheel packages</p>
+<h2 id="mandatory-requirement">Mandatory requirement</h2>
+<pre class="python"><code>import pygame
 
 # This initializes all the functions inside the module
 # this init function returns a tuple if the initialization is successful
@@ -159,13 +151,9 @@ pygame.display.update()
 # closes the functions
 pygame.quit()
 # quit the screen
-quit()
-</code></pre>
-
-<h2>Title</h2>
-
-<pre><code class="prettyprint lang-Python">pygame.display.set_caption(&quot;title&quot;)
-</code></pre>
+quit()</code></pre>
+<h2 id="title">Title</h2>
+<pre class="python"><code>pygame.display.set_caption(&quot;title&quot;)</code></pre>
 
             </div>
         </section>

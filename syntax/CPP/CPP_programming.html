@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,13 +127,10 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>C++ Programming</h1>
-
+                <h1 id="c-programming">C++ Programming</h1>
 <!-- TOC -->
-
 <ul>
 <li><a href="#c-programming">C++ Programming</a>
-
 <ul>
 <li><a href="#sources">Sources:</a></li>
 <li><a href="#sample-c-program">Sample C++ Program</a></li>
@@ -138,18 +138,13 @@
 <li><a href="#if-statement">If Statement</a></li>
 </ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h2>Sources:</h2>
-
+<h2 id="sources">Sources:</h2>
 <ul>
 <li>Bucky Roberts - thenewboston - YouTube channel</li>
 </ul>
-
-<h2>Sample C++ Program</h2>
-
-<pre><code class="prettyprint lang-C++">// This is a comment
+<h2 id="sample-c-program">Sample C++ Program</h2>
+<pre class="c++"><code>// This is a comment
 
 // This is a pre-processor directive
 // iostream is a &quot;header file&quot; having definitions of functions
@@ -177,17 +172,14 @@ int main()
     // \n - escape sequence to jump to a new line
     // terminate statements with ;
     cout &lt;&lt; &quot;Hello World! \n&quot; &lt;&lt; endl;
-
+    
     // functions calculate something and returns a value.
     // this line helps the function to return a value.
     // 0 means the program ran fine!
     return 0;
-}
-</code></pre>
-
-<h2>Variables and basic arithmetic</h2>
-
-<pre><code class="prettyprint lang-C++">// var_name is a variable of integer type.
+}</code></pre>
+<h2 id="variables-and-basic-arithmetic">Variables and basic arithmetic</h2>
+<pre class="c++"><code>// var_name is a variable of integer type.
 // it stores the value 7 - assignment
 int var_name = 7;
 
@@ -211,12 +203,9 @@ a + b
 a - b
 a * c
 a / d
-
 </code></pre>
-
-<h2>If Statement</h2>
-
-<pre><code class="prettyprint lang-C++">if(x&lt;10)
+<h2 id="if-statement">If Statement</h2>
+<pre class="c++"><code>if(x&lt;10)
 {
     cout &lt;&lt; &quot;x is less than 10!&quot;;
 }
@@ -230,8 +219,7 @@ else if ****
 else
 {
     cout &lt;&lt; &quot;Don&#39;t know what to do now!&quot;
-}
-</code></pre>
+}</code></pre>
 
             </div>
         </section>

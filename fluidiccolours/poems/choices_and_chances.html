@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,112 +127,111 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Choices and Chances</h1>
-
-<p>| It happened randomly, they all write,
-| As if the universe, conspired to make them meet.
-| It is an Illusion, is all it is,
-| Only a little truth, that\&#39;s all there is.
-| 
-| If love is random and happens by chance,
-| Will it matter if you try it or not?
-| What shall be, the difference it makes?
-| For those who pursue, and pour in their soul?
-| 
-| Love, you are, a mystical enigma!
-| Despite a million tales, you are still elusive!
-| Source of awe, wonder, and peace,
-| Reason for disgust, disaster, and violence.
-| 
-| You happen to many, at precarious times,
-| Breaking their hearts, and tainting their souls.
-| You happen, for some in odd times,
-| And thrive and flourish, in ways never thought.
-| 
-| For some who seek, they get tested to the core,
-| For some, you come, taking their breath away.
-| For some who seek, end up all alone,
-| For some, you come, at the right moments.
-| 
-| You tempt us all, with all that is rosy,
-| Showing us the tales, of many twin flames.
-| That\&#39;s not the way; it happens to all,
-| Some who believe it, they break and fall.
-| 
-| You make two souls meet, who are fitting pieces,
-| The flower doesn\&#39;t blossom, and sees the day,
-| You make two souls meet, who are unfit pieces,
-| The flower blossoms, rots, and withers.
-| 
-| You make two souls meet, who are fitting pieces,
-| For one it blossoms, for the other it doesn\&#39;t,
-| And make the bloomers wonder, what\&#39;s this sorcery?
-| Left with no answer, forced to find closure.
-| 
-| For some, it happens, gradual and natural,
-| From unknown to friends to buddies to sweethearts.
-| Blurring the lines gracefully and smooth,
-| Nurtured and built, with time and space.
-| 
-| For some, it happens, as if a fairy tale,
-| With many intimate moments and many fantasies,
-| It ends bitter, like a quenched hot steel,
-| The heart does shatter, like broken glass.
-| 
-| Not all your tales have a happy ending.
-| Not all those who found you, cherish you till the end.
-| Some end what is theirs, for greener pastures,
-| While some change a lot, they don\&#39;t fit anymore.
-| 
-| It is a tragedy to see, a good broken heart,
-| A heart once full of hopes, stitching its pieces.
-| Filled with pain, and walls so high,
-| Scared to trust, and cautious than before.
-| 
-| It is sad to see, a good heart so lonely,
-| A heart that yearns, for the joys of intimacy.
-| Feeling low and cold, and learning from falls,
-| Trying hard to be strong, despite the let downs.
-| 
-| Are you that fickle? That you happen by chance?
-| And you are fragile, tender yet dangerous.
-| Are you so chaotic? That you are unpredictable?
-| After making us win, you break us to be humble?
-| 
-| Despite the turbulence, you bring forth,
-| And amidst the chaos, you show us an order.
-| Despite the shipwrecks, you show us some joy,
-| Making our lives hard, with or without you.
-| 
-| The stars do align, for some people proper,
-| With time and space, everything falls in place.
-| For some they make, the stars to align,
-| For they can\&#39;t wait, as you never visited them.
-| 
-| It takes courage, to fall in love hard,
-| To fall so madly, and fall so deeply.
-| It takes, even more, to pick your shattered heart,
-| And stitch it back in place, and move on.
-| 
-| It takes strength to stay strong, and keep going on,
-| To find The One you yearned, all the way long.
-| Swimming up the river, against the cross-currents,
-| Trying not to drown, in the stream of life.
-| 
-| All the love that formed, out of lies and disguise,
-| May start well at first, but it will break off.
-| Not long can you wear, a skin different from yours,
-| At the core of it lies, all the issues in disguise.
-| 
-| Love once happened can wither with time as well,
-| And it can boom back, with the same soul or other.
-| A love formed of truth, built with trust and kindness,
-| With passion and maturity, is deep and beautiful.
-| 
-| You do get to choose, whom you\&#39;ll fall in love,
-| For reasons right or wrong, the choice is all yours.
-| Welcome to the real world, it is blurry and grey,
-| And love is quite messy, yet you want it anyway.</p>
+                <h1 id="choices-and-chances">Choices and Chances</h1>
+<div class="line-block">It happened randomly, they all write,<br />
+As if the universe, conspired to make them meet.<br />
+It is an Illusion, is all it is,<br />
+Only a little truth, that's all there is.<br />
+<br />
+If love is random and happens by chance,<br />
+Will it matter if you try it or not?<br />
+What shall be, the difference it makes?<br />
+For those who pursue, and pour in their soul?<br />
+<br />
+Love, you are, a mystical enigma!<br />
+Despite a million tales, you are still elusive!<br />
+Source of awe, wonder, and peace,<br />
+Reason for disgust, disaster, and violence.<br />
+<br />
+You happen to many, at precarious times,<br />
+Breaking their hearts, and tainting their souls.<br />
+You happen, for some in odd times,<br />
+And thrive and flourish, in ways never thought.<br />
+<br />
+For some who seek, they get tested to the core,<br />
+For some, you come, taking their breath away.<br />
+For some who seek, end up all alone,<br />
+For some, you come, at the right moments.<br />
+<br />
+You tempt us all, with all that is rosy,<br />
+Showing us the tales, of many twin flames.<br />
+That's not the way; it happens to all,<br />
+Some who believe it, they break and fall.<br />
+<br />
+You make two souls meet, who are fitting pieces,<br />
+The flower doesn't blossom, and sees the day,<br />
+You make two souls meet, who are unfit pieces,<br />
+The flower blossoms, rots, and withers.<br />
+<br />
+You make two souls meet, who are fitting pieces,<br />
+For one it blossoms, for the other it doesn't,<br />
+And make the bloomers wonder, what's this sorcery?<br />
+Left with no answer, forced to find closure.<br />
+<br />
+For some, it happens, gradual and natural,<br />
+From unknown to friends to buddies to sweethearts.<br />
+Blurring the lines gracefully and smooth,<br />
+Nurtured and built, with time and space.<br />
+<br />
+For some, it happens, as if a fairy tale,<br />
+With many intimate moments and many fantasies,<br />
+It ends bitter, like a quenched hot steel,<br />
+The heart does shatter, like broken glass.<br />
+<br />
+Not all your tales have a happy ending.<br />
+Not all those who found you, cherish you till the end.<br />
+Some end what is theirs, for greener pastures,<br />
+While some change a lot, they don't fit anymore.<br />
+<br />
+It is a tragedy to see, a good broken heart,<br />
+A heart once full of hopes, stitching its pieces.<br />
+Filled with pain, and walls so high,<br />
+Scared to trust, and cautious than before.<br />
+<br />
+It is sad to see, a good heart so lonely,<br />
+A heart that yearns, for the joys of intimacy.<br />
+Feeling low and cold, and learning from falls,<br />
+Trying hard to be strong, despite the let downs.<br />
+<br />
+Are you that fickle? That you happen by chance?<br />
+And you are fragile, tender yet dangerous.<br />
+Are you so chaotic? That you are unpredictable?<br />
+After making us win, you break us to be humble?<br />
+<br />
+Despite the turbulence, you bring forth,<br />
+And amidst the chaos, you show us an order.<br />
+Despite the shipwrecks, you show us some joy,<br />
+Making our lives hard, with or without you.<br />
+<br />
+The stars do align, for some people proper,<br />
+With time and space, everything falls in place.<br />
+For some they make, the stars to align,<br />
+For they can't wait, as you never visited them.<br />
+<br />
+It takes courage, to fall in love hard,<br />
+To fall so madly, and fall so deeply.<br />
+It takes, even more, to pick your shattered heart,<br />
+And stitch it back in place, and move on.<br />
+<br />
+It takes strength to stay strong, and keep going on,<br />
+To find The One you yearned, all the way long.<br />
+Swimming up the river, against the cross-currents,<br />
+Trying not to drown, in the stream of life.<br />
+<br />
+All the love that formed, out of lies and disguise,<br />
+May start well at first, but it will break off.<br />
+Not long can you wear, a skin different from yours,<br />
+At the core of it lies, all the issues in disguise.<br />
+<br />
+Love once happened can wither with time as well,<br />
+And it can boom back, with the same soul or other.<br />
+A love formed of truth, built with trust and kindness,<br />
+With passion and maturity, is deep and beautiful.<br />
+<br />
+You do get to choose, whom you'll fall in love,<br />
+For reasons right or wrong, the choice is all yours.<br />
+Welcome to the real world, it is blurry and grey,<br />
+And love is quite messy, yet you want it anyway.</div>
 
             </div>
         </section>

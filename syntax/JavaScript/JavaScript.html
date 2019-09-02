@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,45 +127,31 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>JavaScript</h1>
-
+                <h1 id="javascript">JavaScript</h1>
 <p>It is a scripting language used for programming webpages and doing arithmetic in webpages and for including interactions!.</p>
-
 <p>There are several scripting languages for the purpose, like PHP. JavaScript is one of them!</p>
-
-<h2>Prerequisites</h2>
-
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Before picking up JavaScript, it is required to know,</p>
-
 <ul>
 <li>Knowledge in HTML</li>
 <li>Knowledge in CSS</li>
 </ul>
-
 <p>If these are missing, then picking up JavaScript becomes difficult!</p>
-
 <p>As far as softwares are concerned, you need</p>
-
 <ul>
 <li>One nice text editor
-
 <ul>
 <li>Notepad, Notepad++, geany, gedit, textmate, Eclipse, Webstorm, Netbeans, Aptana, etc.,</li>
 </ul></li>
 <li>One or more web browser
-
 <ul>
 <li>Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer etc.,</li>
 </ul></li>
 </ul>
-
-<h2>Writing JavaScript code inside HTML pages</h2>
-
-<p>You can include the javascript code inside HTML pages via the <code class="prettyprint">&lt;script&gt;</code> tag or by including the javascript using some inclusion tags.</p>
-
-<p>To write a javascript command inside html page, use the <code class="prettyprint">&lt;script&gt;</code> tag as below. The type attribute defines the scripting language used.</p>
-
-<pre><code class="prettyprint lang-HTML">
+<h2 id="writing-javascript-code-inside-html-pages">Writing JavaScript code inside HTML pages</h2>
+<p>You can include the javascript code inside HTML pages via the <code>&lt;script&gt;</code> tag or by including the javascript using some inclusion tags.</p>
+<p>To write a javascript command inside html page, use the <code>&lt;script&gt;</code> tag as below. The type attribute defines the scripting language used.</p>
+<pre class="html"><code>
     &lt;script type=&quot;text/javascript&quot;&gt;
     // This is a single line comment
     /* This is a multi-line comment */
@@ -170,29 +159,17 @@
         document.write(&quot;Hey There!&quot;);
     //--&gt;
     // This is a print statement!
-    &lt;/script&gt;
-</code></pre>
-
-<p><code class="prettyprint">document.write();</code> is a print statement! The <code class="prettyprint">&lt;!--</code> and <code class="prettyprint">//--&gt;</code> is just a safety check!</p>
-
-<h2>Safety Check!</h2>
-
+    &lt;/script&gt;</code></pre>
+<p><code>document.write();</code> is a print statement! The <code>&lt;!--</code> and <code>//--&gt;</code> is just a safety check!</p>
+<h2 id="safety-check">Safety Check!</h2>
 <p>Some older browsers may not work nicely with javascript. Instead of executing the code, they might just print them. A safety check is used, so that the code is either ignored (in case of older browsers) or execute them (in the case of newer browsers.). Enclose the javascript code inside the code as above!</p>
-
-<h2>Comments</h2>
-
-<p>To include comments, use <code class="prettyprint">//</code> for a single line of comment. Use <code class="prettyprint">/*</code> and <code class="prettyprint">*/</code> for multi-line comments.</p>
-
-<h2>Variables</h2>
-
+<h2 id="comments">Comments</h2>
+<p>To include comments, use <code>//</code> for a single line of comment. Use <code>/*</code> and <code>*/</code> for multi-line comments.</p>
+<h2 id="variables">Variables</h2>
 <p>To include a variable, use the syntax.</p>
-
-<pre><code class="prettyprint lang-JavaScript">    var var_name = value
-</code></pre>
-
+<pre class="javascript"><code>    var var_name = value</code></pre>
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
 
     var v1 = 45;        // Integer
     var v2 = 45.28;     // Decimal
@@ -210,20 +187,15 @@
 
     document.write(str2 + &quot; Is he not write? He has proved it &quot; + v1 + &quot; times!&quot;);
     // Will join strings and numbers, and print them in a line!
-
+    
     document.write(v1+v2);
     // If plain numbers are used, then they are added normally!
 
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre>
 <p>** Variables are case sensitive! **</p>
-
-<h2>Functions</h2>
-
+<h2 id="functions">Functions</h2>
 <p>It is a mini-program!</p>
-
-<pre><code class="prettyprint lang-HTML">
+<pre class="html"><code>
 &lt;body&gt;
 
     &lt;script type=&quot;text/javascript&quot;&gt;
@@ -260,18 +232,12 @@
     &lt;/form&gt;
 
 &lt;/body&gt;
-
 </code></pre>
-
-<h2>Advanced function operations</h2>
-
+<h2 id="advanced-function-operations">Advanced function operations</h2>
 <p><strong>Functions with multiple input arguments</strong></p>
-
 <p><strong>Functions with return values</strong></p>
-
 <p><strong>Function called inside another function</strong></p>
-
-<pre><code class="prettyprint lang-HTML">&lt;body&gt;
+<pre class="html"><code>&lt;body&gt;
 
     &lt;script type=&quot;text/javascript&quot;&gt;
 
@@ -314,12 +280,9 @@
         &lt;input type=&quot;button&quot; value=&quot;start&quot; onclick=&quot;start()&quot; /&gt;
     &lt;/form&gt;
 
-&lt;/body&gt;
-</code></pre>
-
+&lt;/body&gt;</code></pre>
 <p>The output on pressing the button is:</p>
-
-<pre><code class="prettyprint">
+<pre><code>
 We are inside start function! 
 We are inside power function! 
 The received values are :
@@ -329,13 +292,10 @@ We are inside fahren_2_cel function!
 The value of 212 degree Fahrenheit is 100 degree Celsius!
 We are inside print function! 
 We are back to start function! 
-
 </code></pre>
-
-<h2>Global and Local Variables</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
-
+<h2 id="global-and-local-variables">Global and Local Variables</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+            
     var var1 = &quot;global &quot;; // Global variable!
 
     function print1()
@@ -354,18 +314,12 @@ We are back to start function!
 
     document.write(var1); // Global usage
 
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre>
 <p>The output is</p>
-
-<pre><code class="prettyprint">local global global
-</code></pre>
-
-<h2>Mathematical Operations</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
-
+<pre><code>local global global</code></pre>
+<h2 id="mathematical-operations">Mathematical Operations</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+            
     var a = 5+6;            //Addition
     var b = 8-9;            //Subtraction
     var c = 8*9;            //Multiplication
@@ -395,12 +349,9 @@ We are back to start function!
     document.write(&quot;The calculated values are &lt;br /&gt;&quot;);
     document.write(a + &quot;&lt;br /&gt;&quot; + b + &quot;&lt;br /&gt;&quot; + c + &quot;&lt;br /&gt;&quot; + d + &quot;&lt;br /&gt;&quot; + e + &quot;&lt;br /&gt;&quot;)
 
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre>
 <p>The output is:</p>
-
-<pre><code class="prettyprint">11
+<pre><code>11
 10
 20
 0
@@ -413,12 +364,9 @@ The calculated values are
 72
 0.8888888888888888
 7
-
 </code></pre>
-
-<h2>If statement and Relational Operators</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<h2 id="if-statement-and-relational-operators">If statement and Relational Operators</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
 
     var a = 7;
     var b = 7;
@@ -443,28 +391,20 @@ The calculated values are
     // &gt;=   Greater than or equal to
     // &lt;=   Less than or equal to
     // !=   Not Equal to
-
+    
     // Logical Operators
     // &amp;&amp;   AND
     // ||   OR
 
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre>
 <p>The output is :</p>
-
-<pre><code class="prettyprint">7 is equal to 7
-</code></pre>
-
+<pre><code>7 is equal to 7</code></pre>
 <p><strong>Nesting is possible!</strong></p>
-
-<h2>Switch Case:</h2>
-
+<h2 id="switch-case">Switch Case:</h2>
 <p>It is given as follows:</p>
-
-<pre><code class="prettyprint lang-HTML">
+<pre class="html"><code>
 &lt;script type=&quot;text/javascript&quot;&gt;
-
+            
     var a = 7;
 
     switch(a)
@@ -493,12 +433,9 @@ The calculated values are
     }
 
 &lt;/script&gt;
-
 </code></pre>
-
-<h2>For  and While loops</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<h2 id="for-and-while-loops">For and While loops</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
 
     // This is a for loop!
     // initialization, ending condition, increment/decrement
@@ -533,19 +470,14 @@ The calculated values are
     }
     while(x&lt;10); // This is the condition!
 
-&lt;/script&gt;
-</code></pre>
-
-<h2>Event Handlers</h2>
-
+&lt;/script&gt;</code></pre>
+<h2 id="event-handlers">Event Handlers</h2>
 <p>These are used for doing a specific job when a certain <strong>event</strong> happens, like press of a button, entering a value, etc.,</p>
-
-<p>Event handler codes need not be written inside <code class="prettyprint">&lt;script&gt;</code> tags!.</p>
-
-<pre><code class="prettyprint lang-HTML">&lt;body onload=&quot;alert(&#39;Loading complete!&#39;);&quot; onUnload=&quot;alert(&#39;See you!&#39;);&quot;&gt;
-
+<p>Event handler codes need not be written inside <code>&lt;script&gt;</code> tags!.</p>
+<pre class="html"><code>&lt;body onload=&quot;alert(&#39;Loading complete!&#39;);&quot; onUnload=&quot;alert(&#39;See you!&#39;);&quot;&gt;
+        
      &lt;!-- This is an On Load and On Unload Event handlers. When the webpage is loaded, the onload event happens. When the wepage is closed, refreshed or terminated, the onUnload event happens. Use either one, not both!--&gt;
-
+        
     &lt;!-- On click Event handler! --&gt;
     &lt;form&gt;
         &lt;input type=&quot;button&quot; value=&quot;Press&quot; onClick=&quot;alert(&#39;Nice!&#39;);alert(&#39;Nice again!&#39;)&quot;/&gt;
@@ -577,12 +509,9 @@ The calculated values are
     &lt;!-- When the mouse cursor moves to the link, and then leaves
     away, an alert box pops up! This can be annoying!--&gt;
 
-&lt;/body&gt;
-</code></pre>
-
-<h2>Objects in JavaScript</h2>
-
-<pre><code class="prettyprint lang-HTML">
+&lt;/body&gt;</code></pre>
+<h2 id="objects-in-javascript">Objects in JavaScript</h2>
+<pre class="html"><code>
 &lt;body&gt;
 
     &lt;!-- Object is a peculiar datatype which has a few properties and methods associated with it!
@@ -621,14 +550,10 @@ The calculated values are
     &lt;/script&gt;
 
 &lt;/body&gt;
-
 </code></pre>
-
-<h2>Creating Objects Using Constructor Functions</h2>
-
+<h2 id="creating-objects-using-constructor-functions">Creating Objects Using Constructor Functions</h2>
 <p>There are different methods! This is one long way!</p>
-
-<pre><code class="prettyprint lang-HTML">
+<pre class="html"><code>
 &lt;head&gt;
 
     &lt;title&gt;Object Creation!&lt;/title&gt;
@@ -665,12 +590,9 @@ The calculated values are
     &lt;/script&gt;
 
 &lt;/body&gt;
-
 </code></pre>
-
-<h2>Object Creation Using Object Initializers</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;head&gt;
+<h2 id="object-creation-using-object-initializers">Object Creation Using Object Initializers</h2>
+<pre class="html"><code>&lt;head&gt;
 
     &lt;title&gt;Object Initializers!&lt;/title&gt;
 
@@ -695,12 +617,9 @@ The calculated values are
         document.write(Arun.name + &quot; of age &quot; + Arun.age + &quot; plus a few days and &quot; + Chetan.name + &quot; of age &quot; + Chetan.age + &quot; plus 10 months are friends! &lt;br /&gt;&quot; );
     &lt;/script&gt;
 
-&lt;/body&gt;
-</code></pre>
-
-<h2>Adding Methods into Objects</h2>
-
-<pre><code class="prettyprint lang-HTML">
+&lt;/body&gt;</code></pre>
+<h2 id="adding-methods-into-objects">Adding Methods into Objects</h2>
+<pre class="html"><code>
 &lt;head&gt;
 
     &lt;title&gt;Adding Object Methods&lt;/title&gt;
@@ -742,12 +661,9 @@ The calculated values are
     &lt;/script&gt;
 
 &lt;/body&gt;
-
 </code></pre>
-
-<h2>Arrays in JavaScript</h2>
-
-<pre><code class="prettyprint lang-HTML">
+<h2 id="arrays-in-javascript">Arrays in JavaScript</h2>
+<pre class="html"><code>
 &lt;body&gt;
 
     &lt;script type=&quot;text/javascript&quot;&gt;
@@ -791,7 +707,7 @@ The calculated values are
 
         document.write(&quot;&lt;br /&gt;&quot;+new_array1);
         document.write(&quot;&lt;br /&gt;&quot;+new_array2);
-
+        
         var names = new Array (&quot;Arun&quot;, &quot;Chetan&quot;, &quot;Dipankar&quot;, &quot;Senthil&quot;, &quot;Gowtham&quot;, &quot;Keethi&quot;, &quot;Kevin&quot;);
 
         var string1 = names.join();
@@ -807,7 +723,7 @@ The calculated values are
 
         document.write(names + &quot;&lt;br /&gt;&quot;);
         document.write(string3 + &quot;&lt;br /&gt;&quot;);
-
+        
         // To add the element back, use push method
         names.push(&quot;Kevin&quot;);
 
@@ -822,39 +738,31 @@ The calculated values are
         names.sort();
 
         document.write(names + &quot;&lt;br /&gt;&quot;);
-
+            
     &lt;/script&gt;
 
-&lt;/body&gt;
-</code></pre>
-
-<h2>Multi-Dimensional Arrays</h2>
-
+&lt;/body&gt;</code></pre>
+<h2 id="multi-dimensional-arrays">Multi-Dimensional Arrays</h2>
 <p>Creating multi-dimensional arrays is easy!</p>
-
 <p>Source : <a href="http://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript">stackoverflow question</a></p>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
     var items = [[1,2],[3,4],[5,6]]; // Static Array
     alert(items[0][0]); // 1
-
+    
     var xx = [[]]; xx[0][1] = 5; // Dynamic Array
-
+    
     var x = new Array(10);
     for (var i = 0; i &lt; 10; i++)
     {
       x[i] = new Array(20);
     }
     x[5][12] = 3.0; // Creating a 2D array
-
+    
     // In a similar manner, you can extend it to a 3D, 4D array!
-
-&lt;/script&gt;
-</code></pre>
-
-<h2>Getting User Input using prompt feature and entering data for 2D arrays</h2>
-
-<pre><code class="prettyprint lang-HTML">
+    
+&lt;/script&gt;</code></pre>
+<h2 id="getting-user-input-using-prompt-feature-and-entering-data-for-2d-arrays">Getting User Input using prompt feature and entering data for 2D arrays</h2>
+<pre class="html"><code>
 &lt;script type=&quot;text/javascript&quot;&gt;
 
     // Opens a pop-up box with a prompt to enter data
@@ -883,10 +791,10 @@ The calculated values are
             array1[i][j] = prompt(&quot;Enter the value for array1[&quot;+(i+1)+&quot;][&quot;+(j+1)+&quot;]:&quot;);
         }
     }
-
+    
     // Printing the entire array!
     document.write(&quot;&lt;br /&gt; The Array entered is : &lt;br /&gt;&quot;);
-
+    
     // Printing the entire array in proper format!
     document.write(array1+&quot;&lt;br /&gt;&quot;);
 
@@ -900,12 +808,9 @@ The calculated values are
     }
 
 &lt;/script&gt;
-
 </code></pre>
-
-<h2>Associative Arrays</h2>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<h2 id="associative-arrays">Associative Arrays</h2>
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
 
     // These associative arrays are similar to
     // Dictionaries in Python!
@@ -916,19 +821,12 @@ The calculated values are
 
     document.write(asso[&quot;one&quot;]);
 
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre>
 <p>The output is</p>
-
-<pre><code class="prettyprint">    1
-</code></pre>
-
-<h2>Mathematical Object</h2>
-
+<pre><code>    1</code></pre>
+<h2 id="mathematical-object">Mathematical Object</h2>
 <p>JavaScript has a lot of mathematical constants and functions.</p>
-
-<pre><code class="prettyprint lang-HTML">&lt;script type=&quot;text/javascript&quot;&gt;
+<pre class="html"><code>&lt;script type=&quot;text/javascript&quot;&gt;
 
     var n = prompt(&quot;Enter a number&quot;, &quot;&quot;);
     // This will prompt the user for a number.
@@ -942,14 +840,10 @@ The calculated values are
     // Square root
     var sqrt_n = Math.sqrt(n);
     alert(&quot;The Square Root of &quot; + n + &quot; is &quot; + sqrt_n);
-&lt;/script&gt;
-</code></pre>
-
-<h2>Date and Time Objects</h2>
-
+&lt;/script&gt;</code></pre>
+<h2 id="date-and-time-objects">Date and Time Objects</h2>
 <p>JavaScript has in-built modules to get the date and time.</p>
-
-<pre><code class="prettyprint lang-HTML">
+<pre class="html"><code>
 &lt;body&gt;
 
     &lt;!-- This tag acts as a place holder for the time to be displayed! --&gt;
@@ -1021,12 +915,9 @@ The calculated values are
         End of example --&gt;
 
 &lt;/body&gt;
-
-</code></pre>
-
-<h2>Form Validation</h2>
-
-<pre><code class="prettyprint lang-HTML">
+    </code></pre>
+<h2 id="form-validation">Form Validation</h2>
+<pre class="html"><code>
 &lt;head&gt;
 
     &lt;title&gt; Forms and JavaScript! &lt;/title&gt;
@@ -1085,7 +976,6 @@ The calculated values are
     &lt;/script&gt;
 
 &lt;/body&gt;
-
 </code></pre>
 
             </div>

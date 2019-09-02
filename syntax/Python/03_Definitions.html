@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,51 +127,29 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Definitions</h1>
-
-<h2>External Terms</h2>
-
-<h3>Script</h3>
-
+                <h1 id="definitions">Definitions</h1>
+<h2 id="external-terms">External Terms</h2>
+<h3 id="script">Script</h3>
 <p>The text file in which Python programs are written. Called so as it is used to operate other programs</p>
-
-<h3>Module</h3>
-
+<h3 id="module">Module</h3>
 <p>A Python Script containing functions with or without classes and global variables.</p>
-
-<h3>Package</h3>
-
+<h3 id="package">Package</h3>
 <p>A collection of Modules in a directory</p>
-
-<h3>Source file</h3>
-
+<h3 id="source-file">Source file</h3>
 <p>Alternative name for python programs.</p>
-
-<h3>IDLE</h3>
-
+<h3 id="idle">IDLE</h3>
 <p>The Interactive Development Environment of Python. It is a python terminal prompt</p>
-
-<h3>Console</h3>
-
+<h3 id="console">Console</h3>
 <p>(usually) an upgraded version of IDLE with facility to embed graphics</p>
-
-<h3>IPython</h3>
-
+<h3 id="ipython">IPython</h3>
 <p>Enhanced interactive python terminal. supports all python terminal operations along with shell commands and more.</p>
-
-<h3>IDE</h3>
-
+<h3 id="ide">IDE</h3>
 <p>This is a sophisticated text editor to write and check code.</p>
-
-<h2>Internal Terms</h2>
-
-<h3>Comment</h3>
-
+<h2 id="internal-terms">Internal Terms</h2>
+<h3 id="comment">Comment</h3>
 <p>Used for making notes. Starts with a #</p>
-
-<h3>Docstring</h3>
-
-<p>Short for Documentation String. Used for multi-line commenting and for writing documentation within the code. Starts and terminates with &#39;&#39;&#39; or &quot;&quot;&quot;.</p>
+<h3 id="docstring">Docstring</h3>
+<p>Short for Documentation String. Used for multi-line commenting and for writing documentation within the code. Starts and terminates with ’’’ or """.</p>
 
             </div>
         </section>

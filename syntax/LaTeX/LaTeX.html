@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,252 +127,114 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>LaTeX</h1>
-
-<h2>Introduction</h2>
-
-<p>$\LaTeX$ is a type setting document</p>
-
-<h3>Sources, Why, Origin and Forums</h3>
-
-<p> 
-LaTeX has two inventors</p>
-
+                <h1 id="latex">LaTeX</h1>
+<h2 id="introduction">Introduction</h2>
+<p><span class="math inline">\(\LaTeX\)</span> is a type setting document</p>
+<h3 id="sources-why-origin-and-forums">Sources, Why, Origin and Forums</h3>
+<p>  LaTeX has two inventors</p>
 <p>1.Donald Knuth</p>
-
 <p>He was the first person to create TeX, the basic compiling code used in LaTeX. When TeX was introduced, it was still difficult to follow.</p>
-
 <p>2.Leslie Lamport</p>
-
-<p>He was the person who made an interface on TeX to make LaTeX. This made document production very easy and productive.
- </p>
-
-<h3>Sources:</h3>
-
-<p>  </p>
-
-<ol>
-<li>Video Lectures on LaTeX by Mitchell Krummel in Youtube</li>
-<li>Spoken-tutorials.org Video Lectures</li>
-</ol>
-
+<p>He was the person who made an interface on TeX to make LaTeX. This made document production very easy and productive.   ### Sources:    1. Video Lectures on LaTeX by Mitchell Krummel in Youtube 2. Spoken-tutorials.org Video Lectures</p>
 <p>Lot of online references were taken/compiled from Stack Exchange, Sharetatex.com</p>
-
 <p>Optional reference: moudgalya.org</p>
-
-<p><strong>Will add more references when a considerable amount of information is collected from a single source
-Some unmentioned sources will be present, but those shall contribute less. If more, then it will be cited.</strong></p>
-
+<p><strong>Will add more references when a considerable amount of information is collected from a single source Some unmentioned sources will be present, but those shall contribute less. If more, then it will be cited.</strong></p>
 <p>All these following steps are to be done in TeXMaker. They correspond without any change to TeXstudio. For other editors, there might be changes.</p>
-
-<h3>Books</h3>
-
-<ol>
-<li>LaTeX, A document preparation system, User&#39;s guide and reference manual by Leslie Lamport.</li>
+<h3 id="books">Books</h3>
+<ol type="1">
+<li>LaTeX, A document preparation system, User’s guide and reference manual by Leslie Lamport.</li>
 <li>LaTeX companion by F. Mittelbach and M. Goossens (advanced users)</li>
 </ol>
-
 <p>Main website for all LaTeX related updates and sources is <a href="http://ctan.org">CTAN</a> centraised TeX archive network.</p>
-
-<h3>Why LaTeX?</h3>
-
+<h3 id="why-latex">Why LaTeX?</h3>
 <ul>
 <li>Free and Open Source</li>
-<li>What you type is what you get output </li>
-<li>Cross platform compatibility. Especially with Windows/Mac/Unix/Linux </li>
-<li>Has excellent features for scientific documents, Especially, the mathematical documents </li>
-<li>Automatically takes care of formatting, numbering, updating and referencing chapters, figures, tables, page numbers, citations etc., </li>
+<li>What you type is what you get output</li>
+<li>Cross platform compatibility. Especially with Windows/Mac/Unix/Linux</li>
+<li>Has excellent features for scientific documents, Especially, the mathematical documents</li>
+<li>Automatically takes care of formatting, numbering, updating and referencing chapters, figures, tables, page numbers, citations etc.,</li>
 <li>Standard of document print is excellent.</li>
 <li>Lot of user communities</li>
 <li>Excellent Typesetting software</li>
 <li>Easy to produce bibliography index and easy to change the entire document format in a few steps.</li>
 <li>Bibliographic entries are easy to make and produce</li>
 </ul>
-
-<h3>Forums</h3>
-
+<h3 id="forums">Forums</h3>
 <p> www.sharelatex.com</p>
-
 <p>For user forums in India.</p>
-
 <ul>
 <li>Tug India.in</li>
 <li>Fossee.in</li>
 </ul>
-
-<h2>Requirements</h2>
-
-<p>LaTeX is a type-setting program used for making scientific documents. It is to be viewed like a programming language.
- 
-LaTeX requires a few components, namely,</p>
-
-<ol>
+<h2 id="requirements">Requirements</h2>
+<p>LaTeX is a type-setting program used for making scientific documents. It is to be viewed like a programming language.   LaTeX requires a few components, namely,</p>
+<ol type="1">
 <li>Compiler</li>
 <li>Editor</li>
 <li>Viewer</li>
 <li>Accessories</li>
 </ol>
-
-<h3>Compiler:</h3>
-
+<h3 id="compiler">Compiler:</h3>
 <p>This is the core of the system. It is the basic codes that helps to produce outputs and results. It is completely mandatory.</p>
-
 <p>It is available in different versions for different OS.</p>
-
 <p><strong>Windows</strong>:MiKTeX distribution (As of Oct 4, 2014, the Current Version is 2.9)</p>
-
 <p>MikTeX is available from miktex.org</p>
-
 <p><strong>Linux/Unix</strong> : Comes pre-installed or added along with the editor. (can select and choose the necessary options)</p>
-
-<p><strong>To be noted: It is very much advisable to install and use a &quot;dedicated&quot; editor (made especially for this purpose) for Linux/Unix systems. This will take care of the installation of the compilers during installation and making changes after edition. Directly installing LaTeX compilers is a bit tricky in Linux/Unix (as far as I have seen). This is not a problem in Windows/Mac because there, the compiler and editor are separate and independent, unlike in Linux/Unix.</strong>
- 
-<strong>Mac</strong> : MacTeX distribution
- </p>
-
-<h3>Editor:</h3>
-
+<p><strong>To be noted: It is very much advisable to install and use a “dedicated” editor (made especially for this purpose) for Linux/Unix systems. This will take care of the installation of the compilers during installation and making changes after edition. Directly installing LaTeX compilers is a bit tricky in Linux/Unix (as far as I have seen). This is not a problem in Windows/Mac because there, the compiler and editor are separate and independent, unlike in Linux/Unix.</strong>   <strong>Mac</strong> : MacTeX distribution   ### Editor:</p>
 <p>This is where the codes are written/edited and saved. There are many editors.</p>
-
-<h4>Cross platform editors:</h4>
-
-<p>TexMaker, TexStudio --- These are the ones that I use. Very good, All in one interface. Edits, Compiles and views results in one shot. Both have complimenting features</p>
-
-<p>TexWorks, --- Comes with MiKTeX and MacTeX.  Not bad, but not much tried. All the three are dedicated LaTeX editor.</p>
-
-<p>Emacs --- Good editor with colour differentiation, but cannot offer more features because it is a general purpose editor.
- </p>
-
+<h4 id="cross-platform-editors">Cross platform editors:</h4>
+<p>TexMaker, TexStudio — These are the ones that I use. Very good, All in one interface. Edits, Compiles and views results in one shot. Both have complimenting features</p>
+<p>TexWorks, — Comes with MiKTeX and MacTeX.  Not bad, but not much tried. All the three are dedicated LaTeX editor.</p>
+<p>Emacs — Good editor with colour differentiation, but cannot offer more features because it is a general purpose editor.  </p>
 <p><strong>Windows:</strong></p>
-
-<p>TeXnicCentre : Works pretty well for windows. Similar to TeXmaker and TexStudio. More of &quot;Windows format&quot;. But it is a dedicated LaTeX editor.
- 
-Any editor can be used in this regard. However, the use of a dedicated editor is preferred for ease.
- </p>
-
-<p><strong>Mac</strong>: To be checked.
- </p>
-
+<p>TeXnicCentre : Works pretty well for windows. Similar to TeXmaker and TexStudio. More of “Windows format”. But it is a dedicated LaTeX editor.   Any editor can be used in this regard. However, the use of a dedicated editor is preferred for ease.  </p>
+<p><strong>Mac</strong>: To be checked.  </p>
 <p><strong>Linux:</strong></p>
-
 <p>Lync : There are a lot of similarities, but operates differently.</p>
-
 <p>LateXilla, : not tried</p>
-
-<p>kile, : not tried
- </p>
-
-<h3>Viewer:</h3>
-
-<p>It is a pdf viewer to see the results. Sometimes, you can have ghost-script results which need other viewers. Will be updated when the information is received. Most of the editors will have them by default. Some examples are,
-Adobe PDF : For Windows. All time classic, but does not have &quot;memory&quot;, meaning, it will not show the last modified page during recompilations.</p>
-
-<p>Sumatra: Light and handy, has &quot;memory&quot; suits for windows.</p>
-
+<p>kile, : not tried   ### Viewer: It is a pdf viewer to see the results. Sometimes, you can have ghost-script results which need other viewers. Will be updated when the information is received. Most of the editors will have them by default. Some examples are, Adobe PDF : For Windows. All time classic, but does not have “memory”, meaning, it will not show the last modified page during recompilations.</p>
+<p>Sumatra: Light and handy, has “memory” suits for windows.</p>
 <p>Skim : Just like sumatra, but for Mac OS </p>
-
-<p>Mostly, the default pdf viewers associated with dedicated editors are sufficient.
- </p>
-
-<h3>Accessories</h3>
-
-<p>These are additional software, that is not necessary for LaTeX compilation, but assists in making figures or they serve other purposes. Some of them are:
- </p>
-
-<ol>
-<li>Xfig : Specifically used for making layouts, flowcharts, and presentation related figures etc., (Available for Mac. Windows and Linux/Unix = to be checked)
- 
-Created with Microsoft OneNote 2013.</li>
-</ol>
-
-<h2>Configurations and File types</h2>
-
+<p>Mostly, the default pdf viewers associated with dedicated editors are sufficient.   ### Accessories These are additional software, that is not necessary for LaTeX compilation, but assists in making figures or they serve other purposes. Some of them are:   1. Xfig : Specifically used for making layouts, flowcharts, and presentation related figures etc., (Available for Mac. Windows and Linux/Unix = to be checked)   Created with Microsoft OneNote 2013.</p>
+<h2 id="configurations-and-file-types">Configurations and File types</h2>
 <p>Startup Settings:</p>
-
-<ol>
+<ol start="0" type="1">
 <li>Open TeXmaker</li>
 <li>Go to Options&gt;Configure TeXmaker&gt;Commands&gt; Check the embed option in pdf viewer.</li>
 </ol>
-
 <p>This is for having a parallel pdf view along with the pdf.</p>
-
-<ol>
+<ol start="2" type="1">
 <li>Go to Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX+view pdf.</li>
 </ol>
-
 <p>This is for setting the output of our files to be pdf by default. make changes here for different output formats.</p>
-
-<ol>
+<ol start="3" type="1">
 <li>Go to Options&gt;Configure TeXmaker&gt;editor&gt;Check the word-wrap, completion and show line numbers (check backup after 10 min if needed).</li>
 </ol>
-
-<p>For assistance and ease only.
-     
-While handling bibliography entries, </p>
-
-<pre><code class="prettyprint">    use Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX + BibTeX 
-    pdfLaTex(x2) + view pdf
-</code></pre>
-
-<p>This is a short method for taking care of bibilography entries easily.
- 
-<strong>File Extensions:</strong></p>
-
+<p>For assistance and ease only.   While handling bibliography entries,</p>
+<pre><code>    use Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX + BibTeX 
+    pdfLaTex(x2) + view pdf</code></pre>
+<p>This is a short method for taking care of bibilography entries easily.   <strong>File Extensions:</strong></p>
 <p>The LaTeX files have several extensions.</p>
-
-<p>TeX file or the .tex is the important file. It is the script file you write and compile to get the output. This file is mandatory. If this file is deleted without a backup, you have to re do the work from scratch.
- 
-Bibliography file or the bib file with extension .bib is used for storing bibliographical references. The specific bibliography entries are called when these files are included and keywords associated with them are referred.
- 
-A log file or .log is present after compilation. It has a list of all the compiling steps involved and has useful messages that can be used for debugging if needed.
- 
-Most of the other files are backup files and intermediate object/binary/log/executable files that get generated during compilation. Noticeably, all the files, including the pdf file, executables, tex file and intermediates will have the same name as that of the tex file.
- 
-All the files that have to be included within the pdf file such as figures and other chapters etc., have to be placed in the same folder.
- 
-So it is better to create a single folder, and save all your files inside it. Transfer figures and other files that you will like to include into the document within this folder.</p>
-
-<p><code class="prettyprint">.sty</code> is a LaTeX style format file. These are available in the libraries, and are included when certain packages are used. They are used for making certain styles and formats available in the documents.</p>
-
-<p><code class="prettyprint">.toc</code> file is a LaTeX table of contents file. When a table of contents generation is invoked, the compiler collects all the possible sections, their names and page numbers within the entire document and saves it here. Then, uses these data for generating the table of contents in the document.</p>
-
-<p><code class="prettyprint">.bst</code> is a bibliography style file. This is needed for changing the alignment/manner in which the citations are generated.</p>
-
-<p><code class="prettyprint">.aux</code> is an auxiliary file. Probably this file  is needed for executing multiple operations. This plays a role in invoking the BibTeX compilations.</p>
-
-<p><code class="prettyprint">.cls</code> is a document class file.</p>
-
-<h2>General notes, Tips and Compiling</h2>
-
-<h3>General Notes:</h3>
-
+<p>TeX file or the .tex is the important file. It is the script file you write and compile to get the output. This file is mandatory. If this file is deleted without a backup, you have to re do the work from scratch.   Bibliography file or the bib file with extension .bib is used for storing bibliographical references. The specific bibliography entries are called when these files are included and keywords associated with them are referred.   A log file or .log is present after compilation. It has a list of all the compiling steps involved and has useful messages that can be used for debugging if needed.   Most of the other files are backup files and intermediate object/binary/log/executable files that get generated during compilation. Noticeably, all the files, including the pdf file, executables, tex file and intermediates will have the same name as that of the tex file.   All the files that have to be included within the pdf file such as figures and other chapters etc., have to be placed in the same folder.   So it is better to create a single folder, and save all your files inside it. Transfer figures and other files that you will like to include into the document within this folder.</p>
+<p><code>.sty</code> is a LaTeX style format file. These are available in the libraries, and are included when certain packages are used. They are used for making certain styles and formats available in the documents.</p>
+<p><code>.toc</code> file is a LaTeX table of contents file. When a table of contents generation is invoked, the compiler collects all the possible sections, their names and page numbers within the entire document and saves it here. Then, uses these data for generating the table of contents in the document.</p>
+<p><code>.bst</code> is a bibliography style file. This is needed for changing the alignment/manner in which the citations are generated.</p>
+<p><code>.aux</code> is an auxiliary file. Probably this file  is needed for executing multiple operations. This plays a role in invoking the BibTeX compilations.</p>
+<p><code>.cls</code> is a document class file.</p>
+<h2 id="general-notes-tips-and-compiling">General notes, Tips and Compiling</h2>
+<h3 id="general-notes">General Notes:</h3>
 <ul>
 <li>All commands start with a backslash.</li>
 <li>Almost all the commands usually come in pairs, analogous to html tags. So there is a start command and an end command.</li>
-<li><code class="prettyprint">%</code> stands for a single line comment. Everything that is typed after % becomes a comment. No multi-comment option is noticed.
- 
-LaTex has certain reserved symbols such as,</li>
+<li><code>%</code> stands for a single line comment. Everything that is typed after % becomes a comment. No multi-comment option is noticed.   LaTex has certain reserved symbols such as,</li>
 </ul>
-
-<pre><code class="prettyprint lang-LaTeX">$,%,{,},\
-</code></pre>
-
-<p>These symbols are used in certain command contexts and to use them in general context, some alterations are to be done. (Will be explained as the notes progress)
- 
-some commands need arguments to be filled in. they require to be filled inside <code class="prettyprint">[]</code> and <code class="prettyprint">{}</code>.</p>
-
-<p>The arguments filled within <code class="prettyprint">[]</code> are optional and they have a default value. So, even when they are not mentioned, it is fine. If you have no optional arguments, then ignore <code class="prettyprint">[]</code>. </p>
-
-<p>Empty <code class="prettyprint">[]</code> will show an error. When mentioned, they overrule the default settings.</p>
-
-<p>The arguments filled within <code class="prettyprint">{}</code> are compulsory and optional. Some arguments inside it, are mandatory, while some arguments are optional, that will have a default value, which will get overruled when these optional arguments are filled.
- </p>
-
-<h3>Document Structure:</h3>
-
+<pre class="latex"><code>$,%,{,},\</code></pre>
+<p>These symbols are used in certain command contexts and to use them in general context, some alterations are to be done. (Will be explained as the notes progress)   some commands need arguments to be filled in. they require to be filled inside <code>[]</code> and <code>{}</code>.</p>
+<p>The arguments filled within <code>[]</code> are optional and they have a default value. So, even when they are not mentioned, it is fine. If you have no optional arguments, then ignore <code>[]</code>.</p>
+<p>Empty <code>[]</code> will show an error. When mentioned, they overrule the default settings.</p>
+<p>The arguments filled within <code>{}</code> are compulsory and optional. Some arguments inside it, are mandatory, while some arguments are optional, that will have a default value, which will get overruled when these optional arguments are filled.   ### Document Structure:</p>
 <p>The script for the .tex file goes like this:</p>
-
-<pre><code class="prettyprint lang-LaTeX">document class definitions
+<pre class="latex"><code>document class definitions
 package declarations
 definitions and macros
 title page details
@@ -380,48 +245,16 @@ All the contents within the document including appropriate commands
  
 document ending
  
-extra contents
-</code></pre>
-
-<p> 
-The contents in red are mandatory and can have changes. The contents in green are optional. The section above the document beginning is called as preamble.</p>
-
+extra contents</code></pre>
+<p>  The contents in red are mandatory and can have changes. The contents in green are optional. The section above the document beginning is called as preamble.</p>
 <p>All the contents in preamble are analogous to preprocessors or includes to be done, analogous to including .h files in c program.</p>
-
-<p>The contents in blue are extra contents, which get ignored completely. Can be used as some notes or pointers or comments.
- </p>
-
-<h4>Tips</h4>
-
-<ol>
-<li>Compile and execute every now and then. This helps in identifying the errors at the beginning stage. if too many errors pop-up, then it will be tedious to rectify them later.</li>
-<li>Compiling and executing auto-saves the document. If not, it is advisable to save them before compiling.</li>
-<li>Give comments and proper spacing ,tabbing for readability and explanations.</li>
-<li>Compile + Build + View the document simultaneously and in parallel or alongside view. This helps to monitor changes and corrections.</li>
-<li>Windows shortcut key combinations will work. So, use them advantageously.
- 
-### Compiling:
-Compiling is the process of getting the output. For this to work, the LaTeX compiler must be installed.
- 
-If a dedicated LaTeX editor is used, such as TeXMaker or TeXstudio etc., then &quot;build and view&quot; file button (similar to that) will compile the codes, produces the pdf and displays the pdf.
- 
-If a general purpose editor is used, then you have to save the .tex file, and go to the command prompt and execute commands to compile them.</li>
-</ol>
-
+<p>The contents in blue are extra contents, which get ignored completely. Can be used as some notes or pointers or comments.   #### Tips 1. Compile and execute every now and then. This helps in identifying the errors at the beginning stage. if too many errors pop-up, then it will be tedious to rectify them later. 2. Compiling and executing auto-saves the document. If not, it is advisable to save them before compiling. 3. Give comments and proper spacing ,tabbing for readability and explanations. 4. Compile + Build + View the document simultaneously and in parallel or alongside view. This helps to monitor changes and corrections. 5. Windows shortcut key combinations will work. So, use them advantageously.   ### Compiling: Compiling is the process of getting the output. For this to work, the LaTeX compiler must be installed.   If a dedicated LaTeX editor is used, such as TeXMaker or TeXstudio etc., then “build and view” file button (similar to that) will compile the codes, produces the pdf and displays the pdf.   If a general purpose editor is used, then you have to save the .tex file, and go to the command prompt and execute commands to compile them.</p>
 <p>In Mac and most probably in Linux/Unix versions, type</p>
-
-<pre><code class="prettyprint lang-Bash">    pdflatex filename.tex
-</code></pre>
-
+<pre class="bash"><code>    pdflatex filename.tex</code></pre>
 <p>to compile the code and produce the pdf.</p>
-
-<p>We can omit the <code class="prettyprint">.tex</code> file to get the same result. However, as a practice, .tex is to be used.
- 
-The compiled results are stored in filename.log file</p>
-
-<h2>Sample Preamble</h2>
-
-<pre><code class="prettyprint lang-latex">\documentclass[10pt,a4paper,twoside]{article}
+<p>We can omit the <code>.tex</code> file to get the same result. However, as a practice, .tex is to be used.   The compiled results are stored in filename.log file</p>
+<h2 id="sample-preamble">Sample Preamble</h2>
+<pre class="latex"><code>\documentclass[10pt,a4paper,twoside]{article}
 % Document Class
 % Preamble
 \usepackage[utf8]{inputenc}
@@ -440,126 +273,57 @@ The compiled results are stored in filename.log file</p>
 % Used for shaping the size of the page
 
 \author{Arun Prasaad Gunasekaran}
-\title{Introduction to LaTeX}
-</code></pre>
-
-<h2>Document Class, Doc Details</h2>
-
-<h3>Document class details:</h3>
-
-<p>this is the first command and should be present in each and every document at the first line. It goes like this:
- </p>
-
-<pre><code class="prettyprint lang-latex">\documentclass[font_size]{document_type,specs}
-</code></pre>
-
-<p>there are several kinds of document types:</p>
-
-<ol>
-<li>article (most common article format)</li>
-<li>chapter</li>
-<li>report</li>
-<li>beamer (for power point presentations)</li>
-<li>letter</li>
-<li>and many more…
- 
-specs are some document specifications such as
- 
-font_size defines the font size to be specified. there are 3 default font sizes namely,</li>
-</ol>
-
-<p>10pt, 11pt and 12 pt. </p>
-
+\title{Introduction to LaTeX}</code></pre>
+<h2 id="document-class-doc-details">Document Class, Doc Details</h2>
+<h3 id="document-class-details">Document class details:</h3>
+<p>this is the first command and should be present in each and every document at the first line. It goes like this:  </p>
+<pre class="latex"><code>\documentclass[font_size]{document_type,specs}</code></pre>
+<p>there are several kinds of document types: 1. article (most common article format) 2. chapter 3. report 4. beamer (for power point presentations) 5. letter 6. and many more…   specs are some document specifications such as   font_size defines the font size to be specified. there are 3 default font sizes namely,</p>
+<p>10pt, 11pt and 12 pt. </p>
 <p>while mentioning them in LaTeX, you need to mention as follows.</p>
-
-<pre><code class="prettyprint lang-latex">\documentclass[10pt]{document_type,specs}
-</code></pre>
-
-<p>note that &#39;pt&#39; is mandatory.</p>
-
-<p>the default font size is 12pt.
- 
-<strong>Document Details:</strong>
- 
-By default, the document will have a lot of user details. These are filled either by default or present when they are filled in. Those are namely,</p>
-
-<pre><code class="prettyprint lang-latex">\author[Short Name]{Long Name}   %for the file author
-</code></pre>
-
+<pre class="latex"><code>\documentclass[10pt]{document_type,specs}</code></pre>
+<p>note that ‘pt’ is mandatory.</p>
+<p>the default font size is 12pt.   <strong>Document Details:</strong>   By default, the document will have a lot of user details. These are filled either by default or present when they are filled in. Those are namely,</p>
+<pre class="latex"><code>\author[Short Name]{Long Name}   %for the file author</code></pre>
 <p>the short name is used while displaying in pages while the long name is used in the title pages. The long name can have more than the name, separated by \ command.</p>
-
 <p>eg:</p>
+<pre class="latex"><code>\author[Arun]{G. Arun Prasaad\\Centre for Atmospheric and Oceanic Sciences\\Indian Institute of Science}</code></pre>
+<p>they may make a warning message, but that can be ignored.   <strong>This feature of long value and short value will work well in the beamer class. It may not work properly, or might show errors in the other classes.</strong>  </p>
+<pre class="latex"><code>\date{date attributes}   %for setting the date
 
-<pre><code class="prettyprint lang-latex">\author[Arun]{G. Arun Prasaad\\Centre for Atmospheric and Oceanic Sciences\\Indian Institute of Science}
-</code></pre>
-
-<p>they may make a warning message, but that can be ignored.
- 
-<strong>This feature of long value and short value will work well in the beamer class. It may not work properly, or might show errors in the other classes.</strong>
- </p>
-
-<pre><code class="prettyprint lang-latex">\date{date attributes}   %for setting the date
-
-use \date{\today} for using today&#39;s date.
-</code></pre>
-
+use \date{\today} for using today&#39;s date.</code></pre>
 <p>by default, it will be available even without mentioning it. To avoid the date, use a blank date command.</p>
-
 <p>The date gets displayed, by default, in the American Style format.: Full month name, Date, Year in 4 digits.</p>
-
 <p>You can manually enter the date in the format of your choice.</p>
-
-<p>Just like author name, it can have multiple lines.
- </p>
-
-<pre><code class="prettyprint lang-latex">\title{title of the document}
+<p>Just like author name, it can have multiple lines.  </p>
+<pre class="latex"><code>\title{title of the document}
  
 \subtitle{}
  
 \institution{} %Beamer Class Command
  
-\logo{}
-</code></pre>
-
+\logo{}</code></pre>
 <p>Note: title/document details can be placed before or after begin document command!</p>
-
-<h2>Packages</h2>
-
+<h2 id="packages">Packages</h2>
 <p><strong>Packages</strong></p>
-
 <p>A Package is a collection of programs of LaTex, done for having certain formatting styles that includes, margin spacing, font and font size settings etc.,</p>
-
 <p>LaTeX has its own set of packages. If external packages are used, latex will ask before implementing.</p>
-
-<p>between \document class and \begin document, type</p>
-
-<pre><code class="prettyprint lang-latex">\usepackage{package name}
-</code></pre>
-
+<p>between class and \begin document, type</p>
+<pre class="latex"><code>\usepackage{package name}</code></pre>
 <p>to set the page formatting package for the entire document.</p>
-
 <p>some standard package names are:</p>
-
-<ol>
+<ol type="1">
 <li>fullpage</li>
 <li>geometry</li>
 </ol>
-
 <p>for geometry package, the formatting should be specific</p>
-
-<pre><code class="prettyprint lang-latex">\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
-</code></pre>
-
-<p>in stands for inch. it can be centimeter cm or millimeter mm as well. </p>
-
-<pre><code class="prettyprint lang-latex">\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry} % 8.5*11 inch^2 is the standard A4paper size.
-
+<pre class="latex"><code>\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}</code></pre>
+<p>in stands for inch. it can be centimeter cm or millimeter mm as well.</p>
+<pre class="latex"><code>\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry} % 8.5*11 inch^2 is the standard A4paper size.
+ 
 \usepackage{amsfonts} %this is used to allow special mathematical fonts
-$\mathbb{N}$ %after using the above package, the N will look different.
-</code></pre>
-
+$\mathbb{N}$ %after using the above package, the N will look different.</code></pre>
 <p>some of the packages are:</p>
-
 <ul>
 <li>graphicx - for including figures.</li>
 <li>cclicenses</li>
@@ -569,12 +333,9 @@ $\mathbb{N}$ %after using the above package, the N will look different.
 <li>epstopdf - to convert and put eps figures into the document. It will be converted into a .pdf file and later put inside.</li>
 <li>Mathrsfs for including special curly mathematical notations.</li>
 </ul>
-
-<h2>Sample Layout</h2>
-
+<h2 id="sample-layout">Sample Layout</h2>
 <p>The format of a latex document looks like this:</p>
-
-<pre><code class="prettyprint lang-latex">\documentclass[10pt,a4paper,twoside]{article}
+<pre class="latex"><code>\documentclass[10pt,a4paper,twoside]{article}
 % Document Class
 % Preamble
 \usepackage[utf8]{inputenc}
@@ -587,62 +348,35 @@ $\mathbb{N}$ %after using the above package, the N will look different.
 % All the contents
 
 \end{document}
-
 </code></pre>
-
-<h2>Begin Commands</h2>
-
+<h2 id="begin-commands">Begin Commands</h2>
 <p>Begin commands form the majority of the commands in LaTeX. They always occur in pairs. For example,</p>
-
-<pre><code class="prettyprint lang-latex">\begin[options]{args}
+<pre class="latex"><code>\begin[options]{args}
 contents
-\end{args}
-</code></pre>
-
-<p> 
-The args or arguments specify what the commands should do in pairs. Options vary depending on the argument used.
-There are several arguments.
- 
-To begin the document, use the following command in a pair.</p>
-
-<pre><code class="prettyprint lang-latex">\begin{document}
+\end{args}</code></pre>
+<p>  The args or arguments specify what the commands should do in pairs. Options vary depending on the argument used. There are several arguments.   To begin the document, use the following command in a pair.</p>
+<pre class="latex"><code>\begin{document}
 all the contents, figures, tables etc.,
-\end{document}
-</code></pre>
-
+\end{document}</code></pre>
 <p>Without this, the document will not be processed. This is like a main function in a c program. Everything typed within this command pair forms the body of the document.</p>
-
-<h2>Bullets and Numbering</h2>
-
+<h2 id="bullets-and-numbering">Bullets and Numbering</h2>
 <p>The itemize command helps in creating bullet arguments. To start it, use</p>
-
-<pre><code class="prettyprint lang-latex">\begin{itemize}
+<pre class="latex"><code>\begin{itemize}
 \item  first bullet sentence
 \item  second bullet sentence
 \item and so on.
-\end{itemize}
-</code></pre>
+\end{itemize}</code></pre>
+ 
 
-<p> 
-\item is used for the bullet/number based on what option is chosen (itemize or enumerate)</p>
+<p>is used for the bullet/number based on what option is chosen (itemize or enumerate)</p>
+<p>chain bulleting is allowed. For that, create a <code>\begin{itemize} \end{itemize}</code> within an existing itemize command block.</p>
+<p>  <strong>Enumerate:</strong></p>
+<p>  This option is used for making a numbered list. Everything is same as itemize. Use “enumerate” instead of “itemize”.</p>
+<p>  chain numbering is also possible. Also, a chain numbering and bulleting is also possible. However, you cannot bullet and number in a single field.</p>
+<p>  to create a list, the command used is with a proper example is shown below. it can be a list within a list as well. This is pretty much self- explanatory.</p>
 
-<p>chain bulleting is allowed. For that, create a <code class="prettyprint">\begin{itemize} \end{itemize}</code> within an existing itemize command block.</p>
-
-<p> 
-<strong>Enumerate:</strong></p>
-
-<p> 
-This option is used for making a numbered list. Everything is same as itemize. Use &quot;enumerate&quot; instead of &quot;itemize&quot;.</p>
-
-<p> 
-chain numbering is also possible. Also, a chain numbering and bulleting is also possible. However, you cannot bullet and number in a single field.</p>
-
-<p> 
-to create a list, the command used is with a proper example is shown below. it can be a list within a list as well. This is pretty much self- explanatory.</p>
-
-<p>\item is the bullet indicator.</p>
-
-<pre><code class="prettyprint lang-latex ">\begin{enumerate}
+<p>is the bullet indicator.</p>
+<pre class="latex "><code>\begin{enumerate}
     \item rossby
     \begin{enumerate}
         \item mid-latitude
@@ -660,32 +394,22 @@ to create a list, the command used is with a proper example is shown below. it c
     \end{enumerate}
     \item poincare
     \item yanai
-\end{enumerate}
-</code></pre>
-
+\end{enumerate}</code></pre>
 <p>The tabbing here, is done only for readability. The compilation will take care of it.</p>
-
 <p>to insert bullets rather than numbers, use itemize instead of enumerate.</p>
+to change the labels to the symbol of your choice or word of your choice, use [symbol or word] after
 
-<p>to change the labels to the symbol of your choice or word of your choice, use [symbol or word] after \item. You can have multiple labels</p>
-
-<p> 
-Eg:</p>
-
-<pre><code class="prettyprint lang-latex">\begin{enumerate}
+<p>. You can have multiple labels</p>
+<p>  Eg:</p>
+<pre class="latex"><code>\begin{enumerate}
 \item [Rossby Wave] Mid latitude 45 degree
 \item [Gravity Wave] External Inertia
 \item [Others] Poincare
-\end{enumerate}
-</code></pre>
-
-<h2>Bullet and Numbered List</h2>
-
-<pre><code class="prettyprint lang-latex">% LaTeX files have many extensions!
-% This is a bullet list!
-</code></pre>
-
-<pre><code class="prettyprint lang-latex">
+\end{enumerate}</code></pre>
+<h2 id="bullet-and-numbered-list">Bullet and Numbered List</h2>
+<pre class="latex"><code>% LaTeX files have many extensions!
+% This is a bullet list!</code></pre>
+<pre class="latex"><code>
 \begin{document}
 
 \begin{itemize}
@@ -697,10 +421,8 @@ Eg:</p>
 \item .bst this is a style file for bibliography.
 \item .toc this is a table of contents file
 \item .cls class files.
-\end{itemize}
-</code></pre>
-
-<pre><code class="prettyprint lang-latex">% This is a numbered list!
+\end{itemize}</code></pre>
+<pre class="latex"><code>% This is a numbered list!
 \begin{enumerate}
 \item .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.
 \item .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)
@@ -712,82 +434,37 @@ Eg:</p>
 \item .cls class files.
 \end{enumerate}
 
-\end{document}
-</code></pre>
-
-<h2>Document Modes and Sections</h2>
-
+\end{document}</code></pre>
+<h2 id="document-modes-and-sections">Document Modes and Sections</h2>
 <p>Use % for entering a single line comment. Multi-line comments are not available (So far)</p>
-
-<p> 
-use \$ contents \$ to go into a running text mathematical mode or in-line maths mode.</p>
-
-<p> 
-use \$\$ contents \$\$ to go into a centre justified mathematical mode or display maths mode. If certain symbols are used without defining a mathematical mode, (eg: ^), the program will show an error.</p>
-
-<p> 
-Contents entered within maths mode will be properly in mathematical format. They will follow a different font with an inclination or in italics.</p>
-
-<p> 
-While typing lines, &quot;Enter&quot; key or &quot;Return&quot; key is not taken as a line completion or a line break. By default, the program has a paragraph indent.</p>
-
+<p>  use $ contents $ to go into a running text mathematical mode or in-line maths mode.</p>
+<p>  use $$ contents $$ to go into a centre justified mathematical mode or display maths mode. If certain symbols are used without defining a mathematical mode, (eg: ^), the program will show an error.</p>
+<p>  Contents entered within maths mode will be properly in mathematical format. They will follow a different font with an inclination or in italics.</p>
+<p>  While typing lines, “Enter” key or “Return” key is not taken as a line completion or a line break. By default, the program has a paragraph indent.</p>
 <p>Leaving a blank line in the .tex file is interpreted as an end of the paragraph (or a hard return). So, a new line when begun, is taken as a start for a new paragraph.</p>
-
 <p>No matter how many hard returns or blank you give in the tex file, it will be read as a single hard return. Apparently, in a letter format, a blank line is taken as a new paragraph beginning.</p>
-
-<p> 
-While typing lines, if you just want a line break without going into the next paragraph, (or a soft return), use \ at the end of the line and continue typing. This command should have text at the front as well as at the back. This will not create an indent.</p>
-
-<p> 
-There are some options to alter the indentations. It is to be explored.</p>
-
-<p> 
-If you reach the bottom of a page, and you type certain extra lines, LaTeX will automatically push the contents to the next page, or shrink fit them into the same page. It depends on the length of the content.</p>
-
-<p> 
-Similarly, while placing figures and tables, LaTeX will automatically adjust content displays to fit them accordingly.</p>
-
-<p> 
-<strong>Document Sections:</strong>
- 
-To create a section in the document is easy.</p>
-
-<pre><code class="prettyprint lang-latex">use \section{section name}  to create a section in the document.
+<p>  While typing lines, if you just want a line break without going into the next paragraph, (or a soft return), use \ at the end of the line and continue typing. This command should have text at the front as well as at the back. This will not create an indent.</p>
+<p>  There are some options to alter the indentations. It is to be explored.</p>
+<p>  If you reach the bottom of a page, and you type certain extra lines, LaTeX will automatically push the contents to the next page, or shrink fit them into the same page. It depends on the length of the content.</p>
+<p>  Similarly, while placing figures and tables, LaTeX will automatically adjust content displays to fit them accordingly.</p>
+<p>  <strong>Document Sections:</strong>   To create a section in the document is easy.</p>
+<pre class="latex"><code>use \section{section name}  to create a section in the document.
 use \subsection{}  to create a sub section
-use \subsubsection{}  to create a sub sub section
-</code></pre>
-
-<p> 
-Apparently, only 3 levels of hierarchy are allowed. Chapters are also allowed. That is a different category.</p>
-
+use \subsubsection{}  to create a sub sub section</code></pre>
+<p>  Apparently, only 3 levels of hierarchy are allowed. Chapters are also allowed. That is a different category.</p>
 <p>The sizes of these sections are decreasing in size. All these sections are in bold.</p>
-
-<p>Multiple number of sections are allowed. They get automatically numbered.
- 
-using these sections is necessary for making the table of contents. They get numbered accordingly, based on the document type and their position within the document.</p>
-
-<h2>Symbols:</h2>
-
+<p>Multiple number of sections are allowed. They get automatically numbered.   using these sections is necessary for making the table of contents. They get numbered accordingly, based on the document type and their position within the document.</p>
+<h2 id="symbols">Symbols:</h2>
 <p>Symbols in LaTeX are pre-assigned. So, you cannot use them directly.</p>
-
 <p>Use backslash symbol to type the characters.</p>
-
-<p>eg: <code class="prettyprint">\$ \% \&amp;</code></p>
-
-<h2>Parenthesis:</h2>
-
+<p>eg: <code>\$ \% \&amp;</code></p>
+<h2 id="parenthesis">Parenthesis:</h2>
 <p>Circular/Round brackets do not have any meaning. (). Square brackets have meaning in commands, but they can stand alone. [].</p>
-
-<p>But! flower/curly brackets are reserved. You cannot print them directly! {}
-To print them, use backslash <code class="prettyprint">\{ \}.</code></p>
-
+<p>But! flower/curly brackets are reserved. You cannot print them directly! {} To print them, use backslash <code>\{ \}.</code></p>
 <p>In commands, [] are used for filling optional arguments/instructions, whereas {} brackets are used for filling the command name.</p>
-
 <p>use package commands are used for including special packages into the file (they add more features to the document)</p>
-
-<h2>Document Basics, Environment Commands, Document Classes</h2>
-
-<pre><code class="prettyprint lang-latex">
+<h2 id="document-basics-environment-commands-document-classes">Document Basics, Environment Commands, Document Classes</h2>
+<pre class="latex"><code>
 \begin{document}
 \maketitle
 
@@ -809,12 +486,9 @@ Commands in LaTeX start with the backslash symbol. eg: today, maketitle, makeind
 Environment commands start with backslash just like normal commands, but they occur in pairs. Environment commands create a region of special formats or special features within the document. They start with a begin and end with an end.
 eg: begin document - end document, 
 
-\end{document}
-</code></pre>
-
-<h2>Document Sections and Subsections</h2>
-
-<pre><code class="prettyprint lang-latex">\begin{document}
+\end{document}</code></pre>
+<h2 id="document-sections-and-subsections">Document Sections and Subsections</h2>
+<pre class="latex"><code>\begin{document}
 
 \maketitle
 
@@ -859,7 +533,7 @@ Hello everyone! LaTeX was made/created by Leslie Lamport! \\
 Hello everyone! LaTeX was made/created by Leslie Lamport! 
 
 \subsubsection{para3:1:1} 
-
+ 
 I am using TeXmaker for writing this document!\\
 
 \section{Para4}
@@ -867,87 +541,37 @@ Hello everyone! LaTeX was made/created by Leslie Lamport!\\
 
 \section{Para5}
 Hello everyone! LaTeX was made/created by Leslie Lamport! \\
-\end{document}
-</code></pre>
-
-<h2>Mathematical Notations</h2>
-
-<h3>Subscripts and Superscripts:</h3>
-
-<p> 
-This section includes how to use subscripts and superscripts.</p>
-
-<p> 
-<strong>Superscripts:</strong></p>
-
+\end{document}</code></pre>
+<h2 id="mathematical-notations">Mathematical Notations</h2>
+<h3 id="subscripts-and-superscripts">Subscripts and Superscripts:</h3>
+<p>  This section includes how to use subscripts and superscripts.</p>
+<p>  <strong>Superscripts:</strong></p>
 <p>start the maths mode, (inline or display)</p>
-
-<pre><code class="prettyprint lang-latex">x^4 will type it in proper mode.
+<pre class="latex"><code>x^4 will type it in proper mode.
 x^45 will type x^4 properly and 5 in the same line and size of x.
 To avoid that, use {}
-x^{45} will type it in proper mode.
-</code></pre>
-
-<p> 
-Chain superscripts are possible. For that, the {} are to be used properly. Otherwise, it is not a big deal.
-Noticed upto 3 levels. May be more.
- 
-<strong>Subscripts:</strong>
- 
-start the maths mode, (inline or display)</p>
-
-<pre><code class="prettyprint lang-latex">x_4 will type it in proper mode.
+x^{45} will type it in proper mode.</code></pre>
+<p>  Chain superscripts are possible. For that, the {} are to be used properly. Otherwise, it is not a big deal. Noticed upto 3 levels. May be more.   <strong>Subscripts:</strong>   start the maths mode, (inline or display)</p>
+<pre class="latex"><code>x_4 will type it in proper mode.
 x_45 will type x subscript 4 properly and 5 in the same line and size of x.
 To avoid that, use {}
-x_{45} will type it in proper mode.
-</code></pre>
-
-<p> 
-these are more {} sensitive than superscripts.</p>
-
-<p>Chain subscripts are possible. For that, the {} are to be used properly. Otherwise, it is not a big deal.
-Noticed upto 3 levels. May be more.
- 
-To include both subscripts and superscripts, use the above rules together and with proper use of {},^ and _
- 
-<strong>Greek Letters:</strong>
- 
-To type Greek letters,
- 
-go into maths mode (inline or display)</p>
-
-<p>type \ followed by a simplified equivalent English pronunciation word for the letters.</p>
-
-<pre><code class="prettyprint lang-latex">eg: \pi for the Greek letter pi
+x_{45} will type it in proper mode.</code></pre>
+<p>  these are more {} sensitive than superscripts.</p>
+<p>Chain subscripts are possible. For that, the {} are to be used properly. Otherwise, it is not a big deal. Noticed upto 3 levels. May be more.   To include both subscripts and superscripts, use the above rules together and with proper use of {},^ and _   <strong>Greek Letters:</strong>   To type Greek letters,   go into maths mode (inline or display)</p>
+<p>type  followed by a simplified equivalent English pronunciation word for the letters.</p>
+<pre class="latex"><code>eg: \pi for the Greek letter pi
  
 \alpha
 \beta
 \gamma
-\omega and so on.
-</code></pre>
-
-<p> 
-if you do not know the proper one, you can always check it out in the insert symbols options.
- 
-After typing a Greek letter, leave a space. Or else, all the letters along with it will be taken as a big command.</p>
-
-<pre><code class="prettyprint lang-latex">eg: $A = \pi r^2$
-</code></pre>
-
-<p>$A = \pi r^2$</p>
-
-<p><strong>Functions:</strong>
- 
-For trigonometric functions,
- 
-type \ followed by the function name in English (exactly or equivalently depending on the case)</p>
-
-<pre><code class="prettyprint lang-latex">eg \cos{} for the cosine function, \cosh{} for hyperbolic cosine. similar methods exist for other functions and inverse functions.
-</code></pre>
-
+\omega and so on.</code></pre>
+<p>  if you do not know the proper one, you can always check it out in the insert symbols options.   After typing a Greek letter, leave a space. Or else, all the letters along with it will be taken as a big command.</p>
+<pre class="latex"><code>eg: $A = \pi r^2$</code></pre>
+<p><span class="math inline">\(A = \pi r^2\)</span></p>
+<p><strong>Functions:</strong>   For trigonometric functions,   type  followed by the function name in English (exactly or equivalently depending on the case)</p>
+<pre class="latex"><code>eg \cos{} for the cosine function, \cosh{} for hyperbolic cosine. similar methods exist for other functions and inverse functions.</code></pre>
 <p><strong>For log functions</strong>:</p>
-
-<pre><code class="prettyprint lang-latex">type \log{} for base 10 log function without 10 at the base
+<pre class="latex"><code>type \log{} for base 10 log function without 10 at the base
 type \ln{} for natural log function without e at the base
 type \log_{sub}{} for base sub log function with subscript eg: log base 3 or log base 4.5 etc.,
 ``` 
@@ -955,167 +579,64 @@ type \log_{sub}{} for base sub log function with subscript eg: log base 3 or log
 
 ```latex
 type \sqrt{} for regular square roots
-type \sqrt[root]{} for other roots. eg: cube root, 4.5th root, etc.,
-</code></pre>
-
-<p>chain functions are possible. Use {} and endings properly.
- 
-similarly, definitions exists for other functions.
- 
-<strong>Fractions:</strong>
- 
-To type a fraction,
- 
-go to maths mode,</p>
-
-<p>use \frac{Nr}{Dr}
- 
-if used in the in-line maths mode, the fraction will look smaller in font.</p>
-
+type \sqrt[root]{} for other roots. eg: cube root, 4.5th root, etc.,</code></pre>
+<p>chain functions are possible. Use {} and endings properly.   similarly, definitions exists for other functions.   <strong>Fractions:</strong>   To type a fraction,   go to maths mode,</p>
+<p>use    if used in the in-line maths mode, the fraction will look smaller in font.</p>
 <p>to avoid that, wrap the fraction within display style command.</p>
-
-<pre><code class="prettyprint lang-latex">eg: \displaystyle{\frac{Nr}{Dr}}
-</code></pre>
-
-<p>$$\displaystyle{\frac{Nr}{Dr}}$$</p>
-
-<p> 
-chain fractions are possible. Also, commands and fractions nesting is also possible.</p>
-
+<pre class="latex"><code>eg: \displaystyle{\frac{Nr}{Dr}}</code></pre>
+<p><span class="math display">\[\displaystyle{\frac{Nr}{Dr}}\]</span></p>
+<p>  chain fractions are possible. Also, commands and fractions nesting is also possible.</p>
 <p>space between two lines intentionally made in the script will give line break in the document.</p>
-
 <p>use tab for jumping between {} from left to right.</p>
-
 <p>use space between functions as you type them when you write a nested function statement.</p>
-
-<p>This space will not appear in the preview. this will ensure readability of the code.
- 
-eg:</p>
-
-<p>to type fractions:
-$\frac{numerator}{denominator}$</p>
-
+<p>This space will not appear in the preview. this will ensure readability of the code.   eg:</p>
+<p>to type fractions: <span class="math inline">\(\frac{numerator}{denominator}\)</span></p>
 <p>eg:</p>
-
-<p>\$\frac{2}{3}\$ for 2/3 in fraction representation. this shrinks the fraction size to fit in-line</p>
-
-<p>$$\frac{2}{3}$$
- 
-\$\displaystyle{\frac{2}{3}}\$ will print the fraction to the original size.</p>
-
-<p>$$\displaystyle{\frac{2}{3}}$$</p>
-
-<p>\$\frac{x}{x^2+2x+1}\$ \$\frac{x}{\sqrt{x^2+2x+1}}\$</p>
-
-<p>$$\frac{x}{x^2+2x+1}$$ $$\frac{x}{\sqrt{x^2+2x+1}}$$
- 
-fraction within a fraction</p>
-
-<p>\$\frac{\frac{2}{3}}{\frac{5}{6}}\$ will print (2/3)/(5/6) in proper format</p>
-
-<p>$$\frac{\frac{2}{3}}{\frac{5}{6}}$$
- 
-\displaystyle{content} will print the entire content without size shrinking in a single line.
- 
-Symbols and Brackets:
- 
-(), [] are non-reserved brackets. so they can be used inside maths mode and inside text without any alterations.
- 
-{} are reserved brackets. they can be used only with commands, especially for coding.</p>
-
-<p>to use them without commands, use { and }
- 
-similarly, $ is a reserved symbol.</p>
-
-<p>To use it elsewhere, use \$</p>
-
-<pre><code class="prettyprint lang-latex">$$3(\frac{2}{5})$$ will display 3*(2/5) with the () brackets being short.
-</code></pre>
-
-<p>to extend them, or enlarge them use \left and \right command in pairs</p>
-
-<pre><code class="prettyprint lang-latex">eg: $$3\left(\frac{2}{5}\right)$$
-</code></pre>
-
-<p>$$3\left(\frac{2}{5}\right)$$</p>
-
+<p>$$ for 2/3 in fraction representation. this shrinks the fraction size to fit in-line</p>
+<p><span class="math display">\[\frac{2}{3}\]</span>   $$ will print the fraction to the original size.</p>
+<p><span class="math display">\[\displaystyle{\frac{2}{3}}\]</span></p>
+<p>$$ $$</p>
+<p><span class="math display">\[\frac{x}{x^2+2x+1}\]</span> <span class="math display">\[\frac{x}{\sqrt{x^2+2x+1}}\]</span>   fraction within a fraction</p>
+<p>$$ will print (2/3)/(5/6) in proper format</p>
+<p><span class="math display">\[\frac{\frac{2}{3}}{\frac{5}{6}}\]</span>    will print the entire content without size shrinking in a single line.   Symbols and Brackets:   (), [] are non-reserved brackets. so they can be used inside maths mode and inside text without any alterations.   {} are reserved brackets. they can be used only with commands, especially for coding.</p>
+<p>to use them without commands, use { and }   similarly, $ is a reserved symbol.</p>
+<p>To use it elsewhere, use $</p>
+<pre class="latex"><code>$$3(\frac{2}{5})$$ will display 3*(2/5) with the () brackets being short.</code></pre>
+<p>to extend them, or enlarge them use and command in pairs</p>
+<pre class="latex"><code>eg: $$3\left(\frac{2}{5}\right)$$</code></pre>
+<p><span class="math display">\[3\left(\frac{2}{5}\right)\]</span></p>
 <p>applies for [] as well. when using {}, you need to put them as { or }</p>
-
-<pre><code class="prettyprint lang-latex">eg: $\left\{25\right\}$
-</code></pre>
-
-<p>$\left{25\right}$
- 
-\left and \right always should occur in pairs. you can change the brackets between \left and \right.</p>
-
+<pre class="latex"><code>eg: $\left\{25\right\}$</code></pre>
+<p><span class="math inline">\(\left\{25\right\}\)</span>   and always should occur in pairs. you can change the brackets between and .</p>
 <p>if you do not want a bracket in the left or right, use a dot or period</p>
-
-<pre><code class="prettyprint lang-latex">eg: \left. or \right.
-</code></pre>
-
-<p>\left and \right can be used for enveloping other symbols as well, for instance the | symbol</p>
-
-<pre><code class="prettyprint lang-latex">$$3(1+[23])$$ will print 3(1+[23]).
-</code></pre>
-
-<p>except for curly brackets{}, inserting other brackets is not a problem and it is direct.
- 
-{} are reserved symbols in LaTeX options so,</p>
-
-<pre><code class="prettyprint lang-latex">${a,b,c}$ will print a,b,c alone without the brackets.
+<pre class="latex"><code>eg: \left. or \right.</code></pre>
+<p>and can be used for enveloping other symbols as well, for instance the | symbol</p>
+<pre class="latex"><code>$$3(1+[23])$$ will print 3(1+[23]).</code></pre>
+<p>except for curly brackets{}, inserting other brackets is not a problem and it is direct.   {} are reserved symbols in LaTeX options so,</p>
+<pre class="latex"><code>${a,b,c}$ will print a,b,c alone without the brackets.
 
 to solve this, use the backslash operator as follows,
-$\{a,b,c\}$ will print {a,b,c} with brackets.
-</code></pre>
-
-<p>similarly \$ symbol is a reserved in LaTeX so, to print a dollar symbol in LaTeX, use the \$ notation.</p>
-
-<pre><code class="prettyprint lang-latex">$3(\frac{2}{4})$ will print 3(2/4) but () brackets will be short and will not be printed to the size of the fraction.
+$\{a,b,c\}$ will print {a,b,c} with brackets.</code></pre>
+<p>similarly $ symbol is a reserved in LaTeX so, to print a dollar symbol in LaTeX, use the $ notation.</p>
+<pre class="latex"><code>$3(\frac{2}{4})$ will print 3(2/4) but () brackets will be short and will not be printed to the size of the fraction.
  
 to rectify this, use left and right functions as below
 $3\left(\frac{2}{4}\right)$ will print 3(2/4) but the () brackets will grow large enough to cover the fraction.
-this function is available for [] brackets as well.
-</code></pre>
-
-<p> 
-for {} brackets, just as above, but use \ symbol as shown below</p>
-
-<pre><code class="prettyprint lang-latex">$3\left\{\frac{2}{4}\right\}$
-</code></pre>
-
-<p>$$3\left{\frac{2}{4}\right}$$
- 
-this methodology works for all symbols as it is. LaTeX treats all symbols and brackets (except{}) alike</p>
-
-<pre><code class="prettyprint lang-latex">$|\frac{x}{x+1}|$ will print x/x+1 in proper notation within absolute symbol, but the size of the absolute symbol will be short and will not cover the fraction.
-</code></pre>
-
-<p>use the same left and right function as with brackets to grow the symbol.
- 
-left and right functions work as a pair, meaning, if left is present, then right has to be present,
- 
-suppose you don&#39;t want a bracket or a symbol that grows to fit the fraction either in the left or right, use the period (.) symbol to avoid it.</p>
-
+this function is available for [] brackets as well.</code></pre>
+<p>  for {} brackets, just as above, but use  symbol as shown below</p>
+<pre class="latex"><code>$3\left\{\frac{2}{4}\right\}$</code></pre>
+<p><span class="math display">\[3\left\{\frac{2}{4}\right\}\]</span>   this methodology works for all symbols as it is. LaTeX treats all symbols and brackets (except{}) alike</p>
+<pre class="latex"><code>$|\frac{x}{x+1}|$ will print x/x+1 in proper notation within absolute symbol, but the size of the absolute symbol will be short and will not cover the fraction.</code></pre>
+<p>use the same left and right function as with brackets to grow the symbol.   left and right functions work as a pair, meaning, if left is present, then right has to be present,   suppose you don’t want a bracket or a symbol that grows to fit the fraction either in the left or right, use the period (.) symbol to avoid it.</p>
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-latex">$$\left\{x^2\right\}$$ will print {x^2} in proper notation.
+<pre class="latex"><code>$$\left\{x^2\right\}$$ will print {x^2} in proper notation.
 $$\left\{x^2\right.$$ will print {x^2 in proper notation. It will ignore the need for }
-$$\left.\frac{dy}{dx}\right|_x=0$$ will print dy/dx in full fraction with | fully covering the derivative on the right with x=0 at the subscript in proper notation.
-</code></pre>
-
-<p>$$\left{x^2\right}$$</p>
-
-<p>$$\left{x^2\right.$$</p>
-
-<p>$$\left.\frac{dy}{dx}\right|_x=0$$
- 
-on the same note, if you want one side of the brackets to be of the different bracket, then again it is possible. try this out!</p>
-
-<p>note that the commands must be executed in pair but the arguments or symbols they take need not be the same.
- 
-<strong>Other symbols</strong></p>
-
-<pre><code class="prettyprint lang-latex">\pm symbol is used for plus or minus symbol
+$$\left.\frac{dy}{dx}\right|_x=0$$ will print dy/dx in full fraction with | fully covering the derivative on the right with x=0 at the subscript in proper notation.</code></pre>
+<p><span class="math display">\[\left\{x^2\right\}\]</span></p>
+<p><span class="math display">\[\left\{x^2\right.\]</span></p>
+<p><span class="math display">\[\left.\frac{dy}{dx}\right|_x=0\]</span>   on the same note, if you want one side of the brackets to be of the different bracket, then again it is possible. try this out!</p>
+<p>note that the commands must be executed in pair but the arguments or symbols they take need not be the same.   <strong>Other symbols</strong></p>
+<pre class="latex"><code>\pm symbol is used for plus or minus symbol
 
 \approx is used for approximately equal symbol
 
@@ -1140,154 +661,73 @@ Similarly there are \vdots and \ddots for vertical 3 dots and diagonal 3 dots
 \int for integral symbol
 
 \bynsca for 3 symbols of creative common license. Needs cclicense package to print them
-
 </code></pre>
-
-<p> 
-<strong>Special Mathematical Symbols:</strong></p>
-
-<p>Include package mathrsfs and use \mathcal{character name} for getting the stylish/curly character symbols as in Laplace/Fourier Transforms.
- 
-A list of important symbols:
-<a href="http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols</a>
- 
-This source is from wiki.</p>
-
-<h2>Mathematical Notations</h2>
-
-<pre><code class="prettyprint lang-latex">The heron&#39;s formulae for the area of a triangle is given by $A = \sqrt{s(s-a)(s-b)(s-c)} $
-</code></pre>
-
-<p>$A = \sqrt{s(s-a)(s-b)(s-c)} $</p>
-
-<pre><code class="prettyprint lang-latex">For a quadratic equation, $ax^2 + bx + c = 0$, the solution of x is given by the notation: $$ x = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}$$
-</code></pre>
-
-<p>For a quadratic equation, $ax^2 + bx + c = 0$, the solution of x is given by the notation: $$ x = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}$$</p>
-
-<h3>Subscripts and Super-Scripts</h3>
-
+<p>  <strong>Special Mathematical Symbols:</strong></p>
+<p>Include package mathrsfs and use  for getting the stylish/curly character symbols as in Laplace/Fourier Transforms.   A list of important symbols: http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols   This source is from wiki.</p>
+<h2 id="mathematical-notations-1">Mathematical Notations</h2>
+<pre class="latex"><code>The heron&#39;s formulae for the area of a triangle is given by $A = \sqrt{s(s-a)(s-b)(s-c)} $</code></pre>
+<p>$A =  $</p>
+<pre class="latex"><code>For a quadratic equation, $ax^2 + bx + c = 0$, the solution of x is given by the notation: $$ x = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}$$</code></pre>
+<p>For a quadratic equation, <span class="math inline">\(ax^2 + bx + c = 0\)</span>, the solution of x is given by the notation: <span class="math display">\[ x = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}\]</span></p>
+<h3 id="subscripts-and-super-scripts">Subscripts and Super-Scripts</h3>
 <p>The algebraic identities are very vital for evaluating arithmetic operations.</p>
-
-<pre><code class="prettyprint lang-latex">$$ (a+b)^2 = a^2 + 2ab + b^2 $$
-$$ (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$
-</code></pre>
-
-<p>$$ (a+b)^2 = a^2 + 2ab + b^2 $$
-$$ (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$</p>
-
+<pre class="latex"><code>$$ (a+b)^2 = a^2 + 2ab + b^2 $$
+$$ (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$</code></pre>
+<p><span class="math display">\[ (a+b)^2 = a^2 + 2ab + b^2 \]</span> <span class="math display">\[ (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3\]</span></p>
 <p>Taylor series expansion</p>
-
-<pre><code class="prettyprint lang-latex">$$ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 + .... $$
-</code></pre>
-
-<p>$$ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 + .... $$</p>
-
-<pre><code class="prettyprint lang-latex">$U^{235}_{92}$ is radio active and naturally unstable!
-</code></pre>
-
-<p>$U^{235}_{92}$ is radio active and naturally unstable!</p>
-
-<pre><code class="prettyprint lang-latex">$$ U^{35^{-45}}_{{45}_{-35}}$$
-</code></pre>
-
-<p>$$ U^{35^{-45}}<em>{{45}</em>{-35}}$$</p>
-
+<pre class="latex"><code>$$ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 + .... $$</code></pre>
+<p><span class="math display">\[ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 + .... \]</span></p>
+<pre class="latex"><code>$U^{235}_{92}$ is radio active and naturally unstable!</code></pre>
+<p><span class="math inline">\(U^{235}_{92}\)</span> is radio active and naturally unstable!</p>
+<pre class="latex"><code>$$ U^{35^{-45}}_{{45}_{-35}}$$</code></pre>
+<p><span class="math display">\[ U^{35^{-45}}_{{45}_{-35}}\]</span></p>
 <p>The FTBS FD scheme for Linear Advection equation is given as:</p>
-
-<pre><code class="prettyprint lang-latex">$$ u_{i+1,j} = u_{i,j} - \frac{c\Delta t}{\Delta x}[u_{i,j}-u_{i,j-1}]$$
-</code></pre>
-
-<p>$$ u<em>{i+1,j} = u</em>{i,j} - \frac{c\Delta t}{\Delta x}[u<em>{i,j}-u</em>{i,j-1}]$$</p>
-
-<h3>Greek Symbols</h3>
-
-<pre><code class="prettyprint lang-latex">$\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\ \Delta\ \Gamma$
-</code></pre>
-
-<p>$\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\ \Delta\ \Gamma$</p>
-
+<pre class="latex"><code>$$ u_{i+1,j} = u_{i,j} - \frac{c\Delta t}{\Delta x}[u_{i,j}-u_{i,j-1}]$$</code></pre>
+<p><span class="math display">\[ u_{i+1,j} = u_{i,j} - \frac{c\Delta t}{\Delta x}[u_{i,j}-u_{i,j-1}]\]</span></p>
+<h3 id="greek-symbols">Greek Symbols</h3>
+<pre class="latex"><code>$\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\ \Delta\ \Gamma$</code></pre>
+<p><span class="math inline">\(\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\ \Delta\ \Gamma\)</span></p>
 <p>The area of a circle is:</p>
+<pre class="latex"><code>$$ A = \pi r^2$$
 
-<pre><code class="prettyprint lang-latex">$$ A = \pi r^2$$
-
-$\Pi$
-</code></pre>
-
-<p>$$ A = \pi r^2$$</p>
-
-<p>$\Pi$</p>
-
-<h3>Functions</h3>
-
-<h4>Square root and Root</h4>
-
-<pre><code class="prettyprint lang-latex">$$\Delta = \sqrt{b^2 -4ac}$$
-$$ a = \sqrt[0.5]{b}$$
-</code></pre>
-
-<p>$$\Delta = \sqrt{b^2 -4ac}$$
-$$ a = \sqrt[0.5]{b}$$</p>
-
-<h4>Logarithms</h4>
-
+$\Pi$</code></pre>
+<p><span class="math display">\[ A = \pi r^2\]</span></p>
+<p><span class="math inline">\(\Pi\)</span></p>
+<h3 id="functions">Functions</h3>
+<h4 id="square-root-and-root">Square root and Root</h4>
+<pre class="latex"><code>$$\Delta = \sqrt{b^2 -4ac}$$
+$$ a = \sqrt[0.5]{b}$$</code></pre>
+<p><span class="math display">\[\Delta = \sqrt{b^2 -4ac}\]</span> <span class="math display">\[ a = \sqrt[0.5]{b}\]</span></p>
+<h4 id="logarithms">Logarithms</h4>
 <p>Base 10 log without 10 at the base</p>
-
-<pre><code class="prettyprint lang-latex">$$ \log{b} $$
-</code></pre>
-
-<p>$$ \log{b} $$</p>
-
+<pre class="latex"><code>$$ \log{b} $$</code></pre>
+<p><span class="math display">\[ \log{b} \]</span></p>
 <p>Natural Logarithm</p>
-
-<pre><code class="prettyprint lang-latex">$$ \ln{b} $$
-</code></pre>
-
-<p>$$ \ln{b} $$</p>
-
+<pre class="latex"><code>$$ \ln{b} $$</code></pre>
+<p><span class="math display">\[ \ln{b} \]</span></p>
 <p>Non-standard logarithm</p>
-
-<pre><code class="prettyprint lang-latex">$$ \log_{8}{64} = 2 $$
-</code></pre>
-
-<p>$$ \log_{8}{64} = 2 $$</p>
-
-<h4>Trigonometry</h4>
-
+<pre class="latex"><code>$$ \log_{8}{64} = 2 $$</code></pre>
+<p><span class="math display">\[ \log_{8}{64} = 2 \]</span></p>
+<h4 id="trigonometry">Trigonometry</h4>
 <p>Sine function</p>
-
-<pre><code class="prettyprint lang-latex">$ sin(A+B) = sin(A)cos(B) + cos(A)sin(B)$
+<pre class="latex"><code>$ sin(A+B) = sin(A)cos(B) + cos(A)sin(B)$
 
 $ \sin(A+B) = \sin(A)\cos(B) + \cos(A)\sin(B)$
 
 $ \sin{A+B} = \sin{A}\cos{B} + \cos{A}\sin{B}$
 
-$\cosh^2(A)$
-</code></pre>
-
+$\cosh^2(A)$</code></pre>
 <p>$ sin(A+B) = sin(A)cos(B) + cos(A)sin(B)$</p>
-
-<p>$ \sin(A+B) = \sin(A)\cos(B) + \cos(A)\sin(B)$</p>
-
-<p>$ \sin{A+B} = \sin{A}\cos{B} + \cos{A}\sin{B}$</p>
-
-<p>$\cosh^2(A)$</p>
-
-<h4>Fractions and Brackets</h4>
-
-<pre><code class="prettyprint lang-latex">$\frac{4}{5}$ means, you take 4 parts of something after it is divided into 5 equal parts.
-</code></pre>
-
-<p>$\frac45$</p>
-
-<pre><code class="prettyprint lang-latex">$\displaystyle{\frac{4}{5}}$ means, you take 4 parts of something after it is divided into 5 equal parts.
-</code></pre>
-
-<p>$\displaystyle{\frac{4}{5}}$</p>
-
+<p>$ (A+B) = (A)(B) + (A)(B)$</p>
+<p>$  =  + $</p>
+<p><span class="math inline">\(\cosh^2(A)\)</span></p>
+<h4 id="fractions-and-brackets">Fractions and Brackets</h4>
+<pre class="latex"><code>$\frac{4}{5}$ means, you take 4 parts of something after it is divided into 5 equal parts.</code></pre>
+<p><span class="math inline">\(\frac45\)</span></p>
+<pre class="latex"><code>$\displaystyle{\frac{4}{5}}$ means, you take 4 parts of something after it is divided into 5 equal parts.</code></pre>
+<p><span class="math inline">\(\displaystyle{\frac{4}{5}}\)</span></p>
 <p>The FTBS FD scheme for Linear Advection equation is given as:</p>
-
-<pre><code class="prettyprint lang-latex">$$ u_{i+1,j} = u_{i,j} - \left[\frac{c\Delta t}{\Delta x}\right][u_{i,j}-u_{i,j-1}]$$
+<pre class="latex"><code>$$ u_{i+1,j} = u_{i,j} - \left[\frac{c\Delta t}{\Delta x}\right][u_{i,j}-u_{i,j-1}]$$
 
 $$ \left( \frac{c\Delta t}{\Delta x} \right)$$
 
@@ -1295,93 +735,46 @@ $$ \left[ \frac{c\Delta t}{\Delta x} \right)$$
 
 $$ \left( \frac{c\Delta t}{\Delta x} \right]$$
 
-$$ \left. \frac{c\Delta t}{\Delta x} \right\rangle$$
-</code></pre>
-
-<p>$$ u<em>{i+1,j} = u</em>{i,j} - \left[\frac{c\Delta t}{\Delta x}\right][u<em>{i,j}-u</em>{i,j-1}]$$</p>
-
-<p>$$ \left( \frac{c\Delta t}{\Delta x} \right)$$</p>
-
-<p>$$ \left[ \frac{c\Delta t}{\Delta x} \right)$$</p>
-
-<p>$$ \left( \frac{c\Delta t}{\Delta x} \right]$$</p>
-
-<p>$$ \left. \frac{c\Delta t}{\Delta x} \right\rangle$$</p>
-
+$$ \left. \frac{c\Delta t}{\Delta x} \right\rangle$$</code></pre>
+<p><span class="math display">\[ u_{i+1,j} = u_{i,j} - \left[\frac{c\Delta t}{\Delta x}\right][u_{i,j}-u_{i,j-1}]\]</span></p>
+<p><span class="math display">\[ \left( \frac{c\Delta t}{\Delta x} \right)\]</span></p>
+<p><span class="math display">\[ \left[ \frac{c\Delta t}{\Delta x} \right)\]</span></p>
+<p><span class="math display">\[ \left( \frac{c\Delta t}{\Delta x} \right]\]</span></p>
+<p><span class="math display">\[ \left. \frac{c\Delta t}{\Delta x} \right\rangle\]</span></p>
 <p>The definition of a derivative:</p>
+<pre class="latex"><code>$$ \left.\frac{dy}{dx}\right|_{x\rightarrow 0} = \frac{f(y+dy)-f(y)}{dx}$$</code></pre>
+<p><span class="math display">\[ \left.\frac{dy}{dx}\right|_{x\rightarrow 0} = \frac{f(y+dy)-f(y)}{dx}\]</span></p>
+<h4 id="other-symbols">Other Symbols</h4>
+<pre class="latex"><code>$ \pm \ \approx \ \ne \ \ge \ \le $
 
-<pre><code class="prettyprint lang-latex">$$ \left.\frac{dy}{dx}\right|_{x\rightarrow 0} = \frac{f(y+dy)-f(y)}{dx}$$
-</code></pre>
-
-<p>$$ \left.\frac{dy}{dx}\right|_{x\rightarrow 0} = \frac{f(y+dy)-f(y)}{dx}$$</p>
-
-<h4>Other Symbols</h4>
-
-<pre><code class="prettyprint lang-latex">$ \pm \ \approx \ \ne \ \ge \ \le $
-
-$ \cdots \ \ldots \ \vdots \ \ddots $
-</code></pre>
-
-<p>$ \pm \ \approx \ \ne \ \ge \ \le $</p>
-
-<p>$ \cdots \ \ldots \ \vdots \ \ddots $</p>
-
-<h2>Array of Equations</h2>
-
+$ \cdots \ \ldots \ \vdots \ \ddots $</code></pre>
+<p>$     $</p>
+<p>$    $</p>
+<h2 id="array-of-equations">Array of Equations</h2>
 <p>Equation Arrays using eqnarray</p>
-
 <p>To type a set of equations with equation numbers, the command use is eqnarray</p>
-
-<pre><code class="prettyprint lang-latex ">\begin{eqnarray}
+<pre class="latex "><code>\begin{eqnarray}
 equation 1 \\ equation 2 \\ .....
-\end{eqnarray}
-</code></pre>
-
-<p> 
-this set of equations need not need the \$\$ sign. Once typed, it will generate the equation number automatically. To avoid numbers, use <code class="prettyprint">\nonumber</code> command before \</p>
-
-<p>this will not align the equations with centre justification or having the equal signs in the exact middle. </p>
-
-<p>for that, use &amp; before and after the equal sign
- 
-example</p>
-
-<pre><code class="prettyprint lang-latex">\begin{eqnarray*}
+\end{eqnarray}</code></pre>
+<p>  this set of equations need not need the $$ sign. Once typed, it will generate the equation number automatically. To avoid numbers, use <code>\nonumber</code> command before \</p>
+<p>this will not align the equations with centre justification or having the equal signs in the exact middle.</p>
+<p>for that, use &amp; before and after the equal sign   example</p>
+<pre class="latex"><code>\begin{eqnarray*}
 5x^2 + 3x &amp;=&amp; 7y^2 + 5y \\
 3x &amp;=&amp; 5 \\
 x^2 &amp;\approx&amp; \pm \sqrt{3}
-\end{eqnarray*}
-</code></pre>
-
-<p> 
-this will print the 3 equations in proper format without equation numbers. the asterisk sign in eqnarray avoids the equation numbers. remove them to include eqn numbers.
- 
-<strong>Equation Arrays using align</strong></p>
-
+\end{eqnarray*}</code></pre>
+<p>  this will print the 3 equations in proper format without equation numbers. the asterisk sign in eqnarray avoids the equation numbers. remove them to include eqn numbers.   <strong>Equation Arrays using align</strong></p>
 <p>This environment is used for writing equations  with equation numbers. This environment does not need dollar signs. The * prevents the equations being numbered. If removed, the equations will be numbered. Align environment cannot have blank lines. To include blank lines, put a % and leave the line empty</p>
-
-<pre><code class="prettyprint lang-latex">\begin{align*}
+<pre class="latex"><code>\begin{align*}
 Equation 1 \\
 Equation 2 ….
-\end{align*}
-</code></pre>
+\end{align*}</code></pre>
+<p>  To align the equations, put &amp; infront of the equal sign.   If you have a very long equation, you can write it down in two or more lines using \ command. For alignment, you can use &amp; symbol. This will create multiple equation numbering. To avoid that, use the command before the \ command. If and symbols are used, then each line of equation needs a and command. Refer to the mathematical notations page for more details.   To introduce text in between the equations, use</p>
 
-<p> 
-To align the equations, put &amp; infront of the equal sign.
- 
-If you have a very long equation, you can write it down in two or more lines using \ command. For alignment, you can use &amp; symbol. This will create multiple equation numbering. To avoid that, use the command \nonumber before the \ command. If \left and \right symbols are used, then each line of equation needs a \left and \right command. Refer to the mathematical notations page for more details.
- 
-To introduce text in between the equations, use</p>
-
-<p>\intertext{text you want to put. This text, if has maths terms, needs the dollar symbols. Display maths mode may not work here}</p>
-
-<p>** No text can be written inside eqnarray or align. Even blank lines are not allowed. \intexttext command is possible only inside align environment field**
- 
-To refer to an equation, create a <code class="prettyprint">\label{ref_name}</code> and use <code class="prettyprint">\ref{ref_name}</code> to refer to it in the document.</p>
-
-<h2>Equation Arrays</h2>
-
-<pre><code class="prettyprint lang-latex">\begin{eqnarray}
+<p>** No text can be written inside eqnarray or align. Even blank lines are not allowed. command is possible only inside align environment field**   To refer to an equation, create a <code>\label{ref_name}</code> and use <code>\ref{ref_name}</code> to refer to it in the document.</p>
+<h2 id="equation-arrays">Equation Arrays</h2>
+<pre class="latex"><code>\begin{eqnarray}
 x^2 + 2x + 1 &amp;=&amp; (x+1)^2\\
 %
 x^3 + 3x^2 + 3x + 1 &amp;=&amp; \nonumber \\
@@ -1439,73 +832,59 @@ x^3 + 3x^2 + 3x +1 = \nonumber\\
 -(x+1)^3
 (x+1)^3\right]\intertext{This is a set of identities in algebra}
 \end{align}
-
 </code></pre>
-
-<p>\begin{eqnarray}
-x^2 + 2x + 1 &amp;=&amp; (x+1)^2\
+<p><span class="math display">\[\begin{eqnarray}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2\\
 %
-x^3 + 3x^2 + 3x + 1 &amp;=&amp; \nonumber \
+x^3 + 3x^2 + 3x + 1 &amp;=&amp; \nonumber \\
 (x+1)^3
 % Use &amp; for manual alignment
 % The output will have the first equation numbered
 % The equations will be aligned properly!
-\end{eqnarray}</p>
-
-<p>$$ x^2 + 2x + 1 = (x+1)^2 $$</p>
-
-<p>$$ x^3 + 3x^2 + 3x + 1 = (x+1)^3 $$</p>
-
-<p>\begin{eqnarray}
-x^2 + 2x + 1 &amp;=&amp; (x+1)^2 \
+\end{eqnarray}\]</span></p>
+<p><span class="math display">\[ x^2 + 2x + 1 = (x+1)^2 \]</span></p>
+<p><span class="math display">\[ x^3 + 3x^2 + 3x + 1 = (x+1)^3 \]</span></p>
+<p><span class="math display">\[\begin{eqnarray}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2 \\
 %
-x^3 + 3x^2 + 3x + 1 &amp;=&amp; \
+x^3 + 3x^2 + 3x + 1 &amp;=&amp; \\
 (x+1)^3
 % The equation will not have numbers
 % Proper alignment
 % The second equation will be in 2 lines.
-\end{eqnarray}</p>
-
-<p>$$ x^2 + 2x + 1 = (x+1)^2 $$</p>
-
-<p>$$ x^3 + 3x^2 + 3x + 1 = 
-(x+1)^3 $$</p>
-
-<p>\begin{eqnarray<em>}
-x^2 + 2x + 1 = (x+1)^2\
-x^3 + 3x^2 + 3x +1 = \
-\left[(x+1)^3\right]\
-\left[-(x+1)^3\right]\
-\left[(x+1)^3\right]\
-\end{eqnarray</em>}</p>
-
-<p>\begin{align}
-x^2 + 2x + 1 = (x+1)^2  \
-x^3 + 3x^2 + 3x +1 = \nonumber \
-(x+1)^3\
+\end{eqnarray}\]</span></p>
+<p><span class="math display">\[ x^2 + 2x + 1 = (x+1)^2 \]</span></p>
+<p><span class="math display">\[ x^3 + 3x^2 + 3x + 1 = 
+(x+1)^3 \]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+x^2 + 2x + 1 = (x+1)^2\\
+x^3 + 3x^2 + 3x +1 = \\
+\left[(x+1)^3\right]\\
+\left[-(x+1)^3\right]\\
+\left[(x+1)^3\right]\\
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x^2 + 2x + 1 = (x+1)^2  \\
+x^3 + 3x^2 + 3x +1 = \nonumber \\
+(x+1)^3\\
 \intertext{This is a set of identities in algebra}
-\end{align}</p>
-
-<p>\begin{align<em>}
-x^2 + 2x + 1 &amp;=&amp; (x+1)^2\
-x^3 + 3x^2 + 3x +1 &amp;=&amp; \
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2\\
+x^3 + 3x^2 + 3x +1 &amp;=&amp; \\
 (x+1)^3
 \intertext{This is a set of identities in algebra}
-\end{align</em>}</p>
-
-<p>\begin{align}
-x^2 + 2x + 1 = (x+1)^2\
-x^3 + 3x^2 + 3x +1 = \nonumber\
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x^2 + 2x + 1 = (x+1)^2\\
+x^3 + 3x^2 + 3x +1 = \nonumber\\
 \left[(x+1)^3
 -(x+1)^3
 (x+1)^3\right]\intertext{This is a set of identities in algebra}
-\end{align}</p>
-
-<h2>Letter Writing</h2>
-
+\end{align}\]</span></p>
+<h2 id="letter-writing">Letter Writing</h2>
 <p>to start a letter file, use the following format</p>
-
-<pre><code class="prettyprint lang-latex">\documentclass{letter}
+<pre class="latex"><code>\documentclass{letter}
 \address{all the contents of from address separated by \\ for line breaks}
 \date{}
 \signature{your name}
@@ -1524,12 +903,9 @@ Contents of the letter
 \cc{}  % if any
 \end{letter}
 \end{document}
-
 </code></pre>
-
-<h2>Letter Writing</h2>
-
-<pre><code class="prettyprint lang-latex">
+<h2 id="letter-writing-1">Letter Writing</h2>
+<pre class="latex"><code>
 \documentclass[10pt, a4paper]{letter}
 
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
@@ -1569,120 +945,61 @@ See you!
 \end{letter}
 
 \end{document}
-
 </code></pre>
-
-<p>For more detailed sources : </p>
-
+<p>For more detailed sources :</p>
 <ul>
-<li><a href="https://en.wikibooks.org/wiki/LaTeX/Letters">https://en.wikibooks.org/wiki/LaTeX/Letters</a> </li>
-<li><a href="http://texblog.org/2007/08/15/writing-a-letter-in-latex/">http://texblog.org/2007/08/15/writing-a-letter-in-latex/</a> </li>
-<li><a href="http://tex.stackexchange.com/questions/133836/writing-an-official-letter">http://tex.stackexchange.com/questions/133836/writing-an-official-letter</a></li>
+<li>https://en.wikibooks.org/wiki/LaTeX/Letters</li>
+<li>http://texblog.org/2007/08/15/writing-a-letter-in-latex/</li>
+<li>http://tex.stackexchange.com/questions/133836/writing-an-official-letter</li>
 </ul>
-
-<h2>Tables</h2>
-
+<h2 id="tables">Tables</h2>
 <p>to begin a table, tabular command is used.</p>
-
 <p><strong>Tabular Command</strong></p>
-
-<pre><code class="prettyprint lang-latex">\begin{tabular}{args}
+<pre class="latex"><code>\begin{tabular}{args}
  
-\end{tabular}
-</code></pre>
-
-<p> 
-to start a table, a format is as follows</p>
-
-<pre><code class="prettyprint lang-latex">\begin{tabular}{rlcrlc}
+\end{tabular}</code></pre>
+<p>  to start a table, a format is as follows</p>
+<pre class="latex"><code>\begin{tabular}{rlcrlc}
 contents
-\end{tabular}
-</code></pre>
-
-<p> 
-tabular is the parameter for beginning a table. the {} after will decide how many columns to fit.</p>
-
+\end{tabular}</code></pre>
+<p>  tabular is the parameter for beginning a table. the {} after will decide how many columns to fit.</p>
 <p>this table has 6 columns with</p>
-
 <p>columns 1 and 4 right justified,</p>
-
 <p>columns 2 and 5 left justified, and</p>
-
-<p>columns 3 and 6 centre justified
- 
-to write the contents of the rows, type them naturally. the first content will go to row 1 column 1.</p>
-
+<p>columns 3 and 6 centre justified   to write the contents of the rows, type them naturally. the first content will go to row 1 column 1.</p>
 <p>Use ampersand symbol &amp; to swap columns from left to right.</p>
-
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-latex">12345 &amp; 67890 will print 12345 in column 1 and 67890 in column 2.
-use \\ at the end of one line to go to the next column. \\ will introduce a forced line break.
-</code></pre>
-
-<p> 
-<strong>note</strong>: if the content in a page reaches its end and if you add one more content that intuitively be half placed in one page and half in the other, LaTeX will either force shrink the page contents to accommodate the contents or shift the contents to the next page automatically with proper formatting.
- 
-this table command will not print any lines as it is. to make lines and to explain a proper table, see the example</p>
-
-<pre><code class="prettyprint lang-latex">\begin{tabular}{|c|c|c|c|c|c|}
+<pre class="latex"><code>12345 &amp; 67890 will print 12345 in column 1 and 67890 in column 2.
+use \\ at the end of one line to go to the next column. \\ will introduce a forced line break.</code></pre>
+<p>  <strong>note</strong>: if the content in a page reaches its end and if you add one more content that intuitively be half placed in one page and half in the other, LaTeX will either force shrink the page contents to accommodate the contents or shift the contents to the next page automatically with proper formatting.   this table command will not print any lines as it is. to make lines and to explain a proper table, see the example</p>
+<pre class="latex"><code>\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\ \hline
 $f(x)$ &amp; 1 &amp; 4 &amp; 9 &amp; 16 &amp; 25\\ \hline
-\end{tabular}
-</code></pre>
-
-<p>This will put all the lines to form a simple table as you intuitively think of. \hline is for a horizontal line and | symbol in {} between letters is for the vertical line.
- 
-Multiple | lines can be placed. Also, multiple \hline can be placed.
- 
-If you want a blank entry, just leave a space between the &amp; symbols. To merge cells, read the contents below,
- 
-<strong>Merging cells:</strong>
- 
-To merge cells along a row, use multi column command</p>
-
-<pre><code class="prettyprint lang-latex">\multicolumn{N}{A}{C}
+\end{tabular}</code></pre>
+<p>This will put all the lines to form a simple table as you intuitively think of. is for a horizontal line and | symbol in {} between letters is for the vertical line.   Multiple | lines can be placed. Also, multiple can be placed.   If you want a blank entry, just leave a space between the &amp; symbols. To merge cells, read the contents below,   <strong>Merging cells:</strong>   To merge cells along a row, use multi column command</p>
+<pre class="latex"><code>\multicolumn{N}{A}{C}
 N = number of columns in a particular row to be merged from the right to form a cell
 A = cell content alignment with or without |
-C = cell content
-</code></pre>
-
-<p> 
-To merge cells along a row, use empty entries and centre line command.</p>
-
-<pre><code class="prettyprint lang-latex">\cline{n1-n2}
-</code></pre>
-
+C = cell content</code></pre>
+<p>  To merge cells along a row, use empty entries and centre line command.</p>
+<pre class="latex"><code>\cline{n1-n2}</code></pre>
 <p>This will draw a line between the current row and the row below, only between columns n1 and n2.</p>
-
-<p>** If n1 = n2, then the centre line will be drawn only for one cell**
- 
-To merge cells row and column wise, use the above methods in a combined manner properly.
- </p>
-
-<h3>Table Command</h3>
-
-<p> This command is used to treat the table generated in the tabular command to behave as a single independent object instead of a symbol.
- 
-This is the format:</p>
-
-<pre><code class="prettyprint lang-latex">\begin{table} % avoid this command in beamer class. Use tabular directly
+<p>** If n1 = n2, then the centre line will be drawn only for one cell**   To merge cells row and column wise, use the above methods in a combined manner properly.   ### Table Command</p>
+<p> This command is used to treat the table generated in the tabular command to behave as a single independent object instead of a symbol.   This is the format:</p>
+<pre class="latex"><code>\begin{table} % avoid this command in beamer class. Use tabular directly
 \centering
 \caption{name1} % caption is usually put on top of the table
 \label{name2} % label should be below the caption as it is the one that creates the table number.
 \begin{tabular}
 Contents
 \end{tabular}
-\end{table}
-</code></pre>
+\end{table}</code></pre>
+  is for centre justifying the table, while the label is for referencing purpose.
 
-<p> 
-\centering is for centre justifying the table, while the label is for referencing purpose. \caption{} is for the title of the table. These are optional, but if included, will be better.</p>
-
-<h2>Tables, Labels, Captions</h2>
-
-<pre><code class="prettyprint lang-latex">
+<p>is for the title of the table. These are optional, but if included, will be better.</p>
+<h2 id="tables-labels-captions">Tables, Labels, Captions</h2>
+<pre class="latex"><code>
 Table \ref{Tab1} has details of some houses in ASOIAF.
 
 \begin{table}[h]
@@ -1724,57 +1041,37 @@ Sno &amp; House &amp; Leader &amp; Captial &amp; Sigil \\
 \hline 
 \end{tabular} 
 
-\end{document}
-</code></pre>
-
-<h2>Text and Page Formatting</h2>
-
-<p><strong>Text:</strong> </p>
-
-<pre><code class="prettyprint lang-latex">for italicized words use, \textit{word}
+\end{document}</code></pre>
+<h2 id="text-and-page-formatting">Text and Page Formatting</h2>
+<p><strong>Text:</strong></p>
+<pre class="latex"><code>for italicized words use, \textit{word}
 for bold face words use, \textbf{word}
 for small cap words use, \textsc{word}
 for typewriter font use, \texttt{word} ! specifically used to distinguish normal fonts with web-page links.
 for making a word look little larger than normal font use, \begin{large} word(s) \end{large}
-for making a word look little larger than large font use, \begin{Large} word(s) \end{Large}
-</code></pre>
-
-<pre><code class="prettyprint lang-latex ">priority of sizes tiny&lt;small&lt;normal&lt;large&lt;Large&lt;huge&lt;Huge
+for making a word look little larger than large font use, \begin{Large} word(s) \end{Large}</code></pre>
+<pre class="latex "><code>priority of sizes tiny&lt;small&lt;normal&lt;large&lt;Large&lt;huge&lt;Huge
  
 for a single sentence to be justified use \begin{justification} sentence \begin{justification}
 justifications are center, flushleft, flushright. These can be used for tables, figures, a chunk of document etc.,
  
-\tt{} \bf{} \sc{} \it{} works the same way as that of the top (looks like so)
-</code></pre>
-
+\tt{} \bf{} \sc{} \it{} works the same way as that of the top (looks like so)</code></pre>
 <p><strong>Page and Line:</strong></p>
-
-<pre><code class="prettyprint lang-latex">\newpage command for making a new page
-\newline is used for a page break.
-</code></pre>
-
-<p> 
-<strong>Colouring:</strong></p>
-
-<pre><code class="prettyprint lang-latex">Select/envelop a group of text using {} brackets and put \color{colour name} to change the colour of the enveloped text/content. Works well in beamer. (to be checked in documents). For this option to work, add \usepackage{color} at the preamble!
-</code></pre>
-
-<p> 
-<strong>Spacing</strong></p>
-
-<pre><code class="prettyprint lang-latex">Use \quad for tab spacing, \qquad for double tab spacing. Use them appropriately for extended spacing
+<pre class="latex"><code>\newpage command for making a new page
+\newline is used for a page break.</code></pre>
+<p>  <strong>Colouring:</strong></p>
+<pre class="latex"><code>Select/envelop a group of text using {} brackets and put \color{colour name} to change the colour of the enveloped text/content. Works well in beamer. (to be checked in documents). For this option to work, add \usepackage{color} at the preamble!</code></pre>
+<p>  <strong>Spacing</strong></p>
+<pre class="latex"><code>Use \quad for tab spacing, \qquad for double tab spacing. Use them appropriately for extended spacing
 Use \hspace{length} for horizontal spacing. Eg: \hspace{4cm}
 To create a very small horizontal space, use \,
 Use \vspace{length} for vertical spacing. Eg: \vspace{1ex} = size of 1 ex character ?! (needs check)
 \hfill is used for filling the horizontal spaces
  
 Paragraph and line indenting: Worst Case Situations:
-Use \&lt;space&gt; \newline \\ in proper order for manipulate spacing and tabbing. Crude method, but can act as a quick fix
-</code></pre>
-
+Use \&lt;space&gt; \newline \\ in proper order for manipulate spacing and tabbing. Crude method, but can act as a quick fix</code></pre>
 <p>Document and text formatting</p>
-
-<pre><code class="prettyprint lang-latex">\documentclass[10pt,a4paper]{article}
+<pre class="latex"><code>\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -1980,7 +1277,7 @@ And sorry I could not travel both,\\
 And be one traveller, long I stood,\\   
 And looked down one as far as I could,\\    
 To where it bent in the undergrowth;\\
-
+ 
 Then took the other, as just as fair,\\ 
 And having perhaps the better claim,\\  
 Because it was grassy and wanted wear;\\    
@@ -2009,74 +1306,40 @@ This is repeatable using enumerate as well, but there is a difference!
 \end{enumerate}
 
 
-\end{document}
-</code></pre>
-
-<p>\$ \% # { &amp; _ are special symbols. G\&quot;ottingen</p>
-
-<p>\t{oo}</p>
-
-<p>\AA \oe \dag \ddag</p>
-
-<p>\pounds   \copyright</p>
-
-<p>$\pi \ \Pi$</p>
-
-<p>$\sigma \ \Sigma$</p>
-
-<p>$ \Xi \ \vartheta$</p>
-
-<p>$\mathcal{F} \mathcal{L}$</p>
-
-<p>$ x \not \ge y$</p>
-
-<p>$ \pm \mp $</p>
-
-<p>$ A \cap B$</p>
-
-<p>$ \Delta ABC \equiv \Delta DEF$</p>
-
-<p>$ A \gg B \  C \propto D$</p>
-
-<p>$ \Longleftrightarrow $</p>
-
-<p>$ \nabla \surd \partial$</p>
-
-<p>$ \Box \ \Diamond$</p>
-
-<p>$ \backslash $</p>
-
-<p>$ \clubsuit \diamondsuit \heartsuit \spadesuit$</p>
-
-<p>$ \int^b_a $</p>
-
-<p>$\displaystyle{\oint \limits^b_a}$</p>
-
-<p>$ \displaystyle{\lim \limits_{x \to 0} \frac{\sin{x}}{x} = 1}$</p>
-
-<p>$ \vec{A} = a<em>1\vec{i} + a</em>2\vec{j} + a_3\vec{k}$</p>
-
-<p>$ \lim \limits_{x \to 0} \frac{\sin{x}}{x} = 1$</p>
-
-<p>$\lg \gcd$</p>
-
-<p>( \lim \limits_{n \rightarrow \infty} )</p>
-
-<p>$ \lim \limits_{n \rightarrow \infty}$</p>
-
-<p>$$ \lim \limits_{n \rightarrow \infty}$$</p>
-
-<p>[ \lim \limits_{n \rightarrow \infty} ]</p>
-
-<p>$$ \lim_{n \rightarrow \infty} $$</p>
-
-<h2>Arrays and Tabbing</h2>
-
-<h3>Arrays:</h3>
-
+\end{document}</code></pre>
+<p>$ % # { &amp; _ are special symbols. G"ottingen</p>
+<p></p>
+<p></p>
+<p></p>
+<p><span class="math inline">\(\pi \ \Pi\)</span></p>
+<p><span class="math inline">\(\sigma \ \Sigma\)</span></p>
+<p>$  $</p>
+<p><span class="math inline">\(\mathcal{F} \mathcal{L}\)</span></p>
+<p>$ x y$</p>
+<p>$ $</p>
+<p>$ A B$</p>
+<p>$ ABC DEF$</p>
+<p>$ A B   C D$</p>
+<p>$ $</p>
+<p>$ $</p>
+<p>$  $</p>
+<p>$ $</p>
+<p>$ $</p>
+<p>$ ^b_a $</p>
+<p><span class="math inline">\(\displaystyle{\oint \limits^b_a}\)</span></p>
+<p>$ $</p>
+<p>$  = a_1 + a_2 + a_3$</p>
+<p>$ _{x 0}  = 1$</p>
+<p><span class="math inline">\(\lg \gcd\)</span></p>
+<p>( _{n } )</p>
+<p>$ _{n }$</p>
+<p><span class="math display">\[ \lim \limits_{n \rightarrow \infty}\]</span></p>
+<p>[ _{n } ]</p>
+<p><span class="math display">\[ \lim_{n \rightarrow \infty} \]</span></p>
+<h2 id="arrays-and-tabbing">Arrays and Tabbing</h2>
+<h3 id="arrays">Arrays:</h3>
 <p>Arrays are similar to tables</p>
-
-<pre><code class="prettyprint lang-LaTeX">
+<pre class="latex"><code>
 $$ 
 
 \begin{array}{clcr}
@@ -2087,107 +1350,57 @@ $$
 \end{array}
 
 $$
-
 </code></pre>
-
-<h3>Tabbing:</h3>
-
+<h3 id="tabbing">Tabbing:</h3>
 <p>Tabbing is again similar to tables.</p>
-
-<pre><code class="prettyprint lang-LaTeX">
+<pre class="latex"><code>
 \begin{tabbing}
 
 Column 1 \= Column 2 \\
 \= \= Column 5 
 \end{tabbing}
-
 </code></pre>
-
-<h3>Creating Matrix</h3>
-
+<h3 id="creating-matrix">Creating Matrix</h3>
 <p>To create a matrix, use the following code</p>
-
-<pre><code class="prettyprint lang-LaTeX">
+<pre class="latex"><code>
 $$\begin{matrix}
 a &amp; b &amp; c \\
 d &amp; e &amp; f &amp; g \\
-\end{matrix}$$
-</code></pre>
-
-<p> 
-The above command will create a bracket less 2x4 matrix with a14 being empty
-Using pmatrix will create a matrix with curved brackets, bmatrix will create a matrix with rectangular brackets.
-Bmatrix for curly bracket matrix
- 
-One complex example:</p>
-
-<pre><code class="prettyprint lang-LaTeX">
+\end{matrix}$$</code></pre>
+<p>  The above command will create a bracket less 2x4 matrix with a14 being empty Using pmatrix will create a matrix with curved brackets, bmatrix will create a matrix with rectangular brackets. Bmatrix for curly bracket matrix   One complex example:</p>
+<pre class="latex"><code>
 $$\begin{pmatrix}
 a &amp; a^2 &amp; \cdots &amp; a^n \\
 b &amp; b^2 &amp; \cdots &amp; b^n \\
 \vdots &amp; &amp; \ddots \\
 n &amp; n^2 &amp; \cdots &amp; n^n
-\end{pmatrix}$$
-</code></pre>
-
-<h2>Figures</h2>
-
+\end{pmatrix}$$</code></pre>
+<h2 id="figures">Figures</h2>
 <p>To include figures, use the package,</p>
-
-<pre><code class="prettyprint lang-LaTeX">\usepackage{graphicx}
-</code></pre>
-
+<pre class="latex"><code>\usepackage{graphicx}</code></pre>
 <p>To use .eps figures (Encapsulated Post Script), use the package,</p>
-
-<pre><code class="prettyprint lang-LaTeX">\usepackage{eps2pdf}
-</code></pre>
-
-<p> 
-To include a figure use  % do not use  <code class="prettyprint">\begin{figure} \end{figure}</code> in presentations. Use include graphics directly.</p>
-
-<pre><code class="prettyprint lang-LaTeX">\begin{figure}
+<pre class="latex"><code>\usepackage{eps2pdf}</code></pre>
+<p>  To include a figure use  % do not use <code>\begin{figure} \end{figure}</code> in presentations. Use include graphics directly.</p>
+<pre class="latex"><code>\begin{figure}
 \centering
 \includegraphics[size parameters]{figure_name.ext}
 \caption{figure title}  % for figures, the caption/title is given, usually after the figure
 \label{reference}        % the label should be given after caption.
-\end{figure}
-</code></pre>
-
-<p> 
-<code class="prettyprint">\centering</code> centre justifies the figures. Wrapping the image with <code class="prettyprint">\begin{center}</code> and <code class="prettyprint">\end{center}</code> will also work. <code class="prettyprint">\centering</code> will work within the entire begin field <code class="prettyprint">\begin{figure} \end{figure}</code> is used to make the figure an independent whole object that can be moved around together, so that it does not act like alphabets or symbols or numbers.</p>
-
-<p><code class="prettyprint">\label</code> is used to give a reference name to the file, so that it can be referred within the file at other places.</p>
-
-<p><code class="prettyprint">\caption</code> is used to give the figure a title.</p>
-
+\end{figure}</code></pre>
+<p>  <code>\centering</code> centre justifies the figures. Wrapping the image with <code>\begin{center}</code> and <code>\end{center}</code> will also work. <code>\centering</code> will work within the entire begin field <code>\begin{figure} \end{figure}</code> is used to make the figure an independent whole object that can be moved around together, so that it does not act like alphabets or symbols or numbers.</p>
+<p><code>\label</code> is used to give a reference name to the file, so that it can be referred within the file at other places.</p>
+<p><code>\caption</code> is used to give the figure a title.</p>
 <p>Only a selected few formats can be placed, namely,</p>
-
-<pre><code class="prettyprint">.png, .jpeg, .pdf, .eps, .giff, .jpg
-</code></pre>
-
-<p>*<em>Size parameters *</em> are:</p>
-
+<pre><code>.png, .jpeg, .pdf, .eps, .giff, .jpg</code></pre>
+<p><strong>Size parameters </strong> are:</p>
 <p>Width or height = some value with unit.</p>
-
-<p>Eg: </p>
-
-<pre><code class="prettyprint lang-LaTeX">Width=5in, width=0.5\pagewidth, 0.7\pageheight, 0.8\linewidth % page width and line width apparently works for documents and beamer (possibly) 
-</code></pre>
-
-<p>Scale = value between (0,inf] if value greater than 1, then the image is magnified, else it is shrunked. If value equals 1, then same size.
-Eg: scale = 0.5, 0.05, 2
- 
-Angle = value between [0,360] rotates the image accordingly in ccw. Angle can be negative.
-Eg: angle = 45
-All the figures must be in the same folder where the .tex file is kept. Also, the figure names should have no spaces.</p>
-
-<h2>Multiple Figures in a Page</h2>
-
-<p>Source: <a href="http://tex.stackexchange.com/questions/119905/insert-multiple-figures-in-latex%C2%A0As">http://tex.stackexchange.com/questions/119905/insert-multiple-figures-in-latex As</a> on 12th May, 2015</p>
-
+<p>Eg:</p>
+<pre class="latex"><code>Width=5in, width=0.5\pagewidth, 0.7\pageheight, 0.8\linewidth % page width and line width apparently works for documents and beamer (possibly) </code></pre>
+<p>Scale = value between (0,inf] if value greater than 1, then the image is magnified, else it is shrunked. If value equals 1, then same size. Eg: scale = 0.5, 0.05, 2   Angle = value between [0,360] rotates the image accordingly in ccw. Angle can be negative. Eg: angle = 45 All the figures must be in the same folder where the .tex file is kept. Also, the figure names should have no spaces.</p>
+<h2 id="multiple-figures-in-a-page">Multiple Figures in a Page</h2>
+<p>Source: http://tex.stackexchange.com/questions/119905/insert-multiple-figures-in-latex As on 12th May, 2015</p>
 <p>Below is how to insert two figures. Pls adapt this as per your needs. You need subcaption package.</p>
-
-<pre><code class="prettyprint lang-LaTeX">\documentclass{article}
+<pre class="latex"><code>\documentclass{article}
 \usepackage[demo]{graphicx}
 \usepackage{subcaption}
 \begin{document}
@@ -2207,22 +1420,14 @@ All the figures must be in the same folder where the .tex file is kept. Also, th
 \caption{plots of....}
 \label{fig:fig}
 \end{figure}
-\end{document}
-</code></pre>
-
+\end{document}</code></pre>
 <p>Other Source:</p>
-
 <p>Using subfloats and minipages</p>
-
-<p><a href="http://texblog.org/2011/05/24/placing-figures-side-by-side-subfig/">http://texblog.org/2011/05/24/placing-figures-side-by-side-subfig/</a></p>
-
-<p><a href="http://tex.stackexchange.com/questions/9584/how-to-put-subfigures-in-several-rows">http://tex.stackexchange.com/questions/9584/how-to-put-subfigures-in-several-rows</a></p>
-
-<h2>Minipages and Boxes</h2>
-
+<p>http://texblog.org/2011/05/24/placing-figures-side-by-side-subfig/</p>
+<p>http://tex.stackexchange.com/questions/9584/how-to-put-subfigures-in-several-rows</p>
+<h2 id="minipages-and-boxes">Minipages and Boxes</h2>
 <p>Minipage divides the page into multiple pages width-wise. fbox is used for putting a box around contents. hfill ensures that the contents are nicely spaced out width-wise. A blank line pushes the minipage to the next line. A soft return retains the minipage on the same line, provided the dimensions of the page do not interfere.</p>
-
-<pre><code class="prettyprint lang-LaTeX">
+<pre class="latex"><code>
 \begin{minipage}[t]{0.48\textwidth}
     I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!
 \end{minipage}
@@ -2272,75 +1477,44 @@ All the figures must be in the same folder where the .tex file is kept. Also, th
     I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!
 \end{minipage}
 }
-
 </code></pre>
-
-<h2>Report Writing</h2>
-
+<h2 id="report-writing">Report Writing</h2>
 <p>Use the report class. It is similar to article class, except that, report class accepts chapters. Article class does not accept chapters.</p>
-
 <p>To include chapters on the run, use</p>
-
-<pre><code class="prettyprint lang-latex">\chapter{Chapter name}
-</code></pre>
-
+<pre class="latex"><code>\chapter{Chapter name}</code></pre>
 <p>If chapters are in a separate file, use</p>
-
-<pre><code class="prettyprint lang-latex">\chapter{Chapter name}
+<pre class="latex"><code>\chapter{Chapter name}
 \input{Chapter file}
 % Provided, the input file does not have a &quot;chapter&quot; command!
 
 \include{Chapter file}
 % Provided, the input file has a &quot;chapter&quot; command
-
 </code></pre>
-
-<h2>Writing Source Code</h2>
-
+<h2 id="writing-source-code">Writing Source Code</h2>
 <p>This is done in two ways:</p>
-
 <ul>
 <li>Using verbatim environment</li>
 <li>Using listing environment</li>
 </ul>
-
-<h3>Verbatim Environment</h3>
-
+<h3 id="verbatim-environment">Verbatim Environment</h3>
 <p>This is an easy way, but not much colourful. Write the contents within a verbatim environment</p>
-
-<pre><code class="prettyprint lang-LaTeX">\begin{verbatim}
+<pre class="latex"><code>\begin{verbatim}
 code ...
-\end{verbatim}
-</code></pre>
-
+\end{verbatim}</code></pre>
 <p>The other way is to use listing environment.</p>
-
-<h3>Listing Environment</h3>
-
-<p>Source: <a href="https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings">https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings</a></p>
-
+<h3 id="listing-environment">Listing Environment</h3>
+<p>Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings</p>
 <p>This has more features.</p>
-
 <p>To use the package, you need:</p>
-
-<pre><code class="prettyprint lang-LaTeX">\usepackage{listings}
-</code></pre>
-
+<pre class="latex"><code>\usepackage{listings}</code></pre>
 <p>The listings package supports highlighting of all the most common languages and it is highly customizable. If you just want to write code within your document the package provides the lstlisting environment:</p>
-
-<pre><code class="prettyprint lang-LaTeX">\begin{lstlisting}
+<pre class="latex"><code>\begin{lstlisting}
 Put your code here.
-\end{lstlisting}
-</code></pre>
-
+\end{lstlisting}</code></pre>
 <p>You can also import the source code, specify the language, starting and ending lines and a frame box.</p>
-
-<pre><code class="prettyprint lang-LaTeX">\lstinputlisting[language=Python, firstline=37, lastline=45, frame=single]{source_filename.py}
-</code></pre>
-
-<p>You can modify several parameters that will affect how the code is shown. You can put the following code anywhere in the document (it doesn&#39;t matter whether before or after *<em>\begin{document} *</em>), change it according to your needs. The meaning is explained next to any line.</p>
-
-<pre><code class="prettyprint lang-LaTeX">\usepackage{listings}
+<pre class="latex"><code>\lstinputlisting[language=Python, firstline=37, lastline=45, frame=single]{source_filename.py}</code></pre>
+<p>You can modify several parameters that will affect how the code is shown. You can put the following code anywhere in the document (it doesn’t matter whether before or after <strong>\begin{document} </strong>), change it according to your needs. The meaning is explained next to any line.</p>
+<pre class="latex"><code>\usepackage{listings}
 \usepackage{color}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -2373,12 +1547,9 @@ Put your code here.
   stringstyle=\color{mymauve},     % string literal style
   tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
-</code></pre>
-
-<p>Style definition inside the package lets you define multiple styles, i.e. profiles specifying a set of settings.</p>
-
-<pre><code class="prettyprint lang-latex">
+}</code></pre>
+<p>Style definition inside the package lets you define multiple styles, i.e. profiles specifying a set of settings.</p>
+<pre class="latex"><code>
 \lstdefinestyle{customc}{
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -2404,17 +1575,11 @@ Put your code here.
 
 % And use them separately
 \lstset{escapechar=@,style=customc}
-
 </code></pre>
-
-<h3>Minted Package</h3>
-
+<h3 id="minted-package">Minted Package</h3>
 <p>This is similar to listing package. It uses the <em>pygments</em> package and colouring scheme of python for colouring and styling code. You need to include this package in the document preamble. <strong>Python 2.5 and above should be installed in the system to use this package.</strong></p>
-
-<h2>Bibliography using BiBTeX</h2>
-
+<h2 id="bibliography-using-bibtex">Bibliography using BiBTeX</h2>
 <p>To make bibliography entries, you can use bib files. Bib Files have all the citation entries.</p>
-
 <ul>
 <li>Go to google scholar</li>
 <li>Type a paper name, click cite</li>
@@ -2422,12 +1587,9 @@ Put your code here.
 <li>Paste it inside a bib file</li>
 <li>Do this for all the entries</li>
 </ul>
-
 <p>Once done, your bib file is ready.</p>
-
 <p>A sample citation entry looks like this:</p>
-
-<pre><code class="prettyprint lang-LaTeX">@article{forget_1991,
+<pre class="latex"><code>@article{forget_1991,
   title={Improved general circulation models of the Martian atmosphere from the surface to above 80 km},
   author={Forget, Fran{\c{c}}ois and Hourdin, Fr{\&#39;e}d{\&#39;e}ric and Fournier, Richard and Hourdin, Christophe and Talagrand, Olivier and Collins, Matthew and Lewis, Stephen R and Read, Peter L and Huot, Jean-Paul},
   journal={Journal of Geophysical Research: Planets (1991--2012)},
@@ -2436,40 +1598,21 @@ Put your code here.
   pages={24155--24175},
   year={1999},
   publisher={Wiley Online Library}
-}
-</code></pre>
-
+}</code></pre>
 <p>The first one is the keyword or the id of the article. All the others are the article properties. You can have articles, books, magazines, papers, url links, etc., You can create your own citation entry as you wish!</p>
-
 <p><strong>Citing in the Document</strong></p>
-
 <p>Include this line in the document preamble</p>
-
-<pre><code class="prettyprint lang-LaTeX">\bibliographystyle{apalike} % This is a bibliography style
-</code></pre>
-
+<pre class="latex"><code>\bibliographystyle{apalike} % This is a bibliography style</code></pre>
 <p>Include the bib file in the document with this line.</p>
-
-<pre><code class="prettyprint lang-LaTeX">\bibliography{references} % This is the reference file. bib extension not needed.
-</code></pre>
-
-<p>Cite the entries inside the document using <code class="prettyprint">\cite{keyword} or \citep{keyword}</code> or equivalent.</p>
-
-<pre><code class="prettyprint lang-LaTeX">There is a paper by a person named Forget \citep{forget_1991} on Martian Atmosphere GCM. Other papers, for instance, Gierasch \citep{gierasch1968study}, Conrath, \cite{conrath1975thermal} also explain some research topics on Mars.
-</code></pre>
-
+<pre class="latex"><code>\bibliography{references} % This is the reference file. bib extension not needed.</code></pre>
+<p>Cite the entries inside the document using <code>\cite{keyword} or \citep{keyword}</code> or equivalent.</p>
+<pre class="latex"><code>There is a paper by a person named Forget \citep{forget_1991} on Martian Atmosphere GCM. Other papers, for instance, Gierasch \citep{gierasch1968study}, Conrath, \cite{conrath1975thermal} also explain some research topics on Mars.</code></pre>
 <p>And based on the styling chosen, the bibliography entries appear accordingly. <strong>Only the selected entries will be referenced!</strong></p>
-
 <p>Bibliography styles : plain, alpha, apalike, ieeetr, unsrt, acm etc.,</p>
-
 <p><strong>Natbib</strong></p>
-
 <p>Natbib is a separate bibliography style collection. It has several bibliography styles. <strong>apalike</strong> style under natbib is excellent.</p>
-
 <p>To include natbib, use the line</p>
-
-<pre><code class="prettyprint lang-LaTeX">\usepackage{natbib}
-</code></pre>
+<pre class="latex"><code>\usepackage{natbib}</code></pre>
 
             </div>
         </section>

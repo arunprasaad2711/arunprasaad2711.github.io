@@ -11,6 +11,14 @@ from bs4 import BeautifulSoup
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 
+def add_img_class2(img_tag):
+    if img_tag.has_attr('class'):
+        img_tag['class'] = img_tag['class']+' prettify'
+    else:
+        img_tag['class'] = 'prettify'
+    return img_tag
+
+
 # Function to convert md files to html snippets using pandoc. 
 # Then uses jinja to render them into proper html files.
 # This is the active one!
@@ -64,11 +72,11 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 		# same as above with the option to specify the highlight style. If activated, then the corresponding css should be included in main.scss.
 		# system("pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {} > temp.html".format(title))
 
-		# This was the standard pandoc fix. Syntax highlight pushed to highlight.js
-		# system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
+		# This was the standard pandoc fix. Syntax highlight pushed to highlight.js / google pretty type.
+		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
 
 		# This is the new one! It works similar to pandoc. syntax highlight pushed to prism.js or google prettify. Prefer the later.
-		system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
+		# system("redcarpet --parse-no-extra-emphasis --parse-tables --parse-fenced-code-blocks --parse-autolink --parse-lax-spacing --render-prettify {} > temp.html".format(title))
 
 		# by far, the slowest one! it ignores html tags. but surprisingly catches the syntax highlights
 		## DO NOT USE THIS!
@@ -84,12 +92,18 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 			# change this to bcontent if using the FULL PANDOC PROTOCOL
 			content = p.read()
 
-		# # convert the html contents into a bs object
+		# convert the html contents into a bs object
 		# soup = BeautifulSoup(bcontent, 'html.parser')
 
-		# # save only the body content elements into a new temp file
+		# for img_tag in soup.find_all('pre'):
+		# 	img_tag = add_img_class2(img_tag)
+		
+		# for img_tag in soup.find_all('code'):
+		# 	img_tag = add_img_class2(img_tag)
+
+		# # # save only the body content elements into a new temp file
 		# with open('temp2.html', 'w') as f:
-		# 	for line in soup.body:
+		# 	for line in soup:
 		# 		print(line, file=f)
 
 		# with open("temp2.html", "r") as p:

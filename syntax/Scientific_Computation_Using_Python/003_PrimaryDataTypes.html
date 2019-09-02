@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,68 +127,49 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Introduction to Scientific Computation Using Python</h1>
-
+                <h1 id="introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</h1>
 <p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad Gunasekaran</a></p>
-
 <p>Video 3 : Primary Data Types in Python</p>
-
-<h2>Table of Contents</h2>
-
+<h2 id="table-of-contents">Table of Contents</h2>
 <!-- TOC -->
-
 <ul>
 <li><a href="#introduction-to-scientific-computation-using-python">Introduction to Scientific Computation Using Python</a>
-
 <ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#what-is-a-data-type">What is a data type?</a></li>
 <li><a href="#primary-data-types">Primary Data Types</a></li>
 <li><a href="#string-data-type">String Data type</a></li>
-<li><a href="#program-to-test-out-different-types-of-variables">Program to Test out different types of variables.</a></li>
+<li><a href="#program-to-test-out-different-types-of-variables">Program to Test out different types of variables.</a>
+<ul>
 <li><a href="#code">Code</a></li>
 <li><a href="#output">Output</a></li>
+</ul></li>
 <li><a href="#some-simple-data-functions">Some simple data-functions</a></li>
 </ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h2>What is a data type?</h2>
-
+<h2 id="what-is-a-data-type">What is a data type?</h2>
 <p>Simply put, it is the nature of the information.</p>
-
-<h2>Primary Data Types</h2>
-
+<h2 id="primary-data-types">Primary Data Types</h2>
 <p>These are the primary data types available in python</p>
-
-<pre><code class="prettyprint lang-python">i = 1 # Integer. Stores integers
+<pre class="python"><code>i = 1 # Integer. Stores integers
 r = 5.78 # Floats. Stores numbers with decimal parts.
 c = &#39;h&#39; # Characters. Stores single characters. It is a string in python!
 s = &#39;Strings&#39; # Strings. Stores a series of characters
 l = True/False # Logical. Stores binary values
-cm = 6.0+5.6j  # Complex. Stores complex values
-</code></pre>
-
-<h2>String Data type</h2>
-
+cm = 6.0+5.6j  # Complex. Stores complex values</code></pre>
+<h2 id="string-data-type">String Data type</h2>
 <p>Strings are long chain of letters, numbers, symbols, and special characters. You can use both single and double quotes, but must end accordingly. Use slash to place quotes if needed.</p>
-
-<p>In python, there is no equivalent for <code class="prettyprint">char</code> type.</p>
-
-<pre><code class="prettyprint lang-python">&quot;Hello&quot;, 
+<p>In python, there is no equivalent for <code>char</code> type.</p>
+<pre class="python"><code>&quot;Hello&quot;, 
 &#39;Hello&#39;, 
 &#39;My name is Arun&#39;, 
 &quot;I asked, &#39;what is for lunch?&#39;&quot;
 &#39;I exclaimed, &quot;This tree is big!&quot;&#39;
-&quot;I used slash \&quot; to type a double quote symbol&quot;
-</code></pre>
-
-<h2>Program to Test out different types of variables.</h2>
-
-<h3>Code</h3>
-
-<pre><code class="prettyprint lang-python">a = 1.5     # Float/Real
+&quot;I used slash \&quot; to type a double quote symbol&quot;</code></pre>
+<h2 id="program-to-test-out-different-types-of-variables.">Program to Test out different types of variables.</h2>
+<h3 id="code">Code</h3>
+<pre class="python"><code>a = 1.5     # Float/Real
 print(a, id(a), type(a))
 a = &quot;hello&quot; # String/Character
 print(a, id(a), type(a))
@@ -205,12 +189,9 @@ print(a, id(a), type(a))
 print(ord(&#39;z&#39;))
 # Get the character for the ASCII/unicode
 print(chr(98))
-print(chr(32250))
-</code></pre>
-
-<h3>Output</h3>
-
-<pre><code class="prettyprint">1.5 140048331680624 &lt;class &#39;float&#39;&gt;
+print(chr(32250))</code></pre>
+<h3 id="output">Output</h3>
+<pre><code>1.5 140048331680624 &lt;class &#39;float&#39;&gt;
 hello 140048284573232 &lt;class &#39;str&#39;&gt;
 5 140048501217856 &lt;class &#39;int&#39;&gt;
 True 140048500811040 &lt;class &#39;bool&#39;&gt;
@@ -220,16 +201,13 @@ True 140048500811040 &lt;class &#39;bool&#39;&gt;
 {&#39;v1&#39;: 6, &#39;v2&#39;: 10} 140048284066872 &lt;class &#39;dict&#39;&gt;
 122
 b
-緺
-</code></pre>
-
-<h2>Some simple data-functions</h2>
-
+緺</code></pre>
+<h2 id="some-simple-data-functions">Some simple data-functions</h2>
 <ul>
-<li><code class="prettyprint">id()</code> : returns the memory location ID of the variable.</li>
-<li><code class="prettyprint">type()</code> - returns the datatype of the variable.</li>
-<li><code class="prettyprint">ord()</code> - returns the ASCII/Unicode value of the symbol.</li>
-<li><code class="prettyprint">chr()</code> - returns the symbol of the ASCII/Unicode value.</li>
+<li><code>id()</code> : returns the memory location ID of the variable.</li>
+<li><code>type()</code> - returns the datatype of the variable.</li>
+<li><code>ord()</code> - returns the ASCII/Unicode value of the symbol.</li>
+<li><code>chr()</code> - returns the symbol of the ASCII/Unicode value.</li>
 </ul>
 
             </div>

@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,67 +127,66 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>It is never easy</h1>
-
-<p>| It is quite a test, that pushes all your buttons,
-| Whenever he or she, asks those questions,
-| In their odd ways, they do quite care,
-| But in the process, they break and make you.
-| 
-| It is quite easy, to take them as your enemy,
-| They do disagree, to a lot you say,
-| Most of us are, quite fortunate that,
-| They are not, indeed your enemies.
-| 
-| They did give birth, to you in this world,
-| And for a long time, you didn\&#39;t know any better,
-| So they took it upon, themselves to raise you,
-| And it is quite hard, for them to step back.
-| 
-| And when you start to grow, the struggles begin.
-| And within a matter of time, you fight against them.
-| You have the youth, and resilience to spring back,
-| They have their wisdom and worldly caution.
-| 
-| With time, in this changing world,
-| The struggle is real, to put forth your points.
-| Amidst many arguments, and many expectations,
-| In the heated debates, the egos clash.
-| 
-| It is quite an irony, in the journey of life,
-| How often the people you love tend to hurt you.
-| But despite the fights, most of us are lucky,
-| As they are the ones, who love you the most.
-| 
-| Raising kids was never an easy task,
-| With changing times, there were no rules,
-| As you grow up, you thought they knew it all,
-| As you mature, you see the plight they faced.
-| 
-| While they do care, they have their demons,
-| Demons of expectations, fears and insecurities,
-| Some made sense and some will not,
-| Despite the obscurity, they love you truly.
-| 
-| As you grow old, you start to empathise,
-| And try to reconcile, the differences you have,
-| You take a deep breath, and let go the anger,
-| In the moments of silence, you step in their shoes.
-| 
-| You realise that it\&#39;s long and hard learning,
-| You learnt a lot, and still, have a lot to learn.
-| You tread carefully, and sensibly as possible,
-| And in those moments, you feel their burden.
-| 
-| You and them might be poles apart,
-| Both you and they care deeply for the other,
-| It is, however, the flaws in us and the words,
-| That pushes and pulls both you and them.
-| 
-| Sometimes you wonder, can\&#39;t it be easy?
-| It is in some cases; it isn\&#39;t in some cases,
-| There is no winner in these fights all the time,
-| As long as no one is left helpless and alone.</p>
+                <h1 id="it-is-never-easy">It is never easy</h1>
+<div class="line-block">It is quite a test, that pushes all your buttons,<br />
+Whenever he or she, asks those questions,<br />
+In their odd ways, they do quite care,<br />
+But in the process, they break and make you.<br />
+<br />
+It is quite easy, to take them as your enemy,<br />
+They do disagree, to a lot you say,<br />
+Most of us are, quite fortunate that,<br />
+They are not, indeed your enemies.<br />
+<br />
+They did give birth, to you in this world,<br />
+And for a long time, you didn't know any better,<br />
+So they took it upon, themselves to raise you,<br />
+And it is quite hard, for them to step back.<br />
+<br />
+And when you start to grow, the struggles begin.<br />
+And within a matter of time, you fight against them.<br />
+You have the youth, and resilience to spring back,<br />
+They have their wisdom and worldly caution.<br />
+<br />
+With time, in this changing world,<br />
+The struggle is real, to put forth your points.<br />
+Amidst many arguments, and many expectations,<br />
+In the heated debates, the egos clash.<br />
+<br />
+It is quite an irony, in the journey of life,<br />
+How often the people you love tend to hurt you.<br />
+But despite the fights, most of us are lucky,<br />
+As they are the ones, who love you the most.<br />
+<br />
+Raising kids was never an easy task,<br />
+With changing times, there were no rules,<br />
+As you grow up, you thought they knew it all,<br />
+As you mature, you see the plight they faced.<br />
+<br />
+While they do care, they have their demons,<br />
+Demons of expectations, fears and insecurities,<br />
+Some made sense and some will not,<br />
+Despite the obscurity, they love you truly.<br />
+<br />
+As you grow old, you start to empathise,<br />
+And try to reconcile, the differences you have,<br />
+You take a deep breath, and let go the anger,<br />
+In the moments of silence, you step in their shoes.<br />
+<br />
+You realise that it's long and hard learning,<br />
+You learnt a lot, and still, have a lot to learn.<br />
+You tread carefully, and sensibly as possible,<br />
+And in those moments, you feel their burden.<br />
+<br />
+You and them might be poles apart,<br />
+Both you and they care deeply for the other,<br />
+It is, however, the flaws in us and the words,<br />
+That pushes and pulls both you and them.<br />
+<br />
+Sometimes you wonder, can't it be easy?<br />
+It is in some cases; it isn't in some cases,<br />
+There is no winner in these fights all the time,<br />
+As long as no one is left helpless and alone.</div>
 
             </div>
         </section>

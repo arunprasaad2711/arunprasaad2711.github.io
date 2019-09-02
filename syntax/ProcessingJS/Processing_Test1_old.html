@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,21 +127,18 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Processing Test 1 - Fourier Series Demo</h1>
-
-<h2>Animation - 1</h2>
-
-<iframe src="https://editor.p5js.org/arunprasaad2711/embed/e2nYXOn5p" width="100%" height="20%" style="border:0px;"></iframe>
-
-<h2>Animation - 2</h2>
-
+                <h1 id="processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</h1>
+<h2 id="animation---1">Animation - 1</h2>
+<iframe src="https://editor.p5js.org/arunprasaad2711/embed/e2nYXOn5p" width="100%" height="20%" style="border:0px;">
+</iframe>
+<h2 id="animation---2">Animation - 2</h2>
 <div class="box", id="p5js__sketch"></div>
-
 <div class="slidecontainer">
-<p>Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] <span>Number of terms: <span id="demo"></span> </span></p>
-<input type="range" min="1" max="200" value="10" class="slider" id="myRange">
+<p>
+Move the slider value below to adjust the number of terms. [Min = 0, Default = 10, Max = 200] <span>Number of terms: <span id="demo"></span> </span>
+</p>
+<p><input type="range" min="1" max="200" value="10" class="slider" id="myRange"></p>
 </div>
-
 <script>
 let time = 0;
 let wave = [];
@@ -230,12 +230,9 @@ function setup() {
     }
 }
 </script>
-
 <!-- TOC -->
-
 <ul>
 <li><a href="#processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</a>
-
 <ul>
 <li><a href="#animation---1">Animation - 1</a></li>
 <li><a href="#animation---2">Animation - 2</a></li>
@@ -247,41 +244,29 @@ function setup() {
 <li><a href="#acknowledgement">Acknowledgement</a></li>
 </ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h2>What is this?</h2>
-
-<p>This is a test page for checking out <code class="prettyprint">processingJS</code> animation. Here, the fourier series summation of a square wave is tested.</p>
-
-<h2>References</h2>
-
+<h2 id="what-is-this">What is this?</h2>
+<p>This is a test page for checking out <code>processingJS</code> animation. Here, the fourier series summation of a square wave is tested.</p>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mm2eYfj0SgA">Coding Challenge #125: Fourier Series video on YouTube by Daniel Shiffman</a></li>
 <li><a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp">W3Schools tutorial on creating slider</a></li>
 </ul>
-
-<h2>Formula</h2>
-
-<p>The square wave defined here $f(t)$ is a periodic function defined between the period $0 &lt; t &lt; 2\pi$. It&#39;s definition is</p>
-
-<p>$$ f(t) = \begin{cases} 
-               60  &amp; 0 &lt; t &lt; \pi\
+<h2 id="formula">Formula</h2>
+<p>The square wave defined here <span class="math inline">\(f(t)\)</span> is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
+<p><span class="math display">\[ f(t) = \begin{cases} 
+               60  &amp; 0 &lt; t &lt; \pi\\
                -60  &amp; \pi &lt; t &lt; 2\pi
-          \end{cases} $$</p>
-
+          \end{cases} \]</span></p>
 <p>The Fourier series representation of this is given by</p>
-
-<p>$$
-\begin{align<em>}
-    f(t) &amp;= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\
-         &amp;= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\
-\end{align</em>}
-$$</p>
-
-<h2>Source Code</h2>
-
-<pre><code class="prettyprint lang-html">&lt;script&gt;
+<p><span class="math display">\[
+\begin{align*}
+    f(t) &amp;= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
+         &amp;= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
+\end{align*}
+\]</span></p>
+<h2 id="source-code">Source Code</h2>
+<pre class="html"><code>&lt;script&gt;
 let time = 0;
 let wave = [];
 let border = [];
@@ -314,7 +299,7 @@ function setup() {
         output.innerHTML = this.value;
     }
     const n1 = slider.value;
-
+    
     // code for internal (problematic) slider to work
     // var val = p5slider.value();
     // const n1 = val;
@@ -330,10 +315,10 @@ function setup() {
     let y = 0;
 
     for (let i = 0; i &lt; n1; i++){
-
+        
         prev_x = x;
         prev_y = y;
-
+        
         let n = 2 * i + 1;
         let radius = 60 * (4 /(n * PI));
         x += radius * cos(n * time);
@@ -342,7 +327,7 @@ function setup() {
         stroke(255, 100);
         noFill();
         ellipse(prev_x, prev_y, radius*2);
-
+        
         fill(255);
         stroke(255);
         line(prev_x, prev_y, x, y);
@@ -371,16 +356,11 @@ function setup() {
         wave.pop();
     }
 }
-&lt;/script&gt;
-</code></pre>
-
-<h2>Status</h2>
-
-<p>It works! The slider has some issues as the default <code class="prettyprint">p5.js</code> slider is not working. So, added a custom slider. One minor tweak is that the shape of the outer ring is not coming properly. Will try to bring that in a future edit. For reference, it looks like this <a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a>.</p>
-
-<h2>Acknowledgement</h2>
-
-<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting interested in <code class="prettyprint">p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
+&lt;/script&gt;</code></pre>
+<h2 id="status">Status</h2>
+<p>It works! The slider has some issues as the default <code>p5.js</code> slider is not working. So, added a custom slider. One minor tweak is that the shape of the outer ring is not coming properly. Will try to bring that in a future edit. For reference, it looks like this <a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a>.</p>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
 
             </div>
         </section>

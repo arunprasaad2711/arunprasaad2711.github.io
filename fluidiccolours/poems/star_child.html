@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,97 +127,96 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Star Child</h1>
-
-<p>| Days will come and days will go,
-| The trifles of life can weigh you down.
-| Hope may seem bleak and future uncertain, - yet,
-| Don\&#39;t settle for the dust, my star child.
-| 
-| Your blissful solitude may turn to silence,
-| Your heart might prefer violence,
-| Amidst hardship, defeat and despair,
-| Don\&#39;t settle for the dust, my star child.
-| 
-| When the myriad walls that keep you safe break,
-| Making you question your faith,
-| Keeping you pondering with sleepless nights,
-| Don\&#39;t settle for the dust, my star child.
-| 
-| At these times, hope may seem faint,
-| You might feel well-off being a saint,
-| With trials and tribulations seemingly vain,
-| Don\&#39;t settle for the dust, my star child.
-| 
-| When your lookout for love goes barren,
-| When drifting friendships make you sad,
-| When the gravity of reality weighs on you,
-| Don\&#39;t settle for the dust, my star child.
-| 
-| Days will go, but keep fighting,
-| The war will be won, despite a few battles,
-| Where is the chase when things go smooth?
-| Be strong and move on, my star child.
-| 
-| Search your feelings in the cold silence,
-| You will know that there is no end to violence,
-| The harder you burn on the inside,
-| The brighter you shine to all my star child.
-| 
-| Walls can crumble, but ideas cannot,
-| Test your faith; it strengthens your resolve,
-| Confront the storm with might, my dear,
-| You will emerge stronger, my star child.
-| 
-| Flow like a stream my star child,
-| Forge your way, noble and brave.
-| All your efforts will come around,
-| You\&#39;ll reap bounties far and wide.
-| 
-| Pursue your passion my star child,
-| Lose your self and bask in its glory.
-| Your passion will find your lost self back,
-| Infinitely strong and wise you\&#39;ll become,
-| 
-| You are not alone, my star child,
-| There are many like you burning inside,
-| Amidst pain and suffering, they are bright,
-| A symbol they are, that all things not lost.
-| 
-| Why do we fall? Tell me my star child,
-| To master the art of picking ourselves up.
-| The bigger you fall, the higher you rise,
-| Keep moving; you are in for a surprise.
-| 
-| You might seem odd, unflagging all alone,
-| But your light guides the mortals in their nights.
-| Lost in the sea navigating on chunks of dust,
-| Finding their way home, in vast never-ending seas.
-| 
-| Real friends are like stars, my star child,
-| Sometimes, they are far far away.
-| But they are always around you,
-| Even in your darkest night my dear.
-| 
-| You are the child of sun my dear one,
-| Born to accomplish a higher purpose.
-| The gravity of it is unfathomable,
-| To other mortals who try to eclipse you.
-| 
-| Your grandparents the cosmos, are there for you,
-| Looking after you, through thick and thin.
-| As we speak, they listen to your prayers,
-| And conspiring an angel for you.
-| 
-| You will meet the angel from heaven,
-| Forged in hellfire, nourished by the elixir.
-| You will find love and the whole nine yards,
-| So do not be sad, soon, you\&#39;ll be glad.
-| 
-| You are the child of sun my dear one,
-| After every winter, you\&#39;ll face a summer,
-| So don\&#39;t settle for the dust, my star child,
-| For you are the substance that makes suns!</p>
+                <h1 id="star-child">Star Child</h1>
+<div class="line-block">Days will come and days will go,<br />
+The trifles of life can weigh you down.<br />
+Hope may seem bleak and future uncertain, - yet,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+Your blissful solitude may turn to silence,<br />
+Your heart might prefer violence,<br />
+Amidst hardship, defeat and despair,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+When the myriad walls that keep you safe break,<br />
+Making you question your faith,<br />
+Keeping you pondering with sleepless nights,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+At these times, hope may seem faint,<br />
+You might feel well-off being a saint,<br />
+With trials and tribulations seemingly vain,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+When your lookout for love goes barren,<br />
+When drifting friendships make you sad,<br />
+When the gravity of reality weighs on you,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+Days will go, but keep fighting,<br />
+The war will be won, despite a few battles,<br />
+Where is the chase when things go smooth?<br />
+Be strong and move on, my star child.<br />
+<br />
+Search your feelings in the cold silence,<br />
+You will know that there is no end to violence,<br />
+The harder you burn on the inside,<br />
+The brighter you shine to all my star child.<br />
+<br />
+Walls can crumble, but ideas cannot,<br />
+Test your faith; it strengthens your resolve,<br />
+Confront the storm with might, my dear,<br />
+You will emerge stronger, my star child.<br />
+<br />
+Flow like a stream my star child,<br />
+Forge your way, noble and brave.<br />
+All your efforts will come around,<br />
+You'll reap bounties far and wide.<br />
+<br />
+Pursue your passion my star child,<br />
+Lose your self and bask in its glory.<br />
+Your passion will find your lost self back,<br />
+Infinitely strong and wise you'll become,<br />
+<br />
+You are not alone, my star child,<br />
+There are many like you burning inside,<br />
+Amidst pain and suffering, they are bright,<br />
+A symbol they are, that all things not lost.<br />
+<br />
+Why do we fall? Tell me my star child,<br />
+To master the art of picking ourselves up.<br />
+The bigger you fall, the higher you rise,<br />
+Keep moving; you are in for a surprise.<br />
+<br />
+You might seem odd, unflagging all alone,<br />
+But your light guides the mortals in their nights.<br />
+Lost in the sea navigating on chunks of dust,<br />
+Finding their way home, in vast never-ending seas.<br />
+<br />
+Real friends are like stars, my star child,<br />
+Sometimes, they are far far away.<br />
+But they are always around you,<br />
+Even in your darkest night my dear.<br />
+<br />
+You are the child of sun my dear one,<br />
+Born to accomplish a higher purpose.<br />
+The gravity of it is unfathomable,<br />
+To other mortals who try to eclipse you.<br />
+<br />
+Your grandparents the cosmos, are there for you,<br />
+Looking after you, through thick and thin.<br />
+As we speak, they listen to your prayers,<br />
+And conspiring an angel for you.<br />
+<br />
+You will meet the angel from heaven,<br />
+Forged in hellfire, nourished by the elixir.<br />
+You will find love and the whole nine yards,<br />
+So do not be sad, soon, you'll be glad.<br />
+<br />
+You are the child of sun my dear one,<br />
+After every winter, you'll face a summer,<br />
+So don't settle for the dust, my star child,<br />
+For you are the substance that makes suns!</div>
 
             </div>
         </section>

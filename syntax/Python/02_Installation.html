@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -125,66 +128,41 @@
         <section>
             <div class="inner align-justify">
                 <!-- TOC -->
-
 <ul>
 <li><a href="#Installation">Installation</a>
-
 <ul>
-<li><a href="#Using-a-Basic-Installer">Using a Basic Installer</a></li>
+<li><a href="#Using-a-Basic-Installer">Using a Basic Installer</a>
+<ul>
 <li><a href="#Using-pip-installer">Using pip installer</a></li>
 <li><a href="#Installing-from-scratch">Installing from scratch</a></li>
 <li><a href="#Using-LinuxUnix-installers">Using Linux/Unix installers</a></li>
 <li><a href="#Using-Python-Distribution-Bundles">Using Python Distribution Bundles</a></li>
 </ul></li>
+</ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h1>Installation</h1>
-
+<h1 id="installation">Installation</h1>
 <p>Python is cross platform. And hence, it can be installed in all operating systems namely Linux, Windows, Unix, and MacOS. Python is an interpreted programming language. So, it is required to download an interpreter for the installation. There are many ways to download python.</p>
-
-<h2>Using a Basic Installer</h2>
-
-<p>One of the simplest way to install python is by downloading a basic installer from the <a href="python.org">Python Software Foundation</a>. This option is available for Windows, Linux, Mac OS and even other platforms. The installer files are present in the <a href="https://www.python.org/downloads/">Downloads page</a> of the website. </p>
-
-<p>This installer comes with an <code class="prettyprint">Interactive Development Environment</code> also known as <code class="prettyprint">IDE</code> called IDLE for writing and testing code. With IDLE and some bare minimum libraries, the set-up gives the user a bare-minimum starting point to use Python. To make python versatile and to be able to use it for many many other functionalities, It needs more libraries. </p>
-
-<p>To install libraries, the python installer comes with a basic package manager called <code class="prettyprint">pip</code>. <code class="prettyprint">pip</code> is a recursive acronym for &quot;Pip installs Python&quot;. This is the basic requirement to install python libraries and packages.</p>
-
-<p><hr>
-This part below needs rework! Work in progress!</p>
-
-<!-- use this link for details: https://realpython.com/installing-python/-->
-
-<p><hr></p>
-
-<p>Python Installer Program Those are installed by using <code class="prettyprint">pip</code> and <code class="prettyprint">setuptools</code>. Also, <code class="prettyprint">easy_install</code> is useful. Multiple installer environments are possible using <code class="prettyprint">virtualenv</code> package.</p>
-
+<h2 id="using-a-basic-installer">Using a Basic Installer</h2>
+<p>One of the simplest way to install python is by downloading a basic installer from the <a href="python.org">Python Software Foundation</a>. This option is available for Windows, Linux, Mac OS and even other platforms. The installer files are present in the <a href="https://www.python.org/downloads/">Downloads page</a> of the website.</p>
+<p>This installer comes with an <code>Interactive Development Environment</code> also known as <code>IDE</code> called IDLE for writing and testing code. With IDLE and some bare minimum libraries, the set-up gives the user a bare-minimum starting point to use Python. To make python versatile and to be able to use it for many many other functionalities, It needs more libraries.</p>
+<p>To install libraries, the python installer comes with a basic package manager called <code>pip</code>. <code>pip</code> is a recursive acronym for “Pip installs Python”. This is the basic requirement to install python libraries and packages.</p>
+<hr>
+This part below needs rework! Work in progress! <!-- use this link for details: https://realpython.com/installing-python/-->
+<hr>
+<p>Python Installer Program Those are installed by using <code>pip</code> and <code>setuptools</code>. Also, <code>easy_install</code> is useful. Multiple installer environments are possible using <code>virtualenv</code> package.</p>
 <p>Works in Windows.</p>
-
-<h3>Using pip installer</h3>
-
-<p>It installs python libraries and packages. Along with <code class="prettyprint">setuptools</code> and <code class="prettyprint">easy_install</code> and <code class="prettyprint">virtualenv</code>, it works wonders. Sometimes the dependencies may not be met. Does not work when non-python software/libraries are needed.</p>
-
+<h3 id="using-pip-installer">Using pip installer</h3>
+<p>It installs python libraries and packages. Along with <code>setuptools</code> and <code>easy_install</code> and <code>virtualenv</code>, it works wonders. Sometimes the dependencies may not be met. Does not work when non-python software/libraries are needed.</p>
 <p>Works in all Operating Systems.</p>
-
-<h3>Installing from scratch</h3>
-
+<h3 id="installing-from-scratch">Installing from scratch</h3>
 <p>This involves compiling Python from the source code. Tedious work and not at all recommended due to the complexity of the process. Some libraries can be installed in this process.</p>
-
 <p>This works in all operating systems.</p>
-
-<h3>Using Linux/Unix installers</h3>
-
+<h3 id="using-linuxunix-installers">Using Linux/Unix installers</h3>
 <p>Linux and Unix have Python installed in them by default. Hence, the system installers like <em>apt</em> (Debian family), <em>yum</em> (Fedora Family), <em>brew</em> (MacOS) etc., are useful for installing the packages easily. One highly recommended way. However, since Python is used to make GUI and Software that run in Linux/Unix machines, installing conflicting libraries or upgrading libraries might break the system software / programs. So, it is recommended to proceed with a bit caution here, as the installation is easy, one might be bound to make mistakes here.</p>
-
-<h3>Using Python Distribution Bundles</h3>
-
-<p>This is by far the simplest and cleanest way to install Python. Python is provided as a distribution bundle from companies <strong>Continuum Analytics</strong> and <strong>Enthought</strong>. Anaconda Python installer and Miniconda Python installer from <strong>Continuum Analytics</strong> are one of the best collections. The former one has a massive collection including a basic Python installation, core Python libraries, a vast collection of Python Libraries with required software, and the famous package manager, installer, and software installer <code class="prettyprint">conda</code>. The later one is a minimal version having <code class="prettyprint">conda</code>, basic Python installation, and core Python libraries for user-customized building.</p>
-
+<h3 id="using-python-distribution-bundles">Using Python Distribution Bundles</h3>
+<p>This is by far the simplest and cleanest way to install Python. Python is provided as a distribution bundle from companies <strong>Continuum Analytics</strong> and <strong>Enthought</strong>. Anaconda Python installer and Miniconda Python installer from <strong>Continuum Analytics</strong> are one of the best collections. The former one has a massive collection including a basic Python installation, core Python libraries, a vast collection of Python Libraries with required software, and the famous package manager, installer, and software installer <code>conda</code>. The later one is a minimal version having <code>conda</code>, basic Python installation, and core Python libraries for user-customized building.</p>
 <p>This distribution bundle installs Python separately and helps in maintaining multiple versions of python seamlessly. Upgrading Python and its libraries are easiest. Besides, the installation is so simple, that in Linux and Unix, it installs a separate stand alone Python environment thereby not interfering with the system python. And so, it can be modified, tweaked, or removed easily without affecting the system.</p>
-
 <p><strong>Enthought</strong> also has a Python Distribution bundle called <strong>Canopy</strong>. In all aspects, it is similar to Anaconda and Miniconda. However, as of now, Canopy bundle is not available for Python 3. Canopy will be launched in Python 3 soon and thus it provides an alternative means to install and use Python.</p>
 
             </div>

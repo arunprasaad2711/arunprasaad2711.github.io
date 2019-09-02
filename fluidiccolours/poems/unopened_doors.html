@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,157 +127,156 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Unopened Doors</h1>
-
-<p>| There was a breeze,
-| It blew between trees,
-| Thawed my heart old,
-| Rusty and cold.
-| 
-| Finding trust is very rare,
-| Earlier I didn\&#39;t care,
-| I wandered here and there,
-| I couldn\&#39;t find it anywhere.
-| 
-| This breeze I saw,
-| Made my heart thaw,
-| I then had a light,
-| My future was bright.
-| 
-| I was kind and warm,
-| Ever happy and calm,
-| Like a fruit with a worm,
-| My life had a storm.
-| 
-| Navigating at all cost,
-| I found myself lost.
-| All the aims I dreamed,
-| Many got shipwrecked.
-| 
-| I dig my thoughts deep,
-| On many nights I weep,
-| In that pain I became cold,
-| Unrelenting and bold.
-| 
-| Amidst all deception,
-| I saw a conclusion.
-| The ridings were rough,
-| The tidings were tough.
-| 
-| Without any digress,
-| I worked for progress,
-| My life turned around,
-| It became pretty sound.
-| 
-| Amidst all the laughter,
-| There was a missing chapter,
-| That\&#39;s when I saw you,
-| My heart beats for you.
-| 
-| A feeling so gentle,
-| It blossomed to kindle,
-| I fancied a big duet,
-| And I became a poet.
-| 
-| Oh, Gulmohar flower,
-| With your witty fervour,
-| Please don\&#39;t kill me!
-| Please don\&#39;t hang me!
-| 
-| I mustered up my courage,
-| After days of forage,
-| And gave you a flower,
-| For you to be my lover.
-| 
-| My heart stood like a rock,
-| Feelings I had felt a block,
-| I realised that you\&#39;re a wall,
-| Built on rocks strong and tall.
-| 
-| I thought you\&#39;d say yes,
-| And never did I guess,
-| You would say no,
-| My guts said so.
-| 
-| I accepted in grace,
-| And gave you some space,
-| But I stayed in touch,
-| My feelings held in a clutch.
-| 
-| In the distance I admired,
-| What your heart desired,
-| Watched your subtle grace,
-| The thoughts you embrace.
-| 
-| Amidst a turbulent time,
-| My heart did rhyme,
-| And longed to say your name,
-| And stir a passionate flame.
-| 
-| With patience, I waited,
-| My thoughts seated,
-| Having tested time,
-| Hoping your heart be mine.
-| 
-| I gathered a lot of courage,
-| Than what I could forage,
-| I knocked on the door again,
-| Despite the pouring rain.
-| 
-| The door didn\&#39;t budge,
-| Not even a nudge,
-| But I gained a trust,
-| Firm and robust.
-| 
-| I saw a glimpse,
-| The thoughts you eclipse,
-| A glimpse of many years,
-| Sum of many fears.
-| 
-| I saw you up-close,
-| You\&#39;re beautiful prose!
-| Many ups and downs,
-| Echoing many sounds.
-| 
-| What can I honestly say?
-| If you don\&#39;t feel that way?
-| I can\&#39;t force you to sway,
-| But it\&#39;s hard to move away!
-| 
-| In the moments I feel sad,
-| Your thoughts drive me mad.
-| With my feelings unclad,
-| I felt terrible and bad.
-| 
-| I prayed to the universe,
-| For you to find your verse,
-| For many a laurel,
-| And friends so loyal.
-| 
-| With a heavy heart,
-| I take a fresh start,
-| I have been so hard,
-| On myself and scarred.
-| 
-| You did not feel that way,
-| After all, I had to say,
-| Though my heart is in a sway,
-| I decided to move away.
-| 
-| I see my heart in pain,
-| Of injuries deep and plain,
-| I drift away to heal,
-| And many voids to seal.
-| 
-| I sail away far and wide,
-| I have many waves to ride,
-| I am always a riser,
-| I keep growing wiser.
-| 
-| If you feel for me later,
-| Do write a big letter,
-| Come out and take a walk,
-| Let\&#39;s meet out and talk.</p>
+                <h1 id="unopened-doors">Unopened Doors</h1>
+<div class="line-block">There was a breeze,<br />
+It blew between trees,<br />
+Thawed my heart old,<br />
+Rusty and cold.<br />
+<br />
+Finding trust is very rare,<br />
+Earlier I didn't care,<br />
+I wandered here and there,<br />
+I couldn't find it anywhere.<br />
+<br />
+This breeze I saw,<br />
+Made my heart thaw,<br />
+I then had a light,<br />
+My future was bright.<br />
+<br />
+I was kind and warm,<br />
+Ever happy and calm,<br />
+Like a fruit with a worm,<br />
+My life had a storm.<br />
+<br />
+Navigating at all cost,<br />
+I found myself lost.<br />
+All the aims I dreamed,<br />
+Many got shipwrecked.<br />
+<br />
+I dig my thoughts deep,<br />
+On many nights I weep,<br />
+In that pain I became cold,<br />
+Unrelenting and bold.<br />
+<br />
+Amidst all deception,<br />
+I saw a conclusion.<br />
+The ridings were rough,<br />
+The tidings were tough.<br />
+<br />
+Without any digress,<br />
+I worked for progress,<br />
+My life turned around,<br />
+It became pretty sound.<br />
+<br />
+Amidst all the laughter,<br />
+There was a missing chapter,<br />
+That's when I saw you,<br />
+My heart beats for you.<br />
+<br />
+A feeling so gentle,<br />
+It blossomed to kindle,<br />
+I fancied a big duet,<br />
+And I became a poet.<br />
+<br />
+Oh, Gulmohar flower,<br />
+With your witty fervour,<br />
+Please don't kill me!<br />
+Please don't hang me!<br />
+<br />
+I mustered up my courage,<br />
+After days of forage,<br />
+And gave you a flower,<br />
+For you to be my lover.<br />
+<br />
+My heart stood like a rock,<br />
+Feelings I had felt a block,<br />
+I realised that you're a wall,<br />
+Built on rocks strong and tall.<br />
+<br />
+I thought you'd say yes,<br />
+And never did I guess,<br />
+You would say no,<br />
+My guts said so.<br />
+<br />
+I accepted in grace,<br />
+And gave you some space,<br />
+But I stayed in touch,<br />
+My feelings held in a clutch.<br />
+<br />
+In the distance I admired,<br />
+What your heart desired,<br />
+Watched your subtle grace,<br />
+The thoughts you embrace.<br />
+<br />
+Amidst a turbulent time,<br />
+My heart did rhyme,<br />
+And longed to say your name,<br />
+And stir a passionate flame.<br />
+<br />
+With patience, I waited,<br />
+My thoughts seated,<br />
+Having tested time,<br />
+Hoping your heart be mine.<br />
+<br />
+I gathered a lot of courage,<br />
+Than what I could forage,<br />
+I knocked on the door again,<br />
+Despite the pouring rain.<br />
+<br />
+The door didn't budge,<br />
+Not even a nudge,<br />
+But I gained a trust,<br />
+Firm and robust.<br />
+<br />
+I saw a glimpse,<br />
+The thoughts you eclipse,<br />
+A glimpse of many years,<br />
+Sum of many fears.<br />
+<br />
+I saw you up-close,<br />
+You're beautiful prose!<br />
+Many ups and downs,<br />
+Echoing many sounds.<br />
+<br />
+What can I honestly say?<br />
+If you don't feel that way?<br />
+I can't force you to sway,<br />
+But it's hard to move away!<br />
+<br />
+In the moments I feel sad,<br />
+Your thoughts drive me mad.<br />
+With my feelings unclad,<br />
+I felt terrible and bad.<br />
+<br />
+I prayed to the universe,<br />
+For you to find your verse,<br />
+For many a laurel,<br />
+And friends so loyal.<br />
+<br />
+With a heavy heart,<br />
+I take a fresh start,<br />
+I have been so hard,<br />
+On myself and scarred.<br />
+<br />
+You did not feel that way,<br />
+After all, I had to say,<br />
+Though my heart is in a sway,<br />
+I decided to move away.<br />
+<br />
+I see my heart in pain,<br />
+Of injuries deep and plain,<br />
+I drift away to heal,<br />
+And many voids to seal.<br />
+<br />
+I sail away far and wide,<br />
+I have many waves to ride,<br />
+I am always a riser,<br />
+I keep growing wiser.<br />
+<br />
+If you feel for me later,<br />
+Do write a big letter,<br />
+Come out and take a walk,<br />
+Let's meet out and talk.</div>
 
             </div>
         </section>

@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,24 +127,21 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>SASS</h1>
-
+                <h1 id="sass">SASS</h1>
 <!-- TOC -->
-
 <ul>
 <li><a href="#SASS">SASS</a>
-
 <ul>
 <li><a href="#Introduction">Introduction</a></li>
 <li><a href="#Installation">Installation</a></li>
 <li><a href="#Quickstart">Quickstart</a></li>
-<li><a href="#About-configrb-file">About <code class="prettyprint">config.rb</code> file</a></li>
-<li><a href="#Alternate-way-to-create-sass-project">Alternate way to create <code class="prettyprint">sass</code> project</a></li>
+<li><a href="#About-configrb-file">About <code>config.rb</code> file</a></li>
+<li><a href="#Alternate-way-to-create-sass-project">Alternate way to create <code>sass</code> project</a></li>
 <li><a href="#Create-partials">Create partials</a></li>
 <li><a href="#Comments-and-Notes">Comments and Notes.</a></li>
-<li><a href="#Autocompile-sass-files">Autocompile <code class="prettyprint">sass</code> files</a></li>
+<li><a href="#Autocompile-sass-files">Autocompile <code>sass</code> files</a></li>
 <li><a href="#Usage-of-a-mixin">Usage of a mixin</a></li>
-<li><a href="#Includes-in-stylescss">Includes in <code class="prettyprint">style.scss</code></a></li>
+<li><a href="#Includes-in-stylescss">Includes in <code>style.scss</code></a></li>
 <li><a href="#Wrapper-IDClass">Wrapper ID/Class</a></li>
 <li><a href="#To-prevent-overlap-of-elements">To prevent overlap of elements</a></li>
 <li><a href="#Inheritance---Examples">Inheritance - Examples</a></li>
@@ -162,73 +162,28 @@
 <li><a href="#Table-Styling">Table Styling</a></li>
 </ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h2>Introduction</h2>
-
+<h2 id="introduction">Introduction</h2>
 <p>SASS is an extension of CSS with a lot of cool features. Once you compile SASS, you get CSS files.</p>
-
-<p>It adds</p>
-
-<ul>
-<li>Variables
-
-<ul>
-<li>Use variables to store colours or attribute values and use them throughout the SASS document. So, in the future, if you want to change the value at all the places, just change the value at one place and recompile it to get the CSS files.</li>
-</ul></li>
-<li>Nesting
-
-<ul>
-<li>Essentially, list properties one inside the other, like a nest. Avoids repetition of styles and selectors.</li>
-</ul></li>
-<li>Mixins
-
-<ul>
-<li>Helps to reuse chunks of CSS styles.</li>
-</ul></li>
-<li>Selector Inheritance
-
-<ul>
-<li>Can tell one selector to inherit all the styles of another without duplicating the CSS properties.</li>
-</ul></li>
-</ul>
-
+<p>It adds * Variables * Use variables to store colours or attribute values and use them throughout the SASS document. So, in the future, if you want to change the value at all the places, just change the value at one place and recompile it to get the CSS files. * Nesting * Essentially, list properties one inside the other, like a nest. Avoids repetition of styles and selectors. * Mixins * Helps to reuse chunks of CSS styles. * Selector Inheritance * Can tell one selector to inherit all the styles of another without duplicating the CSS properties.</p>
 <p>Essentially, it helps to write CSS very quickly and conveniently.</p>
-
-<p><code class="prettyprint">Compass</code> is an additional plugin used to add more functions to <code class="prettyprint">sass</code>.</p>
-
-<h2>Installation</h2>
-
-<ol>
+<p><code>Compass</code> is an additional plugin used to add more functions to <code>sass</code>.</p>
+<h2 id="installation">Installation</h2>
+<ol type="1">
 <li>Ruby gems</li>
 </ol>
-
-<pre><code class="prettyprint lang-bash">sudo gem install sass compass
-</code></pre>
-
-<ol>
+<pre class="bash"><code>sudo gem install sass compass</code></pre>
+<ol start="2" type="1">
 <li>npm install</li>
 </ol>
-
-<pre><code class="prettyprint lang-bash">npm install -g sass
-</code></pre>
-
+<pre class="bash"><code>npm install -g sass</code></pre>
 <p>To check if you have SASS installed, you type</p>
-
-<pre><code class="prettyprint lang-bash">sass --version
-</code></pre>
-
-<h2>Quickstart</h2>
-
-<p>To start a <code class="prettyprint">sass</code> project, type this in the terminal</p>
-
-<pre><code class="prettyprint lang-bash">compass create project_name
-</code></pre>
-
-<p>It will produce a sass folder, a stylesheet folder, and a ruby <code class="prettyprint">config.rb</code>.</p>
-
-<pre><code class="prettyprint lang-bash">arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
+<pre class="bash"><code>sass --version</code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<p>To start a <code>sass</code> project, type this in the terminal</p>
+<pre class="bash"><code>compass create project_name</code></pre>
+<p>It will produce a sass folder, a stylesheet folder, and a ruby <code>config.rb</code>.</p>
+<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
 .
 ├── config.rb
 ├── sass
@@ -242,27 +197,19 @@
 │   └── screen.css
 └── testing.html    # This is user-made
 
-2 directories, 9 files
-</code></pre>
-
-<p>It will also suggests to add this <code class="prettyprint">HTML5</code> code snippet to any html file.</p>
-
-<pre><code class="prettyprint lang-HTML">&lt;head&gt;
+2 directories, 9 files</code></pre>
+<p>It will also suggests to add this <code>HTML5</code> code snippet to any html file.</p>
+<pre class="html"><code>&lt;head&gt;
 &lt;link href=&quot;/stylesheets/screen.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
 &lt;link href=&quot;/stylesheets/print.css&quot; media=&quot;print&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
 &lt;!--[if IE]&gt;
     &lt;link href=&quot;/stylesheets/ie.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
 &lt;![endif]--&gt;
-&lt;/head&gt;
-</code></pre>
-
+&lt;/head&gt;</code></pre>
 <p>This part is helpful to test the css files using the html file.</p>
-
-<h2>About <code class="prettyprint">config.rb</code> file</h2>
-
+<h2 id="about-config.rb-file">About <code>config.rb</code> file</h2>
 <p>At the start, it looks like this</p>
-
-<pre><code class="prettyprint lang-ruby">require &#39;compass/import-once/activate&#39;
+<pre class="ruby"><code>require &#39;compass/import-once/activate&#39;
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
@@ -287,17 +234,13 @@ javascripts_dir = &quot;javascripts&quot;
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss &amp;&amp; rm -rf sass &amp;&amp; mv scss sass
-
 </code></pre>
-
 <p>You can edit this configuration file as you wish.</p>
-
 <ul>
-<li><code class="prettyprint">require</code> - to include a plugin required for the project. Use one require statement per plugin.</li>
-<li><code class="prettyprint">http_path</code> - The relative path location for the project.</li>
-<li><code class="prettyprint">xxxx_dir</code> - corresponding directories</li>
-<li><code class="prettyprint">output_style</code> - the output style of the css files.
-
+<li><code>require</code> - to include a plugin required for the project. Use one require statement per plugin.</li>
+<li><code>http_path</code> - The relative path location for the project.</li>
+<li><code>xxxx_dir</code> - corresponding directories</li>
+<li><code>output_style</code> - the output style of the css files.
 <ul>
 <li>nested - use indents to display the css output.</li>
 <li>compact - pushes all the code into a single line.</li>
@@ -305,19 +248,12 @@ javascripts_dir = &quot;javascripts&quot;
 <li>expand - full-fledged css with comments, white spaces. It is the SCSS files translated to CSS as it is.</li>
 </ul></li>
 </ul>
-
-<h2>Alternate way to create <code class="prettyprint">sass</code> project</h2>
-
-<pre><code class="prettyprint lang-bash">compass create --sass-dir &quot;sass_directory&quot; --css-dir &quot;css_directory&quot; --javascripts-dir &quot;js&quot; --images-dir &quot;images&quot;
-</code></pre>
-
-<h2>Create partials</h2>
-
+<h2 id="alternate-way-to-create-sass-project">Alternate way to create <code>sass</code> project</h2>
+<pre class="bash"><code>compass create --sass-dir &quot;sass_directory&quot; --css-dir &quot;css_directory&quot; --javascripts-dir &quot;js&quot; --images-dir &quot;images&quot;</code></pre>
+<h2 id="create-partials">Create partials</h2>
 <p>These are subdirectories with sass file fragments. These will be included into the main sass files. This is the tree layout after creating the partials.</p>
-
-<p>Also, outside partials folder, create <code class="prettyprint">styles.scss</code> file.</p>
-
-<pre><code class="prettyprint lang-bash">arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
+<p>Also, outside partials folder, create <code>styles.scss</code> file.</p>
+<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
 .
 ├── config.rb
 ├── sass
@@ -338,20 +274,16 @@ javascripts_dir = &quot;javascripts&quot;
 │   └── screen.css
 └── testing.html
 
-3 directories, 14 files
-</code></pre>
-
+3 directories, 14 files</code></pre>
 <ul>
-<li><code class="prettyprint">_base.scss</code>: the basic structure of the webpage</li>
-<li><code class="prettyprint">_layout.scss</code>: the design layout of the webpage</li>
-<li><code class="prettyprint">_mixins.scss</code>: reusable css definitions</li>
-<li><code class="prettyprint">_variables.scss</code>: the variables to be used everywhere</li>
-<li><code class="prettyprint">_normalize.scss</code>: collection of css attributes and html elements to normalize the style across all browsers. </li>
+<li><code>_base.scss</code>: the basic structure of the webpage</li>
+<li><code>_layout.scss</code>: the design layout of the webpage</li>
+<li><code>_mixins.scss</code>: reusable css definitions</li>
+<li><code>_variables.scss</code>: the variables to be used everywhere</li>
+<li><code>_normalize.scss</code>: collection of css attributes and html elements to normalize the style across all browsers.</li>
 </ul>
-
-<h2>Comments and Notes.</h2>
-
-<pre><code class="prettyprint lang-scss">
+<h2 id="comments-and-notes.">Comments and Notes.</h2>
+<pre class="scss"><code>
 // Single Line Comment
 /*
 Multi-Line comment. When merging multiple files, it may not appear where you want.
@@ -360,18 +292,12 @@ Multi-Line comment. When merging multiple files, it may not appear where you wan
 /*!
 Loud multi-line comment. It will exactly appear where you want.
 */
-
 </code></pre>
-
-<p>You can create your own <code class="prettyprint">_normalize.scss</code> file if you know what &quot;normalization&quot; means. Else, you can copy paste it from contents.</p>
-
-<h2>Autocompile <code class="prettyprint">sass</code> files</h2>
-
-<p>Using compass, you can automatically compile the <code class="prettyprint">sass</code> files to produce the equivalent <code class="prettyprint">css</code> files.</p>
-
+<p>You can create your own <code>_normalize.scss</code> file if you know what “normalization” means. Else, you can copy paste it from contents.</p>
+<h2 id="autocompile-sass-files">Autocompile <code>sass</code> files</h2>
+<p>Using compass, you can automatically compile the <code>sass</code> files to produce the equivalent <code>css</code> files.</p>
 <p>In the root folder, type this in the terminal.</p>
-
-<pre><code class="prettyprint lang-bash">arun@hpdv6:~/Website_Experimental/sass_tutorial$ compass watch
+<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ compass watch
  modified config.rb
     clean stylesheets
    delete stylesheets/ie.css
@@ -381,23 +307,14 @@ Loud multi-line comment. It will exactly appear where you want.
     write stylesheets/ie.css
     write stylesheets/print.css
     write stylesheets/screen.css
-
 </code></pre>
-
-<p>Alternatively, you can compile it using just <code class="prettyprint">sass</code></p>
-
-<pre><code class="prettyprint lang-bash">sass --watch style.scss:style.css
-</code></pre>
-
-<p>As long as it is running, any changes to the <code class="prettyprint">sass</code> files will be immediately reflected to the <code class="prettyprint">css</code> files.</p>
-
-<h2>Usage of a mixin</h2>
-
+<p>Alternatively, you can compile it using just <code>sass</code></p>
+<pre class="bash"><code>sass --watch style.scss:style.css</code></pre>
+<p>As long as it is running, any changes to the <code>sass</code> files will be immediately reflected to the <code>css</code> files.</p>
+<h2 id="usage-of-a-mixin">Usage of a mixin</h2>
 <p>A mixin is a function. You give some values to it, and it operates on it and gives some other values.</p>
-
 <p>Define one like this:</p>
-
-<pre><code class="prettyprint lang-scss">/* Mixins */
+<pre class="scss"><code>/* Mixins */
 /* Functions that take in some value and do some work for us. */
 
 // mixin keyword - mixin name - function arguments, default value,
@@ -405,12 +322,9 @@ Loud multi-line comment. It will exactly appear where you want.
 {
     // some task.
     color: $tc;
-}
-</code></pre>
-
+}</code></pre>
 <p>And implement it in other places like this:</p>
-
-<pre><code class="prettyprint lang-scss">body 
+<pre class="scss"><code>body 
 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -419,48 +333,35 @@ Loud multi-line comment. It will exactly appear where you want.
 
   // We are defining the text color with a mixin
   @include default-text-color($black);
-}
-</code></pre>
-
-<h2>Includes in <code class="prettyprint">style.scss</code></h2>
-
-<p>Write these lines into the <code class="prettyprint">style.scss</code> file.</p>
-
-<pre><code class="prettyprint lang-scss">@import &quot;compass&quot;;
+}</code></pre>
+<h2 id="includes-in-style.scss">Includes in <code>style.scss</code></h2>
+<p>Write these lines into the <code>style.scss</code> file.</p>
+<pre class="scss"><code>@import &quot;compass&quot;;
 @import &quot;partials/variables&quot;;
 @import &quot;partials/normalize&quot;;
 @import &quot;partials/mixins&quot;;
 @import &quot;partials/base&quot;;
-@import &quot;compass/css3&quot;;
-</code></pre>
-
-<h2>Wrapper ID/Class</h2>
-
-<pre><code class="prettyprint lang-css">#wrapper 
+@import &quot;compass/css3&quot;;</code></pre>
+<h2 id="wrapper-idclass">Wrapper ID/Class</h2>
+<pre class="css"><code>#wrapper 
 {
     background: $white;
     margin: 0 auto;
     max-width: 800px;
-}
-</code></pre>
-
-<h2>To prevent overlap of elements</h2>
-
-<pre><code class="prettyprint lang-scss">// Fixes overlapping issues
+}</code></pre>
+<h2 id="to-prevent-overlap-of-elements">To prevent overlap of elements</h2>
+<pre class="scss"><code>// Fixes overlapping issues
 // Makes the rendered box elements padding, borders, etc.
 // fit into the width
-
+   
 *
 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-</code></pre>
-
-<h2>Inheritance - Examples</h2>
-
-<pre><code class="prettyprint lang-scss">article p a
+}</code></pre>
+<h2 id="inheritance---examples">Inheritance - Examples</h2>
+<pre class="scss"><code>article p a
 {
     color: $blue;
     &amp;:hover, &amp;:focus 
@@ -471,14 +372,10 @@ Loud multi-line comment. It will exactly appear where you want.
     {
         color: $blue-gray;
     }
-}
-</code></pre>
-
-<h2>left-side bar links</h2>
-
+}</code></pre>
+<h2 id="left-side-bar-links">left-side bar links</h2>
 <p>Each link is a block. It is mildly transparent. On hover, it becomes fully opaque.</p>
-
-<pre><code class="prettyprint lang-scss">.left-sidebar-links {
+<pre class="scss"><code>.left-sidebar-links {
   a {
     display: block;
     color: $main-green;
@@ -487,22 +384,16 @@ Loud multi-line comment. It will exactly appear where you want.
       opacity: 1;
     }
   }
-}
-</code></pre>
-
+}</code></pre>
 <p>Put a border line at the bottom of each link, except the last one.</p>
-
-<pre><code class="prettyprint lang-scss">.left-sidebar-links {
+<pre class="scss"><code>.left-sidebar-links {
   border-bottom: 2px solid $main-green;
   &amp;:last-child {
     border: none;
   }
-}
-</code></pre>
-
-<h2>Nesting CSS properties</h2>
-
-<pre><code class="prettyprint lang-scss">// You can nest CSS properties as well
+}</code></pre>
+<h2 id="nesting-css-properties">Nesting CSS properties</h2>
+<pre class="scss"><code>// You can nest CSS properties as well
 .example-element {
   border: {
     top: 1px solid $blue;
@@ -510,102 +401,93 @@ Loud multi-line comment. It will exactly appear where you want.
     bottom: 1px solid $yellow;
     left: 1px solid $green;
   }
-}
-</code></pre>
-
-<h2>Extending already existing properties</h2>
-
-<pre><code class="prettyprint lang-scss">// @extend existing properties
+}</code></pre>
+<h2 id="extending-already-existing-properties">Extending already existing properties</h2>
+<pre class="scss"><code>// @extend existing properties
 #riddle{
   padding: 20px;
   background-color: $alice-blue;
 }
-
+ 
 #riddle-answer{
   @extend #riddle;
   margin-top: 10px;
-}
-</code></pre>
-
-<h2>Creating generic properties so that you can use and extend them</h2>
-
-<pre><code class="prettyprint lang-scss">// Creating properties just so we can extend them
-
+}</code></pre>
+<h2 id="creating-generic-properties-so-that-you-can-use-and-extend-them">Creating generic properties so that you can use and extend them</h2>
+<pre class="scss"><code>// Creating properties just so we can extend them
+ 
 %dotted-box {
-
+ 
   border: 2px dotted $duke-blue;
   margin: 10px 0px;
 }
-
+ 
 #riddle-answer{
   @extend %dotted-box;
-}
-</code></pre>
-
-<h2>colour altering commands</h2>
-
-<pre><code class="prettyprint lang-scss">// Lighten a color
+}</code></pre>
+<h2 id="colour-altering-commands">colour altering commands</h2>
+<pre class="scss"><code>// Lighten a color
 // You can use darken in the same way
-
+ 
 .left-sidebar-links{
   border-color: lighten($main-green, 70%);
 }
-
+ 
 // You can generate the 180 degree complement of a color
-
+ 
 #search-button:hover {
   background-color: complement($main-green);
 }
-
+ 
 // You can invert a color by sending the degree (0 - 360)
-
+ 
 #search-button:hover {
   background-color: adjust-hue($main-green, 90deg);
 }
-
+ 
 // Specify a background color for the &lt;li&gt; that is the
 // first child of #vert-nav ul and desaturate (darken)
-
+ 
 #vert-nav ul li:nth-child(1) {
   background-color: desaturate($orange, 80%);
 }
-
+ 
 // Saturate a color by a percent
-
+ 
 #vert-nav ul li:nth-child(2){
   background-color: saturate($orange, 80%);
 }
-
+ 
 // Define transparence (0 to 1 Opaque)
-
+ 
 #vert-nav ul li:nth-child(3){
   background-color: fade-out($orange, .5);
 }
-
+ 
 // Make a color more opaque (0 to 1 Opaque)
-
+ 
 #vert-nav ul li:nth-child(3){
   background-color: fade-in($orange, .8);
 }
-
+ 
 // Define the RGB color
-
+ 
 #vert-nav ul li:nth-child(4){
   background-color: rgba(0, 0, 200, 0.5);
 }
-
+ 
 // Mix 2 colors plus the percent of the first color
-
+ 
 #vert-nav ul li:nth-child(5){
   background-color: mix($yellow, $white, 50%);
 }
-
+ 
 // Make the color passed grayscale
-
+ 
 #vert-nav ul li:nth-child(6){
   background-color: grayscale($yellow);
 }
-
+ 
 /*
 adjust-color allows you to adjust
 red, green and blue : 0 to 255
@@ -615,47 +497,39 @@ lightness : 0 to 100
 alpha : 0 to 1
 Either adjust RGB or HSL
 */
-
+ 
 #vert-nav ul li:nth-child(7){
   background-color: adjust-color($main-green, $red:0, $green:40, $blue:30);
 }
-
+ 
 #vert-nav ul li:nth-child(7){
   background-color: adjust-color($main-green, $hue:30, $saturation:40, $lightness:30, $alpha:0.2);
 }
-
+ 
 // shade combines the color with a percent of black
-
+ 
 #vert-nav ul li:nth-child(8){
   background-color: shade($yellow, 50%);
 }
-
+ 
 // tint combines the color with a percent of white
-
+ 
 #vert-nav ul li:nth-child(9){
   background-color: tint($yellow, 50%);
-}
-</code></pre>
-
-<h2>mixins from compass</h2>
-
+}</code></pre>
+<h2 id="mixins-from-compass">mixins from compass</h2>
 <p>mixins from compass automatically generate equivalent properties that are compatible with other webbrowsers. Essentially, it produces cross-browser stuff.</p>
-
-<p>Mixin used in <code class="prettyprint">sass</code> from <code class="prettyprint">compass</code></p>
-
-<pre><code class="prettyprint lang-scss">// Rounds the border and adds a box shadow
-
+<p>Mixin used in <code>sass</code> from <code>compass</code></p>
+<pre class="scss"><code>// Rounds the border and adds a box shadow
+ 
 #riddle-answer {
   @include border-radius(5px);
-
+ 
   // Horizontal then vertical offset, blur, spread, color
   @include box-shadow(5px 5px 5px 2px gray);
-}
-</code></pre>
-
-<p>The equivalent <code class="prettyprint">css</code>.</p>
-
-<pre><code class="prettyprint lang-css">/* line 273, ../sass/styles.scss */
+}</code></pre>
+<p>The equivalent <code>css</code>.</p>
+<pre class="css"><code>/* line 273, ../sass/styles.scss */
 #riddle-answer {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -663,41 +537,32 @@ Either adjust RGB or HSL
   -moz-box-shadow: 5px 5px 5px 2px gray;
   -webkit-box-shadow: 5px 5px 5px 2px gray;
   box-shadow: 5px 5px 5px 2px gray;
-}
-</code></pre>
-
-<h2>text-shadow</h2>
-
-<pre><code class="prettyprint lang-scss">// Color, horizontal then verical offset, blur amount
+}</code></pre>
+<h2 id="text-shadow">text-shadow</h2>
+<pre class="scss"><code>// Color, horizontal then verical offset, blur amount
 #main-title{
   @include text-shadow(rgba(blue, 0.2) 2px 2px 3px);
-}
-</code></pre>
-
-<h2>gradient</h2>
-
-<pre><code class="prettyprint lang-scss">// Created for extension
+}</code></pre>
+<h2 id="gradient">gradient</h2>
+<pre class="scss"><code>// Created for extension
 // Direction or left / right / top / bottom, color stops
-
+ 
 %main-green-gradient{
-
+ 
   @include background-image(linear-gradient(left, $main-green 80%, $white));
 }
-
+ 
 footer {
   @extend %main-green-gradient;
 }
-
+ 
 #horz-nav {
   @extend %main-green-gradient;
-}
-</code></pre>
-
-<h2>working with images</h2>
-
-<pre><code class="prettyprint lang-scss">// Target the img with the given alt and change the src
+}</code></pre>
+<h2 id="working-with-images">working with images</h2>
+<pre class="scss"><code>// Target the img with the given alt and change the src
 // and restore the proper size
-
+ 
 img[alt=&quot;Programming Frameworks&quot;] {
   content: image-url(&#39;featured-image.png&#39;);
   // can also extract image dimensions
@@ -705,37 +570,28 @@ img[alt=&quot;Programming Frameworks&quot;] {
   width: image-width(&#39;../images/featured-image.png&#39;);
   height: image-height(&#39;../images/featured-image.png&#39;);
   */
-}
-</code></pre>
-
-<h2>Transformations</h2>
-
-<pre><code class="prettyprint lang-scss">// Use a Compass mixin to scale 2x horz &amp; vert
+}</code></pre>
+<h2 id="transformations">Transformations</h2>
+<pre class="scss"><code>// Use a Compass mixin to scale 2x horz &amp; vert
 // Move horz &amp; vert, rotate 45deg and perform multiple transforms
-
+ 
 #logo {
   @include scale(2,2);
   @include transform(translateX(700px) translateY(10px)
   scale(2,2) rotate(-45deg));
 }
-
 </code></pre>
-
-<h2>Drop shadow using compass mixin</h2>
-
-<pre><code class="prettyprint lang-scss">// Add the compass drop shadow on all text in the p
-
+<h2 id="drop-shadow-using-compass-mixin">Drop shadow using compass mixin</h2>
+<pre class="scss"><code>// Add the compass drop shadow on all text in the p
+ 
 article p:nth-child(2){
   @include filter(drop-shadow($gray 1px 1px 0px));
-}
-</code></pre>
-
-<h2>if conditions</h2>
-
-<pre><code class="prettyprint lang-scss">// We can change properties based on conditions
-
+}</code></pre>
+<h2 id="if-conditions">if conditions</h2>
+<pre class="scss"><code>// We can change properties based on conditions
+ 
 $riddle-color: gray;
-
+ 
 @if $riddle-color == blue {
   #riddle {
     background-color: $alice-blue;
@@ -744,34 +600,28 @@ $riddle-color: gray;
   #riddle {
     background-color: $ash-gray;
   }
-}
-</code></pre>
-
-<h2>for loop</h2>
-
-<pre><code class="prettyprint lang-scss">// We can use for loops to change as we iterate
-
+}</code></pre>
+<h2 id="for-loop">for loop</h2>
+<pre class="scss"><code>// We can use for loops to change as we iterate
+ 
 $prct-yellow: 5%;
-
+ 
 @for $i from 1 through 14 {
   #vert-nav ul li:nth-child(#{$i}){
     background-color: mix($yellow, $white, $prct-yellow);
   }
-
+ 
   $prct-yellow: $prct-yellow + 5%
-
-}
-</code></pre>
-
-<h2>spriting using compass mixins</h2>
-
-<pre><code class="prettyprint lang-scss">// Spriting with Compass
+ 
+}</code></pre>
+<h2 id="spriting-using-compass-mixins">spriting using compass mixins</h2>
+<pre class="scss"><code>// Spriting with Compass
 // Combines images in the provided folder into 1 image
 // to limit server requests
 // Define the directory for the images and it provides
 // the background image definition and location for use
 // by your elements
-
+ 
 @import &quot;compass/utilities/sprites&quot;;
 
 // folder with the images.
@@ -792,31 +642,27 @@ $prct-yellow: 5%;
 .icons * {
   height: 64px;
   width: 64px;
-}
-</code></pre>
-
-<h2>Table Styling</h2>
-
-<pre><code class="prettyprint lang-scss">@import &quot;compass/utilities/tables&quot;;
-
+}</code></pre>
+<h2 id="table-styling">Table Styling</h2>
+<pre class="scss"><code>@import &quot;compass/utilities/tables&quot;;
+ 
 .baseball-stats {
   table {
     $table-color: $black;
     @include table-scaffolding;
-
+ 
     // Define the inner border
     @include inner-table-borders(4px, $table-color);
-
+ 
     // Define the outer border
     @include outer-table-borders(4px, $duke-blue);
-
+ 
     // Handles table striping even row color, odd row color, intersection, header
     @include alternating-rows-and-columns($alice-blue, $ash-gray, $table-color, $white);
-
+ 
     width: 400px;
   }
-}
-</code></pre>
+}</code></pre>
 
             </div>
         </section>

@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,57 +127,36 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>MPI Introduction</h1>
-
+                <h1 id="mpi-introduction">MPI Introduction</h1>
 <p>It is a parallel programming methodology wherein the architecture for cores and memory are required to be distributed. MPI works on shared memory systems also. But it cannot take advantage of the shared memory processes when invoked.</p>
-
 <p>The process is as follows. The program execution is such that all the processes will be running the same program but having different set of data. Information is passed between threads via messages to inform the status. So, it follows SPMD or single program multiple data approach. Data to be shared between threads are explicitly passed between threads via messages.</p>
-
 <p>Sources:</p>
-
-<ol>
-<li>High Performance Computing - Prof. Randall J LeVeque, University of Washington, Coursera Course.</li>
+<ol type="1">
+<li>High Performance Computing - Prof. Randall J LeVeque, University of Washington, Coursera Course.</li>
 <li>Sharcnet YouTube channel tutorials</li>
 </ol>
-
 <p>GNU Fortran will have an MPI. MPICH is recommended to be installed and used.</p>
-
 <p>Like fortran, all the variables and subroutines are CASE INSENSITIVE, EVEN IN MPI routines.</p>
-
-<h2>Variables and Terms</h2>
-
+<h2 id="variables-and-terms">Variables and Terms</h2>
 <p><strong>Communicator</strong>:</p>
-
-<p>Only a group of processors communicate.
-Processors communicate on a purpose/context.
-A communicator is a variable/() used for communicating messages or data between processors on a context.</p>
-
-<p><code class="prettyprint">MPI_COMM_WORLD</code> is a default communicator to communicate to all the processes and processors.</p>
-
-<p><code class="prettyprint">MPI_COMM_RANK(comm1, proc_num, ierr)</code> returns the rank/number/position/label of the processor in the communicator group. The value is given to proc-num</p>
-
-<p><code class="prettyprint">MPI_COMM_SIZE(comm1, num_proc, ierr)</code> returns the number of processors/processes in the communicator group. The value is given to num_proc</p>
-
-<p><code class="prettyprint">ierr</code> is a logical variable to indicate any error. If ierr is zero, then no error. If it is non-zero, then an MPI error is present.</p>
-
-<p><code class="prettyprint">MPI_INIT(ierr)</code> is used for initializing an MPI process.</p>
-
-<p><code class="prettyprint">MPI_FINALIZE(ierr)</code> is used for ending an MPI process.</p>
-
+<p>Only a group of processors communicate. Processors communicate on a purpose/context. A communicator is a variable/() used for communicating messages or data between processors on a context.</p>
+<p><code>MPI_COMM_WORLD</code> is a default communicator to communicate to all the processes and processors.</p>
+<p><code>MPI_COMM_RANK(comm1, proc_num, ierr)</code> returns the rank/number/position/label of the processor in the communicator group. The value is given to proc-num</p>
+<p><code>MPI_COMM_SIZE(comm1, num_proc, ierr)</code> returns the number of processors/processes in the communicator group. The value is given to num_proc</p>
+<p><code>ierr</code> is a logical variable to indicate any error. If ierr is zero, then no error. If it is non-zero, then an MPI error is present.</p>
+<p><code>MPI_INIT(ierr)</code> is used for initializing an MPI process.</p>
+<p><code>MPI_FINALIZE(ierr)</code> is used for ending an MPI process.</p>
 <p>There are 125+ MPI functions. Some important and main functions other than the above mentioned ones are as follows. They are helpful to do a wide variety of programs.</p>
-
-<ol>
-<li><code class="prettyprint">MPI_INTEGER</code>: Used to specify the type of data being sent</li>
-<li><code class="prettyprint">MPI_SUM</code>: Used for doing sum reduction operation</li>
-<li><code class="prettyprint">MPI_SEND</code>: Used to send a message</li>
-<li><code class="prettyprint">MPI_RCV</code>: Used to receive a message</li>
-<li><code class="prettyprint">MPI_BCAST</code>: Used to broadcast a message to all processors</li>
-<li><code class="prettyprint">MPI_REDUCE</code>: Used to do a reduction process</li>
+<ol type="1">
+<li><code>MPI_INTEGER</code>: Used to specify the type of data being sent</li>
+<li><code>MPI_SUM</code>: Used for doing sum reduction operation</li>
+<li><code>MPI_SEND</code>: Used to send a message</li>
+<li><code>MPI_RCV</code>: Used to receive a message</li>
+<li><code>MPI_BCAST</code>: Used to broadcast a message to all processors</li>
+<li><code>MPI_REDUCE</code>: Used to do a reduction process</li>
 </ol>
-
-<h2>Sample Hello World Program in Fortran</h2>
-
-<pre><code class="prettyprint lang-Fortran">! A sample hello world program in Fortran MPI
+<h2 id="sample-hello-world-program-in-fortran">Sample Hello World Program in Fortran</h2>
+<pre class="fortran"><code>! A sample hello world program in Fortran MPI
 
 program hello_mpi
 
@@ -190,10 +172,10 @@ program hello_mpi
 
     call MPI_INIT(ierr)
     ! mpi_init starts the MPI processes
-
+    
     call MPI_COMM_SIZE(MPI_COMM_WORLD, no_pro, ierr)
     ! mpi_comm_size finds the number of processes under use
-
+    
     call MPI_COMM_RANK(MPI_COMM_WORLD, pro_num, ierr)
     ! mpi_comm_rank finds the processor number
     ! MPI_COMM_WORLD is a default communicator used for 
@@ -206,150 +188,76 @@ program hello_mpi
     call MPI_FINALIZE(ierr)
     ! mpi_finalize ends the MPI processes
 
-end program hello_mpi
-</code></pre>
-
+end program hello_mpi</code></pre>
 <p>To compile and create the executable, use</p>
-
-<pre><code class="prettyprint lang-Bash">mpif90 filename.f90
-</code></pre>
-
+<pre class="bash"><code>mpif90 filename.f90</code></pre>
 <p>If MPICH is used, use</p>
-
-<pre><code class="prettyprint lang-bash">mpif90.mpich filename.f90 or mpif90 filename.f90 or .*.f95
-</code></pre>
-
+<pre class="bash"><code>mpif90.mpich filename.f90 or mpif90 filename.f90 or .*.f95</code></pre>
 <p>To execute the file, use</p>
-
-<pre><code class="prettyprint lang-bash">mpiexec -n 4 ./a.out 
-!mpiexec helps to indicate the number of processors to be used.
-</code></pre>
-
-<p>Where -n stands for the number of processors to be used. 4 processors are used here.
-If more processors are indicated than what is available, then it wont show an error. Each processor will do two or more processes to meet the number indicated and thus, it won&#39;t be parallel. This is recommended when for debugging.</p>
-
-<h2>Creating Communicators</h2>
-
-<p><code class="prettyprint">MPI_COMM_WORLD</code> is a communicator for all the processors.</p>
-
+<pre class="bash"><code>mpiexec -n 4 ./a.out 
+!mpiexec helps to indicate the number of processors to be used.</code></pre>
+<p>Where -n stands for the number of processors to be used. 4 processors are used here. If more processors are indicated than what is available, then it wont show an error. Each processor will do two or more processes to meet the number indicated and thus, it won’t be parallel. This is recommended when for debugging.</p>
+<h2 id="creating-communicators">Creating Communicators</h2>
+<p><code>MPI_COMM_WORLD</code> is a communicator for all the processors.</p>
 <p>If a subset of processors were to be used, then a new communicator has to be created and used.</p>
-
-<h2>MPI_BCAST</h2>
-
-<pre><code class="prettyprint lang-Fortran">call MPI_BCAST(start, count, datatype, root, comm, ierr)
-</code></pre>
-
+<h2 id="mpi_bcast">MPI_BCAST</h2>
+<pre class="fortran"><code>call MPI_BCAST(start, count, datatype, root, comm, ierr)</code></pre>
 <p>This statement broadcasts variables from one processor thread to all the others.</p>
-
 <p><strong>start</strong> : the memory address or variable name or an array entry.</p>
-
 <p><strong>count</strong> : number of variables/data to be sent using the entry in start.</p>
-
 <p><strong>datatype</strong> : the data type of the value(s) in the start.</p>
-
 <p><strong>root</strong> : the processor number that sends this variable to all the threads or the process doing the broadcast.</p>
-
 <p><strong>comm</strong> : communicator under use.</p>
-
 <p><strong>ierr</strong> : the error variable.</p>
-
 <p>eg: to broad cast a double precision variable, x, from processor 3, to all the processes, then</p>
-
-<pre><code class="prettyprint lang-Fortran">MPI_BCAST(x,1,MPI_DOUBLE_PRECISION,3,MPI_COMM_WORLD,ierr)
-</code></pre>
-
+<pre class="fortran"><code>MPI_BCAST(x,1,MPI_DOUBLE_PRECISION,3,MPI_COMM_WORLD,ierr)</code></pre>
 <p>For passing array values, it is a bit tricky. A new memory continuous array has to be made and then this array has to be made use for broadcast, or using a loop, the values can be made use for broadcast.</p>
-
 <p>eg: you want to pass the jth column of a matrix/array having nrows and ncols, then the command will be</p>
-
-<pre><code class="prettyprint lang-Fortran">MPI_BCAST(a(1,j),nrows,MPI_DOUBLE_PRECISION,0,MPI_COMM_WORLD,ierr)
-</code></pre>
-
-<p>where <code class="prettyprint">a(1,j)</code> is the starting address of the jth column and nrows of elements are there continuously in the memory allocation.
-This works for passing columns in Fortran because Fortran is column based in memory allocation. This works for passing rows in C.</p>
-
+<pre class="fortran"><code>MPI_BCAST(a(1,j),nrows,MPI_DOUBLE_PRECISION,0,MPI_COMM_WORLD,ierr)</code></pre>
+<p>where <code>a(1,j)</code> is the starting address of the jth column and nrows of elements are there continuously in the memory allocation. This works for passing columns in Fortran because Fortran is column based in memory allocation. This works for passing rows in C.</p>
 <p>For passing rows/columns of an array that are not memory contiguous in Fortran/C, a buffer variable is to be created and it has to be allocated with the elements of the row/column using a loop and broadcasted.</p>
-
-<p><code class="prettyprint">MPI_VECTOR</code> is a simple way to do this process.</p>
-
-<h2>MPI<em>SEND MPI</em>RECV</h2>
-
+<p><code>MPI_VECTOR</code> is a simple way to do this process.</p>
+<h2 id="mpi_send-mpi_recv">MPI_SEND MPI_RECV</h2>
 <p><strong>MPI_SEND</strong> and <strong>MPI_RECV</strong> are used for sending and receiving particular parts of data to and from other processes.</p>
-
-<p><code class="prettyprint">MPI_SEND</code> is used for sending data from one process to another</p>
-
-<p><code class="prettyprint">MPI_RECV</code> is used for receiving the data from the <code class="prettyprint">MPI_SEND</code> call.</p>
-
-<p>While sending and receiving multiple data between processes , to ensure the correct data is sent and received (simply to check the match) all around, an identifier is needed. This identifier is called a tag. <code class="prettyprint">MPI_SEND</code> will be read by the MPI_RECV command having the same tag.</p>
-
+<p><code>MPI_SEND</code> is used for sending data from one process to another</p>
+<p><code>MPI_RECV</code> is used for receiving the data from the <code>MPI_SEND</code> call.</p>
+<p>While sending and receiving multiple data between processes , to ensure the correct data is sent and received (simply to check the match) all around, an identifier is needed. This identifier is called a tag. <code>MPI_SEND</code> will be read by the MPI_RECV command having the same tag.</p>
 <p>Tag is usually an integer, but can be used as a meaningful info, like row/column number.</p>
-
-<pre><code class="prettyprint lang-Fortran">call MPI_SEND(start, count, datatype, dest, tag, comm, ierr)
-</code></pre>
-
+<pre class="fortran"><code>call MPI_SEND(start, count, datatype, dest, tag, comm, ierr)</code></pre>
 <p><strong>start</strong> = Starting address or the variable name or the array element</p>
-
-<p><strong>count</strong> = No. of variables in continuous order to send</p>
-
+<p><strong>count</strong> = No. of variables in continuous order to send</p>
 <p><strong>datatype</strong> = type of each element (int, float etc.,)</p>
-
 <p><strong>dest</strong> = destination process</p>
-
 <p><strong>tag</strong> = identifier tag (0 to 32767)</p>
-
 <p><strong>comm</strong> = communicator</p>
-
 <p><strong>ierr</strong> = error variable</p>
-
-<pre><code class="prettyprint lang-Fortran">call MPI_RECV(start, count, datatype, source, tag, comm, status, ierr)
-</code></pre>
-
+<pre class="fortran"><code>call MPI_RECV(start, count, datatype, source, tag, comm, status, ierr)</code></pre>
 <p><strong>start</strong> = Starting address or the variable name or the array element</p>
-
-<p><strong>count</strong> = No. of variables in continuous order to send</p>
-
+<p><strong>count</strong> = No. of variables in continuous order to send</p>
 <p><strong>datatype</strong> = type of each element (int, float etc.,)</p>
-
 <p><strong>source</strong> = process from where data is coming</p>
-
 <p><strong>tag</strong> = identifier tag (0 to 32767)</p>
-
 <p><strong>comm</strong> = communicator</p>
-
-<p><strong>status</strong> = integer array of length MPI<em>STATUS</em>SIZE. Has a lot of uses.</p>
-
-<p>status array/vector has an inbuilt size namely <strong>MPI<em>STATUS</em>SIZE</strong>.</p>
-
+<p><strong>status</strong> = integer array of length MPI_STATUS_SIZE. Has a lot of uses.</p>
+<p>status array/vector has an inbuilt size namely <strong>MPI_STATUS_SIZE</strong>.</p>
 <p>status array has to be defined explicitly as:</p>
-
-<pre><code class="prettyprint lang-Fortran">    integer, dimension(MPI_STATUS_SIZE) :: status
-</code></pre>
-
-<p><code class="prettyprint">ierr</code> = error variable</p>
-
-<p>A source can match any source with the keyword <strong>MPI<em>ANY</em>SOURCE</strong></p>
-
-<p>A tag can match any tag with the keyword <strong>MPI<em>ANY</em>TAG</strong></p>
-
+<pre class="fortran"><code>    integer, dimension(MPI_STATUS_SIZE) :: status</code></pre>
+<p><code>ierr</code> = error variable</p>
+<p>A source can match any source with the keyword <strong>MPI_ANY_SOURCE</strong></p>
+<p>A tag can match any tag with the keyword <strong>MPI_ANY_TAG</strong></p>
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-Fortran">if (proc_num == 4) then
+<pre class="fortran"><code>if (proc_num == 4) then
     i = 55
     call MPI_SEND(i, 1, MPI_INTEGER, 3, 21, MPI_COMM_WORLD, ierr)
 end if
 if (proc_num == 3) then
     call MPI_RECV(j, 1, MPI_INTEGER, 4, 21, MPI_COMM_WORLD, status, ierr)
     print *, &quot;j = &quot;,j  ! Process 3 Will print j = 55
-end if
-</code></pre>
-
+end if</code></pre>
 <p>In this example, i is sent from process number 4 and received by process number 3 as j. The Tag is 21. The receive call will not accept messages from other sent calls.</p>
-
 <p>This is a <strong>blocking MPI_RECV</strong>. This subroutine will not return or complete its job until it receives a call from MPI_SEND with the tag 21. So, the next statement will not run unless it is finished called. Similarly, it will wait till all the other processes are done that calls and sends a message to it. Can lead to code hangups if not done properly.</p>
-
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-Fortran">!This piece of code will pass value of i from process 0 to 1 to 2 to ... to num_proc - 1
+<pre class="fortran"><code>!This piece of code will pass value of i from process 0 to 1 to 2 to ... to num_proc - 1
 
 if (proc_num == 0) then
     i = 55
@@ -363,24 +271,15 @@ else if (proc_num &lt; num_procs - 1) then
 else if (proc_num == num_procs - 1) then
     call MPI_RECV(i, 1, MPI_INTEGER, proc_num-1, 21, MPI_COMM_WORLD, status, ierr)
     print *, &quot;i = &quot;,i  ! Process proc_num-1 Will print i = 55
-end if
-</code></pre>
-
-<h2>Status and Tags in MPI_RECV</h2>
-
-<p><code class="prettyprint">Status</code> is a parameter in <code class="prettyprint">MPI_RECV</code>.</p>
-
-<p>Used for knowing from where the data was received from and what data is received. Especially when <code class="prettyprint">MPI_ANY_SOURCE</code> or <code class="prettyprint">MPI_ANY_TAG</code> are used.</p>
-
-<p>Status is an array of integers. It has one element indexed with the keyword <code class="prettyprint">MPI_SOURCE</code>. Denoted as status (<code class="prettyprint">MPI_SOURCE</code>). This will return a number from which the source of the message can be found.</p>
-
-<p>Using this, we can find if <code class="prettyprint">MPI_ANY_SOURCE</code> was used or not.</p>
-
-<p>Similarly, <code class="prettyprint">status(MPI_TAG)</code> will return the tag of the source message. Using this, we can find if MPI<em>ANY</em>TAG was used or not.</p>
-
+end if</code></pre>
+<h2 id="status-and-tags-in-mpi_recv">Status and Tags in MPI_RECV</h2>
+<p><code>Status</code> is a parameter in <code>MPI_RECV</code>.</p>
+<p>Used for knowing from where the data was received from and what data is received. Especially when <code>MPI_ANY_SOURCE</code> or <code>MPI_ANY_TAG</code> are used.</p>
+<p>Status is an array of integers. It has one element indexed with the keyword <code>MPI_SOURCE</code>. Denoted as status (<code>MPI_SOURCE</code>). This will return a number from which the source of the message can be found.</p>
+<p>Using this, we can find if <code>MPI_ANY_SOURCE</code> was used or not.</p>
+<p>Similarly, <code>status(MPI_TAG)</code> will return the tag of the source message. Using this, we can find if MPI_ANY_TAG was used or not.</p>
 <p>eg:</p>
-
-<pre><code class="prettyprint lang-Fortran">! Master processor 0 sends the jth column of an array to the jth 
+<pre class="fortran"><code>! Master processor 0 sends the jth column of an array to the jth 
 ! worker and gets the 1-norm to store in anorm(j) j = 1, 2, 3, ..., ncols
 
 ! code for master processor = 0
@@ -395,19 +294,12 @@ if (proc_num == 0) then
           jj = status(MPI_TAG)
           anorm(jj) = colnorm
     end do
-end if
-</code></pre>
-
-<p>Explanation:
-The master processor will make n send calls. Each call will pass the jth column fully. a(1,j) is the beginning address of the column j. nrows indicate the n consecutive values in the array. The source is j itself. J denotes both the processor under consideration and the iteration number. The tag is again j. So, for each column sent, the tag used is the column number itself.</p>
-
-<p>In the second do loop, the master processor gets n receive calls. These calls will be in any order. They will receive the column norm from other processes in any order. The code for slave processors does the column norm calculation. So, instead of waiting to receive the message in a regular order, the keyword MPI<em>ANY</em>SOURCE ensures that any of the finished processors can send the data to be received by processor 0. To ensure the same, the keyword MPI<em>ANY</em>TAG does the same. It assists any finished processor to come accordingly. Note that for a particular SOURCE, the corresponding TAG alone will be received. No mix and match.</p>
-
+end if</code></pre>
+<p>Explanation: The master processor will make n send calls. Each call will pass the jth column fully. a(1,j) is the beginning address of the column j. nrows indicate the n consecutive values in the array. The source is j itself. J denotes both the processor under consideration and the iteration number. The tag is again j. So, for each column sent, the tag used is the column number itself.</p>
+<p>In the second do loop, the master processor gets n receive calls. These calls will be in any order. They will receive the column norm from other processes in any order. The code for slave processors does the column norm calculation. So, instead of waiting to receive the message in a regular order, the keyword MPI_ANY_SOURCE ensures that any of the finished processors can send the data to be received by processor 0. To ensure the same, the keyword MPI_ANY_TAG does the same. It assists any finished processor to come accordingly. Note that for a particular SOURCE, the corresponding TAG alone will be received. No mix and match.</p>
 <p>But, to know which TAG has popped up or been received, the MPI_TAG element in status has the memory of the TAG received. So, this will say the column norm of which column was calculated and returned. jj gets the tag received and using that, the array anorm is filled with the column norm pertaining to the column, tag and source j.</p>
-
 <p>The code that does the column norm calculation is given below.</p>
-
-<pre><code class="prettyprint lang-Fortran">! code for the slave processors
+<pre class="fortran"><code>! code for the slave processors
 if (proc_num /= 0) then
 
      call MPI_RECV(colvect, nrows, MPI_DOUBLE_PRECISION, 0, MPI_ANY_TAG, MPI_COMM_WORLD, status, ierr)
@@ -420,20 +312,12 @@ if (proc_num /= 0) then
 
     call MPI_SEND(colnorm, 1, MPI_DOUBLE_PRECISION, 0, j, MPI_COMM_WORLD, ierr)
 
-end if
-</code></pre>
-
-<p>The <code class="prettyprint">MPI_RECV</code> call receives each call from the master processor n times. Each call is received by one slave processor. To ensure that the call can be received in any order, <code class="prettyprint">MPI_ANY_TAG</code> are used.</p>
-
-<p><code class="prettyprint">j = status(MPI_TAG)</code> gets the tag and the column number under consideration from the sent message. The do loop calculates the column norm and the result colnorn is sent by each of the n processors once through the <code class="prettyprint">MPI_SEND</code> call. When sent, the source is made as 0 and the tag is sent as j, to indicate that the values are going to process 0 and the value corresponds to the column j.</p>
-
-<h2>MPI_ABORT</h2>
-
+end if</code></pre>
+<p>The <code>MPI_RECV</code> call receives each call from the master processor n times. Each call is received by one slave processor. To ensure that the call can be received in any order, <code>MPI_ANY_TAG</code> are used.</p>
+<p><code>j = status(MPI_TAG)</code> gets the tag and the column number under consideration from the sent message. The do loop calculates the column norm and the result colnorn is sent by each of the n processors once through the <code>MPI_SEND</code> call. When sent, the source is made as 0 and the tag is sent as j, to indicate that the values are going to process 0 and the value corresponds to the column j.</p>
+<h2 id="mpi_abort">MPI_ABORT</h2>
 <p>To terminate or abort a program abruptly or in case of any error condition, use the <strong>MPI_ABORT</strong> call.</p>
-
-<pre><code class="prettyprint lang-Fortran">    call MPI_ABORT(MPI_COMM_WORLD, 1)
-</code></pre>
-
+<pre class="fortran"><code>    call MPI_ABORT(MPI_COMM_WORLD, 1)</code></pre>
 <p>1 is the error value</p>
 
             </div>

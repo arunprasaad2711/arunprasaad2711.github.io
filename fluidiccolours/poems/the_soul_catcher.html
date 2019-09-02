@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,67 +127,66 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>The Soul Catcher</h1>
-
-<p>| Many days I walked, alone and restless,
-| Chasing my dreams, hard and endless,
-| Ever trying my best, to complete fullness,
-| Trying to fill a void, a deep emptiness.
-| 
-| You don\&#39;t speak a word, you sleep,
-| Your kind face forever, in my heart I\&#39;ll keep,
-| You wipe my tears, whenever I weep,
-| Let me sing a song, for you to rest deep.
-| 
-| Like the eyelids to the eye, I will be close to you,
-| Protecting you from harm, I shall be with you,
-| Till you break your rest, my eyes won\&#39;t rest for you,
-| That is the least I can, always do for you.
-| 
-| I asked the flowers: Is this a dream?
-| To have you in my life, in joy I scream!
-| Adding joy to my life, you are a stream,
-| Whenever we kiss, you taste like cream.
-| 
-| I curse the autumn winds that give you the cold,
-| As you sleep in sickness, ill care for you until I\&#39;m old,
-| I bless the summer winds that made me so bold,
-| To meet you and tell, what my heart truly told.
-| 
-| As you lie in my lap, I am reading a book,
-| A book so dear to you that I\&#39;ll never overlook.
-| I wonder and ponder, what did it take,
-| Your precious little heart, to get such a hook?
-| 
-| My heart once wandered, hither and thither,
-| Drifting in the wind, like a lonely feather,
-| Changing its emotions, just like the weather,
-| Until you came in and became my tether.
-| 
-| You don\&#39;t speak a word, my dear,
-| I feel your words, loud and clear,
-| Whatever happens, you don\&#39;t fear,
-| I am strong now, and the troubles I can bear,
-| 
-| As you sleep in peace, I\&#39;ll touch you gently,
-| I\&#39;ll comb your hair to ease, all its knots feebly.
-| Rest all you want; there is nothing so urgently,
-| I have to take care of them all, well and attentively.
-| 
-| Even if you are far, my heart is close to you,
-| When I hear your voice, my eyes search for you,
-| In happiness and sadness, my heart is full of you,
-| I dared to jump the skies, to be with you.
-| 
-| Once I was a storm chaser, running far and wide,
-| Till one storm caught me and tossed me aside.
-| Now I am a Stormbreaker, being a chaser\&#39;s guide,
-| My catcher in the rye, my soon to be the bride!
-| 
-| I ask the spring winds, for many beautiful days,
-| As we celebrate our wedding, with bliss and gay.
-| I ask for the winter winds, to keep the stars at bay,
-| To keep the clouds grey, for us to cuddle that way.</p>
+                <h1 id="the-soul-catcher">The Soul Catcher</h1>
+<div class="line-block">Many days I walked, alone and restless,<br />
+Chasing my dreams, hard and endless,<br />
+Ever trying my best, to complete fullness,<br />
+Trying to fill a void, a deep emptiness.<br />
+<br />
+You don't speak a word, you sleep,<br />
+Your kind face forever, in my heart I'll keep,<br />
+You wipe my tears, whenever I weep,<br />
+Let me sing a song, for you to rest deep.<br />
+<br />
+Like the eyelids to the eye, I will be close to you,<br />
+Protecting you from harm, I shall be with you,<br />
+Till you break your rest, my eyes won't rest for you,<br />
+That is the least I can, always do for you.<br />
+<br />
+I asked the flowers: Is this a dream?<br />
+To have you in my life, in joy I scream!<br />
+Adding joy to my life, you are a stream,<br />
+Whenever we kiss, you taste like cream.<br />
+<br />
+I curse the autumn winds that give you the cold,<br />
+As you sleep in sickness, ill care for you until I'm old,<br />
+I bless the summer winds that made me so bold,<br />
+To meet you and tell, what my heart truly told.<br />
+<br />
+As you lie in my lap, I am reading a book,<br />
+A book so dear to you that I'll never overlook.<br />
+I wonder and ponder, what did it take,<br />
+Your precious little heart, to get such a hook?<br />
+<br />
+My heart once wandered, hither and thither,<br />
+Drifting in the wind, like a lonely feather,<br />
+Changing its emotions, just like the weather,<br />
+Until you came in and became my tether.<br />
+<br />
+You don't speak a word, my dear,<br />
+I feel your words, loud and clear,<br />
+Whatever happens, you don't fear,<br />
+I am strong now, and the troubles I can bear,<br />
+<br />
+As you sleep in peace, I'll touch you gently,<br />
+I'll comb your hair to ease, all its knots feebly.<br />
+Rest all you want; there is nothing so urgently,<br />
+I have to take care of them all, well and attentively.<br />
+<br />
+Even if you are far, my heart is close to you,<br />
+When I hear your voice, my eyes search for you,<br />
+In happiness and sadness, my heart is full of you,<br />
+I dared to jump the skies, to be with you.<br />
+<br />
+Once I was a storm chaser, running far and wide,<br />
+Till one storm caught me and tossed me aside.<br />
+Now I am a Stormbreaker, being a chaser's guide,<br />
+My catcher in the rye, my soon to be the bride!<br />
+<br />
+I ask the spring winds, for many beautiful days,<br />
+As we celebrate our wedding, with bliss and gay.<br />
+I ask for the winter winds, to keep the stars at bay,<br />
+To keep the clouds grey, for us to cuddle that way.</div>
 
             </div>
         </section>

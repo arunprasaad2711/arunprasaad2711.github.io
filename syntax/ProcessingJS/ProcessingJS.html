@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,76 +127,46 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>ProcessingJS</h1>
-
+                <h1 id="processingjs">ProcessingJS</h1>
 <p>ProcessingJS is a JavaScript library for creating web based animation. It is a port of processing visualization language.</p>
-
 <p>It is an starter for JavaScript.</p>
-
-<h2>Notes and References</h2>
-
+<h2 id="notes-and-references">Notes and References</h2>
 <ul>
 <li>KhanAcademy Course on Computer Animation.</li>
 </ul>
-
-<h2>About</h2>
-
+<h2 id="about">About</h2>
 <p><em>Courtesy: ProcessingJS webpage</em></p>
-
-<p>Processing.js is the sister project of the popular <a href="http://processing.org/">Processing</a> visual programming language, designed for the web. Processing.js makes your data visualizations, digital art, interactive animations, educational graphs, video games, etc. work using web standards and without any plug-ins. You write code using the Processing language, include it in your web page, and Processing.js does the rest. It&#39;s not magic, but almost.</p>
-
+<p>Processing.js is the sister project of the popular <a href="http://processing.org/">Processing</a> visual programming language, designed for the web. Processing.js makes your data visualizations, digital art, interactive animations, educational graphs, video games, etc. work using web standards and without any plug-ins. You write code using the Processing language, include it in your web page, and Processing.js does the rest. It’s not magic, but almost.</p>
 <p>Originally developed by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com/">Casey Reas</a>, Processing started as an open source programming language based on Java to help the electronic arts and visual design communities learn the basics of computer programming in a visual context. Processing.js takes this to the next level, allowing Processing code to be run by any HTML5 compatible browser, including current versions of Firefox, Safari, Chrome, Opera, and Internet Explorer. Processing.js brings the best of visual programming to the web, both for Processing and web developers.</p>
-
 <p>Everything you need to work with Processing.js is here. You can download the most recent version of Processing.js, read Quick Start Guides for Processing Developers or JavaScript Developers, learn about the Processing language and Processing.js render modes, consult the Reference, and of course view many existing demos that use Processing.js. You can also get involved with the Processing and Processing.js communities, both of which are active and and looking for new users and developers.</p>
-
-<p>Whether you&#39;re an advanced Processing developer or completely new, whether you&#39;re a pro with web technologies or just getting started, Processing.js bridges the gap between these two powerful technologies.</p>
-
+<p>Whether you’re an advanced Processing developer or completely new, whether you’re a pro with web technologies or just getting started, Processing.js bridges the gap between these two powerful technologies.</p>
 <p><strong>More details</strong> are to be found here in the <a href="http://processingjs.org/">main website</a></p>
-
-<h2>Reference Manual</h2>
-
+<h2 id="reference-manual">Reference Manual</h2>
 <p><a href="http://processingjs.org/reference/">This is the reference manual</a></p>
-
-<h2>How to use</h2>
-
+<h2 id="how-to-use">How to use</h2>
 <p><a href="http://processingjs.org/learning/">implementation</a></p>
-
-<h2>Some Commands</h2>
-
-<h3>Variable</h3>
-
-<pre><code class="prettyprint lang-JavaScript">var varname1 = 340;
+<h2 id="some-commands">Some Commands</h2>
+<h3 id="variable">Variable</h3>
+<pre class="javascript"><code>var varname1 = 340;
 var varname;
-varname = 40;
-</code></pre>
-
-<pre><code class="prettyprint lang-JavaScript">var x = 10;
+varname = 40;</code></pre>
+<pre class="javascript"><code>var x = 10;
 var a = x + 5; // add 5, result is 15
 var b = x - 5; // subtract 5, result is 5
 var c = x * 2; // multiply by 2, result is 20
 var d = x / 4; // divide by 4, result is 2.5
-var e = x % 4; // divide by 4 &amp; return remainder, result is 2
-</code></pre>
-
+var e = x % 4; // divide by 4 &amp; return remainder, result is 2</code></pre>
 <p><em>Courtesy: Khan Academy Webpage</em></p>
-
-<p><img src="img1.png" alt="Image 1">
-<img src="img2.png" alt="Image 2">
-<img src="img3.png" alt="Image 3">
-<img src="img4.png" alt="Image 4"></p>
-
-<h2>Notes</h2>
-
+<p><img src="img1.png" alt="Image 1" /> <img src="img2.png" alt="Image 2" /> <img src="img3.png" alt="Image 3" /> <img src="img4.png" alt="Image 4" /></p>
+<h2 id="notes">Notes</h2>
 <ul>
-<li>Use <code class="prettyprint">// comment</code> for single line comment. Use <code class="prettyprint">/* comments */</code> for multi line comments.</li>
+<li>Use <code>// comment</code> for single line comment. Use <code>/* comments */</code> for multi line comments.</li>
 <li>Images are drawn as <em>layers!</em>. So, one object or shape lies on top of the other. Hence, plan out well.</li>
 <li>Fill colour option fills the entire region or shape specified below. Fill uses RGB 256 scale</li>
-<li><code class="prettyprint">draw</code> is a predefined function, with no definition. <code class="prettyprint">draw</code> function gets called over and over by other functions in <code class="prettyprint">ProcessingJS</code>.</li>
+<li><code>draw</code> is a predefined function, with no definition. <code>draw</code> function gets called over and over by other functions in <code>ProcessingJS</code>.</li>
 </ul>
-
-<h2>Example</h2>
-
-<pre><code class="prettyprint lang-html">&lt;!DOCTYPE html&gt;
+<h2 id="example">Example</h2>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -245,16 +218,12 @@ void draw()
 &lt;canvas id=&quot;mycanvas&quot;&gt;&lt;/canvas&gt;
 
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<h2>Animation with pictures</h2>
-
+&lt;/html&gt;</code></pre>
+<h2 id="animation-with-pictures">Animation with pictures</h2>
 <ul>
 <li>Use draw function.</li>
 </ul>
-
-<pre><code class="prettyprint lang-JavaScript">void function_name()
+<pre class="javascript"><code>void function_name()
 {
     // contents
 }
@@ -262,12 +231,9 @@ void draw()
 void draw()
 {
     function_name();
-}
-</code></pre>
-
+}</code></pre>
 <p>Also,</p>
-
-<pre><code class="prettyprint lang-JavaScript">var function_name = function(args)
+<pre class="javascript"><code>var function_name = function(args)
 {
     // contents
 }
@@ -275,18 +241,13 @@ void draw()
 var draw = function()
 {
     function_name(args);
-}
-</code></pre>
-
-<h2>While making proportional shapes,</h2>
-
+}</code></pre>
+<h2 id="while-making-proportional-shapes">While making proportional shapes,</h2>
 <ul>
 <li>Replace all distances and measurements as a multiple of just a few variables.</li>
 </ul>
-
 <p>Example.</p>
-
-<pre><code class="prettyprint lang-JavaScript">// bear
+<pre class="javascript"><code>// bear
 void brown_bear()
 {
     noStroke();
@@ -314,29 +275,19 @@ void brown_bear()
     fill(89, 52, 20);
     ellipse(x, y+faceSize/8, faceSize*4/15, faceSize/5);
 
-}
-</code></pre>
-
-<h2>Text</h2>
-
-<pre><code class="prettyprint lang-JavaScript">fill(0, 13, 255); // colour
+}</code></pre>
+<h2 id="text">Text</h2>
+<pre class="javascript"><code>fill(0, 13, 255); // colour
 textSize(38);     // text size
 textFont(createFont(&quot;Papyrus&quot;, 0), 20); // to change font
-text(&quot;Sophia&quot;+&quot; &quot;+&quot;Trainer&quot;, 99, 96); // write text at the location
-</code></pre>
-
-<h2>Mouse Pointer positions</h2>
-
-<p><code class="prettyprint">mouseX</code> and <code class="prettyprint">mouseY</code> are the mouse position variables.</p>
-
-<pre><code class="prettyprint lang-JavaScript">var myName = &quot;Sophia&quot;;
+text(&quot;Sophia&quot;+&quot; &quot;+&quot;Trainer&quot;, 99, 96); // write text at the location</code></pre>
+<h2 id="mouse-pointer-positions">Mouse Pointer positions</h2>
+<p><code>mouseX</code> and <code>mouseY</code> are the mouse position variables.</p>
+<pre class="javascript"><code>var myName = &quot;Sophia&quot;;
 var message = myName + &quot;!!!&quot;;
-text(message, mouseX, mouseY); // using mouse positions
-</code></pre>
-
-<p>Example: Code to mark the mouse position and show it&#39;s coordinates</p>
-
-<pre><code class="prettyprint lang-JavaScript">
+text(message, mouseX, mouseY); // using mouse positions</code></pre>
+<p>Example: Code to mark the mouse position and show it’s coordinates</p>
+<pre class="javascript"><code>
 void mouse_capture()
 {
     background(255, 255, 255);
@@ -344,12 +295,9 @@ void mouse_capture()
     ellipse(mouseX, mouseY, 12, 12);
     text(label, mouseX, mouseY);
 }
-
 </code></pre>
-
-<h2>Using functions</h2>
-
-<pre><code class="prettyprint lang-JavaScript">// function definition
+<h2 id="using-functions">Using functions</h2>
+<pre class="javascript"><code>// function definition
 var drawWinston = function(faceSize, xpos, ypos)
 {
     noStroke();
@@ -375,22 +323,15 @@ var drawWinston = function(faceSize, xpos, ypos)
     ellipse(x + 1/6 * faceSize, y + 2/15 * faceSize, mouthSize, mouthSize);
 }
 // function call
-drawWinston(300, 200, 200);
-</code></pre>
-
-<p>One can use <code class="prettyprint">void</code> keyword as well.</p>
-
-<h2>Return value of functions</h2>
-
-<pre><code class="prettyprint lang-JavaScript">var calcTotalDonuts = function(numYears, no_per_day)
+drawWinston(300, 200, 200);</code></pre>
+<p>One can use <code>void</code> keyword as well.</p>
+<h2 id="return-value-of-functions">Return value of functions</h2>
+<pre class="javascript"><code>var calcTotalDonuts = function(numYears, no_per_day)
 {
     return no_per_day * 365 * numYears;
-};
-</code></pre>
-
-<h2>Local and Global Variables</h2>
-
-<pre><code class="prettyprint lang-JavaScript">var lifeInches = 20; // global variable
+};</code></pre>
+<h2 id="local-and-global-variables">Local and Global Variables</h2>
+<pre class="javascript"><code>var lifeInches = 20; // global variable
 
 var calcInches = function(startAge, endAge, inchesPerYear)
 {
@@ -408,25 +349,17 @@ text(&quot;From 8-16 years:&quot;, 10, 100);
 text(calcInches(8, 16, 2), 10, 120);
 
 text(&quot;Total grown over life:&quot;, 10, 168);
-text(lifeInches, 10, 200);
-</code></pre>
-
-<h2>Mouse Moved <code class="prettyprint">mouseMoved</code> function</h2>
-
-<p>This is an inbuilt function with no definition, called by other <code class="prettyprint">ProcessingJS</code> functions again and again. Based on the definition it is built using the mouse cursor variables, the function performs the contents specified.</p>
-
-<pre><code class="prettyprint lang-JavaScript">mouseMoved = function()
+text(lifeInches, 10, 200);</code></pre>
+<h2 id="mouse-moved-mousemoved-function">Mouse Moved <code>mouseMoved</code> function</h2>
+<p>This is an inbuilt function with no definition, called by other <code>ProcessingJS</code> functions again and again. Based on the definition it is built using the mouse cursor variables, the function performs the contents specified.</p>
+<pre class="javascript"><code>mouseMoved = function()
 {
     fill(mouseX, mouseY, mouseY);
     ellipse(mouseX, mouseY, 10, 10);
-};
-</code></pre>
-
-<h2><code class="prettyprint">if</code> statement</h2>
-
+};</code></pre>
+<h2 id="if-statement"><code>if</code> statement</h2>
 <p>A moving ball reaches the edges and reverses direction. Speeds are random.</p>
-
-<pre><code class="prettyprint lang-JavaScript">// position of the ball
+<pre class="javascript"><code>// position of the ball
 var y = random(0, 400);
 var x = random(0, 400);
 // how far the ball moves every time
@@ -459,35 +392,25 @@ draw = function() {
     // move the ball
     x = x + speedx;
     y = y + speedy;
-};
-</code></pre>
-
-<h2><code class="prettyprint">mouseIsPressed</code> keyword</h2>
-
-<p>This is a boolean keyword. If the mouse is pressed, then it will return a <code class="prettyprint">true</code> value, else a <code class="prettyprint">false</code> value.</p>
-
-<pre><code class="prettyprint lang-JavaScript">draw = function()
+};</code></pre>
+<h2 id="mouseispressed-keyword"><code>mouseIsPressed</code> keyword</h2>
+<p>This is a boolean keyword. If the mouse is pressed, then it will return a <code>true</code> value, else a <code>false</code> value.</p>
+<pre class="javascript"><code>draw = function()
 {
     if(mouseIsPressed)
     {
         ellipse(mouseX, mouseY, 20, 20);
     }
-};
-</code></pre>
-
-<h2>Relational Operations</h2>
-
-<pre><code class="prettyprint lang-JavaScript">x &gt; y;
+};</code></pre>
+<h2 id="relational-operations">Relational Operations</h2>
+<pre class="javascript"><code>x &gt; y;
 x &gt;= y;
 x &lt; y;
 x &lt;= y;
 x !== y; // yeah, double equals
-x === y; // yeah, triple equals
-</code></pre>
-
-<h2>Boolean operations</h2>
-
-<pre><code class="prettyprint lang-JavaScript">if (number &lt; 50) // boolean condition
+x === y; // yeah, triple equals</code></pre>
+<h2 id="boolean-operations">Boolean operations</h2>
+<pre class="javascript"><code>if (number &lt; 50) // boolean condition
 {
     // statements
 }
@@ -498,18 +421,12 @@ var day = true
 if(day)  // relational expression using boolean variable
 
 mouseX &lt; 200 &amp;&amp; mouseY &lt; 200 // logical and
-mouseX === 200 || mouseY === 200 // logical or
-</code></pre>
-
-<h2>Number functions</h2>
-
-<pre><code class="prettyprint lang-JavaScript">var number = random(0, 10); // generates a random number between 0 and 10
-var integer = round(number) // rounds up if number&#39;s fraction part is greater than half, rounds down if the number&#39;s fraction part is less than half.
-</code></pre>
-
-<h2><code class="prettyprint">if/else if/else</code> statement</h2>
-
-<pre><code class="prettyprint lang-JavaScript">if (integer === 0)
+mouseX === 200 || mouseY === 200 // logical or</code></pre>
+<h2 id="number-functions">Number functions</h2>
+<pre class="javascript"><code>var number = random(0, 10); // generates a random number between 0 and 10
+var integer = round(number) // rounds up if number&#39;s fraction part is greater than half, rounds down if the number&#39;s fraction part is less than half.</code></pre>
+<h2 id="ifelse-ifelse-statement"><code>if/else if/else</code> statement</h2>
+<pre class="javascript"><code>if (integer === 0)
 {
     fill(132, 0, 255);
 }
@@ -524,33 +441,21 @@ else if (integer === 2)
 else
 {
     fill(0, 196, 255);
-}
-</code></pre>
-
-<h2><code class="prettyprint">println</code> statement</h2>
-
-<pre><code class="prettyprint lang-JavaScript">println(&quot;I am a print statement&quot;); // prints in a new line
-print(&quot;I am the real print statement&quot;); // prints there itself.
-</code></pre>
-
-<h2><code class="prettyprint">while</code> loop</h2>
-
-<pre><code class="prettyprint lang-JavaScript">while(x &lt; 400)
+}</code></pre>
+<h2 id="println-statement"><code>println</code> statement</h2>
+<pre class="javascript"><code>println(&quot;I am a print statement&quot;); // prints in a new line
+print(&quot;I am the real print statement&quot;); // prints there itself.</code></pre>
+<h2 id="while-loop"><code>while</code> loop</h2>
+<pre class="javascript"><code>while(x &lt; 400)
 {
     print(x, x, 10);
     x += 50;
-}
-</code></pre>
-
-<h2>Importing and Using images</h2>
-
-<pre><code class="prettyprint lang-JavaScript">var image_variable = getImage(&quot;path/to/image&quot;);
-image(image_variable, xpos, ypos);
-</code></pre>
-
-<h2><code class="prettyprint">for</code> loop</h2>
-
-<pre><code class="prettyprint lang-JavaScript">// for(init/start; how long/condition; change/increment)
+}</code></pre>
+<h2 id="importing-and-using-images">Importing and Using images</h2>
+<pre class="javascript"><code>var image_variable = getImage(&quot;path/to/image&quot;);
+image(image_variable, xpos, ypos);</code></pre>
+<h2 id="for-loop"><code>for</code> loop</h2>
+<pre class="javascript"><code>// for(init/start; how long/condition; change/increment)
 for(i=0; i&lt;10; i++)
 {
     // statements
@@ -562,32 +467,22 @@ for(i=0; i&lt;10; i++)
     {
         // statements
     }
-}
-</code></pre>
-
-<h2>Short hand operators</h2>
-
-<pre><code class="prettyprint lang-JavaScript">x += 20;
+}</code></pre>
+<h2 id="short-hand-operators">Short hand operators</h2>
+<pre class="javascript"><code>x += 20;
 y -= 10;
 z *= 20;
 x /= 5;
 x++;
 ++x;
 y--;
---y;
-</code></pre>
-
-<h2>Modes</h2>
-
-<pre><code class="prettyprint lang-JavaScript">imageMode(CENTER); // put the image at centre
-angleMode(DEGREE); // set angle to degrees
-</code></pre>
-
-<h2>Arrays</h2>
-
-<p>For full reference: <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">https://www.w3schools.com/jsref/jsref_obj_array.asp</a></p>
-
-<pre><code class="prettyprint lang-JavaScript">var names = [&quot;Krishna&quot;, &quot;Bharathi&quot;, &quot;Uday&quot;];
+--y;</code></pre>
+<h2 id="modes">Modes</h2>
+<pre class="javascript"><code>imageMode(CENTER); // put the image at centre
+angleMode(DEGREE); // set angle to degrees</code></pre>
+<h2 id="arrays">Arrays</h2>
+<p>For full reference: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>
+<pre class="javascript"><code>var names = [&quot;Krishna&quot;, &quot;Bharathi&quot;, &quot;Uday&quot;];
 // index = 0, 1, 2, ...
 println(names.length); // array length
 println(names[1]); // access element 2
@@ -598,12 +493,9 @@ var numbers = [
                     [4, 5, 6],
                     [7, 8, 9]
               ]; // 2d array
-println(numbers[1][1]) // prints 5
-</code></pre>
-
-<h2>Objects</h2>
-
-<pre><code class="prettyprint lang-JavaScript">
+println(numbers[1][1]) // prints 5</code></pre>
+<h2 id="objects">Objects</h2>
+<pre class="javascript"><code>
 /*
     Creating objects. Use key:value pairs.
     This is also called as object literal.
@@ -632,12 +524,9 @@ text(&quot;Winston was born in &quot; + winston.birthplace.city + &quot;, &quot;
 
 // change object entry
 winston.age = 21;
-winston.wife = &quot;winnefer&quot;;
-</code></pre>
-
-<h2>Array of Objects</h2>
-
-<pre><code class="prettyprint lang-JavaScript">// Array of objects. - Each entry of an array is an object with two variables.
+winston.wife = &quot;winnefer&quot;;</code></pre>
+<h2 id="array-of-objects">Array of Objects</h2>
+<pre class="javascript"><code>// Array of objects. - Each entry of an array is an object with two variables.
 var positions = [
     {x: 99, y: 117},
     {x: 294, y: 117},
@@ -648,14 +537,10 @@ var positions = [
 // use the length method to get the length of objects too!
 for (var i = 0; i &lt; positions.length; i++) {
     drawWinston(positions[i].x, positions[i].y);
-}
-</code></pre>
-
-<h2>Creating an Abstract Object - constructor</h2>
-
+}</code></pre>
+<h2 id="creating-an-abstract-object---constructor">Creating an Abstract Object - constructor</h2>
 <p>Essentially, create an object template to fill the object values later.</p>
-
-<pre><code class="prettyprint lang-JavaScript">// template for an object - constructor funtion.
+<pre class="javascript"><code>// template for an object - constructor funtion.
 // this is called whenever a new object is called.
 var Winston = function(nickname, age, x, y)
 {
@@ -668,14 +553,10 @@ var Winston = function(nickname, age, x, y)
 
 // creating a winston object - object instance
 var WinstonTeen = new Winston(&quot;Teenage Winston&quot;, 15, 20, 50);
-var WinstonAdult = new Winston(&quot;Mr Winston&quot;, 30, 229, 50);
-</code></pre>
-
-<h2>Object Methods</h2>
-
+var WinstonAdult = new Winston(&quot;Mr Winston&quot;, 30, 229, 50);</code></pre>
+<h2 id="object-methods">Object Methods</h2>
 <p>Functions that are attached to objects.</p>
-
-<pre><code class="prettyprint lang-JavaScript">// method associated with Winston object to draw it.
+<pre class="javascript"><code>// method associated with Winston object to draw it.
 Winston.prototype.draw = function() {
     fill(255, 0, 0);
     var img = getImage(&quot;creatures/Winston&quot;);
@@ -685,12 +566,9 @@ Winston.prototype.draw = function() {
 };
 
 // Calling the method for an object.
-WinstonTeen.draw();
-</code></pre>
-
-<h2>Object Inheritance</h2>
-
-<pre><code class="prettyprint lang-JavaScript">// base object constructor
+WinstonTeen.draw();</code></pre>
+<h2 id="object-inheritance">Object Inheritance</h2>
+<pre class="javascript"><code>// base object constructor
 var Creature = function(nickname, age, x, y)
 {
     this.nickname = nickname;
@@ -748,11 +626,8 @@ Winston.prototype.draw = function()
     image(img, this.x, this.y);
     var txt = this.nickname + &quot;, &quot; + this.age;
     text(txt, this.x+20, this.y-10);  
-};
-</code></pre>
-
-<h2>More Places to Learn JavaScript</h2>
-
+};</code></pre>
+<h2 id="more-places-to-learn-javascript">More Places to Learn JavaScript</h2>
 <ul>
 <li><a href="https://teamtreehouse.com/library/javascript-basics">Treehouse</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Mozilla</a></li>
@@ -760,9 +635,7 @@ Winston.prototype.draw = function()
 <li><a href="http://www.w3schools.com/js/">W3Schools</a></li>
 <li><a href="http://eloquentjavascript.net/contents.html">Eloquent</a></li>
 </ul>
-
-<h2>Resources from KhanAcademy</h2>
-
+<h2 id="resources-from-khanacademy">Resources from KhanAcademy</h2>
 <ul>
 <li><a href="https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/good-practices-what-to-learn-next">What to learn next</a></li>
 <li><a href="https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/planning-a-programming-project">Planning a progamming project</a></li>

@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,27 +127,26 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Recursive Clock</h1>
-
-<p>| The moment I got you, I never went back,
-| Turning your dials, time became simple.
-| As your hands moved, she began to sway,
-| The unseen enchantress became my lover forever.
-| 
-| Is this magic? Or is this a wonder?
-| I visited my past self, ahead in the future.
-| Saved my younger self, from taking a wrong turn,
-| I lived a hundred years, in a fraction of a second.
-| 
-| Am I blessed to have you? Or cursed to possess you?
-| The power you hold is quite unfathomable.
-| For once in my life, I feel like God!
-| I can undo my wrongs, and rewrite the world!
-| 
-| Time became my lover, and I became a nomad!
-| Travelling to and fro, between the past and future.
-| I dropped the infamous apple that made Newton blink!
-| Gave the thought to Einstein, and made the world think!</p>
+                <h1 id="recursive-clock">Recursive Clock</h1>
+<div class="line-block">The moment I got you, I never went back,<br />
+Turning your dials, time became simple.<br />
+As your hands moved, she began to sway,<br />
+The unseen enchantress became my lover forever.<br />
+<br />
+Is this magic? Or is this a wonder?<br />
+I visited my past self, ahead in the future.<br />
+Saved my younger self, from taking a wrong turn,<br />
+I lived a hundred years, in a fraction of a second.<br />
+<br />
+Am I blessed to have you? Or cursed to possess you?<br />
+The power you hold is quite unfathomable.<br />
+For once in my life, I feel like God!<br />
+I can undo my wrongs, and rewrite the world!<br />
+<br />
+Time became my lover, and I became a nomad!<br />
+Travelling to and fro, between the past and future.<br />
+I dropped the infamous apple that made Newton blink!<br />
+Gave the thought to Einstein, and made the world think!</div>
 
             </div>
         </section>

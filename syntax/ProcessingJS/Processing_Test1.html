@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,19 +127,14 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Processing Test 1 - Fourier Series Demo</h1>
-
-<h2>Animation</h2>
-
-<iframe src="https://editor.p5js.org/arunprasaad2711/embed/e2nYXOn5p" width="100%" height="400px" style="border:0px;"></iframe>
-
-<h2>Table of Contents</h2>
-
+                <h1 id="processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</h1>
+<h2 id="animation">Animation</h2>
+<iframe src="https://editor.p5js.org/arunprasaad2711/embed/e2nYXOn5p" width="100%" height="400px" style="border:0px;">
+</iframe>
+<h2 id="table-of-contents">Table of Contents</h2>
 <!-- TOC -->
-
 <ul>
 <li><a href="#processing-test-1---fourier-series-demo">Processing Test 1 - Fourier Series Demo</a>
-
 <ul>
 <li><a href="#animation">Animation</a></li>
 <li><a href="#table-of-contents">Table of Contents</a></li>
@@ -149,47 +147,32 @@
 <li><a href="#acknowledgement">Acknowledgement</a></li>
 </ul></li>
 </ul>
-
 <!-- /TOC -->
-
-<h2>What is this?</h2>
-
-<p>This is a test page for checking out <code class="prettyprint">p5.js</code> animation. This is the 5th javascript export version of <code class="prettyprint">processing</code> programming language. Here, the fourier series summation of a square wave is tested.</p>
-
-<h2>References</h2>
-
+<h2 id="what-is-this">What is this?</h2>
+<p>This is a test page for checking out <code>p5.js</code> animation. This is the 5th javascript export version of <code>processing</code> programming language. Here, the fourier series summation of a square wave is tested.</p>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mm2eYfj0SgA">Coding Challenge #125: Fourier Series video on YouTube by Daniel Shiffman</a></li>
 <li><a href="https://bl.ocks.org/jinroh/7524988">d3js program on fourier series</a></li>
 </ul>
-
-<h2>Formula</h2>
-
-<p>The square wave defined here $f(t)$ is a periodic function defined between the period $0 &lt; t &lt; 2\pi$. It&#39;s definition is</p>
-
-<p>$$ f(t) = \begin{cases} 
-               60  &amp; 0 &lt; t &lt; \pi\
+<h2 id="formula">Formula</h2>
+<p>The square wave defined here <span class="math inline">\(f(t)\)</span> is a periodic function defined between the period <span class="math inline">\(0 &lt; t &lt; 2\pi\)</span>. It’s definition is</p>
+<p><span class="math display">\[ f(t) = \begin{cases} 
+               60  &amp; 0 &lt; t &lt; \pi\\
                -60  &amp; \pi &lt; t &lt; 2\pi
-          \end{cases} $$</p>
-
+          \end{cases} \]</span></p>
 <p>The Fourier series representation of this is given by</p>
-
-<p>$$
-\begin{align<em>}
-    f(t) &amp;= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\
-         &amp;= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\
-\end{align</em>}
-$$</p>
-
-<h2>How is this done?</h2>
-
-<p>In an earlier method, I extracted the canvas elements, the javascript code and directly pasted them here. In the earlier method, the <code class="prettyprint">p5.js</code> files were necessary.</p>
-
-<p>In the latest method, I am writing the code in the online <code class="prettyprint">p5.js editor</code> and embedding the file iframe in the webpage. Also, to make the embedding fit nicely, I added the width, height, and border attributes to the iframe. In this method, I don&#39;t need the <code class="prettyprint">p5.js</code> files linked here as they are run separately.</p>
-
-<h2>Source Code</h2>
-
-<pre><code class="prettyprint lang-javascript">// Some variables
+<p><span class="math display">\[
+\begin{align*}
+    f(t) &amp;= 60 \times \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{\sin(2\pi(2k - 1)ft)}{2k - 1}\\
+         &amp;= 60 \times \frac{4}{\pi} \left( \sin(\omega t) + \frac{1}{3} \sin(3\omega t) + \frac{1}{5} \sin(5\omega t) + \dots \right) \hspace{1 cm} \text{where } \omega = 2\pi f\\
+\end{align*}
+\]</span></p>
+<h2 id="how-is-this-done">How is this done?</h2>
+<p>In an earlier method, I extracted the canvas elements, the javascript code and directly pasted them here. In the earlier method, the <code>p5.js</code> files were necessary.</p>
+<p>In the latest method, I am writing the code in the online <code>p5.js editor</code> and embedding the file iframe in the webpage. Also, to make the embedding fit nicely, I added the width, height, and border attributes to the iframe. In this method, I don’t need the <code>p5.js</code> files linked here as they are run separately.</p>
+<h2 id="source-code">Source Code</h2>
+<pre class="javascript"><code>// Some variables
 let time = 0;
 let wave = [];
 let border = [];
@@ -197,7 +180,7 @@ var p5slider;
 
 function setup() {
     var canvas = createCanvas(1280, 400);
-
+  
     // Slider variables
     p5slider = createSlider(0, 100, 10);
     p5slider.position(250, 25);
@@ -208,7 +191,7 @@ function setup() {
 
     background(245);
     translate(200, 200);
-
+    
     // Lines to extract the slider value to the program
     var val = p5slider.value();
     const n1 = val;
@@ -220,15 +203,15 @@ function setup() {
     text(&#39;Fourier Series Representation of a Square Wave&#39;, -100, -180);
     text(&#39;number of terms = &#39;+n1, -100, -160);
     text(&#39;Move the slider above to adjust the number of terms in the fourier series.&#39;, -100, -140);
-
+      
     let x = 0;
     let y = 0;
 
     for (let i = 0; i &lt; n1; i++){
-
+        
         prev_x = x;
         prev_y = y;
-
+        
         let n = 2 * i + 1;
         let radius = 60 * (4 /(n * PI));
         x += radius * cos(n * time);
@@ -238,7 +221,7 @@ function setup() {
         strokeWeight(1);
         noFill();
         ellipse(prev_x, prev_y, radius*2);
-
+        
         fill(255);
         stroke(171,159,157);
         strokeWeight(2);
@@ -246,7 +229,7 @@ function setup() {
     }
     wave.unshift(y);
     border.unshift(x);
-
+      
     beginShape();
     strokeWeight(0.5);
     stroke(0,0,128);
@@ -270,23 +253,18 @@ function setup() {
         vertex(i, wave[i]);
     }
     endShape();
-
+    
     time += 0.05;
 
     if (wave.length &gt; 600){
         wave.pop();
         border.pop();
     }
-}
-</code></pre>
-
-<h2>Status</h2>
-
+}</code></pre>
+<h2 id="status">Status</h2>
 <p>It works like a charm! The embedding method used sorts out the slider issue quite well! Even the locus of the last point was brought out quite well due to a slight tweak to the code.</p>
-
-<h2>Acknowledgement</h2>
-
-<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting me interested in <code class="prettyprint">p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>Special thanks to <a href="https://shiffman.net/">Daniel Shiffman</a> for his phenomenal enthusiasm in getting me interested in <code>p5.js</code>. This code is a slightly tweaked version of the same code Daniel used to teach the tutorial in his YouTube Channel - <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a> and in his website - <a href="https://thecodingtrain.com/">The Coding Train</a></p>
 
             </div>
         </section>

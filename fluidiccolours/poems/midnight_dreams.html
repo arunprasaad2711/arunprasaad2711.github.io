@@ -25,8 +25,20 @@
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
     <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
+    <script src="..././assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
 
     
+
+    <script>
+		
+        window.onload = function() {
+            $("pre").addClass("prettyprint");
+            $("code").addClass("prettyprint");
+        };
+    
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
 
@@ -51,15 +63,6 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
-
-    <!-- <script>
-		
-		window.onload = function() {
-			$("pre").addClass("prettyprint");
-			$("code").addClass("prettyprint");
-		};
-
-    </script> -->
     
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
@@ -124,25 +127,24 @@
         
         <section>
             <div class="inner align-justify">
-                <h1>Midnight Dreams</h1>
-
-<p>| I am thankful,
-| for that glance from your eyes,
-| I am blessed,
-| for our intertwined fingers,
-| I pray,
-| for this night to never end,
-| I hear your heart,
-| whenever our eyes meet,
-| 
-| In this blissful solitude,
-| your presence fills my soul,
-| I am in your arms; you are in mine,
-| naked and shameless, in our little world,
-| I am grateful,
-| for the universe to unite us,
-| I hope this is forever,
-| the bond we have for each other.</p>
+                <h1 id="midnight-dreams">Midnight Dreams</h1>
+<div class="line-block">I am thankful,<br />
+for that glance from your eyes,<br />
+I am blessed,<br />
+for our intertwined fingers,<br />
+I pray,<br />
+for this night to never end,<br />
+I hear your heart,<br />
+whenever our eyes meet,<br />
+<br />
+In this blissful solitude,<br />
+your presence fills my soul,<br />
+I am in your arms; you are in mine,<br />
+naked and shameless, in our little world,<br />
+I am grateful,<br />
+for the universe to unite us,<br />
+I hope this is forever,<br />
+the bond we have for each other.</div>
 
             </div>
         </section>
