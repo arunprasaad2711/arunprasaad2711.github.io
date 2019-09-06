@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 from os import system
 
 # Beautiful Soup
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
 # Specify the template directory and environment 
 file_loader = FileSystemLoader('templates')
@@ -67,6 +67,7 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 
 		# This was the standard pandoc fix. Syntax highlight pushed permanently google pretty type.
 		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
+		# system("pandoc -F pygments --from=markdown --to=html5 --mathjax {} > temp.html".format(title))
 
 		# Read the data from the first temporary file.
 		with open("temp.html", "r") as p:
