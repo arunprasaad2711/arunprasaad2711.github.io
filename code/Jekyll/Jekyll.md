@@ -160,7 +160,7 @@ You can go and tweak the values as per your convenience.
 
 If you open the default sample blog jekyll created for you, the header of the file will look like this:
 
-```mark
+```yaml
 ---
 layout: post
 title:  "Welcome to Jekyll!"
@@ -211,7 +211,7 @@ Other important webpages like “About” or “Contact” are called “Pages�
 
 To create them, write a normal markdown file with a front-matter like this:
 
-```markdown
+```yaml
 ---
 layout: page
 title: FAQ
@@ -225,7 +225,7 @@ This is a sample FAQ page!
 
 Permalinks are permanent links for the webpages. By modifying the variable in the permalink section, you can give permanent links to each page.
 
-```markdown
+```yaml
 permalink: /:categories/:year/:month/:day/:title
 ```
 
@@ -251,13 +251,12 @@ Whenever a ``yaml`` file is modified, shut the server and restart it to have the
 
 ```yaml
 defaults:
-	-
-		scope:
-			path: ""
-			type: "posts"
-        values:
-        	layout: "post"
-        	title: "My Title"
+  scope:
+    path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      title: "My Title"
 ```
 
 This setting will take any page inside the post folder without any details and assign a “post” layout and a default “title”.
