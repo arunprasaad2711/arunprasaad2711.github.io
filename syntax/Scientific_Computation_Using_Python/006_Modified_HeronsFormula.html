@@ -227,44 +227,48 @@
 </tbody>
 </table>
 <h2 id="if-else-construct">If-else construct</h2>
-<pre class="python"><code>if (condition1):
-    # statements to execute if the condition1 is true
-elif (condition2):
-    # statements to execute if the condition2 is true
-elif (condition3):
-    # statements to execute if the condition3 is true
-...
-elif (conditionN):
-    # statements to execute if the conditionN is true
-else:
-    # statements to execute if all the N conditions fail</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">):</span>
+    <span class="c1"># statements to execute if the condition1 is true</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">condition2</span><span class="p">):</span>
+    <span class="c1"># statements to execute if the condition2 is true</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">condition3</span><span class="p">):</span>
+    <span class="c1"># statements to execute if the condition3 is true</span>
+<span class="o">...</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">conditionN</span><span class="p">):</span>
+    <span class="c1"># statements to execute if the conditionN is true</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># statements to execute if all the N conditions fail</span>
+</pre></div>
+
 <h3 id="note">Note</h3>
 <p>The <key>Tabs</key> here are necessary! The tab indicates that the indended statements are a part of the construct.</p>
 <h2 id="updated-herons-formula">Updated Heron’s Formula</h2>
 <p>Check if the inputs actually make a valid triangle.</p>
-<pre class="python"><code>&#39;&#39;&#39;
-Program to calculate the area of a triangle using Heron&#39;s formulae
-&#39;&#39;&#39;
+<div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Program to calculate the area of a triangle using Heron&#39;s formulae</span>
+<span class="sd">&#39;&#39;&#39;</span>
 
-# Get inputs
-a = float(input(&quot;Enter the side &#39;a&#39; of the triangle:&quot;))
-b = float(input(&quot;Enter the side &#39;b&#39; of the triangle:&quot;))
-c = float(input(&quot;Enter the side &#39;c&#39; of the triangle:&quot;))
+<span class="c1"># Get inputs</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;a&#39; of the triangle:&quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;b&#39; of the triangle:&quot;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;c&#39; of the triangle:&quot;</span><span class="p">))</span>
 
-if (a &lt;= 0.0 or b &lt;= 0.0 or c &lt;= 0.0):
-    print(&quot;Sides of a triangle can&#39;t be zero or negative!&quot;)
-elif ( c &gt;= a+b or b &gt;= a+c or a &gt;= b+c):
-    print(&quot;The values violate triangle inequality!&quot;)
-else:
-    print(&quot;All conditions are valid!&quot;)
-    # Calculate the semi-perimeter
-    s = (a + b + c)*0.5
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sides of a triangle can&#39;t be zero or negative!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="o">+</span><span class="n">c</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The values violate triangle inequality!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;All conditions are valid!&quot;</span><span class="p">)</span>
+    <span class="c1"># Calculate the semi-perimeter</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
 
-    # Find the Area
-    Area = (s*(s-a)*(s-b)*(s-c))**0.5
+    <span class="c1"># Find the Area</span>
+    <span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 
-    # Print the result
-    print(&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;.format(a, b, c, Area))</code></pre>
+    <span class="c1"># Print the result</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">Area</span><span class="p">))</span>
+</pre></div>
+
 
             </div>
         </section>
@@ -299,7 +303,7 @@ else:
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -320,12 +324,12 @@ else:
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

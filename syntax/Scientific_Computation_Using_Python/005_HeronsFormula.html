@@ -140,28 +140,30 @@
 <iframe scrolling="no" title="TaylorSeries_Demo" src="https://www.geogebra.org/material/iframe/id/n4pxcth2/width/1366/height/687/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="600px" style="border:0px;">
 </iframe>
 <h2 id="program">Program</h2>
-<pre class="python"><code>&#39;&#39;&#39;
-Program to calculate the area of a triangle using Heron&#39;s formulae
-&#39;&#39;&#39;
+<div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Program to calculate the area of a triangle using Heron&#39;s formulae</span>
+<span class="sd">&#39;&#39;&#39;</span>
 
-# Get inputs
-a = float(input(&quot;Enter the side &#39;a&#39; of the triangle:&quot;))
-b = float(input(&quot;Enter the side &#39;b&#39; of the triangle:&quot;))
-c = float(input(&quot;Enter the side &#39;c&#39; of the triangle:&quot;))
+<span class="c1"># Get inputs</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;a&#39; of the triangle:&quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;b&#39; of the triangle:&quot;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;c&#39; of the triangle:&quot;</span><span class="p">))</span>
 
-# Calculate the semi-perimeter
-s = (a + b + c)*0.5
+<span class="c1"># Calculate the semi-perimeter</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
 
-# Find the Area
-Area = (s*(s-a)*(s-b)*(s-c))**0.5
+<span class="c1"># Find the Area</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 
-# Print the result
-print(&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;.format(a, b, c, Area))</code></pre>
+<span class="c1"># Print the result</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">Area</span><span class="p">))</span>
+</pre></div>
+
 <h2 id="output">Output</h2>
-<pre><code>Enter the side &#39;a&#39; of the triangle:3
-Enter the side &#39;b&#39; of the triangle:4
-Enter the side &#39;c&#39; of the triangle:5
-The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</code></pre>
+<div class ="highlight"><pre>Enter the side 'a' of the triangle:3
+Enter the side 'b' of the triangle:4
+Enter the side 'c' of the triangle:5
+The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</pre></div>
 
             </div>
         </section>
@@ -196,7 +198,7 @@ The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</code><
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -217,12 +219,12 @@ The area of the triangle with sides a = 3.0, b = 4.0, and c = 5.0 is 6.0</code><
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

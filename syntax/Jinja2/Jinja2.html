@@ -125,11 +125,11 @@
 <p>These notes are taken from <a href="https://www.youtube.com/watch?v=bxhXQG1qJPM">a YouTube Tutorial on Jinja2 by Jason Rigden</a></p>
 <h2 id="example">Example</h2>
 <p>Let’s say that the template file had a sentence like this:</p>
-<pre><code>{{name}} had a little {{animal}}</code></pre>
+<div class ="highlight"><pre>{{name}} had a little {{animal}}</pre></div>
 <p>Here, <code>name</code> is a variable and it is placed within backticks. Same with <code>animal</code>. The curly brackets are placeholders for the variables.</p>
 <p>Suppose <code>name = 'Mary'</code> and <code>animal = 'Lamb'</code> are the values provided by the user.</p>
 <p>Then Jinja will take these values and replace the variables in the template to give this file:</p>
-<pre><code>Mary had a little Lamb</code></pre>
+<div class ="highlight"><pre>Mary had a little Lamb</pre></div>
 <h2 id="where-is-it-used">Where is it used?</h2>
 <ul>
 <li>Websites.</li>
@@ -149,284 +149,340 @@
 <ul>
 <li>Open a Python file and write this line first in it.</li>
 </ul>
-<pre class="python"><code>from jinja2 import Environment, FileSystemLoader</code></pre>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
+</pre></div>
+
 <ul>
 <li>Create a file loader variable and pass the folder name where the template files are present.</li>
 </ul>
-<pre class="python"><code>file_loader = FileSystemLoader(&#39;templates&#39;)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li><p>Note that the directory/folder name here can by anything!</p></li>
 <li><p>Create an enviroment variable and pass the file loader variable to it.</p></li>
 </ul>
-<pre class="python"><code>env = Environment(loader=file_loader)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li><p>Now, the environment is ready.</p></li>
 <li><p>Now, create an input text file and write contents into it. We’ll call it “hello_world.txt”</p></li>
 </ul>
-<pre><code>Hello, world!</code></pre>
+<div class ="highlight"><pre>Hello, world!</pre></div>
 <ul>
 <li>In the python file, create a template variable and pass the text to it.</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;hello_world.txt&#39;)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;hello_world.txt&#39;</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Now, create an output variable by rendering the template variable and print it.</li>
 </ul>
-<pre class="python"><code>output = template.render()
-print(output)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li><p>You can pass variables to the <code>render()</code> method. But, that is for a future example.</p></li>
 <li><p>Run the python file and the output will be:</p></li>
 </ul>
-<pre><code>Hello, World!</code></pre>
+<div class ="highlight"><pre>Hello, World!</pre></div>
 <p>This is the full code:</p>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
 
-# Create a template variable via environment
-template = env.get_template(&#39;hello_world.txt&#39;)
+<span class="c1"># Create a template variable via environment</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;hello_world.txt&#39;</span><span class="p">)</span>
 
-# Render the template and create an output variable.
-output = template.render()
+<span class="c1"># Render the template and create an output variable.</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 
-# Print it out to see or export it to a new file as you see fit.
-print(output)</code></pre>
+<span class="c1"># Print it out to see or export it to a new file as you see fit.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <h3 id="example-2-adding-variables.">Example 2: Adding Variables.</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Create a template file and place variables with curly bracket placeholders. Let’s call it <code>lamb.txt</code></li>
 </ul>
-<pre><code>{{name}} had a little {{animal}}.</code></pre>
+<div class ="highlight"><pre>{{name}} had a little {{animal}}.</pre></div>
 <ul>
 <li>Load the template and render it with variables.</li>
 </ul>
-<pre class="python"><code># Create a template variable via environment
-template = env.get_template(&#39;lamb.txt&#39;)
+<div class="highlight"><pre><span></span><span class="c1"># Create a template variable via environment</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;lamb.txt&#39;</span><span class="p">)</span>
 
-# Render the template and create an output variable.
-output = template.render(name=&#39;Mary&#39;, animal=&#39;Lamb&#39;)
+<span class="c1"># Render the template and create an output variable.</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="n">animal</span><span class="o">=</span><span class="s1">&#39;Lamb&#39;</span><span class="p">)</span>
 
-# Print it out to see or export it to a new file as you see fit.
-print(output)</code></pre>
+<span class="c1"># Print it out to see or export it to a new file as you see fit.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>The output is</li>
 </ul>
-<pre><code>Mary had a little Lamb.</code></pre>
+<div class ="highlight"><pre>Mary had a little Lamb.</pre></div>
 <h3 id="example-3-using-dictionaries">Example 3: Using Dictionaries</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Create a template file and place variables with curly bracket placeholders. Let’s call it <code>lamb.txt</code></li>
 </ul>
-<pre><code>{{data.name}} had a little {{data.animal}}.</code></pre>
+<div class ="highlight"><pre>{{data.name}} had a little {{data.animal}}.</pre></div>
 <ul>
 <li>Load the template and render it with a dictionary.</li>
 </ul>
-<pre class="python"><code># Create a template variable via environment
-template = env.get_template(&#39;lamb.txt&#39;)
+<div class="highlight"><pre><span></span><span class="c1"># Create a template variable via environment</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;lamb.txt&#39;</span><span class="p">)</span>
 
-# Create a dictionary
-person = {}
-person[&#39;name&#39;] = &#39;Mary&#39;
-person[&#39;animal&#39;] = &#39;Lamb&#39;
+<span class="c1"># Create a dictionary</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Mary&#39;</span>
+<span class="n">person</span><span class="p">[</span><span class="s1">&#39;animal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Lamb&#39;</span>
 
-# Render the template and create an output variable.
-output = template.render(data=person)
+<span class="c1"># Render the template and create an output variable.</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">person</span><span class="p">)</span>
 
-# Print it out to see or export it to a new file as you see fit.
-print(output)</code></pre>
+<span class="c1"># Print it out to see or export it to a new file as you see fit.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>The output is</li>
 </ul>
-<pre><code>Mary had a little Lamb.</code></pre>
+<div class ="highlight"><pre>Mary had a little Lamb.</pre></div>
 <h3 id="example-4-using-if-else-statements.">Example 4: Using if-else statements.</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Template file: <code>truth.txt</code></li>
 </ul>
-<pre class="python"><code>{% if truth %}
-    This is true
-{% else %}
-    This is false
-{% endif %}</code></pre>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">truth</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">true</span>
+<span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">false</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+
 <ul>
 <li>Modifications 1: Set truth variable to be True</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;truth.txt&#39;)
-output = template.render(truth=True)
-print(output)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;truth.txt&#39;</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">truth</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Output</li>
 </ul>
-<pre><code>This is true</code></pre>
+<div class ="highlight"><pre>This is true</pre></div>
 <ul>
 <li>Modifications 2: Set truth variable to be False</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;truth.txt&#39;)
-output = template.render(truth=False)
-print(output)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;truth.txt&#39;</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">truth</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Output</li>
 </ul>
-<pre><code>This is false</code></pre>
+<div class ="highlight"><pre>This is false</pre></div>
 <h3 id="example-5-for-loops-using-liststuples">Example 5: For loops using lists/tuples</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Template file: <code>rainbow.txt</code></li>
 </ul>
-<pre class="python"><code>{% for colour in colours %}
-    {{colour}}
-{% endfor %}</code></pre>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">colour</span> <span class="ow">in</span> <span class="n">colours</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">colour</span><span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+
 <ul>
 <li>Modifications: Pass a list/tuple</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;rainbow.txt&#39;)
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;rainbow.txt&#39;</span><span class="p">)</span>
 
-colours = [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;]
-output = template.render(colours=colours)
-print(output)</code></pre>
+<span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">colours</span><span class="o">=</span><span class="n">colours</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Output</li>
 </ul>
-<pre><code>red
+<div class ="highlight"><pre>red
 
 green
 
-blue</code></pre>
+blue</pre></div>
 <h3 id="example-6-template-inheritance---combine-blocks-from-multiple-places.">Example 6: Template inheritance - combine blocks from multiple places.</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Include file: <code>header.html</code> - Has the title. It will be included in the template.</li>
 </ul>
-<pre class="html"><code>&lt;head&gt;
-    &lt;title&gt;{{title}}&lt;/title&gt;
-&lt;/head&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{title}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
 <ul>
 <li>Base file: <code>base.html</code> - This is the base file.</li>
 </ul>
-<pre class="html"><code>&lt;html&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     {% include &#39;header.html&#39; %}
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <ul>
 <li>Modifications</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;base.html&#39;)
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;base.html&#39;</span><span class="p">)</span>
 
-output = template.render(title=&quot;Hey, there!&quot;)
-print(output)</code></pre>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Hey, there!&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Output</li>
 </ul>
-<pre class="html"><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Hey, there!&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hey, there!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <p>Observation: Here, the <code>base.html</code> file automatically called <code>header.html</code> file. And inside it, the title variable was automatically placed.</p>
 <h3 id="example-7-template-rendering-placing-data-in-body-tag">Example 7: Template rendering + Placing data in body tag</h3>
 <ul>
 <li>Prerequisite code</li>
 </ul>
-<pre class="python"><code># Import the required methods
-from jinja2 import Environment, FileSystemLoader
+<div class="highlight"><pre><span></span><span class="c1"># Import the required methods</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 
-# Specify the template directory and environment 
-file_loader = FileSystemLoader(&#39;templates&#39;)
-env = Environment(loader=file_loader)</code></pre>
+<span class="c1"># Specify the template directory and environment </span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Include file: <code>header.html</code> - Has the title. It will be included in the template.</li>
 </ul>
-<pre class="html"><code>&lt;head&gt;
-    &lt;title&gt;{{title}}&lt;/title&gt;
-&lt;/head&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{title}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
 <ul>
 <li>Base file: <code>base.html</code> - This is the base file with content!</li>
 </ul>
-<pre class="html"><code>&lt;html&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     {% include &#39;header.html&#39; %}
-    &lt;body&gt;
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     {% block content %}
     {% endblock %}
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <ul>
 <li>Template file: <code>child.html</code> - Contents of this file fill be placed.</li>
 </ul>
-<pre class="html"><code>{% extends &quot;base.html&quot; %}
+<div class="highlight"><pre><span></span>{% extends &quot;base.html&quot; %}
 
 {% block content %}
 
-    &lt;p&gt;
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
         {{body}}
-    &lt;/p&gt;
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-{% endblock %}</code></pre>
+{% endblock %}
+</pre></div>
+
 <ul>
 <li>Modifications</li>
 </ul>
-<pre class="python"><code>template = env.get_template(&#39;child.html&#39;)
+<div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;child.html&#39;</span><span class="p">)</span>
 
-output = template.render(title=&quot;Hey, there!&quot;, body=&quot;Brown cow!&quot;)
-print(output)</code></pre>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Hey, there!&quot;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s2">&quot;Brown cow!&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
 <ul>
 <li>Output</li>
 </ul>
-<pre class="html"><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Hey, there!&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hey, there!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
             Brown cow!
-        &lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 
             </div>
         </section>
@@ -461,7 +517,7 @@ print(output)</code></pre>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -482,12 +538,12 @@ print(output)</code></pre>
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

@@ -200,7 +200,9 @@
 <ul>
 <li>Go to the terminal and type the line below for Debian/Ubuntu. (Instead of <code>apt-get</code> use the proper keyword based on the distro)</li>
 </ul>
-<pre class="bash"><code>    sudo apt-get install gfortran</code></pre>
+<div class="highlight"><pre><span></span>    sudo apt-get install gfortran
+</pre></div>
+
 <ul>
 <li>Make sure that the internet is connected</li>
 <li>Proceed as per instructions - easy and straight forward</li>
@@ -221,43 +223,49 @@
 <li>Programs written keeping one compiler in mind, may cause warning or do not work in other compilers - due to flags and optimizations - Be cautious!</li>
 </ul>
 <h2 id="hello-world-program">Hello World Program!</h2>
-<pre class="fortran"><code>! This program is a hello world program
-! This is a comment. Start a comment with an ! mark
-! Intendation is optional, use it for enhanced readability!
+<div class="highlight"><pre><span></span><span class="c">! This program is a hello world program</span>
+<span class="c">! This is a comment. Start a comment with an ! mark</span>
+<span class="c">! Intendation is optional, use it for enhanced readability!</span>
 
-program hello
-! This is the program starting. program is a key word, followed by the program name
+<span class="k">program </span><span class="n">hello</span>
+<span class="c">! This is the program starting. program is a key word, followed by the program name</span>
 
-    implicit none
-    ! It has a meaning
+    <span class="k">implicit none</span>
+    <span class="c">! It has a meaning</span>
     
-    print *, &quot;Hello World! My Name is Arun!&quot;
-    ! This is the print statement. * means unformatted!
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Hello World! My Name is Arun!&quot;</span>
+    <span class="c">! This is the print statement. * means unformatted!</span>
 
-! The line below is the program ending. end is sufficient, but for clarity, write end program prog_name
-end program hello</code></pre>
+<span class="c">! The line below is the program ending. end is sufficient, but for clarity, write end program prog_name</span>
+<span class="k">end program </span><span class="n">hello</span>
+</pre></div>
+
 <h2 id="basic-concepts">Basic Concepts</h2>
 <h3 id="implicit-none-and-datatypes">Implicit none and Datatypes</h3>
-<pre class="fortran"><code>    implicit none
-    ! Without it,
-    ! Variables beginning with l, m, n .... are termed as integers by the compiler by default
-    ! Variables beginning with a, b, c, x, y, z, ..... are real/float!
-    ! If not used, then there can be data type troubles and limitation in variable names!
-    ! implicit none tells the compiler &quot;Not to assume the data type of any variable implicitly! Let the user define the data type explicitly&quot;</code></pre>
-<pre class="fortran"><code>    integer :: i1, i2
-    ! Integers are positive and negative whole numbers
-    integer i3, i4
-    ! This notation without :: is also fine! :: is used for separation - that is it!
-    real :: r1, r2
-    ! Reals are positive and negative float numbers (numbers having decimal places)
-    double :: d1, d2
-    ! Reals having 8 bytes of memory! 15 digits precision
-    complex :: c1, c2
-    ! Complex numbers. By default, both the real and imaginary parts are floats
-    character :: ch1, ch2
-    ! Used for storing symbols
-    logical :: l1, l2
-    ! Used for storing Boolean/Logical Values &quot;True&quot; or &quot;False&quot;</code></pre>
+<div class="highlight"><pre><span></span>    <span class="k">implicit none</span>
+    <span class="c">! Without it,</span>
+    <span class="c">! Variables beginning with l, m, n .... are termed as integers by the compiler by default</span>
+    <span class="c">! Variables beginning with a, b, c, x, y, z, ..... are real/float!</span>
+    <span class="c">! If not used, then there can be data type troubles and limitation in variable names!</span>
+    <span class="c">! implicit none tells the compiler &quot;Not to assume the data type of any variable implicitly! Let the user define the data type explicitly&quot;</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span>
+    <span class="c">! Integers are positive and negative whole numbers</span>
+    <span class="kt">integer </span><span class="n">i3</span><span class="p">,</span> <span class="n">i4</span>
+    <span class="c">! This notation without :: is also fine! :: is used for separation - that is it!</span>
+    <span class="kt">real</span> <span class="kd">::</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span>
+    <span class="c">! Reals are positive and negative float numbers (numbers having decimal places)</span>
+    <span class="n">double</span> <span class="kd">::</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span>
+    <span class="c">! Reals having 8 bytes of memory! 15 digits precision</span>
+    <span class="kt">complex</span> <span class="kd">::</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span>
+    <span class="c">! Complex numbers. By default, both the real and imaginary parts are floats</span>
+    <span class="kt">character</span> <span class="kd">::</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span>
+    <span class="c">! Used for storing symbols</span>
+    <span class="kt">logical</span> <span class="kd">::</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span>
+    <span class="c">! Used for storing Boolean/Logical Values &quot;True&quot; or &quot;False&quot;</span>
+</pre></div>
+
 <h3 id="implicit-none">Implicit None</h3>
 <p>This statement is given before variable declarations. The purpose is to tell the program that all the variables that will be used in the program will be user defined. It also says that no variable will be defined just like that.</p>
 <p>If this statement is avoided, you can arbitrarily define variables anywhere in the code/script and the compiler will not cause a warning. Also, the data type of the variable is decided by the compiler based on some in-built rules. Also, these rules mention what type the memory location should be, should it be a constant or a variable?</p>
@@ -268,61 +276,65 @@ end program hello</code></pre>
 <p>Instead of removing this convention, they added this command that overrides the convention. Thereby, the convention can be followed if required, avoided if needed.</p>
 <h3 id="operations-and-operator-precedence">Operations and Operator Precedence</h3>
 <p>Code for hero’s formulae : Area of a triangle</p>
-<pre class="fortran"><code>real :: a, b, c, s, p, Area
+<div class="highlight"><pre><span></span><span class="kt">real</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">Area</span>
 
-! + - * / Standard ASMD (Add, Subtract, Multiply, Divide)
-! ** exponent or power eg: 2^3 = 8 is written as 2**3
-! ^ not available!
-! mod(5,3) = 2. Returns the reminder of 5/3. Works for both
-! integers and real numbers
+<span class="c">! + - * / Standard ASMD (Add, Subtract, Multiply, Divide)</span>
+<span class="c">! ** exponent or power eg: 2^3 = 8 is written as 2**3</span>
+<span class="c">! ^ not available!</span>
+<span class="c">! mod(5,3) = 2. Returns the reminder of 5/3. Works for both</span>
+<span class="c">! integers and real numbers</span>
 
-! Operator precedence: 
-! Operators have an order in which the operation occurs
-! Avoids multiple representation of an expression
-! Tells which operation to occur first, which next ...
-! PEMDAS = Parenthesis Exponent Multiplication Division Addition Subtraction
-! Please Excuse My Dear Aunt Sally (Acronym to remember the above)
+<span class="c">! Operator precedence: </span>
+<span class="c">! Operators have an order in which the operation occurs</span>
+<span class="c">! Avoids multiple representation of an expression</span>
+<span class="c">! Tells which operation to occur first, which next ...</span>
+<span class="c">! PEMDAS = Parenthesis Exponent Multiplication Division Addition Subtraction</span>
+<span class="c">! Please Excuse My Dear Aunt Sally (Acronym to remember the above)</span>
 
-a = 3
-b = 4
-c = 5
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
 
-! 3x10^8 scientific notation is given by 3E8. decimals allowed.
-! e stands for a single precision number
-! 3d1, 6d-2 is also allowed. 
-! These are another type of scientific notation.
-! d stands for double precision number
+<span class="c">! 3x10^8 scientific notation is given by 3E8. decimals allowed.</span>
+<span class="c">! e stands for a single precision number</span>
+<span class="c">! 3d1, 6d-2 is also allowed. </span>
+<span class="c">! These are another type of scientific notation.</span>
+<span class="c">! d stands for double precision number</span>
 
-p = a+b+c
-s = p/2 ! 0.5*p
+<span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">p</span><span class="o">/</span><span class="mi">2</span> <span class="c">! 0.5*p</span>
 
-Area = (s*(s-a)*(s-b)*(s-c))**0.5
-! Parenthesis takes first preference! making s, s-a, s-b, s-c occurring separately.
-! Then, these results are multiplied and finally, the result is powered!
+<span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="c">! Parenthesis takes first preference! making s, s-a, s-b, s-c occurring separately.</span>
+<span class="c">! Then, these results are multiplied and finally, the result is powered!</span>
 
-print *, &quot;The perimeter of the Triangle is:&quot;, Area
-print *, &quot;The area of the triangle is:&quot;, p</code></pre>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The perimeter of the Triangle is:&quot;</span><span class="p">,</span> <span class="n">Area</span>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The area of the triangle is:&quot;</span><span class="p">,</span> <span class="n">p</span>
+</pre></div>
+
 <p>The output is:</p>
-<pre><code>The perimeter of the Triangle is: 12.00000
-The area of the triangle is : 6.00000</code></pre>
+<div class ="highlight"><pre>The perimeter of the Triangle is: 12.00000
+The area of the triangle is : 6.00000</pre></div>
 <h3 id="type-casting-and-truncation">Type Casting and Truncation</h3>
-<pre class="fortran"><code>integer :: d, e
-real :: f, g
-! Proper integers and proper real numbers
+<div class="highlight"><pre><span></span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span>
+<span class="kt">real</span> <span class="kd">::</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="c">! Proper integers and proper real numbers</span>
 
-d = 4
-f = 6.7
-! Valid assignments based on data type
+<span class="n">d</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mf">6.7</span>
+<span class="c">! Valid assignments based on data type</span>
 
-g = d
-e = f
-! Not a proper assignment
+<span class="n">g</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">f</span>
+<span class="c">! Not a proper assignment</span>
 
-print *, &quot;d = &quot;,d , &quot;e = &quot;, e
-print *, &quot;f = &quot;,f , &quot;g = &quot;, g</code></pre>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;d = &quot;</span><span class="p">,</span><span class="n">d</span> <span class="p">,</span> <span class="s2">&quot;e = &quot;</span><span class="p">,</span> <span class="n">e</span>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;f = &quot;</span><span class="p">,</span><span class="n">f</span> <span class="p">,</span> <span class="s2">&quot;g = &quot;</span><span class="p">,</span> <span class="n">g</span>
+</pre></div>
+
 <p>The output is:</p>
-<pre><code>d = 4 e = 6
-f = 6.6999 g = 4.0000</code></pre>
+<div class ="highlight"><pre>d = 4 e = 6
+f = 6.6999 g = 4.0000</pre></div>
 <p>Note that ‘e’ value is truncated and you have extra zeros in ‘g’</p>
 <p>Why the variation in output?</p>
 <ul>
@@ -332,269 +344,306 @@ f = 6.6999 g = 4.0000</code></pre>
 <h3 id="case-insensitivity">Case Insensitivity</h3>
 <p>Variables, keywords etc., in fortran are case insensitive! for example</p>
 <p>Code for hero’s formulae : Area of a triangle</p>
-<pre class="fortran"><code>! Note that throughout this code, capitalization is used
-! in a crazy manner!
+<div class="highlight"><pre><span></span><span class="c">! Note that throughout this code, capitalization is used</span>
+<span class="c">! in a crazy manner!</span>
 
-Real :: a, b, c, s, p, Area
+<span class="kt">Real</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">Area</span>
 
-A = 3
-b = 4
-c = 5
+<span class="n">A</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
 
-P = a+b+c
-s = p/2 ! 0.5*p
+<span class="n">P</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">p</span><span class="o">/</span><span class="mi">2</span> <span class="c">! 0.5*p</span>
 
-AREA = (s*(s-a)*(s-b)*(s-c))**0.5
+<span class="n">AREA</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 
-Print *, &quot;The perimeter of the Triangle is:&quot;, AreA
-prInt *, &quot;The area of the triangle is:&quot;, p</code></pre>
+<span class="k">Print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The perimeter of the Triangle is:&quot;</span><span class="p">,</span> <span class="n">AreA</span>
+<span class="k">prInt</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The area of the triangle is:&quot;</span><span class="p">,</span> <span class="n">p</span>
+</pre></div>
+
 <p>The output is:</p>
-<pre><code>The perimeter of the Triangle is: 12.00000
-The area of the triangle is : 6.00000</code></pre>
+<div class ="highlight"><pre>The perimeter of the Triangle is: 12.00000
+The area of the triangle is : 6.00000</pre></div>
 <p>The result is the same and not a problem!</p>
 <p>Note that this can be an advantage/disadvantage based on the case! Use caution!</p>
 <h3 id="explicit-type-casting-and-read-statement">Explicit type casting and Read Statement</h3>
-<pre class="fortran"><code>g = real(f) ! Explicit type casting for real numbers
-e = int(f)  ! Explicit type casting for integer numbers</code></pre>
+<div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c">! Explicit type casting for real numbers</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c">! Explicit type casting for integer numbers</span>
+</pre></div>
+
 <p>To get the data from the user, use <code>read</code> command!</p>
-<pre class="fortran"><code>print *, &quot;Enter the sides of the triangle!&quot;
-read *, a, b, c
-! * means unformatted input
-! While execution, after printing the message, the compiler waits.
-! Give data one by one and press enter.
-! Data has to be entered based on the data order mentioned in the read statement.
-! Sometimes, &#39;,&#39; and space between the data are also used for entering the data. Use carefully!
-! Use asterix properly for entering a common data to multiple consecutive variables!
-! eg: 3*5 = 5 is repeated thrice!</code></pre>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Enter the sides of the triangle!&quot;</span>
+<span class="k">read</span> <span class="o">*</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+<span class="c">! * means unformatted input</span>
+<span class="c">! While execution, after printing the message, the compiler waits.</span>
+<span class="c">! Give data one by one and press enter.</span>
+<span class="c">! Data has to be entered based on the data order mentioned in the read statement.</span>
+<span class="c">! Sometimes, &#39;,&#39; and space between the data are also used for entering the data. Use carefully!</span>
+<span class="c">! Use asterix properly for entering a common data to multiple consecutive variables!</span>
+<span class="c">! eg: 3*5 = 5 is repeated thrice!</span>
+</pre></div>
+
 <h3 id="parameter-keyword-and-built-in-functions">Parameter keyword and Built-in Functions</h3>
 <p>Use parameter keyword for making constants.</p>
-<pre class="fortran"><code>real, parameter :: pi = 4*atan(1.0)
-! This way, pi becomes a constant. 
-! To get the value of pi, we are using the built in inverse tan function (arctan).
-real, parameter :: v = 1.0
-! v is also a constant
-real, parameter :: p 
-! This line will throw an error. While defining constants, one should enter the value as well</code></pre>
+<div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">pi</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">atan</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="c">! This way, pi becomes a constant. </span>
+<span class="c">! To get the value of pi, we are using the built in inverse tan function (arctan).</span>
+<span class="kt">real</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">v</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="c">! v is also a constant</span>
+<span class="kt">real</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">p</span> 
+<span class="c">! This line will throw an error. While defining constants, one should enter the value as well</span>
+</pre></div>
+
 <p>Since <span class="math inline">\(tan(\frac{\pi}{4}) = 1.0\)</span> , the function usage gives pi value properly!</p>
 <p>Now, if we equate or modify the value of pi somewhere in the program, then it will throw an error!</p>
 <p>Like the above tan functions, you have a lot of default functions available in fortran, called as <strong>intrinsic functions!</strong>. You have an entire list! You can check it out in books, internet etc..,</p>
 <p>eg:</p>
-<pre class="fortran"><code>l = sqrt(x**2 + y**2) ! square root function
-a = sin(y/x)          ! sine function!</code></pre>
+<div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c">! square root function</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>          <span class="c">! sine function!</span>
+</pre></div>
+
 <h2 id="relational-and-logical-operators">Relational and Logical Operators</h2>
-<pre class="fortran"><code>    ! A simple demonstration of Logical and Relational Operators
-    ! Comment/Uncomment the lines to check the relational and logical expression!
-    ! Also, change the values of m and n to verify the table below 
+<div class="highlight"><pre><span></span>    <span class="c">! A simple demonstration of Logical and Relational Operators</span>
+    <span class="c">! Comment/Uncomment the lines to check the relational and logical expression!</span>
+    <span class="c">! Also, change the values of m and n to verify the table below </span>
 
-program rel_logic
+<span class="k">program </span><span class="n">rel_logic</span>
 
-    implicit none
-    !integer :: a, b
-    logical :: m,n
+    <span class="k">implicit none</span>
+    <span class="c">!integer :: a, b</span>
+    <span class="kt">logical</span> <span class="kd">::</span> <span class="n">m</span><span class="p">,</span><span class="n">n</span>
     
-    !a = 5
-    !b = 4
-    m = .true.
-    n = .true.
+    <span class="c">!a = 5</span>
+    <span class="c">!b = 4</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>
     
-!    print *, &quot;A = &quot;,a,&quot;, B = &quot;,b
-!    print *, &quot;A == B? :&quot;, a==b
-!    print *, &quot;A &gt; B? :&quot;, a&gt;b
-!    print *, &quot;A &lt; B? :&quot;, a&lt;b
-!    print *, &quot;A &gt;= B? :&quot;, a&gt;=b
-!    print *, &quot;A &lt;= B? :&quot;, a&lt;=b
-!    print *, &quot;A /= B? :&quot;, a/=b
+<span class="c">!    print *, &quot;A = &quot;,a,&quot;, B = &quot;,b</span>
+<span class="c">!    print *, &quot;A == B? :&quot;, a==b</span>
+<span class="c">!    print *, &quot;A &gt; B? :&quot;, a&gt;b</span>
+<span class="c">!    print *, &quot;A &lt; B? :&quot;, a&lt;b</span>
+<span class="c">!    print *, &quot;A &gt;= B? :&quot;, a&gt;=b</span>
+<span class="c">!    print *, &quot;A &lt;= B? :&quot;, a&lt;=b</span>
+<span class="c">!    print *, &quot;A /= B? :&quot;, a/=b</span>
     
-    print *, &quot;M = &quot;,m,&quot; N = &quot;,n
-    !print *, &quot;.not.M = &quot;, .not.m
-    !print *, &quot;M or N? :&quot;, m.or.N
-    !print *, &quot;M and N? :&quot;, m.and.n
-    print *, &quot;M eqv N? :&quot;, m.eqv.n
-    print *, &quot;M neqv N? :&quot;, m.neqv.n
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;M = &quot;</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="s2">&quot; N = &quot;</span><span class="p">,</span><span class="n">n</span>
+    <span class="c">!print *, &quot;.not.M = &quot;, .not.m</span>
+    <span class="c">!print *, &quot;M or N? :&quot;, m.or.N</span>
+    <span class="c">!print *, &quot;M and N? :&quot;, m.and.n</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;M eqv N? :&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">.</span><span class="n">eqv</span><span class="p">.</span><span class="n">n</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;M neqv N? :&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">.</span><span class="n">neqv</span><span class="p">.</span><span class="n">n</span>
     
-    ! == .eq. equal to
-    ! &gt; .gt. greater than
-    ! &lt; .lt. less than
-    ! &gt;= .ge. greater than or equal to
-    ! &lt;= .le. less than or equal to
-    ! /= .ne. not equal to
+    <span class="c">! == .eq. equal to</span>
+    <span class="c">! &gt; .gt. greater than</span>
+    <span class="c">! &lt; .lt. less than</span>
+    <span class="c">! &gt;= .ge. greater than or equal to</span>
+    <span class="c">! &lt;= .le. less than or equal to</span>
+    <span class="c">! /= .ne. not equal to</span>
 
-    ! .true. or .false.
-    ! .not.(exp1)
-    ! (exp1).and.(exp2)
-    ! (exp1).or.(exp2)
-    ! (exp1).eqv.(exp2)
-    ! (exp1).neqv.(exp2)
+    <span class="c">! .true. or .false.</span>
+    <span class="c">! .not.(exp1)</span>
+    <span class="c">! (exp1).and.(exp2)</span>
+    <span class="c">! (exp1).or.(exp2)</span>
+    <span class="c">! (exp1).eqv.(exp2)</span>
+    <span class="c">! (exp1).neqv.(exp2)</span>
     
-    ! U PEMDAS REL_OP LOG_OP
-    ! This is a full fledged operator precedence
-    ! Unary PEMDAS Relative operators Logical Operators
-    ! Unary +5, -7 ! N/A: ++ --
+    <span class="c">! U PEMDAS REL_OP LOG_OP</span>
+    <span class="c">! This is a full fledged operator precedence</span>
+    <span class="c">! Unary PEMDAS Relative operators Logical Operators</span>
+    <span class="c">! Unary +5, -7 ! N/A: ++ --</span>
     
-    ! a    .not.a   0 = .false.
-    ! 1     0       1 = .true.
-    ! 0     1
+    <span class="c">! a    .not.a   0 = .false.</span>
+    <span class="c">! 1     0       1 = .true.</span>
+    <span class="c">! 0     1</span>
     
-    !____________________________________________________________
-    !    |      |          |           |            |            |
-    ! a  |   b  | a.and.b  |  a.or.b   |   a.eqv.b  |   a.neqv.b |
-    !____|______|__________|___________|____________|____________|
-    !    |      |          |           |            |            |
-    ! 0  |   0  |     0    |     0     |      1     |     0      |
-    ! 0  |   1  |     0    |     1     |      0     |     1      |
-    ! 1  |   0  |     0    |     1     |      0     |     1      |
-    ! 1  |   1  |     1    |     1     |      1     |     0      |
-    !____|______|__________|___________|____________|____________|
+    <span class="c">!____________________________________________________________</span>
+    <span class="c">!    |      |          |           |            |            |</span>
+    <span class="c">! a  |   b  | a.and.b  |  a.or.b   |   a.eqv.b  |   a.neqv.b |</span>
+    <span class="c">!____|______|__________|___________|____________|____________|</span>
+    <span class="c">!    |      |          |           |            |            |</span>
+    <span class="c">! 0  |   0  |     0    |     0     |      1     |     0      |</span>
+    <span class="c">! 0  |   1  |     0    |     1     |      0     |     1      |</span>
+    <span class="c">! 1  |   0  |     0    |     1     |      0     |     1      |</span>
+    <span class="c">! 1  |   1  |     1    |     1     |      1     |     0      |</span>
+    <span class="c">!____|______|__________|___________|____________|____________|</span>
 
-end program rel_logic</code></pre>
+<span class="k">end program </span><span class="n">rel_logic</span>
+</pre></div>
+
 <h2 id="characters-and-strings">Characters and Strings</h2>
 <p>This program explains the concept nicely!</p>
-<pre class="fortran"><code>
-! Program for defining and printing strings
+<div class="highlight"><pre><span></span><span class="c">! Program for defining and printing strings</span>
 
-program strings
+<span class="k">program </span><span class="n">strings</span>
 
-    implicit none
+    <span class="k">implicit none</span>
 
-    !character :: a ! a can store just one character = symbol or a 1 digit 
-                   ! number or a single alphabet
-    !character (len=5) :: b ! b is a 5 character long string
+    <span class="c">!character :: a ! a can store just one character = symbol or a 1 digit </span>
+                   <span class="c">! number or a single alphabet</span>
+    <span class="c">!character (len=5) :: b ! b is a 5 character long string</span>
 
-    !character(5) :: b
-    !character*5 :: b
-    !character :: b*5
+    <span class="c">!character(5) :: b</span>
+    <span class="c">!character*5 :: b</span>
+    <span class="c">!character :: b*5</span>
 
-    !character :: c*6, d*10, e*3
+    <span class="c">!character :: c*6, d*10, e*3</span>
     
-    !array of strings declarations
+    <span class="c">!array of strings declarations</span>
     
-    !character (len=6), dimension(2) :: str1 ! str1 will have two 
-    !strings each of 6 characters in length
+    <span class="c">!character (len=6), dimension(2) :: str1 ! str1 will have two </span>
+    <span class="c">!strings each of 6 characters in length</span>
     
-    !character (6), dimension(2) :: str1
-    !character*6, dimension(2) :: str1  
-    !character, dimension(2) :: str1*6!, str2*7, str3*10 
+    <span class="c">!character (6), dimension(2) :: str1</span>
+    <span class="c">!character*6, dimension(2) :: str1  </span>
+    <span class="c">!character, dimension(2) :: str1*6!, str2*7, str3*10 </span>
 
-!    a = &#39;X&#39;
-!    !a = &quot;X&quot; ! Alternate expression
-!    b = &#39;white&#39;
-!    c = &quot;456321&quot;
-!    d = &quot;asd567jk^%&quot;
-!    e = &quot;_ _&quot;
+<span class="c">!    a = &#39;X&#39;</span>
+<span class="c">!    !a = &quot;X&quot; ! Alternate expression</span>
+<span class="c">!    b = &#39;white&#39;</span>
+<span class="c">!    c = &quot;456321&quot;</span>
+<span class="c">!    d = &quot;asd567jk^%&quot;</span>
+<span class="c">!    e = &quot;_ _&quot;</span>
 
-!    print *, &quot;a = &quot;,a
-!    print *, &quot;b = &quot;,b
-!    print *, &quot;c = &quot;,c
-!    print *, &quot;d = &quot;,d
-!    print *, &quot;e = &quot;,e
+<span class="c">!    print *, &quot;a = &quot;,a</span>
+<span class="c">!    print *, &quot;b = &quot;,b</span>
+<span class="c">!    print *, &quot;c = &quot;,c</span>
+<span class="c">!    print *, &quot;d = &quot;,d</span>
+<span class="c">!    print *, &quot;e = &quot;,e</span>
 
-    print *, &quot;My name is Arun, written in double quotes&quot;
-    print *, &#39;My name is Arun, written in single quotes&#39;
-    print *, &quot;He is my friend&#39;s teacher&quot;
-    print *, &#39;He is my friend&quot;s teacher&#39;
-    print *, &#39;My friend said, &quot;I am fine!&quot;, and I moved on!&#39;
-    print *, &quot;My friend said, &#39;I am fine!&#39;, and I moved on!&quot;
-    print *, &quot;My friend said, &quot;&quot;I am fine!&quot;&quot;, and I moved on!&quot;
-    print *, &#39;My friend said, &#39;&#39;I am fine!&#39;&#39;, and I moved on!&#39;
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;My name is Arun, written in double quotes&quot;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;My name is Arun, written in single quotes&#39;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;He is my friend&#39;s teacher&quot;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;He is my friend&quot;s teacher&#39;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;My friend said, &quot;I am fine!&quot;, and I moved on!&#39;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;My friend said, &#39;I am fine!&#39;, and I moved on!&quot;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;My friend said, &quot;&quot;I am fine!&quot;&quot;, and I moved on!&quot;</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;My friend said, &#39;&#39;I am fine!&#39;&#39;, and I moved on!&#39;</span>
 
-!    str1(1) = &quot;Carrom&quot;
-!    str1(2) = &#39;Cod ng&#39;
+<span class="c">!    str1(1) = &quot;Carrom&quot;</span>
+<span class="c">!    str1(2) = &#39;Cod ng&#39;</span>
     
-!    ! read *, str1(1), str1(2)
+<span class="c">!    ! read *, str1(1), str1(2)</span>
     
-!    print *, &quot;First string: &quot;, str1(1), &quot; Second string: &quot;, str1(2) 
+<span class="c">!    print *, &quot;First string: &quot;, str1(1), &quot; Second string: &quot;, str1(2) </span>
     
 
-end program strings
-</code></pre>
+<span class="k">end program </span><span class="n">strings</span>
+</pre></div>
+
 <h2 id="modulus-operation">Modulus Operation</h2>
 <p>Modulus operation returns the remainder of a division. This function works for both integers and real numbers.</p>
-<pre class="fortran"><code>d = 51
-e = 10
-q = d/e      ! Quotient is 5
-m = mod(d,e) ! Reminder is 1
+<div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">51</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">d</span><span class="o">/</span><span class="n">e</span>      <span class="c">! Quotient is 5</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">mod</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">)</span> <span class="c">! Reminder is 1</span>
 
-a = 51.04
-b = 10.0
-qr = a/b      ! Quotient is 5.104
-mr = mod(a,b) ! Reminder is 1.04</code></pre>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="mf">1.04</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="mf">0.0</span>
+<span class="n">qr</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>      <span class="c">! Quotient is 5.104</span>
+<span class="n">mr</span> <span class="o">=</span> <span class="nb">mod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c">! Reminder is 1.04</span>
+</pre></div>
+
 <h2 id="exectution-from-terminal">Exectution from Terminal</h2>
 <p>To execute the file in Unix/Linux prompt with bash,</p>
 <ul>
 <li>Compile and link the file first to get the objects</li>
 </ul>
-<pre class="bash"><code>gfortran filename.ext</code></pre>
+<div class="highlight"><pre><span></span>gfortran filename.ext
+</pre></div>
+
 <p>For example:</p>
-<pre class="bash"><code>gfortran triangle.f95</code></pre>
+<div class="highlight"><pre><span></span>gfortran triangle.f95
+</pre></div>
+
 <p>This will create object files, link them and creates a default executable file a.out</p>
 <ul>
 <li>Run the file by</li>
 </ul>
-<pre class="bash"><code>./a.out</code></pre>
+<div class="highlight"><pre><span></span>./a.out
+</pre></div>
+
 <p>the executable file’s name is a historic practice. The executable is machine specific. You cannot use the a.out in some other machines. It is resolved by compiling and then executing the file.</p>
 <p>To have a different executable file name, use -o flag while compiling and linking.</p>
-<pre class="bash"><code>gfortran filename.ext -o exec_filename.ext (this extension can be .exe also)</code></pre>
+<div class="highlight"><pre><span></span>gfortran filename.ext -o exec_filename.ext <span class="o">(</span>this extension can be .exe also<span class="o">)</span>
+</pre></div>
+
 <p>To compile alone, use -c flag</p>
-<pre class="bash"><code>gfortran -c filename.ext</code></pre>
+<div class="highlight"><pre><span></span>gfortran -c filename.ext
+</pre></div>
+
 <p>To link it, use -o flag with the .o files</p>
-<pre class="bash"><code>gfortran filename.o -o exec_filename.ext </code></pre>
+<div class="highlight"><pre><span></span>gfortran filename.o -o exec_filename.ext 
+</pre></div>
+
 <p>To save the output of the executed file, use,</p>
-<pre class="bash"><code>./exec_filename.ext &gt; result_filename.ext</code></pre>
+<div class="highlight"><pre><span></span>./exec_filename.ext &gt; result_filename.ext
+</pre></div>
+
 <p>eg:</p>
-<pre class="bash"><code>./main.exe &gt; output.txt</code></pre>
+<div class="highlight"><pre><span></span>./main.exe &gt; output.txt
+</pre></div>
+
 <h2 id="conditional-statements-and-loops">Conditional Statements and Loops</h2>
 <h3 id="if-statement">If statement</h3>
 <p>Code segment to find the quadrant of a point (x,y) using the magnitudes of x and y</p>
-<pre class="fortran"><code>if ( x &gt;= 0 .and. y &gt;= 0) then ! First condition
-   q = 1 ! Statements to be executed if condition is true
-else if (x&lt;=0 .and. y&gt;=0) then ! Condition to check if all above conditions are false
-   q = 2 ! Statements to be executed if condition is true
-else if (x&lt;=0 .and. y&lt;=0) then ! Condition to check if all above conditions are false
-   q = 3 ! Statements to be executed if condition is true
-else
-   q = 4 ! Statements to be executed if all the above conditions are false
-end if   !this line is necessary
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span> <span class="c">! First condition</span>
+   <span class="n">q</span> <span class="o">=</span> <span class="mi">1</span> <span class="c">! Statements to be executed if condition is true</span>
+<span class="k">else if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">y</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span> <span class="c">! Condition to check if all above conditions are false</span>
+   <span class="n">q</span> <span class="o">=</span> <span class="mi">2</span> <span class="c">! Statements to be executed if condition is true</span>
+<span class="k">else if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">y</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span> <span class="c">! Condition to check if all above conditions are false</span>
+   <span class="n">q</span> <span class="o">=</span> <span class="mi">3</span> <span class="c">! Statements to be executed if condition is true</span>
+<span class="k">else</span>
+<span class="k">   </span><span class="n">q</span> <span class="o">=</span> <span class="mi">4</span> <span class="c">! Statements to be executed if all the above conditions are false</span>
+<span class="k">end if</span>   <span class="c">!this line is necessary</span>
 
-! else if and else statements are optional</code></pre>
+<span class="c">! else if and else statements are optional</span>
+</pre></div>
+
 <h3 id="do-statement">do statement</h3>
 <p>syntax:</p>
-<pre class="fortran"><code>do serial=1,k,increment 
-!serial is an integer variable that varies from 1 to k. if increment is absent, the default value is 1.
-   ! Set of statements 1
-    if (condition-x) cycle  
-    !the presence of keyword cycle transfers control back to do statement if condition-x is satisfied.
-       ! Set of statements 2
-    !the presence of keyword cycle avoids statement-2 if condition-x is satisfied.
-end do</code></pre>
+<div class="highlight"><pre><span></span><span class="k">do </span><span class="n">serial</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">increment</span> 
+<span class="c">!serial is an integer variable that varies from 1 to k. if increment is absent, the default value is 1.</span>
+   <span class="c">! Set of statements 1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="k">cycle</span>  
+    <span class="c">!the presence of keyword cycle transfers control back to do statement if condition-x is satisfied.</span>
+       <span class="c">! Set of statements 2</span>
+    <span class="c">!the presence of keyword cycle avoids statement-2 if condition-x is satisfied.</span>
+<span class="k">end do</span>
+</pre></div>
+
 <p>The iterating variable increases till end+increment and then checks the condition. Since the condition will break, the loop for end+increment will not happen.</p>
 <p>code to generate geometric sequences</p>
-<pre class="fortran"><code>a = 1.0 ! First term
-r = 2.0 ! Common ratio
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c">! First term</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c">! Common ratio</span>
 
-do i=0, n !i = 0, 1, 2, 3, ...., n
-   print *, &quot;The value &quot;, i, &quot; of the series is: &quot;, a*(r**i)
-end do
-</code></pre>
+<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="c">!i = 0, 1, 2, 3, ...., n</span>
+   <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The value &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; of the series is: &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+<span class="k">end do</span>
+</pre></div>
+
 <p><code>exit</code> command is used to quit the loop and come out. Exit command is used explicitly inside do loop with if statement.</p>
 <p>Code for n successive factorials using labels:</p>
-<pre class="fortran"><code>outer_do_loop: do i=1,n
+<div class="highlight"><pre><span></span><span class="n">outer_do_loop</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span>
         
-    !print *, &quot;Inside the loop, i = &quot;,i
-    fact = 1
-    ! j can be modified and used here!
-    ! i can be only used here!
-    inner_do_loop: do j=1,i
+    <span class="c">!print *, &quot;Inside the loop, i = &quot;,i</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c">! j can be modified and used here!</span>
+    <span class="c">! i can be only used here!</span>
+    <span class="n">inner_do_loop</span><span class="p">:</span> <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span>
         
-        ! i and j cannot be modified here!
-        ! i and j can be used here!
-        fact = fact*j
+        <span class="c">! i and j cannot be modified here!</span>
+        <span class="c">! i and j can be used here!</span>
+        <span class="n">fact</span> <span class="o">=</span> <span class="n">fact</span><span class="o">*</span><span class="n">j</span>
 
-    end do inner_do_loop
-    ! j can be modified and used here!
-    ! i can be only used here!
-    print *, &quot;The factorial of &quot;, i, &quot; is:&quot;, fact
+    <span class="k">end do </span><span class="n">inner_do_loop</span>
+    <span class="c">! j can be modified and used here!</span>
+    <span class="c">! i can be only used here!</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The factorial of &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; is:&quot;</span><span class="p">,</span> <span class="n">fact</span>
 
-end do outer_do_loop</code></pre>
+<span class="k">end do </span><span class="n">outer_do_loop</span>
+</pre></div>
+
 <h3 id="cautions-in-do-loop">Cautions in do loop</h3>
 <ul>
 <li>do loops must be sandwitched! Loops cannot overlap!</li>
@@ -606,72 +655,87 @@ end do outer_do_loop</code></pre>
 <h3 id="do-while">Do while</h3>
 <p>This do loop is actually a while loop.</p>
 <p>syntax:</p>
-<pre class="fortran"><code>do while (condition)
-    !set of statements
-    !one condition breaking statement
-end do</code></pre>
+<div class="highlight"><pre><span></span><span class="k">do while</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+    <span class="c">!set of statements</span>
+    <span class="c">!one condition breaking statement</span>
+<span class="k">end do</span>
+</pre></div>
+
 <h2 id="labels">Labels</h2>
 <p>This looping is also possible using labels.</p>
 <p>eg:</p>
-<pre class="fortran"><code>do label_name: serial=1,k
-     statements
-label_name continue
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">do </span><span class="n">label_name</span><span class="p">:</span> <span class="n">serial</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>
+     <span class="n">statements</span>
+<span class="n">label_name</span> <span class="k">continue</span>
+</pre></div>
+
 <p>Here, the do statement starts first and executes the statement set once, and goes to the continue statement. Now, the do loop does not knows what to do. So it continues, because of the instruction given by the continue statement. Now, since it already finished the iteration with the first value of the iteration variable, it goes to the next value of the iteration variable and proceeds further.</p>
 <p>The colon (:) is necessary!</p>
 <p>The label_name is the place, where the continue has to be placed. That label is being referred in the do statement. This makes sure that the do statement gets the information/call from the continue statement instead of some other statement. If some other label is used, then the do loop might not work.</p>
 <p>You do not need a continue statement. The label can be placed pointing some other statement also. So, the do statement, does the statements, goes to the statement where the label is pointed at, then goes to the statements inside it, goes to the label attached statement and repeats till the indices are over.</p>
 <p>This label has no specific format. It is an F77 convention.   you can label loops.  </p>
-<pre class="fortran"><code>outer_do: do
-         statement1
-inner_do: do
-         statement2
-end do inner_do
-         statement3
-end do outer_do</code></pre>
+<div class="highlight"><pre><span></span><span class="n">outer_do</span><span class="p">:</span> <span class="k">do</span>
+<span class="k">         </span><span class="n">statement1</span>
+<span class="n">inner_do</span><span class="p">:</span> <span class="k">do</span>
+<span class="k">         </span><span class="n">statement2</span>
+<span class="k">end do </span><span class="n">inner_do</span>
+         <span class="n">statement3</span>
+<span class="k">end do </span><span class="n">outer_do</span>
+</pre></div>
+
 <h2 id="select-case">Select case</h2>
 <p> </p>
-<pre class="fortran"><code>select case(variable)                  
-         case (value1)                            
-statements1                      
-         case (value2)
-                 statements2
-         case (value3)
-                 statements3
-         .
-         .
-         .
-         case default
-                 statement final
-end select</code></pre>
+<div class="highlight"><pre><span></span><span class="k">select case</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>                  
+         <span class="k">case</span> <span class="p">(</span><span class="n">value1</span><span class="p">)</span>                            
+<span class="n">statements1</span>                      
+         <span class="k">case</span> <span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+                 <span class="n">statements2</span>
+         <span class="k">case</span> <span class="p">(</span><span class="n">value3</span><span class="p">)</span>
+                 <span class="n">statements3</span>
+         <span class="p">.</span>
+         <span class="p">.</span>
+         <span class="p">.</span>
+         <span class="k">case </span><span class="n">default</span>
+                 <span class="n">statement</span> <span class="k">final</span>
+<span class="k">end select</span>
+</pre></div>
+
 <p>eg: assume statements for each case. note that multiple values can be fed into the case analysis as shown. case values can be .TRUE. or .FALSE. as well. default case is not mandatory.</p>
-<pre class="fortran"><code>select case(variable)
-         case(1)
-         case(2,3,7,8,10)
-         case(4:6)
-         case(11:)
-         case default</code></pre>
+<div class="highlight"><pre><span></span><span class="k">select case</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+         <span class="k">case</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+         <span class="k">case</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+         <span class="k">case</span><span class="p">(</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">)</span>
+         <span class="k">case</span><span class="p">(</span><span class="mi">11</span><span class="p">:)</span>
+         <span class="k">case </span><span class="n">default</span>
+</pre></div>
+
 <h2 id="forall-loop">forall loop</h2>
 <p>Fortran also has a for loop implemented as a forall. This loop can be used like any other for loop except for one condition. Each iterative loop should be independent of each other. Therefore, the loop can be done in any order instead of a serial order. <strong>So, in this strict sense, it is not a for traditional for loop</strong>. So, if one wants a <strong>strict</strong> for loop implementation, use a <strong>do</strong> loop.</p>
 <p>The format is:</p>
-<pre class="fortran"><code>forall (i=1:n)
- statements
-end forall</code></pre>
+<div class="highlight"><pre><span></span><span class="k">forall</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+ <span class="n">statements</span>
+<span class="k">end forall</span>
+</pre></div>
+
 <p>When executed, the compiler gets freedom to do the job in any order of i, thereby can make some optimizations to the programs. This is useful even in serial processing.</p>
 <p>Nested forall is also possible, provided all the loop index can be acted together. Also, it can have masks.  eg:</p>
-<pre class="fortran"><code>forall (i=1:n, j=1:m, b(i,j).n.e.0 ) 
-    !the mask here is that ignore or do not calculate an expression if b(i,j) is zero
-    a(i,j) = 2*i*j
-    c(i,j) = 1/b(i,j)
-end forall</code></pre>
+<div class="highlight"><pre><span></span><span class="k">forall</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">).</span><span class="n">n</span><span class="p">.</span><span class="n">e</span><span class="p">.</span><span class="mi">0</span> <span class="p">)</span> 
+    <span class="c">!the mask here is that ignore or do not calculate an expression if b(i,j) is zero</span>
+    <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">j</span>
+    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">b</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="k">end forall</span>
+</pre></div>
+
 <h2 id="kind-attribute">Kind attribute</h2>
 <p>Kind command is used for setting the storage memory of the data type. It is useful for variables and functions. This is also used to make the variables to store a large range of numbers.</p>
-<pre class="fortran"><code>    integer(kind=8) :: a
-    integer*8 :: a ! Alternate statement
-    ! variable a is an integer variable that takes 8 bytes of memory
-    real(kind=4) :: r
-    real*8 :: r ! Alternate statement
-    ! variable r is a real variable that takes 4 bytes of memory</code></pre>
+<div class="highlight"><pre><span></span>    <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span>
+    <span class="kt">integer</span><span class="o">*</span><span class="mi">8</span> <span class="kd">::</span> <span class="n">a</span> <span class="c">! Alternate statement</span>
+    <span class="c">! variable a is an integer variable that takes 8 bytes of memory</span>
+    <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">r</span>
+    <span class="kt">real</span><span class="o">*</span><span class="mi">8</span> <span class="kd">::</span> <span class="n">r</span> <span class="c">! Alternate statement</span>
+    <span class="c">! variable r is a real variable that takes 4 bytes of memory</span>
+</pre></div>
+
 <p>Integers have kind = 2, 4(default), 8, 16</p>
 <h2 id="limit-of-integers-and-real-numbers">Limit of Integers and Real numbers</h2>
 <p>The integers and real numbers are stored in a particular manner in the memory. Each value takes some memory. The more memory a value takes, the higher the magnitude of the value can be stored.</p>
@@ -679,20 +743,26 @@ end forall</code></pre>
 <p>So, if a proper kind statement is not used, then the values will overflow, corrupting the values finally. Precaution has to be taken to ensure that such issue does not take place. Use the kind statement properly to avoid this issue.</p>
 <h2 id="arrays">Arrays</h2>
 <p>declaration example:</p>
-<pre class="fortran"><code>real :: array_name(size)</code></pre>
-<p>  sometimes it can be defined using dimension function namely</p>
-<pre class="fortran"><code>real, dimension(size1,size2,size3,...) :: array_name</code></pre>
-<p><strong>Here, the index is not mentioned. By default its from 1 to the given size.</strong>   The index is superb in fortran. It can be negative or positive. some definitions are</p>
-<pre class="fortran"><code>a(-1:3) !5 values of a from a(-1), a(0), a(1), a(2), a(3)
-a(-6:-4) !3 values similarly.
-dimension(0:20) :: a 
-!has 21 values from a(0) to a(20)        
-dimension(0:20,0:20) :: a 
-!has 441 values from a(0,0) to a(20,20)</code></pre>
-<p>Based on these definitions, you can modify the indexing as per your requirement.   for array to be filled one-by-one, the order, taking a 5x5 array, is,</p>
-<pre><code>(1,1), (2,1), (3,1), ... (5,1),
+<div class="highlight"><pre><span></span><span class="kt">real</span> <span class="kd">::</span> <span class="n">array_name</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
 
-(1,2), (2,2), (3,2), ... (5,2), and so on!</code></pre>
+<p>  sometimes it can be defined using dimension function namely</p>
+<div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">size1</span><span class="p">,</span><span class="n">size2</span><span class="p">,</span><span class="n">size3</span><span class="p">,...)</span> <span class="kd">::</span> <span class="n">array_name</span>
+</pre></div>
+
+<p><strong>Here, the index is not mentioned. By default its from 1 to the given size.</strong>   The index is superb in fortran. It can be negative or positive. some definitions are</p>
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span> <span class="c">!5 values of a from a(-1), a(0), a(1), a(2), a(3)</span>
+<span class="n">a</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="c">!3 values similarly.</span>
+<span class="k">dimension</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span> 
+<span class="c">!has 21 values from a(0) to a(20)        </span>
+<span class="k">dimension</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span> 
+<span class="c">!has 441 values from a(0,0) to a(20,20)</span>
+</pre></div>
+
+<p>Based on these definitions, you can modify the indexing as per your requirement.   for array to be filled one-by-one, the order, taking a 5x5 array, is,</p>
+<div class ="highlight"><pre>(1,1), (2,1), (3,1), ... (5,1),
+
+(1,2), (2,2), (3,2), ... (5,2), and so on!</pre></div>
 <p><strong>Yes the order flips! unlike other programming languages!</strong></p>
 <p>This is the manner in which the values get stored in the memory as well!</p>
 <p><strong>This is called as Column Contiguous Memory Storage</strong>. In normal convention, the successive elements in the memory happen to be row-wise. In Fortran, they are column-wise!</p>
@@ -703,46 +773,70 @@ dimension(0:20,0:20) :: a
 </ul>
 <p>This is a big problem when you are trying to pass arrays between different programming languages like Python or C, where the memory allocation is row based.</p>
 <p>array initialisations using constructors. <code>/values/</code> is a constructor for the array.</p>
-<pre class="fortran"><code>b=(/1,2,3,4,5/)
-d=(/(i, i=1,50, increment)/) !d = 1,2,3,....50 if increment =1 !USE OF INCREMENT IS DOUBTFUL
-c=(/5,8,(2*i, i=1,20,increment),9/) !d = 5,8,2,4,6,......40, 9 if increment =1 !USE OF INCREMENT IS DOUBTFUL</code></pre>
+<div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span>
+<span class="n">d</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span> <span class="n">increment</span><span class="p">)</span><span class="o">/</span><span class="p">)</span> <span class="c">!d = 1,2,3,....50 if increment =1 !USE OF INCREMENT IS DOUBTFUL</span>
+<span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">increment</span><span class="p">),</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span> <span class="c">!d = 5,8,2,4,6,......40, 9 if increment =1 !USE OF INCREMENT IS DOUBTFUL</span>
+</pre></div>
+
 <p>multiple statements like the above two within the constructor are allowed.</p>
-<pre class="fortran"><code>real, dimension(20) :: a=0 
-!assigns all 20 values of a to 0.</code></pre>
-<pre class="fortran"><code>a(5,6,7) </code></pre>
+<div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span> 
+<span class="c">!assigns all 20 values of a to 0.</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> 
+</pre></div>
+
 <p>has</p>
-<pre class="fortran"><code>rank=3 
-extent1=5, 
-extent2=6, 
-extent3=7 
-size =5*6*7=210 
-shape =(5,6,7)</code></pre>
-<pre class="fortran"><code>rank(), shape(), size() </code></pre>
+<div class="highlight"><pre><span></span><span class="n">rank</span><span class="o">=</span><span class="mi">3</span> 
+<span class="n">extent1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+<span class="n">extent2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> 
+<span class="n">extent3</span><span class="o">=</span><span class="mi">7</span> 
+<span class="n">size</span> <span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="o">*</span><span class="mi">7</span><span class="o">=</span><span class="mi">210</span> 
+<span class="nb">shape</span> <span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="n">rank</span><span class="p">(),</span> <span class="nb">shape</span><span class="p">(),</span> <span class="n">size</span><span class="p">()</span> 
+</pre></div>
+
 <p>The above functions return the rank, shape and size of the arrays.</p>
 <p>Arrays can be dynamic in Fortran.</p>
 <h2 id="array-operations">Array Operations</h2>
 <p>Array operations can be done without the need for loops.</p>
 <p>eg:</p>
 <p>For three arrays of size n, with indices from 1 to n,</p>
-<pre class="fortran"><code>do i=1,n
-     c(i) = a(i) + b(i)
-end do</code></pre>
+<div class="highlight"><pre><span></span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span>
+     <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">end do</span>
+</pre></div>
+
 <p>This can be done by the line</p>
-<pre class="fortran"><code>c = a + b !(available from F90 onwards)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c">!(available from F90 onwards)</span>
+</pre></div>
+
 <p>If x and y are arrays, then</p>
-<pre class="fortran"><code>y = x**2 </code></pre>
+<div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> 
+</pre></div>
+
 <p>is an example of a component-wise operation. This operation holds good for - / * also.</p>
 <p>even <code>sqrt()</code>works component-wise.</p>
-<pre class="fortran"><code>dot_product(x,y) !calculates the dot product of x,y namely = sum of all xi*yi from i=1,n
-array2 = reshape(array1, shape) !reshapes a given 1D array into a 2D array of the given shape.</code></pre>
+<div class="highlight"><pre><span></span><span class="nb">dot_product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c">!calculates the dot product of x,y namely = sum of all xi*yi from i=1,n</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="nb">shape</span><span class="p">)</span> <span class="c">!reshapes a given 1D array into a 2D array of the given shape.</span>
+</pre></div>
+
 <p>eg:</p>
-<pre class="fortran"><code>A = reshape((/1,2,3,4,5,6/), (/3,2/))</code></pre>
+<div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">((</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="p">),</span> <span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">))</span>
+</pre></div>
+
 <p>This will produce a three row, two column matrix. <strong>All the entries get filled COLUMNWISE instead of ROWWISE!</strong></p>
 <p>Array slices can be made.</p>
 <p>eg:</p>
-<pre class="fortran"><code>print *, a(i,:)  !this will print out the ith row.</code></pre>
-<pre class="fortran"><code>transpose(array) !transposes the matrix/array
-C = matmul(a,b) !does the matrix multiplication of a,b. Applicable to vectors also.</code></pre>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,:)</span>  <span class="c">!this will print out the ith row.</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="nb">transpose</span><span class="p">(</span><span class="k">array</span><span class="p">)</span> <span class="c">!transposes the matrix/array</span>
+<span class="n">C</span> <span class="o">=</span> <span class="nb">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c">!does the matrix multiplication of a,b. Applicable to vectors also.</span>
+</pre></div>
+
 <h2 id="array-memory-allocations">Array Memory Allocations</h2>
 <p>Fortran needs to know the size of the arrays beforehand for allocating memory. But usually, the size of the array is not known until it is run/executed.</p>
 <p>F77 has two ways to resolve this:</p>
@@ -755,22 +849,28 @@ C = matmul(a,b) !does the matrix multiplication of a,b. Applicable to vectors al
 <p>Dynamic allocation is the solution to it. This started from F90 and extends in all future versions. This avoids the need for F77 protocols for storing array data.</p>
 <p>The arrays get dynamically allocated.</p>
 <p>dynamic arrays are to be declared as below</p>
-<pre class="fortran"><code>allocatable, dimension(:) :: a 
-!This tells the compiler that array a&#39;s memory is dynamic
-! get a value n and allocate a as,
-allocate (a(n)) 
-!a value ranges from a(1) to a(n)
+<div class="highlight"><pre><span></span><span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">a</span> 
+<span class="c">!This tells the compiler that array a&#39;s memory is dynamic</span>
+<span class="c">! get a value n and allocate a as,</span>
+<span class="k">allocate</span> <span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> 
+<span class="c">!a value ranges from a(1) to a(n)</span>
 
-allocatable, dimension(:,:) :: b
-! get values for m and n and allocate b as,
+<span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:)</span> <span class="kd">::</span> <span class="n">b</span>
+<span class="c">! get values for m and n and allocate b as,</span>
 
-allocate(b(m,n))</code></pre>
+<span class="k">allocate</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
 <p>This can be extended to multi-dimensional arrays also.</p>
 <p>To deallocate them, use the deallocate command.</p>
-<pre class="fortran"><code>deallocate(a), deallocate(b)</code></pre>
+<div class="highlight"><pre><span></span><span class="k">deallocate</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
 <p>To ensure that you do not run out of space, use the optional stat argument. eg:</p>
-<pre class="fortran"><code>allocate(a(n), stat=alloc_error)</code></pre>
-<pre><code>if alloc_error /= 0, </code></pre>
+<div class="highlight"><pre><span></span><span class="k">allocate</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">alloc_error</span><span class="p">)</span>
+</pre></div>
+
+<div class ="highlight"><pre>if alloc_error /= 0, </pre></div>
 <p>then you have an insufficient memory. Otherwise, it is fine.</p>
 <p><strong>Caution: Be careful while passing arrays and scalars into subroutines. If a scalar is passed, and it is treated as an array inside the subroutine, it will change the values of the other variables! Vice-Versa also happens. In older versions, not even a warning will appear and the program will be executed. In newer versions, the program will be executed with warnings. Because, when you pass an element into a subroutine, the variable address is passes into it. Sometimes you get a SEGMENTATION FAULT, meaning, the program is trying to write values in certain parts of the memory that it has no access or permission to. To check these, use -fbounds-check flags while compiling the code. (these are gfortran flags)</strong></p>
 <h2 id="fortran-flags-and-gdb">Fortran Flags and gdb</h2>
@@ -787,91 +887,100 @@ allocate(b(m,n))</code></pre>
 <li><p>-finline-functions is for compiling the code, by replacing the function calls with a direct in-line representation of the function. Wherever the function call happens, instead of going to the function, the statements of the function are brought to the code having the function call directly. This avoids the need for creating dummy variables, switching between programs etc., This makes a big difference when an array is processed by the functions, or the function is being called within a loop.</p></li>
 </ul>
 <p>If there is a problem in the file while using the -g flag there will be indications. Then type,</p>
-<pre><code>gdb executable_filename.ext</code></pre>
+<div class ="highlight"><pre>gdb executable_filename.ext</pre></div>
 <p>to have a full pass at the file and you will get a gdb prompt. Type run to get an indication as to where the problem is.</p>
 <p>gdb is similar to Python Debugger (pdb) use help in gdb prompt to get all the available commands.</p>
 <h2 id="goto-statement">Goto statement</h2>
 <p>Go to statement is used for force shifting the line of execution to some other part of the program.</p>
 <p>syntax:</p>
-<pre class="fortran"><code>  go to &lt;LABEL&gt;</code></pre>
+<div class="highlight"><pre><span></span>  <span class="n">go</span> <span class="n">to</span> <span class="o">&lt;</span><span class="n">LABEL</span><span class="o">&gt;</span>
+</pre></div>
+
 <p>eg:</p>
-<pre class="fortran"><code>if (some condition) go to 99
-! lot of lines of code in between!
-99 continue
-    set of statements
-! continue statement is used to continue the execution. That is all.</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">some</span> <span class="n">condition</span><span class="p">)</span> <span class="n">go</span> <span class="n">to</span> <span class="mi">99</span>
+<span class="c">! lot of lines of code in between!</span>
+<span class="mi">99</span> <span class="k">continue</span>
+<span class="k">    </span><span class="n">set</span> <span class="n">of</span> <span class="n">statements</span>
+<span class="c">! continue statement is used to continue the execution. That is all.</span>
+</pre></div>
+
 <h2 id="functions-simple">Functions – Simple</h2>
 <p>Functions in fortran are similar to other functional definitions in other languages.</p>
 <p>Functions can take one or more arguments and return a value.</p>
 <p>eg:</p>
-<pre><code>y = f(x) or z = f(x,y)</code></pre>
+<div class ="highlight"><pre>y = f(x) or z = f(x,y)</pre></div>
 <p>Usage in fortran:</p>
-<pre class="fortran"><code>real (kind=8), external :: f</code></pre>
+<div class="highlight"><pre><span></span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">external</span> <span class="kd">::</span> <span class="n">f</span>
+</pre></div>
+
 <p>“External” is used to tell that the definition is available elsewhere.</p>
 <p>Within the program script, but outside program, end program lines, the definition of the function should be mentioned.</p>
 <p>See the example below for clarification.</p>
 <p>Sample Program:</p>
-<pre class="fortran"><code>! Program to experiment with functions
-! The function is the implementation of hero&#39;s formulae
-! For calculating the area of a triangle
+<div class="highlight"><pre><span></span><span class="c">! Program to experiment with functions</span>
+<span class="c">! The function is the implementation of hero&#39;s formulae</span>
+<span class="c">! For calculating the area of a triangle</span>
 
-program functions_example
+<span class="k">program </span><span class="n">functions_example</span>
 
-    implicit none
-    real (kind=8) :: a,b,c,s,Area
-    real (kind=8), external :: tri_area_ssa, semi
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">Area</span>
+    <span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">external</span> <span class="kd">::</span> <span class="n">tri_area_ssa</span><span class="p">,</span> <span class="n">semi</span>
 
-    ! External indicates that the definitions for them are given
-    ! Outside the program.
+    <span class="c">! External indicates that the definitions for them are given</span>
+    <span class="c">! Outside the program.</span>
 
-    a = 5
-    b = 12
-    c = (a**2 + b**2)**0.5
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
 
-    s = semi(a,b,c) 
-    ! Invoking one function
+    <span class="n">s</span> <span class="o">=</span> <span class="n">semi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> 
+    <span class="c">! Invoking one function</span>
 
-    Area = tri_area_ssa(a,b,c,s)
-    ! Invoking another function
+    <span class="n">Area</span> <span class="o">=</span> <span class="n">tri_area_ssa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+    <span class="c">! Invoking another function</span>
 
-    print *, &quot;The semi-perimeter of the triangle is :&quot;,s
-    print *, &quot;Area of the triangle using Hero&#39;s Formula is :&quot;,Area
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The semi-perimeter of the triangle is :&quot;</span><span class="p">,</span><span class="n">s</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Area of the triangle using Hero&#39;s Formula is :&quot;</span><span class="p">,</span><span class="n">Area</span>
 
-end program functions_example
+<span class="k">end program </span><span class="n">functions_example</span>
 
-real (kind=8) function semi(a,b,c)
-! Note that the data type definition is needed for the return value
+<span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">function </span><span class="n">semi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="c">! Note that the data type definition is needed for the return value</span>
 
-    implicit none
-    real (kind=8), intent(in) :: a,b,c
-    ! intent() is a built-in-function that indicates whether the variables
-    ! are passed into or passed out of the function or both.
-    ! Here, these variables are being passed into the function and
-    ! hence the argument &quot;in&quot;.
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+    <span class="c">! intent() is a built-in-function that indicates whether the variables</span>
+    <span class="c">! are passed into or passed out of the function or both.</span>
+    <span class="c">! Here, these variables are being passed into the function and</span>
+    <span class="c">! hence the argument &quot;in&quot;.</span>
 
-    semi = 0.5*(a+b+c)
+    <span class="n">semi</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
 
-end function semi
+<span class="k">end function </span><span class="n">semi</span>
 
-real (kind=8) function tri_area_ssa(a,b,c,s)
+<span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">function </span><span class="n">tri_area_ssa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
 
-    implicit none
-    real (kind=8), intent(in) :: a,b,c,s
-    real (kind=8) :: x,y,z
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span>
+    <span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
 
-    x = s-a
-    y = s-b
-    z = s-c
+    <span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">a</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">b</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">c</span>
 
-    tri_area_ssa = (s*x*y*z)**0.5
+    <span class="n">tri_area_ssa</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
 
-end function tri_area_ssa
-</code></pre>
+<span class="k">end function </span><span class="n">tri_area_ssa</span>
+</pre></div>
+
 <h2 id="intent-functions">Intent functions</h2>
 <p>Intent is a built-in-function used inside other functions and subroutines to indicate the nature of the variables involved.</p>
-<pre class="fortran"><code> intent(in) : !This means that the variable is passed into the function/subroutine/module and it&#39;s values should not be changed inside it.
- intent(out) : !This means that the variable is passed into the function/subroutine/module may not have a value, and thereby can be assigned a value and passed out of it.
- intent(inout) : !This means that the variable is passed into the function/subroutine/module and it can be altered and can be passed out of the function.</code></pre>
+<div class="highlight"><pre><span></span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="p">:</span> <span class="c">!This means that the variable is passed into the function/subroutine/module and it&#39;s values should not be changed inside it.</span>
+ <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="p">:</span> <span class="c">!This means that the variable is passed into the function/subroutine/module may not have a value, and thereby can be assigned a value and passed out of it.</span>
+ <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="p">:</span> <span class="c">!This means that the variable is passed into the function/subroutine/module and it can be altered and can be passed out of the function.</span>
+</pre></div>
+
 <p>These are not necessary sometimes, but it is a good practice to follow their usage.</p>
 <h2 id="subroutine">Subroutine</h2>
 <p>A subroutine is similar to a function. It is not invoked, but rather called in.</p>
@@ -879,82 +988,94 @@ end function tri_area_ssa
 <p>Also, it can pass out the variables passed into it by making changes to them.</p>
 <p>This is very essential for complicated programming algorithms.</p>
 <p>How to call it?</p>
-<pre class="fortran"><code>call subroutine_name(args)</code></pre>
+<div class="highlight"><pre><span></span><span class="k">call </span><span class="n">subroutine_name</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+
 <p>Subroutines can modify and pass arrays. Functions cannot! They follow the same procedure as that of other variables, the “dimension” type has to be mentioned to in inside the subroutine as well as outside the subroutine. Also, you may have to pass the size of the arrays is needed.</p>
 <p>Subroutines can be defined within the script or outside in a new script.</p>
 <p>This is an example:</p>
 <p>Sample Program:</p>
-<pre class="fortran"><code>! Program to experiment with subroutine
-! The subroutine is the implementation of hero&#39;s formulae
-! For calculating the area of a triangle
+<div class="highlight"><pre><span></span><span class="c">! Program to experiment with subroutine</span>
+<span class="c">! The subroutine is the implementation of hero&#39;s formulae</span>
+<span class="c">! For calculating the area of a triangle</span>
 
-program subroutines_example
+<span class="k">program </span><span class="n">subroutines_example</span>
 
-    implicit none
-    real (kind=8) :: a,b,c,s,Area
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">Area</span>
 
-    a = 5
-    b = 12
-    c = (a**2 + b**2)**0.5
-    s = 0
-    ! s is intentionally set to 0 so that it gets modified inside
-    ! the sub-routine call. Area is not set any value. This is
-    ! to see that the subroutine assigns a value to it.
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c">! s is intentionally set to 0 so that it gets modified inside</span>
+    <span class="c">! the sub-routine call. Area is not set any value. This is</span>
+    <span class="c">! to see that the subroutine assigns a value to it.</span>
 
-    print *, &quot;A=&quot;,a,&quot;B=&quot;,b,&quot;C=&quot;,c
-    print *, &quot;S=&quot;,s
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;A=&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s2">&quot;B=&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s2">&quot;C=&quot;</span><span class="p">,</span><span class="n">c</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;S=&quot;</span><span class="p">,</span><span class="n">s</span>
 
-    call tri_area_ssa(a,b,c,s,Area)
-    ! This is the subroutine call !
+    <span class="k">call </span><span class="n">tri_area_ssa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">Area</span><span class="p">)</span>
+    <span class="c">! This is the subroutine call !</span>
 
-    print *, &quot;A=&quot;,a,&quot;B=&quot;,b,&quot;C=&quot;,c
-    print *, &quot;The semi-perimeter of the triangle is :&quot;,s
-    print *, &quot;Area of the triangle using Hero&#39;s Formula is :&quot;,Area
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;A=&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s2">&quot;B=&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s2">&quot;C=&quot;</span><span class="p">,</span><span class="n">c</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The semi-perimeter of the triangle is :&quot;</span><span class="p">,</span><span class="n">s</span>
+    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Area of the triangle using Hero&#39;s Formula is :&quot;</span><span class="p">,</span><span class="n">Area</span>
 
-end program subroutines_example
+<span class="k">end program </span><span class="n">subroutines_example</span>
 
-subroutine tri_area_ssa(a,b,c,s,Area)
+<span class="k">subroutine </span><span class="n">tri_area_ssa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">Area</span><span class="p">)</span>
 
-    implicit none
-    real (kind=8), intent(in) :: a,b,c
-    real (kind=8), intent(out) :: Area
-    ! This is for making an assignment to Area, as Area has no value
-    real (kind=8), intent(inout) :: s
-    ! This is for altering s, as s has a value to it.
-    real (kind=8) :: x,y,z
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+    <span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Area</span>
+    <span class="c">! This is for making an assignment to Area, as Area has no value</span>
+    <span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">s</span>
+    <span class="c">! This is for altering s, as s has a value to it.</span>
+    <span class="kt">real</span> <span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
 
-    s = 0.5*(a+b+c)
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
 
-    x = s-a
-    y = s-b
-    z = s-c
+    <span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">a</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">b</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">s</span><span class="o">-</span><span class="n">c</span>
 
-    Area = (s*x*y*z)**0.5
+    <span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
 
-end subroutine tri_area_ssa</code></pre>
+<span class="k">end subroutine </span><span class="n">tri_area_ssa</span>
+</pre></div>
+
 <h2 id="modules">Modules</h2>
 <p>Modules are big chunks of programs written separately. It can have it’s own variables, functions and subroutines. Modules are like header files in C or like import file modules in Python.  </p>
 <p>Format of a module goes like this:</p>
-<pre class="fortran"><code>module &lt;module name&gt;
-     !variables and statements
-contains
-     !definitions for subroutines/functions
-end module &lt;module name&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">module</span> <span class="o">&lt;</span><span class="k">module </span><span class="n">name</span><span class="o">&gt;</span>
+     <span class="c">!variables and statements</span>
+<span class="k">contains</span>
+     <span class="c">!definitions for subroutines/functions</span>
+<span class="k">end module</span> <span class="o">&lt;</span><span class="k">module </span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+
 <p>To use the module in a program/subroutine/function:</p>
-<pre class="fortran"><code>program program_name
-     use &lt;module-name&gt; !This has to come before using other variables/statements
-     !variable declarations and statements for program
-end program_name</code></pre>
+<div class="highlight"><pre><span></span><span class="k">program </span><span class="n">program_name</span>
+     <span class="k">use</span> <span class="o">&lt;</span><span class="k">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="c">!This has to come before using other variables/statements</span>
+     <span class="c">!variable declarations and statements for program</span>
+<span class="k">end </span><span class="n">program_name</span>
+</pre></div>
+
 <p>To import only a function/part of a module, use only command</p>
-<pre class="fortran"><code>     use &lt;module-name&gt;, only: &lt;var or function or subroutine&gt;</code></pre>
+<div class="highlight"><pre><span></span>     <span class="k">use</span> <span class="o">&lt;</span><span class="k">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">var</span> <span class="nb">or </span><span class="k">function </span><span class="nb">or </span><span class="k">subroutine</span><span class="o">&gt;</span>
+</pre></div>
+
 <p>Modules can be used to define global variables that can be used in several programs. But this is not recommended. Modules generate interface information when their variables and functions/subroutines are used. These are links to determine which variables came from which file. This helps to see whether proper arguments have been passed or not. Modules also help to create derived data type.</p>
 <p>NOTE: Modules must be compiled before compiling the programs using the module! On compiling a module, it produces a .mod file and a .o file. Then, the file using the module has to be used. When compiling the program and module file together, put the module file first and then the program file.</p>
 <p>eg:</p>
-<pre><code>gfortran module_file.f90 prog.f90</code></pre>
+<div class ="highlight"><pre>gfortran module_file.f90 prog.f90</pre></div>
 <p>You cannot put variables inside module. Only parameters are allowed. Variables are allowed inside the functions and subroutines of a module. To make a variable, use the “save” keyword after the variable declarations. This command makes sure that any value that gets assigned to the variable is available in all the programs using the module. Like a global variable. While calling the module, use “call another_subroutine()” subroutine to set it’s value. This subroutine should have the variables defined and set with a value. eg:</p>
-<pre class="fortran"><code>implicit none
-real :: pi
-save</code></pre>
+<div class="highlight"><pre><span></span><span class="k">implicit none</span>
+<span class="kt">real</span> <span class="kd">::</span> <span class="n">pi</span>
+<span class="k">save</span>
+</pre></div>
+
 <h2 id="pure-keyword">Pure Keyword</h2>
 <p>This keyword is used for making subroutines, modules and functions free from global variables and alterations. To declare them, use</p>
 <p>pure function/module/subroutine name and that is all.</p>
@@ -970,22 +1091,28 @@ save</code></pre>
 <p>This is one of the several kind of a problems that used to happen in olden days when many people made computer systems, because each manufacturer used to make their own way of doing computer arithmetic. After standardization, the problems got mitigated very much. But some issues still pop-up.</p>
 <h2 id="timing-code-in-fortran">Timing Code in Fortran</h2>
 <p>There is a subroutine named system clock to measure the time taken for a code to be executed completely. To use it,</p>
-<pre class="fortran"><code>call system_clock(var1, var2) !both variables are to be integers</code></pre>
+<div class="highlight"><pre><span></span><span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span> <span class="c">!both variables are to be integers</span>
+</pre></div>
+
 <p>Variable 1 will have the elapsed clock cycles of the system from the point where the code is executed to the current line. The unit will be cycles.</p>
 <p>Variable 2 will have the clock rate or the rate at which the system/cpu is operating. The unit will be cycles per second.</p>
 <p>eg:</p>
-<pre class="fortran"><code>call system_clock(tclock1)
- ! &lt;code to be executed&gt;
-call system_clock(tclock2, rate)
+<div class="highlight"><pre><span></span><span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">tclock1</span><span class="p">)</span>
+ <span class="c">! &lt;code to be executed&gt;</span>
+<span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">tclock2</span><span class="p">,</span> <span class="n">rate</span><span class="p">)</span>
 
-elapsed_time = float(tclock2 - tclock1)/float(rate)</code></pre>
+<span class="n">elapsed_time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">tclock2</span> <span class="o">-</span> <span class="n">tclock1</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+</pre></div>
+
 <p>To look at the cpu time, use <code>cpu_time subroutine</code></p>
 <p>eg:</p>
-<pre class="fortran"><code>call cpu_time(time1) !the variable is a float with time in seconds.
-  ! &lt;code to be executed&gt;
-call cpu_time(time2)
+<div class="highlight"><pre><span></span><span class="k">call </span><span class="nb">cpu_time</span><span class="p">(</span><span class="n">time1</span><span class="p">)</span> <span class="c">!the variable is a float with time in seconds.</span>
+  <span class="c">! &lt;code to be executed&gt;</span>
+<span class="k">call </span><span class="nb">cpu_time</span><span class="p">(</span><span class="n">time2</span><span class="p">)</span>
 
-elapsed_time = time2 - time1</code></pre>
+<span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">time2</span> <span class="o">-</span> <span class="n">time1</span>
+</pre></div>
+
 <h2 id="blas-lapack">BLAS LAPACK</h2>
 <p>BLAS (Basic Linear Algebra Subroutines) and LAPACK (LA Pack or Linear Algebra Package) are linear algebra and scientific packages used by Fortran, Matlab, Python, Scilab and many other programs. LAPACK kind of depends on BLAS for some of it’s functions.</p>
 <p>They provide functions and sub-routine definitions for performing the above mentioned operations. They are made in both C and Fortran.</p>
@@ -1024,7 +1151,7 @@ Fortran does not have an equivalent of Matlab’s A
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -1045,12 +1172,12 @@ Fortran does not have an equivalent of Matlab’s A
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

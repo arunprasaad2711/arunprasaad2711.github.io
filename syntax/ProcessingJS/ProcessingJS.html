@@ -135,15 +135,19 @@
 <p><a href="http://processingjs.org/learning/">implementation</a></p>
 <h2 id="some-commands">Some Commands</h2>
 <h3 id="variable">Variable</h3>
-<pre class="javascript"><code>var varname1 = 340;
-var varname;
-varname = 40;</code></pre>
-<pre class="javascript"><code>var x = 10;
-var a = x + 5; // add 5, result is 15
-var b = x - 5; // subtract 5, result is 5
-var c = x * 2; // multiply by 2, result is 20
-var d = x / 4; // divide by 4, result is 2.5
-var e = x % 4; // divide by 4 &amp; return remainder, result is 2</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">varname1</span> <span class="o">=</span> <span class="mi">340</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">varname</span><span class="p">;</span>
+<span class="nx">varname</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// add 5, result is 15</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// subtract 5, result is 5</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// multiply by 2, result is 20</span>
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// divide by 4, result is 2.5</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// divide by 4 &amp; return remainder, result is 2</span>
+</pre></div>
+
 <p><em>Courtesy: Khan Academy Webpage</em></p>
 <p><img src="img1.png" alt="Image 1" /> <img src="img2.png" alt="Image 2" /> <img src="img3.png" alt="Image 3" /> <img src="img4.png" alt="Image 4" /></p>
 <h2 id="notes">Notes</h2>
@@ -154,467 +158,522 @@ var e = x % 4; // divide by 4 &amp; return remainder, result is 2</code></pre>
 <li><code>draw</code> is a predefined function, with no definition. <code>draw</code> function gets called over and over by other functions in <code>ProcessingJS</code>.</li>
 </ul>
 <h2 id="example">Example</h2>
-<pre class="html"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Froggy&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Froggy<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;script src=&quot;processing.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/processing&quot; data-processing-target=&quot;mycanvas&quot;&gt;
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;processing.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/processing&quot;</span> <span class="na">data-processing-target</span><span class="o">=</span><span class="s">&quot;mycanvas&quot;</span><span class="p">&gt;</span>
 
-// set up the canvas to draw
-void setup()
-{
-  size(400,400);
-  background(127, 127, 127);
-}
+<span class="c1">// set up the canvas to draw</span>
+<span class="k">void</span> <span class="nx">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="nx">size</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span>
+  <span class="nx">background</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">);</span>
+<span class="p">}</span>
 
-// function to draw a frog face
-void froggy(x1, x2)
-{
+<span class="c1">// function to draw a frog face</span>
+<span class="k">void</span> <span class="nx">froggy</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">)</span>
+<span class="p">{</span>
 
-    var x = x1;
-    var y = x2;
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x2</span><span class="p">;</span>
 
-    noStroke();
-    fill(30, 204, 91); // a nice froggy green!
+    <span class="nx">noStroke</span><span class="p">();</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">91</span><span class="p">);</span> <span class="c1">// a nice froggy green!</span>
 
-    ellipse(x, y, 200, 100); // face
-    ellipse(x - 50, y - 50, 40, 40); // left eye socket
-    ellipse(x + 50, y - 50, 40, 40); // right eye socket
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// face</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> <span class="c1">// left eye socket</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> <span class="c1">// right eye socket</span>
 
-    fill(255, 255, 255); // for the whites of the eyes!
-    ellipse(x - 50, y - 50, 30, 30); // left eyeball
-    ellipse(x + 50, y - 50, 30, 30); // right eyeball
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// for the whites of the eyes!</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span> <span class="c1">// left eyeball</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span> <span class="c1">// right eyeball</span>
 
-    fill(0, 0, 0); // for the mouth and eye pupils
-    ellipse(x, y, 120, 60); // mouth
-    rect(x-55, y-53, 10, 10); // left pupil
-    rect(x+45, y-53, 10, 10); // right pupil
-}
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// for the mouth and eye pupils</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span> <span class="c1">// mouth</span>
+    <span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="mi">53</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// left pupil</span>
+    <span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="mi">45</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="mi">53</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// right pupil</span>
+<span class="p">}</span>
 
-// renders the frog images
-void draw()
-{
-    froggy(210, 260);
-}
+<span class="c1">// renders the frog images</span>
+<span class="k">void</span> <span class="nx">draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">froggy</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
+<span class="p">}</span>
 
-&lt;/script&gt;
-&lt;canvas id=&quot;mycanvas&quot;&gt;&lt;/canvas&gt;
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mycanvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <h2 id="animation-with-pictures">Animation with pictures</h2>
 <ul>
 <li>Use draw function.</li>
 </ul>
-<pre class="javascript"><code>void function_name()
-{
-    // contents
-}
+<div class="highlight"><pre><span></span><span class="k">void</span> <span class="nx">function_name</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// contents</span>
+<span class="p">}</span>
 
-void draw()
-{
-    function_name();
-}</code></pre>
+<span class="k">void</span> <span class="nx">draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">function_name</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>Also,</p>
-<pre class="javascript"><code>var function_name = function(args)
-{
-    // contents
-}
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">function_name</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// contents</span>
+<span class="p">}</span>
 
-var draw = function()
-{
-    function_name(args);
-}</code></pre>
+<span class="kd">var</span> <span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">function_name</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="while-making-proportional-shapes">While making proportional shapes,</h2>
 <ul>
 <li>Replace all distances and measurements as a multiple of just a few variables.</li>
 </ul>
 <p>Example.</p>
-<pre class="javascript"><code>// bear
-void brown_bear()
-{
-    noStroke();
-    var x = 200;
-    var y = 200;
-    var faceSize = 200;
-    var eyeSize = faceSize / 8;
+<div class="highlight"><pre><span></span><span class="c1">// bear</span>
+<span class="k">void</span> <span class="nx">brown_bear</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">noStroke</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">faceSize</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">eyeSize</span> <span class="o">=</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
 
-    // ears
-    var earSize=faceSize*1/2;
-    fill(89, 52, 17);
-    ellipse(x-faceSize*2/5, y-faceSize*2/5, earSize, earSize);
-    ellipse(x+faceSize*2/5, y-faceSize*2/5, earSize, earSize);
+    <span class="c1">// ears</span>
+    <span class="kd">var</span> <span class="nx">earSize</span><span class="o">=</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">89</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">17</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">);</span>
 
-    // face
-    fill(163, 113, 5);
-    ellipse(x, y, faceSize, faceSize);
+    <span class="c1">// face</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">163</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">);</span>
 
-    //eyes
-    fill(0, 0, 0);
-    ellipse(x - faceSize / 4, y - faceSize / 8, eyeSize, eyeSize);
-    ellipse(x + faceSize / 4, y - faceSize / 8, eyeSize, eyeSize);
+    <span class="c1">//eyes</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
 
-    //nose
-    fill(89, 52, 20);
-    ellipse(x, y+faceSize/8, faceSize*4/15, faceSize/5);
+    <span class="c1">//nose</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">89</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">faceSize</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="nx">faceSize</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">15</span><span class="p">,</span> <span class="nx">faceSize</span><span class="o">/</span><span class="mi">5</span><span class="p">);</span>
 
-}</code></pre>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="text">Text</h2>
-<pre class="javascript"><code>fill(0, 13, 255); // colour
-textSize(38);     // text size
-textFont(createFont(&quot;Papyrus&quot;, 0), 20); // to change font
-text(&quot;Sophia&quot;+&quot; &quot;+&quot;Trainer&quot;, 99, 96); // write text at the location</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// colour</span>
+<span class="nx">textSize</span><span class="p">(</span><span class="mi">38</span><span class="p">);</span>     <span class="c1">// text size</span>
+<span class="nx">textFont</span><span class="p">(</span><span class="nx">createFont</span><span class="p">(</span><span class="s2">&quot;Papyrus&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">20</span><span class="p">);</span> <span class="c1">// to change font</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Sophia&quot;</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="s2">&quot;Trainer&quot;</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">96</span><span class="p">);</span> <span class="c1">// write text at the location</span>
+</pre></div>
+
 <h2 id="mouse-pointer-positions">Mouse Pointer positions</h2>
 <p><code>mouseX</code> and <code>mouseY</code> are the mouse position variables.</p>
-<pre class="javascript"><code>var myName = &quot;Sophia&quot;;
-var message = myName + &quot;!!!&quot;;
-text(message, mouseX, mouseY); // using mouse positions</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myName</span> <span class="o">=</span> <span class="s2">&quot;Sophia&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">myName</span> <span class="o">+</span> <span class="s2">&quot;!!!&quot;</span><span class="p">;</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span> <span class="c1">// using mouse positions</span>
+</pre></div>
+
 <p>Example: Code to mark the mouse position and show it’s coordinates</p>
-<pre class="javascript"><code>
-void mouse_capture()
-{
-    background(255, 255, 255);
-    var label = &quot;(&quot; + mouseX + &quot;,&quot; + mouseY + &quot;)&quot;;
-    ellipse(mouseX, mouseY, 12, 12);
-    text(label, mouseX, mouseY);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">void</span> <span class="nx">mouse_capture</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">background</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nx">mouseX</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">mouseY</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span> <span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="using-functions">Using functions</h2>
-<pre class="javascript"><code>// function definition
-var drawWinston = function(faceSize, xpos, ypos)
-{
-    noStroke();
+<div class="highlight"><pre><span></span><span class="c1">// function definition</span>
+<span class="kd">var</span> <span class="nx">drawWinston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">faceSize</span><span class="p">,</span> <span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">noStroke</span><span class="p">();</span>
 
-    // var faceSize = 300;
-    var mouthSize = 1/2 * faceSize;
-    var eyeSize = 2/15 * faceSize;
+    <span class="c1">// var faceSize = 300;</span>
+    <span class="kd">var</span> <span class="nx">mouthSize</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">eyeSize</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">;</span>
 
-    var x = xpos;
-    var y = ypos;
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">xpos</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">ypos</span><span class="p">;</span>
 
-    // face
-    fill(255, 255, 0);
-    ellipse(x, y, faceSize, faceSize);
+    <span class="c1">// face</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">);</span>
 
-    // eyes
-    fill(46, 46, 41);
-    ellipse(x - 1/6 * faceSize, y - 1/6 * faceSize, eyeSize, eyeSize);
-    ellipse(x + 1/3 * faceSize, y - 1/5 * faceSize, eyeSize, eyeSize);
+    <span class="c1">// eyes</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
 
-    // mouth
-    fill(252, 65, 65);
-    ellipse(x + 1/6 * faceSize, y + 2/15 * faceSize, mouthSize, mouthSize);
-}
-// function call
-drawWinston(300, 200, 200);</code></pre>
+    <span class="c1">// mouth</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">252</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">65</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">mouthSize</span><span class="p">,</span> <span class="nx">mouthSize</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// function call</span>
+<span class="nx">drawWinston</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+
 <p>One can use <code>void</code> keyword as well.</p>
 <h2 id="return-value-of-functions">Return value of functions</h2>
-<pre class="javascript"><code>var calcTotalDonuts = function(numYears, no_per_day)
-{
-    return no_per_day * 365 * numYears;
-};</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">calcTotalDonuts</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">numYears</span><span class="p">,</span> <span class="nx">no_per_day</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">no_per_day</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="nx">numYears</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
 <h2 id="local-and-global-variables">Local and Global Variables</h2>
-<pre class="javascript"><code>var lifeInches = 20; // global variable
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">lifeInches</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// global variable</span>
 
-var calcInches = function(startAge, endAge, inchesPerYear)
-{
-    var totalInches = inchesPerYear * (endAge - startAge); // Local variable
-    lifeInches += totalInches;
-    return totalInches;
-};
+<span class="kd">var</span> <span class="nx">calcInches</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">startAge</span><span class="p">,</span> <span class="nx">endAge</span><span class="p">,</span> <span class="nx">inchesPerYear</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">totalInches</span> <span class="o">=</span> <span class="nx">inchesPerYear</span> <span class="o">*</span> <span class="p">(</span><span class="nx">endAge</span> <span class="o">-</span> <span class="nx">startAge</span><span class="p">);</span> <span class="c1">// Local variable</span>
+    <span class="nx">lifeInches</span> <span class="o">+=</span> <span class="nx">totalInches</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">totalInches</span><span class="p">;</span>
+<span class="p">};</span>
 
-fill(255, 0, 0);
+<span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 
-text(&quot;From 0-8 years:&quot;, 10, 20);
-text(calcInches(0, 8, 2.5), 10, 40);
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;From 0-8 years:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">calcInches</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
 
-text(&quot;From 8-16 years:&quot;, 10, 100);
-text(calcInches(8, 16, 2), 10, 120);
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;From 8-16 years:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">calcInches</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">120</span><span class="p">);</span>
 
-text(&quot;Total grown over life:&quot;, 10, 168);
-text(lifeInches, 10, 200);</code></pre>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Total grown over life:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">168</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">lifeInches</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+
 <h2 id="mouse-moved-mousemoved-function">Mouse Moved <code>mouseMoved</code> function</h2>
 <p>This is an inbuilt function with no definition, called by other <code>ProcessingJS</code> functions again and again. Based on the definition it is built using the mouse cursor variables, the function performs the contents specified.</p>
-<pre class="javascript"><code>mouseMoved = function()
-{
-    fill(mouseX, mouseY, mouseY);
-    ellipse(mouseX, mouseY, 10, 10);
-};</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">mouseMoved</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
 <h2 id="if-statement"><code>if</code> statement</h2>
 <p>A moving ball reaches the edges and reverses direction. Speeds are random.</p>
-<pre class="javascript"><code>// position of the ball
-var y = random(0, 400);
-var x = random(0, 400);
-// how far the ball moves every time
-var speedx = 2;
-var speedy = 2;
+<div class="highlight"><pre><span></span><span class="c1">// position of the ball</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="c1">// how far the ball moves every time</span>
+<span class="kd">var</span> <span class="nx">speedx</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">speedy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
-draw = function() {
-    background(127, 204, 255);
+<span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">background</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
 
-    fill(66, 66, 66);
-    ellipse(x, y, 50, 50);
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 
-    if (y &gt; 375)
-    {
-        speedy = - random(0, 10);
-    }
-    if (y &lt; 25)
-    {
-        speedy =  random(0, 10);
-    }
-    if (x &gt; 375)
-    {
-        speedx = - random(0, 10);
-    }
-    if (x &lt; 25)
-    {
-        speedx =  random(0, 10);
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">375</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedy</span> <span class="o">=</span> <span class="o">-</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedy</span> <span class="o">=</span>  <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">375</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedx</span> <span class="o">=</span> <span class="o">-</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedx</span> <span class="o">=</span>  <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    // move the ball
-    x = x + speedx;
-    y = y + speedy;
-};</code></pre>
+    <span class="c1">// move the ball</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">speedx</span><span class="p">;</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">speedy</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
 <h2 id="mouseispressed-keyword"><code>mouseIsPressed</code> keyword</h2>
 <p>This is a boolean keyword. If the mouse is pressed, then it will return a <code>true</code> value, else a <code>false</code> value.</p>
-<pre class="javascript"><code>draw = function()
-{
-    if(mouseIsPressed)
-    {
-        ellipse(mouseX, mouseY, 20, 20);
-    }
-};</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">mouseIsPressed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
 <h2 id="relational-operations">Relational Operations</h2>
-<pre class="javascript"><code>x &gt; y;
-x &gt;= y;
-x &lt; y;
-x &lt;= y;
-x !== y; // yeah, double equals
-x === y; // yeah, triple equals</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&gt;=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&lt;=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">!==</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// yeah, double equals</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// yeah, triple equals</span>
+</pre></div>
+
 <h2 id="boolean-operations">Boolean operations</h2>
-<pre class="javascript"><code>if (number &lt; 50) // boolean condition
-{
-    // statements
-}
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">number</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">// boolean condition</span>
+<span class="p">{</span>
+    <span class="c1">// statements</span>
+<span class="p">}</span>
 
-if (x &gt; y) // some relational expression
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">)</span> <span class="c1">// some relational expression</span>
 
-var day = true
-if(day)  // relational expression using boolean variable
+<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">day</span><span class="p">)</span>  <span class="c1">// relational expression using boolean variable</span>
 
-mouseX &lt; 200 &amp;&amp; mouseY &lt; 200 // logical and
-mouseX === 200 || mouseY === 200 // logical or</code></pre>
+<span class="nx">mouseX</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="nx">mouseY</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="c1">// logical and</span>
+<span class="nx">mouseX</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">mouseY</span> <span class="o">===</span> <span class="mi">200</span> <span class="c1">// logical or</span>
+</pre></div>
+
 <h2 id="number-functions">Number functions</h2>
-<pre class="javascript"><code>var number = random(0, 10); // generates a random number between 0 and 10
-var integer = round(number) // rounds up if number&#39;s fraction part is greater than half, rounds down if the number&#39;s fraction part is less than half.</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// generates a random number between 0 and 10</span>
+<span class="kd">var</span> <span class="nx">integer</span> <span class="o">=</span> <span class="nx">round</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="c1">// rounds up if number&#39;s fraction part is greater than half, rounds down if the number&#39;s fraction part is less than half.</span>
+</pre></div>
+
 <h2 id="ifelse-ifelse-statement"><code>if/else if/else</code> statement</h2>
-<pre class="javascript"><code>if (integer === 0)
-{
-    fill(132, 0, 255);
-}
-else if (integer === 1)
-{
-    fill(255, 255, 0);
-}
-else if (integer === 2)
-{
-    fill(255, 0, 0);
-}
-else
-{
-    fill(0, 196, 255);
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="println-statement"><code>println</code> statement</h2>
-<pre class="javascript"><code>println(&quot;I am a print statement&quot;); // prints in a new line
-print(&quot;I am the real print statement&quot;); // prints there itself.</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;I am a print statement&quot;</span><span class="p">);</span> <span class="c1">// prints in a new line</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;I am the real print statement&quot;</span><span class="p">);</span> <span class="c1">// prints there itself.</span>
+</pre></div>
+
 <h2 id="while-loop"><code>while</code> loop</h2>
-<pre class="javascript"><code>while(x &lt; 400)
-{
-    print(x, x, 10);
-    x += 50;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="importing-and-using-images">Importing and Using images</h2>
-<pre class="javascript"><code>var image_variable = getImage(&quot;path/to/image&quot;);
-image(image_variable, xpos, ypos);</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image_variable</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;path/to/image&quot;</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">(</span><span class="nx">image_variable</span><span class="p">,</span> <span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">);</span>
+</pre></div>
+
 <h2 id="for-loop"><code>for</code> loop</h2>
-<pre class="javascript"><code>// for(init/start; how long/condition; change/increment)
-for(i=0; i&lt;10; i++)
-{
-    // statements
-}
-// nested for loops
-for(i=0; i&lt;10; i++)
-{
-    for(j=0; j&lt;10; j++)
-    {
-        // statements
-    }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="c1">// for(init/start; how long/condition; change/increment)</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// statements</span>
+<span class="p">}</span>
+<span class="c1">// nested for loops</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// statements</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="short-hand-operators">Short hand operators</h2>
-<pre class="javascript"><code>x += 20;
-y -= 10;
-z *= 20;
-x /= 5;
-x++;
-++x;
-y--;
---y;</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">x</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">y</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">z</span> <span class="o">*=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">/=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+<span class="o">++</span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">y</span><span class="o">--</span><span class="p">;</span>
+<span class="o">--</span><span class="nx">y</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="modes">Modes</h2>
-<pre class="javascript"><code>imageMode(CENTER); // put the image at centre
-angleMode(DEGREE); // set angle to degrees</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">imageMode</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span> <span class="c1">// put the image at centre</span>
+<span class="nx">angleMode</span><span class="p">(</span><span class="nx">DEGREE</span><span class="p">);</span> <span class="c1">// set angle to degrees</span>
+</pre></div>
+
 <h2 id="arrays">Arrays</h2>
 <p>For full reference: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>
-<pre class="javascript"><code>var names = [&quot;Krishna&quot;, &quot;Bharathi&quot;, &quot;Uday&quot;];
-// index = 0, 1, 2, ...
-println(names.length); // array length
-println(names[1]); // access element 2
-names.push(&quot;Muki&quot;); // append a new element to the array
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Krishna&quot;</span><span class="p">,</span> <span class="s2">&quot;Bharathi&quot;</span><span class="p">,</span> <span class="s2">&quot;Uday&quot;</span><span class="p">];</span>
+<span class="c1">// index = 0, 1, 2, ...</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// array length</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// access element 2</span>
+<span class="nx">names</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Muki&quot;</span><span class="p">);</span> <span class="c1">// append a new element to the array</span>
 
-var numbers = [
-                    [1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9]
-              ]; // 2d array
-println(numbers[1][1]) // prints 5</code></pre>
+<span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+              <span class="p">];</span> <span class="c1">// 2d array</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1">// prints 5</span>
+</pre></div>
+
 <h2 id="objects">Objects</h2>
-<pre class="javascript"><code>
-/*
-    Creating objects. Use key:value pairs.
-    This is also called as object literal.
-    Because you are literally creating an object from
-    scratch instead of using a template.
-*/
-var winston = {
-  age: 19,
-  eyes: &quot;black&quot;,
-  likes: [&quot;programming&quot;, &quot;being programmed&quot;],
-  isCool: true,
-  birthplace: {
-      city: &quot;Mountain View&quot;,
-      state: &quot;California&quot;
-  }
-};
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Creating objects. Use key:value pairs.</span>
+<span class="cm">    This is also called as object literal.</span>
+<span class="cm">    Because you are literally creating an object from</span>
+<span class="cm">    scratch instead of using a template.</span>
+<span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">winston</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+  <span class="nx">eyes</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+  <span class="nx">likes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;programming&quot;</span><span class="p">,</span> <span class="s2">&quot;being programmed&quot;</span><span class="p">],</span>
+  <span class="nx">isCool</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">birthplace</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+      <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;California&quot;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
 
-// Accessing object values.
-fill(0, 0, 0);
-textSize(16);
-text(&quot;All about Winston:&quot;, 10, 30);
-text(&quot;Winston is &quot; + winston.age + &quot; years old&quot;, 10, 50);
-text(&quot;Winston has &quot; + winston.eyes + &quot; eyes&quot;, 10, 70);
-text(&quot;Winston likes &quot; + winston.likes[0] + &quot; and &quot; +  winston.likes[1], 10, 90);
-text(&quot;Winston was born in &quot; + winston.birthplace.city + &quot;, &quot; + winston.birthplace.state, 10, 110);
+<span class="c1">// Accessing object values.</span>
+<span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">textSize</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;All about Winston:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston is &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot; years old&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston has &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">eyes</span> <span class="o">+</span> <span class="s2">&quot; eyes&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston likes &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">likes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span>  <span class="nx">winston</span><span class="p">.</span><span class="nx">likes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">90</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston was born in &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">birthplace</span><span class="p">.</span><span class="nx">city</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">birthplace</span><span class="p">.</span><span class="nx">state</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">110</span><span class="p">);</span>
 
-// change object entry
-winston.age = 21;
-winston.wife = &quot;winnefer&quot;;</code></pre>
+<span class="c1">// change object entry</span>
+<span class="nx">winston</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+<span class="nx">winston</span><span class="p">.</span><span class="nx">wife</span> <span class="o">=</span> <span class="s2">&quot;winnefer&quot;</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="array-of-objects">Array of Objects</h2>
-<pre class="javascript"><code>// Array of objects. - Each entry of an array is an object with two variables.
-var positions = [
-    {x: 99, y: 117},
-    {x: 294, y: 117},
-    {x: 101, y: 316},
-    {x: 294, y: 316}  
-];
+<div class="highlight"><pre><span></span><span class="c1">// Array of objects. - Each entry of an array is an object with two variables.</span>
+<span class="kd">var</span> <span class="nx">positions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">99</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">117</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">294</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">117</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">101</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">316</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">294</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">316</span><span class="p">}</span>  
+<span class="p">];</span>
 
-// use the length method to get the length of objects too!
-for (var i = 0; i &lt; positions.length; i++) {
-    drawWinston(positions[i].x, positions[i].y);
-}</code></pre>
+<span class="c1">// use the length method to get the length of objects too!</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">positions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">drawWinston</span><span class="p">(</span><span class="nx">positions</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">x</span><span class="p">,</span> <span class="nx">positions</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="creating-an-abstract-object---constructor">Creating an Abstract Object - constructor</h2>
 <p>Essentially, create an object template to fill the object values later.</p>
-<pre class="javascript"><code>// template for an object - constructor funtion.
-// this is called whenever a new object is called.
-var Winston = function(nickname, age, x, y)
-{
-    // this = refers to the variables inside the constructor.
-    this.nickname = nickname;
-    this.age = age;
-    this.x = x;
-    this.y = y;
-}
+<div class="highlight"><pre><span></span><span class="c1">// template for an object - constructor funtion.</span>
+<span class="c1">// this is called whenever a new object is called.</span>
+<span class="kd">var</span> <span class="nx">Winston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this = refers to the variables inside the constructor.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">=</span> <span class="nx">nickname</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
 
-// creating a winston object - object instance
-var WinstonTeen = new Winston(&quot;Teenage Winston&quot;, 15, 20, 50);
-var WinstonAdult = new Winston(&quot;Mr Winston&quot;, 30, 229, 50);</code></pre>
+<span class="c1">// creating a winston object - object instance</span>
+<span class="kd">var</span> <span class="nx">WinstonTeen</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Winston</span><span class="p">(</span><span class="s2">&quot;Teenage Winston&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">WinstonAdult</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Winston</span><span class="p">(</span><span class="s2">&quot;Mr Winston&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</pre></div>
+
 <h2 id="object-methods">Object Methods</h2>
 <p>Functions that are attached to objects.</p>
-<pre class="javascript"><code>// method associated with Winston object to draw it.
-Winston.prototype.draw = function() {
-    fill(255, 0, 0);
-    var img = getImage(&quot;creatures/Winston&quot;);
-    image(img, this.x, this.y);
-    var txt = this.nickname + &quot;, &quot; + this.age;
-    text(txt, this.x+20, this.y-10);    
-};
+<div class="highlight"><pre><span></span><span class="c1">// method associated with Winston object to draw it.</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Winston&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>    
+<span class="p">};</span>
 
-// Calling the method for an object.
-WinstonTeen.draw();</code></pre>
+<span class="c1">// Calling the method for an object.</span>
+<span class="nx">WinstonTeen</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+</pre></div>
+
 <h2 id="object-inheritance">Object Inheritance</h2>
-<pre class="javascript"><code>// base object constructor
-var Creature = function(nickname, age, x, y)
-{
-    this.nickname = nickname;
-    this.age = age + &quot;yrs old&quot;;
-    this.x = x;
-    this.y = y;
-};
-// talk method to the base constructor
-Creature.prototype.talk = function()
-{
-    text(&quot;Hello, World!&quot;, this.x+20, this.y+140);  
-};
+<div class="highlight"><pre><span></span><span class="c1">// base object constructor</span>
+<span class="kd">var</span> <span class="nx">Creature</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">=</span> <span class="nx">nickname</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot;yrs old&quot;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// talk method to the base constructor</span>
+<span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">talk</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="mi">140</span><span class="p">);</span>  
+<span class="p">};</span>
 
-// Setup for inheriting an Object to a new one
-// This line initializes a new object and then defines
-// additional information for modification.
-var Hopper = function(nickname, age, x, y)
-{
-    Creature.call(this, nickname, age, x, y);
-};
-// New Object Inherited from creature
-// prototype chain
-Hopper.prototype = Object.create(Creature.prototype);
-// Additional method - to draw the animal
-Hopper.prototype.draw = function()
-{
-    fill(217, 90, 0);
-    var img = getImage(&quot;creatures/Hopper-Happy&quot;);
-    image(img, this.x, this.y);
-    var txt = this.nickname + &quot;, &quot; + this.age;
-    text(txt, this.x+10, this.y-7);  
-};
-// Another additional method - to call hooray!
-Hopper.prototype.hooray = function()
-{
-   text(&quot;Hooooray!!!&quot;, this.x+29, this.y+140);  
-};
+<span class="c1">// Setup for inheriting an Object to a new one</span>
+<span class="c1">// This line initializes a new object and then defines</span>
+<span class="c1">// additional information for modification.</span>
+<span class="kd">var</span> <span class="nx">Hopper</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">Creature</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">// New Object Inherited from creature</span>
+<span class="c1">// prototype chain</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="c1">// Additional method - to draw the animal</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">217</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Hopper-Happy&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">7</span><span class="p">);</span>  
+<span class="p">};</span>
+<span class="c1">// Another additional method - to call hooray!</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hooray</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hooooray!!!&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">29</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="mi">140</span><span class="p">);</span>  
+<span class="p">};</span>
 
-// Another Object based on Creature object
+<span class="c1">// Another Object based on Creature object</span>
 
-// Initialization
-var Winston = function(nickname, age, x, y)
-{
-    Creature.call(this, nickname, age, x, y);
-};
+<span class="c1">// Initialization</span>
+<span class="kd">var</span> <span class="nx">Winston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">Creature</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">};</span>
 
-// inheritance. Prototype chain
-Winston.prototype = Object.create(Creature.prototype);
+<span class="c1">// inheritance. Prototype chain</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
 
-// Additional function
-Winston.prototype.draw = function()
-{
-    fill(255, 0, 0);
-    var img = getImage(&quot;creatures/Winston&quot;);
-    image(img, this.x, this.y);
-    var txt = this.nickname + &quot;, &quot; + this.age;
-    text(txt, this.x+20, this.y-10);  
-};</code></pre>
+<span class="c1">// Additional function</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Winston&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>  
+<span class="p">};</span>
+</pre></div>
+
 <h2 id="more-places-to-learn-javascript">More Places to Learn JavaScript</h2>
 <ul>
 <li><a href="https://teamtreehouse.com/library/javascript-basics">Treehouse</a></li>
@@ -662,7 +721,7 @@ Winston.prototype.draw = function()
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -683,12 +742,12 @@ Winston.prototype.draw = function()
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

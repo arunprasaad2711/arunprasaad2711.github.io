@@ -133,92 +133,94 @@
 <h2 id="what-is-this">What is this?</h2>
 <p>This is a <code>p5js</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
 <h2 id="source-code">Source Code</h2>
-<pre class="javascript"><code>let time = 0;
-let wave_x = [];
-let wave_y = [];
-var slider_n;
-var slider_d;
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">wave_x</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">wave_y</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">slider_n</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">slider_d</span><span class="p">;</span>
 
-function setup() {
-    var canvas = createCanvas(600, 400);
-    var button = createButton(&quot;reset&quot;);
-    button.mousePressed(resetSketch);
-    button.position(35, 35);
+<span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">createButton</span><span class="p">(</span><span class="s2">&quot;reset&quot;</span><span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">mousePressed</span><span class="p">(</span><span class="nx">resetSketch</span><span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
 
   
-    // Numerator Slider variables
-    slider_n = createSlider(0, 10, 2);
-    slider_n.position(100, 25);
-    slider_n.style(&#39;width&#39;, &#39;80px&#39;);
+    <span class="c1">// Numerator Slider variables</span>
+    <span class="nx">slider_n</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="nx">slider_n</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="nx">slider_n</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;80px&#39;</span><span class="p">);</span>
   
-    // Denominator Slider variables
-    slider_d = createSlider(0, 10, 1);
-    slider_d.position(100, 50);
-    slider_d.style(&#39;width&#39;, &#39;80px&#39;);
-}
+    <span class="c1">// Denominator Slider variables</span>
+    <span class="nx">slider_d</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">slider_d</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+    <span class="nx">slider_d</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;80px&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 
-function draw() {
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
 
-    background(125);
-    strokeWeight(1);
-    translate(200, 200);
+    <span class="nx">background</span><span class="p">(</span><span class="mi">125</span><span class="p">);</span>
+    <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nx">translate</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
   
-    const n = slider_n.value();
-    const d = slider_d.value();
-    const k = n/d;
-    const radius = 100;
+    <span class="kr">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">slider_n</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">slider_d</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">k</span> <span class="o">=</span> <span class="nx">n</span><span class="o">/</span><span class="nx">d</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">radius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 
-    fill(25);
-    stroke(0);
-    text(&#39;Rose Curves or Rhodonea Curves&#39;, 0, -180);
-    text(&#39;Numerator, n = &#39;+ n +&#39;; Denominator, d = &#39;+ d +&#39;; k = n/d = &#39;+k, 0, -160);
-    text(&#39;Move the sliders on the left to adjust the numerator and denonimator.&#39;, 0, -140);
-    text(&#39;Press the reset button when the slider value changes.&#39;, 0, -120);
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Rose Curves or Rhodonea Curves&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Numerator, n = &#39;</span><span class="o">+</span> <span class="nx">n</span> <span class="o">+</span><span class="s1">&#39;; Denominator, d = &#39;</span><span class="o">+</span> <span class="nx">d</span> <span class="o">+</span><span class="s1">&#39;; k = n/d = &#39;</span><span class="o">+</span><span class="nx">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">160</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Move the sliders on the left to adjust the numerator and denonimator.&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">140</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Press the reset button when the slider value changes.&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">);</span>
 
-    let x = 0;
-    let y = 0;
-    let ox = 0;
-    let oy = 0;
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">ox</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">oy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    fill(255, 0, 0);
-    circle(ox, oy, 10);
-    noFill();
-    circle(ox, oy, 2*radius);
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">noFill</span><span class="p">();</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="nx">radius</span><span class="p">);</span>
   
-    let phase = 0.0*HALF_PI;
+    <span class="kd">let</span> <span class="nx">phase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="nx">HALF_PI</span><span class="p">;</span>
     
-    x += radius * cos(k * time - phase)*cos(time - phase);
-    y += radius * cos(k * time - phase)*sin(time - phase);
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">k</span> <span class="o">*</span> <span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">)</span><span class="o">*</span><span class="nx">cos</span><span class="p">(</span><span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">);</span>
+    <span class="nx">y</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">k</span> <span class="o">*</span> <span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">)</span><span class="o">*</span><span class="nx">sin</span><span class="p">(</span><span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">);</span>
 
-    wave_x.push(x);
-    wave_y.push(y);
+    <span class="nx">wave_x</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="nx">wave_y</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
   
-    var last = wave_x.length - 1;
+    <span class="kd">var</span> <span class="nx">last</span> <span class="o">=</span> <span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
     
-    fill(0, 0, 255);
-    stroke(0, 0, 255);
-    fill(0, 255, 0);
-    line(ox, oy, x, y);
-    circle(wave_x[last], wave_y[last], 10);
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">line</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">wave_x</span><span class="p">[</span><span class="nx">last</span><span class="p">],</span> <span class="nx">wave_y</span><span class="p">[</span><span class="nx">last</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
 
-    beginShape();
-    noFill();
-    for (let i = 0; i &lt; wave_x.length; i++){
-        vertex(wave_x[i], wave_y[i]);
-    }
-    endShape();
+    <span class="nx">beginShape</span><span class="p">();</span>
+    <span class="nx">noFill</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">vertex</span><span class="p">(</span><span class="nx">wave_x</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">wave_y</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="nx">endShape</span><span class="p">();</span>
 
-    time += 0.05;
+    <span class="nx">time</span> <span class="o">+=</span> <span class="mf">0.05</span><span class="p">;</span>
 
-    if (wave_x.length &gt; 2000){
-        resetSketch();
-    }
-}
+    <span class="k">if</span> <span class="p">(</span><span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">){</span>
+        <span class="nx">resetSketch</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-function resetSketch() {
-    wave_x = [];
-    wave_y = [];
-}</code></pre>
+<span class="kd">function</span> <span class="nx">resetSketch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">wave_x</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">wave_y</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="status">Status</h2>
 <p>All done! Works like a charm!.</p>
 
@@ -255,7 +257,7 @@ function resetSketch() {
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -276,12 +278,12 @@ function resetSketch() {
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

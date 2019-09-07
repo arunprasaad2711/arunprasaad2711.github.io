@@ -152,53 +152,57 @@
 <img src="eight_note.jpg" title="fig:" alt="Eight Note" />
 </div>
 <h3 id="step-1-extract-the-points-using-python-opencv">Step 1 : Extract the points using Python OpenCV</h3>
-<pre class="python"><code>import cv2
-import numpy as np
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-# Load the image
-image = cv2.imread(&#39;eight_note.jpg&#39;)
+<span class="c1"># Load the image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;eight_note.jpg&#39;</span><span class="p">)</span>
 
-# make it grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+<span class="c1"># make it grayscale</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
-# Find Canny edges
-edged = cv2.Canny(gray, 30, 200)
+<span class="c1"># Find Canny edges</span>
+<span class="n">edged</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
-# Finding Contours
-contours, hierarchy = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+<span class="c1"># Finding Contours</span>
+<span class="n">contours</span><span class="p">,</span> <span class="n">hierarchy</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">edged</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
 
-# Remove extra array axes
-new_contours = np.squeeze(contours)
+<span class="c1"># Remove extra array axes</span>
+<span class="n">new_contours</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span>
 
-# Extract the points
-points = []
-for point in new_contours:
-    temp = {&#39;x&#39;: point[0], &#39;y&#39;: point[1]}
-    points.append(temp)
+<span class="c1"># Extract the points</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">new_contours</span><span class="p">:</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+    <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
 
-# Print them for viewing
-# print(points)
+<span class="c1"># Print them for viewing</span>
+<span class="c1"># print(points)</span>
 
-# Write the points as a javascript file.
-file_path = &quot;logo.js&quot; ## your path variable
-with open(file_path, &#39;w&#39;) as f:
-    f.write(&quot;%s\n&quot; % &#39;let drawing = [&#39;)
-    for item in points:
-        f.write(&quot;%s,\n&quot; % item)
-    f.write(&quot;%s\n&quot; % &#39;];&#39;)</code></pre>
+<span class="c1"># Write the points as a javascript file.</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;logo.js&quot;</span> <span class="c1">## your path variable</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s1">&#39;let drawing = [&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">item</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s1">&#39;];&#39;</span><span class="p">)</span>
+</pre></div>
+
 <p>The <code>logo.js</code> file will look like this:</p>
-<pre class="javascript"><code>let drawing = [
-{&#39;x&#39;: 197, &#39;y&#39;: 21},
-{&#39;x&#39;: 196, &#39;y&#39;: 22},
-{&#39;x&#39;: 195, &#39;y&#39;: 22},
-{&#39;x&#39;: 195, &#39;y&#39;: 23},
-{&#39;x&#39;: 195, &#39;y&#39;: 24},
-{&#39;x&#39;: 195, &#39;y&#39;: 25},
-.....
-{&#39;x&#39;: 200, &#39;y&#39;: 21},
-{&#39;x&#39;: 199, &#39;y&#39;: 21},
-{&#39;x&#39;: 198, &#39;y&#39;: 21},
-];</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">drawing</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">197</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">21</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">196</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">22</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">195</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">22</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">195</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">23</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">195</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">24</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">195</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">25</span><span class="p">},</span>
+<span class="p">.....</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">21</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">199</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">21</span><span class="p">},</span>
+<span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="o">:</span> <span class="mi">198</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="o">:</span> <span class="mi">21</span><span class="p">},</span>
+<span class="p">];</span>
+</pre></div>
+
 <h3 id="step-2---write-the-dft-function-using-p5.js">Step 2 - Write the DFT function using <code>p5.js</code></h3>
 <p>The Discrete Fourier Transform (DFT) of <span class="math inline">\(N\)</span> complex numbers <span class="math inline">\(\{x_n\} := x_0, x_1, \dots, x_{n-1}\)</span> is another sequence of <span class="math inline">\(N\)</span> complex numbers <span class="math inline">\(\{X_n\} := X_0, X_1, \dots, X_{n-1}\)</span> given by</p>
 <p><span class="math display">\[
@@ -208,112 +212,116 @@ X_k &amp;= \sum_{n=0}^{N-1}x_n.e^{-\frac{i2\pi}{N}kn}\\
 \end{align*}
 \]</span></p>
 <p>The equivalent source code is written in the file <code>fourier.js</code>.</p>
-<pre class="javascript"><code>function dft(x)
-{
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">dft</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="p">{</span>
     
-    let X = [];
-    const N = x.length;
+    <span class="kd">let</span> <span class="nx">X</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
   
-    for (let k = 0; k &lt; N; k++)
-    {
-        let re = 0;
-        let im = 0;
-        for (let n = 0; n &lt; N; n++)
-        {
-            const phi = (TWO_PI * k * n) / N;
-            re += x[n] * cos(phi);
-            im -= x[n] * sin(phi);
-        }
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">re</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">im</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kr">const</span> <span class="nx">phi</span> <span class="o">=</span> <span class="p">(</span><span class="nx">TWO_PI</span> <span class="o">*</span> <span class="nx">k</span> <span class="o">*</span> <span class="nx">n</span><span class="p">)</span> <span class="o">/</span> <span class="nx">N</span><span class="p">;</span>
+            <span class="nx">re</span> <span class="o">+=</span> <span class="nx">x</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">phi</span><span class="p">);</span>
+            <span class="nx">im</span> <span class="o">-=</span> <span class="nx">x</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">*</span> <span class="nx">sin</span><span class="p">(</span><span class="nx">phi</span><span class="p">);</span>
+        <span class="p">}</span>
       
-        re = re / N;
-        im = im / N;
+        <span class="nx">re</span> <span class="o">=</span> <span class="nx">re</span> <span class="o">/</span> <span class="nx">N</span><span class="p">;</span>
+        <span class="nx">im</span> <span class="o">=</span> <span class="nx">im</span> <span class="o">/</span> <span class="nx">N</span><span class="p">;</span>
       
-        let freq = k;
-        let amp = sqrt(re * re + im * im);
-        let phase = atan2(im, re);
+        <span class="kd">let</span> <span class="nx">freq</span> <span class="o">=</span> <span class="nx">k</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">amp</span> <span class="o">=</span> <span class="nx">sqrt</span><span class="p">(</span><span class="nx">re</span> <span class="o">*</span> <span class="nx">re</span> <span class="o">+</span> <span class="nx">im</span> <span class="o">*</span> <span class="nx">im</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">phase</span> <span class="o">=</span> <span class="nx">atan2</span><span class="p">(</span><span class="nx">im</span><span class="p">,</span> <span class="nx">re</span><span class="p">);</span>
         
-        X[k] = {re, im, freq, amp, phase};
-    }
-    return X;
-}</code></pre>
+        <span class="nx">X</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nx">re</span><span class="p">,</span> <span class="nx">im</span><span class="p">,</span> <span class="nx">freq</span><span class="p">,</span> <span class="nx">amp</span><span class="p">,</span> <span class="nx">phase</span><span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">X</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h3 id="step-3---write-the-main-code">Step 3 - Write the main code</h3>
-<pre class="javascript"><code>let x = [];
-let y = [];
-let fourierX = [];
-let fourierY = [];
-let time = 0;
-let path = [];
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">fourierX</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">fourierY</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="p">[];</span>
 
-function setup() {
-  createCanvas(800, 800);
-  const skip = 1;
-  for(let i = 0; i &lt; drawing.length; i+= skip){
-    x[i] = drawing[i].x;
-    y[i] = drawing[i].y;
-  }
+<span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">skip</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">drawing</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">+=</span> <span class="nx">skip</span><span class="p">){</span>
+    <span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">drawing</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">x</span><span class="p">;</span>
+    <span class="nx">y</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">drawing</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">y</span><span class="p">;</span>
+  <span class="p">}</span>
   
-  // for(let i = 0; i &lt; 100; i+= skip){
-  //   x[i] = i;
-  //   y[i] = i;
-  // }
+  <span class="c1">// for(let i = 0; i &lt; 100; i+= skip){</span>
+  <span class="c1">//   x[i] = i;</span>
+  <span class="c1">//   y[i] = i;</span>
+  <span class="c1">// }</span>
   
-  fourierX = dft(x);
-  fourierY = dft(y);
+  <span class="nx">fourierX</span> <span class="o">=</span> <span class="nx">dft</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="nx">fourierY</span> <span class="o">=</span> <span class="nx">dft</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
   
-  fourierX.sort((a, b) =&gt; b.amp - a.amp);
-  fourierY.sort((a, b) =&gt; b.amp - a.amp);
-}
+  <span class="nx">fourierX</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">amp</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">amp</span><span class="p">);</span>
+  <span class="nx">fourierY</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">amp</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">amp</span><span class="p">);</span>
+<span class="p">}</span>
 
-function epiCycle(x, y, rotation, fourier)
-{
-  for (let i = 0; i &lt; fourierY.length; i++)
-  {
-    let prev_x = x;
-    let prev_y = y;
+<span class="kd">function</span> <span class="nx">epiCycle</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">rotation</span><span class="p">,</span> <span class="nx">fourier</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">fourierY</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">prev_x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">prev_y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
     
-    let freq = fourier[i].freq;
-    let radius = fourier[i].amp;
-    let angle = rotation + freq * time + fourier[i].phase;
-    x += radius * cos(angle);
-    y += radius * sin(angle);
+    <span class="kd">let</span> <span class="nx">freq</span> <span class="o">=</span> <span class="nx">fourier</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">freq</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">radius</span> <span class="o">=</span> <span class="nx">fourier</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">amp</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">angle</span> <span class="o">=</span> <span class="nx">rotation</span> <span class="o">+</span> <span class="nx">freq</span> <span class="o">*</span> <span class="nx">time</span> <span class="o">+</span> <span class="nx">fourier</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">phase</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">angle</span><span class="p">);</span>
+    <span class="nx">y</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="p">);</span>
     
-    stroke(255, 100);
-    noFill();
-    ellipse(prev_x, prev_y, radius * 2);
-    stroke(255);
-    line(prev_x, prev_y, x, y);
-  }
-  return createVector(x, y);
-}
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="nx">noFill</span><span class="p">();</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">prev_x</span><span class="p">,</span> <span class="nx">prev_y</span><span class="p">,</span> <span class="nx">radius</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="nx">line</span><span class="p">(</span><span class="nx">prev_x</span><span class="p">,</span> <span class="nx">prev_y</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">createVector</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
 
-function draw() {
-  background(0);
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">background</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   
-  let vx = epiCycle(300, 50, 0, fourierX);
-  let vy = epiCycle(50, 200, HALF_PI, fourierY);
-  let v = createVector(vx.x, vy.y);
+  <span class="kd">let</span> <span class="nx">vx</span> <span class="o">=</span> <span class="nx">epiCycle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">fourierX</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">vy</span> <span class="o">=</span> <span class="nx">epiCycle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">HALF_PI</span><span class="p">,</span> <span class="nx">fourierY</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">(</span><span class="nx">vx</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">vy</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
   
-  path.unshift(v);
+  <span class="nx">path</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
   
-  // translate(200, 0);
-  line(vx.x, vx.y, v.x, v.y);
-  line(vy.x, vy.y, v.x, v.y);
-  beginShape();
-  noFill();
-  for (let i = 0; i &lt; path.length; i++) {
-    vertex(path[i].x, path[i].y);
-  }
-  endShape();
+  <span class="c1">// translate(200, 0);</span>
+  <span class="nx">line</span><span class="p">(</span><span class="nx">vx</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">vx</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+  <span class="nx">line</span><span class="p">(</span><span class="nx">vy</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">vy</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+  <span class="nx">beginShape</span><span class="p">();</span>
+  <span class="nx">noFill</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">path</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">vertex</span><span class="p">(</span><span class="nx">path</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">x</span><span class="p">,</span> <span class="nx">path</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">y</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">endShape</span><span class="p">();</span>
   
-  const dt = TWO_PI / fourierY.length;
-  time += dt;
+  <span class="kr">const</span> <span class="nx">dt</span> <span class="o">=</span> <span class="nx">TWO_PI</span> <span class="o">/</span> <span class="nx">fourierY</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="nx">time</span> <span class="o">+=</span> <span class="nx">dt</span><span class="p">;</span>
   
-  if (time &gt; TWO_PI)
-  {
-    time = 0;
-    path.pop();
-  }
-}</code></pre>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">time</span> <span class="o">&gt;</span> <span class="nx">TWO_PI</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">path</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="status">Status</h2>
 <p>It works pretty slowly! The code is quite slow as it calculates more than 1700 components for <span class="math inline">\(x\)</span> coordinates and another 1700+ components for <span class="math inline">\(y\)</span> coordinates respectively.</p>
 <h2 id="acknowledgement">Acknowledgement</h2>
@@ -352,7 +360,7 @@ function draw() {
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -373,12 +381,12 @@ function draw() {
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

@@ -132,82 +132,87 @@
 <li>Bucky Roberts - thenewboston - YouTube channel</li>
 </ul>
 <h2 id="sample-c-program">Sample C++ Program</h2>
-<pre class="c++"><code>// This is a comment
+<div class="highlight"><pre><span></span><span class="c1">// This is a comment</span>
 
-// This is a pre-processor directive
-// iostream is a &quot;header file&quot; having definitions of functions
-// that would be useful in the program.
-// we are including the header file iostream - input/output stream
-#include &lt;iostream&gt;
+<span class="c1">// This is a pre-processor directive</span>
+<span class="c1">// iostream is a &quot;header file&quot; having definitions of functions</span>
+<span class="c1">// that would be useful in the program.</span>
+<span class="c1">// we are including the header file iostream - input/output stream</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-// std = standard library. 
-// This includes the stardard functions in the library of C++
-using namespace std;
+<span class="c1">// std = standard library. </span>
+<span class="c1">// This includes the stardard functions in the library of C++</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-// This is the main function. This is MANDATORY for a program
-// All executions are to be done through main fucntion because it is
-// the first function to be executed by the program
-// int = this function returns integers
-// main is the fucntion name.
-// the definition of a function are to be included inside {}
-int main()
-{
-    //output stream object - for printing/writing data to the screen
-    // &lt;&lt; is the stream insertion operator
-    // endl - end line or go to the next line
-    // if not, then the next cout expression will print the statement
-    // from where the previous statement stopped.
-    // \n - escape sequence to jump to a new line
-    // terminate statements with ;
-    cout &lt;&lt; &quot;Hello World! \n&quot; &lt;&lt; endl;
+<span class="c1">// This is the main function. This is MANDATORY for a program</span>
+<span class="c1">// All executions are to be done through main fucntion because it is</span>
+<span class="c1">// the first function to be executed by the program</span>
+<span class="c1">// int = this function returns integers</span>
+<span class="c1">// main is the fucntion name.</span>
+<span class="c1">// the definition of a function are to be included inside {}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//output stream object - for printing/writing data to the screen</span>
+    <span class="c1">// &lt;&lt; is the stream insertion operator</span>
+    <span class="c1">// endl - end line or go to the next line</span>
+    <span class="c1">// if not, then the next cout expression will print the statement</span>
+    <span class="c1">// from where the previous statement stopped.</span>
+    <span class="c1">// \n - escape sequence to jump to a new line</span>
+    <span class="c1">// terminate statements with ;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World! </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     
-    // functions calculate something and returns a value.
-    // this line helps the function to return a value.
-    // 0 means the program ran fine!
-    return 0;
-}</code></pre>
+    <span class="c1">// functions calculate something and returns a value.</span>
+    <span class="c1">// this line helps the function to return a value.</span>
+    <span class="c1">// 0 means the program ran fine!</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="variables-and-basic-arithmetic">Variables and basic arithmetic</h2>
-<pre class="c++"><code>// var_name is a variable of integer type.
-// it stores the value 7 - assignment
-int var_name = 7;
+<div class="highlight"><pre><span></span><span class="c1">// var_name is a variable of integer type.</span>
+<span class="c1">// it stores the value 7 - assignment</span>
+<span class="kt">int</span> <span class="n">var_name</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
-// variable declaration
-int a, b;
+<span class="c1">// variable declaration</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
 
-// this prints the variable value
-cout &lt;&lt; var_name;
+<span class="c1">// this prints the variable value</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">var_name</span><span class="p">;</span>
 
-// entering a value from the user
-cout &lt;&lt; &quot;Enter a value for a:&quot;;
-// cin - input stream object 
-// &gt;&gt; - stream extraction operator
-cin &gt;&gt; a;
+<span class="c1">// entering a value from the user</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter a value for a:&quot;</span><span class="p">;</span>
+<span class="c1">// cin - input stream object </span>
+<span class="c1">// &gt;&gt; - stream extraction operator</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
 
-// assigning value manually
-b = 5;
+<span class="c1">// assigning value manually</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
-// basic arithmetic - ASMD
-a + b
-a - b
-a * c
-a / d
-</code></pre>
+<span class="c1">// basic arithmetic - ASMD</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">d</span>
+</pre></div>
+
 <h2 id="if-statement">If Statement</h2>
-<pre class="c++"><code>if(x&lt;10)
-{
-    cout &lt;&lt; &quot;x is less than 10!&quot;;
-}
-else if(x&lt;20 &amp;&amp; x&gt;=10)
-{
-    cout &lt;&lt; &quot;x is greater than 10 and less than 20!&quot;;
-}
-else if ****
-........
-.......
-else
-{
-    cout &lt;&lt; &quot;Don&#39;t know what to do now!&quot;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x is less than 10!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x is greater than 10 and less than 20!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="o">****</span>
+<span class="p">........</span>
+<span class="p">.......</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Don&#39;t know what to do now!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
 
             </div>
         </section>
@@ -242,7 +247,7 @@ else
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -263,12 +268,12 @@ else
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

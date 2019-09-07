@@ -140,56 +140,62 @@
 <p>Simply put, it is the nature of the information.</p>
 <h2 id="primary-data-types">Primary Data Types</h2>
 <p>These are the primary data types available in python</p>
-<pre class="python"><code>i = 1 # Integer. Stores integers
-r = 5.78 # Floats. Stores numbers with decimal parts.
-c = &#39;h&#39; # Characters. Stores single characters. It is a string in python!
-s = &#39;Strings&#39; # Strings. Stores a series of characters
-l = True/False # Logical. Stores binary values
-cm = 6.0+5.6j  # Complex. Stores complex values</code></pre>
+<div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Integer. Stores integers</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">5.78</span> <span class="c1"># Floats. Stores numbers with decimal parts.</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span> <span class="c1"># Characters. Stores single characters. It is a string in python!</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Strings&#39;</span> <span class="c1"># Strings. Stores a series of characters</span>
+<span class="n">l</span> <span class="o">=</span> <span class="bp">True</span><span class="o">/</span><span class="bp">False</span> <span class="c1"># Logical. Stores binary values</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="mf">6.0</span><span class="o">+</span><span class="mf">5.6j</span>  <span class="c1"># Complex. Stores complex values</span>
+</pre></div>
+
 <h2 id="string-data-type">String Data type</h2>
 <p>Strings are long chain of letters, numbers, symbols, and special characters. You can use both single and double quotes, but must end accordingly. Use slash to place quotes if needed.</p>
 <p>In python, there is no equivalent for <code>char</code> type.</p>
-<pre class="python"><code>&quot;Hello&quot;, 
-&#39;Hello&#39;, 
-&#39;My name is Arun&#39;, 
-&quot;I asked, &#39;what is for lunch?&#39;&quot;
-&#39;I exclaimed, &quot;This tree is big!&quot;&#39;
-&quot;I used slash \&quot; to type a double quote symbol&quot;</code></pre>
+<div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> 
+<span class="s1">&#39;Hello&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;My name is Arun&#39;</span><span class="p">,</span> 
+<span class="s2">&quot;I asked, &#39;what is for lunch?&#39;&quot;</span>
+<span class="s1">&#39;I exclaimed, &quot;This tree is big!&quot;&#39;</span>
+<span class="s2">&quot;I used slash </span><span class="se">\&quot;</span><span class="s2"> to type a double quote symbol&quot;</span>
+</pre></div>
+
 <h2 id="program-to-test-out-different-types-of-variables.">Program to Test out different types of variables.</h2>
 <h3 id="code">Code</h3>
-<pre class="python"><code>a = 1.5     # Float/Real
-print(a, id(a), type(a))
-a = &quot;hello&quot; # String/Character
-print(a, id(a), type(a))
-a = 5       # Integer
-print(a, id(a), type(a))
-a = True    # Logical
-print(a, id(a), type(a))
-a = 6.0+7.8j    # Complex
-print(a, id(a), type(a))
-a = [7, 8.9, 10] # List
-print(a, id(a), type(a))
-a = (5.2, 4, 12) # Tuple
-print(a, id(a), type(a))
-a = {&#39;v1&#39;: 6, &#39;v2&#39; : 10} # Dictionary
-print(a, id(a), type(a))
-# Get the ASCII/unicode value of a character
-print(ord(&#39;z&#39;))
-# Get the character for the ASCII/unicode
-print(chr(98))
-print(chr(32250))</code></pre>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span>     <span class="c1"># Float/Real</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span> <span class="c1"># String/Character</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Integer</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>    <span class="c1"># Logical</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">6.0</span><span class="o">+</span><span class="mf">7.8j</span>    <span class="c1"># Complex</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="c1"># List</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1"># Tuple</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">}</span> <span class="c1"># Dictionary</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="c1"># Get the ASCII/unicode value of a character</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
+<span class="c1"># Get the character for the ASCII/unicode</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">98</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">32250</span><span class="p">))</span>
+</pre></div>
+
 <h3 id="output">Output</h3>
-<pre><code>1.5 140048331680624 &lt;class &#39;float&#39;&gt;
-hello 140048284573232 &lt;class &#39;str&#39;&gt;
-5 140048501217856 &lt;class &#39;int&#39;&gt;
-True 140048500811040 &lt;class &#39;bool&#39;&gt;
-(6+7.8j) 140048284294832 &lt;class &#39;complex&#39;&gt;
-[7, 8.9, 10] 140048284073544 &lt;class &#39;list&#39;&gt;
-(5.2, 4, 12) 140048284133416 &lt;class &#39;tuple&#39;&gt;
-{&#39;v1&#39;: 6, &#39;v2&#39;: 10} 140048284066872 &lt;class &#39;dict&#39;&gt;
+<div class ="highlight"><pre>1.5 140048331680624 <class 'float'>
+hello 140048284573232 <class 'str'>
+5 140048501217856 <class 'int'>
+True 140048500811040 <class 'bool'>
+(6+7.8j) 140048284294832 <class 'complex'>
+[7, 8.9, 10] 140048284073544 <class 'list'>
+(5.2, 4, 12) 140048284133416 <class 'tuple'>
+{'v1': 6, 'v2': 10} 140048284066872 <class 'dict'>
 122
 b
-緺</code></pre>
+緺</pre></div>
 <h2 id="some-simple-data-functions">Some simple data-functions</h2>
 <ul>
 <li><code>id()</code> : returns the memory location ID of the variable.</li>
@@ -231,7 +237,7 @@ b
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -252,12 +258,12 @@ b
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

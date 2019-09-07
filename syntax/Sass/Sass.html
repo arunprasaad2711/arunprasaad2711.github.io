@@ -160,69 +160,82 @@
 <ol type="1">
 <li>Ruby gems</li>
 </ol>
-<pre class="bash"><code>sudo gem install sass compass</code></pre>
+<div class="highlight"><pre><span></span>sudo gem install sass compass
+</pre></div>
+
 <ol start="2" type="1">
 <li>npm install</li>
 </ol>
-<pre class="bash"><code>npm install -g sass</code></pre>
+<div class="highlight"><pre><span></span>npm install -g sass
+</pre></div>
+
 <p>To check if you have SASS installed, you type</p>
-<pre class="bash"><code>sass --version</code></pre>
+<div class="highlight"><pre><span></span>sass --version
+</pre></div>
+
 <h2 id="quickstart">Quickstart</h2>
 <p>To start a <code>sass</code> project, type this in the terminal</p>
-<pre class="bash"><code>compass create project_name</code></pre>
+<div class="highlight"><pre><span></span>compass create project_name
+</pre></div>
+
 <p>It will produce a sass folder, a stylesheet folder, and a ruby <code>config.rb</code>.</p>
-<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
+<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
 .
 ├── config.rb
 ├── sass
 │   ├── ie.scss
 │   ├── print.scss
 │   └── screen.scss
-├── sass.md         # This is user-made
+├── sass.md         <span class="c1"># This is user-made</span>
 ├── stylesheets
 │   ├── ie.css
 │   ├── print.css
 │   └── screen.css
-└── testing.html    # This is user-made
+└── testing.html    <span class="c1"># This is user-made</span>
 
-2 directories, 9 files</code></pre>
+<span class="m">2</span> directories, <span class="m">9</span> files
+</pre></div>
+
 <p>It will also suggests to add this <code>HTML5</code> code snippet to any html file.</p>
-<pre class="html"><code>&lt;head&gt;
-&lt;link href=&quot;/stylesheets/screen.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-&lt;link href=&quot;/stylesheets/print.css&quot; media=&quot;print&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-&lt;!--[if IE]&gt;
-    &lt;link href=&quot;/stylesheets/ie.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-&lt;![endif]--&gt;
-&lt;/head&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/stylesheets/screen.css&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen, projection&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/stylesheets/print.css&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;print&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+<span class="c">&lt;!--[if IE]&gt;</span>
+<span class="c">    &lt;link href=&quot;/stylesheets/ie.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+
 <p>This part is helpful to test the css files using the html file.</p>
 <h2 id="about-config.rb-file">About <code>config.rb</code> file</h2>
 <p>At the start, it looks like this</p>
-<pre class="ruby"><code>require &#39;compass/import-once/activate&#39;
-# Require any additional compass plugins here.
+<div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;compass/import-once/activate&#39;</span>
+<span class="c1"># Require any additional compass plugins here.</span>
 
-# Set this to the root of your project when deployed:
-http_path = &quot;/&quot;
-css_dir = &quot;stylesheets&quot;
-sass_dir = &quot;sass&quot;
-images_dir = &quot;images&quot;
-javascripts_dir = &quot;javascripts&quot;
+<span class="c1"># Set this to the root of your project when deployed:</span>
+<span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;stylesheets&quot;</span>
+<span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;sass&quot;</span>
+<span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;images&quot;</span>
+<span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;javascripts&quot;</span>
 
-# You can select your preferred output style here (can be overridden via the command line):
-# output_style = :expanded or :nested or :compact or :compressed
+<span class="c1"># You can select your preferred output style here (can be overridden via the command line):</span>
+<span class="c1"># output_style = :expanded or :nested or :compact or :compressed</span>
 
-# To enable relative paths to assets via compass helper functions. Uncomment:
-# relative_assets = true
+<span class="c1"># To enable relative paths to assets via compass helper functions. Uncomment:</span>
+<span class="c1"># relative_assets = true</span>
 
-# To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
+<span class="c1"># To disable debugging comments that display the original location of your selectors. Uncomment:</span>
+<span class="c1"># line_comments = false</span>
 
 
-# If you prefer the indented syntax, you might want to regenerate this
-# project again passing --syntax sass, or you can uncomment this:
-# preferred_syntax = :sass
-# and then run:
-# sass-convert -R --from scss --to sass sass scss &amp;&amp; rm -rf sass &amp;&amp; mv scss sass
-</code></pre>
+<span class="c1"># If you prefer the indented syntax, you might want to regenerate this</span>
+<span class="c1"># project again passing --syntax sass, or you can uncomment this:</span>
+<span class="c1"># preferred_syntax = :sass</span>
+<span class="c1"># and then run:</span>
+<span class="c1"># sass-convert -R --from scss --to sass sass scss &amp;&amp; rm -rf sass &amp;&amp; mv scss sass</span>
+</pre></div>
+
 <p>You can edit this configuration file as you wish.</p>
 <ul>
 <li><code>require</code> - to include a plugin required for the project. Use one require statement per plugin.</li>
@@ -237,11 +250,13 @@ javascripts_dir = &quot;javascripts&quot;
 </ul></li>
 </ul>
 <h2 id="alternate-way-to-create-sass-project">Alternate way to create <code>sass</code> project</h2>
-<pre class="bash"><code>compass create --sass-dir &quot;sass_directory&quot; --css-dir &quot;css_directory&quot; --javascripts-dir &quot;js&quot; --images-dir &quot;images&quot;</code></pre>
+<div class="highlight"><pre><span></span>compass create --sass-dir <span class="s2">&quot;sass_directory&quot;</span> --css-dir <span class="s2">&quot;css_directory&quot;</span> --javascripts-dir <span class="s2">&quot;js&quot;</span> --images-dir <span class="s2">&quot;images&quot;</span>
+</pre></div>
+
 <h2 id="create-partials">Create partials</h2>
 <p>These are subdirectories with sass file fragments. These will be included into the main sass files. This is the tree layout after creating the partials.</p>
 <p>Also, outside partials folder, create <code>styles.scss</code> file.</p>
-<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
+<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
 .
 ├── config.rb
 ├── sass
@@ -254,7 +269,7 @@ javascripts_dir = &quot;javascripts&quot;
 │   │   └── _variables.scss
 │   ├── print.scss
 │   ├── screen.scss
-|   └── styles.scss
+<span class="p">|</span>   └── styles.scss
 ├── sass.md
 ├── stylesheets
 │   ├── ie.css
@@ -262,7 +277,9 @@ javascripts_dir = &quot;javascripts&quot;
 │   └── screen.css
 └── testing.html
 
-3 directories, 14 files</code></pre>
+<span class="m">3</span> directories, <span class="m">14</span> files
+</pre></div>
+
 <ul>
 <li><code>_base.scss</code>: the basic structure of the webpage</li>
 <li><code>_layout.scss</code>: the design layout of the webpage</li>
@@ -271,386 +288,434 @@ javascripts_dir = &quot;javascripts&quot;
 <li><code>_normalize.scss</code>: collection of css attributes and html elements to normalize the style across all browsers.</li>
 </ul>
 <h2 id="comments-and-notes.">Comments and Notes.</h2>
-<pre class="scss"><code>
-// Single Line Comment
-/*
-Multi-Line comment. When merging multiple files, it may not appear where you want.
-*/
+<div class="highlight"><pre><span></span><span class="c1">// Single Line Comment</span>
+<span class="cm">/*</span>
+<span class="cm">Multi-Line comment. When merging multiple files, it may not appear where you want.</span>
+<span class="cm">*/</span>
 
-/*!
-Loud multi-line comment. It will exactly appear where you want.
-*/
-</code></pre>
+<span class="cm">/*!</span>
+<span class="cm">Loud multi-line comment. It will exactly appear where you want.</span>
+<span class="cm">*/</span>
+</pre></div>
+
 <p>You can create your own <code>_normalize.scss</code> file if you know what “normalization” means. Else, you can copy paste it from contents.</p>
 <h2 id="autocompile-sass-files">Autocompile <code>sass</code> files</h2>
 <p>Using compass, you can automatically compile the <code>sass</code> files to produce the equivalent <code>css</code> files.</p>
 <p>In the root folder, type this in the terminal.</p>
-<pre class="bash"><code>arun@hpdv6:~/Website_Experimental/sass_tutorial$ compass watch
+<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ compass watch
  modified config.rb
     clean stylesheets
    delete stylesheets/ie.css
    delete stylesheets/print.css
    delete stylesheets/screen.css
-&gt;&gt;&gt; Compass is watching for changes. Press Ctrl-C to Stop.
+&gt;&gt;&gt; Compass is watching <span class="k">for</span> changes. Press Ctrl-C to Stop.
     write stylesheets/ie.css
     write stylesheets/print.css
     write stylesheets/screen.css
-</code></pre>
+</pre></div>
+
 <p>Alternatively, you can compile it using just <code>sass</code></p>
-<pre class="bash"><code>sass --watch style.scss:style.css</code></pre>
+<div class="highlight"><pre><span></span>sass --watch style.scss:style.css
+</pre></div>
+
 <p>As long as it is running, any changes to the <code>sass</code> files will be immediately reflected to the <code>css</code> files.</p>
 <h2 id="usage-of-a-mixin">Usage of a mixin</h2>
 <p>A mixin is a function. You give some values to it, and it operates on it and gives some other values.</p>
 <p>Define one like this:</p>
-<pre class="scss"><code>/* Mixins */
-/* Functions that take in some value and do some work for us. */
+<div class="highlight"><pre><span></span><span class="cm">/* Mixins */</span>
+<span class="cm">/* Functions that take in some value and do some work for us. */</span>
 
-// mixin keyword - mixin name - function arguments, default value,
-@mixin default-text-color($tc: $black)
-{
-    // some task.
-    color: $tc;
-}</code></pre>
+<span class="c1">// mixin keyword - mixin name - function arguments, default value,</span>
+<span class="k">@mixin</span><span class="nf"> default-text-color</span><span class="p">(</span><span class="nv">$tc</span><span class="o">:</span> <span class="nv">$black</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// some task.</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">tc</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>And implement it in other places like this:</p>
-<pre class="scss"><code>body 
-{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  background: $gray;
-  line-height: 1em;
+<div class="highlight"><pre><span></span><span class="nt">body</span> 
+<span class="p">{</span>
+  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+  <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">1em</span><span class="o">;</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="err">$</span><span class="nt">gray</span><span class="o">;</span>
+  <span class="nt">line-height</span><span class="nd">:</span> <span class="nt">1em</span><span class="o">;</span>
 
-  // We are defining the text color with a mixin
-  @include default-text-color($black);
-}</code></pre>
+  <span class="o">//</span> <span class="nt">We</span> <span class="nt">are</span> <span class="nt">defining</span> <span class="nt">the</span> <span class="nt">text</span> <span class="nt">color</span> <span class="nt">with</span> <span class="nt">a</span> <span class="nt">mixin</span>
+  <span class="o">@</span><span class="nt">include</span> <span class="nt">default-text-color</span><span class="o">(</span><span class="err">$</span><span class="nt">black</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="includes-in-style.scss">Includes in <code>style.scss</code></h2>
 <p>Write these lines into the <code>style.scss</code> file.</p>
-<pre class="scss"><code>@import &quot;compass&quot;;
-@import &quot;partials/variables&quot;;
-@import &quot;partials/normalize&quot;;
-@import &quot;partials/mixins&quot;;
-@import &quot;partials/base&quot;;
-@import &quot;compass/css3&quot;;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">@import</span> <span class="s2">&quot;compass&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;partials/variables&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;partials/normalize&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;partials/mixins&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;partials/base&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;compass/css3&quot;</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="wrapper-idclass">Wrapper ID/Class</h2>
-<pre class="css"><code>#wrapper 
-{
-    background: $white;
-    margin: 0 auto;
-    max-width: 800px;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">wrapper</span> 
+<span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">max-width</span><span class="p">:</span> <span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="to-prevent-overlap-of-elements">To prevent overlap of elements</h2>
-<pre class="scss"><code>// Fixes overlapping issues
-// Makes the rendered box elements padding, borders, etc.
-// fit into the width
+<div class="highlight"><pre><span></span><span class="c1">// Fixes overlapping issues</span>
+<span class="c1">// Makes the rendered box elements padding, borders, etc.</span>
+<span class="c1">// fit into the width</span>
    
-*
-{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}</code></pre>
+<span class="o">*</span>
+<span class="p">{</span>
+    <span class="nt">-webkit-box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
+    <span class="nt">-moz-box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
+    <span class="nt">box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="inheritance---examples">Inheritance - Examples</h2>
-<pre class="scss"><code>article p a
-{
-    color: $blue;
-    &amp;:hover, &amp;:focus 
-    {
-        color: $duke-blue;
-    }
-    &amp;:visited
-    {
-        color: $blue-gray;
-    }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="nt">article</span> <span class="nt">p</span> <span class="nt">a</span>
+<span class="p">{</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">blue</span><span class="o">;</span>
+    <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span> <span class="k">&amp;</span><span class="nd">:focus</span> 
+    <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">duke-blue</span><span class="o">;</span>
+    <span class="p">}</span>
+    <span class="k">&amp;</span><span class="nd">:visited</span>
+    <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">blue-gray</span><span class="o">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="left-side-bar-links">left-side bar links</h2>
 <p>Each link is a block. It is mildly transparent. On hover, it becomes fully opaque.</p>
-<pre class="scss"><code>.left-sidebar-links {
-  a {
-    display: block;
-    color: $main-green;
-    opacity: .7;
-    &amp;:hover {
-      opacity: 1;
-    }
-  }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="nc">.left-sidebar-links</span> <span class="p">{</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="nt">display</span><span class="nd">:</span> <span class="nt">block</span><span class="o">;</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">main-green</span><span class="o">;</span>
+    <span class="nt">opacity</span><span class="nd">:</span> <span class="nc">.7</span><span class="o">;</span>
+    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+      <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>Put a border line at the bottom of each link, except the last one.</p>
-<pre class="scss"><code>.left-sidebar-links {
-  border-bottom: 2px solid $main-green;
-  &amp;:last-child {
-    border: none;
-  }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="nc">.left-sidebar-links</span> <span class="p">{</span>
+  <span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">main-green</span><span class="o">;</span>
+  <span class="k">&amp;</span><span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nt">border</span><span class="nd">:</span> <span class="nt">none</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="nesting-css-properties">Nesting CSS properties</h2>
-<pre class="scss"><code>// You can nest CSS properties as well
-.example-element {
-  border: {
-    top: 1px solid $blue;
-    right: 1px solid $red;
-    bottom: 1px solid $yellow;
-    left: 1px solid $green;
-  }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="c1">// You can nest CSS properties as well</span>
+<span class="nc">.example-element</span> <span class="p">{</span>
+  <span class="nt">border</span><span class="nd">:</span> <span class="p">{</span>
+    <span class="nt">top</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">blue</span><span class="o">;</span>
+    <span class="nt">right</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">red</span><span class="o">;</span>
+    <span class="nt">bottom</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">yellow</span><span class="o">;</span>
+    <span class="nt">left</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">green</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="extending-already-existing-properties">Extending already existing properties</h2>
-<pre class="scss"><code>// @extend existing properties
-#riddle{
-  padding: 20px;
-  background-color: $alice-blue;
-}
+<div class="highlight"><pre><span></span><span class="c1">// @extend existing properties</span>
+<span class="nn">#riddle</span><span class="p">{</span>
+  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">20px</span><span class="o">;</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">alice-blue</span><span class="o">;</span>
+<span class="p">}</span>
  
-#riddle-answer{
-  @extend #riddle;
-  margin-top: 10px;
-}</code></pre>
+<span class="nn">#riddle-answer</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="nn">#riddle</span><span class="o">;</span>
+  <span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">10px</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="creating-generic-properties-so-that-you-can-use-and-extend-them">Creating generic properties so that you can use and extend them</h2>
-<pre class="scss"><code>// Creating properties just so we can extend them
+<div class="highlight"><pre><span></span><span class="c1">// Creating properties just so we can extend them</span>
  
-%dotted-box {
+<span class="err">%</span><span class="nt">dotted-box</span> <span class="p">{</span>
  
-  border: 2px dotted $duke-blue;
-  margin: 10px 0px;
-}
+  <span class="nt">border</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">dotted</span> <span class="err">$</span><span class="nt">duke-blue</span><span class="o">;</span>
+  <span class="nt">margin</span><span class="nd">:</span> <span class="nt">10px</span> <span class="nt">0px</span><span class="o">;</span>
+<span class="p">}</span>
  
-#riddle-answer{
-  @extend %dotted-box;
-}</code></pre>
+<span class="nn">#riddle-answer</span><span class="p">{</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">dotted-box</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="colour-altering-commands">colour altering commands</h2>
-<pre class="scss"><code>// Lighten a color
-// You can use darken in the same way
+<div class="highlight"><pre><span></span><span class="c1">// Lighten a color</span>
+<span class="c1">// You can use darken in the same way</span>
  
-.left-sidebar-links{
-  border-color: lighten($main-green, 70%);
-}
+<span class="nc">.left-sidebar-links</span><span class="p">{</span>
+  <span class="nt">border-color</span><span class="nd">:</span> <span class="nt">lighten</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="nt">70</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
  
-// You can generate the 180 degree complement of a color
+<span class="c1">// You can generate the 180 degree complement of a color</span>
  
-#search-button:hover {
-  background-color: complement($main-green);
-}
+<span class="nn">#search-button</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">complement</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">);</span>
+<span class="p">}</span>
  
-// You can invert a color by sending the degree (0 - 360)
+<span class="c1">// You can invert a color by sending the degree (0 - 360)</span>
  
-#search-button:hover {
-  background-color: adjust-hue($main-green, 90deg);
-}
+<span class="nn">#search-button</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-hue</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="nt">90deg</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Specify a background color for the &lt;li&gt; that is the
-// first child of #vert-nav ul and desaturate (darken)
+<span class="c1">// Specify a background color for the &lt;li&gt; that is the</span>
+<span class="c1">// first child of #vert-nav ul and desaturate (darken)</span>
  
-#vert-nav ul li:nth-child(1) {
-  background-color: desaturate($orange, 80%);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">desaturate</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nt">80</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Saturate a color by a percent
+<span class="c1">// Saturate a color by a percent</span>
  
-#vert-nav ul li:nth-child(2){
-  background-color: saturate($orange, 80%);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">saturate</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nt">80</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Define transparence (0 to 1 Opaque)
+<span class="c1">// Define transparence (0 to 1 Opaque)</span>
  
-#vert-nav ul li:nth-child(3){
-  background-color: fade-out($orange, .5);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">fade-out</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nc">.5</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Make a color more opaque (0 to 1 Opaque)
+<span class="c1">// Make a color more opaque (0 to 1 Opaque)</span>
  
-#vert-nav ul li:nth-child(3){
-  background-color: fade-in($orange, .8);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">fade-in</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nc">.8</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Define the RGB color
+<span class="c1">// Define the RGB color</span>
  
-#vert-nav ul li:nth-child(4){
-  background-color: rgba(0, 0, 200, 0.5);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">4</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">200</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.5</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Mix 2 colors plus the percent of the first color
+<span class="c1">// Mix 2 colors plus the percent of the first color</span>
  
-#vert-nav ul li:nth-child(5){
-  background-color: mix($yellow, $white, 50%);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">5</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mix</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="err">$</span><span class="nt">white</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
  
-// Make the color passed grayscale
+<span class="c1">// Make the color passed grayscale</span>
  
-#vert-nav ul li:nth-child(6){
-  background-color: grayscale($yellow);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">6</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">grayscale</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">);</span>
+<span class="p">}</span>
  
-/*
-adjust-color allows you to adjust
-red, green and blue : 0 to 255
-hue : 0 to 359
-saturation : 0 to 100
-lightness : 0 to 100
-alpha : 0 to 1
-Either adjust RGB or HSL
-*/
+<span class="cm">/*</span>
+<span class="cm">adjust-color allows you to adjust</span>
+<span class="cm">red, green and blue : 0 to 255</span>
+<span class="cm">hue : 0 to 359</span>
+<span class="cm">saturation : 0 to 100</span>
+<span class="cm">lightness : 0 to 100</span>
+<span class="cm">alpha : 0 to 1</span>
+<span class="cm">Either adjust RGB or HSL</span>
+<span class="cm">*/</span>
  
-#vert-nav ul li:nth-child(7){
-  background-color: adjust-color($main-green, $red:0, $green:40, $blue:30);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">7</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-color</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="err">$</span><span class="nt">red</span><span class="nd">:0</span><span class="o">,</span> <span class="err">$</span><span class="nt">green</span><span class="nd">:40</span><span class="o">,</span> <span class="err">$</span><span class="nt">blue</span><span class="nd">:30</span><span class="o">);</span>
+<span class="p">}</span>
  
-#vert-nav ul li:nth-child(7){
-  background-color: adjust-color($main-green, $hue:30, $saturation:40, $lightness:30, $alpha:0.2);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">7</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-color</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="err">$</span><span class="nt">hue</span><span class="nd">:30</span><span class="o">,</span> <span class="err">$</span><span class="nt">saturation</span><span class="nd">:40</span><span class="o">,</span> <span class="err">$</span><span class="nt">lightness</span><span class="nd">:30</span><span class="o">,</span> <span class="err">$</span><span class="nt">alpha</span><span class="nd">:0</span><span class="nc">.2</span><span class="o">);</span>
+<span class="p">}</span>
  
-// shade combines the color with a percent of black
+<span class="c1">// shade combines the color with a percent of black</span>
  
-#vert-nav ul li:nth-child(8){
-  background-color: shade($yellow, 50%);
-}
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">8</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">shade</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
  
-// tint combines the color with a percent of white
+<span class="c1">// tint combines the color with a percent of white</span>
  
-#vert-nav ul li:nth-child(9){
-  background-color: tint($yellow, 50%);
-}</code></pre>
+<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">9</span><span class="o">)</span><span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">tint</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="mixins-from-compass">mixins from compass</h2>
 <p>mixins from compass automatically generate equivalent properties that are compatible with other webbrowsers. Essentially, it produces cross-browser stuff.</p>
 <p>Mixin used in <code>sass</code> from <code>compass</code></p>
-<pre class="scss"><code>// Rounds the border and adds a box shadow
+<div class="highlight"><pre><span></span><span class="c1">// Rounds the border and adds a box shadow</span>
  
-#riddle-answer {
-  @include border-radius(5px);
+<span class="nn">#riddle-answer</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
  
-  // Horizontal then vertical offset, blur, spread, color
-  @include box-shadow(5px 5px 5px 2px gray);
-}</code></pre>
+  <span class="c1">// Horizontal then vertical offset, blur, spread, color</span>
+  <span class="k">@include</span><span class="nd"> box-shadow</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="ni">gray</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>The equivalent <code>css</code>.</p>
-<pre class="css"><code>/* line 273, ../sass/styles.scss */
-#riddle-answer {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 5px 5px 5px 2px gray;
-  -webkit-box-shadow: 5px 5px 5px 2px gray;
-  box-shadow: 5px 5px 5px 2px gray;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="c">/* line 273, ../sass/styles.scss */</span>
+<span class="p">#</span><span class="nn">riddle-answer</span> <span class="p">{</span>
+  <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="kp">-moz-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
+  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="text-shadow">text-shadow</h2>
-<pre class="scss"><code>// Color, horizontal then verical offset, blur amount
-#main-title{
-  @include text-shadow(rgba(blue, 0.2) 2px 2px 3px);
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="c1">// Color, horizontal then verical offset, blur amount</span>
+<span class="nn">#main-title</span><span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> text-shadow</span><span class="p">(</span><span class="nf">rgba</span><span class="p">(</span><span class="ni">blue</span><span class="o">,</span> <span class="mi">0</span><span class="mf">.2</span><span class="p">)</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">3</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="gradient">gradient</h2>
-<pre class="scss"><code>// Created for extension
-// Direction or left / right / top / bottom, color stops
+<div class="highlight"><pre><span></span><span class="c1">// Created for extension</span>
+<span class="c1">// Direction or left / right / top / bottom, color stops</span>
  
-%main-green-gradient{
+<span class="err">%</span><span class="nt">main-green-gradient</span><span class="p">{</span>
  
-  @include background-image(linear-gradient(left, $main-green 80%, $white));
-}
+  <span class="k">@include</span><span class="nd"> background-image</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">left</span><span class="o">,</span> <span class="nv">$main-green</span> <span class="mi">80</span><span class="kt">%</span><span class="o">,</span> <span class="nv">$white</span><span class="p">));</span>
+<span class="p">}</span>
  
-footer {
-  @extend %main-green-gradient;
-}
+<span class="nt">footer</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">main-green-gradient</span><span class="o">;</span>
+<span class="p">}</span>
  
-#horz-nav {
-  @extend %main-green-gradient;
-}</code></pre>
+<span class="nn">#horz-nav</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">main-green-gradient</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="working-with-images">working with images</h2>
-<pre class="scss"><code>// Target the img with the given alt and change the src
-// and restore the proper size
+<div class="highlight"><pre><span></span><span class="c1">// Target the img with the given alt and change the src</span>
+<span class="c1">// and restore the proper size</span>
  
-img[alt=&quot;Programming Frameworks&quot;] {
-  content: image-url(&#39;featured-image.png&#39;);
-  // can also extract image dimensions
-  /*
-  width: image-width(&#39;../images/featured-image.png&#39;);
-  height: image-height(&#39;../images/featured-image.png&#39;);
-  */
-}</code></pre>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s2">&quot;Programming Frameworks&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nt">content</span><span class="nd">:</span> <span class="nt">image-url</span><span class="o">(</span><span class="s1">&#39;featured-image.png&#39;</span><span class="o">);</span>
+  <span class="o">//</span> <span class="nt">can</span> <span class="nt">also</span> <span class="nt">extract</span> <span class="nt">image</span> <span class="nt">dimensions</span>
+  <span class="o">/*</span>
+  <span class="nt">width</span><span class="nd">:</span> <span class="nt">image-width</span><span class="o">(</span><span class="s1">&#39;../images/featured-image.png&#39;</span><span class="o">);</span>
+  <span class="nt">height</span><span class="nd">:</span> <span class="nt">image-height</span><span class="o">(</span><span class="s1">&#39;../images/featured-image.png&#39;</span><span class="o">);</span>
+  <span class="o">*/</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="transformations">Transformations</h2>
-<pre class="scss"><code>// Use a Compass mixin to scale 2x horz &amp; vert
-// Move horz &amp; vert, rotate 45deg and perform multiple transforms
+<div class="highlight"><pre><span></span><span class="c1">// Use a Compass mixin to scale 2x horz &amp; vert</span>
+<span class="c1">// Move horz &amp; vert, rotate 45deg and perform multiple transforms</span>
  
-#logo {
-  @include scale(2,2);
-  @include transform(translateX(700px) translateY(10px)
-  scale(2,2) rotate(-45deg));
-}
-</code></pre>
+<span class="nn">#logo</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> scale</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">);</span>
+  <span class="k">@include</span><span class="nd"> transform</span><span class="p">(</span><span class="nf">translateX</span><span class="p">(</span><span class="mi">700</span><span class="kt">px</span><span class="p">)</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">10</span><span class="kt">px</span><span class="p">)</span>
+  <span class="nf">scale</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">)</span> <span class="nf">rotate</span><span class="p">(</span><span class="mi">-45</span><span class="kt">deg</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="drop-shadow-using-compass-mixin">Drop shadow using compass mixin</h2>
-<pre class="scss"><code>// Add the compass drop shadow on all text in the p
+<div class="highlight"><pre><span></span><span class="c1">// Add the compass drop shadow on all text in the p</span>
  
-article p:nth-child(2){
-  @include filter(drop-shadow($gray 1px 1px 0px));
-}</code></pre>
+<span class="nt">article</span> <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> filter</span><span class="p">(</span><span class="nf">drop-shadow</span><span class="p">(</span><span class="nv">$gray</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">0</span><span class="kt">px</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="if-conditions">if conditions</h2>
-<pre class="scss"><code>// We can change properties based on conditions
+<div class="highlight"><pre><span></span><span class="c1">// We can change properties based on conditions</span>
  
-$riddle-color: gray;
+<span class="nv">$riddle-color</span><span class="o">:</span> <span class="ni">gray</span><span class="p">;</span>
  
-@if $riddle-color == blue {
-  #riddle {
-    background-color: $alice-blue;
-  }
-} @else {
-  #riddle {
-    background-color: $ash-gray;
-  }
-}</code></pre>
+<span class="k">@if</span> <span class="nv">$riddle-color</span> <span class="o">==</span> <span class="ni">blue</span> <span class="p">{</span>
+  <span class="nn">#riddle</span> <span class="p">{</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">alice-blue</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+  <span class="nn">#riddle</span> <span class="p">{</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">ash-gray</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="for-loop">for loop</h2>
-<pre class="scss"><code>// We can use for loops to change as we iterate
+<div class="highlight"><pre><span></span><span class="c1">// We can use for loops to change as we iterate</span>
  
-$prct-yellow: 5%;
+<span class="nv">$prct-yellow</span><span class="o">:</span> <span class="mi">5</span><span class="kt">%</span><span class="p">;</span>
  
-@for $i from 1 through 14 {
-  #vert-nav ul li:nth-child(#{$i}){
-    background-color: mix($yellow, $white, $prct-yellow);
-  }
+<span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="mi">1</span> <span class="ow">through</span> <span class="mi">14</span> <span class="p">{</span>
+  <span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">i</span><span class="p">}</span><span class="o">)</span><span class="p">{</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mix</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="err">$</span><span class="nt">white</span><span class="o">,</span> <span class="err">$</span><span class="nt">prct-yellow</span><span class="o">);</span>
+  <span class="p">}</span>
  
-  $prct-yellow: $prct-yellow + 5%
+  <span class="nv">$prct-yellow</span><span class="o">:</span> <span class="nv">$prct-yellow</span> <span class="o">+</span> <span class="mi">5</span><span class="kt">%</span>
  
-}</code></pre>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="spriting-using-compass-mixins">spriting using compass mixins</h2>
-<pre class="scss"><code>// Spriting with Compass
-// Combines images in the provided folder into 1 image
-// to limit server requests
-// Define the directory for the images and it provides
-// the background image definition and location for use
-// by your elements
+<div class="highlight"><pre><span></span><span class="c1">// Spriting with Compass</span>
+<span class="c1">// Combines images in the provided folder into 1 image</span>
+<span class="c1">// to limit server requests</span>
+<span class="c1">// Define the directory for the images and it provides</span>
+<span class="c1">// the background image definition and location for use</span>
+<span class="c1">// by your elements</span>
  
-@import &quot;compass/utilities/sprites&quot;;
+<span class="k">@import</span> <span class="s2">&quot;compass/utilities/sprites&quot;</span><span class="p">;</span>
 
-// folder with the images.
-@import &quot;icons/*.png&quot;;
+<span class="c1">// folder with the images.</span>
+<span class="k">@import</span> <span class="s2">&quot;icons/*.png&quot;</span><span class="p">;</span>
 
-// sprite mixin
-@include all-icons-sprites;
+<span class="c1">// sprite mixin</span>
+<span class="k">@include</span><span class="nd"> all-icons-sprites</span><span class="p">;</span>
 
-// grouping the images into 1
-.icons {
-  .clock { @include icons-sprite(clock);}
-  .diary { @include icons-sprite(diary);}
-  .printer { @include icons-sprite(printer);}
-  .weather { @include icons-sprite(weather);}
-}
+<span class="c1">// grouping the images into 1</span>
+<span class="nc">.icons</span> <span class="p">{</span>
+  <span class="nc">.clock</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">clock</span><span class="p">);}</span>
+  <span class="nc">.diary</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">diary</span><span class="p">);}</span>
+  <span class="nc">.printer</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">printer</span><span class="p">);}</span>
+  <span class="nc">.weather</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">weather</span><span class="p">);}</span>
+<span class="p">}</span>
 
-// size of the individual images
-.icons * {
-  height: 64px;
-  width: 64px;
-}</code></pre>
+<span class="c1">// size of the individual images</span>
+<span class="nc">.icons</span> <span class="o">*</span> <span class="p">{</span>
+  <span class="nt">height</span><span class="nd">:</span> <span class="nt">64px</span><span class="o">;</span>
+  <span class="nt">width</span><span class="nd">:</span> <span class="nt">64px</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="table-styling">Table Styling</h2>
-<pre class="scss"><code>@import &quot;compass/utilities/tables&quot;;
+<div class="highlight"><pre><span></span><span class="k">@import</span> <span class="s2">&quot;compass/utilities/tables&quot;</span><span class="p">;</span>
  
-.baseball-stats {
-  table {
-    $table-color: $black;
-    @include table-scaffolding;
+<span class="nc">.baseball-stats</span> <span class="p">{</span>
+  <span class="nt">table</span> <span class="p">{</span>
+    <span class="nv">$table-color</span><span class="o">:</span> <span class="nv">$black</span><span class="p">;</span>
+    <span class="k">@include</span><span class="nd"> table-scaffolding</span><span class="p">;</span>
  
-    // Define the inner border
-    @include inner-table-borders(4px, $table-color);
+    <span class="c1">// Define the inner border</span>
+    <span class="k">@include</span><span class="nd"> inner-table-borders</span><span class="p">(</span><span class="mi">4</span><span class="kt">px</span><span class="o">,</span> <span class="nv">$table-color</span><span class="p">);</span>
  
-    // Define the outer border
-    @include outer-table-borders(4px, $duke-blue);
+    <span class="c1">// Define the outer border</span>
+    <span class="k">@include</span><span class="nd"> outer-table-borders</span><span class="p">(</span><span class="mi">4</span><span class="kt">px</span><span class="o">,</span> <span class="nv">$duke-blue</span><span class="p">);</span>
  
-    // Handles table striping even row color, odd row color, intersection, header
-    @include alternating-rows-and-columns($alice-blue, $ash-gray, $table-color, $white);
+    <span class="c1">// Handles table striping even row color, odd row color, intersection, header</span>
+    <span class="k">@include</span><span class="nd"> alternating-rows-and-columns</span><span class="p">(</span><span class="nv">$alice-blue</span><span class="o">,</span> <span class="nv">$ash-gray</span><span class="o">,</span> <span class="nv">$table-color</span><span class="o">,</span> <span class="nv">$white</span><span class="p">);</span>
  
-    width: 400px;
-  }
-}</code></pre>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">400px</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 
             </div>
         </section>
@@ -685,7 +750,7 @@ $prct-yellow: 5%;
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -706,12 +771,12 @@ $prct-yellow: 5%;
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

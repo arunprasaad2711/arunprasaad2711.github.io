@@ -46,8 +46,18 @@
 		accent6:			#87c5a4,
 		// code-bg: None,
 		// code-fg: None,
-		code-bg:			#333333, // for light website themes
-		code-fg:			#ffffff  // for light website themes
+		// code-bg:			#333333, // for prettify desert theme
+		// code-fg:			#ffffff  // for prettify desert theme
+		// code-bg: 		#f8f8f8,  // for pygments default theme
+		// code-fg: 		#000000,  // for pygments default theme
+		// code-bg: 		#272822,  // for pygments monokai theme
+		// code-fg: 		#ffffff,  // for pygments monokai theme
+		// code-bg: 		#f9f9f9,  // for pygments chroma theme
+		// code-fg: 		#4b4b4b,  // for pygments monokai theme
+		// code-bg: 		#404040,  // for pygments native theme
+		// code-fg: 		#ffffff,  // for pygments native theme
+		code-bg: 		#2f1e2e,  // for pygments paraiso-dark theme
+		code-fg: 		#e7e9db,  // for pygments paraiso-dark theme
 	);
 
 // // Original Palette.

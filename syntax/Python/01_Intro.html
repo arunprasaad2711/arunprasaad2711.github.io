@@ -145,16 +145,20 @@
 <h3 id="it-is-an-interpreted-programming-language.">It is an Interpreted Programming Language.</h3>
 <p>What this means is that each and every line of code written by the programmer is interpreted into its corresponding machine or assembly level programming immediately and executed immediately. The advantage of this kind of architecture is that the programmer can see if his/her code is working well on a line-by-line basis and execute each and every line on their own. So, this architecture is user-friendly to work with. However, this method is inefficient when it comes to using resources. Hence, the speed of execution is quite slow, often taking anywhere between 2-200+ times the speed of a code written in a compiled programming language like C or C++ for the same purpose. However, one of the pragmatic reasons such interpreted languages exist is because such languages are easier to learn and get things done on the fly. In comparison to compiled programming languages, the development time to generate a program for some purposes is quite small. So in a trade-off between Development time versus Execution time, if Execution time is not a big bother, speed is not a major requirement, and the freedom to run commands on the fly is more important, then in such places, Python and other interpreted programming languages are the clear winner. Learning programming using python or interpreted programming language is a gentler way to introduce people into programming by concentrating on the end goal without worrying about the specifics.</p>
 <p>Just for an example, look at the simple <code>hello, world</code> program looks like in <code>Java</code> - a compiled programming language vs <code>Python</code> - an interpreted programming language. The simplicity you see with Python is quite evident. Granted, this is a simple program and it might look like this example is nitpicked. However, when a programmer tries to write a program in a compiled programming language versus any other interpreted language, the latter one will usually look simpler and easy to read.</p>
-<pre class="java"><code>/* This is a simple &quot;Hello, world&quot; program written in Java. */
-class hello 
-{ 
-    public static void main(String args[]) 
-    { 
-        System.out.println(&quot;Hello, World&quot;); 
-    } 
-} </code></pre>
-<pre class="python"><code># This is a simple &quot;Hello, world&quot; program written in Python
-print(&quot;Hello, world&quot;)</code></pre>
+<div class="highlight"><pre><span></span><span class="cm">/* This is a simple &quot;Hello, world&quot; program written in Java. */</span>
+<span class="kd">class</span> <span class="nc">hello</span> 
+<span class="o">{</span> 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> 
+    <span class="o">{</span> 
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, World&quot;</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span> 
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># This is a simple &quot;Hello, world&quot; program written in Python</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello, world&quot;</span><span class="p">)</span>
+</pre></div>
+
 <p>In contrast to this, we have compiled programming languages like C, C++, Java etc., in which the entire program gets converted into machine or assembly level programming at the end and executed together. This makes compiled programming languages fast and quite efficient. However, the architecture is not user-friendly. You don’t have the freedom to run each and every line one-by-one. So, this makes the programming difficult for the programmer. For the purpose of speed and efficiency, compiled programming languages take the cake by a land-slide. If execution time has to be as small as possible, and programming resources such as availability of processors, memory are of vital importance, then in these situations the compiled programming languages win. These reasons enable them to be used as the foundations of interpreted programming languages and even the architectures of operating systems. Due to the complexities involved, learning programming using such compiled programming languages is a harder way to introduce people to learn programming languages by enforcing the need for good programming practices and systematic thinking.</p>
 <h3 id="it-is-a-general-purpose-programming-language">It is a general purpose programming language</h3>
 <p>What this means is that the programming language can be used for a variety of purposes. Most programming languages can be used only for one or two applications. For instance, C, C++, are used for making OS and software. They are also used for scientific computation.</p>
@@ -166,9 +170,11 @@ print(&quot;Hello, world&quot;)</code></pre>
 <p>As of now, the context is not well-established here to explain what <code>objects</code> fully mean. It will be established and explained quite well and in-detail in the subsequent pages.</p>
 <h3 id="the-design-of-the-language-is-simple">The design of the language is simple</h3>
 <p>The core philosophy of python is to make the programming experience simple for anyone who uses it. To summarize the philosophy behind the language in the best possible way, the Python Enhancement Proposal 20 - shortly known as <a href="https://www.python.org/dev/peps/pep-0020/">PEP-20</a> has a set of 19 instructions listed down in the document - <a href="https://www.python.org/dev/peps/pep-0020/"><em>The Zen of Python</em></a>. To access this set of instructions, all one has to do is type the command:</p>
-<pre class="python"><code>import this</code></pre>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+
 <p>… in the terminal to get the instructions as shown.</p>
-<pre><code>The Zen of Python, by Tim Peters
+<div class ="highlight"><pre>The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
 Explicit is better than implicit.
@@ -177,18 +183,18 @@ Complex is better than complicated.
 Flat is better than nested.
 Sparse is better than dense.
 Readability counts.
-Special cases aren&#39;t special enough to break the rules.
+Special cases aren't special enough to break the rules.
 Although practicality beats purity.
 Errors should never pass silently.
 Unless explicitly silenced.
 In the face of ambiguity, refuse the temptation to guess.
 There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&#39;re Dutch.
+Although that way may not be obvious at first unless you're Dutch.
 Now is better than never.
 Although never is often better than *right* now.
-If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
+Namespaces are one honking great idea -- let's do more of those!</pre></div>
 <h2 id="why-python">Why Python?</h2>
 <p>If you were to ask me “why should I learn Python when there are many many languages out there?” - I’ll simply list-out the following details.</p>
 <ul>
@@ -258,7 +264,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -279,12 +285,12 @@ Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

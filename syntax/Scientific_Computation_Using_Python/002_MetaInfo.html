@@ -232,40 +232,46 @@
 <h2 id="lets-write-our-first-program">Let’s write our first program</h2>
 <p>Open up a Text Editor and save a file with the extension <code>.py</code></p>
 <h2 id="program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program to ask the name, temperature, and rainfall of a place and print it</h2>
-<pre class="python"><code>&quot;&quot;&quot;
-Program to ask the name, temperature, and rainfall of a place and print it.
-&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Program to ask the name, temperature, and rainfall of a place and print it.</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
-# This is a variable to save the place
-place = input(&quot;Enter the name of the place:&quot;)
+<span class="c1"># This is a variable to save the place</span>
+<span class="n">place</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the name of the place:&quot;</span><span class="p">)</span>
 
-# Rainfall variable
-rainfall = input(&quot;Enter the rainfall recorded today in mm:&quot;)
+<span class="c1"># Rainfall variable</span>
+<span class="n">rainfall</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the rainfall recorded today in mm:&quot;</span><span class="p">)</span>
 
-# Temperature variable
-temperature = float(input(&quot;Enter the temperature recorded today in Celsius:&quot;))
+<span class="c1"># Temperature variable</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature recorded today in Celsius:&quot;</span><span class="p">))</span>
 
-# Print statement
-print(&quot;In &quot;, place, &quot; today it rained &quot;, rainfall, &quot; mm  and the temperature is&quot;, temperature, &quot; degree celsius&quot;)</code></pre>
+<span class="c1"># Print statement</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;In &quot;</span><span class="p">,</span> <span class="n">place</span><span class="p">,</span> <span class="s2">&quot; today it rained &quot;</span><span class="p">,</span> <span class="n">rainfall</span><span class="p">,</span> <span class="s2">&quot; mm  and the temperature is&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="s2">&quot; degree celsius&quot;</span><span class="p">)</span>
+</pre></div>
+
 <h2 id="comments-and-docstrings">Comments and Docstrings</h2>
 <p>Comment - Lines that are ignored when the program is run. Used for excluding codes and for including messages.</p>
-<pre class="python"><code>
-# This is a single line comment
-# Comment begins with a hash # symbol
-</code></pre>
-<p>Docstrings - Document strings. Multi-line comments. But more useful for including help/direction messages that appear when help utilities are called. In libraries, this is used as a documentation/help message for functions and classes.</p>
-<pre class="python"><code>&quot;&quot;&quot;
-    This is a Docstring. It starts and ends with 
-    triple &quot; or triple &#39; quotes. Mix and match does not work!
-&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><span class="c1"># This is a single line comment</span>
+<span class="c1"># Comment begins with a hash # symbol</span>
+</pre></div>
 
-&#39;&#39;&#39;
-    This is also a DocString
-&#39;&#39;&#39;</code></pre>
+<p>Docstrings - Document strings. Multi-line comments. But more useful for including help/direction messages that appear when help utilities are called. In libraries, this is used as a documentation/help message for functions and classes.</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is a Docstring. It starts and ends with </span>
+<span class="sd">    triple &quot; or triple &#39; quotes. Mix and match does not work!</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This is also a DocString</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+
 <h2 id="input-command">Input Command</h2>
 <p>Input command - Used for getting input from user to a variable.</p>
-<pre class="python"><code>n = input(&#39;Enter the value for n&#39;) # Default string input
-n = float(input(&#39;Enter the value for n&#39;)) # Type casted input</code></pre>
+<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the value for n&#39;</span><span class="p">)</span> <span class="c1"># Default string input</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the value for n&#39;</span><span class="p">))</span> <span class="c1"># Type casted input</span>
+</pre></div>
+
 <ul>
 <li>Default string input - that is, the function assumes data type to be string automatically.</li>
 <li>Explicit type casting (manually changing the data type) is used to control data types.</li>
@@ -304,7 +310,7 @@ n = float(input(&#39;Enter the value for n&#39;)) # Type casted input</code></pr
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -325,12 +331,12 @@ n = float(input(&#39;Enter the value for n&#39;)) # Type casted input</code></pr
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

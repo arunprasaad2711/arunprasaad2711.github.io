@@ -66,8 +66,8 @@ def md2html_conv(category, hfolder, mfolder, folder, leftIndex, rightIndex):
 		# system("pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {} > temp.html".format(title))
 
 		# This was the standard pandoc fix. Syntax highlight pushed permanently google pretty type.
-		system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
-		# system("pandoc -F pygments --from=markdown --to=html5 --mathjax {} > temp.html".format(title))
+		# system("pandoc --from=markdown --to=html5 --no-highlight --mathjax {} > temp.html".format(title))
+		system("pandoc -F pygments --from=markdown --to=html5 --mathjax {} > temp.html".format(title))
 
 		# Read the data from the first temporary file.
 		with open("temp.html", "r") as p:

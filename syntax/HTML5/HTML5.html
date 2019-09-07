@@ -178,25 +178,27 @@
 </ul></li>
 </ul>
 <h2 id="html-page-structure">HTML Page structure</h2>
-<pre class="html"><code>&lt;!DOCTYPE html&gt; &lt;!-- This tells the type of the HTML version used --&gt;
-&lt;html&gt;
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span> <span class="c">&lt;!-- This tells the type of the HTML version used --&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 
-    &lt;head&gt;
-        &lt;!-- Head of the file. Has metadata for search.
-        Also has scripts and script links for CSS,
-        JavaScript --&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;title&gt; Title of the Page &lt;/title&gt;
-        &lt;!-- Other contents --&gt;
-    &lt;/head&gt;
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Head of the file. Has metadata for search.</span>
+<span class="c">        Also has scripts and script links for CSS,</span>
+<span class="c">        JavaScript --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Title of the Page <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Other contents --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-    &lt;body&gt;
-        &lt;!-- This is the body of the file! --&gt;
-        &lt;!-- All the contents here are displayed in the browser. --&gt;
-        &lt;!-- Other contents --&gt;
-    &lt;/body&gt;
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- This is the body of the file! --&gt;</span>
+        <span class="c">&lt;!-- All the contents here are displayed in the browser. --&gt;</span>
+        <span class="c">&lt;!-- Other contents --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/html&gt;</code></pre>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <h2 id="tag-types">Tag types</h2>
 <h3 id="block-tags">Block tags</h3>
 <ul>
@@ -237,58 +239,86 @@
 <p>This is the comment tag. Within the <code>-- --</code> of the tag, you can write comments. They are ignored by default by the browser. It helps the user to write notes and to block code.</p>
 <h3 id="conditional-comments">Conditional Comments</h3>
 <p>Used to execute tags if and only if certain conditions are met. In other cases, it is ignored.</p>
-<pre class="html"><code>&lt;!--[if IE 9]&gt;
-    .... some HTML here ....
-&lt;![endif]--&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="c">&lt;!--[if IE 9]&gt;</span>
+<span class="c">    .... some HTML here ....</span>
+<span class="c">&lt;![endif]--&gt;</span>
+</pre></div>
+
 <h3 id="h1-h1"><code>&lt;h1&gt; &lt;/h1&gt;</code></h3>
 <p>This is a heading tag. The biggest heading available in the webpage. There are progressively smaller ones namely <code>h2, h3, h4, h5, h6</code>. Each heading has its own size, margin size, and padding.</p>
-<pre class="html"><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-&lt;h4&gt;Heading 4&lt;/h4&gt;
-&lt;h5&gt;Heading 5&lt;/h5&gt;
-&lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Heading 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Heading 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Heading 3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Heading 4<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Heading 5<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>Heading 6<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="p-p"><code>&lt;p&gt; &lt;/p&gt;</code></h3>
 <p>This is a paragraph tag. <strong>This is a block tag</strong>, meaning this tag appears separately. It cannot lie in the same line as that of another tag. Has <code>1em</code> margin. (<code>1em</code> = 1 font size)</p>
-<pre class="html"><code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</code></pre>
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="br"><code>&lt;br&gt;</code></h3>
 <p>This is a line break. Used for pushing the contents to the next line.</p>
-<pre class="html"><code>&lt;br&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="hr"><code>&lt;hr&gt;</code></h3>
 <p>This is a horizontal rule tag. Used for drawing a horizontal line.</p>
-<pre class="html"><code>&lt;hr&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="strong-strong"><code>&lt;strong&gt; &lt;/strong&gt;</code></h3>
 <p>This is the <strong>bold</strong> tag. This tag has <em>semantic</em> importance. The older bold tag does the same and has no <em>semantic</em> importance. The old tag is not recommended.</p>
-<pre class="html"><code>&lt;strong&gt;This text is strong/bold&lt;/strong&gt;
-&lt;b&gt;This text is bold&lt;/b&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>This text is strong/bold<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>This text is bold<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="em-em"><code>&lt;em&gt; &lt;/em&gt;</code></h3>
 <p>This is the italics tag. Called as <em>emphasis</em>. The older italics tag does the same and has no <em>semantic</em> importance. The older italic tag is not recommended.</p>
-<pre class="html"><code>&lt;em&gt;This text is italic/emphasised&lt;/em&gt;
-&lt;i&gt;This text is italic&lt;/i&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>This text is italic/emphasised<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>This text is italic<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="small-small"><code>&lt;small&gt; &lt;/small&gt;</code></h3>
 <p>Defines smaller text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;small&gt;superscripted&lt;/small&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>superscripted<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="mark-mark"><code>&lt;mark&gt; &lt;/mark&gt;</code></h3>
 <p>Defines a marked or highlighted text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;mark&gt;superscripted&lt;/mark&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>superscripted<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="del-del"><code>&lt;del&gt; &lt;/del&gt;</code></h3>
 <p>Defines a deleted text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;del&gt;superscripted&lt;/del&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>superscripted<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="ins-ins"><code>&lt;ins&gt; &lt;/ins&gt;</code></h3>
 <p>Defines an inserted text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;ins&gt;inserted&lt;/ins&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>inserted<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="sub-sub"><code>&lt;sub&gt; &lt;/sub&gt;</code></h3>
 <p>Defines a subscripted text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;sub&gt;subscripted&lt;/sub&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>subscripted<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="sup-sup"><code>&lt;sup&gt; &lt;/sup&gt;&gt;</code></h3>
 <p>Defines a superscripted text.</p>
-<pre class="html"><code>&lt;p&gt;This is &lt;sup&gt;superscripted&lt;/sup&gt; text.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>superscripted<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="a-a"><code>&lt;a&gt; &lt;/a&gt;</code></h3>
 <p>This is the <em>link</em> tag. Used for linking a webpage. Syntax:</p>
-<pre class="html"><code>&lt;a href=&quot;link_to_webpage_or_section&quot; target=&quot;_blank&quot;&gt; This is a link &lt;/a&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link_to_webpage_or_section&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span> This is a link <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+
 <p><strong>href</strong> is the hytertext reference. Simply put, the location to go when clicked. It can be a new webpage or a section in the current webpage.</p>
 <p><strong>target</strong> is a placeholder to tell where the webpage has to be opened.</p>
 <ul>
@@ -300,146 +330,174 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 </ul>
 <h3 id="ul-ul"><code>&lt;ul&gt; &lt;/ul&gt;</code></h3>
 <p>Tag for <strong>unordered</strong> lists or <strong>bullet</strong> lists. You can change the bulltes.</p>
-<pre class="html"><code>&lt;ul&gt;
-    &lt;li&gt; List Item 1 &lt;/li&gt; &lt;!-- List item --&gt;
-    &lt;li&gt; List Item 2 &lt;/li&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item 1 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="c">&lt;!-- List item --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item 2 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     .........
-    &lt;li&gt; List Item n &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item n <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="ol-ol"><code>&lt;ol&gt; &lt;/ol&gt;</code></h3>
 <p>Tag for <strong>ordered</strong> lists or <strong>numbered</strong> lists. Numbers are auto-generated.</p>
-<pre class="html"><code>&lt;ol&gt;
-    &lt;li&gt; List Item 1 &lt;/li&gt;
-    &lt;li&gt; List Item 2 &lt;/li&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item 1 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item 2 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     .........
-    &lt;li&gt; List Item n &lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> List Item n <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="table-table"><code>&lt;table&gt; &lt;/table&gt;</code></h3>
 <p>The table tag. Requires <code>&lt;thead&gt;</code> the table head tag, <code>&lt;tbody&gt;</code> the table body tag, <code>&lt;tr&gt;</code> the table row tag, <code>&lt;th&gt;</code> the table headings tag, and <code>&lt;td&gt;</code> the table data tags.</p>
-<pre class="html"><code>&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;  Name &lt;/th&gt;
-            &lt;th&gt;  Email &lt;/th&gt;
-            &lt;th&gt;  Age &lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;  Name1 &lt;/td&gt;
-            &lt;td&gt;  Email1 &lt;/td&gt;
-            &lt;td&gt;  Age1 &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;  Name2 &lt;/td&gt;
-            &lt;td&gt;  Email2 &lt;/td&gt;
-            &lt;td&gt;  Age2 &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;  Name3 &lt;/td&gt;
-            &lt;td&gt;  Email3 &lt;/td&gt;
-            &lt;td&gt;  Age3 &lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>  Name <span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>  Email <span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>  Age <span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Name1 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Email1 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Age1 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Name2 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Email2 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Age2 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Name3 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Email3 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>  Age3 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+
 <p>Earlier, tables were used for making structured webpages by creating layouts. Now, it is not used anymore, as it is not a good practice. Use tables just for tabular data.</p>
 <h3 id="form-form"><code>&lt;form&gt; &lt;/form&gt;</code></h3>
 <p>Used for creating a form for submission and processing. Requires <code>JavaScript</code> for full functionality. HTML can only be used for creating the elements. Labels and input are <strong>inline</strong> elements. Needs block level elements to place them well, for example <code>&lt;div&gt;</code> tags.</p>
-<pre class="html"><code>&lt;!-- action submits the form to a certain page. --&gt;
-&lt;!-- method tells what we are going to do --&gt;
-&lt;form class=&quot;&quot; action=&quot;index.html&quot; method=&quot;post&quot;&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;First Name&lt;/label&gt; &lt;!-- Fancy Label --&gt;
-        &lt;!-- type = data type, name = variable name --&gt;
-        &lt;input type=&quot;text&quot; name=&quot;firstName&quot; value=&quot;Enter First Name&quot;&gt; &lt;!-- input option--&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Last Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; name=&quot;lastName&quot; value=&quot;Enter Last Name&quot;&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Email Address&lt;/label&gt;
-        &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;johndoe@unknown.com&quot;&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Message for user&lt;/label&gt;
-        &lt;!-- text area tag for typing a message. --&gt;
-        &lt;textarea name=&quot;message&quot; rows=&quot;8&quot; cols=&quot;80&quot;&gt;&lt;/textarea&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Gender&lt;/label&gt;
-        &lt;!-- text area tag for typing a message. --&gt;
-        &lt;select class=&quot;&quot; name=&quot;gender&quot;&gt;
-            &lt;option value=&quot;male&quot;&gt;Male&lt;/option&gt;
-            &lt;option value=&quot;female&quot;&gt;Female&lt;/option&gt;
-            &lt;option value=&quot;other&quot;&gt;Other&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Age&lt;/label&gt;
-        &lt;!--number type, default value --&gt;
-        &lt;input type=&quot;number&quot; name=&quot;age&quot; value=&quot;&quot;&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div class=&quot;&quot;&gt;
-        &lt;label for=&quot;&quot;&gt;Birthday&lt;/label&gt;
-        &lt;input type=&quot;date&quot; name=&quot;birthday&quot; value=&quot;&quot;&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;!-- submit button for the form--&gt;
-    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;&gt;
-&lt;/form&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="c">&lt;!-- action submits the form to a certain page. --&gt;</span>
+<span class="c">&lt;!-- method tells what we are going to do --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>First Name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="c">&lt;!-- Fancy Label --&gt;</span>
+        <span class="c">&lt;!-- type = data type, name = variable name --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;firstName&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enter First Name&quot;</span><span class="p">&gt;</span> <span class="c">&lt;!-- input option--&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Last Name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lastName&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enter Last Name&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;johndoe@unknown.com&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Message for user<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- text area tag for typing a message. --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;message&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;8&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;80&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Gender<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- text area tag for typing a message. --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;gender&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;male&quot;</span><span class="p">&gt;</span>Male<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;female&quot;</span><span class="p">&gt;</span>Female<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;other&quot;</span><span class="p">&gt;</span>Other<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Age<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="c">&lt;!--number type, default value --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Birthday<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;birthday&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- submit button for the form--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+
 <p><code>post</code> (in <code>method</code>) means post a request to a server. Used for adding data to a server. <code>get</code> means to post and get data from a server.</p>
 <h3 id="button-button"><code>&lt;button&gt; &lt;/button&gt;</code></h3>
 <p>Used for creating a button</p>
-<pre class="html"><code>&lt;button event=&quot;functionName&quot; type=&quot;button&quot; name=&quot;buttonName&quot;&gt;Click Me&lt;/button&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">event</span><span class="o">=</span><span class="s">&quot;functionName&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;buttonName&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="img"><code>&lt;img&gt;</code></h3>
 <p>Self-closing tag. Not inline. Used for enclosing images.</p>
-<pre class="html"><code>&lt;img src=&quot;pathOrLink/to/filename&quot; alt=&quot;sample message for image if image not found&quot; width=&quot;widthValue&quot; height=&quot;heightValue&quot;&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;pathOrLink/to/filename&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;sample message for image if image not found&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;widthValue&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;heightValue&quot;</span><span class="p">&gt;</span>
+</pre></div>
+
 <p>Usually the image aspect ratios are preserved. When width or height attribute is used, then the image scales accordingly. Usage of both leads to distort the image’s aspect ratio.</p>
 <h3 id="blockquote-blockquote"><code>&lt;blockquote&gt; &lt;/blockquote&gt;</code></h3>
 <p>Used for writing a block quote.</p>
-<pre class="html"><code>&lt;blockquote cite=&quot;http://websitename.com&quot;&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">cite</span><span class="o">=</span><span class="s">&quot;http://websitename.com&quot;</span><span class="p">&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-&lt;/blockquote&gt;</code></pre>
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="abbr-abbr"><code>&lt;abbr&gt; &lt;/abbr&gt;</code></h3>
 <p>Abbreviation tag. Used for Abbreviations.</p>
-<pre class="html"><code>&lt;abbr title=&quot;American Standard Code for Information Interchange&quot;&gt;ASCII&lt;/abbr&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">abbr</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;American Standard Code for Information Interchange&quot;</span><span class="p">&gt;</span>ASCII<span class="p">&lt;/</span><span class="nt">abbr</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="cite-cite"><code>&lt;cite&gt; &lt;/cite&gt;</code></h3>
 <p>Citation tag. Gives a small italics. Used for citations.</p>
-<pre class="html"><code>&lt;cite&gt;HTML notes&lt;/cite&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">cite</span><span class="p">&gt;</span>HTML notes<span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="q-q"><code>&lt;q&gt; &lt;/q&gt;</code></h3>
 <p>Short question tag.</p>
-<pre class="html"><code>&lt;p&gt;WWF&#39;s goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>WWF&#39;s goal is to: <span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>Build a future where people live in harmony with nature.<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="address-address"><code>&lt;address&gt; &lt;/address&gt;</code></h3>
 <p>Address tag.</p>
-<pre class="html"><code>&lt;address&gt;
-Written by John Doe.&lt;br&gt;
-Visit us at:&lt;br&gt;
-Example.com&lt;br&gt;
-Box 564, Disneyland&lt;br&gt;
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
+Written by John Doe.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Visit us at:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Example.com<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Box 564, Disneyland<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
 USA
-&lt;/address&gt;</code></pre>
+<span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="bdo-bdo"><code>&lt;bdo&gt; &lt;/bdo&gt;</code></h3>
 <p>Used to write the text in right to left or left to right. Bi-directional override.</p>
-<pre class="html"><code>&lt;bdo dir=&quot;rtl&quot;&gt;This text will be written from right to left&lt;/bdo&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">bdo</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;rtl&quot;</span><span class="p">&gt;</span>This text will be written from right to left<span class="p">&lt;/</span><span class="nt">bdo</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="div-div"><code>&lt;div&gt; &lt;/div&gt;</code></h3>
 <p>Used for creating divisions in the page or section. Block tag.</p>
-<pre class="html"><code>&lt;div style=&quot;color:#0000FF&quot;&gt;
-    &lt;h3&gt;This is a heading&lt;/h3&gt;
-    &lt;p&gt;This is a paragraph.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#0000FF&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>This is a heading<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
 <h3 id="meta-meta"><code>&lt;meta&gt; &lt;/meta&gt;</code></h3>
 <p>Includes search keywords and information to be used by search engines for finding them. Stands for metadata.</p>
-<pre class="html"><code>&lt;meta name=&quot;description&quot; content=&quot;Notes by Arun&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;notes, html, css, JavaScript, libraries, python, sphinx&quot;&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;!-- utf-8 specifies english like script, not others like arabic etc.,--&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Notes by Arun&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;notes, html, css, JavaScript, libraries, python, sphinx&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- utf-8 specifies english like script, not others like arabic etc.,--&gt;</span>
+</pre></div>
+
 <h2 id="html5-semantic-tags.">HTML5 Semantic Tags.</h2>
 <p>Tags that tell what it means to both the browser and the developer.</p>
 <h3 id="header-header"><code>&lt;header&gt; &lt;/header&gt;</code></h3>
@@ -515,7 +573,7 @@ USA
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -536,12 +594,12 @@ USA
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

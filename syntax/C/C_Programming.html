@@ -163,23 +163,31 @@
 <p>If wanted to work in Linux/Unix environment, install a gcc/icc or any equivalent compiler and proceed.</p>
 <h2 id="installation">Installation</h2>
 <p>Installing C, C++ is fairly easy. In a Linux operating system like Ubuntu, just type the command in the terminal.</p>
-<pre class="bash"><code>sudo apt install gcc g++</code></pre>
+<div class="highlight"><pre><span></span>sudo apt install gcc g++
+</pre></div>
+
 <h2 id="basics-of-c">Basics of C</h2>
 <p>The extension of c files is .c</p>
 <p>There are main compilers for C Programs. The ideal choice of compiler is gcc in case of linux and unix.</p>
 <p>The program start with pre-processing statements like</p>
-<pre class="c"><code>#include&lt;somefilename.h&gt;</code></pre>
-<p>These are header files required to give definitions for commands and built-in functions used in C</p>
-<pre class="c"><code># is used for making an explicit definition to the compiler.
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;somefilename.h&gt;</span><span class="cp"></span>
+</pre></div>
 
-/*  contents  is used for a block comment. */
-// contents is used for a single line comment.</code></pre>
+<p>These are header files required to give definitions for commands and built-in functions used in C</p>
+<div class="highlight"><pre><span></span><span class="cp"># is used for making an explicit definition to the compiler.</span>
+
+<span class="cm">/*  contents  is used for a block comment. */</span>
+<span class="c1">// contents is used for a single line comment.</span>
+</pre></div>
+
 <p>There are quite a few changes between Borland C and GCC.</p>
 <p>The entire program is written inside the main function</p>
-<pre class="c"><code>main()
-{
-contents;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">contents</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>By default, the c compiler will first look for this function first. Only then, other functions will be handled/read. The main function can have a return statement if it returns a value. To make so, you need to assign it a return value</p>
 <p>eg: <code>int main or float main.</code></p>
 <p>To make it return a value, use return statement.</p>
@@ -198,18 +206,28 @@ contents;
 <p><code>math.h</code> has definitions for mathematical operations.</p>
 <p><strong>Usually, Header files have “declarations” for the functions and commands. The actual contents are available in a separate C file. Header files pull the contents of the C file of the same name, except the extension into the C file</strong></p>
 <h2 id="built-in-commands-and-functions">Built-in Commands and Functions</h2>
-<pre class="c"><code>printf(&quot;strings&quot;, vars);</code></pre>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="n">vars</span><span class="p">);</span>
+</pre></div>
+
 <p>This is used for printing and displaying contents on screen. eg:</p>
-<pre class="c"><code>printf(&quot;Simple Interest is: %f&quot;, si);</code></pre>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Simple Interest is: %f&quot;</span><span class="p">,</span> <span class="n">si</span><span class="p">);</span>
+</pre></div>
+
 <p>You can also print the variable’s address. Use <code>%d</code> for the type specifier and &amp; infront of the variable to indicate the address.</p>
-<pre class="c"><code>scanf(&quot;type specifiers&quot;, &amp;vars);</code></pre>
+<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;type specifiers&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vars</span><span class="p">);</span>
+</pre></div>
+
 <p>This is used for retrieving varaible values from the console. </p>
 <p>The variable addresses are sent as the arguments for scanf</p>
 <p>eg:</p>
-<pre class="c"><code>scanf(&quot;%d&quot;, &amp;years);</code></pre>
+<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">years</span><span class="p">);</span>
+</pre></div>
+
 <p>The &amp; is used for indicating the address of the variable.</p>
 <p>While entering the values in the console, press enter or tab key after every value entry.</p>
-<pre class="c"><code>sizeof(var)</code></pre>
+<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+
 <p>This function returns in integer, the number of bytes occupied by the variable in memory.</p>
 <ul>
 <li>int occupies 4 bytes,</li>
@@ -223,21 +241,29 @@ contents;
 </ul>
 <p>This storage depends on the bit-technology of the compiler and OS.</p>
 <p>But</p>
-<pre class="c"><code>    sizeof(char)=&lt;sizeof(short)=&lt;sizeof(int)=&lt;sizeof(long)=&lt;sizeof(long long);</code></pre>
-<pre><code>break;</code></pre>
+<div class="highlight"><pre><span></span>    <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+</pre></div>
+
+<div class ="highlight"><pre>break;</pre></div>
 <p>This is a command used for breaking a loop structure or a case structure. If a certain loop breaking condition is reached, use break to come out of the loop.</p>
-<pre class="c"><code>continue;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">continue</span><span class="p">;</span>
+</pre></div>
+
 <p>This is a command used for skipping a particular iteration of a loop or a case structure without breaking out of the loop. To make this happen, use a condition or use this where a certain thing happens.</p>
-<pre class="c"><code>goto</code></pre>
+<div class="highlight"><pre><span></span><span class="k">goto</span>
+</pre></div>
+
 <p>This is a statement used for shifting the line of execution from one point to another. It can also break loops and decision statements.</p>
 <p>To make a goto statement work, you need a label along with it. The label is case sensitive.</p>
 <p>eg:</p>
-<pre class="c"><code>...
-goto label1;
-....
+<div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="k">goto</span> <span class="n">label1</span><span class="p">;</span>
+<span class="p">....</span>
 
-label1:
-    ......</code></pre>
+<span class="nl">label1</span><span class="p">:</span>
+    <span class="p">......</span>
+</pre></div>
+
 <p><code>goto</code> is not preferred because it can complicate the programming by jumping the execution here and there. Also, if not done properly, you might end up with an infinite loop. goto with line numbers is worse because you may modify the code later and line numbers may change, thus ending with a confusing code. One has to be cautious while using this code.</p>
 <h2 id="data-types-and-symbols">Data types and Symbols</h2>
 <p>There are 4 basic data types</p>
@@ -254,7 +280,9 @@ label1:
 </ul>
 <p>This storage depends on the bit-technology of the compiler and OS.</p>
 <p>But in any system,</p>
-<pre class="c"><code>sizeof(char)=&lt;sizeof(short)=&lt;sizeof(int)=&lt;sizeof(long)=&lt;sizeof(long long)</code></pre>
+<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span>
+</pre></div>
+
 <p>float for real numbers (single precision numbers or precise upto 6-8 digits)</p>
 <p>char for short numbers and characters.</p>
 <p>strings are also available under char but in a different manner.</p>
@@ -269,7 +297,9 @@ label1:
 <p><code>void</code> is used for indicating that the variable/function will not return any value.</p>
 <p><code>const</code> is used for making a constant in the program</p>
 <p>eg:</p>
-<pre class="c"><code>const int AREA = 4;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">AREA</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+
 <p>(constants, by practice have to be in upper case. they need not be in caps. Used to differentiate them from variables)</p>
 <p>To place the variables inside strings (as in the case of print statements) or to get the values (in case of scan statements,) type specifiers or format specifiers are needed.</p>
 <p><code>%d</code> or <code>%i</code> for integers/ number part of characters/short integers</p>
@@ -293,12 +323,14 @@ label1:
 <p>This can be edited also.</p>
 <p><code>%5.3f</code> indicates that in a field of 5 spaces, allocate 3 spaces for digits to the right of the period, 1 for the point and the rest for the digits to the left of the period (with or without sign)</p>
 <p>Both the whole number and decimal number part are optional, but good to add them for specific output formats. Some examples are:</p>
-<pre class="c"><code>    printf(&quot;%d\n&quot;,b);
-    printf(&quot;%3d\n&quot;,b);
-    printf(&quot;%03d\n&quot;,b);
-    printf(&quot;%3.2f\n&quot;,d);</code></pre>
+<div class="highlight"><pre><span></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%03d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</pre></div>
+
 <p>The outputs are</p>
-<pre><code>   7   70075.10</code></pre>
+<div class ="highlight"><pre>   7   70075.10</pre></div>
 <p>Other examples are:</p>
 <p><code>%d</code> (print as a decimal integer) <code>%6d</code> (print as a decimal integer with a width of at least 6 wide)</p>
 <p><code>%f</code> (print as a floating point)</p>
@@ -326,7 +358,9 @@ label1:
 <p>Meaning, to the left and right of the operator, the sub-expressions are noticed as to whether they are involved in any other sub-expressions.</p>
 <p>If they are, then that expression is not done. If it is not, then it is done.</p>
 <p>eg:</p>
-<pre class="c"><code>10/5*2</code></pre>
+<div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
 <p>The <code>/</code> operator is executed first, because 10(sub-expression on the left of <code>/</code>) is not involved in any other operation.</p>
 <p>Whereas <code>*</code> is done second because 5(left of <code>*</code> ) is involved in <code>/</code> operation.</p>
 <p>This is also called as operator associativity.</p>
@@ -341,39 +375,47 @@ label1:
 <p><code>""</code> is used for string input.</p>
 <p><code>''</code> is used for character input.</p>
 <p>eg:</p>
-<pre class="c"><code>c = &#39;A&#39;;
-option = &#39;Y&#39;;
-name = &quot;Arun&quot;;</code></pre>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="n">option</span> <span class="o">=</span> <span class="sc">&#39;Y&#39;</span><span class="p">;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Arun&quot;</span><span class="p">;</span>
+</pre></div>
+
 <p>Characters can also be added.</p>
 <p>Characters carry an ASCII value. So, if characters are added, a new character is created that is equal to the sum of the characters’ ASCII value.</p>
 <p>strings are available and are given as a part of char.</p>
 <p>When character variables are operated and assigned to another character variable, a new symbol or character is stored in the new character variable.</p>
 <p>If the assignment is to an integer, the result of the ASCII value operation of the characters is stored.</p>
 <p>Relational operators are</p>
-<pre class="c"><code>==
-&gt;
-&lt;
-&gt;=
-&lt;=
-!=</code></pre>
+<div class="highlight"><pre><span></span><span class="o">==</span>
+<span class="o">&gt;</span>
+<span class="o">&lt;</span>
+<span class="o">&gt;=</span>
+<span class="o">&lt;=</span>
+<span class="o">!=</span>
+</pre></div>
+
 <p><code>=</code> is a normal equal sign.</p>
 <p>Logical operators are</p>
-<pre class="c"><code>&amp;&amp; for AND
-|| for OR
-! for NOT</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&amp;&amp;</span> <span class="k">for</span> <span class="n">AND</span>
+<span class="o">||</span> <span class="k">for</span> <span class="n">OR</span>
+<span class="o">!</span> <span class="k">for</span> <span class="n">NOT</span>
+</pre></div>
+
 <p>Escape Sequences are used for re-arranging/formatting the output properly. They are also used for placing key symbols inside strings. </p>
 <p>They have to be placed within string quotes.</p>
 <p><code>\</code> symbol is for escaping a reserved symbol and using it in print statement or other places.</p>
 <p>eg: <code>C \' \\ \" \&amp;</code> etc.,</p>
 <p>The default escape sequences are</p>
-<pre class="c"><code>\n (newline)
-\t (tab)
-\v (vertical tab)
-\f (new page)
-\b (backspace)
-\r (carriage return)
-\n (newline)
-\a (alert, invokes a beep sound)</code></pre>
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
+<span class="err">\</span><span class="n">t</span> <span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="err">\</span><span class="n">v</span> <span class="p">(</span><span class="n">vertical</span> <span class="n">tab</span><span class="p">)</span>
+<span class="err">\</span><span class="n">f</span> <span class="p">(</span><span class="n">new</span> <span class="n">page</span><span class="p">)</span>
+<span class="err">\</span><span class="n">b</span> <span class="p">(</span><span class="n">backspace</span><span class="p">)</span>
+<span class="err">\</span><span class="n">r</span> <span class="p">(</span><span class="n">carriage</span> <span class="k">return</span><span class="p">)</span>
+<span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
+<span class="err">\</span><span class="n">a</span> <span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="n">invokes</span> <span class="n">a</span> <span class="n">beep</span> <span class="n">sound</span><span class="p">)</span>
+</pre></div>
+
 <h2 id="storage-classes">Storage Classes</h2>
 <p>Storage classes are ways of storing variables in memory locations. C offers 4 storage classes namely,</p>
 <ol type="1">
@@ -384,7 +426,9 @@ name = &quot;Arun&quot;;</code></pre>
 </ol>
 <p>To make a variable stored in the class, use their name during declariation.</p>
 <p>eg:</p>
-<pre class="c"><code>static int i; auto int j</code></pre>
+<div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="k">auto</span> <span class="kt">int</span> <span class="n">j</span>
+</pre></div>
+
 <p>auto:</p>
 <p>auto is used for making the variable defined only within the function it is defined in. Outside the function, the variables do not exist. So, when they are accessed, it shows an error. By default, auto is the storage class for all the variables in any function in C.</p>
 <p>register:</p>
@@ -392,29 +436,34 @@ name = &quot;Arun&quot;;</code></pre>
 <h2 id="hash-sequences">Hash Sequences</h2>
 <p>Hash sequences explicitly define certain job to the compiler. Hence they are also termed as compiler directives.</p>
 <p>To define a global constant, use</p>
-<pre class="c"><code>#define VAR_NAME &lt;value&gt;</code></pre>
+<div class="highlight"><pre><span></span><span class="cp">#define VAR_NAME &lt;value&gt;</span>
+</pre></div>
+
 <p>eg:</p>
-<pre class="c"><code>#define PI 3.141596</code></pre>
+<div class="highlight"><pre><span></span><span class="cp">#define PI 3.141596</span>
+</pre></div>
+
 <p>These variables have a special data type. So, they adjust accordingly to the variable type of the expression involved. These variables have to be in caps. Also, variables cannot change in the program. Hence they are constants.</p>
 <p>The constants are in capital letters. They need not be. It is a notation or a practice to do so, so that they are differentiated from variables.</p>
 <h2 id="variable-formatting-with-example">Variable Formatting With Example</h2>
-<pre class="c"><code>#include&lt;stdio.h&gt;
-//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output
-main()
-{
-    printf(&quot;The color: %s\n&quot;, &quot;blue&quot;);
-    printf(&quot;First number: %d\n&quot;, 12345);
-    printf(&quot;Second number: %04d\n&quot;, 25);
-    printf(&quot;Third number: %i\n&quot;, 1234);
-    printf(&quot;Float number: %3.2f\n&quot;, 3.14159);
-    printf(&quot;Hexadecimal: %x\n&quot;, 255);
-    printf(&quot;Octal: %o\n&quot;, 255);
-    printf(&quot;Unsigned value: %u\n&quot;, 150);
-    printf(&quot;Just print the percentage sign %%\n&quot;, 10);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The color: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;First number: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Second number: %04d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Third number: %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Float number: %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hexadecimal: %x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Octal: %o</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unsigned value: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Just print the percentage sign %%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>The output is</p>
-<pre><code>The color: blue
+<div class ="highlight"><pre>The color: blue
 First number: 12345
 Second number: 0025
 Third number: 1234
@@ -423,99 +472,115 @@ Hexadecimal: ff
 Octal: 377
 Unsigned value: 150
 Just print the percentage sign %
-</code></pre>
-<pre class="c"><code>
-#include&lt;stdio.h&gt;
-//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output
-main()
-{
-    printf(&quot;:%s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%15s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%.10s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%-10s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%-15s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%.15s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%15.10s:\n&quot;, &quot;Hello, world!&quot;);
-    printf(&quot;:%-15.10s:\n&quot;, &quot;Hello, world!&quot;);
-}
-</code></pre>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>The output is</p>
-<pre class="c"><code>:Hello, world!:
-:  Hello, world!:
-:Hello, wor:
-:Hello, world!:
-:Hello, world!  :
-:Hello, world!:
-:     Hello, wor:
-:Hello, wor     :</code></pre>
+<div class="highlight"><pre><span></span><span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span>  <span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>  <span class="o">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span>     <span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span>     <span class="p">:</span>
+</pre></div>
+
 <h2 id="condition-and-loop-statements">Condition and Loop Statements</h2>
 <h3 id="if-statement">if statement:</h3>
-<pre class="c"><code>if(condition 1)
-{
-    Set of commands;
-}
-else if(condition 2)
-{
-    Set of commands 2;
-}
-....
-else
-{
-    Final set of commands;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">....</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Final</span> <span class="n">set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>The condition expression should evaluate to a logical value 1 or 0 (True or false.).</p>
 <p>if the condition returns a value that is != 0, then the condition is termed as True. Else, it is termed as false.</p>
 <p>Nested if-else statements (if-else statement inside another if-else statement) is possible.</p>
 <h3 id="switch-case-structureconstruct">Switch case structure/construct</h3>
-<pre class="c"><code>switch(varname)
-{
-    case value1 || value a || value b:
-          {
-              statement set1;
-              break;
-          }
-    case value2 || value c || value d:
-          {
-              statement set2;
-              break;
-          }
-.....
-    default:
-          {
-             statement set final;
-              break; 
-           }
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="n">value1</span> <span class="o">||</span> <span class="n">value</span> <span class="n">a</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">b</span><span class="p">:</span>
+          <span class="p">{</span>
+              <span class="n">statement</span> <span class="n">set1</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+    <span class="k">case</span> <span class="n">value2</span> <span class="o">||</span> <span class="n">value</span> <span class="n">c</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">d</span><span class="p">:</span>
+          <span class="p">{</span>
+              <span class="n">statement</span> <span class="n">set2</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+<span class="p">.....</span>
+    <span class="k">default</span><span class="o">:</span>
+          <span class="p">{</span>
+             <span class="n">statement</span> <span class="n">set</span> <span class="n">final</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span> 
+           <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>If the variable value matches any of the case, then that corresponding case statement set is executed. break is necessary to break out the switch case. otherwise, all the codes inside all the cases will be done and then the decision statement terminates.</p>
 <h3 id="while-loop">while loop</h3>
-<pre class="c"><code>while(condition)
-{
-    set of statements;
-    one condition breaker statement;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>In the absence of the condition breaker statement, the while loop will run forever.</p>
 <h3 id="do-while-loop">do while loop</h3>
-<pre class="c"><code>do
-{
-    set of statements;
-    one condition breaker statement;
-}
-while(condition)</code></pre>
+<div class="highlight"><pre><span></span><span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div>
+
 <p>There is a small difference. while loop checks condition every time before it executes the set of statements. So, for executing and terminating the set of statements ‘n’ times, it checks the condition ‘n+1’ times. Whereas the do-while loop executes the statements before checking the condition. So for doing ‘n+1’ times the set of statements, it checks the condition ‘n’ times. So, while loop does not even allow executing the code once when the condition fails, whereas do loop allows executing the code atleast once before the condition fails.</p>
 <h3 id="for-loop">for loop</h3>
-<pre class="c"><code>for(i = initial_value; increment/decrement break or normal condition; increment/decrement)
-{
-    set of statements;
-    condition breaking statement (if a normal condition)
-} </code></pre>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">initial_value</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span> <span class="k">break</span> <span class="n">or</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">condition</span> <span class="n">breaking</span> <span class="n">statement</span> <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">)</span>
+<span class="p">}</span> 
+</pre></div>
+
 <p>explanation: for loop needs 4 components along with an iterating integer variable. 1. Iterating integer variable 2. Initial value for iterating variable 3. condition statement     a. increment/decrement based condition           This condition fails after a finite number of iterations when the iterating variable because it is incremented/decremented hits a limiting value. This limiting value is given as the condition     b. normal condition           This condition fails after a finite number of iterations when the codes inside the loop bring about a case where the condition fails. 4. Increment/decrement     This can be given using ++ or – operator or by other forced increments/decrements like i + = 3 etc., eg:</p>
-<pre class="c"><code>for (i = 1; i&lt;10; i++ or i += 1)
-{ statements; }</code></pre>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="n">or</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span> <span class="n">statements</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
 <p>working 1. initialization 2. condition 3. statements 4. increment 5. condition 6. statements 7. increment 8. condition 9. statements 10. increment and so on…..</p>
-<pre class="c"><code>for(;;)
-{
-    set of statements;
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>This is an infinte loop!. Unless manually terminated or crashed by the system, the program will run perpetually. This is used with manual loop breaks. It is required for some programming applications where till a certain condition is reached, the iterations have to proceed.</p>
 
             </div>
@@ -551,7 +616,7 @@ while(condition)</code></pre>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
 
 <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
@@ -572,12 +637,12 @@ while(condition)</code></pre>
 
 
     <!-- google prettytype class adder using jquery. -->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $("code").addClass('prettyprint');
             $("pre").addClass('prettyprint');
         });
-    </script>
+    </script> -->
 
 </body>
 </html>
