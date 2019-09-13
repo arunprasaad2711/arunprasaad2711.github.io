@@ -134,7 +134,8 @@
 		font-family: _font(family-fixed);
 		font-size: 1.0em;
 		margin: 0 0.25em;
-		padding: 0.25em 0.65em;
+		padding: 0.075em 0.25em;
+		border: solid _size(code-border) _palette(accent6); // Added by me.
 	}
 
 	pre {
@@ -142,12 +143,13 @@
 		font-family: _font(family-fixed);
 		font-size: 1.0em;
 		margin: 0 0 _size(element-margin) 0;
-		padding: 1.25em 1.25em; // Added by me.
+		padding: 1.25em 1.0em; // Added by me.
+		border: solid _size(code-border) _palette(accent6); // Added by me.
 
 		code {
 			display: block;
-			line-height: 1.75;
-			padding: 1em 1.5em;
+			line-height: 1.25;
+			padding: 0.075em 0.65em;
 			overflow-x: auto;
 		}
 	}

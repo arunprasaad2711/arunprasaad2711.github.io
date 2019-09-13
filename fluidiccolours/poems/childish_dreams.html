@@ -11,73 +11,7 @@
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
-    <!-- PrismJS - use with red carpet-->
-    <!-- <link rel="stylesheet" href="../../assets/css/prism.css"> -->
-
-    <!-- p5.js local copy -->
-    <!-- commenting them out as they are being rendered externally. -->
-    <!-- <script type="text/javascript" src="../../assets/js/p5js/p5.min.js"></script>
-    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.dom.min.js"></script>
-    <script type="text/javascript" src="../../assets/js/p5js/addons/p5.sound.min.js"></script> -->
-
-    <!-- Sequence Diagram Files local copy -->
-    <script type="text/javascript" src="../../assets/js/sequence_diagrams/webfont.js"></script>
-    <script type="text/javascript" src="../../assets/js/sequence_diagrams/snap.svg-min.js"></script>
-    <script type="text/javascript" src="../../assets/js/sequence_diagrams/underscore-min.js"></script>
-    <script type="text/javascript" src="../../assets/js/sequence_diagrams/sequence-diagram-min.js"></script>
-
     
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> -->
-
-    <!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-    <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/railscasts.min.css"-->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-dark.min.css"> -->
-
-    <!--
-        For source code, go here: https://github.com/highlightjs/highlight.js
-    -->
-
-    <!-- Moment.js - This is used for time difference calculations and time displays. -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script>
-        moment().format();
-    </script>
-
-    <!-- BokehJS-->
-    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
-    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
-    <script type="text/javascript">
-        Bokeh.set_log_level("info");
-    </script>
-    
-    <!-- MathJax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        jax: ["input/TeX", "output/HTML-CSS"],
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true,
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
-            TeX: {  equationNumbers: { autoNumber: "AMS" },
-                    extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            fonts: ["TeX"],
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
 
     </head>
     
@@ -168,14 +102,46 @@ I'll spread and share to the world around.</div>
 <!-- Plotly.js for plotting -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<!-- PrettifyJS for syntax highlighting - use this with redcarpet. -->
-<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?&skin=desert"></script> -->
-
-<!-- Code highlight using Highlighter JS - to be used with pandoc + no default pandoc highlights -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<!-- Moment.js - This is used for time difference calculations and time displays. -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script>
-    hljs.initHighlightingOnLoad();
-</script> -->
+    moment().format();
+</script>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: {  equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        fonts: ["TeX"],
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
 
 
     <script src="../../assets/js/jquery.min.js"></script>
@@ -185,17 +151,8 @@ I'll spread and share to the world around.</div>
     <script src="../../assets/js/breakpoints.min.js"></script>
     <script src="../../assets/js/util.js"></script>
     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/my_functions/helpers.js"></script>
-    <!-- <script src="../../assets/css/prism.js"></script> -->
 
 
-    <!-- google prettytype class adder using jquery. -->
-    <!-- <script>
-        $(document).ready(function(){
-            $("code").addClass('prettyprint');
-            $("pre").addClass('prettyprint');
-        });
-    </script> -->
 
 </body>
 </html>

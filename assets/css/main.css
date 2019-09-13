@@ -1,6 +1,5 @@
 @import url(./font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono");
 /*
 	Forty by HTML5 UP
@@ -8,7 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import url(./pygments_themes/overflow.css);
-@import url(./pygments_themes/paraiso-dark.css);
+@import url(./pygments_themes/pygments.css);
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -238,12 +237,13 @@ blockquote {
 }
 
 code {
-  background: #2f1e2e;
-  color: #e7e9db;
+  background: #f8f8f8;
+  color: #000000;
   font-family: "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
   font-size: 1.0em;
   margin: 0 0.25em;
-  padding: 0.25em 0.65em;
+  padding: 0.075em 0.25em;
+  border: solid 1px #87c5a4;
 }
 
 pre {
@@ -251,13 +251,14 @@ pre {
   font-family: "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
   font-size: 1.0em;
   margin: 0 0 2em 0;
-  padding: 1.25em 1.25em;
+  padding: 1.25em 1.0em;
+  border: solid 1px #87c5a4;
 }
 
 pre code {
   display: block;
-  line-height: 1.75;
-  padding: 1em 1.5em;
+  line-height: 1.25;
+  padding: 0.075em 0.65em;
   overflow-x: auto;
 }
 
