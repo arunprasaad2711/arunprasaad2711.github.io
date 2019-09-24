@@ -7,7 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import url(./pygments_themes/overflow.css);
-@import url(./pygments_themes/pygments.css);
+@import url(./pygments_themes/onedark.css);
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -118,7 +118,7 @@ body, input, select, textarea {
   font-size: 17pt;
   font-weight: 300;
   letter-spacing: 0.025em;
-  line-height: 1.65;
+  line-height: 1.65em;
 }
 
 @media screen and (max-width: 1680px) {
@@ -237,27 +237,25 @@ blockquote {
 }
 
 code {
-  background: #f8f8f8;
-  color: #000000;
-  font-family: "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
+  background: #282c34;
+  color: #abb2bf;
+  font-family: "Monospace", "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
   font-size: 1.0em;
   margin: 0 0.25em;
   padding: 0.075em 0.25em;
-  border: solid 1px #87c5a4;
 }
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
-  font-size: 1.0em;
+  font-family: "Monospace", "Droid Sans Mono", "Inconsolata", "Monospace", monospace;
+  font-size: 1.00em;
   margin: 0 0 2em 0;
-  padding: 1.25em 1.0em;
-  border: solid 1px #87c5a4;
+  padding: 1.0em 1.0em;
 }
 
 pre code {
   display: block;
-  line-height: 1.25;
+  line-height: 1.00;
   padding: 0.075em 0.65em;
   overflow-x: auto;
 }

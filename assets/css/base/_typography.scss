@@ -9,21 +9,25 @@
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 17pt;
+		font-size: 17pt; // default: 17pt
+		// font-size: 1em; // default: 17pt
 		font-weight: _font(weight);
 		letter-spacing: _font(letter-spacing);
-		line-height: 1.65;
+		line-height: 1.65em; // default: 1.65
 
 		@include breakpoint('<=xlarge') {
-			font-size: 14pt;
+			font-size: 14pt; // default: 14pt
+			// font-size: 1em; // default: 14pt
 		}
 
 		@include breakpoint('<=large') {
-			font-size: 12pt;
+			font-size: 12pt; // default: 12pt
+			// font-size: 1em; // default: 12pt
 		}
 
 		@include breakpoint('<=xxsmall') {
-			font-size: 11pt;
+			font-size: 11pt; // default: 11pt
+			// font-size: 1em; // default: 11pt
 		}
 	}
 
@@ -132,23 +136,23 @@
 		background: _palette(code-bg);
 		color: _palette(code-fg);
 		font-family: _font(family-fixed);
-		font-size: 1.0em;
+		font-size: 1.0em; // tweaked by me. default: 1.0em;
 		margin: 0 0.25em;
 		padding: 0.075em 0.25em;
-		border: solid _size(code-border) _palette(accent6); // Added by me.
+		// border: solid _size(code-border) _palette(accent6); // Added by me.
 	}
 
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: _font(family-fixed);
-		font-size: 1.0em;
+		font-size: 1.00em; // tweaked by me. default: 1.0em;
 		margin: 0 0 _size(element-margin) 0;
-		padding: 1.25em 1.0em; // Added by me.
-		border: solid _size(code-border) _palette(accent6); // Added by me.
+		padding: 1.0em 1.0em; // Added by me.
+		// border: solid _size(code-border) _palette(accent6); // Added by me.
 
 		code {
 			display: block;
-			line-height: 1.25;
+			line-height: 1.00;
 			padding: 0.075em 0.65em;
 			overflow-x: auto;
 		}
