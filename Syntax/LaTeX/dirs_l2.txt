@@ -1,0 +1,2 @@
+./Syntax/LaTeX/LaTex02.md
+./Syntax/LaTeX/LaTeX.md

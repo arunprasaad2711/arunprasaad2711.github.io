@@ -1,3 +1,0 @@
-code/Bokeh/Bokeh_Notes.md
-code/Bokeh/Bokeh_test1.md
-code/Bokeh/Bokeh_test2.md

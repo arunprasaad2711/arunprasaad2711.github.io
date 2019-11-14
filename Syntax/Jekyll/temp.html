@@ -1,0 +1,216 @@
+<h1 id="jekyll">Jekyll</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#jekyll">Jekyll</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#starting-a-website">Starting a website</a></li>
+<li><a href="#running-the-website">Running the Website</a></li>
+<li><a href="#configuration-file">Configuration file</a></li>
+<li><a href="#front-matter">Front Matter</a></li>
+<li><a href="#creating-blog-posts">Creating blog posts</a></li>
+<li><a href="#working-with-drafts">Working with Drafts.</a></li>
+<li><a href="#creating-pages">Creating Pages</a></li>
+<li><a href="#permalinks">Permalinks</a></li>
+<li><a href="#front-matter-defaults">Front matter defaults</a></li>
+<li><a href="#installing-themes">Installing Themes</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="introduction">Introduction</h2>
+<p>Jekyll is a static site generator software made using Ruby. It is useful for creating a static website. It will take care of all the HTML. Write the content in a text file and it will automatically convert into HTML file. Also, there is a provision for including CSS files to make your own website design.</p>
+<h2 id="installation">Installation</h2>
+<p>You need to install:</p>
+<ul>
+<li>Ruby Compiler</li>
+<li>Ruby Gems [Package Manager]</li>
+</ul>
+<p>In Ubuntu, install Ruby and Jekyll using the commands:</p>
+<div class="highlight"><pre><span></span>sudo apt install ruby
+sudo gem install jekyll bundler
+</pre></div>
+
+<p>To check if the components are installed, type the following commands and see if a similar output pops-up.</p>
+<div class="highlight"><pre><span></span>arun@hpdv6:~$ ruby -v
+ruby <span class="m">2</span>.5.1p57 <span class="o">(</span><span class="m">2018</span>-03-29 revision <span class="m">63029</span><span class="o">)</span> <span class="o">[</span>x86_64-linux-gnu<span class="o">]</span>
+arun@hpdv6:~$ gem -v
+<span class="m">2</span>.7.6
+arun@hpdv6:~$ jekyll -v
+jekyll <span class="m">3</span>.8.5
+arun@hpdv6:~$ bundler -v
+Bundler version <span class="m">2</span>.0.1
+</pre></div>
+
+<h2 id="starting-a-website">Starting a website</h2>
+<p>To create a website, type the command <code>jekyll new &lt;foldername&gt;</code> as follows:</p>
+<div class="highlight"><pre><span></span>jekyll new fluidiccolours
+</pre></div>
+
+<p>Once it is done, a directory called <code>fluidiccolours</code> is created with a lot of files in it.</p>
+<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/jekyll_minimal_experiment$ tree
+.
+└── fluidiccolours
+    ├── <span class="m">404</span>.html
+    ├── about.md
+    ├── _config.yml
+    ├── Gemfile
+    ├── index.md
+    └── _posts
+        └── <span class="m">2019</span>-06-11-welcome-to-jekyll.markdown
+
+<span class="m">2</span> directories, <span class="m">6</span> files
+</pre></div>
+
+<ul>
+<li><code>index.md</code> is the home page of the website.</li>
+<li><code>about.md</code> is the about page of the website.</li>
+<li><code>Gemfile</code> is the bundle configuration file for the project. Do not edit it unless you want to go and tweak a lot of fundamental settings. It contains all the packages and the dependencies that are necessary for the ruby project to work.</li>
+<li><code>_posts</code> folder has all the blog posts in markdown that will be converted into HTML files.</li>
+<li><code>_site</code> folder will have all the HTML files of your website - essentially the final version of your website. It gets updated as and when the web pages are modified.</li>
+<li><code>_config.yaml</code> file contains the configuration values for the files as a list of key-value pairs.</li>
+</ul>
+<h2 id="running-the-website">Running the Website</h2>
+<p>To run the website, go into the website folder and type this command in the terminal.</p>
+<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/jekyll_minimal_experiment/fluidiccolours$ bundle <span class="nb">exec</span> jekyll serve
+Configuration file: /home/arun/Website_Experimental/jekyll_minimal_experiment/fluidiccolours/_config.yml
+            Source: /home/arun/Website_Experimental/jekyll_minimal_experiment/fluidiccolours
+       Destination: /home/arun/Website_Experimental/jekyll_minimal_experiment/fluidiccolours/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed <span class="k">for</span> posts
+                    <span class="k">done</span> in <span class="m">0</span>.8 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">&#39;/home/arun/Website_Experimental/jekyll_minimal_experiment/fluidiccolours&#39;</span>
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+<span class="o">[</span><span class="m">2019</span>-06-11 <span class="m">01</span>:35:49<span class="o">]</span> ERROR <span class="sb">`</span>/favicon.ico<span class="err">&#39;</span> not found.
+</pre></div>
+
+<p>The website should be accessible from the local server <code>http://127.0.0.1:4000/</code></p>
+<h2 id="configuration-file">Configuration file</h2>
+<p><code>_config.yml</code> is the configuration file for the project. It contains all the important attributes for the website as a key-value pair list.</p>
+<p>The default configuration file will be like this:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Welcome to Jekyll!</span>
+<span class="c1">#</span>
+<span class="c1"># This config file is meant for settings that affect your whole blog, values</span>
+<span class="c1"># which you are expected to set up once and rarely edit after that. If you find</span>
+<span class="c1"># yourself editing this file very often, consider using Jekyll&#39;s data files</span>
+<span class="c1"># feature for the data you need to update frequently.</span>
+<span class="c1">#</span>
+<span class="c1"># For technical reasons, this file is *NOT* reloaded automatically when you use</span>
+<span class="c1"># &#39;bundle exec jekyll serve&#39;. If you change this file, please restart the server process.</span>
+
+<span class="c1"># Site settings</span>
+<span class="c1"># These are used to personalize your new site. If you look in the HTML files,</span>
+<span class="c1"># you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.</span>
+<span class="c1"># You can create any custom variable you would like, and they will be accessible</span>
+<span class="c1"># in the templates via {{ site.myvariable }}.</span>
+<span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Your awesome title</span>
+<span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your-email@example.com</span>
+<span class="nt">description</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span> <span class="c1"># this means to ignore newlines until &quot;baseurl:&quot;</span>
+  <span class="no">Write an awesome description for your new site here. You can edit this</span>
+  <span class="no">line in _config.yml. It will appear in your document head meta (for</span>
+  <span class="no">Google search results) and in your feed.xml site description.</span>
+<span class="nt">baseurl</span><span class="p">:</span> <span class="s">&quot;&quot;</span> <span class="c1"># the subpath of your site, e.g. /blog</span>
+<span class="nt">url</span><span class="p">:</span> <span class="s">&quot;&quot;</span> <span class="c1"># the base hostname &amp; protocol for your site, e.g. http://example.com</span>
+<span class="nt">twitter_username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jekyllrb</span>
+<span class="nt">github_username</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">jekyll</span>
+
+<span class="c1"># Build settings</span>
+<span class="nt">markdown</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kramdown</span>
+<span class="nt">theme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minima</span>
+<span class="nt">plugins</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jekyll-feed</span>
+
+<span class="c1"># Exclude from processing.</span>
+<span class="c1"># The following items will not be processed, by default. Create a custom list</span>
+<span class="c1"># to override the default setting.</span>
+<span class="c1"># exclude:</span>
+<span class="c1">#   - Gemfile</span>
+<span class="c1">#   - Gemfile.lock</span>
+<span class="c1">#   - node_modules</span>
+<span class="c1">#   - vendor/bundle/</span>
+<span class="c1">#   - vendor/cache/</span>
+<span class="c1">#   - vendor/gems/</span>
+<span class="c1">#   - vendor/ruby/</span>
+</pre></div>
+
+<p>You can go and tweak the values as per your convenience.</p>
+<h2 id="front-matter">Front Matter</h2>
+<p>If you open the default sample blog jekyll created for you, the header of the file will look like this:</p>
+<div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">layout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">post</span>
+<span class="nt">title</span><span class="p">:</span>  <span class="s">&quot;Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Jekyll!&quot;</span>
+<span class="nt">date</span><span class="p">:</span>   <span class="l l-Scalar l-Scalar-Plain">2019-06-11 01:26:32 +0530</span>
+<span class="nt">categories</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jekyll update</span>
+<span class="nt">author</span><span class="p">:</span> <span class="s">&quot;Arun</span><span class="nv"> </span><span class="s">Prasaad</span><span class="nv"> </span><span class="s">Gunasekaran&quot;</span>
+<span class="nt">permalink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/sample/</span>
+<span class="nn">---</span>
+</pre></div>
+
+<p>This is the front matter for the blog post. A similar front matter exists for other web pages. It is the information of the webpage. Front matter is written using <code>YAML</code> or <code>JSON</code>. The content is written in <code>YAML</code> by default.</p>
+<ul>
+<li><code>layout</code> is used to set the type of the webpage.</li>
+<li><code>title</code> is the title of the webpage.</li>
+<li><code>date</code> is the date and time of the webpage.</li>
+<li><code>categories</code> has a set of keywords associated with the webpage. It is also used for maintaining the folder structure.</li>
+<li><code>author</code> is the name of the author of the webpage.</li>
+<li><code>permalink</code> is the permanent link for the webpage.</li>
+</ul>
+<p>All the values given here are the <code>variables</code> for the webpage.</p>
+<h2 id="creating-blog-posts">Creating blog posts</h2>
+<p>Inside the <code>_posts</code> directory, create a markdown file with a similar front matter and type all your contents. For blogs, you need the <code>post</code> layout idea.</p>
+<p>You can create as many posts as you like in whichever order you fancy within the <code>_posts</code> directory. And that includes creating sub-folders within <code>_posts</code> folder and placing the blogs inside them. As long as the linking method is fixed, the address of the webpages is taken care of.</p>
+<h2 id="working-with-drafts.">Working with Drafts.</h2>
+<p>If you have draft pages, write them in the <code>_drafts</code> folder in the same level as that of <code>_posts</code> folder. Inside it, write all the draft versions of the blog posts. Jekyll does not post the draft pages. Only when it is moved to <code>_posts</code> folder will it work.</p>
+<p>To see the draft webpost served, use the command</p>
+<div class="highlight"><pre><span></span>jekyll serve --draft
+</pre></div>
+
+<p>Jekyll will automatically create a link based on the date the draft was last modified to display the draft file.</p>
+<h2 id="creating-pages">Creating Pages</h2>
+<p>There are two kinds of pages:</p>
+<ul>
+<li>General pages like “About” page</li>
+<li>Blog pages</li>
+</ul>
+<p>Other important webpages like “About” or “Contact” are called “Pages”.</p>
+<p>To create them, write a normal markdown file with a front-matter like this:</p>
+<div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">layout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">page</span>
+<span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FAQ</span>
+<span class="nt">permalink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/faq/</span>
+<span class="nn">---</span>
+
+<span class="l l-Scalar l-Scalar-Plain">This is a sample FAQ page!</span>
+</pre></div>
+
+<h2 id="permalinks">Permalinks</h2>
+<p>Permalinks are permanent links for the webpages. By modifying the variable in the permalink section, you can give permanent links to each page.</p>
+<div class="highlight"><pre><span></span><span class="nt">permalink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/:categories/:year/:month/:day/:title</span>
+</pre></div>
+
+<p>This will create a weblink with categories followed by the year, month, day, and title.</p>
+<h2 id="front-matter-defaults">Front matter defaults</h2>
+<p>These are settings that are default to a certain kinds of webpages.</p>
+<p>To set custom front-matter, you can use the default values in the <code>_config.yaml</code> file.</p>
+<div class="highlight"><pre><span></span><span class="nt">defaults</span><span class="p">:</span>
+  <span class="nt">scope</span><span class="p">:</span>
+    <span class="nt">path</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+  <span class="nt">values</span><span class="p">:</span>
+    <span class="nt">layout</span><span class="p">:</span> <span class="s">&quot;post&quot;</span>
+</pre></div>
+
+<p>This setting will automatically make any page without any layout value a blog post by default.</p>
+<p>Whenever a <code>yaml</code> file is modified, shut the server and restart it to have the details reflected.</p>
+<div class="highlight"><pre><span></span><span class="nt">defaults</span><span class="p">:</span>
+  <span class="nt">scope</span><span class="p">:</span>
+    <span class="nt">path</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;posts&quot;</span>
+    <span class="nt">values</span><span class="p">:</span>
+      <span class="nt">layout</span><span class="p">:</span> <span class="s">&quot;post&quot;</span>
+      <span class="nt">title</span><span class="p">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Title&quot;</span>
+</pre></div>
+
+<p>This setting will take any page inside the post folder without any details and assign a “post” layout and a default “title”.</p>
+<h2 id="installing-themes">Installing Themes</h2>

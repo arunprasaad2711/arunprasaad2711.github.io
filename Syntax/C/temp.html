@@ -1,0 +1,467 @@
+<h1 id="c-programming">C Programming</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#c-programming">C Programming</a>
+<ul>
+<li><a href="#sources">Sources:</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#basics-of-c">Basics of C</a></li>
+<li><a href="#header-files">Header Files</a></li>
+<li><a href="#built-in-commands-and-functions">Built-in Commands and Functions</a></li>
+<li><a href="#data-types-and-symbols">Data types and Symbols</a></li>
+</ul></li>
+<li><a href="#c">C</a></li>
+</ul>
+<!-- /TOC -->
+<p>C is a compiled programming language Developed by Dennis Ritche in 1970’s.</p>
+<p>It is a programming language next to fortran in terms of speed and flexibility.</p>
+<p>C has more options and features than fortran and for this reason, the C is preferred over fortran.</p>
+<p>C has give rise to so many derived programming languages like</p>
+<ol type="1">
+<li>C++</li>
+<li>Visual C, C++</li>
+<li>C#</li>
+<li>Objective C</li>
+<li>CUDA C</li>
+</ol>
+<p>All of them are based on C and are built/made using them.</p>
+<p>C is also a part of other interpreted programming languages, games, operating systems, applications etc.,</p>
+<h2 id="sources">Sources:</h2>
+<ul>
+<li>http://www.cprogramming.com/tutorial/c-tutorial.html</li>
+<li>http://www.physics.drexel.edu/courses/Comp_Phys/General/C_basics/</li>
+<li>http://gd.tuwien.ac.at/languages/c/cref-mleslie/CONTRIB/SAWTELL/intro.html</li>
+<li>http://en.wikibooks.org/wiki/C_Programming</li>
+<li>http://www.cprogramming.com/</li>
+<li>http://www.tutorialspoint.com</li>
+<li>http://www.codingunit.com/</li>
+</ul>
+<p>Youtube Video lectures on C by</p>
+<ol type="1">
+<li>Bucky Roberts</li>
+<li>Adam</li>
+<li>Madhur Bhatia</li>
+</ol>
+<p>Install Code Blocks as mentioned in Fortran tutorials.</p>
+<p>If wanted to work in Linux/Unix environment, install a gcc/icc or any equivalent compiler and proceed.</p>
+<h2 id="installation">Installation</h2>
+<p>Installing C, C++ is fairly easy. In a Linux operating system like Ubuntu, just type the command in the terminal.</p>
+<div class="highlight"><pre><span></span>sudo apt install gcc g++
+</pre></div>
+
+<h2 id="basics-of-c">Basics of C</h2>
+<p>The extension of c files is .c</p>
+<p>There are main compilers for C Programs. The ideal choice of compiler is gcc in case of linux and unix.</p>
+<p>The program start with pre-processing statements like</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;somefilename.h&gt;</span><span class="cp"></span>
+</pre></div>
+
+<p>These are header files required to give definitions for commands and built-in functions used in C</p>
+<div class="highlight"><pre><span></span><span class="cp"># is used for making an explicit definition to the compiler.</span>
+
+<span class="cm">/*  contents  is used for a block comment. */</span>
+<span class="c1">// contents is used for a single line comment.</span>
+</pre></div>
+
+<p>There are quite a few changes between Borland C and GCC.</p>
+<p>The entire program is written inside the main function</p>
+<div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">contents</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>By default, the c compiler will first look for this function first. Only then, other functions will be handled/read. The main function can have a return statement if it returns a value. To make so, you need to assign it a return value</p>
+<p>eg: <code>int main or float main.</code></p>
+<p>To make it return a value, use return statement.</p>
+<p>eg: <code>return 1, return 0 etc.,</code></p>
+<p>simple main (eg: main) or a main with no return type (eg: void main) is also allowed.</p>
+<p>Any line of code written below return command will be ignored safely without any error.</p>
+<p>All the lines in c are to be separated by ;</p>
+<p>The entire program is written in terms of functions.</p>
+<p>All the variables and commands are case sensitive!</p>
+<p>Use  command at the end of a statement to continue the statement into the next line.</p>
+<p>Variable declarations can happen anywhere in the program, but it should be defined before it is used.</p>
+<h2 id="header-files">Header Files</h2>
+<p>Header files have an extension <code>.h</code></p>
+<p>Header files give explicit definitions to each and every command used in the program.</p>
+<p><code>stdio.h</code> standard input and output. Has explanations to the basic keywords and statements in C.</p>
+<p><code>math.h</code> has definitions for mathematical operations.</p>
+<p><strong>Usually, Header files have “declarations” for the functions and commands. The actual contents are available in a separate C file. Header files pull the contents of the C file of the same name, except the extension into the C file</strong></p>
+<h2 id="built-in-commands-and-functions">Built-in Commands and Functions</h2>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="n">vars</span><span class="p">);</span>
+</pre></div>
+
+<p>This is used for printing and displaying contents on screen. eg:</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Simple Interest is: %f&quot;</span><span class="p">,</span> <span class="n">si</span><span class="p">);</span>
+</pre></div>
+
+<p>You can also print the variable’s address. Use <code>%d</code> for the type specifier and &amp; infront of the variable to indicate the address.</p>
+<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;type specifiers&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vars</span><span class="p">);</span>
+</pre></div>
+
+<p>This is used for retrieving varaible values from the console. </p>
+<p>The variable addresses are sent as the arguments for scanf</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">years</span><span class="p">);</span>
+</pre></div>
+
+<p>The &amp; is used for indicating the address of the variable.</p>
+<p>While entering the values in the console, press enter or tab key after every value entry.</p>
+<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+
+<p>This function returns in integer, the number of bytes occupied by the variable in memory.</p>
+<ul>
+<li>int occupies 4 bytes,</li>
+<li>short int (or just short) occupies 2 bytes,</li>
+<li>long int (or just long) occupies 4 bytes,</li>
+<li>long long int (or just long long) occupies 8 bytes,</li>
+<li>char occupies 1 byte,</li>
+<li>float occupies 4 bytes,</li>
+<li>double occupies 8 bytes,</li>
+<li>long float occupies 8 bytes.</li>
+</ul>
+<p>This storage depends on the bit-technology of the compiler and OS.</p>
+<p>But</p>
+<div class="highlight"><pre><span></span>    <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+</pre></div>
+
+<div class ="highlight"><pre>break;</pre></div>
+<p>This is a command used for breaking a loop structure or a case structure. If a certain loop breaking condition is reached, use break to come out of the loop.</p>
+<div class="highlight"><pre><span></span><span class="k">continue</span><span class="p">;</span>
+</pre></div>
+
+<p>This is a command used for skipping a particular iteration of a loop or a case structure without breaking out of the loop. To make this happen, use a condition or use this where a certain thing happens.</p>
+<div class="highlight"><pre><span></span><span class="k">goto</span>
+</pre></div>
+
+<p>This is a statement used for shifting the line of execution from one point to another. It can also break loops and decision statements.</p>
+<p>To make a goto statement work, you need a label along with it. The label is case sensitive.</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="k">goto</span> <span class="n">label1</span><span class="p">;</span>
+<span class="p">....</span>
+
+<span class="nl">label1</span><span class="p">:</span>
+    <span class="p">......</span>
+</pre></div>
+
+<p><code>goto</code> is not preferred because it can complicate the programming by jumping the execution here and there. Also, if not done properly, you might end up with an infinite loop. goto with line numbers is worse because you may modify the code later and line numbers may change, thus ending with a confusing code. One has to be cautious while using this code.</p>
+<h2 id="data-types-and-symbols">Data types and Symbols</h2>
+<p>There are 4 basic data types</p>
+<p>int for integers. There are several types of integers,</p>
+<ul>
+<li>int occupies 4 bytes,</li>
+<li>short int (or just short) occupies 2 bytes,</li>
+<li>long int (or just long) occupies 4 bytes,</li>
+<li>long long int (or just long long) occupies 8 bytes,</li>
+<li>char occupies 1 byte,</li>
+<li>float occupies 4 bytes,</li>
+<li>double occupies 8 bytes,</li>
+<li>long float occupies 8 bytes.</li>
+</ul>
+<p>This storage depends on the bit-technology of the compiler and OS.</p>
+<p>But in any system,</p>
+<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span>
+</pre></div>
+
+<p>float for real numbers (single precision numbers or precise upto 6-8 digits)</p>
+<p>char for short numbers and characters.</p>
+<p>strings are also available under char but in a different manner.</p>
+<p>There is a double also (double precision numbers or precise upto 15-16 digits). It occupies 8 bytes.</p>
+<p>Long double exists and it occupies 12 bytes (triple precision numbers 17-18 digits)</p>
+<p>All the above integer number types fall in two categories - signed and unsigned.</p>
+<p>Signed numbers have half the range of the unsigned numbers, but they go into both positive and negative.</p>
+<p>Unsigned values are always positive and include zero. By default the values are signed.</p>
+<p>To make them unsigned, use “unsigned” keyword infront of them.</p>
+<p>In general, the range of signed integers is <code>-2^(8*n -1) to 2^(8*n -1) -1</code> (n stands for the number of bytes)</p>
+<p>In general, the range of unsigned integers is <code>0 to 2^(8*n) -1</code></p>
+<p><code>void</code> is used for indicating that the variable/function will not return any value.</p>
+<p><code>const</code> is used for making a constant in the program</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">AREA</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+
+<p>(constants, by practice have to be in upper case. they need not be in caps. Used to differentiate them from variables)</p>
+<p>To place the variables inside strings (as in the case of print statements) or to get the values (in case of scan statements,) type specifiers or format specifiers are needed.</p>
+<p><code>%d</code> or <code>%i</code> for integers/ number part of characters/short integers</p>
+<p><code>%li</code> for long int</p>
+<p><code>%lli</code> for long long int</p>
+<p><code>%c</code> for character</p>
+<p><code>%f</code> for float/double</p>
+<p><code>%llf</code> for long double</p>
+<p><code>%s</code> for string.</p>
+<p><code>%e</code> for printing numbers in scientific notation.</p>
+<p><code>%u</code> for unsigned integers/characters/short integers</p>
+<p><code>%lu</code> for unsigned long int</p>
+<p><code>%llu</code> for unsigned long long int</p>
+<p><code>%o</code> for octal numbers</p>
+<p><code>%x</code> for hexa-decimal numbers lower case</p>
+<p><code>%X</code> for hexa-decimal numbers upper case</p>
+<p><code>%%</code> to print the percentage sign.</p>
+<p>use <code>%lf</code> in the scanf function to get double numbers.</p>
+<p>use <code>%f</code> for printing them.</p>
+<p>No type specifier for binary.</p>
+<p>This can be edited also.</p>
+<p><code>%5.3f</code> indicates that in a field of 5 spaces, allocate 3 spaces for digits to the right of the period, 1 for the point and the rest for the digits to the left of the period (with or without sign)</p>
+<p>Both the whole number and decimal number part are optional, but good to add them for specific output formats. Some examples are:</p>
+<div class="highlight"><pre><span></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%03d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</pre></div>
+
+<p>The outputs are</p>
+<div class ="highlight"><pre>   7   70075.10</pre></div>
+<p>Other examples are:</p>
+<p><code>%d</code> (print as a decimal integer) <code>%6d</code> (print as a decimal integer with a width of at least 6 wide)</p>
+<p><code>%f</code> (print as a floating point)</p>
+<p><code>%4f</code> (print as a floating point with a width of at least 4 wide)</p>
+<p><code>%.4f</code> (print as a floating point with a precision of four characters after the decimal point)</p>
+<p><code>%3.2f</code> (print as a floating point at least 3 wide and a precision of 2)</p>
+<p><code>+, - , *, /</code> stand for the basic ASMD operations.</p>
+<p><code>^</code> stands for a bit-wise XOR binary operation. Look at bitwise operations for details.</p>
+<p><code>&amp;</code> infront of the variable returns the address of the variable in an integer format.</p>
+<p><code>&amp;</code> is also used as a bitwise AND operator.</p>
+<p><code>++</code>, <code>--</code> are 1 unit increment and decrement operators. They operate only on integers.</p>
+<p><code>++i</code> is a pre-increment (before i is accessed, it is incremented)</p>
+<p><code>i++</code> is a post-increment (after i is accesses, it is incremented)</p>
+<p>The decrement works the same way but decreases the value.</p>
+<p>for a full list of operators, visit,</p>
+<p>http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B</p>
+<p><code>()</code> parenthesis is used for wrapping contents</p>
+<p><code>{}</code> is used for wrapping definitions</p>
+<p><code>[]</code> is used for wrapping indices.</p>
+<p>exponent is given by the <code>pow(a,b)</code> (=a^b) function in <code>math.h</code></p>
+<p>Modulus operation is given by <code>%</code></p>
+<p><code>5%2 = 1</code> Modulus is applicable only for integers here.</p>
+<p><strong>PEMDAS</strong> operation scheme is followed.</p>
+<p>In case of operators having equal precedence, left to right precedence is followed.</p>
+<p>Meaning, to the left and right of the operator, the sub-expressions are noticed as to whether they are involved in any other sub-expressions.</p>
+<p>If they are, then that expression is not done. If it is not, then it is done.</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
+<p>The <code>/</code> operator is executed first, because 10(sub-expression on the left of <code>/</code>) is not involved in any other operation.</p>
+<p>Whereas <code>*</code> is done second because 5(left of <code>*</code> ) is involved in <code>/</code> operation.</p>
+<p>This is also called as operator associativity.</p>
+<p>If the expression goes complicated or for the ease of avoiding operator associativity or operator precedence, use paranthesis.</p>
+<p>Division operation applied on integers truncate the result.</p>
+<p>To avoid that, wrap the segment within <code>float()</code>.</p>
+<p>type conversion is always from lower to higher.  So, it is a one way.</p>
+<p>ie. Lower type data can become a higher type data. Also, if a lower type data is assigned to a higher variable, then it becomes a higher type value.</p>
+<p>The opposite (higher type data to a lower type variable) is not possible. When done so, the data get’s truncated.</p>
+<p>eg: <code>integer</code> (lower)  data can be promoted to a <code>float</code>(higher) data but a <code>float</code> data can not be demoted to an <code>integer</code>. Implicit type conversion occurs when integers are assigned to floats etc., and the variables take care of the conversion.</p>
+<p>Explicit type conversion occurs when intentional conversions are introduced, using float() or int() etc.,</p>
+<p><code>""</code> is used for string input.</p>
+<p><code>''</code> is used for character input.</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="n">option</span> <span class="o">=</span> <span class="sc">&#39;Y&#39;</span><span class="p">;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Arun&quot;</span><span class="p">;</span>
+</pre></div>
+
+<p>Characters can also be added.</p>
+<p>Characters carry an ASCII value. So, if characters are added, a new character is created that is equal to the sum of the characters’ ASCII value.</p>
+<p>strings are available and are given as a part of char.</p>
+<p>When character variables are operated and assigned to another character variable, a new symbol or character is stored in the new character variable.</p>
+<p>If the assignment is to an integer, the result of the ASCII value operation of the characters is stored.</p>
+<p>Relational operators are</p>
+<div class="highlight"><pre><span></span><span class="o">==</span>
+<span class="o">&gt;</span>
+<span class="o">&lt;</span>
+<span class="o">&gt;=</span>
+<span class="o">&lt;=</span>
+<span class="o">!=</span>
+</pre></div>
+
+<p><code>=</code> is a normal equal sign.</p>
+<p>Logical operators are</p>
+<div class="highlight"><pre><span></span><span class="o">&amp;&amp;</span> <span class="k">for</span> <span class="n">AND</span>
+<span class="o">||</span> <span class="k">for</span> <span class="n">OR</span>
+<span class="o">!</span> <span class="k">for</span> <span class="n">NOT</span>
+</pre></div>
+
+<p>Escape Sequences are used for re-arranging/formatting the output properly. They are also used for placing key symbols inside strings. </p>
+<p>They have to be placed within string quotes.</p>
+<p><code>\</code> symbol is for escaping a reserved symbol and using it in print statement or other places.</p>
+<p>eg: <code>C \' \\ \" \&amp;</code> etc.,</p>
+<p>The default escape sequences are</p>
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
+<span class="err">\</span><span class="n">t</span> <span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="err">\</span><span class="n">v</span> <span class="p">(</span><span class="n">vertical</span> <span class="n">tab</span><span class="p">)</span>
+<span class="err">\</span><span class="n">f</span> <span class="p">(</span><span class="n">new</span> <span class="n">page</span><span class="p">)</span>
+<span class="err">\</span><span class="n">b</span> <span class="p">(</span><span class="n">backspace</span><span class="p">)</span>
+<span class="err">\</span><span class="n">r</span> <span class="p">(</span><span class="n">carriage</span> <span class="k">return</span><span class="p">)</span>
+<span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
+<span class="err">\</span><span class="n">a</span> <span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="n">invokes</span> <span class="n">a</span> <span class="n">beep</span> <span class="n">sound</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="storage-classes">Storage Classes</h2>
+<p>Storage classes are ways of storing variables in memory locations. C offers 4 storage classes namely,</p>
+<ol type="1">
+<li>Static</li>
+<li>Extern</li>
+<li>Auto</li>
+<li>Register</li>
+</ol>
+<p>To make a variable stored in the class, use their name during declariation.</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="k">auto</span> <span class="kt">int</span> <span class="n">j</span>
+</pre></div>
+
+<p>auto:</p>
+<p>auto is used for making the variable defined only within the function it is defined in. Outside the function, the variables do not exist. So, when they are accessed, it shows an error. By default, auto is the storage class for all the variables in any function in C.</p>
+<p>register:</p>
+<p>register is for storing variables in the “register” of a computer. These variables do not have an address in the memory. These variables tend to be fastest in execution or calls.</p>
+<h2 id="hash-sequences">Hash Sequences</h2>
+<p>Hash sequences explicitly define certain job to the compiler. Hence they are also termed as compiler directives.</p>
+<p>To define a global constant, use</p>
+<div class="highlight"><pre><span></span><span class="cp">#define VAR_NAME &lt;value&gt;</span>
+</pre></div>
+
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="cp">#define PI 3.141596</span>
+</pre></div>
+
+<p>These variables have a special data type. So, they adjust accordingly to the variable type of the expression involved. These variables have to be in caps. Also, variables cannot change in the program. Hence they are constants.</p>
+<p>The constants are in capital letters. They need not be. It is a notation or a practice to do so, so that they are differentiated from variables.</p>
+<h2 id="variable-formatting-with-example">Variable Formatting With Example</h2>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The color: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;First number: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Second number: %04d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Third number: %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Float number: %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hexadecimal: %x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Octal: %o</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unsigned value: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Just print the percentage sign %%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The output is</p>
+<div class ="highlight"><pre>The color: blue
+First number: 12345
+Second number: 0025
+Third number: 1234
+Float number: 3.14
+Hexadecimal: ff
+Octal: 377
+Unsigned value: 150
+Just print the percentage sign %
+</pre></div>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The output is</p>
+<div class="highlight"><pre><span></span><span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span>  <span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>  <span class="o">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
+<span class="o">:</span>     <span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
+<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span>     <span class="p">:</span>
+</pre></div>
+
+<h2 id="condition-and-loop-statements">Condition and Loop Statements</h2>
+<h3 id="if-statement">if statement:</h3>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">....</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Final</span> <span class="n">set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The condition expression should evaluate to a logical value 1 or 0 (True or false.).</p>
+<p>if the condition returns a value that is != 0, then the condition is termed as True. Else, it is termed as false.</p>
+<p>Nested if-else statements (if-else statement inside another if-else statement) is possible.</p>
+<h3 id="switch-case-structureconstruct">Switch case structure/construct</h3>
+<div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="n">value1</span> <span class="o">||</span> <span class="n">value</span> <span class="n">a</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">b</span><span class="p">:</span>
+          <span class="p">{</span>
+              <span class="n">statement</span> <span class="n">set1</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+    <span class="k">case</span> <span class="n">value2</span> <span class="o">||</span> <span class="n">value</span> <span class="n">c</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">d</span><span class="p">:</span>
+          <span class="p">{</span>
+              <span class="n">statement</span> <span class="n">set2</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+<span class="p">.....</span>
+    <span class="k">default</span><span class="o">:</span>
+          <span class="p">{</span>
+             <span class="n">statement</span> <span class="n">set</span> <span class="n">final</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span> 
+           <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>If the variable value matches any of the case, then that corresponding case statement set is executed. break is necessary to break out the switch case. otherwise, all the codes inside all the cases will be done and then the decision statement terminates.</p>
+<h3 id="while-loop">while loop</h3>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>In the absence of the condition breaker statement, the while loop will run forever.</p>
+<h3 id="do-while-loop">do while loop</h3>
+<div class="highlight"><pre><span></span><span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div>
+
+<p>There is a small difference. while loop checks condition every time before it executes the set of statements. So, for executing and terminating the set of statements ‘n’ times, it checks the condition ‘n+1’ times. Whereas the do-while loop executes the statements before checking the condition. So for doing ‘n+1’ times the set of statements, it checks the condition ‘n’ times. So, while loop does not even allow executing the code once when the condition fails, whereas do loop allows executing the code atleast once before the condition fails.</p>
+<h3 id="for-loop">for loop</h3>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">initial_value</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span> <span class="k">break</span> <span class="n">or</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+    <span class="n">condition</span> <span class="n">breaking</span> <span class="n">statement</span> <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">)</span>
+<span class="p">}</span> 
+</pre></div>
+
+<p>explanation: for loop needs 4 components along with an iterating integer variable. 1. Iterating integer variable 2. Initial value for iterating variable 3. condition statement     a. increment/decrement based condition           This condition fails after a finite number of iterations when the iterating variable because it is incremented/decremented hits a limiting value. This limiting value is given as the condition     b. normal condition           This condition fails after a finite number of iterations when the codes inside the loop bring about a case where the condition fails. 4. Increment/decrement     This can be given using ++ or – operator or by other forced increments/decrements like i + = 3 etc., eg:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="n">or</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span> <span class="n">statements</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+<p>working 1. initialization 2. condition 3. statements 4. increment 5. condition 6. statements 7. increment 8. condition 9. statements 10. increment and so on…..</p>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span>
+<span class="p">{</span>
+    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This is an infinte loop!. Unless manually terminated or crashed by the system, the program will run perpetually. This is used with manual loop breaks. It is required for some programming applications where till a certain condition is reached, the iterations have to proceed.</p>

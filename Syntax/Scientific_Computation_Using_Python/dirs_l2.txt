@@ -1,0 +1,6 @@
+./Syntax/Scientific_Computation_Using_Python/001_Introduction.md
+./Syntax/Scientific_Computation_Using_Python/002_MetaInfo.md
+./Syntax/Scientific_Computation_Using_Python/003_PrimaryDataTypes.md
+./Syntax/Scientific_Computation_Using_Python/004_Operations_Part1.md
+./Syntax/Scientific_Computation_Using_Python/005_HeronsFormula.md
+./Syntax/Scientific_Computation_Using_Python/006_Modified_HeronsFormula.md

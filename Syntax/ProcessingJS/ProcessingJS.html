@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProcessingJS | Syntax | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+
+    
+
+    </head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./index.html">Home</a></li>
+		<li><a href="./blogs.html">Blogs</a></li>
+		<li><a href="./syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./science.html">Science Notes</a></li>
+		<li><a href="./maths.html">Mathematics Notes</a></li>
+		<li><a href="./apps.html">Useful Apps</a></li>
+		<li><a href="./faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+
+                <h1 id="processingjs">ProcessingJS</h1>
+<p>ProcessingJS is a JavaScript library for creating web based animation. It is a port of processing visualization language.</p>
+<p>It is an starter for JavaScript.</p>
+<h2 id="notes-and-references">Notes and References</h2>
+<ul>
+<li>KhanAcademy Course on Computer Animation.</li>
+</ul>
+<h2 id="about">About</h2>
+<p><em>Courtesy: ProcessingJS webpage</em></p>
+<p>Processing.js is the sister project of the popular <a href="http://processing.org/">Processing</a> visual programming language, designed for the web. Processing.js makes your data visualizations, digital art, interactive animations, educational graphs, video games, etc. work using web standards and without any plug-ins. You write code using the Processing language, include it in your web page, and Processing.js does the rest. It’s not magic, but almost.</p>
+<p>Originally developed by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com/">Casey Reas</a>, Processing started as an open source programming language based on Java to help the electronic arts and visual design communities learn the basics of computer programming in a visual context. Processing.js takes this to the next level, allowing Processing code to be run by any HTML5 compatible browser, including current versions of Firefox, Safari, Chrome, Opera, and Internet Explorer. Processing.js brings the best of visual programming to the web, both for Processing and web developers.</p>
+<p>Everything you need to work with Processing.js is here. You can download the most recent version of Processing.js, read Quick Start Guides for Processing Developers or JavaScript Developers, learn about the Processing language and Processing.js render modes, consult the Reference, and of course view many existing demos that use Processing.js. You can also get involved with the Processing and Processing.js communities, both of which are active and and looking for new users and developers.</p>
+<p>Whether you’re an advanced Processing developer or completely new, whether you’re a pro with web technologies or just getting started, Processing.js bridges the gap between these two powerful technologies.</p>
+<p><strong>More details</strong> are to be found here in the <a href="http://processingjs.org/">main website</a></p>
+<h2 id="reference-manual">Reference Manual</h2>
+<p><a href="http://processingjs.org/reference/">This is the reference manual</a></p>
+<h2 id="how-to-use">How to use</h2>
+<p><a href="http://processingjs.org/learning/">implementation</a></p>
+<h2 id="some-commands">Some Commands</h2>
+<h3 id="variable">Variable</h3>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">varname1</span> <span class="o">=</span> <span class="mi">340</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">varname</span><span class="p">;</span>
+<span class="nx">varname</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// add 5, result is 15</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// subtract 5, result is 5</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// multiply by 2, result is 20</span>
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// divide by 4, result is 2.5</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// divide by 4 &amp; return remainder, result is 2</span>
+</pre></div>
+
+<p><em>Courtesy: Khan Academy Webpage</em></p>
+<p><img src="img1.png" alt="Image 1" /> <img src="img2.png" alt="Image 2" /> <img src="img3.png" alt="Image 3" /> <img src="img4.png" alt="Image 4" /></p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Use <code>// comment</code> for single line comment. Use <code>/* comments */</code> for multi line comments.</li>
+<li>Images are drawn as <em>layers!</em>. So, one object or shape lies on top of the other. Hence, plan out well.</li>
+<li>Fill colour option fills the entire region or shape specified below. Fill uses RGB 256 scale</li>
+<li><code>draw</code> is a predefined function, with no definition. <code>draw</code> function gets called over and over by other functions in <code>ProcessingJS</code>.</li>
+</ul>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Froggy<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;processing.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/processing&quot;</span> <span class="na">data-processing-target</span><span class="o">=</span><span class="s">&quot;mycanvas&quot;</span><span class="p">&gt;</span>
+
+<span class="c1">// set up the canvas to draw</span>
+<span class="k">void</span> <span class="nx">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="nx">size</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span>
+  <span class="nx">background</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// function to draw a frog face</span>
+<span class="k">void</span> <span class="nx">froggy</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">)</span>
+<span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x2</span><span class="p">;</span>
+
+    <span class="nx">noStroke</span><span class="p">();</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">91</span><span class="p">);</span> <span class="c1">// a nice froggy green!</span>
+
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// face</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> <span class="c1">// left eye socket</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> <span class="c1">// right eye socket</span>
+
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// for the whites of the eyes!</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span> <span class="c1">// left eyeball</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span> <span class="c1">// right eyeball</span>
+
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// for the mouth and eye pupils</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span> <span class="c1">// mouth</span>
+    <span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="mi">53</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// left pupil</span>
+    <span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="mi">45</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="mi">53</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// right pupil</span>
+<span class="p">}</span>
+
+<span class="c1">// renders the frog images</span>
+<span class="k">void</span> <span class="nx">draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">froggy</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mycanvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="animation-with-pictures">Animation with pictures</h2>
+<ul>
+<li>Use draw function.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">void</span> <span class="nx">function_name</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// contents</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nx">draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">function_name</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Also,</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">function_name</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// contents</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">function_name</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="while-making-proportional-shapes">While making proportional shapes,</h2>
+<ul>
+<li>Replace all distances and measurements as a multiple of just a few variables.</li>
+</ul>
+<p>Example.</p>
+<div class="highlight"><pre><span></span><span class="c1">// bear</span>
+<span class="k">void</span> <span class="nx">brown_bear</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">noStroke</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">faceSize</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">eyeSize</span> <span class="o">=</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+
+    <span class="c1">// ears</span>
+    <span class="kd">var</span> <span class="nx">earSize</span><span class="o">=</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">89</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">17</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">y</span><span class="o">-</span><span class="nx">faceSize</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">,</span> <span class="nx">earSize</span><span class="p">);</span>
+
+    <span class="c1">// face</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">163</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">);</span>
+
+    <span class="c1">//eyes</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="nx">faceSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+
+    <span class="c1">//nose</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">89</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">+</span><span class="nx">faceSize</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="nx">faceSize</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">15</span><span class="p">,</span> <span class="nx">faceSize</span><span class="o">/</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="text">Text</h2>
+<div class="highlight"><pre><span></span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// colour</span>
+<span class="nx">textSize</span><span class="p">(</span><span class="mi">38</span><span class="p">);</span>     <span class="c1">// text size</span>
+<span class="nx">textFont</span><span class="p">(</span><span class="nx">createFont</span><span class="p">(</span><span class="s2">&quot;Papyrus&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">20</span><span class="p">);</span> <span class="c1">// to change font</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Sophia&quot;</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="s2">&quot;Trainer&quot;</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">96</span><span class="p">);</span> <span class="c1">// write text at the location</span>
+</pre></div>
+
+<h2 id="mouse-pointer-positions">Mouse Pointer positions</h2>
+<p><code>mouseX</code> and <code>mouseY</code> are the mouse position variables.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myName</span> <span class="o">=</span> <span class="s2">&quot;Sophia&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">myName</span> <span class="o">+</span> <span class="s2">&quot;!!!&quot;</span><span class="p">;</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span> <span class="c1">// using mouse positions</span>
+</pre></div>
+
+<p>Example: Code to mark the mouse position and show it’s coordinates</p>
+<div class="highlight"><pre><span></span><span class="k">void</span> <span class="nx">mouse_capture</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">background</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nx">mouseX</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">mouseY</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span> <span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="using-functions">Using functions</h2>
+<div class="highlight"><pre><span></span><span class="c1">// function definition</span>
+<span class="kd">var</span> <span class="nx">drawWinston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">faceSize</span><span class="p">,</span> <span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">noStroke</span><span class="p">();</span>
+
+    <span class="c1">// var faceSize = 300;</span>
+    <span class="kd">var</span> <span class="nx">mouthSize</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">eyeSize</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">xpos</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">ypos</span><span class="p">;</span>
+
+    <span class="c1">// face</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">faceSize</span><span class="p">);</span>
+
+    <span class="c1">// eyes</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">,</span> <span class="nx">eyeSize</span><span class="p">);</span>
+
+    <span class="c1">// mouth</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">252</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">65</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="nx">faceSize</span><span class="p">,</span> <span class="nx">mouthSize</span><span class="p">,</span> <span class="nx">mouthSize</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// function call</span>
+<span class="nx">drawWinston</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+
+<p>One can use <code>void</code> keyword as well.</p>
+<h2 id="return-value-of-functions">Return value of functions</h2>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">calcTotalDonuts</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">numYears</span><span class="p">,</span> <span class="nx">no_per_day</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">no_per_day</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="nx">numYears</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="local-and-global-variables">Local and Global Variables</h2>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">lifeInches</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// global variable</span>
+
+<span class="kd">var</span> <span class="nx">calcInches</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">startAge</span><span class="p">,</span> <span class="nx">endAge</span><span class="p">,</span> <span class="nx">inchesPerYear</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">totalInches</span> <span class="o">=</span> <span class="nx">inchesPerYear</span> <span class="o">*</span> <span class="p">(</span><span class="nx">endAge</span> <span class="o">-</span> <span class="nx">startAge</span><span class="p">);</span> <span class="c1">// Local variable</span>
+    <span class="nx">lifeInches</span> <span class="o">+=</span> <span class="nx">totalInches</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">totalInches</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;From 0-8 years:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">calcInches</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;From 8-16 years:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">calcInches</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">120</span><span class="p">);</span>
+
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Total grown over life:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">168</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="nx">lifeInches</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+
+<h2 id="mouse-moved-mousemoved-function">Mouse Moved <code>mouseMoved</code> function</h2>
+<p>This is an inbuilt function with no definition, called by other <code>ProcessingJS</code> functions again and again. Based on the definition it is built using the mouse cursor variables, the function performs the contents specified.</p>
+<div class="highlight"><pre><span></span><span class="nx">mouseMoved</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="if-statement"><code>if</code> statement</h2>
+<p>A moving ball reaches the edges and reverses direction. Speeds are random.</p>
+<div class="highlight"><pre><span></span><span class="c1">// position of the ball</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="c1">// how far the ball moves every time</span>
+<span class="kd">var</span> <span class="nx">speedx</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">speedy</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">background</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">375</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedy</span> <span class="o">=</span> <span class="o">-</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedy</span> <span class="o">=</span>  <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">375</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedx</span> <span class="o">=</span> <span class="o">-</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">speedx</span> <span class="o">=</span>  <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// move the ball</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">speedx</span><span class="p">;</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">speedy</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="mouseispressed-keyword"><code>mouseIsPressed</code> keyword</h2>
+<p>This is a boolean keyword. If the mouse is pressed, then it will return a <code>true</code> value, else a <code>false</code> value.</p>
+<div class="highlight"><pre><span></span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">mouseIsPressed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">ellipse</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="relational-operations">Relational Operations</h2>
+<div class="highlight"><pre><span></span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&gt;=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&lt;=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">!==</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// yeah, double equals</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// yeah, triple equals</span>
+</pre></div>
+
+<h2 id="boolean-operations">Boolean operations</h2>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">number</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">// boolean condition</span>
+<span class="p">{</span>
+    <span class="c1">// statements</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">)</span> <span class="c1">// some relational expression</span>
+
+<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">day</span><span class="p">)</span>  <span class="c1">// relational expression using boolean variable</span>
+
+<span class="nx">mouseX</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="nx">mouseY</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="c1">// logical and</span>
+<span class="nx">mouseX</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">mouseY</span> <span class="o">===</span> <span class="mi">200</span> <span class="c1">// logical or</span>
+</pre></div>
+
+<h2 id="number-functions">Number functions</h2>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// generates a random number between 0 and 10</span>
+<span class="kd">var</span> <span class="nx">integer</span> <span class="o">=</span> <span class="nx">round</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="c1">// rounds up if number&#39;s fraction part is greater than half, rounds down if the number&#39;s fraction part is less than half.</span>
+</pre></div>
+
+<h2 id="ifelse-ifelse-statement"><code>if/else if/else</code> statement</h2>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">integer</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="println-statement"><code>println</code> statement</h2>
+<div class="highlight"><pre><span></span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;I am a print statement&quot;</span><span class="p">);</span> <span class="c1">// prints in a new line</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">&quot;I am the real print statement&quot;</span><span class="p">);</span> <span class="c1">// prints there itself.</span>
+</pre></div>
+
+<h2 id="while-loop"><code>while</code> loop</h2>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="importing-and-using-images">Importing and Using images</h2>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image_variable</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;path/to/image&quot;</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">(</span><span class="nx">image_variable</span><span class="p">,</span> <span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">);</span>
+</pre></div>
+
+<h2 id="for-loop"><code>for</code> loop</h2>
+<div class="highlight"><pre><span></span><span class="c1">// for(init/start; how long/condition; change/increment)</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// statements</span>
+<span class="p">}</span>
+<span class="c1">// nested for loops</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// statements</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="short-hand-operators">Short hand operators</h2>
+<div class="highlight"><pre><span></span><span class="nx">x</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">y</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">z</span> <span class="o">*=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">/=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+<span class="o">++</span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">y</span><span class="o">--</span><span class="p">;</span>
+<span class="o">--</span><span class="nx">y</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="modes">Modes</h2>
+<div class="highlight"><pre><span></span><span class="nx">imageMode</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span> <span class="c1">// put the image at centre</span>
+<span class="nx">angleMode</span><span class="p">(</span><span class="nx">DEGREE</span><span class="p">);</span> <span class="c1">// set angle to degrees</span>
+</pre></div>
+
+<h2 id="arrays">Arrays</h2>
+<p>For full reference: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Krishna&quot;</span><span class="p">,</span> <span class="s2">&quot;Bharathi&quot;</span><span class="p">,</span> <span class="s2">&quot;Uday&quot;</span><span class="p">];</span>
+<span class="c1">// index = 0, 1, 2, ...</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// array length</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// access element 2</span>
+<span class="nx">names</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Muki&quot;</span><span class="p">);</span> <span class="c1">// append a new element to the array</span>
+
+<span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+              <span class="p">];</span> <span class="c1">// 2d array</span>
+<span class="nx">println</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1">// prints 5</span>
+</pre></div>
+
+<h2 id="objects">Objects</h2>
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Creating objects. Use key:value pairs.</span>
+<span class="cm">    This is also called as object literal.</span>
+<span class="cm">    Because you are literally creating an object from</span>
+<span class="cm">    scratch instead of using a template.</span>
+<span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">winston</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+  <span class="nx">eyes</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+  <span class="nx">likes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;programming&quot;</span><span class="p">,</span> <span class="s2">&quot;being programmed&quot;</span><span class="p">],</span>
+  <span class="nx">isCool</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">birthplace</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+      <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;California&quot;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Accessing object values.</span>
+<span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">textSize</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;All about Winston:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston is &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot; years old&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston has &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">eyes</span> <span class="o">+</span> <span class="s2">&quot; eyes&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston likes &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">likes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span>  <span class="nx">winston</span><span class="p">.</span><span class="nx">likes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">90</span><span class="p">);</span>
+<span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Winston was born in &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">birthplace</span><span class="p">.</span><span class="nx">city</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nx">winston</span><span class="p">.</span><span class="nx">birthplace</span><span class="p">.</span><span class="nx">state</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">110</span><span class="p">);</span>
+
+<span class="c1">// change object entry</span>
+<span class="nx">winston</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+<span class="nx">winston</span><span class="p">.</span><span class="nx">wife</span> <span class="o">=</span> <span class="s2">&quot;winnefer&quot;</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="array-of-objects">Array of Objects</h2>
+<div class="highlight"><pre><span></span><span class="c1">// Array of objects. - Each entry of an array is an object with two variables.</span>
+<span class="kd">var</span> <span class="nx">positions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">99</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">117</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">294</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">117</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">101</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">316</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">294</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">316</span><span class="p">}</span>  
+<span class="p">];</span>
+
+<span class="c1">// use the length method to get the length of objects too!</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">positions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">drawWinston</span><span class="p">(</span><span class="nx">positions</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">x</span><span class="p">,</span> <span class="nx">positions</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="creating-an-abstract-object---constructor">Creating an Abstract Object - constructor</h2>
+<p>Essentially, create an object template to fill the object values later.</p>
+<div class="highlight"><pre><span></span><span class="c1">// template for an object - constructor funtion.</span>
+<span class="c1">// this is called whenever a new object is called.</span>
+<span class="kd">var</span> <span class="nx">Winston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this = refers to the variables inside the constructor.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">=</span> <span class="nx">nickname</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// creating a winston object - object instance</span>
+<span class="kd">var</span> <span class="nx">WinstonTeen</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Winston</span><span class="p">(</span><span class="s2">&quot;Teenage Winston&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">WinstonAdult</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Winston</span><span class="p">(</span><span class="s2">&quot;Mr Winston&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</pre></div>
+
+<h2 id="object-methods">Object Methods</h2>
+<p>Functions that are attached to objects.</p>
+<div class="highlight"><pre><span></span><span class="c1">// method associated with Winston object to draw it.</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Winston&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>    
+<span class="p">};</span>
+
+<span class="c1">// Calling the method for an object.</span>
+<span class="nx">WinstonTeen</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+</pre></div>
+
+<h2 id="object-inheritance">Object Inheritance</h2>
+<div class="highlight"><pre><span></span><span class="c1">// base object constructor</span>
+<span class="kd">var</span> <span class="nx">Creature</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">=</span> <span class="nx">nickname</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot;yrs old&quot;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// talk method to the base constructor</span>
+<span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">talk</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="mi">140</span><span class="p">);</span>  
+<span class="p">};</span>
+
+<span class="c1">// Setup for inheriting an Object to a new one</span>
+<span class="c1">// This line initializes a new object and then defines</span>
+<span class="c1">// additional information for modification.</span>
+<span class="kd">var</span> <span class="nx">Hopper</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">Creature</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">// New Object Inherited from creature</span>
+<span class="c1">// prototype chain</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="c1">// Additional method - to draw the animal</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">217</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Hopper-Happy&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">7</span><span class="p">);</span>  
+<span class="p">};</span>
+<span class="c1">// Another additional method - to call hooray!</span>
+<span class="nx">Hopper</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hooray</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hooooray!!!&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">29</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="mi">140</span><span class="p">);</span>  
+<span class="p">};</span>
+
+<span class="c1">// Another Object based on Creature object</span>
+
+<span class="c1">// Initialization</span>
+<span class="kd">var</span> <span class="nx">Winston</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">Creature</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">nickname</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// inheritance. Prototype chain</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Creature</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+
+<span class="c1">// Additional function</span>
+<span class="nx">Winston</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nx">getImage</span><span class="p">(</span><span class="s2">&quot;creatures/Winston&quot;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">nickname</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="nx">text</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>  
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="more-places-to-learn-javascript">More Places to Learn JavaScript</h2>
+<ul>
+<li><a href="https://teamtreehouse.com/library/javascript-basics">Treehouse</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Mozilla</a></li>
+<li><a href="http://www.codecademy.com/tracks/javascript">Code Academy</a></li>
+<li><a href="http://www.w3schools.com/js/">W3Schools</a></li>
+<li><a href="http://eloquentjavascript.net/contents.html">Eloquent</a></li>
+</ul>
+<h2 id="resources-from-khanacademy">Resources from KhanAcademy</h2>
+<ul>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/good-practices-what-to-learn-next">What to learn next</a></li>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/planning-a-programming-project">Planning a progamming project</a></li>
+</ul>
+
+                
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: {  equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        fonts: ["TeX"],
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

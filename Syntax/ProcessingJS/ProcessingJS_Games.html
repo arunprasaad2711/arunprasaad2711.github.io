@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProcessingJS_Games | Syntax | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+
+    
+
+    </head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./index.html">Home</a></li>
+		<li><a href="./blogs.html">Blogs</a></li>
+		<li><a href="./syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./science.html">Science Notes</a></li>
+		<li><a href="./maths.html">Mathematics Notes</a></li>
+		<li><a href="./apps.html">Useful Apps</a></li>
+		<li><a href="./faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+
+                <h1 id="processingjs-games-and-simulations">ProcessingJS Games, and Simulations</h1>
+<p>ProcessingJS can be used for making games and visualizations. And as a consequence, you can make illustrations as well!</p>
+<h2 id="sources">Sources:</h2>
+<ul>
+<li>Khan Academy computer programming course on Advanced JS: Games and Visualizations, and Advanced JS: Natural Simulations</li>
+</ul>
+<h2 id="scenes-and-buttons">Scenes and buttons</h2>
+<p>Scenes are snapshots in a game.</p>
+<ul>
+<li>You can use functions to generate scenes and call them one by one by using <code>if</code> statement logics and mouse pressed keywords.</li>
+<li>Creating buttons and clicking them can generate function calls.
+<ul>
+<li>For buttons to work, create a button and use logics to see if the mouse click happens on the mouse region. If true, invoke a function call.</li>
+<li>If possible, make the buttons generic so that they can be produced from a function given with an input object. This makes the creation easier.</li>
+</ul></li>
+<li>Interactive scenes can be made by creating functions and executing them whenever a mouse is pressed or a button is pressed.</li>
+</ul>
+<h2 id="randomness">Randomness</h2>
+<p>A random walker code:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Adapted from Dan Shiffman, natureofcode.com</span>
+
+<span class="kd">var</span> <span class="nx">Walker</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Walker</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Randomly move up, down, left, right, or stay in one place</span>
+<span class="nx">Walker</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">walk</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">choice</span> <span class="o">=</span> <span class="nx">floor</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">choice</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">choice</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">choice</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span> 
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">w</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Walker</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">w</span><span class="p">.</span><span class="nx">walk</span><span class="p">();</span>
+    <span class="nx">w</span><span class="p">.</span><span class="nx">display</span><span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+
+
+                
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: {  equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        fonts: ["TeX"],
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Processing_Test2 | Syntax | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+
+    
+
+    </head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./index.html">Home</a></li>
+		<li><a href="./blogs.html">Blogs</a></li>
+		<li><a href="./syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./science.html">Science Notes</a></li>
+		<li><a href="./maths.html">Mathematics Notes</a></li>
+		<li><a href="./apps.html">Useful Apps</a></li>
+		<li><a href="./faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+
+                <h1 id="processing-test-2---rose-curves">Processing Test 2 - Rose Curves</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#processing-test-2---rose-curves">Processing Test 2 - Rose Curves</a>
+<ul>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#what-is-this">What is this?</a></li>
+<li><a href="#source-code">Source Code</a></li>
+<li><a href="#status">Status</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="animation">Animation</h2>
+<iframe src="https://editor.p5js.org/arunprasaad2711/embed/cbzzwsqj1" width="100%" height="400px" style="border:0px;">
+</iframe>
+<h2 id="what-is-this">What is this?</h2>
+<p>This is a <code>p5js</code> animation of <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)">rose curves</a>.</p>
+<h2 id="source-code">Source Code</h2>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">wave_x</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">wave_y</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">slider_n</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">slider_d</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">createButton</span><span class="p">(</span><span class="s2">&quot;reset&quot;</span><span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">mousePressed</span><span class="p">(</span><span class="nx">resetSketch</span><span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+
+  
+    <span class="c1">// Numerator Slider variables</span>
+    <span class="nx">slider_n</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="nx">slider_n</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="nx">slider_n</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;80px&#39;</span><span class="p">);</span>
+  
+    <span class="c1">// Denominator Slider variables</span>
+    <span class="nx">slider_d</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">slider_d</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+    <span class="nx">slider_d</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;80px&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">background</span><span class="p">(</span><span class="mi">125</span><span class="p">);</span>
+    <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nx">translate</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+  
+    <span class="kr">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">slider_n</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">slider_d</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">k</span> <span class="o">=</span> <span class="nx">n</span><span class="o">/</span><span class="nx">d</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">radius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Rose Curves or Rhodonea Curves&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Numerator, n = &#39;</span><span class="o">+</span> <span class="nx">n</span> <span class="o">+</span><span class="s1">&#39;; Denominator, d = &#39;</span><span class="o">+</span> <span class="nx">d</span> <span class="o">+</span><span class="s1">&#39;; k = n/d = &#39;</span><span class="o">+</span><span class="nx">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">160</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Move the sliders on the left to adjust the numerator and denonimator.&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">140</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Press the reset button when the slider value changes.&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">);</span>
+
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">ox</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">oy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">noFill</span><span class="p">();</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="nx">radius</span><span class="p">);</span>
+  
+    <span class="kd">let</span> <span class="nx">phase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="nx">HALF_PI</span><span class="p">;</span>
+    
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">k</span> <span class="o">*</span> <span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">)</span><span class="o">*</span><span class="nx">cos</span><span class="p">(</span><span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">);</span>
+    <span class="nx">y</span> <span class="o">+=</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">cos</span><span class="p">(</span><span class="nx">k</span> <span class="o">*</span> <span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">)</span><span class="o">*</span><span class="nx">sin</span><span class="p">(</span><span class="nx">time</span> <span class="o">-</span> <span class="nx">phase</span><span class="p">);</span>
+
+    <span class="nx">wave_x</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="nx">wave_y</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
+  
+    <span class="kd">var</span> <span class="nx">last</span> <span class="o">=</span> <span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">line</span><span class="p">(</span><span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+    <span class="nx">circle</span><span class="p">(</span><span class="nx">wave_x</span><span class="p">[</span><span class="nx">last</span><span class="p">],</span> <span class="nx">wave_y</span><span class="p">[</span><span class="nx">last</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">beginShape</span><span class="p">();</span>
+    <span class="nx">noFill</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">vertex</span><span class="p">(</span><span class="nx">wave_x</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">wave_y</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="nx">endShape</span><span class="p">();</span>
+
+    <span class="nx">time</span> <span class="o">+=</span> <span class="mf">0.05</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">wave_x</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">){</span>
+        <span class="nx">resetSketch</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">resetSketch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">wave_x</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">wave_y</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="status">Status</h2>
+<p>All done! Works like a charm!.</p>
+
+                
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: {  equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        fonts: ["TeX"],
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

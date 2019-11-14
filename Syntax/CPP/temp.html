@@ -1,0 +1,98 @@
+<h1 id="c-programming">C++ Programming</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#c-programming">C++ Programming</a>
+<ul>
+<li><a href="#sources">Sources:</a></li>
+<li><a href="#sample-c-program">Sample C++ Program</a></li>
+<li><a href="#variables-and-basic-arithmetic">Variables and basic arithmetic</a></li>
+<li><a href="#if-statement">If Statement</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="sources">Sources:</h2>
+<ul>
+<li>Bucky Roberts - thenewboston - YouTube channel</li>
+</ul>
+<h2 id="sample-c-program">Sample C++ Program</h2>
+<div class="highlight"><pre><span></span><span class="c1">// This is a comment</span>
+
+<span class="c1">// This is a pre-processor directive</span>
+<span class="c1">// iostream is a &quot;header file&quot; having definitions of functions</span>
+<span class="c1">// that would be useful in the program.</span>
+<span class="c1">// we are including the header file iostream - input/output stream</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="c1">// std = standard library. </span>
+<span class="c1">// This includes the stardard functions in the library of C++</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// This is the main function. This is MANDATORY for a program</span>
+<span class="c1">// All executions are to be done through main fucntion because it is</span>
+<span class="c1">// the first function to be executed by the program</span>
+<span class="c1">// int = this function returns integers</span>
+<span class="c1">// main is the fucntion name.</span>
+<span class="c1">// the definition of a function are to be included inside {}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//output stream object - for printing/writing data to the screen</span>
+    <span class="c1">// &lt;&lt; is the stream insertion operator</span>
+    <span class="c1">// endl - end line or go to the next line</span>
+    <span class="c1">// if not, then the next cout expression will print the statement</span>
+    <span class="c1">// from where the previous statement stopped.</span>
+    <span class="c1">// \n - escape sequence to jump to a new line</span>
+    <span class="c1">// terminate statements with ;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World! </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    
+    <span class="c1">// functions calculate something and returns a value.</span>
+    <span class="c1">// this line helps the function to return a value.</span>
+    <span class="c1">// 0 means the program ran fine!</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="variables-and-basic-arithmetic">Variables and basic arithmetic</h2>
+<div class="highlight"><pre><span></span><span class="c1">// var_name is a variable of integer type.</span>
+<span class="c1">// it stores the value 7 - assignment</span>
+<span class="kt">int</span> <span class="n">var_name</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">// variable declaration</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="c1">// this prints the variable value</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">var_name</span><span class="p">;</span>
+
+<span class="c1">// entering a value from the user</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter a value for a:&quot;</span><span class="p">;</span>
+<span class="c1">// cin - input stream object </span>
+<span class="c1">// &gt;&gt; - stream extraction operator</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+
+<span class="c1">// assigning value manually</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="c1">// basic arithmetic - ASMD</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">d</span>
+</pre></div>
+
+<h2 id="if-statement">If Statement</h2>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x is less than 10!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x is greater than 10 and less than 20!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="o">****</span>
+<span class="p">........</span>
+<span class="p">.......</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Don&#39;t know what to do now!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+

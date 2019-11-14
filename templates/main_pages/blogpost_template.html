@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include 'partials/header.html' %}
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        {% include 'partials/menubar.html' %}
+        
+        <section>
+            <div class="inner align-justify">
+
+                {{post.content}}
+                
+            </div>
+        </section>
+		
+        {% include 'partials/footer.html' %}
+        
+    </div>
+
+    {% include 'partials/jsfiles.html' %}
+
+</body>
+</html>

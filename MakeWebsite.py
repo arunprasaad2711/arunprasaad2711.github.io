@@ -1,6 +1,70 @@
-# Import md2html function from support function
-from jinja_support_functions import md2html_conv, file_loader, env
-from os import system as sys
+from jinja2 import Environment, FileSystemLoader
+from os import system
+
+# Specify the template directory and environment 
+file_loader = FileSystemLoader('templates')
+env = Environment(loader=file_loader)
+
+Main_Folders = ["Syntax", "FluidicColours", "Continuum", "Derivative", "FAQs", "Apps"]
+
+def pandoc2html(title, fname, temp_file, output_file):
+
+	# Use this when using haskell to create a custom pygments parser
+	result = system(f"pandoc -F pygments --from=markdown --to=html5 --mathjax {fname} -o {temp_file}")
+
+	## DO NOT USE THE ONES BELOW - SASS file modified a lot to get the haskell executable to work.
+	# Use this for a simple syntax highlight
+	# system(f"pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {fname} -o {temp_file}")
+	# This was the standard pandoc fix. Syntax highlight pushed permanently google pretty type.
+	# system(f"pandoc --from=markdown --to=html5 --no-highlight --mathjax {fname} -o {temp_file}")
+
+	if result != 0:
+		print(f"Error occurred file converting {fname}")
+	else:	
+		with open(temp_file, "r") as p:
+		
+			data = {
+				'content': p.read(),
+				'title': title,
+				'L0':False,
+				'L1':False,
+				'L2':True,
+				}
+
+			template = env.get_template('main_pages/blogpost_template.html')
+			output = template.render(post=data)
+
+			with open(output_file, 'w') as f2:
+				print(output, file=f2)
+
+			print(f'Finished rendering {output_file}')
+
+
+for folder in Main_Folders:
+	system(f"ls -d ./{folder}/*/ > ./{folder}/dirs_l1.txt")
+
+	with open(f"./{folder}/dirs_l1.txt", 'r') as f:
+		l1_dirs = f.readlines()
+
+	for lines in l1_dirs:
+		l1_dir = lines.rstrip()[2:]
+		print(l1_dir)
+		system(f"ls ./{l1_dir}*.md > ./{l1_dir}dirs_l2.txt")
+
+		with open(f"./{l1_dir}dirs_l2.txt", 'r') as mdfiles:
+			md_file_list = mdfiles.readlines()
+
+			for mdline in md_file_list:
+				md = mdline.rstrip()[2:].replace(l1_dir, "")[:-3]
+				# print(md)
+				html = f'{md}.html'
+				
+				fname = f"./{l1_dir}{md}.md"
+				temp_file = f"./{l1_dir}temp.html"
+				output_file = f"./{l1_dir}{html}"
+				title = f"{md} | {folder}"
+
+				pandoc2html(title, fname, temp_file, output_file)
 
 main_pages = ['index.html',
               'faq.html',
@@ -40,57 +104,23 @@ BannerImages = [
 	"images/syntax.png",
 ]
 
-# Write down the list of folders, 
-# the number of characters to skip from left and right.
-
-# Coding
-md2html_conv("Python and Web Programming", "syntax", "code", "Jinja2", 12, -3)
-md2html_conv("Python and Web Programming", "syntax", "code", "Bokeh", 11, -3)
-md2html_conv("Python and Web Programming", "syntax", "code", "Plotly", 12, -3)
-md2html_conv("C Programming", "syntax", "code", "C", 7, -3)
-md2html_conv("Geogebra Programming", "syntax", "code", "Geogebra", 14, -3)
-md2html_conv("Python Programming", "syntax", "code", "Scientific_Computation_Using_Python", 41, -3)
-md2html_conv("Fortran Programming", "syntax", "code", "Fortran", 13, -3)
-md2html_conv("CPP Programming", "syntax", "code", "CPP", 9, -3)
-md2html_conv("Java Programming", "syntax", "code", "Java", 10, -3)
-md2html_conv("LaTeX Programming", "syntax", "code", "LaTeX", 11, -3)
-md2html_conv("Parallel Programming", "syntax", "code", "MPI", 9, -3)
-md2html_conv("Shell Programming", "syntax", "code", "Shell", 11, -3)
-md2html_conv("Python Programming", "syntax", "code", "Python", 12, -3)
-md2html_conv("Web Development", "syntax", "code", "CSS3", 10, -3)
-md2html_conv("Web Development", "syntax", "code", "HTML5", 11, -3)
-md2html_conv("Web Development", "syntax", "code", "JavaScript", 16, -3)
-md2html_conv("Web Development", "syntax", "code", "ProcessingJS", 18, -3)
-md2html_conv("Web Development", "syntax", "code", "HTML5_CSS3", 16, -3)
-md2html_conv("Web Development", "syntax", "code", "Jekyll", 12, -3)
-md2html_conv("Web Development", "syntax", "code", "Sass", 10, -3)
-
-# Blogs
-md2html_conv("Poems", "fluidiccolours", "blog", "poems", 11, -3)
-md2html_conv("Stories", "fluidiccolours", "blog", "short_stories", 19, -3)
-md2html_conv("Writings","fluidiccolours", "blog", "articles", 14, -3)
-
 i = 0
 for page in main_pages:
 	
+	data = {
+		'title' : titles[i],
+		'Banner' : Banners[i],
+		'BannerMessage' : BannerMessages[i],
+		'BannerImage' : BannerImages[i]
+	}
+
 	# Templating Page
 	template = env.get_template('main_pages/'+page)
-	output = template.render(title=titles[i], Banner=Banners[i], BannerMessage=BannerMessages[i], BannerImages=BannerImages[i])
+	output = template.render(post=data)
 	
 	# Create Page
 	with open(page, 'w') as f:
 		print(output, file=f)
 	
-	print("Created {} page!".format(page))
+	print(f"Created {page} page!")
 	i += 1
-
-# # Updating the git repository and loading the files to github pages
-# commit = input("Should Commit? Y/N: ")
-
-# if(commit == "Y" or commit == 'y'):
-# 	commit_message = input("Enter the commit message:")
-# 	sys("git status")
-# 	sys("git add .")
-# 	sys("git status")
-# 	sys("git commit -m {}".format(commit_message))
-# 	sys("git push -u origin master")

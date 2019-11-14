@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript | Syntax | Fluidic Colours</title>
+
+    
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+
+    
+
+    </head>
+    
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+<header id="header" class="alt">
+	
+	
+		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
+	
+	
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+		<li><a href="./index.html">Home</a></li>
+		<li><a href="./blogs.html">Blogs</a></li>
+		<li><a href="./syntax.html">Coding and Software Notes</a></li>
+		<li><a href="./science.html">Science Notes</a></li>
+		<li><a href="./maths.html">Mathematics Notes</a></li>
+		<li><a href="./apps.html">Useful Apps</a></li>
+		<li><a href="./faq.html">FAQs</a></li>
+		
+	</ul>
+</nav>
+        
+        <section>
+            <div class="inner align-justify">
+
+                <h1 id="javascript">JavaScript</h1>
+<p>It is a scripting language used for programming webpages and doing arithmetic in webpages and for including interactions!.</p>
+<p>There are several scripting languages for the purpose, like PHP. JavaScript is one of them!</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before picking up JavaScript, it is required to know,</p>
+<ul>
+<li>Knowledge in HTML</li>
+<li>Knowledge in CSS</li>
+</ul>
+<p>If these are missing, then picking up JavaScript becomes difficult!</p>
+<p>As far as softwares are concerned, you need</p>
+<ul>
+<li>One nice text editor
+<ul>
+<li>Notepad, Notepad++, geany, gedit, textmate, Eclipse, Webstorm, Netbeans, Aptana, etc.,</li>
+</ul></li>
+<li>One or more web browser
+<ul>
+<li>Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer etc.,</li>
+</ul></li>
+</ul>
+<h2 id="writing-javascript-code-inside-html-pages">Writing JavaScript code inside HTML pages</h2>
+<p>You can include the javascript code inside HTML pages via the <code>&lt;script&gt;</code> tag or by including the javascript using some inclusion tags.</p>
+<p>To write a javascript command inside html page, use the <code>&lt;script&gt;</code> tag as below. The type attribute defines the scripting language used.</p>
+<div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="c1">// This is a single line comment</span>
+    <span class="cm">/* This is a multi-line comment */</span>
+    <span class="c">&lt;!--</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;Hey There!&quot;</span><span class="p">);</span>
+    <span class="c1">//--&gt;</span>
+    <span class="c1">// This is a print statement!</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p><code>document.write();</code> is a print statement! The <code>&lt;!--</code> and <code>//--&gt;</code> is just a safety check!</p>
+<h2 id="safety-check">Safety Check!</h2>
+<p>Some older browsers may not work nicely with javascript. Instead of executing the code, they might just print them. A safety check is used, so that the code is either ignored (in case of older browsers) or execute them (in the case of newer browsers.). Enclose the javascript code inside the code as above!</p>
+<h2 id="comments">Comments</h2>
+<p>To include comments, use <code>//</code> for a single line of comment. Use <code>/*</code> and <code>*/</code> for multi-line comments.</p>
+<h2 id="variables">Variables</h2>
+<p>To include a variable, use the syntax.</p>
+<div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">var_name</span> <span class="o">=</span> <span class="nx">value</span>
+</pre></div>
+
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="kd">var</span> <span class="nx">v1</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>        <span class="c1">// Integer</span>
+    <span class="kd">var</span> <span class="nx">v2</span> <span class="o">=</span> <span class="mf">45.28</span><span class="p">;</span>     <span class="c1">// Decimal</span>
+    <span class="kd">var</span> <span class="nx">v3</span> <span class="o">=</span> <span class="o">-</span><span class="mf">45.8</span><span class="p">;</span>     <span class="c1">// Negative</span>
+    <span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span> <span class="c1">// Strings</span>
+    <span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">&quot; Jon said \&quot; Be Brave man! \&quot; to Sam&quot;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">str3</span> <span class="o">=</span> <span class="s2">&quot; Jon said &#39; Be Brave man! &#39; to Sam&quot;</span><span class="p">;</span>
+    <span class="c1">// Escape Sequences. Use \ for beginning an Escape Sequence!</span>
+    <span class="kd">var</span> <span class="nx">bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// Boolean</span>
+    <span class="kd">var</span> <span class="nx">bool1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>  <span class="c1">// Boolean</span>
+    <span class="kd">var</span> <span class="nx">v4</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>      <span class="c1">// Null or empty variable!</span>
+    <span class="c1">// No value is assigned to v4</span>
+
+<span class="c1">// Quotation marks are not needed, but it is needed for clarity and differentiation.</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str2</span> <span class="o">+</span> <span class="s2">&quot; Is he not write? He has proved it &quot;</span> <span class="o">+</span> <span class="nx">v1</span> <span class="o">+</span> <span class="s2">&quot; times!&quot;</span><span class="p">);</span>
+    <span class="c1">// Will join strings and numbers, and print them in a line!</span>
+    
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">v1</span><span class="o">+</span><span class="nx">v2</span><span class="p">);</span>
+    <span class="c1">// If plain numbers are used, then they are added normally!</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>** Variables are case sensitive! **</p>
+<h2 id="functions">Functions</h2>
+<p>It is a mini-program!</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="c1">// Functions!</span>
+
+    <span class="c1">// This is the function definition!</span>
+    <span class="kd">function</span> <span class="nx">func_name</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This is an alert!&quot;</span><span class="p">);</span>
+        <span class="c1">// This will put a pop-up on the screen!</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">func_name1</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// It takes an argument X and uses it!</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This is an alert! by &quot;</span><span class="o">+</span> <span class="nx">x</span><span class="p">);</span>
+        <span class="c1">// This will put a pop-up on the screen!</span>
+    <span class="p">}</span>
+
+    <span class="nx">func_name</span><span class="p">();</span>
+    <span class="cm">/* This is the function call!  When called, there will be a </span>
+<span class="cm">    pop-up indicating the message!*/</span>
+
+    <span class="nx">func_name1</span><span class="p">(</span><span class="s2">&quot;Arun&quot;</span><span class="p">);</span>
+    <span class="cm">/* This is also a function call */</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Alert!&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">func_name()</span> <span class="p">/&gt;</span>
+        <span class="c">&lt;!-- This will create an button with the name Alert!.</span>
+<span class="c">        On clicking the button, the function will be invoked and </span>
+<span class="c">        the pop-up will display! --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="advanced-function-operations">Advanced function operations</h2>
+<p><strong>Functions with multiple input arguments</strong></p>
+<p><strong>Functions with return values</strong></p>
+<p><strong>Function called inside another function</strong></p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="kd">function</span> <span class="nx">power</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;We are inside power function! &quot;</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The received values are :&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span> <span class="o">+</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+            <span class="c1">// This function receives 2 arguments/parameters</span>
+            <span class="c1">// using &lt;br /&gt; inside quotes serves as a line break!</span>
+            <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span> <span class="c1">// Power function in JavaScript!</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of &quot;</span><span class="o">+</span><span class="nx">x</span><span class="o">+</span><span class="s2">&quot; ^ &quot;</span><span class="o">+</span><span class="nx">y</span><span class="o">+</span><span class="s2">&quot; is: &quot;</span><span class="o">+</span><span class="nx">p</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">fahren_2_cel</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;We are inside fahren_2_cel function! &quot;</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span><span class="o">-</span><span class="mf">32.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nx">c</span><span class="p">;</span>
+            <span class="c1">// Function that returns a value!</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of &quot;</span> <span class="o">+</span> <span class="nx">f</span> <span class="o">+</span> <span class="s2">&quot; degree Fahrenheit is &quot;</span> <span class="o">+</span> <span class="nx">fahren_2_cel</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; degree Celsius!&quot;</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+            <span class="c1">// Calling functions inside another functions!</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;We are inside print function! &lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="kd">function</span> <span class="nx">start</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;We are inside start function! &lt;br /&gt;&quot;</span><span class="p">);</span>
+            <span class="nx">power</span><span class="p">(</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">);</span>
+            <span class="nx">print</span><span class="p">(</span><span class="mf">212.0</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;We are back to start function! &lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;start&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;start()&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>The output on pressing the button is:</p>
+<div class ="highlight"><pre>
+We are inside start function! 
+We are inside power function! 
+The received values are :
+5.01 and 1.2
+The value of 5.01 ^ 1.2 is: 6.915208372830329
+We are inside fahren_2_cel function! 
+The value of 212 degree Fahrenheit is 100 degree Celsius!
+We are inside print function! 
+We are back to start function! 
+</pre></div>
+<h2 id="global-and-local-variables">Global and Local Variables</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+            
+    <span class="kd">var</span> <span class="nx">var1</span> <span class="o">=</span> <span class="s2">&quot;global &quot;</span><span class="p">;</span> <span class="c1">// Global variable!</span>
+
+    <span class="kd">function</span> <span class="nx">print1</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">var1</span> <span class="o">=</span> <span class="s2">&quot;local &quot;</span><span class="p">;</span>  <span class="c1">// Local Variable!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">var1</span><span class="p">);</span> <span class="c1">// Local usage!</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">print2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">var1</span><span class="p">);</span> <span class="c1">// Global usage</span>
+    <span class="p">}</span>
+
+    <span class="nx">print1</span><span class="p">();</span>
+    <span class="nx">print2</span><span class="p">();</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">var1</span><span class="p">);</span> <span class="c1">// Global usage</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>The output is</p>
+<div class ="highlight"><pre>local global global</pre></div>
+<h2 id="mathematical-operations">Mathematical Operations</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+            
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">+</span><span class="mi">6</span><span class="p">;</span>            <span class="c1">//Addition</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">8</span><span class="o">-</span><span class="mi">9</span><span class="p">;</span>            <span class="c1">//Subtraction</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="mi">9</span><span class="p">;</span>            <span class="c1">//Multiplication</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">9</span><span class="p">;</span>            <span class="c1">//Division</span>
+    <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="mi">25</span><span class="o">%</span><span class="mi">9</span><span class="p">;</span>           <span class="c1">//Modulus Operation</span>
+    <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">//Power Operation</span>
+    <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span><span class="o">++</span><span class="p">;</span>                    <span class="c1">// Increment Operation</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span><span class="o">--</span><span class="p">;</span>                    <span class="c1">// Decrement Operation</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>                <span class="c1">// Add and assign operator</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>                <span class="c1">// Subtract and assign operator</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span> <span class="o">*=</span> <span class="mi">10</span><span class="p">;</span>                <span class="c1">// Multiply and assign operator</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>                <span class="c1">// Divide and assign operator</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">g</span> <span class="o">%=</span> <span class="mi">10</span><span class="p">;</span>                <span class="c1">// Modulus and assign operator</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The calculated values are &lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span> <span class="o">+</span> <span class="nx">c</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span> <span class="o">+</span> <span class="nx">d</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span> <span class="o">+</span> <span class="nx">e</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">)</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>The output is:</p>
+<div class ="highlight"><pre>11
+10
+20
+0
+100
+1
+0
+The calculated values are 
+11
+-1
+72
+0.8888888888888888
+7
+</pre></div>
+<h2 id="if-statement-and-relational-operators">If statement and Relational Operators</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot; is greater than &quot;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot; is less than &quot;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot; is equal to &quot;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Relational Operators</span>
+    <span class="c1">// &gt;    Greater than,</span>
+    <span class="c1">// &lt;    Less than,</span>
+    <span class="c1">// ==   equals,</span>
+    <span class="c1">// &gt;=   Greater than or equal to</span>
+    <span class="c1">// &lt;=   Less than or equal to</span>
+    <span class="c1">// !=   Not Equal to</span>
+    
+    <span class="c1">// Logical Operators</span>
+    <span class="c1">// &amp;&amp;   AND</span>
+    <span class="c1">// ||   OR</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>The output is :</p>
+<div class ="highlight"><pre>7 is equal to 7</pre></div>
+<p><strong>Nesting is possible!</strong></p>
+<h2 id="switch-case">Switch Case:</h2>
+<p>It is given as follows:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+            
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>     <span class="c1">// Multiple common cases!</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;a is 0 or 1&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span> <span class="c1">// break to stop checking the next cases.</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;a is 2 or 3 or 4&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">6</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">7</span><span class="o">:</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;a is 5 or 6 or 7&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">8</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">9</span><span class="o">:</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;a is 8 or 9&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;a is something else!&quot;</span><span class="p">);</span>
+            <span class="c1">// break; // break not needed!</span>
+    <span class="p">}</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="for-and-while-loops">For and While loops</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="c1">// This is a for loop!</span>
+    <span class="c1">// initialization, ending condition, increment/decrement</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of i is &quot;</span><span class="o">+</span><span class="nx">i</span><span class="o">+</span><span class="s2">&quot; &lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// This is a while loop condition variable</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// This is a while loop</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// This is the condition</span>
+    <span class="p">{</span>
+        <span class="c1">// Set of statements to be executed</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of x is &quot;</span><span class="o">+</span><span class="nx">x</span><span class="o">+</span><span class="s2">&quot; &lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="c1">// This is a condition breaker statement!</span>
+        <span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// This is a do while loop condition variable now!</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// This is a do while loop</span>
+    <span class="c1">// Run the code (regardless of the condition) and then check the condition!</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="c1">// Set of statements to be executed</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of x is &quot;</span><span class="o">+</span><span class="nx">x</span><span class="o">+</span><span class="s2">&quot; &lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="c1">// This is a condition breaker statement!</span>
+        <span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// This is the condition!</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="event-handlers">Event Handlers</h2>
+<p>These are used for doing a specific job when a certain <strong>event</strong> happens, like press of a button, entering a value, etc.,</p>
+<p>Event handler codes need not be written inside <code>&lt;script&gt;</code> tags!.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;alert(&#39;Loading complete!&#39;);&quot;</span> <span class="na">onUnload</span><span class="o">=</span><span class="s">&quot;alert(&#39;See you!&#39;);&quot;</span><span class="p">&gt;</span>
+        
+     <span class="c">&lt;!-- This is an On Load and On Unload Event handlers. When the webpage is loaded, the onload event happens. When the wepage is closed, refreshed or terminated, the onUnload event happens. Use either one, not both!--&gt;</span>
+        
+    <span class="c">&lt;!-- On click Event handler! --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Press&quot;</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;alert(&#39;Nice!&#39;);alert(&#39;Nice again!&#39;)&quot;</span><span class="p">/&gt;</span>
+        <span class="c">&lt;!-- You have a button, with the name &quot;Press&quot;. On clicking</span>
+<span class="c">        the button, the javascript code alert(&#39;Nice!&#39;); is executed.</span>
+<span class="c">        Single quotes are used for user convenience and to avoid </span>
+<span class="c">        string termination. --&gt;</span>
+
+        <span class="c">&lt;!-- You can add multiple statements! After alert(&#39;Nice!&#39;),</span>
+<span class="c">        alert(&#39;Nice again!&#39;); is executed. So, if you have a function,</span>
+<span class="c">        you can execute a series of statements. --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- on mouse over even handler! --&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">HrEf</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span> <span class="na">onmouseover</span><span class="o">=</span><span class="s">&quot;alert(&#39;Going to Google!&#39;);&quot;</span><span class="p">&gt;</span> Click to go to Google! <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- Note that the attributes are case-insensitive! --&gt;</span>
+
+    <span class="c">&lt;!-- When the mouse cursor comes on top of the link, an alert</span>
+<span class="c">    box is displayed. This can be annoying!--&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+
+    <span class="c">&lt;!-- on mouse out even handler! --&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span> <span class="na">onmouseout</span><span class="o">=</span><span class="s">&quot;alert(&#39;Going to Google!&#39;);&quot;</span><span class="p">&gt;</span> Click to go to Google! <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- When the mouse cursor moves to the link, and then leaves</span>
+<span class="c">    away, an alert box pops up! This can be annoying!--&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="objects-in-javascript">Objects in JavaScript</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- Object is a peculiar datatype which has a few properties and methods associated with it!</span>
+
+<span class="c">    Eg: Book</span>
+
+<span class="c">    A book has various properties that can be quantified:</span>
+<span class="c">    * Title</span>
+<span class="c">    * No. of Pages</span>
+<span class="c">    * Price</span>
+<span class="c">    * Topic</span>
+<span class="c">    * Publisher</span>
+<span class="c">    * Authors</span>
+
+<span class="c">    A book has several functions or methods that can be done:</span>
+<span class="c">    * Reading</span>
+<span class="c">    * Pillow?!</span>
+<span class="c">    * Get a degree</span>
+<span class="c">    * Teach a class</span>
+
+<span class="c">    These properties are like variables. These functions that are</span>
+<span class="c">    done by and using the object and it&#39;s properties are methods!</span>
+
+<span class="c">    Usage:</span>
+
+<span class="c">    object.method();</span>
+<span class="c">    object.variable;</span>
+<span class="c">    --&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&quot;hey there!&quot;</span><span class="p">;</span>
+        <span class="c1">// t itself is an object!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">length</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span> <span class="c1">// This is a property of t!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;Hey!&quot;</span><span class="p">);</span>   <span class="c1">// This is a &quot;method&quot; of the object &quot;document&quot;!</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="creating-objects-using-constructor-functions">Creating Objects Using Constructor Functions</h2>
+<p>There are different methods! This is one long way!</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Object Creation!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- To make an object, create a constructor function in the head tag.--&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="c1">// This is a constructor function. This function is </span>
+        <span class="c1">// a blueprint of what an object has! This function</span>
+        <span class="c1">// assigns values to objects.</span>
+        <span class="kd">function</span> <span class="nx">person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+            <span class="c1">// This is a syntax for passing object details</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Creating an object or creating a new instance of an object!</span>
+        <span class="cm">/* Syntax:</span>
+<span class="cm">            var object_name = new object_constructor_function(values); */</span>
+        <span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">person</span><span class="p">(</span><span class="s2">&quot;Arun Prasaad&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">person</span><span class="p">(</span><span class="s2">&quot;ChetanKumar&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="c1">// Using an object variable or property!</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="object-creation-using-object-initializers">Object Creation Using Object Initializers</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Object Initializers!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- This is a faster way to create an object --&gt;</span>
+    <span class="c">&lt;!-- Used for creating just one or more objects --&gt;</span>
+    <span class="c">&lt;!-- Constructor function is for creating multiple objects! --&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+        <span class="cm">/* To create an object, use the following syntax </span>
+<span class="cm">        Syntax:</span>
+<span class="cm">        obj_name = {var1 : value1, var2 : value2, ...};</span>
+<span class="cm">        */</span>
+        <span class="nx">Arun</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Arun Prasaad&quot;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">24</span><span class="p">};</span>
+        <span class="nx">Chetan</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;ChetanKumar&quot;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">23</span><span class="p">};</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">Arun</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; of age &quot;</span> <span class="o">+</span> <span class="nx">Arun</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot; plus a few days and &quot;</span> <span class="o">+</span> <span class="nx">Chetan</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; of age &quot;</span> <span class="o">+</span> <span class="nx">Chetan</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">&quot; plus 10 months are friends! &lt;br /&gt;&quot;</span> <span class="p">);</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="adding-methods-into-objects">Adding Methods into Objects</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Adding Object Methods<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="c1">// let&#39;s create a constructor function first!</span>
+        <span class="kd">function</span> <span class="nx">people</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">age_after_phd_end</span> <span class="o">=</span> <span class="nx">age_after_phd</span><span class="p">;</span>
+            <span class="c1">// This way, the method is plugged into the object.</span>
+            <span class="c1">// You need not need the () !</span>
+            <span class="c1">// age_after_phd_end is the name of the method age_after_phd inside the object!</span>
+        <span class="p">}</span>
+
+        <span class="c1">// This is a method for the object to be plugged into it!</span>
+        <span class="kd">function</span> <span class="nx">age_after_phd</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">phd_years</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">phd_years</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+            <span class="c1">// Here, &quot;this&quot; means the object into which the function/method is plugged into.</span>
+            <span class="k">return</span> <span class="nx">age</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// An object is also ready!</span>
+        <span class="kd">var</span> <span class="nx">Arun</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">people</span><span class="p">(</span><span class="s2">&quot;Arun Prasaad&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">Arun</span><span class="p">.</span><span class="nx">age_after_phd_end</span><span class="p">());</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="arrays-in-javascript">Arrays in JavaScript</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="cm">/* This is how you create a 1D array */</span>
+        <span class="cm">/* Index starts from 0 */</span>
+        <span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span> <span class="p">(</span><span class="s2">&quot;Arun&quot;</span><span class="p">,</span> <span class="s2">&quot;Chetan&quot;</span><span class="p">,</span> <span class="s2">&quot;Dipankar&quot;</span><span class="p">,</span> <span class="s2">&quot;Senthil&quot;</span><span class="p">,</span> <span class="s2">&quot;Gowtham&quot;</span><span class="p">,</span> <span class="s2">&quot;Keethi&quot;</span><span class="p">,</span> <span class="s2">&quot;Kevin&quot;</span><span class="p">);</span>
+
+        <span class="cm">/* This is another way! */</span>
+        <span class="kd">var</span> <span class="nx">name1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="c1">// Here, the array has 4 values!</span>
+        <span class="c1">// To assign the values, use as follows.</span>
+        <span class="nx">name1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;JRR Tolkien&quot;</span><span class="p">;</span>
+        <span class="nx">name1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;GRR Martin&quot;</span><span class="p">;</span>
+        <span class="nx">name1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;JK Rowling&quot;</span><span class="p">;</span>
+        <span class="nx">name1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Sidney Sheldon&quot;</span><span class="p">;</span>
+
+        <span class="c1">// This is another way of making arrays - This is dynamic!</span>
+        <span class="kd">var</span> <span class="nx">books</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+        <span class="c1">// Now, this array &quot;books&quot; is dynamic!</span>
+
+        <span class="c1">// To assign the values, use them this way!</span>
+        <span class="nx">books</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Lord of the Rings&quot;</span><span class="p">;</span>
+        <span class="nx">books</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A Song of Ice and Fire&quot;</span><span class="p">;</span>
+        <span class="nx">books</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Harry Potter Series&quot;</span><span class="p">;</span>
+        <span class="nx">books</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Crime/Murder/Suspense/Thriller&quot;</span><span class="p">;</span>
+
+        <span class="c1">// To access any indivual value!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">names</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+        <span class="c1">// To print all values</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span>
+
+        <span class="c1">// Some Array Properties and Methods!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">name1</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// length of the array</span>
+
+        <span class="kd">var</span> <span class="nx">new_array1</span> <span class="o">=</span> <span class="nx">name1</span> <span class="o">+</span> <span class="nx">books</span><span class="p">;</span> <span class="c1">// Merges Array Elements</span>
+        <span class="c1">// May have a small difference!</span>
+        <span class="kd">var</span> <span class="nx">new_array2</span> <span class="o">=</span> <span class="nx">name1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">books</span><span class="p">);</span>
+        <span class="c1">// Concatenation of 2 arrays</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="o">+</span><span class="nx">new_array1</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="o">+</span><span class="nx">new_array2</span><span class="p">);</span>
+        
+        <span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span> <span class="p">(</span><span class="s2">&quot;Arun&quot;</span><span class="p">,</span> <span class="s2">&quot;Chetan&quot;</span><span class="p">,</span> <span class="s2">&quot;Dipankar&quot;</span><span class="p">,</span> <span class="s2">&quot;Senthil&quot;</span><span class="p">,</span> <span class="s2">&quot;Gowtham&quot;</span><span class="p">,</span> <span class="s2">&quot;Keethi&quot;</span><span class="p">,</span> <span class="s2">&quot;Kevin&quot;</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">string1</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">join</span><span class="p">();</span>
+        <span class="c1">// Joins all strings, with commas in between</span>
+        <span class="kd">var</span> <span class="nx">string2</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot; - &quot;</span><span class="p">);</span>
+        <span class="c1">// Joins all strings, with hypen in between</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">string1</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">string2</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">string3</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+        <span class="c1">// Removes the last element in names array and saves it inside string3</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">names</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">string3</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+        
+        <span class="c1">// To add the element back, use push method</span>
+        <span class="nx">names</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Kevin&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Reverses the elements in reverse index order</span>
+        <span class="nx">names</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">names</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+
+        <span class="nx">names</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+
+        <span class="c1">// This sorts out all the entries in the array!</span>
+        <span class="nx">names</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">names</span> <span class="o">+</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+            
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="multi-dimensional-arrays">Multi-Dimensional Arrays</h2>
+<p>Creating multi-dimensional arrays is easy!</p>
+<p>Source : <a href="http://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript">stackoverflow question</a></p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]];</span> <span class="c1">// Static Array</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// 1</span>
+    
+    <span class="kd">var</span> <span class="nx">xx</span> <span class="o">=</span> <span class="p">[[]];</span> <span class="nx">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// Dynamic Array</span>
+    
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">x</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span> <span class="c1">// Creating a 2D array</span>
+    
+    <span class="c1">// In a similar manner, you can extend it to a 3D, 4D array!</span>
+    
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="getting-user-input-using-prompt-feature-and-entering-data-for-2d-arrays">Getting User Input using prompt feature and entering data for 2D arrays</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="c1">// Opens a pop-up box with a prompt to enter data</span>
+    <span class="kd">var</span> <span class="nx">pie</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter a value for Pie!&quot;</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;The value of Pie is : &quot;</span><span class="o">+</span><span class="nx">pie</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Defining a 2D Array!</span>
+    <span class="c1">// Defining the number of rows and columns!</span>
+    <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="c1">// Making an array with r elements</span>
+    <span class="kd">var</span> <span class="nx">array1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+
+    <span class="c1">// Making each of the r elements as arrays with c elements</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">array1</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Essentially, array1 is a r time c 2D array or a matrix!</span>
+    <span class="c1">// Using Prompt option to get each and every array entry value!</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">array1</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter the value for array1[&quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;][&quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;]:&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// Printing the entire array!</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt; The Array entered is : &lt;br /&gt;&quot;</span><span class="p">);</span>
+    
+    <span class="c1">// Printing the entire array in proper format!</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">array1</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">array1</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;  &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="associative-arrays">Associative Arrays</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="c1">// These associative arrays are similar to</span>
+    <span class="c1">// Dictionaries in Python!</span>
+
+    <span class="kd">var</span> <span class="nx">asso</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+    <span class="nx">asso</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="nx">asso</span><span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">asso</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]);</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>The output is</p>
+<div class ="highlight"><pre>    1</pre></div>
+<h2 id="mathematical-object">Mathematical Object</h2>
+<p>JavaScript has a lot of mathematical constants and functions.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter a number&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="c1">// This will prompt the user for a number.</span>
+    <span class="c1">// The default value is nothing, set by &quot;&quot;</span>
+
+    <span class="c1">// Has a lot of constants and in-built functions!</span>
+    <span class="c1">// Pi</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="c1">// e</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">E</span><span class="o">+</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="c1">// Square root</span>
+    <span class="kd">var</span> <span class="nx">sqrt_n</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The Square Root of &quot;</span> <span class="o">+</span> <span class="nx">n</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nx">sqrt_n</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="date-and-time-objects">Date and Time Objects</h2>
+<p>JavaScript has in-built modules to get the date and time.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- This tag acts as a place holder for the time to be displayed! --&gt;</span>
+
+    <span class="c">&lt;!-- id name is used to address this element --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;time&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="c1">// Some simple function</span>
+        <span class="kd">function</span> <span class="nx">print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// This function will execute the print function continuously after every 2000 milliseconds or 2 seconds.</span>
+        <span class="c1">// setInterval(&quot;print()&quot;, 2000);</span>
+
+        <span class="kd">function</span> <span class="nx">print_time_date</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>       <span class="c1">// Grabs the date</span>
+            <span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>  <span class="c1">// Grabs the hour in 24-hr</span>
+            <span class="kd">var</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span> <span class="c1">// Grabs the minutes</span>
+            <span class="kd">var</span> <span class="nx">secs</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span> <span class="c1">// Grabs the seconds</span>
+
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">hours</span><span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span><span class="nx">mins</span><span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span><span class="nx">secs</span><span class="p">;</span>
+
+            <span class="cm">/* </span>
+<span class="cm">                This big command</span>
+<span class="cm">                * Searches the entire document,</span>
+<span class="cm">                * Finds the element with the ID namely, &quot;time&quot;,</span>
+<span class="cm">                * And, inside the ID, it will display the time</span>
+<span class="cm">                in the prescribed format.</span>
+<span class="cm">            */</span>
+        <span class="p">}</span>
+
+        <span class="c1">// This function will execute the print_time_date function continuously after every 1000 milliseconds or 1 second(s).</span>
+        <span class="nx">setInterval</span><span class="p">(</span><span class="s2">&quot;print_time_date()&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+      <span class="c">&lt;!-- Start of example</span>
+<span class="c">         &lt;script&gt;</span>
+<span class="c">           var myDate         = new Date();               // returns the date object</span>
+<span class="c">           var myMonth        = myDate.getMonth();        // 0 through 11</span>
+<span class="c">           var myDay          = myDate.getDate();         // 1 through 31</span>
+<span class="c">           var myDayOfWeek    = myDate.getDay();          // 0 through 6 -  0 = Sunday</span>
+<span class="c">           var myYear         = myDate.getFullYear();     // 4 digit year</span>
+<span class="c">           var myHour         = myDate.getHours();        // 0 through 23</span>
+<span class="c">           var myMinutes      = myDate.getMinutes();      // 0 through 59</span>
+<span class="c">           var mySeconds      = myDate.getSeconds();      // 0 through 59</span>
+<span class="c">           var myMillSec      = myDate.getMilliseconds(); // 0 through 999</span>
+<span class="c">           var months  = new Array(&quot;January&quot;,   &quot;February&quot;, &quot;March&quot;,    &quot;April&quot;,</span>
+<span class="c">                                    &quot;May&quot;,       &quot;June&quot;,     &quot;July&quot;,     &quot;August&quot;,</span>
+<span class="c">                                  &quot;September&quot;, &quot;October&quot;,  &quot;November&quot;, &quot;December&quot;);</span>
+<span class="c">           var days    = new Array(&quot;Sunday&quot;,   &quot;Monday&quot;, &quot;Tuesday&quot;,&quot;Wednesday&quot;,</span>
+<span class="c">                                   &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;);</span>
+<span class="c">         &lt;/script&gt;</span>
+
+<span class="c">         &lt;p&gt;&lt;mark&gt; var myDate = new Date();&lt;/mark&gt;&lt;/p&gt;</span>
+<span class="c">         &lt;p&gt;&lt;mark&gt; var myMillSec = myDate.getMilliseconds();&lt;/mark&gt;&lt;/p&gt;</span>
+<span class="c">         &lt;script&gt;</span>
+<span class="c">            document.write(&quot;&lt;p&gt;The date is &lt;mark&gt; &quot;, myDate, &quot; &lt;/mark&gt;&lt;/p&gt;&quot;);</span>
+<span class="c">            document.write(&quot;&lt;p&gt;The Milli seconds is &lt;mark&gt; &quot;, myMillSec, &quot;&lt;/mark&gt;&lt;/p&gt;&quot;);</span>
+<span class="c">         &lt;/script&gt;</span>
+
+<span class="c">         &lt;p&gt;&lt;mark&gt;The getMilliseconds() method returns 0 to 999. &lt;/mark&gt;&lt;/p&gt;</span>
+
+<span class="c">        End of example --&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    
+</pre></div>
+
+<h2 id="form-validation">Form Validation</h2>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Forms and JavaScript! <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+        <span class="kd">function</span> <span class="nx">validator</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">sample</span><span class="p">.</span><span class="nx">box</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="c1">// True of box is checked</span>
+            <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Yes Checked!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Check the box!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- A Sample Form! --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sample&quot;</span><span class="p">&gt;</span>
+        Username: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;uname&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        Password: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pword&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        Want colour(s)? : <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Check!&quot;</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;validator()&quot;</span><span class="p">/&gt;</span>
+        <span class="c">&lt;!-- On clicking the button, the validator function is invoked! --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+        <span class="c1">// JavaScripts automatically creates a form array, if a </span>
+        <span class="c1">// form field is present! First form will be form 0, next</span>
+        <span class="c1">// is form 1, form 2 etc.,</span>
+
+        <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+        <span class="c1">// This will access the first form!</span>
+        <span class="c1">// length is the number of inputs in the form, here it is 3.</span>
+        <span class="c1">// x = 3</span>
+        <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// Accessess uname!</span>
+        <span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// Accessess pword!</span>
+
+        <span class="c1">// Using Form name</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">sample</span><span class="p">.</span><span class="nx">uname</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// Accessess uname!</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">sample</span><span class="p">.</span><span class="nx">pword</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// Accessess pword!</span>
+
+        <span class="c1">// document.write(x+&quot; &quot;+y+&quot; &quot;+z+&quot;&lt;br/&gt;&quot;);</span>
+        <span class="c1">// document.write(a+&quot; &quot;+b+&quot;&lt;br/&gt;&quot;);</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+
+                
+            </div>
+        </section>
+		
+        <!-- Footer -->
+<footer id="footer" class="">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
+			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
+			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
+		</ul>
+		<p>
+			Copyright &copy; 2018 - <script type="text/javascript">
+				document.write(new Date().getFullYear());
+			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+		</p>
+	</div>
+</footer>
+        
+    </div>
+
+    <!-- McAfee Trust mark -->
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- D3Js library for plotting -->
+<!-- script src="https://d3js.org/d3.v5.min.js"></script-->
+
+<!-- Plotly.js for plotting -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: {  equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        fonts: ["TeX"],
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+
+
+</body>
+</html>

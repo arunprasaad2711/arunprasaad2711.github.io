@@ -1,0 +1,399 @@
+<h1 id="latex">LaTeX</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#latex">LaTeX</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#sources-why-origin-and-forums">Sources, Why, Origin and Forums</a>
+<ul>
+<li><a href="#sources">Sources</a></li>
+</ul></li>
+<li><a href="#books">Books</a></li>
+<li><a href="#why-latex">Why LaTeX?</a></li>
+<li><a href="#forums">Forums</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#compiler">Compiler:</a></li>
+<li><a href="#editor">Editor:</a></li>
+<li><a href="#cross-platform-editors">Cross platform editors:</a></li>
+<li><a href="#viewer">Viewer:</a></li>
+<li><a href="#accessories">Accessories</a></li>
+<li><a href="#configurations-and-file-types">Configurations and File types</a></li>
+<li><a href="#file-extensions">File Extensions:</a></li>
+<li><a href="#general-notes-tips-and-compiling">General notes, Tips and Compiling</a>
+<ul>
+<li><a href="#general-notes">General Notes:</a></li>
+</ul></li>
+<li><a href="#document-structure">Document Structure:</a></li>
+<li><a href="#tips">Tips</a></li>
+<li><a href="#compiling">Compiling:</a></li>
+<li><a href="#sample-preamble">Sample Preamble</a></li>
+<li><a href="#document-class-doc-details">Document Class, Doc Details</a>
+<ul>
+<li><a href="#document-class-details">Document class details:</a></li>
+</ul></li>
+<li><a href="#document-details">Document Details:</a></li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#sample-layout">Sample Layout</a></li>
+<li><a href="#begin-commands">Begin Commands</a></li>
+<li><a href="#bullets-and-numbering">Bullets and Numbering</a></li>
+<li><a href="#enumerate">Enumerate</a></li>
+<li><a href="#bullet-and-numbered-list">Bullet and Numbered List</a></li>
+<li><a href="#document-modes-and-sections">Document Modes and Sections</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="introduction">Introduction</h2>
+<p><span class="math inline">\(\LaTeX\)</span> is a type setting document</p>
+<h2 id="sources-why-origin-and-forums">Sources, Why, Origin and Forums</h2>
+<p>  LaTeX has two inventors</p>
+<ol type="1">
+<li>Donald Knuth</li>
+</ol>
+<p>He was the first person to create TeX, the basic compiling code used in LaTeX. When TeX was introduced, it was still difficult to follow.</p>
+<ol start="2" type="1">
+<li>Leslie Lamport</li>
+</ol>
+<p>He was the person who made an interface on TeX to make LaTeX. This made document production very easy and productive.   ### Sources    1. Video Lectures on LaTeX by Mitchell Krummel in Youtube 2. <a href="Spoken-tutorials.org">Spoken Tutorials</a> Video Lectures</p>
+<p>Lot of online references were taken/compiled from Stack Exchange, Sharetatex.com</p>
+<p>Optional reference: moudgalya.org</p>
+<p><strong>Will add more references when a considerable amount of information is collected from a single source. Some unmentioned sources will be present, but those shall contribute less. If more, then it will be cited.</strong></p>
+<p>All these following steps are to be done in TeXMaker. They correspond without any change to TeXstudio. For other editors, there might be changes.</p>
+<h2 id="books">Books</h2>
+<ul>
+<li>LaTeX, A document preparation system, User’s guide and reference manual by Leslie Lamport.</li>
+<li>LaTeX companion by F. Mittelbach and M. Goossens (advanced users)</li>
+</ul>
+<p>Main website for all LaTeX related updates and sources is <a href="http://ctan.org">CTAN</a> centraised TeX archive network.</p>
+<h2 id="why-latex">Why LaTeX?</h2>
+<ul>
+<li>Free and Open Source</li>
+<li>What you type is what you get output</li>
+<li>Cross platform compatibility. Especially with Windows/Mac/Unix/Linux</li>
+<li>Has excellent features for scientific documents, Especially, the mathematical documents</li>
+<li>Automatically takes care of formatting, numbering, updating and referencing chapters, figures, tables, page numbers, citations etc.,</li>
+<li>Standard of document print is excellent.</li>
+<li>Lot of user communities</li>
+<li>Excellent Typesetting software</li>
+<li>Easy to produce bibliography index and easy to change the entire document format in a few steps.</li>
+<li>Bibliographic entries are easy to make and produce</li>
+</ul>
+<h2 id="forums">Forums</h2>
+<p>One good place to check out will be <a href="www.sharelatex.com">ShareLaTeX</a></p>
+<p>For user forums in India.</p>
+<ul>
+<li>Tug India.in</li>
+<li>Fossee.in</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>LaTeX is a type-setting program used for making scientific documents. It is to be viewed like a programming language.   LaTeX requires a few components, namely,</p>
+<ol type="1">
+<li>Compiler</li>
+<li>Editor</li>
+<li>Viewer</li>
+<li>Accessories</li>
+</ol>
+<h2 id="compiler">Compiler:</h2>
+<p>This is the core of the system. It is the basic codes that helps to produce outputs and results. It is completely mandatory.</p>
+<p>It is available in different versions for different OS.</p>
+<p><strong>Windows</strong>:MiKTeX distribution (As of Oct 4, 2014, the Current Version is 2.9)</p>
+<p>MikTeX is available from miktex.org</p>
+<p><strong>Linux/Unix</strong> : Comes pre-installed or added along with the editor. (can select and choose the necessary options)</p>
+<p><strong>To be noted: It is very much advisable to install and use a “dedicated” editor (made especially for this purpose) for Linux/Unix systems. This will take care of the installation of the compilers during installation and making changes after edition. Directly installing LaTeX compilers is a bit tricky in Linux/Unix (as far as I have seen). This is not a problem in Windows/Mac because there, the compiler and editor are separate and independent, unlike in Linux/Unix.</strong></p>
+<p><strong>Mac</strong> : MacTeX distribution   ## Editor:</p>
+<p>This is where the codes are written/edited and saved. There are many editors.</p>
+<h2 id="cross-platform-editors">Cross platform editors:</h2>
+<p>TexMaker, TexStudio — These are the ones that I use. Very good, All in one interface. Edits, Compiles and views results in one shot. Both have complimenting features</p>
+<p>TexWorks, — Comes with MiKTeX and MacTeX.  Not bad, but not much tried. All the three are dedicated LaTeX editor.</p>
+<p>Emacs — Good editor with colour differentiation, but cannot offer more features because it is a general purpose editor.   <strong>Windows:</strong></p>
+<p>TeXnicCentre : Works pretty well for windows. Similar to TeXmaker and TexStudio. More of “Windows format”. But it is a dedicated LaTeX editor.   Any editor can be used in this regard. However, the use of a dedicated editor is preferred for ease.</p>
+<p><strong>Mac</strong>: To be checked.   <strong>Linux:</strong></p>
+<p>Lync : There are a lot of similarities, but operates differently.</p>
+<p>LaTeXilla, : not tried</p>
+<p>Kile : This can be a good alternative to TeXStudio and TeXMaker.   ## Viewer: It is a pdf viewer to see the results. Sometimes, you can have ghost-script results which need other viewers. Will be updated when the information is received. Most of the editors will have them by default.</p>
+<p>Some examples are,</p>
+<p>Adobe PDF : For Windows. All time classic, but does not have “memory”, meaning, it will not show the last modified page during recompilations.</p>
+<p>Sumatra: Light and handy, has “memory” suits for windows.</p>
+<p>Skim : Just like sumatra, but for Mac OS </p>
+<p>Mostly, the default pdf viewers associated with dedicated editors are sufficient.   ## Accessories</p>
+<p>These are additional software, that is not necessary for LaTeX compilation, but assists in making figures or they serve other purposes. Some of them are:   1. Xfig : Specifically used for making layouts, flowcharts, and presentation related figures etc., (Available for Mac. Windows and Linux/Unix = to be checked)</p>
+<h2 id="configurations-and-file-types">Configurations and File types</h2>
+<p>Startup Settings for TeXMaker:</p>
+<ol start="0" type="1">
+<li>Open TeXmaker</li>
+<li>Go to Options&gt;Configure TeXmaker&gt;Commands&gt; Check the embed option in pdf viewer.</li>
+</ol>
+<p>This is for having a parallel pdf view along with the pdf.</p>
+<ol start="2" type="1">
+<li>Go to Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX+view pdf.</li>
+</ol>
+<p>This is for setting the output of our files to be pdf by default. make changes here for different output formats.</p>
+<ol start="3" type="1">
+<li>Go to Options&gt;Configure TeXmaker&gt;editor&gt;Check the word-wrap, completion and show line numbers (check backup after 10 min if needed).</li>
+</ol>
+<p>For assistance and ease only.   While handling bibliography entries,</p>
+<div class="highlight"><pre><span></span>  use Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX + BibTeX 
+  pdfLaTex<span class="o">(</span>x2<span class="o">)</span> + view pdf
+</pre></div>
+
+<p>This is a short method for taking care of bibilography entries easily.   ## File Extensions:</p>
+<p>The LaTeX files have several extensions.</p>
+<p>TeX file or the .tex is the important file. It is the script file you write and compile to get the output. This file is mandatory. If this file is deleted without a backup, you have to re do the work from scratch.   Bibliography file or the bib file with extension .bib is used for storing bibliographical references. The specific bibliography entries are called when these files are included and keywords associated with them are referred.   A log file or .log is present after compilation. It has a list of all the compiling steps involved and has useful messages that can be used for debugging if needed.   Most of the other files are backup files and intermediate object/binary/log/executable files that get generated during compilation. Noticeably, all the files, including the pdf file, executables, tex file and intermediates will have the same name as that of the tex file.   All the files that have to be included within the pdf file such as figures and other chapters etc., have to be placed in the same folder.   So it is better to create a single folder, and save all your files inside it. Transfer figures and other files that you will like to include into the document within this folder.</p>
+<p><code>.sty</code> is a LaTeX style format file. These are available in the libraries, and are included when certain packages are used. They are used for making certain styles and formats available in the documents.</p>
+<p><code>.toc</code> file is a LaTeX table of contents file. When a table of contents generation is invoked, the compiler collects all the possible sections, their names and page numbers within the entire document and saves it here. Then, uses these data for generating the table of contents in the document.</p>
+<p><code>.bst</code> is a bibliography style file. This is needed for changing the alignment/manner in which the citations are generated.</p>
+<p><code>.aux</code> is an auxiliary file. Probably this file  is needed for executing multiple operations. This plays a role in invoking the BibTeX compilations.</p>
+<p><code>.cls</code> is a document class file.</p>
+<h2 id="general-notes-tips-and-compiling">General notes, Tips and Compiling</h2>
+<h3 id="general-notes">General Notes:</h3>
+<ul>
+<li>All commands start with a backslash.</li>
+<li>Almost all the commands usually come in pairs, analogous to html tags. So there is a start command and an end command.</li>
+<li><code>%</code> stands for a single line comment. Everything that is typed after % becomes a comment. No multi-comment option is noticed.</li>
+</ul>
+<p>LaTex has certain reserved symbols such as,</p>
+<div class="highlight"><pre><span></span><span class="s">$</span><span class="nb">,</span><span class="c">%,{,},\</span>
+</pre></div>
+
+<p>These symbols are used in certain command contexts and to use them in general context, some alterations are to be done. (Will be explained as the notes progress)   some commands need arguments to be filled in. they require to be filled inside <code>[]</code> and <code>{}</code>.</p>
+<p>The arguments filled within <code>[]</code> are optional and they have a default value. So, even when they are not mentioned, it is fine. If you have no optional arguments, then ignore <code>[]</code>.</p>
+<p>Empty <code>[]</code> will show an error. When mentioned, they overrule the default settings.</p>
+<p>The arguments filled within <code>{}</code> are compulsory and optional. Some arguments inside it, are mandatory, while some arguments are optional, that will have a default value, which will get overruled when these optional arguments are filled.   ## Document Structure:</p>
+<p>The script for the .tex file goes like this:</p>
+<div class ="highlight"><pre>document class definitions
+package declarations
+definitions and macros
+title page details
+ 
+document beginning
+ 
+All the contents within the document including appropriate commands
+ 
+document ending
+ 
+extra contents</pre></div>
+<p>  The contents in red are mandatory and can have changes. The contents in green are optional. The section above the document beginning is called as preamble.</p>
+<p>All the contents in preamble are analogous to preprocessors or includes to be done, analogous to including .h files in c program.</p>
+<p>The contents in blue are extra contents, which get ignored completely. Can be used as some notes or pointers or comments.   ## Tips 1. Compile and execute every now and then. This helps in identifying the errors at the beginning stage. if too many errors pop-up, then it will be tedious to rectify them later. 2. Compiling and executing auto-saves the document. If not, it is advisable to save them before compiling. 3. Give comments and proper spacing ,tabbing for readability and explanations. 4. Compile + Build + View the document simultaneously and in parallel or alongside view. This helps to monitor changes and corrections. 5. Windows shortcut key combinations will work. So, use them advantageously.   ## Compiling: Compiling is the process of getting the output. For this to work, the LaTeX compiler must be installed.   If a dedicated LaTeX editor is used, such as TeXMaker or TeXstudio etc., then “build and view” file button (similar to that) will compile the codes, produces the pdf and displays the pdf.   If a general purpose editor is used, then you have to save the .tex file, and go to the command prompt and execute commands to compile them.</p>
+<p>In Mac and most probably in Linux/Unix versions, type</p>
+<div class="highlight"><pre><span></span>pdflatex filename.tex
+</pre></div>
+
+<p>to compile the code and produce the pdf.</p>
+<p>We can omit the <code>.tex</code> file to get the same result. However, as a practice, .tex is to be used.   The compiled results are stored in filename.log file</p>
+<h2 id="sample-preamble">Sample Preamble</h2>
+<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt,a4paper,twoside]</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="c">% Document Class</span>
+<span class="c">% Preamble</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="c">% Setting the input encoding</span>
+<span class="k">\usepackage</span><span class="na">[english]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="c">% The input language</span>
+
+<span class="c">% symbol is used for typing comments</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsfonts<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+<span class="c">% For including mathematical symbols</span>
+
+<span class="k">\usepackage</span><span class="na">[left=2cm,right=2cm,top=2cm,bottom=2cm]</span><span class="nb">{</span>geometry<span class="nb">}</span>
+<span class="c">% Used for shaping the size of the page</span>
+
+<span class="k">\author</span><span class="nb">{</span>Arun Prasaad Gunasekaran<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>Introduction to LaTeX<span class="nb">}</span>
+</pre></div>
+
+<h2 id="document-class-doc-details">Document Class, Doc Details</h2>
+<h3 id="document-class-details">Document class details:</h3>
+<p>this is the first command and should be present in each and every document at the first line. It goes like this:  </p>
+<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[font_size]</span><span class="nb">{</span>document<span class="nb">_</span>type,specs<span class="nb">}</span>
+</pre></div>
+
+<p>there are several kinds of document types: 1. article (most common article format) 2. chapter 3. report 4. beamer (for power point presentations) 5. letter 6. and many more…   specs are some document specifications such as   font_size defines the font size to be specified. there are 3 default font sizes namely,</p>
+<p>10pt, 11pt and 12 pt. </p>
+<p>while mentioning them in LaTeX, you need to mention as follows.</p>
+<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt]</span><span class="nb">{</span>document<span class="nb">_</span>type,specs<span class="nb">}</span>
+</pre></div>
+
+<p>note that ‘pt’ is mandatory.</p>
+<p>the default font size is 12pt.   ## Document Details:   By default, the document will have a lot of user details. These are filled either by default or present when they are filled in. Those are namely,</p>
+<div class="highlight"><pre><span></span><span class="k">\author</span><span class="na">[Short Name]</span><span class="nb">{</span>Long Name<span class="nb">}</span>   <span class="c">%for the file author</span>
+</pre></div>
+
+<p>the short name is used while displaying in pages while the long name is used in the title pages. The long name can have more than the name, separated by \ command.</p>
+<p>eg:</p>
+<div class="highlight"><pre><span></span><span class="k">\author</span><span class="na">[Arun]</span><span class="nb">{</span>G. Arun Prasaad<span class="k">\\</span>Centre for Atmospheric and Oceanic Sciences<span class="k">\\</span>Indian Institute of Science<span class="nb">}</span>
+</pre></div>
+
+<p>They may make a warning message, but that can be ignored.   <strong>This feature of long value and short value will work well in the beamer class. It may not work properly, or might show errors in the other classes.</strong>  </p>
+<div class="highlight"><pre><span></span><span class="k">\date</span><span class="nb">{</span>date attributes<span class="nb">}</span>   <span class="c">%for setting the date</span>
+
+use <span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span> for using today&#39;s date.
+</pre></div>
+
+<p>by default, it will be available even without mentioning it. To avoid the date, use a blank date command.</p>
+<p>The date gets displayed, by default, in the American Style format.: Full month name, Date, Year in 4 digits.</p>
+<p>You can manually enter the date in the format of your choice.</p>
+<p>Just like author name, it can have multiple lines.  </p>
+<div class="highlight"><pre><span></span><span class="k">\title</span><span class="nb">{</span>title of the document<span class="nb">}</span>
+ 
+<span class="k">\subtitle</span><span class="nb">{}</span>
+ 
+<span class="k">\institution</span><span class="nb">{}</span> <span class="c">%Beamer Class Command</span>
+ 
+<span class="k">\logo</span><span class="nb">{}</span>
+</pre></div>
+
+<p>Note: title/document details can be placed before or after begin document command!</p>
+<h2 id="packages">Packages</h2>
+<p>A Package is a collection of programs of LaTex, done for having certain formatting styles that includes, margin spacing, font and font size settings etc.,</p>
+<p>LaTeX has its own set of packages. If external packages are used, latex will ask before implementing.</p>
+<p>between class and \begin document, type</p>
+<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>package name<span class="nb">}</span>
+</pre></div>
+
+<p>to set the page formatting package for the entire document.</p>
+<p>some standard package names are:</p>
+<ol type="1">
+<li>fullpage</li>
+<li>geometry</li>
+</ol>
+<p>for geometry package, the formatting should be specific</p>
+<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="na">[top=1in, bottom=1in, left=1in, right=1in]</span><span class="nb">{</span>geometry<span class="nb">}</span>
+</pre></div>
+
+<p>in stands for inch. it can be centimeter cm or millimeter mm as well.</p>
+<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="na">[margin=1in, paperwidth=8.5in, paperheight=11in]</span><span class="nb">{</span>geometry<span class="nb">}</span> <span class="c">% 8.5*11 inch^2 is the standard A4paper size.</span>
+ 
+<span class="k">\usepackage</span><span class="nb">{</span>amsfonts<span class="nb">}</span> <span class="c">%this is used to allow special mathematical fonts</span>
+<span class="s">$</span><span class="nv">\mathbb</span><span class="nb">{N}</span><span class="s">$</span> <span class="c">%after using the above package, the N will look different.</span>
+</pre></div>
+
+<p>some of the packages are:</p>
+<ul>
+<li>graphicx - for including figures.</li>
+<li>cclicenses</li>
+<li>Harvard</li>
+<li>amsmath</li>
+<li>beamer - for ppt</li>
+<li>epstopdf - to convert and put eps figures into the document. It will be converted into a .pdf file and later put inside.</li>
+<li>Mathrsfs for including special curly mathematical notations.</li>
+</ul>
+<h2 id="sample-layout">Sample Layout</h2>
+<p>The format of a latex document looks like this:</p>
+<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt,a4paper,twoside]</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="c">% Document Class</span>
+<span class="c">% Preamble</span>
+<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="c">% List of packages and commands!</span>
+<span class="k">\usepackage</span><span class="na">[english]</span><span class="nb">{</span>babel<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\maketitle</span>
+
+<span class="c">% All the contents</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+<h2 id="begin-commands">Begin Commands</h2>
+<p>Begin commands form the majority of the commands in LaTeX. They always occur in pairs. For example,</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="na">[options]</span><span class="nb">{</span>args<span class="nb">}</span>
+contents
+<span class="k">\end</span><span class="nb">{</span>args<span class="nb">}</span>
+</pre></div>
+
+<p>  The args or arguments specify what the commands should do in pairs. Options vary depending on the argument used. There are several arguments.   To begin the document, use the following command in a pair.</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+all the contents, figures, tables etc.,
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+<p>Without this, the document will not be processed. This is like a main function in a c program. Everything typed within this command pair forms the body of the document.</p>
+<h2 id="bullets-and-numbering">Bullets and Numbering</h2>
+<p>The itemize command helps in creating bullet arguments. To start it, use</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span>  first bullet sentence
+<span class="k">\item</span>  second bullet sentence
+<span class="k">\item</span> and so on.
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</pre></div>
+
+<p>  <code>\item</code> is used for the bullet/number based on what option is chosen (itemize or enumerate)</p>
+<p>chain bulleting is allowed. For that, create a <code>\begin{itemize} \end{itemize}</code> within an existing itemize command block.   ## Enumerate   This option is used for making a numbered list. Everything is same as itemize. Use “enumerate” instead of “itemize”.   Chain numbering is also possible. Also, a chain numbering and bulleting is also possible. However, you cannot bullet and number in a single field.   To create a list, the command used is with a proper example is shown below. it can be a list within a list as well. This is pretty much self- explanatory.</p>
+<p><code>\item</code> is the bullet indicator.</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> rossby
+    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+        <span class="k">\item</span> mid-latitude
+            <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+                <span class="k">\item</span> 45 deg latitude
+                <span class="k">\item</span> 30 deg latitude
+            <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+        <span class="k">\item</span> equatorial
+    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> kelvin
+    <span class="k">\item</span> inertia
+    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+        <span class="k">\item</span> external gravity
+        <span class="k">\item</span> internal gravity
+    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> poincare
+    <span class="k">\item</span> yanai
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</pre></div>
+
+<p>The tabbing here, is done only for readability. The compilation will take care of it.</p>
+<p>To insert bullets rather than numbers, use itemize instead of enumerate.</p>
+<p>To change the labels to the symbol of your choice or word of your choice, use [symbol or word] after <code>\item</code>. You can have multiple labels.</p>
+<p>Eg:</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\item</span> [Rossby Wave] Mid latitude 45 degree
+<span class="k">\item</span> [Gravity Wave] External Inertia
+<span class="k">\item</span> [Others] Poincare
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</pre></div>
+
+<h2 id="bullet-and-numbered-list">Bullet and Numbered List</h2>
+<div class="highlight"><pre><span></span><span class="c">% LaTeX files have many extensions!</span>
+<span class="c">% This is a bullet list!</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.
+<span class="k">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)
+<span class="k">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,
+<span class="k">\item</span> .aux .gz support files that come when a .tex file is executed.
+<span class="k">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.
+<span class="k">\item</span> .bst this is a style file for bibliography.
+<span class="k">\item</span> .toc this is a table of contents file
+<span class="k">\item</span> .cls class files.
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+
+<span class="c">% This is a numbered list!</span>
+<span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.
+<span class="k">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)
+<span class="k">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,
+<span class="k">\item</span> .aux .gz support files that come when a .tex file is executed.
+<span class="k">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.
+<span class="k">\item</span> .bst this is a style file for bibliography.
+<span class="k">\item</span> .toc this is a table of contents file
+<span class="k">\item</span> .cls class files.
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+<h2 id="document-modes-and-sections">Document Modes and Sections</h2>
+<p>Use <code>%</code> for entering a single line comment. Multi-line comments are not available (So far)</p>
+<p>  use <code>$ contents $</code> to go into a running text mathematical mode or in-line maths mode.</p>
+<p>  use <code>$$ contents $$</code> to go into a centre justified mathematical mode or display maths mode. If certain symbols are used without defining a mathematical mode, (eg: <code>^</code>), the program will show an error.</p>
+<p>Contents entered within maths mode will be properly in mathematical format. They will follow a different font with an inclination or in italics.   While typing lines, “Enter” key or “Return” key is not taken as a line completion or a line break. By default, the program has a paragraph indent.</p>
+<p>Leaving a blank line in the .tex file is interpreted as an end of the paragraph (or a hard return). So, a new line when begun, is taken as a start for a new paragraph.</p>
+<p>No matter how many hard returns or blank you give in the tex file, it will be read as a single hard return. Apparently, in a letter format, a blank line is taken as a new paragraph beginning.</p>
+<p>  While typing lines, if you just want a line break without going into the next paragraph, (or a soft return), use \ at the end of the line and continue typing. This command should have text at the front as well as at the back. This will not create an indent.</p>
+<p>  There are some options to alter the indentations. It is to be explored.</p>
+<p>  If you reach the bottom of a page, and you type certain extra lines, LaTeX will automatically push the contents to the next page, or shrink fit them into the same page. It depends on the length of the content.</p>
+<p>  Similarly, while placing figures and tables, LaTeX will automatically adjust content displays to fit them accordingly.</p>
