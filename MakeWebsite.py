@@ -39,32 +39,21 @@ def pandoc2html(title, fname, temp_file, output_file):
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 
-
 for folder in Main_Folders:
-	system(f"ls -d ./{folder}/*/ > ./{folder}/dirs_l1.txt")
+	# system(f"ls -d ./{folder}/*/ > ./{folder}/dirs_l1.txt")
+	system(f'find ./{folder} -name "*.md" -type f > ./{folder}/mdfiles.txt')
 
-	with open(f"./{folder}/dirs_l1.txt", 'r') as f:
-		l1_dirs = f.readlines()
-
-	for lines in l1_dirs:
-		l1_dir = lines.rstrip()[2:]
-		print(l1_dir)
-		system(f"ls ./{l1_dir}*.md > ./{l1_dir}dirs_l2.txt")
-
-		with open(f"./{l1_dir}dirs_l2.txt", 'r') as mdfiles:
-			md_file_list = mdfiles.readlines()
-
-			for mdline in md_file_list:
-				md = mdline.rstrip()[2:].replace(l1_dir, "")[:-3]
-				# print(md)
-				html = f'{md}.html'
-				
-				fname = f"./{l1_dir}{md}.md"
-				temp_file = f"./{l1_dir}temp.html"
-				output_file = f"./{l1_dir}{html}"
-				title = f"{md} | {folder}"
-
-				pandoc2html(title, fname, temp_file, output_file)
+	with open(f"./{folder}/mdfiles.txt", 'r') as f:
+		mdlines = f.readlines()
+	
+	for mdline in mdlines:
+		md = mdline.rstrip()
+		html = f'{md[:-3]}.html'
+		temp_file = 'temp.html'
+		title = md[2:-3].replace(f"{folder}/", "")
+		print(title)
+		# print(html)
+		pandoc2html(title, md, temp_file, html)
 
 i = 0
 for page in main_pages:

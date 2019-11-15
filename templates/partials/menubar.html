@@ -1,9 +1,9 @@
 <!-- Header -->
 <header id="header" class="alt">
 	
-	{% if L1 %}
+	{% if post.L1 %}
 		<a href="./../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
-	{% elif L2 %}
+	{% elif post.L2 %}
 		<a href="./../../index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
 	{% else %}
 		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
@@ -17,7 +17,7 @@
 <!-- Menu -->
 <nav id="menu">
 	<ul class="links">
-		{% if L1 %}
+		{% if post.L1 %}
 		<li><a href="./../index.html">Home</a></li>
 		<li><a href="./../blogs.html">Blogs</a></li>
 		<li><a href="./../syntax.html">Coding and Software Notes</a></li>
@@ -25,7 +25,7 @@
 		<li><a href="./../maths.html">Mathematics Notes</a></li>
 		<li><a href="./../apps.html">Useful Apps</a></li>
 		<li><a href="./../faq.html">FAQs</a></li>
-		{% elif L2 %}
+		{% elif post.L2 %}
 		<li><a href="./../../index.html">Home</a></li>
 		<li><a href="./../../blogs.html">Blogs</a></li>
 		<li><a href="./../../syntax.html">Coding and Software Notes</a></li>

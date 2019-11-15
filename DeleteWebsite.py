@@ -1,7 +1,7 @@
 # Run this file only when you are absolutely sure
 
 from os import system
-from WebsiteData import *
+from WebsiteData import main_pages, Main_Folders
 
 for folder in Main_Folders:
     # run this command to check the files to be deleted

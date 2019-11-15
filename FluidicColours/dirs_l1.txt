@@ -1,3 +1,0 @@
-./FluidicColours/articles/
-./FluidicColours/poems/
-./FluidicColours/short_stories/
