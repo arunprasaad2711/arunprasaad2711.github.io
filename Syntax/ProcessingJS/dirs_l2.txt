@@ -1,6 +1,0 @@
-./Syntax/ProcessingJS/ProcessingJS_Games.md
-./Syntax/ProcessingJS/ProcessingJS.md
-./Syntax/ProcessingJS/Processing_Test1.md
-./Syntax/ProcessingJS/Processing_Test1_old.md
-./Syntax/ProcessingJS/Processing_Test2.md
-./Syntax/ProcessingJS/Processing_Test3.md

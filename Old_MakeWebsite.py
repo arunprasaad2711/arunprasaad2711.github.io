@@ -1,12 +1,11 @@
 from jinja2 import Environment, FileSystemLoader
-from os import system as sys
-from pathlib import Path
+import os
 from WebsiteData import *
 
 def pandoc2html(title, fname, temp_file, output_file):
 
 	# Use this when using haskell to create a custom pygments parser
-	result = sys(f"pandoc -F pygments --from=markdown --to=html5 --mathjax {fname} -o {temp_file}")
+	result = os.system(f"pandoc -F pygments --from=markdown --to=html5 --mathjax {fname} -o {temp_file}")
 
 	## DO NOT USE THE ONES BELOW - SASS file modified a lot to get the haskell executable to work.
 	# Use this for a simple syntax highlight
@@ -35,35 +34,26 @@ def pandoc2html(title, fname, temp_file, output_file):
 
 			print(f'Finished rendering {output_file}')
 
-def recurFind(root, f):
-
-    basePath = Path(f'{root}/{f}/')
-    files_in_basepath = basePath.iterdir()
-    print(f"Listing files in '{root}/{f}/")
-    for item in files_in_basepath:
-        if item.is_file():
-            if item.name.endswith(".md"):
-                title_words = str(item).split("/")
-                title = title_words[-1][:-3]
-                for Word in reversed(title_words[:-1]):
-                    title += f' | {Word}'
-                fname = str(item)
-                html = fname[:-3]+'.html'
-                temp_file = 'temp.html'
-                # print(title, item, html)
-                pandoc2html(title, fname, temp_file, html)
-        else:
-            newRoot = f'{root}'
-            print(f"Recursion calling in '{newRoot}/{item}/")
-            recurFind(newRoot, item)
 
 # Specify the template directory and environment 
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 
 for folder in Main_Folders:
-    print(f"inside {folder}")
-    recurFind(".", folder)
+	# system(f"ls -d ./{folder}/*/ > ./{folder}/dirs_l1.txt")
+	os.system(f'find ./{folder} -name "*.md" -type f > ./{folder}/mdfiles.txt')
+
+	with open(f"./{folder}/mdfiles.txt", 'r') as f:
+		mdlines = f.readlines()
+	
+	for mdline in mdlines:
+		md = mdline.rstrip()
+		html = f'{md[:-3]}.html'
+		temp_file = 'temp.html'
+		title = md[2:-3].replace(f"{folder}/", "")
+		print(title)
+		# print(html)
+		pandoc2html(title, md, temp_file, html)
 
 i = 0
 for page in main_pages:
@@ -85,5 +75,3 @@ for page in main_pages:
 	
 	print(f"Created {page} page!")
 	i += 1
-
-sys("rm ./temp.html")

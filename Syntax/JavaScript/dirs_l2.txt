@@ -1,1 +1,0 @@
-./Syntax/JavaScript/JavaScript.md

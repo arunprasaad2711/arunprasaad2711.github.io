@@ -1,5 +1,0 @@
-./Syntax/Python/01_Intro.md
-./Syntax/Python/02_Installation.md
-./Syntax/Python/03_Definitions.md
-./Syntax/Python/04_Basics.md
-./Syntax/Python/pygame.md

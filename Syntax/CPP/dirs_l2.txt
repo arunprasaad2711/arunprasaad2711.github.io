@@ -1,1 +1,0 @@
-./Syntax/CPP/CPP_programming.md

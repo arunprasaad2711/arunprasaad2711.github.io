@@ -1,2 +1,0 @@
-code/LaTeX/LaTex02.md
-code/LaTeX/LaTeX.md
