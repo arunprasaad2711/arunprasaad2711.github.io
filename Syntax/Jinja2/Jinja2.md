@@ -387,13 +387,11 @@ env = Environment(loader=file_loader)
 {% extends "base.html" %}
 
 {% block content %}
-{% raw %}
 
 	<p>
 		{{body}}
 	</p>
 
-{% endraw %}
 {% endblock %}
 ```
 
