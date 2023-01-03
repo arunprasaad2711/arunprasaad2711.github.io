@@ -1,0 +1,4 @@
+/*  This code is included to make sure that the pre and code blocks have a horizontal scrollbar.
+    Include this at the top of the pygments themes css. */
+    pre { display: block; word-wrap: normal; overflow: auto; border-width: 10px; border-style: solid;}
+    code { word-wrap: normal; overflow: auto;}

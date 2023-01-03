@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LaTeX | LaTeX | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>LaTeX | LaTeX | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -183,10 +193,8 @@
 <li>Go to Options&gt;Configure TeXmaker&gt;editor&gt;Check the word-wrap, completion and show line numbers (check backup after 10 min if needed).</li>
 </ol>
 <p>For assistance and ease only.   While handling bibliography entries,</p>
-<div class="highlight"><pre><span></span>  use Options&gt;Configure TeXmaker&gt;quick build&gt;select pdfLaTeX + BibTeX 
-  pdfLaTex<span class="o">(</span>x2<span class="o">)</span> + view pdf
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">use</span> Options<span class="op">&gt;</span>Configure TeXmaker<span class="op">&gt;</span>quick build<span class="op">&gt;</span>select pdfLaTeX + BibTeX </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">pdfLaTex</span><span class="er">(</span><span class="ex">x2</span><span class="kw">)</span> <span class="ex">+</span> view pdf</span></code></pre></div>
 <p>This is a short method for taking care of bibilography entries easily.   ## File Extensions:</p>
 <p>The LaTeX files have several extensions.</p>
 <p>TeX file or the .tex is the important file. It is the script file you write and compile to get the output. This file is mandatory. If this file is deleted without a backup, you have to re do the work from scratch.   Bibliography file or the bib file with extension .bib is used for storing bibliographical references. The specific bibliography entries are called when these files are included and keywords associated with them are referred.   A log file or .log is present after compilation. It has a list of all the compiling steps involved and has useful messages that can be used for debugging if needed.   Most of the other files are backup files and intermediate object/binary/log/executable files that get generated during compilation. Noticeably, all the files, including the pdf file, executables, tex file and intermediates will have the same name as that of the tex file.   All the files that have to be included within the pdf file such as figures and other chapters etc., have to be placed in the same folder.   So it is better to create a single folder, and save all your files inside it. Transfer figures and other files that you will like to include into the document within this folder.</p>
@@ -203,15 +211,13 @@
 <li><code>%</code> stands for a single line comment. Everything that is typed after % becomes a comment. No multi-comment option is noticed.</li>
 </ul>
 <p>LaTex has certain reserved symbols such as,</p>
-<div class="highlight"><pre><span></span><span class="s">$</span><span class="nb">,</span><span class="c">%,{,},\</span>
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$,</span><span class="co">%,{,},\</span></span></code></pre></div>
 <p>These symbols are used in certain command contexts and to use them in general context, some alterations are to be done. (Will be explained as the notes progress)   some commands need arguments to be filled in. they require to be filled inside <code>[]</code> and <code>{}</code>.</p>
 <p>The arguments filled within <code>[]</code> are optional and they have a default value. So, even when they are not mentioned, it is fine. If you have no optional arguments, then ignore <code>[]</code>.</p>
 <p>Empty <code>[]</code> will show an error. When mentioned, they overrule the default settings.</p>
 <p>The arguments filled within <code>{}</code> are compulsory and optional. Some arguments inside it, are mandatory, while some arguments are optional, that will have a default value, which will get overruled when these optional arguments are filled.   ## Document Structure:</p>
 <p>The script for the .tex file goes like this:</p>
-<div class ="highlight"><pre>document class definitions
+<pre><code>document class definitions
 package declarations
 definitions and macros
 title page details
@@ -222,88 +228,70 @@ All the contents within the document including appropriate commands
  
 document ending
  
-extra contents</pre></div>
+extra contents</code></pre>
 <p>  The contents in red are mandatory and can have changes. The contents in green are optional. The section above the document beginning is called as preamble.</p>
 <p>All the contents in preamble are analogous to preprocessors or includes to be done, analogous to including .h files in c program.</p>
 <p>The contents in blue are extra contents, which get ignored completely. Can be used as some notes or pointers or comments.   ## Tips 1. Compile and execute every now and then. This helps in identifying the errors at the beginning stage. if too many errors pop-up, then it will be tedious to rectify them later. 2. Compiling and executing auto-saves the document. If not, it is advisable to save them before compiling. 3. Give comments and proper spacing ,tabbing for readability and explanations. 4. Compile + Build + View the document simultaneously and in parallel or alongside view. This helps to monitor changes and corrections. 5. Windows shortcut key combinations will work. So, use them advantageously.   ## Compiling: Compiling is the process of getting the output. For this to work, the LaTeX compiler must be installed.   If a dedicated LaTeX editor is used, such as TeXMaker or TeXstudio etc., then “build and view” file button (similar to that) will compile the codes, produces the pdf and displays the pdf.   If a general purpose editor is used, then you have to save the .tex file, and go to the command prompt and execute commands to compile them.</p>
 <p>In Mac and most probably in Linux/Unix versions, type</p>
-<div class="highlight"><pre><span></span>pdflatex filename.tex
-</pre></div>
-
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdflatex</span> filename.tex</span></code></pre></div>
 <p>to compile the code and produce the pdf.</p>
 <p>We can omit the <code>.tex</code> file to get the same result. However, as a practice, .tex is to be used.   The compiled results are stored in filename.log file</p>
 <h2 id="sample-preamble">Sample Preamble</h2>
-<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt,a4paper,twoside]</span><span class="nb">{</span>article<span class="nb">}</span>
-<span class="c">% Document Class</span>
-<span class="c">% Preamble</span>
-<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
-<span class="c">% Setting the input encoding</span>
-<span class="k">\usepackage</span><span class="na">[english]</span><span class="nb">{</span>babel<span class="nb">}</span>
-<span class="c">% The input language</span>
-
-<span class="c">% symbol is used for typing comments</span>
-
-<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>amsfonts<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
-<span class="c">% For including mathematical symbols</span>
-
-<span class="k">\usepackage</span><span class="na">[left=2cm,right=2cm,top=2cm,bottom=2cm]</span><span class="nb">{</span>geometry<span class="nb">}</span>
-<span class="c">% Used for shaping the size of the page</span>
-
-<span class="k">\author</span><span class="nb">{</span>Arun Prasaad Gunasekaran<span class="nb">}</span>
-<span class="k">\title</span><span class="nb">{</span>Introduction to LaTeX<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[10pt,a4paper,twoside]{<span class="ex">article</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">% Document Class</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Preamble</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">% Setting the input encoding</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[english]{<span class="ex">babel</span>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">% The input language</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">% symbol is used for typing comments</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsfonts</span>}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amssymb</span>}</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">% For including mathematical symbols</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[left=2cm,right=2cm,top=2cm,bottom=2cm]{<span class="ex">geometry</span>}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">% Used for shaping the size of the page</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Arun Prasaad Gunasekaran}</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Introduction to LaTeX}</span></code></pre></div>
 <h2 id="document-class-doc-details">Document Class, Doc Details</h2>
 <h3 id="document-class-details">Document class details:</h3>
 <p>this is the first command and should be present in each and every document at the first line. It goes like this:  </p>
-<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[font_size]</span><span class="nb">{</span>document<span class="nb">_</span>type,specs<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[font_size]{<span class="ex">document_type,specs</span>}</span></code></pre></div>
 <p>there are several kinds of document types: 1. article (most common article format) 2. chapter 3. report 4. beamer (for power point presentations) 5. letter 6. and many more…   specs are some document specifications such as   font_size defines the font size to be specified. there are 3 default font sizes namely,</p>
 <p>10pt, 11pt and 12 pt. </p>
 <p>while mentioning them in LaTeX, you need to mention as follows.</p>
-<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt]</span><span class="nb">{</span>document<span class="nb">_</span>type,specs<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[10pt]{<span class="ex">document_type,specs</span>}</span></code></pre></div>
 <p>note that ‘pt’ is mandatory.</p>
 <p>the default font size is 12pt.   ## Document Details:   By default, the document will have a lot of user details. These are filled either by default or present when they are filled in. Those are namely,</p>
-<div class="highlight"><pre><span></span><span class="k">\author</span><span class="na">[Short Name]</span><span class="nb">{</span>Long Name<span class="nb">}</span>   <span class="c">%for the file author</span>
-</pre></div>
-
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>[Short Name]{Long Name}   <span class="co">%for the file author</span></span></code></pre></div>
 <p>the short name is used while displaying in pages while the long name is used in the title pages. The long name can have more than the name, separated by \ command.</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="k">\author</span><span class="na">[Arun]</span><span class="nb">{</span>G. Arun Prasaad<span class="k">\\</span>Centre for Atmospheric and Oceanic Sciences<span class="k">\\</span>Indian Institute of Science<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>[Arun]{G. Arun Prasaad<span class="fu">\\</span>Centre for Atmospheric and Oceanic Sciences<span class="fu">\\</span>Indian Institute of Science}</span></code></pre></div>
 <p>They may make a warning message, but that can be ignored.   <strong>This feature of long value and short value will work well in the beamer class. It may not work properly, or might show errors in the other classes.</strong>  </p>
-<div class="highlight"><pre><span></span><span class="k">\date</span><span class="nb">{</span>date attributes<span class="nb">}</span>   <span class="c">%for setting the date</span>
-
-use <span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span> for using today&#39;s date.
-</pre></div>
-
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{date attributes}   <span class="co">%for setting the date</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>use <span class="fu">\date</span>{<span class="fu">\today</span>} for using today&#39;s date.</span></code></pre></div>
 <p>by default, it will be available even without mentioning it. To avoid the date, use a blank date command.</p>
 <p>The date gets displayed, by default, in the American Style format.: Full month name, Date, Year in 4 digits.</p>
 <p>You can manually enter the date in the format of your choice.</p>
 <p>Just like author name, it can have multiple lines.  </p>
-<div class="highlight"><pre><span></span><span class="k">\title</span><span class="nb">{</span>title of the document<span class="nb">}</span>
- 
-<span class="k">\subtitle</span><span class="nb">{}</span>
- 
-<span class="k">\institution</span><span class="nb">{}</span> <span class="c">%Beamer Class Command</span>
- 
-<span class="k">\logo</span><span class="nb">{}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{title of the document}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\subtitle</span>{}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\institution</span>{} <span class="co">%Beamer Class Command</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\logo</span>{}</span></code></pre></div>
 <p>Note: title/document details can be placed before or after begin document command!</p>
 <h2 id="packages">Packages</h2>
 <p>A Package is a collection of programs of LaTex, done for having certain formatting styles that includes, margin spacing, font and font size settings etc.,</p>
 <p>LaTeX has its own set of packages. If external packages are used, latex will ask before implementing.</p>
 <p>between class and \begin document, type</p>
-<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>package name<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">package name</span>}</span></code></pre></div>
 <p>to set the page formatting package for the entire document.</p>
 <p>some standard package names are:</p>
 <ol type="1">
@@ -311,16 +299,12 @@ use <span class="k">\date</span><span class="nb">{</span><span class="k">\today<
 <li>geometry</li>
 </ol>
 <p>for geometry package, the formatting should be specific</p>
-<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="na">[top=1in, bottom=1in, left=1in, right=1in]</span><span class="nb">{</span>geometry<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[top=1in, bottom=1in, left=1in, right=1in]{<span class="ex">geometry</span>}</span></code></pre></div>
 <p>in stands for inch. it can be centimeter cm or millimeter mm as well.</p>
-<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="na">[margin=1in, paperwidth=8.5in, paperheight=11in]</span><span class="nb">{</span>geometry<span class="nb">}</span> <span class="c">% 8.5*11 inch^2 is the standard A4paper size.</span>
- 
-<span class="k">\usepackage</span><span class="nb">{</span>amsfonts<span class="nb">}</span> <span class="c">%this is used to allow special mathematical fonts</span>
-<span class="s">$</span><span class="nv">\mathbb</span><span class="nb">{N}</span><span class="s">$</span> <span class="c">%after using the above package, the N will look different.</span>
-</pre></div>
-
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[margin=1in, paperwidth=8.5in, paperheight=11in]{<span class="ex">geometry</span>} <span class="co">% 8.5*11 inch^2 is the standard A4paper size.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsfonts</span>} <span class="co">%this is used to allow special mathematical fonts</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\mathbb</span><span class="ss">{N}$</span> <span class="co">%after using the above package, the N will look different.</span></span></code></pre></div>
 <p>some of the packages are:</p>
 <ul>
 <li>graphicx - for including figures.</li>
@@ -333,111 +317,97 @@ use <span class="k">\date</span><span class="nb">{</span><span class="k">\today<
 </ul>
 <h2 id="sample-layout">Sample Layout</h2>
 <p>The format of a latex document looks like this:</p>
-<div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="na">[10pt,a4paper,twoside]</span><span class="nb">{</span>article<span class="nb">}</span>
-<span class="c">% Document Class</span>
-<span class="c">% Preamble</span>
-<span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
-<span class="c">% List of packages and commands!</span>
-<span class="k">\usepackage</span><span class="na">[english]</span><span class="nb">{</span>babel<span class="nb">}</span>
-
-<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-<span class="k">\maketitle</span>
-
-<span class="c">% All the contents</span>
-
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[10pt,a4paper,twoside]{<span class="ex">article</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">% Document Class</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Preamble</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">% List of packages and commands!</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[english]{<span class="ex">babel</span>}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">% All the contents</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <h2 id="begin-commands">Begin Commands</h2>
 <p>Begin commands form the majority of the commands in LaTeX. They always occur in pairs. For example,</p>
-<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="na">[options]</span><span class="nb">{</span>args<span class="nb">}</span>
-contents
-<span class="k">\end</span><span class="nb">{</span>args<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb16"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>[options]{args}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>contents</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">args</span>}</span></code></pre></div>
 <p>  The args or arguments specify what the commands should do in pairs. Options vary depending on the argument used. There are several arguments.   To begin the document, use the following command in a pair.</p>
-<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-all the contents, figures, tables etc.,
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>all the contents, figures, tables etc.,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <p>Without this, the document will not be processed. This is like a main function in a c program. Everything typed within this command pair forms the body of the document.</p>
 <h2 id="bullets-and-numbering">Bullets and Numbering</h2>
 <p>The itemize command helps in creating bullet arguments. To start it, use</p>
-<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-<span class="k">\item</span>  first bullet sentence
-<span class="k">\item</span>  second bullet sentence
-<span class="k">\item</span> and so on.
-<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span>  first bullet sentence</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span>  second bullet sentence</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> and so on.</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code></pre></div>
 <p>  <code>\item</code> is used for the bullet/number based on what option is chosen (itemize or enumerate)</p>
 <p>chain bulleting is allowed. For that, create a <code>\begin{itemize} \end{itemize}</code> within an existing itemize command block.   ## Enumerate   This option is used for making a numbered list. Everything is same as itemize. Use “enumerate” instead of “itemize”.   Chain numbering is also possible. Also, a chain numbering and bulleting is also possible. However, you cannot bullet and number in a single field.   To create a list, the command used is with a proper example is shown below. it can be a list within a list as well. This is pretty much self- explanatory.</p>
 <p><code>\item</code> is the bullet indicator.</p>
-<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-    <span class="k">\item</span> rossby
-    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-        <span class="k">\item</span> mid-latitude
-            <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-                <span class="k">\item</span> 45 deg latitude
-                <span class="k">\item</span> 30 deg latitude
-            <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-        <span class="k">\item</span> equatorial
-    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-    <span class="k">\item</span> kelvin
-    <span class="k">\item</span> inertia
-    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-        <span class="k">\item</span> external gravity
-        <span class="k">\item</span> internal gravity
-    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-    <span class="k">\item</span> poincare
-    <span class="k">\item</span> yanai
-<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb19"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> rossby</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\item</span> mid-latitude</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\item</span> 45 deg latitude</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\item</span> 30 deg latitude</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\item</span> equatorial</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> kelvin</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> inertia</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\item</span> external gravity</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\item</span> internal gravity</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> poincare</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> yanai</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code></pre></div>
 <p>The tabbing here, is done only for readability. The compilation will take care of it.</p>
 <p>To insert bullets rather than numbers, use itemize instead of enumerate.</p>
 <p>To change the labels to the symbol of your choice or word of your choice, use [symbol or word] after <code>\item</code>. You can have multiple labels.</p>
 <p>Eg:</p>
-<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-<span class="k">\item</span> [Rossby Wave] Mid latitude 45 degree
-<span class="k">\item</span> [Gravity Wave] External Inertia
-<span class="k">\item</span> [Others] Poincare
-<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb20"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [Rossby Wave] Mid latitude 45 degree</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [Gravity Wave] External Inertia</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [Others] Poincare</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code></pre></div>
 <h2 id="bullet-and-numbered-list">Bullet and Numbered List</h2>
-<div class="highlight"><pre><span></span><span class="c">% LaTeX files have many extensions!</span>
-<span class="c">% This is a bullet list!</span>
-
-<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-
-<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-<span class="k">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.
-<span class="k">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)
-<span class="k">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,
-<span class="k">\item</span> .aux .gz support files that come when a .tex file is executed.
-<span class="k">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.
-<span class="k">\item</span> .bst this is a style file for bibliography.
-<span class="k">\item</span> .toc this is a table of contents file
-<span class="k">\item</span> .cls class files.
-<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-
-<span class="c">% This is a numbered list!</span>
-<span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-<span class="k">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.
-<span class="k">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)
-<span class="k">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,
-<span class="k">\item</span> .aux .gz support files that come when a .tex file is executed.
-<span class="k">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.
-<span class="k">\item</span> .bst this is a style file for bibliography.
-<span class="k">\item</span> .toc this is a table of contents file
-<span class="k">\item</span> .cls class files.
-<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb21"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">% LaTeX files have many extensions!</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">% This is a bullet list!</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .aux .gz support files that come when a .tex file is executed.</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .bst this is a style file for bibliography.</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .toc this is a table of contents file</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .cls class files.</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co">% This is a numbered list!</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .tex = TeX file. The core file and the most important file. All contents are written/typed within this file.</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .bib bibliography files. It has the attributes and meta data (author&#39;s name, title, pages, abstract, year of publication ....)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .log Log file. It contains all the errors, warnings, execution messages, steps while compiling, etc.,</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .aux .gz support files that come when a .tex file is executed.</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .sty style format files. They contain TeX instructions and and formats to be included in the file.</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .bst this is a style file for bibliography.</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .toc this is a table of contents file</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> .cls class files.</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <h2 id="document-modes-and-sections">Document Modes and Sections</h2>
 <p>Use <code>%</code> for entering a single line comment. Multi-line comments are not available (So far)</p>
 <p>  use <code>$ contents $</code> to go into a running text mathematical mode or in-line maths mode.</p>
@@ -474,10 +444,7 @@ all the contents, figures, tables etc.,
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -491,10 +458,11 @@ all the contents, figures, tables etc.,
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -515,7 +483,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

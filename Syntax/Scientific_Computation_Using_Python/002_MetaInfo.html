@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>002_MetaInfo | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>002_MetaInfo | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -167,46 +177,39 @@
 <h2 id="lets-write-our-first-program">Let’s write our first program</h2>
 <p>Open up a Text Editor and save a file with the extension <code>.py</code></p>
 <h2 id="program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program to ask the name, temperature, and rainfall of a place and print it</h2>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Program to ask the name, temperature, and rainfall of a place and print it.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="c1"># This is a variable to save the place</span>
-<span class="n">place</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the name of the place:&quot;</span><span class="p">)</span>
-
-<span class="c1"># Rainfall variable</span>
-<span class="n">rainfall</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the rainfall recorded today in mm:&quot;</span><span class="p">)</span>
-
-<span class="c1"># Temperature variable</span>
-<span class="n">temperature</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the temperature recorded today in Celsius:&quot;</span><span class="p">))</span>
-
-<span class="c1"># Print statement</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;In &quot;</span><span class="p">,</span> <span class="n">place</span><span class="p">,</span> <span class="s2">&quot; today it rained &quot;</span><span class="p">,</span> <span class="n">rainfall</span><span class="p">,</span> <span class="s2">&quot; mm  and the temperature is&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="s2">&quot; degree celsius&quot;</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">Program to ask the name, temperature, and rainfall of a place and print it.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a variable to save the place</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>place <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the name of the place:&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Rainfall variable</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>rainfall <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the rainfall recorded today in mm:&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature variable</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter the temperature recorded today in Celsius:&quot;</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print statement</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;In &quot;</span>, place, <span class="st">&quot; today it rained &quot;</span>, rainfall, <span class="st">&quot; mm  and the temperature is&quot;</span>, temperature, <span class="st">&quot; degree celsius&quot;</span>)</span></code></pre></div>
 <h2 id="comments-and-docstrings">Comments and Docstrings</h2>
 <p>Comment - Lines that are ignored when the program is run. Used for excluding codes and for including messages.</p>
-<div class="highlight"><pre><span></span><span class="c1"># This is a single line comment</span>
-<span class="c1"># Comment begins with a hash # symbol</span>
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a single line comment</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Comment begins with a hash # symbol</span></span></code></pre></div>
 <p>Docstrings - Document strings. Multi-line comments. But more useful for including help/direction messages that appear when help utilities are called. In libraries, this is used as a documentation/help message for functions and classes.</p>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This is a Docstring. It starts and ends with </span>
-<span class="sd">    triple &quot; or triple &#39; quotes. Mix and match does not work!</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This is also a DocString</span>
-<span class="sd">&#39;&#39;&#39;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    This is a Docstring. It starts and ends with </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    triple &quot; or triple &#39; quotes. Mix and match does not work!</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    This is also a DocString</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span></code></pre></div>
 <h2 id="input-command">Input Command</h2>
 <p>Input command - Used for getting input from user to a variable.</p>
-<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the value for n&#39;</span><span class="p">)</span> <span class="c1"># Default string input</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the value for n&#39;</span><span class="p">))</span> <span class="c1"># Type casted input</span>
-</pre></div>
-
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Enter the value for n&#39;</span>) <span class="co"># Default string input</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&#39;Enter the value for n&#39;</span>)) <span class="co"># Type casted input</span></span></code></pre></div>
 <ul>
 <li>Default string input - that is, the function assumes data type to be string automatically.</li>
 <li>Explicit type casting (manually changing the data type) is used to control data types.</li>
@@ -236,10 +239,7 @@
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -253,10 +253,11 @@
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -277,7 +278,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

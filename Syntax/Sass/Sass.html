@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sass | Sass | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>Sass | Sass | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -95,82 +105,68 @@
 <ol type="1">
 <li>Ruby gems</li>
 </ol>
-<div class="highlight"><pre><span></span>sudo gem install sass compass
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem install sass compass</span></code></pre></div>
 <ol start="2" type="1">
 <li>npm install</li>
 </ol>
-<div class="highlight"><pre><span></span>npm install -g sass
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> sass</span></code></pre></div>
 <p>To check if you have SASS installed, you type</p>
-<div class="highlight"><pre><span></span>sass --version
-</pre></div>
-
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sass</span> <span class="at">--version</span></span></code></pre></div>
 <h2 id="quickstart">Quickstart</h2>
 <p>To start a <code>sass</code> project, type this in the terminal</p>
-<div class="highlight"><pre><span></span>compass create project_name
-</pre></div>
-
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">compass</span> create project_name</span></code></pre></div>
 <p>It will produce a sass folder, a stylesheet folder, and a ruby <code>config.rb</code>.</p>
-<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
-.
-├── config.rb
-├── sass
-│   ├── ie.scss
-│   ├── print.scss
-│   └── screen.scss
-├── sass.md         <span class="c1"># This is user-made</span>
-├── stylesheets
-│   ├── ie.css
-│   ├── print.css
-│   └── screen.css
-└── testing.html    <span class="c1"># This is user-made</span>
-
-<span class="m">2</span> directories, <span class="m">9</span> files
-</pre></div>
-
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">arun@hpdv6:~/Website_Experimental/sass_tutorial$</span> tree</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> config.rb</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sass</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── ie.scss</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── print.scss</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── screen.scss</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sass.md         <span class="co"># This is user-made</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> stylesheets</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── ie.css</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── print.css</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── screen.css</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> testing.html    <span class="co"># This is user-made</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="ex">2</span> directories, 9 files</span></code></pre></div>
 <p>It will also suggests to add this <code>HTML5</code> code snippet to any html file.</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/stylesheets/screen.css&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen, projection&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/stylesheets/print.css&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;print&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
-<span class="c">&lt;!--[if IE]&gt;</span>
-<span class="c">    &lt;link href=&quot;/stylesheets/ie.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span>
-<span class="c">&lt;![endif]--&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;/stylesheets/screen.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen, projection&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;/stylesheets/print.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;print&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--[if IE]&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &lt;link href=&quot;/stylesheets/ie.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;![endif]--&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
 <p>This part is helpful to test the css files using the html file.</p>
 <h2 id="about-config.rb-file">About <code>config.rb</code> file</h2>
 <p>At the start, it looks like this</p>
-<div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;compass/import-once/activate&#39;</span>
-<span class="c1"># Require any additional compass plugins here.</span>
-
-<span class="c1"># Set this to the root of your project when deployed:</span>
-<span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
-<span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;stylesheets&quot;</span>
-<span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;sass&quot;</span>
-<span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;images&quot;</span>
-<span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;javascripts&quot;</span>
-
-<span class="c1"># You can select your preferred output style here (can be overridden via the command line):</span>
-<span class="c1"># output_style = :expanded or :nested or :compact or :compressed</span>
-
-<span class="c1"># To enable relative paths to assets via compass helper functions. Uncomment:</span>
-<span class="c1"># relative_assets = true</span>
-
-<span class="c1"># To disable debugging comments that display the original location of your selectors. Uncomment:</span>
-<span class="c1"># line_comments = false</span>
-
-
-<span class="c1"># If you prefer the indented syntax, you might want to regenerate this</span>
-<span class="c1"># project again passing --syntax sass, or you can uncomment this:</span>
-<span class="c1"># preferred_syntax = :sass</span>
-<span class="c1"># and then run:</span>
-<span class="c1"># sass-convert -R --from scss --to sass sass scss &amp;&amp; rm -rf sass &amp;&amp; mv scss sass</span>
-</pre></div>
-
+<div class="sourceCode" id="cb7"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;compass/import-once/activate&#39;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Require any additional compass plugins here.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set this to the root of your project when deployed:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>http_path <span class="kw">=</span> <span class="st">&quot;/&quot;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>css_dir <span class="kw">=</span> <span class="st">&quot;stylesheets&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>sass_dir <span class="kw">=</span> <span class="st">&quot;sass&quot;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>images_dir <span class="kw">=</span> <span class="st">&quot;images&quot;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>javascripts_dir <span class="kw">=</span> <span class="st">&quot;javascripts&quot;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># You can select your preferred output style here (can be overridden via the command line):</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># output_style = :expanded or :nested or :compact or :compressed</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># To enable relative paths to assets via compass helper functions. Uncomment:</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># relative_assets = true</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># To disable debugging comments that display the original location of your selectors. Uncomment:</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># line_comments = false</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># If you prefer the indented syntax, you might want to regenerate this</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># project again passing --syntax sass, or you can uncomment this:</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># preferred_syntax = :sass</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># and then run:</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># sass-convert -R --from scss --to sass sass scss &amp;&amp; rm -rf sass &amp;&amp; mv scss sass</span></span></code></pre></div>
 <p>You can edit this configuration file as you wish.</p>
 <ul>
 <li><code>require</code> - to include a plugin required for the project. Use one require statement per plugin.</li>
@@ -185,36 +181,32 @@
 </ul></li>
 </ul>
 <h2 id="alternate-way-to-create-sass-project">Alternate way to create <code>sass</code> project</h2>
-<div class="highlight"><pre><span></span>compass create --sass-dir <span class="s2">&quot;sass_directory&quot;</span> --css-dir <span class="s2">&quot;css_directory&quot;</span> --javascripts-dir <span class="s2">&quot;js&quot;</span> --images-dir <span class="s2">&quot;images&quot;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">compass</span> create <span class="at">--sass-dir</span> <span class="st">&quot;sass_directory&quot;</span> <span class="at">--css-dir</span> <span class="st">&quot;css_directory&quot;</span> <span class="at">--javascripts-dir</span> <span class="st">&quot;js&quot;</span> <span class="at">--images-dir</span> <span class="st">&quot;images&quot;</span></span></code></pre></div>
 <h2 id="create-partials">Create partials</h2>
 <p>These are subdirectories with sass file fragments. These will be included into the main sass files. This is the tree layout after creating the partials.</p>
 <p>Also, outside partials folder, create <code>styles.scss</code> file.</p>
-<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ tree
-.
-├── config.rb
-├── sass
-│   ├── ie.scss
-│   ├── partials
-│   │   ├── _base.scss
-│   │   ├── _layout.scss
-│   │   ├── _mixins.scss
-│   │   ├── _normalize.scss
-│   │   └── _variables.scss
-│   ├── print.scss
-│   ├── screen.scss
-<span class="p">|</span>   └── styles.scss
-├── sass.md
-├── stylesheets
-│   ├── ie.css
-│   ├── print.css
-│   └── screen.css
-└── testing.html
-
-<span class="m">3</span> directories, <span class="m">14</span> files
-</pre></div>
-
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">arun@hpdv6:~/Website_Experimental/sass_tutorial$</span> tree</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> config.rb</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sass</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── ie.scss</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── partials</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── _base.scss</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── _layout.scss</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── _mixins.scss</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── _normalize.scss</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── _variables.scss</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── print.scss</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── screen.scss</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="ex">└──</span> styles.scss</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sass.md</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> stylesheets</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── ie.css</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── print.css</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── screen.css</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> testing.html</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="ex">3</span> directories, 14 files</span></code></pre></div>
 <ul>
 <li><code>_base.scss</code>: the basic structure of the webpage</li>
 <li><code>_layout.scss</code>: the design layout of the webpage</li>
@@ -223,434 +215,385 @@
 <li><code>_normalize.scss</code>: collection of css attributes and html elements to normalize the style across all browsers.</li>
 </ul>
 <h2 id="comments-and-notes.">Comments and Notes.</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Single Line Comment</span>
-<span class="cm">/*</span>
-<span class="cm">Multi-Line comment. When merging multiple files, it may not appear where you want.</span>
-<span class="cm">*/</span>
+<pre class="scss"><code>
+// Single Line Comment
+/*
+Multi-Line comment. When merging multiple files, it may not appear where you want.
+*/
 
-<span class="cm">/*!</span>
-<span class="cm">Loud multi-line comment. It will exactly appear where you want.</span>
-<span class="cm">*/</span>
-</pre></div>
-
+/*!
+Loud multi-line comment. It will exactly appear where you want.
+*/
+</code></pre>
 <p>You can create your own <code>_normalize.scss</code> file if you know what “normalization” means. Else, you can copy paste it from contents.</p>
 <h2 id="autocompile-sass-files">Autocompile <code>sass</code> files</h2>
 <p>Using compass, you can automatically compile the <code>sass</code> files to produce the equivalent <code>css</code> files.</p>
 <p>In the root folder, type this in the terminal.</p>
-<div class="highlight"><pre><span></span>arun@hpdv6:~/Website_Experimental/sass_tutorial$ compass watch
- modified config.rb
-    clean stylesheets
-   delete stylesheets/ie.css
-   delete stylesheets/print.css
-   delete stylesheets/screen.css
-&gt;&gt;&gt; Compass is watching <span class="k">for</span> changes. Press Ctrl-C to Stop.
-    write stylesheets/ie.css
-    write stylesheets/print.css
-    write stylesheets/screen.css
-</pre></div>
-
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">arun@hpdv6:~/Website_Experimental/sass_tutorial$</span> compass watch</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">modified</span> config.rb</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">clean</span> stylesheets</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>   <span class="ex">delete</span> stylesheets/ie.css</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>   <span class="ex">delete</span> stylesheets/print.css</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>   <span class="ex">delete</span> stylesheets/screen.css</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> Compass <span class="ex">is</span> watching for changes. Press Ctrl-C to Stop.</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write</span> stylesheets/ie.css</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write</span> stylesheets/print.css</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write</span> stylesheets/screen.css</span></code></pre></div>
 <p>Alternatively, you can compile it using just <code>sass</code></p>
-<div class="highlight"><pre><span></span>sass --watch style.scss:style.css
-</pre></div>
-
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sass</span> <span class="at">--watch</span> style.scss:style.css</span></code></pre></div>
 <p>As long as it is running, any changes to the <code>sass</code> files will be immediately reflected to the <code>css</code> files.</p>
 <h2 id="usage-of-a-mixin">Usage of a mixin</h2>
 <p>A mixin is a function. You give some values to it, and it operates on it and gives some other values.</p>
 <p>Define one like this:</p>
-<div class="highlight"><pre><span></span><span class="cm">/* Mixins */</span>
-<span class="cm">/* Functions that take in some value and do some work for us. */</span>
+<pre class="scss"><code>/* Mixins */
+/* Functions that take in some value and do some work for us. */
 
-<span class="c1">// mixin keyword - mixin name - function arguments, default value,</span>
-<span class="k">@mixin</span><span class="nf"> default-text-color</span><span class="p">(</span><span class="nv">$tc</span><span class="o">:</span> <span class="nv">$black</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// some task.</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">tc</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+// mixin keyword - mixin name - function arguments, default value,
+@mixin default-text-color($tc: $black)
+{
+    // some task.
+    color: $tc;
+}</code></pre>
 <p>And implement it in other places like this:</p>
-<div class="highlight"><pre><span></span><span class="nt">body</span> 
-<span class="p">{</span>
-  <span class="nt">font-family</span><span class="nd">:</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
-  <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">1em</span><span class="o">;</span>
-  <span class="nt">background</span><span class="nd">:</span> <span class="err">$</span><span class="nt">gray</span><span class="o">;</span>
-  <span class="nt">line-height</span><span class="nd">:</span> <span class="nt">1em</span><span class="o">;</span>
+<pre class="scss"><code>body 
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background: $gray;
+  line-height: 1em;
 
-  <span class="o">//</span> <span class="nt">We</span> <span class="nt">are</span> <span class="nt">defining</span> <span class="nt">the</span> <span class="nt">text</span> <span class="nt">color</span> <span class="nt">with</span> <span class="nt">a</span> <span class="nt">mixin</span>
-  <span class="o">@</span><span class="nt">include</span> <span class="nt">default-text-color</span><span class="o">(</span><span class="err">$</span><span class="nt">black</span><span class="o">);</span>
-<span class="p">}</span>
-</pre></div>
-
+  // We are defining the text color with a mixin
+  @include default-text-color($black);
+}</code></pre>
 <h2 id="includes-in-style.scss">Includes in <code>style.scss</code></h2>
 <p>Write these lines into the <code>style.scss</code> file.</p>
-<div class="highlight"><pre><span></span><span class="k">@import</span> <span class="s2">&quot;compass&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;partials/variables&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;partials/normalize&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;partials/mixins&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;partials/base&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;compass/css3&quot;</span><span class="p">;</span>
-</pre></div>
-
+<pre class="scss"><code>@import &quot;compass&quot;;
+@import &quot;partials/variables&quot;;
+@import &quot;partials/normalize&quot;;
+@import &quot;partials/mixins&quot;;
+@import &quot;partials/base&quot;;
+@import &quot;compass/css3&quot;;</code></pre>
 <h2 id="wrapper-idclass">Wrapper ID/Class</h2>
-<div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">wrapper</span> 
-<span class="p">{</span>
-    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">white</span><span class="p">;</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
-    <span class="k">max-width</span><span class="p">:</span> <span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb16"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#wrapper</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background</span>: $white<span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin</span>: <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <h2 id="to-prevent-overlap-of-elements">To prevent overlap of elements</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Fixes overlapping issues</span>
-<span class="c1">// Makes the rendered box elements padding, borders, etc.</span>
-<span class="c1">// fit into the width</span>
+<pre class="scss"><code>// Fixes overlapping issues
+// Makes the rendered box elements padding, borders, etc.
+// fit into the width
    
-<span class="o">*</span>
-<span class="p">{</span>
-    <span class="nt">-webkit-box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
-    <span class="nt">-moz-box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
-    <span class="nt">box-sizing</span><span class="nd">:</span> <span class="nt">border-box</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}</code></pre>
 <h2 id="inheritance---examples">Inheritance - Examples</h2>
-<div class="highlight"><pre><span></span><span class="nt">article</span> <span class="nt">p</span> <span class="nt">a</span>
-<span class="p">{</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">blue</span><span class="o">;</span>
-    <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span> <span class="k">&amp;</span><span class="nd">:focus</span> 
-    <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">duke-blue</span><span class="o">;</span>
-    <span class="p">}</span>
-    <span class="k">&amp;</span><span class="nd">:visited</span>
-    <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">blue-gray</span><span class="o">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="scss"><code>article p a
+{
+    color: $blue;
+    &amp;:hover, &amp;:focus 
+    {
+        color: $duke-blue;
+    }
+    &amp;:visited
+    {
+        color: $blue-gray;
+    }
+}</code></pre>
 <h2 id="left-side-bar-links">left-side bar links</h2>
 <p>Each link is a block. It is mildly transparent. On hover, it becomes fully opaque.</p>
-<div class="highlight"><pre><span></span><span class="nc">.left-sidebar-links</span> <span class="p">{</span>
-  <span class="nt">a</span> <span class="p">{</span>
-    <span class="nt">display</span><span class="nd">:</span> <span class="nt">block</span><span class="o">;</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">main-green</span><span class="o">;</span>
-    <span class="nt">opacity</span><span class="nd">:</span> <span class="nc">.7</span><span class="o">;</span>
-    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-      <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="scss"><code>.left-sidebar-links {
+  a {
+    display: block;
+    color: $main-green;
+    opacity: .7;
+    &amp;:hover {
+      opacity: 1;
+    }
+  }
+}</code></pre>
 <p>Put a border line at the bottom of each link, except the last one.</p>
-<div class="highlight"><pre><span></span><span class="nc">.left-sidebar-links</span> <span class="p">{</span>
-  <span class="nt">border-bottom</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">main-green</span><span class="o">;</span>
-  <span class="k">&amp;</span><span class="nd">:last-child</span> <span class="p">{</span>
-    <span class="nt">border</span><span class="nd">:</span> <span class="nt">none</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="scss"><code>.left-sidebar-links {
+  border-bottom: 2px solid $main-green;
+  &amp;:last-child {
+    border: none;
+  }
+}</code></pre>
 <h2 id="nesting-css-properties">Nesting CSS properties</h2>
-<div class="highlight"><pre><span></span><span class="c1">// You can nest CSS properties as well</span>
-<span class="nc">.example-element</span> <span class="p">{</span>
-  <span class="nt">border</span><span class="nd">:</span> <span class="p">{</span>
-    <span class="nt">top</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">blue</span><span class="o">;</span>
-    <span class="nt">right</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">red</span><span class="o">;</span>
-    <span class="nt">bottom</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">yellow</span><span class="o">;</span>
-    <span class="nt">left</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="err">$</span><span class="nt">green</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="scss"><code>// You can nest CSS properties as well
+.example-element {
+  border: {
+    top: 1px solid $blue;
+    right: 1px solid $red;
+    bottom: 1px solid $yellow;
+    left: 1px solid $green;
+  }
+}</code></pre>
 <h2 id="extending-already-existing-properties">Extending already existing properties</h2>
-<div class="highlight"><pre><span></span><span class="c1">// @extend existing properties</span>
-<span class="nn">#riddle</span><span class="p">{</span>
-  <span class="nt">padding</span><span class="nd">:</span> <span class="nt">20px</span><span class="o">;</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">alice-blue</span><span class="o">;</span>
-<span class="p">}</span>
+<pre class="scss"><code>// @extend existing properties
+#riddle{
+  padding: 20px;
+  background-color: $alice-blue;
+}
  
-<span class="nn">#riddle-answer</span><span class="p">{</span>
-  <span class="k">@extend</span> <span class="nn">#riddle</span><span class="o">;</span>
-  <span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">10px</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+#riddle-answer{
+  @extend #riddle;
+  margin-top: 10px;
+}</code></pre>
 <h2 id="creating-generic-properties-so-that-you-can-use-and-extend-them">Creating generic properties so that you can use and extend them</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Creating properties just so we can extend them</span>
+<pre class="scss"><code>// Creating properties just so we can extend them
  
-<span class="err">%</span><span class="nt">dotted-box</span> <span class="p">{</span>
+%dotted-box {
  
-  <span class="nt">border</span><span class="nd">:</span> <span class="nt">2px</span> <span class="nt">dotted</span> <span class="err">$</span><span class="nt">duke-blue</span><span class="o">;</span>
-  <span class="nt">margin</span><span class="nd">:</span> <span class="nt">10px</span> <span class="nt">0px</span><span class="o">;</span>
-<span class="p">}</span>
+  border: 2px dotted $duke-blue;
+  margin: 10px 0px;
+}
  
-<span class="nn">#riddle-answer</span><span class="p">{</span>
-  <span class="k">@extend</span> <span class="err">%</span><span class="nt">dotted-box</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+#riddle-answer{
+  @extend %dotted-box;
+}</code></pre>
 <h2 id="colour-altering-commands">colour altering commands</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Lighten a color</span>
-<span class="c1">// You can use darken in the same way</span>
+<pre class="scss"><code>// Lighten a color
+// You can use darken in the same way
  
-<span class="nc">.left-sidebar-links</span><span class="p">{</span>
-  <span class="nt">border-color</span><span class="nd">:</span> <span class="nt">lighten</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="nt">70</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
+.left-sidebar-links{
+  border-color: lighten($main-green, 70%);
+}
  
-<span class="c1">// You can generate the 180 degree complement of a color</span>
+// You can generate the 180 degree complement of a color
  
-<span class="nn">#search-button</span><span class="nd">:hover</span> <span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">complement</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">);</span>
-<span class="p">}</span>
+#search-button:hover {
+  background-color: complement($main-green);
+}
  
-<span class="c1">// You can invert a color by sending the degree (0 - 360)</span>
+// You can invert a color by sending the degree (0 - 360)
  
-<span class="nn">#search-button</span><span class="nd">:hover</span> <span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-hue</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="nt">90deg</span><span class="o">);</span>
-<span class="p">}</span>
+#search-button:hover {
+  background-color: adjust-hue($main-green, 90deg);
+}
  
-<span class="c1">// Specify a background color for the &lt;li&gt; that is the</span>
-<span class="c1">// first child of #vert-nav ul and desaturate (darken)</span>
+// Specify a background color for the &lt;li&gt; that is the
+// first child of #vert-nav ul and desaturate (darken)
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">desaturate</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nt">80</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(1) {
+  background-color: desaturate($orange, 80%);
+}
  
-<span class="c1">// Saturate a color by a percent</span>
+// Saturate a color by a percent
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">saturate</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nt">80</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(2){
+  background-color: saturate($orange, 80%);
+}
  
-<span class="c1">// Define transparence (0 to 1 Opaque)</span>
+// Define transparence (0 to 1 Opaque)
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">fade-out</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nc">.5</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(3){
+  background-color: fade-out($orange, .5);
+}
  
-<span class="c1">// Make a color more opaque (0 to 1 Opaque)</span>
+// Make a color more opaque (0 to 1 Opaque)
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">fade-in</span><span class="o">(</span><span class="err">$</span><span class="nt">orange</span><span class="o">,</span> <span class="nc">.8</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(3){
+  background-color: fade-in($orange, .8);
+}
  
-<span class="c1">// Define the RGB color</span>
+// Define the RGB color
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">4</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">200</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.5</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(4){
+  background-color: rgba(0, 0, 200, 0.5);
+}
  
-<span class="c1">// Mix 2 colors plus the percent of the first color</span>
+// Mix 2 colors plus the percent of the first color
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">5</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mix</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="err">$</span><span class="nt">white</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(5){
+  background-color: mix($yellow, $white, 50%);
+}
  
-<span class="c1">// Make the color passed grayscale</span>
+// Make the color passed grayscale
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">6</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">grayscale</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(6){
+  background-color: grayscale($yellow);
+}
  
-<span class="cm">/*</span>
-<span class="cm">adjust-color allows you to adjust</span>
-<span class="cm">red, green and blue : 0 to 255</span>
-<span class="cm">hue : 0 to 359</span>
-<span class="cm">saturation : 0 to 100</span>
-<span class="cm">lightness : 0 to 100</span>
-<span class="cm">alpha : 0 to 1</span>
-<span class="cm">Either adjust RGB or HSL</span>
-<span class="cm">*/</span>
+/*
+adjust-color allows you to adjust
+red, green and blue : 0 to 255
+hue : 0 to 359
+saturation : 0 to 100
+lightness : 0 to 100
+alpha : 0 to 1
+Either adjust RGB or HSL
+*/
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">7</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-color</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="err">$</span><span class="nt">red</span><span class="nd">:0</span><span class="o">,</span> <span class="err">$</span><span class="nt">green</span><span class="nd">:40</span><span class="o">,</span> <span class="err">$</span><span class="nt">blue</span><span class="nd">:30</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(7){
+  background-color: adjust-color($main-green, $red:0, $green:40, $blue:30);
+}
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">7</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">adjust-color</span><span class="o">(</span><span class="err">$</span><span class="nt">main-green</span><span class="o">,</span> <span class="err">$</span><span class="nt">hue</span><span class="nd">:30</span><span class="o">,</span> <span class="err">$</span><span class="nt">saturation</span><span class="nd">:40</span><span class="o">,</span> <span class="err">$</span><span class="nt">lightness</span><span class="nd">:30</span><span class="o">,</span> <span class="err">$</span><span class="nt">alpha</span><span class="nd">:0</span><span class="nc">.2</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(7){
+  background-color: adjust-color($main-green, $hue:30, $saturation:40, $lightness:30, $alpha:0.2);
+}
  
-<span class="c1">// shade combines the color with a percent of black</span>
+// shade combines the color with a percent of black
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">8</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">shade</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
+#vert-nav ul li:nth-child(8){
+  background-color: shade($yellow, 50%);
+}
  
-<span class="c1">// tint combines the color with a percent of white</span>
+// tint combines the color with a percent of white
  
-<span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">9</span><span class="o">)</span><span class="p">{</span>
-  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">tint</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="nt">50</span><span class="err">%</span><span class="o">);</span>
-<span class="p">}</span>
-</pre></div>
-
+#vert-nav ul li:nth-child(9){
+  background-color: tint($yellow, 50%);
+}</code></pre>
 <h2 id="mixins-from-compass">mixins from compass</h2>
 <p>mixins from compass automatically generate equivalent properties that are compatible with other webbrowsers. Essentially, it produces cross-browser stuff.</p>
 <p>Mixin used in <code>sass</code> from <code>compass</code></p>
-<div class="highlight"><pre><span></span><span class="c1">// Rounds the border and adds a box shadow</span>
+<pre class="scss"><code>// Rounds the border and adds a box shadow
  
-<span class="nn">#riddle-answer</span> <span class="p">{</span>
-  <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+#riddle-answer {
+  @include border-radius(5px);
  
-  <span class="c1">// Horizontal then vertical offset, blur, spread, color</span>
-  <span class="k">@include</span><span class="nd"> box-shadow</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="ni">gray</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
+  // Horizontal then vertical offset, blur, spread, color
+  @include box-shadow(5px 5px 5px 2px gray);
+}</code></pre>
 <p>The equivalent <code>css</code>.</p>
-<div class="highlight"><pre><span></span><span class="c">/* line 273, ../sass/styles.scss */</span>
-<span class="p">#</span><span class="nn">riddle-answer</span> <span class="p">{</span>
-  <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-  <span class="kp">-moz-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
-  <span class="kp">-webkit-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
-  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">gray</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb26"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* line 273, ../sass/styles.scss */</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#riddle-answer</span> {</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">-moz-border-radius</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">-webkit-border-radius</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">-moz-box-shadow</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">-webkit-box-shadow</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">box-shadow</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <h2 id="text-shadow">text-shadow</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Color, horizontal then verical offset, blur amount</span>
-<span class="nn">#main-title</span><span class="p">{</span>
-  <span class="k">@include</span><span class="nd"> text-shadow</span><span class="p">(</span><span class="nf">rgba</span><span class="p">(</span><span class="ni">blue</span><span class="o">,</span> <span class="mi">0</span><span class="mf">.2</span><span class="p">)</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">3</span><span class="kt">px</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="scss"><code>// Color, horizontal then verical offset, blur amount
+#main-title{
+  @include text-shadow(rgba(blue, 0.2) 2px 2px 3px);
+}</code></pre>
 <h2 id="gradient">gradient</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Created for extension</span>
-<span class="c1">// Direction or left / right / top / bottom, color stops</span>
+<pre class="scss"><code>// Created for extension
+// Direction or left / right / top / bottom, color stops
  
-<span class="err">%</span><span class="nt">main-green-gradient</span><span class="p">{</span>
+%main-green-gradient{
  
-  <span class="k">@include</span><span class="nd"> background-image</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">left</span><span class="o">,</span> <span class="nv">$main-green</span> <span class="mi">80</span><span class="kt">%</span><span class="o">,</span> <span class="nv">$white</span><span class="p">));</span>
-<span class="p">}</span>
+  @include background-image(linear-gradient(left, $main-green 80%, $white));
+}
  
-<span class="nt">footer</span> <span class="p">{</span>
-  <span class="k">@extend</span> <span class="err">%</span><span class="nt">main-green-gradient</span><span class="o">;</span>
-<span class="p">}</span>
+footer {
+  @extend %main-green-gradient;
+}
  
-<span class="nn">#horz-nav</span> <span class="p">{</span>
-  <span class="k">@extend</span> <span class="err">%</span><span class="nt">main-green-gradient</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+#horz-nav {
+  @extend %main-green-gradient;
+}</code></pre>
 <h2 id="working-with-images">working with images</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Target the img with the given alt and change the src</span>
-<span class="c1">// and restore the proper size</span>
+<pre class="scss"><code>// Target the img with the given alt and change the src
+// and restore the proper size
  
-<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s2">&quot;Programming Frameworks&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="nt">content</span><span class="nd">:</span> <span class="nt">image-url</span><span class="o">(</span><span class="s1">&#39;featured-image.png&#39;</span><span class="o">);</span>
-  <span class="o">//</span> <span class="nt">can</span> <span class="nt">also</span> <span class="nt">extract</span> <span class="nt">image</span> <span class="nt">dimensions</span>
-  <span class="o">/*</span>
-  <span class="nt">width</span><span class="nd">:</span> <span class="nt">image-width</span><span class="o">(</span><span class="s1">&#39;../images/featured-image.png&#39;</span><span class="o">);</span>
-  <span class="nt">height</span><span class="nd">:</span> <span class="nt">image-height</span><span class="o">(</span><span class="s1">&#39;../images/featured-image.png&#39;</span><span class="o">);</span>
-  <span class="o">*/</span>
-<span class="p">}</span>
-</pre></div>
-
+img[alt=&quot;Programming Frameworks&quot;] {
+  content: image-url(&#39;featured-image.png&#39;);
+  // can also extract image dimensions
+  /*
+  width: image-width(&#39;../images/featured-image.png&#39;);
+  height: image-height(&#39;../images/featured-image.png&#39;);
+  */
+}</code></pre>
 <h2 id="transformations">Transformations</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Use a Compass mixin to scale 2x horz &amp; vert</span>
-<span class="c1">// Move horz &amp; vert, rotate 45deg and perform multiple transforms</span>
+<pre class="scss"><code>// Use a Compass mixin to scale 2x horz &amp; vert
+// Move horz &amp; vert, rotate 45deg and perform multiple transforms
  
-<span class="nn">#logo</span> <span class="p">{</span>
-  <span class="k">@include</span><span class="nd"> scale</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">);</span>
-  <span class="k">@include</span><span class="nd"> transform</span><span class="p">(</span><span class="nf">translateX</span><span class="p">(</span><span class="mi">700</span><span class="kt">px</span><span class="p">)</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">10</span><span class="kt">px</span><span class="p">)</span>
-  <span class="nf">scale</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">)</span> <span class="nf">rotate</span><span class="p">(</span><span class="mi">-45</span><span class="kt">deg</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></div>
-
+#logo {
+  @include scale(2,2);
+  @include transform(translateX(700px) translateY(10px)
+  scale(2,2) rotate(-45deg));
+}
+</code></pre>
 <h2 id="drop-shadow-using-compass-mixin">Drop shadow using compass mixin</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Add the compass drop shadow on all text in the p</span>
+<pre class="scss"><code>// Add the compass drop shadow on all text in the p
  
-<span class="nt">article</span> <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span>
-  <span class="k">@include</span><span class="nd"> filter</span><span class="p">(</span><span class="nf">drop-shadow</span><span class="p">(</span><span class="nv">$gray</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">0</span><span class="kt">px</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></div>
-
+article p:nth-child(2){
+  @include filter(drop-shadow($gray 1px 1px 0px));
+}</code></pre>
 <h2 id="if-conditions">if conditions</h2>
-<div class="highlight"><pre><span></span><span class="c1">// We can change properties based on conditions</span>
+<pre class="scss"><code>// We can change properties based on conditions
  
-<span class="nv">$riddle-color</span><span class="o">:</span> <span class="ni">gray</span><span class="p">;</span>
+$riddle-color: gray;
  
-<span class="k">@if</span> <span class="nv">$riddle-color</span> <span class="o">==</span> <span class="ni">blue</span> <span class="p">{</span>
-  <span class="nn">#riddle</span> <span class="p">{</span>
-    <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">alice-blue</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
-  <span class="nn">#riddle</span> <span class="p">{</span>
-    <span class="nt">background-color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">ash-gray</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+@if $riddle-color == blue {
+  #riddle {
+    background-color: $alice-blue;
+  }
+} @else {
+  #riddle {
+    background-color: $ash-gray;
+  }
+}</code></pre>
 <h2 id="for-loop">for loop</h2>
-<div class="highlight"><pre><span></span><span class="c1">// We can use for loops to change as we iterate</span>
+<pre class="scss"><code>// We can use for loops to change as we iterate
  
-<span class="nv">$prct-yellow</span><span class="o">:</span> <span class="mi">5</span><span class="kt">%</span><span class="p">;</span>
+$prct-yellow: 5%;
  
-<span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="mi">1</span> <span class="ow">through</span> <span class="mi">14</span> <span class="p">{</span>
-  <span class="nn">#vert-nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">i</span><span class="p">}</span><span class="o">)</span><span class="p">{</span>
-    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mix</span><span class="o">(</span><span class="err">$</span><span class="nt">yellow</span><span class="o">,</span> <span class="err">$</span><span class="nt">white</span><span class="o">,</span> <span class="err">$</span><span class="nt">prct-yellow</span><span class="o">);</span>
-  <span class="p">}</span>
+@for $i from 1 through 14 {
+  #vert-nav ul li:nth-child(#{$i}){
+    background-color: mix($yellow, $white, $prct-yellow);
+  }
  
-  <span class="nv">$prct-yellow</span><span class="o">:</span> <span class="nv">$prct-yellow</span> <span class="o">+</span> <span class="mi">5</span><span class="kt">%</span>
+  $prct-yellow: $prct-yellow + 5%
  
-<span class="p">}</span>
-</pre></div>
-
+}</code></pre>
 <h2 id="spriting-using-compass-mixins">spriting using compass mixins</h2>
-<div class="highlight"><pre><span></span><span class="c1">// Spriting with Compass</span>
-<span class="c1">// Combines images in the provided folder into 1 image</span>
-<span class="c1">// to limit server requests</span>
-<span class="c1">// Define the directory for the images and it provides</span>
-<span class="c1">// the background image definition and location for use</span>
-<span class="c1">// by your elements</span>
+<pre class="scss"><code>// Spriting with Compass
+// Combines images in the provided folder into 1 image
+// to limit server requests
+// Define the directory for the images and it provides
+// the background image definition and location for use
+// by your elements
  
-<span class="k">@import</span> <span class="s2">&quot;compass/utilities/sprites&quot;</span><span class="p">;</span>
+@import &quot;compass/utilities/sprites&quot;;
 
-<span class="c1">// folder with the images.</span>
-<span class="k">@import</span> <span class="s2">&quot;icons/*.png&quot;</span><span class="p">;</span>
+// folder with the images.
+@import &quot;icons/*.png&quot;;
 
-<span class="c1">// sprite mixin</span>
-<span class="k">@include</span><span class="nd"> all-icons-sprites</span><span class="p">;</span>
+// sprite mixin
+@include all-icons-sprites;
 
-<span class="c1">// grouping the images into 1</span>
-<span class="nc">.icons</span> <span class="p">{</span>
-  <span class="nc">.clock</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">clock</span><span class="p">);}</span>
-  <span class="nc">.diary</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">diary</span><span class="p">);}</span>
-  <span class="nc">.printer</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">printer</span><span class="p">);}</span>
-  <span class="nc">.weather</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> icons-sprite</span><span class="p">(</span><span class="n">weather</span><span class="p">);}</span>
-<span class="p">}</span>
+// grouping the images into 1
+.icons {
+  .clock { @include icons-sprite(clock);}
+  .diary { @include icons-sprite(diary);}
+  .printer { @include icons-sprite(printer);}
+  .weather { @include icons-sprite(weather);}
+}
 
-<span class="c1">// size of the individual images</span>
-<span class="nc">.icons</span> <span class="o">*</span> <span class="p">{</span>
-  <span class="nt">height</span><span class="nd">:</span> <span class="nt">64px</span><span class="o">;</span>
-  <span class="nt">width</span><span class="nd">:</span> <span class="nt">64px</span><span class="o">;</span>
-<span class="p">}</span>
-</pre></div>
-
+// size of the individual images
+.icons * {
+  height: 64px;
+  width: 64px;
+}</code></pre>
 <h2 id="table-styling">Table Styling</h2>
-<div class="highlight"><pre><span></span><span class="k">@import</span> <span class="s2">&quot;compass/utilities/tables&quot;</span><span class="p">;</span>
+<pre class="scss"><code>@import &quot;compass/utilities/tables&quot;;
  
-<span class="nc">.baseball-stats</span> <span class="p">{</span>
-  <span class="nt">table</span> <span class="p">{</span>
-    <span class="nv">$table-color</span><span class="o">:</span> <span class="nv">$black</span><span class="p">;</span>
-    <span class="k">@include</span><span class="nd"> table-scaffolding</span><span class="p">;</span>
+.baseball-stats {
+  table {
+    $table-color: $black;
+    @include table-scaffolding;
  
-    <span class="c1">// Define the inner border</span>
-    <span class="k">@include</span><span class="nd"> inner-table-borders</span><span class="p">(</span><span class="mi">4</span><span class="kt">px</span><span class="o">,</span> <span class="nv">$table-color</span><span class="p">);</span>
+    // Define the inner border
+    @include inner-table-borders(4px, $table-color);
  
-    <span class="c1">// Define the outer border</span>
-    <span class="k">@include</span><span class="nd"> outer-table-borders</span><span class="p">(</span><span class="mi">4</span><span class="kt">px</span><span class="o">,</span> <span class="nv">$duke-blue</span><span class="p">);</span>
+    // Define the outer border
+    @include outer-table-borders(4px, $duke-blue);
  
-    <span class="c1">// Handles table striping even row color, odd row color, intersection, header</span>
-    <span class="k">@include</span><span class="nd"> alternating-rows-and-columns</span><span class="p">(</span><span class="nv">$alice-blue</span><span class="o">,</span> <span class="nv">$ash-gray</span><span class="o">,</span> <span class="nv">$table-color</span><span class="o">,</span> <span class="nv">$white</span><span class="p">);</span>
+    // Handles table striping even row color, odd row color, intersection, header
+    @include alternating-rows-and-columns($alice-blue, $ash-gray, $table-color, $white);
  
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">400px</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+    width: 400px;
+  }
+}</code></pre>
 
                 
             </div>
@@ -676,10 +619,7 @@
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -693,10 +633,11 @@
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -717,7 +658,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

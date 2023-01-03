@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>006_Modified_HeronsFormula | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>006_Modified_HeronsFormula | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -162,48 +172,44 @@
 </tbody>
 </table>
 <h2 id="if-else-construct">If-else construct</h2>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">):</span>
-    <span class="c1"># statements to execute if the condition1 is true</span>
-<span class="k">elif</span> <span class="p">(</span><span class="n">condition2</span><span class="p">):</span>
-    <span class="c1"># statements to execute if the condition2 is true</span>
-<span class="k">elif</span> <span class="p">(</span><span class="n">condition3</span><span class="p">):</span>
-    <span class="c1"># statements to execute if the condition3 is true</span>
-<span class="o">...</span>
-<span class="k">elif</span> <span class="p">(</span><span class="n">conditionN</span><span class="p">):</span>
-    <span class="c1"># statements to execute if the conditionN is true</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># statements to execute if all the N conditions fail</span>
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition1):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements to execute if the condition1 is true</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (condition2):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements to execute if the condition2 is true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (condition3):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements to execute if the condition3 is true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (conditionN):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements to execute if the conditionN is true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements to execute if all the N conditions fail</span></span></code></pre></div>
 <h3 id="note">Note</h3>
 <p>The <key>Tabs</key> here are necessary! The tab indicates that the indended statements are a part of the construct.</p>
 <h2 id="updated-herons-formula">Updated Heron’s Formula</h2>
 <p>Check if the inputs actually make a valid triangle.</p>
-<div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Program to calculate the area of a triangle using Heron&#39;s formulae</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="c1"># Get inputs</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;a&#39; of the triangle:&quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;b&#39; of the triangle:&quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the side &#39;c&#39; of the triangle:&quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sides of a triangle can&#39;t be zero or negative!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="p">(</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="o">+</span><span class="n">c</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The values violate triangle inequality!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;All conditions are valid!&quot;</span><span class="p">)</span>
-    <span class="c1"># Calculate the semi-perimeter</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
-
-    <span class="c1"># Find the Area</span>
-    <span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
-
-    <span class="c1"># Print the result</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The area of the triangle with sides a = {}, b = {}, and c = {} is {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">Area</span><span class="p">))</span>
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">Program to calculate the area of a triangle using Heron&#39;s formulae</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get inputs</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter the side &#39;a&#39; of the triangle:&quot;</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter the side &#39;b&#39; of the triangle:&quot;</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter the side &#39;c&#39; of the triangle:&quot;</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="op">&lt;=</span> <span class="fl">0.0</span> <span class="kw">or</span> b <span class="op">&lt;=</span> <span class="fl">0.0</span> <span class="kw">or</span> c <span class="op">&lt;=</span> <span class="fl">0.0</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Sides of a triangle can&#39;t be zero or negative!&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> ( c <span class="op">&gt;=</span> a<span class="op">+</span>b <span class="kw">or</span> b <span class="op">&gt;=</span> a<span class="op">+</span>c <span class="kw">or</span> a <span class="op">&gt;=</span> b<span class="op">+</span>c):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The values violate triangle inequality!&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;All conditions are valid!&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the semi-perimeter</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> (a <span class="op">+</span> b <span class="op">+</span> c)<span class="op">*</span><span class="fl">0.5</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find the Area</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    Area <span class="op">=</span> (s<span class="op">*</span>(s<span class="op">-</span>a)<span class="op">*</span>(s<span class="op">-</span>b)<span class="op">*</span>(s<span class="op">-</span>c))<span class="op">**</span><span class="fl">0.5</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Print the result</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The area of the triangle with sides a = </span><span class="sc">{}</span><span class="st">, b = </span><span class="sc">{}</span><span class="st">, and c = </span><span class="sc">{}</span><span class="st"> is </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(a, b, c, Area))</span></code></pre></div>
 
                 
             </div>
@@ -229,10 +235,7 @@
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -246,10 +249,11 @@
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -270,7 +274,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

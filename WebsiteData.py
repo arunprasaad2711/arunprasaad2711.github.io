@@ -1,4 +1,4 @@
-Main_Folders = ["Syntax", "FluidicColours", "Continuum", "Derivative", "FAQs", "Apps"]
+Main_Folders = ["Syntax", "Colours", "Continuum", "Derivative", "FAQs", "Apps"]
 
 main_pages = ['index.html',
               'faq.html',

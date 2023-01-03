@@ -5,14 +5,8 @@ from WebsiteData import *
 
 def pandoc2html(title, fname, temp_file, output_file):
 
-	# Use this when using haskell to create a custom pygments parser
-	result = sys(f"pandoc -F pygments --from=markdown --to=html5 --mathjax {fname} -o {temp_file}")
-
-	## DO NOT USE THE ONES BELOW - SASS file modified a lot to get the haskell executable to work.
-	# Use this for a simple syntax highlight
-	# system(f"pandoc --from=markdown --to=html5 --highlight-style=pygments --mathjax {fname} -o {temp_file}")
-	# This was the standard pandoc fix. Syntax highlight pushed permanently google pretty type.
-	# system(f"pandoc --from=markdown --to=html5 --no-highlight --mathjax {fname} -o {temp_file}")
+	# Removing haskell. Including Pandoc-based syntax highlights.
+	result = sys(f"pandoc --from=markdown --to=html5 --mathjax --highlight-style=pygments {fname} -o {temp_file}")
 
 	if result != 0:
 		print(f"Error occurred file converting {fname}")
@@ -44,6 +38,7 @@ def recurFind(root, f):
         if item.is_file():
             if item.name.endswith(".md"):
                 title_words = str(item).split("/")
+                # print(f"title words = {title_words}")
                 title = title_words[-1][:-3]
                 for Word in reversed(title_words[:-1]):
                     title += f' | {Word}'
@@ -54,8 +49,15 @@ def recurFind(root, f):
                 pandoc2html(title, fname, temp_file, html)
         else:
             newRoot = f'{root}'
-            print(f"Recursion calling in '{newRoot}/{item}/")
-            recurFind(newRoot, item)
+            root_words = str(newRoot + "/" + str(item)).split('/')
+            # Intentionally putting it to stop deep recursion.
+            # The depth is: Main folder - ".", Group folder - "Fluidic Colours/Derivative/ ...", Sub-Group - "articles"
+            if(len(root_words) <= ScanDepth):
+                print(f"Recursion calling in '{newRoot}/{item}/")
+                recurFind(newRoot, item)
+
+# Recursive Scan-Depth
+ScanDepth = 3
 
 # Specify the template directory and environment 
 file_loader = FileSystemLoader('templates')

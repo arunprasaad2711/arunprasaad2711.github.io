@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>003_PrimaryDataTypes | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>003_PrimaryDataTypes | Scientific_Computation_Using_Python | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -75,62 +85,56 @@
 <p>Simply put, it is the nature of the information.</p>
 <h2 id="primary-data-types">Primary Data Types</h2>
 <p>These are the primary data types available in python</p>
-<div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Integer. Stores integers</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">5.78</span> <span class="c1"># Floats. Stores numbers with decimal parts.</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span> <span class="c1"># Characters. Stores single characters. It is a string in python!</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Strings&#39;</span> <span class="c1"># Strings. Stores a series of characters</span>
-<span class="n">l</span> <span class="o">=</span> <span class="bp">True</span><span class="o">/</span><span class="bp">False</span> <span class="c1"># Logical. Stores binary values</span>
-<span class="n">cm</span> <span class="o">=</span> <span class="mf">6.0</span><span class="o">+</span><span class="mf">5.6j</span>  <span class="c1"># Complex. Stores complex values</span>
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span> <span class="co"># Integer. Stores integers</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">5.78</span> <span class="co"># Floats. Stores numbers with decimal parts.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">&#39;h&#39;</span> <span class="co"># Characters. Stores single characters. It is a string in python!</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&#39;Strings&#39;</span> <span class="co"># Strings. Stores a series of characters</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> <span class="va">True</span><span class="op">/</span><span class="va">False</span> <span class="co"># Logical. Stores binary values</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> <span class="fl">6.0</span><span class="op">+</span><span class="ot">5.6j</span>  <span class="co"># Complex. Stores complex values</span></span></code></pre></div>
 <h2 id="string-data-type">String Data type</h2>
 <p>Strings are long chain of letters, numbers, symbols, and special characters. You can use both single and double quotes, but must end accordingly. Use slash to place quotes if needed.</p>
 <p>In python, there is no equivalent for <code>char</code> type.</p>
-<div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> 
-<span class="s1">&#39;Hello&#39;</span><span class="p">,</span> 
-<span class="s1">&#39;My name is Arun&#39;</span><span class="p">,</span> 
-<span class="s2">&quot;I asked, &#39;what is for lunch?&#39;&quot;</span>
-<span class="s1">&#39;I exclaimed, &quot;This tree is big!&quot;&#39;</span>
-<span class="s2">&quot;I used slash </span><span class="se">\&quot;</span><span class="s2"> to type a double quote symbol&quot;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;Hello&quot;</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;Hello&#39;</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;My name is Arun&#39;</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;I asked, &#39;what is for lunch?&#39;&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;I exclaimed, &quot;This tree is big!&quot;&#39;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;I used slash </span><span class="ch">\&quot;</span><span class="co"> to type a double quote symbol&quot;</span></span></code></pre></div>
 <h2 id="program-to-test-out-different-types-of-variables.">Program to Test out different types of variables.</h2>
 <h3 id="code">Code</h3>
-<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span>     <span class="c1"># Float/Real</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span> <span class="c1"># String/Character</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Integer</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>    <span class="c1"># Logical</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mf">6.0</span><span class="o">+</span><span class="mf">7.8j</span>    <span class="c1"># Complex</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="c1"># List</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1"># Tuple</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">}</span> <span class="c1"># Dictionary</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="c1"># Get the ASCII/unicode value of a character</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
-<span class="c1"># Get the character for the ASCII/unicode</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">98</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">32250</span><span class="p">))</span>
-</pre></div>
-
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span>     <span class="co"># Float/Real</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&quot;hello&quot;</span> <span class="co"># String/Character</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span>       <span class="co"># Integer</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span>    <span class="co"># Logical</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">6.0</span><span class="op">+</span><span class="ot">7.8j</span>    <span class="co"># Complex</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">7</span>, <span class="fl">8.9</span>, <span class="dv">10</span>] <span class="co"># List</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (<span class="fl">5.2</span>, <span class="dv">4</span>, <span class="dv">12</span>) <span class="co"># Tuple</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> {<span class="st">&#39;v1&#39;</span>: <span class="dv">6</span>, <span class="st">&#39;v2&#39;</span> : <span class="dv">10</span>} <span class="co"># Dictionary</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">id</span>(a), <span class="bu">type</span>(a))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the ASCII/unicode value of a character</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">ord</span>(<span class="st">&#39;z&#39;</span>))</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the character for the ASCII/unicode</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="dv">98</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="dv">32250</span>))</span></code></pre></div>
 <h3 id="output">Output</h3>
-<div class ="highlight"><pre>1.5 140048331680624 <class 'float'>
-hello 140048284573232 <class 'str'>
-5 140048501217856 <class 'int'>
-True 140048500811040 <class 'bool'>
-(6+7.8j) 140048284294832 <class 'complex'>
-[7, 8.9, 10] 140048284073544 <class 'list'>
-(5.2, 4, 12) 140048284133416 <class 'tuple'>
-{'v1': 6, 'v2': 10} 140048284066872 <class 'dict'>
+<pre><code>1.5 140048331680624 &lt;class &#39;float&#39;&gt;
+hello 140048284573232 &lt;class &#39;str&#39;&gt;
+5 140048501217856 &lt;class &#39;int&#39;&gt;
+True 140048500811040 &lt;class &#39;bool&#39;&gt;
+(6+7.8j) 140048284294832 &lt;class &#39;complex&#39;&gt;
+[7, 8.9, 10] 140048284073544 &lt;class &#39;list&#39;&gt;
+(5.2, 4, 12) 140048284133416 &lt;class &#39;tuple&#39;&gt;
+{&#39;v1&#39;: 6, &#39;v2&#39;: 10} 140048284066872 &lt;class &#39;dict&#39;&gt;
 122
 b
-緺</pre></div>
+緺</code></pre>
 <h2 id="some-simple-data-functions">Some simple data-functions</h2>
 <ul>
 <li><code>id()</code> : returns the memory location ID of the variable.</li>
@@ -163,10 +167,7 @@ b
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -180,10 +181,11 @@ b
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -204,7 +206,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

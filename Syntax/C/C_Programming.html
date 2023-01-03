@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>C_Programming | C | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>C_Programming | C | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -98,31 +108,23 @@
 <p>If wanted to work in Linux/Unix environment, install a gcc/icc or any equivalent compiler and proceed.</p>
 <h2 id="installation">Installation</h2>
 <p>Installing C, C++ is fairly easy. In a Linux operating system like Ubuntu, just type the command in the terminal.</p>
-<div class="highlight"><pre><span></span>sudo apt install gcc g++
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gcc g++</span></code></pre></div>
 <h2 id="basics-of-c">Basics of C</h2>
 <p>The extension of c files is .c</p>
 <p>There are main compilers for C Programs. The ideal choice of compiler is gcc in case of linux and unix.</p>
 <p>The program start with pre-processing statements like</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;somefilename.h&gt;</span><span class="cp"></span>
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include</span><span class="im">&lt;somefilename.h&gt;</span></span></code></pre></div>
 <p>These are header files required to give definitions for commands and built-in functions used in C</p>
-<div class="highlight"><pre><span></span><span class="cp"># is used for making an explicit definition to the compiler.</span>
-
-<span class="cm">/*  contents  is used for a block comment. */</span>
-<span class="c1">// contents is used for a single line comment.</span>
-</pre></div>
-
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er"># is used for making an explicit definition to the compiler.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">/*  contents  is used for a block comment. */</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">// contents is used for a single line comment.</span></span></code></pre></div>
 <p>There are quite a few changes between Borland C and GCC.</p>
 <p>The entire program is written inside the main function</p>
-<div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="n">contents</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>main<span class="op">()</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>contents<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>By default, the c compiler will first look for this function first. Only then, other functions will be handled/read. The main function can have a return statement if it returns a value. To make so, you need to assign it a return value</p>
 <p>eg: <code>int main or float main.</code></p>
 <p>To make it return a value, use return statement.</p>
@@ -141,28 +143,18 @@
 <p><code>math.h</code> has definitions for mathematical operations.</p>
 <p><strong>Usually, Header files have “declarations” for the functions and commands. The actual contents are available in a separate C file. Header files pull the contents of the C file of the same name, except the extension into the C file</strong></p>
 <h2 id="built-in-commands-and-functions">Built-in Commands and Functions</h2>
-<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="n">vars</span><span class="p">);</span>
-</pre></div>
-
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;strings&quot;</span><span class="op">,</span> vars<span class="op">);</span></span></code></pre></div>
 <p>This is used for printing and displaying contents on screen. eg:</p>
-<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Simple Interest is: %f&quot;</span><span class="p">,</span> <span class="n">si</span><span class="p">);</span>
-</pre></div>
-
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">&quot;Simple Interest is: %f&quot;</span><span class="op">,</span> si<span class="op">);</span></span></code></pre></div>
 <p>You can also print the variable’s address. Use <code>%d</code> for the type specifier and &amp; infront of the variable to indicate the address.</p>
-<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;type specifiers&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vars</span><span class="p">);</span>
-</pre></div>
-
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>scanf<span class="op">(</span><span class="st">&quot;type specifiers&quot;</span><span class="op">,</span> <span class="op">&amp;</span>vars<span class="op">);</span></span></code></pre></div>
 <p>This is used for retrieving varaible values from the console. </p>
 <p>The variable addresses are sent as the arguments for scanf</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">years</span><span class="p">);</span>
-</pre></div>
-
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>scanf<span class="op">(</span><span class="st">&quot;%d&quot;</span><span class="op">,</span> <span class="op">&amp;</span>years<span class="op">);</span></span></code></pre></div>
 <p>The &amp; is used for indicating the address of the variable.</p>
 <p>While entering the values in the console, press enter or tab key after every value entry.</p>
-<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sizeof</span><span class="op">(</span>var<span class="op">)</span></span></code></pre></div>
 <p>This function returns in integer, the number of bytes occupied by the variable in memory.</p>
 <ul>
 <li>int occupies 4 bytes,</li>
@@ -176,29 +168,21 @@
 </ul>
 <p>This storage depends on the bit-technology of the compiler and OS.</p>
 <p>But</p>
-<div class="highlight"><pre><span></span>    <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
-</pre></div>
-
-<div class ="highlight"><pre>break;</pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">sizeof</span><span class="op">(</span><span class="dt">char</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">short</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">long</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">long</span> <span class="dt">long</span><span class="op">);</span></span></code></pre></div>
+<pre><code>break;</code></pre>
 <p>This is a command used for breaking a loop structure or a case structure. If a certain loop breaking condition is reached, use break to come out of the loop.</p>
-<div class="highlight"><pre><span></span><span class="k">continue</span><span class="p">;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">continue</span><span class="op">;</span></span></code></pre></div>
 <p>This is a command used for skipping a particular iteration of a loop or a case structure without breaking out of the loop. To make this happen, use a condition or use this where a certain thing happens.</p>
-<div class="highlight"><pre><span></span><span class="k">goto</span>
-</pre></div>
-
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">goto</span></span></code></pre></div>
 <p>This is a statement used for shifting the line of execution from one point to another. It can also break loops and decision statements.</p>
 <p>To make a goto statement work, you need a label along with it. The label is case sensitive.</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">goto</span> <span class="n">label1</span><span class="p">;</span>
-<span class="p">....</span>
-
-<span class="nl">label1</span><span class="p">:</span>
-    <span class="p">......</span>
-</pre></div>
-
+<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">goto</span> label1<span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">....</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>label1<span class="op">:</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">......</span></span></code></pre></div>
 <p><code>goto</code> is not preferred because it can complicate the programming by jumping the execution here and there. Also, if not done properly, you might end up with an infinite loop. goto with line numbers is worse because you may modify the code later and line numbers may change, thus ending with a confusing code. One has to be cautious while using this code.</p>
 <h2 id="data-types-and-symbols">Data types and Symbols</h2>
 <p>There are 4 basic data types</p>
@@ -215,9 +199,7 @@
 </ul>
 <p>This storage depends on the bit-technology of the compiler and OS.</p>
 <p>But in any system,</p>
-<div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">=&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sizeof</span><span class="op">(</span><span class="dt">char</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">short</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">long</span><span class="op">)=&lt;</span><span class="kw">sizeof</span><span class="op">(</span><span class="dt">long</span> <span class="dt">long</span><span class="op">)</span></span></code></pre></div>
 <p>float for real numbers (single precision numbers or precise upto 6-8 digits)</p>
 <p>char for short numbers and characters.</p>
 <p>strings are also available under char but in a different manner.</p>
@@ -232,9 +214,7 @@
 <p><code>void</code> is used for indicating that the variable/function will not return any value.</p>
 <p><code>const</code> is used for making a constant in the program</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">AREA</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb16"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> AREA <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span></code></pre></div>
 <p>(constants, by practice have to be in upper case. they need not be in caps. Used to differentiate them from variables)</p>
 <p>To place the variables inside strings (as in the case of print statements) or to get the values (in case of scan statements,) type specifiers or format specifiers are needed.</p>
 <p><code>%d</code> or <code>%i</code> for integers/ number part of characters/short integers</p>
@@ -258,14 +238,12 @@
 <p>This can be edited also.</p>
 <p><code>%5.3f</code> indicates that in a field of 5 spaces, allocate 3 spaces for digits to the right of the period, 1 for the point and the rest for the digits to the left of the period (with or without sign)</p>
 <p>Both the whole number and decimal number part are optional, but good to add them for specific output formats. Some examples are:</p>
-<div class="highlight"><pre><span></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%03d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
-</pre></div>
-
+<div class="sourceCode" id="cb17"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span>b<span class="op">);</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;%3d</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span>b<span class="op">);</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;%03d</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span>b<span class="op">);</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;%3.2f</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span>d<span class="op">);</span></span></code></pre></div>
 <p>The outputs are</p>
-<div class ="highlight"><pre>   7   70075.10</pre></div>
+<pre><code>   7   70075.10</code></pre>
 <p>Other examples are:</p>
 <p><code>%d</code> (print as a decimal integer) <code>%6d</code> (print as a decimal integer with a width of at least 6 wide)</p>
 <p><code>%f</code> (print as a floating point)</p>
@@ -293,9 +271,7 @@
 <p>Meaning, to the left and right of the operator, the sub-expressions are noticed as to whether they are involved in any other sub-expressions.</p>
 <p>If they are, then that expression is not done. If it is not, then it is done.</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span>
-</pre></div>
-
+<div class="sourceCode" id="cb19"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="op">/</span><span class="dv">5</span><span class="op">*</span><span class="dv">2</span></span></code></pre></div>
 <p>The <code>/</code> operator is executed first, because 10(sub-expression on the left of <code>/</code>) is not involved in any other operation.</p>
 <p>Whereas <code>*</code> is done second because 5(left of <code>*</code> ) is involved in <code>/</code> operation.</p>
 <p>This is also called as operator associativity.</p>
@@ -310,47 +286,39 @@
 <p><code>""</code> is used for string input.</p>
 <p><code>''</code> is used for character input.</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
-<span class="n">option</span> <span class="o">=</span> <span class="sc">&#39;Y&#39;</span><span class="p">;</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Arun&quot;</span><span class="p">;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb20"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="ch">&#39;A&#39;</span><span class="op">;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>option <span class="op">=</span> <span class="ch">&#39;Y&#39;</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Arun&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>Characters can also be added.</p>
 <p>Characters carry an ASCII value. So, if characters are added, a new character is created that is equal to the sum of the characters’ ASCII value.</p>
 <p>strings are available and are given as a part of char.</p>
 <p>When character variables are operated and assigned to another character variable, a new symbol or character is stored in the new character variable.</p>
 <p>If the assignment is to an integer, the result of the ASCII value operation of the characters is stored.</p>
 <p>Relational operators are</p>
-<div class="highlight"><pre><span></span><span class="o">==</span>
-<span class="o">&gt;</span>
-<span class="o">&lt;</span>
-<span class="o">&gt;=</span>
-<span class="o">&lt;=</span>
-<span class="o">!=</span>
-</pre></div>
-
+<div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">==</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;=</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;=</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">!=</span></span></code></pre></div>
 <p><code>=</code> is a normal equal sign.</p>
 <p>Logical operators are</p>
-<div class="highlight"><pre><span></span><span class="o">&amp;&amp;</span> <span class="k">for</span> <span class="n">AND</span>
-<span class="o">||</span> <span class="k">for</span> <span class="n">OR</span>
-<span class="o">!</span> <span class="k">for</span> <span class="n">NOT</span>
-</pre></div>
-
+<div class="sourceCode" id="cb22"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">&amp;&amp;</span> <span class="cf">for</span> AND</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="op">||</span> <span class="cf">for</span> OR</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> <span class="cf">for</span> NOT</span></code></pre></div>
 <p>Escape Sequences are used for re-arranging/formatting the output properly. They are also used for placing key symbols inside strings. </p>
 <p>They have to be placed within string quotes.</p>
 <p><code>\</code> symbol is for escaping a reserved symbol and using it in print statement or other places.</p>
 <p>eg: <code>C \' \\ \" \&amp;</code> etc.,</p>
 <p>The default escape sequences are</p>
-<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
-<span class="err">\</span><span class="n">t</span> <span class="p">(</span><span class="n">tab</span><span class="p">)</span>
-<span class="err">\</span><span class="n">v</span> <span class="p">(</span><span class="n">vertical</span> <span class="n">tab</span><span class="p">)</span>
-<span class="err">\</span><span class="n">f</span> <span class="p">(</span><span class="n">new</span> <span class="n">page</span><span class="p">)</span>
-<span class="err">\</span><span class="n">b</span> <span class="p">(</span><span class="n">backspace</span><span class="p">)</span>
-<span class="err">\</span><span class="n">r</span> <span class="p">(</span><span class="n">carriage</span> <span class="k">return</span><span class="p">)</span>
-<span class="err">\</span><span class="n">n</span> <span class="p">(</span><span class="n">newline</span><span class="p">)</span>
-<span class="err">\</span><span class="n">a</span> <span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="n">invokes</span> <span class="n">a</span> <span class="n">beep</span> <span class="n">sound</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb23"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>\n <span class="op">(</span>newline<span class="op">)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>\t <span class="op">(</span>tab<span class="op">)</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>\v <span class="op">(</span>vertical tab<span class="op">)</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>\f <span class="op">(</span>new page<span class="op">)</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>\b <span class="op">(</span>backspace<span class="op">)</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>\r <span class="op">(</span>carriage <span class="cf">return</span><span class="op">)</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>\n <span class="op">(</span>newline<span class="op">)</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>\a <span class="op">(</span>alert<span class="op">,</span> invokes a beep sound<span class="op">)</span></span></code></pre></div>
 <h2 id="storage-classes">Storage Classes</h2>
 <p>Storage classes are ways of storing variables in memory locations. C offers 4 storage classes namely,</p>
 <ol type="1">
@@ -361,9 +329,7 @@
 </ol>
 <p>To make a variable stored in the class, use their name during declariation.</p>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="k">auto</span> <span class="kt">int</span> <span class="n">j</span>
-</pre></div>
-
+<div class="sourceCode" id="cb24"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">int</span> i<span class="op">;</span> <span class="dt">auto</span> <span class="dt">int</span> j</span></code></pre></div>
 <p>auto:</p>
 <p>auto is used for making the variable defined only within the function it is defined in. Outside the function, the variables do not exist. So, when they are accessed, it shows an error. By default, auto is the storage class for all the variables in any function in C.</p>
 <p>register:</p>
@@ -371,34 +337,28 @@
 <h2 id="hash-sequences">Hash Sequences</h2>
 <p>Hash sequences explicitly define certain job to the compiler. Hence they are also termed as compiler directives.</p>
 <p>To define a global constant, use</p>
-<div class="highlight"><pre><span></span><span class="cp">#define VAR_NAME &lt;value&gt;</span>
-</pre></div>
-
+<div class="sourceCode" id="cb25"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#define VAR_NAME &lt;value&gt;</span></span></code></pre></div>
 <p>eg:</p>
-<div class="highlight"><pre><span></span><span class="cp">#define PI 3.141596</span>
-</pre></div>
-
+<div class="sourceCode" id="cb26"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#define PI 3.141596</span></span></code></pre></div>
 <p>These variables have a special data type. So, they adjust accordingly to the variable type of the expression involved. These variables have to be in caps. Also, variables cannot change in the program. Hence they are constants.</p>
 <p>The constants are in capital letters. They need not be. It is a notation or a practice to do so, so that they are differentiated from variables.</p>
 <h2 id="variable-formatting-with-example">Variable Formatting With Example</h2>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
-<span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The color: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;First number: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Second number: %04d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Third number: %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Float number: %3.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hexadecimal: %x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Octal: %o</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unsigned value: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Just print the percentage sign %%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb27"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>main<span class="op">()</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;The color: %s</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">);</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;First number: %d</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">12345</span><span class="op">);</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Second number: %04d</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">25</span><span class="op">);</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Third number: %i</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">1234</span><span class="op">);</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Float number: %3.2f</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="fl">3.14159</span><span class="op">);</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hexadecimal: %x</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">255</span><span class="op">);</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Octal: %o</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">255</span><span class="op">);</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Unsigned value: %u</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">150</span><span class="op">);</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Just print the percentage sign %%</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="dv">10</span><span class="op">);</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The output is</p>
-<div class ="highlight"><pre>The color: blue
+<pre><code>The color: blue
 First number: 12345
 Second number: 0025
 Third number: 1234
@@ -407,115 +367,98 @@ Hexadecimal: ff
 Octal: 377
 Unsigned value: 150
 Just print the percentage sign %
-</pre></div>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="c1">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span>
-<span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%.15s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;:%-15.10s:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
+</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">//http://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>main<span class="op">()</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%15s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%.10s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%-10s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%-15s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%.15s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%15.10s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;:%-15.10s:</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The output is</p>
-<div class="highlight"><pre><span></span><span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
-<span class="o">:</span>  <span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
-<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
-<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
-<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>  <span class="o">:</span>
-<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!:</span>
-<span class="o">:</span>     <span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span><span class="p">:</span>
-<span class="o">:</span><span class="n">Hello</span><span class="p">,</span> <span class="nl">wor</span>     <span class="p">:</span>
-</pre></div>
-
+<div class="sourceCode" id="cb30"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> world<span class="op">!:</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>  Hello<span class="op">,</span> world<span class="op">!:</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> wor<span class="op">:</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> world<span class="op">!:</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> world<span class="op">!</span>  <span class="op">:</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> world<span class="op">!:</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>     Hello<span class="op">,</span> wor<span class="op">:</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="op">:</span>Hello<span class="op">,</span> wor     <span class="op">:</span></span></code></pre></div>
 <h2 id="condition-and-loop-statements">Condition and Loop Statements</h2>
 <h3 id="if-statement">if statement:</h3>
-<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">condition</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Set</span> <span class="n">of</span> <span class="n">commands</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">....</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Final</span> <span class="n">set</span> <span class="n">of</span> <span class="n">commands</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb31"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>condition <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    Set of commands<span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="cf">if</span><span class="op">(</span>condition <span class="dv">2</span><span class="op">)</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    Set of commands <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="op">....</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    Final set of commands<span class="op">;</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The condition expression should evaluate to a logical value 1 or 0 (True or false.).</p>
 <p>if the condition returns a value that is != 0, then the condition is termed as True. Else, it is termed as false.</p>
 <p>Nested if-else statements (if-else statement inside another if-else statement) is possible.</p>
 <h3 id="switch-case-structureconstruct">Switch case structure/construct</h3>
-<div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">case</span> <span class="n">value1</span> <span class="o">||</span> <span class="n">value</span> <span class="n">a</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">b</span><span class="p">:</span>
-          <span class="p">{</span>
-              <span class="n">statement</span> <span class="n">set1</span><span class="p">;</span>
-              <span class="k">break</span><span class="p">;</span>
-          <span class="p">}</span>
-    <span class="k">case</span> <span class="n">value2</span> <span class="o">||</span> <span class="n">value</span> <span class="n">c</span> <span class="o">||</span> <span class="n">value</span> <span class="nl">d</span><span class="p">:</span>
-          <span class="p">{</span>
-              <span class="n">statement</span> <span class="n">set2</span><span class="p">;</span>
-              <span class="k">break</span><span class="p">;</span>
-          <span class="p">}</span>
-<span class="p">.....</span>
-    <span class="k">default</span><span class="o">:</span>
-          <span class="p">{</span>
-             <span class="n">statement</span> <span class="n">set</span> <span class="n">final</span><span class="p">;</span>
-              <span class="k">break</span><span class="p">;</span> 
-           <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb32"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span><span class="op">(</span>varname<span class="op">)</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> value1 <span class="op">||</span> value a <span class="op">||</span> value b<span class="op">:</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>          <span class="op">{</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>              statement set1<span class="op">;</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>              break<span class="op">;</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">}</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> value2 <span class="op">||</span> value c <span class="op">||</span> value d<span class="op">:</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>          <span class="op">{</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>              statement set2<span class="op">;</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>              break<span class="op">;</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>          <span class="op">}</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="op">.....</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>          <span class="op">{</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>             statement set final<span class="op">;</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>              break<span class="op">;</span> </span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>           <span class="op">}</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If the variable value matches any of the case, then that corresponding case statement set is executed. break is necessary to break out the switch case. otherwise, all the codes inside all the cases will be done and then the decision statement terminates.</p>
 <h3 id="while-loop">while loop</h3>
-<div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
-    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb33"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span><span class="op">(</span>condition<span class="op">)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    set of statements<span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    one condition breaker statement<span class="op">;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>In the absence of the condition breaker statement, the while loop will run forever.</p>
 <h3 id="do-while-loop">do while loop</h3>
-<div class="highlight"><pre><span></span><span class="k">do</span>
-<span class="p">{</span>
-    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
-    <span class="n">one</span> <span class="n">condition</span> <span class="n">breaker</span> <span class="n">statement</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb34"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    set of statements<span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    one condition breaker statement<span class="op">;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span><span class="op">(</span>condition<span class="op">)</span></span></code></pre></div>
 <p>There is a small difference. while loop checks condition every time before it executes the set of statements. So, for executing and terminating the set of statements ‘n’ times, it checks the condition ‘n+1’ times. Whereas the do-while loop executes the statements before checking the condition. So for doing ‘n+1’ times the set of statements, it checks the condition ‘n’ times. So, while loop does not even allow executing the code once when the condition fails, whereas do loop allows executing the code atleast once before the condition fails.</p>
 <h3 id="for-loop">for loop</h3>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">initial_value</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span> <span class="k">break</span> <span class="n">or</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="o">/</span><span class="n">decrement</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
-    <span class="n">condition</span> <span class="n">breaking</span> <span class="n">statement</span> <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="n">normal</span> <span class="n">condition</span><span class="p">)</span>
-<span class="p">}</span> 
-</pre></div>
-
+<div class="sourceCode" id="cb35"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span>i <span class="op">=</span> initial_value<span class="op">;</span> increment<span class="op">/</span>decrement <span class="cf">break</span> or normal condition<span class="op">;</span> increment<span class="op">/</span>decrement<span class="op">)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    set of statements<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    condition breaking statement <span class="op">(</span><span class="cf">if</span> a normal condition<span class="op">)</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span></code></pre></div>
 <p>explanation: for loop needs 4 components along with an iterating integer variable. 1. Iterating integer variable 2. Initial value for iterating variable 3. condition statement     a. increment/decrement based condition           This condition fails after a finite number of iterations when the iterating variable because it is incremented/decremented hits a limiting value. This limiting value is given as the condition     b. normal condition           This condition fails after a finite number of iterations when the codes inside the loop bring about a case where the condition fails. 4. Increment/decrement     This can be given using ++ or – operator or by other forced increments/decrements like i + = 3 etc., eg:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="n">or</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">{</span> <span class="n">statements</span><span class="p">;</span> <span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb36"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> or i <span class="op">+=</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> statements<span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 <p>working 1. initialization 2. condition 3. statements 4. increment 5. condition 6. statements 7. increment 8. condition 9. statements 10. increment and so on…..</p>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span>
-<span class="p">{</span>
-    <span class="n">set</span> <span class="n">of</span> <span class="n">statements</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="sourceCode" id="cb37"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(;;)</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    set of statements<span class="op">;</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>This is an infinte loop!. Unless manually terminated or crashed by the system, the program will run perpetually. This is used with manual loop breaks. It is required for some programming applications where till a certain condition is reached, the iterations have to proceed.</p>
 
                 
@@ -542,10 +485,7 @@ Just print the percentage sign %
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -559,10 +499,11 @@ Just print the percentage sign %
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -583,7 +524,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 

@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Plotly_test1 | Plotly | Syntax | Fluidic Colours</title>
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 
     
 	<link rel="stylesheet" href="../../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 
     
+
+    <title>Plotly_test1 | Plotly | Syntax | Fluidic Colours</title>
 
     </head>
     
@@ -66,13 +76,9 @@
 <p>It is a plotting library made for python for making interactive plots in python displayed in html files.</p>
 <h2 id="how-to-get-started">How to get started?</h2>
 <p>Install plotly using <code>pip</code>.</p>
-<div class="highlight"><pre><span></span>pip install plotly
-</pre></div>
-
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install plotly</span></code></pre></div>
 <p>You can also use <code>conda</code> as well.</p>
-<div class="highlight"><pre><span></span>conda install -c conda-forge plotly
-</pre></div>
-
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge plotly</span></code></pre></div>
 <h2 id="to-remember">To remember</h2>
 <p>Plotly has two variants:</p>
 <ul>
@@ -81,71 +87,69 @@
 </ul>
 <p>Both of them are used for making plots. The difference is that the offline version does not the data to be stored in the plotly account.</p>
 <h2 id="how-to-plot-using-plotly">How to Plot using plotly</h2>
-<div class="highlight"><pre><span></span><span class="c1"># Imports</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ply</span>
-
-<span class="c1"># Sample data to plot</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">201</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">y2</span>
-
-<span class="c1">## Plotly steps begin.</span>
-
-<span class="c1">### Step 1: Create Traces</span>
-<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y1</span><span class="p">,</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sine curve&quot;</span><span class="p">,</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">),</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="n">dash</span> <span class="o">=</span> <span class="s1">&#39;dot&#39;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">trace2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y2</span><span class="p">,</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cosine curve&quot;</span><span class="p">,</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">),</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="n">dash</span> <span class="o">=</span> <span class="s1">&#39;dash&#39;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">trace3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y3</span><span class="p">,</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sine + cosine curve&quot;</span><span class="p">,</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">),</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="n">dash</span> <span class="o">=</span> <span class="s1">&#39;dashdot&#39;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="c1">### Step 2: Create information / layout dictionary</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Sine Curves&quot;</span><span class="p">,</span>
-    <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Angle in Radian&quot;</span><span class="p">),</span>
-    <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Angle in Radian&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="c1">### Pack all the traces to get a data list</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">,</span> <span class="n">trace2</span><span class="p">,</span> <span class="n">trace3</span><span class="p">]</span>
-
-<span class="c1">### Create a figure dictionary</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
-
-<span class="c1">### Plot the figure in a html file</span>
-<span class="n">ply</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plotly_test1.html&quot;</span><span class="p">)</span>
-</pre></div>
-
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imports</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objs <span class="im">as</span> go</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.offline <span class="im">as</span> ply</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data to plot</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">201</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">2.0</span><span class="op">*</span>np.pi, n)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> np.sin(x)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> np.cos(x)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>y3 <span class="op">=</span> y1 <span class="op">+</span> y2</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">## Plotly steps begin.</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">### Step 1: Create Traces</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>trace1 <span class="op">=</span> go.Scatter(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y1,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">&quot;sine curve&quot;</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        color <span class="op">=</span> (<span class="st">&quot;green&quot;</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> <span class="dv">4</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        dash <span class="op">=</span> <span class="st">&#39;dot&#39;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>trace2 <span class="op">=</span> go.Scatter(</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y2,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">&quot;cosine curve&quot;</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        color <span class="op">=</span> (<span class="st">&quot;red&quot;</span>),</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> <span class="dv">4</span>,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        dash <span class="op">=</span> <span class="st">&#39;dash&#39;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>trace3 <span class="op">=</span> go.Scatter(</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x,</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y3,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">&quot;sine + cosine curve&quot;</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        color <span class="op">=</span> (<span class="st">&quot;blue&quot;</span>),</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> <span class="dv">4</span>,</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        dash <span class="op">=</span> <span class="st">&#39;dashdot&#39;</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">### Step 2: Create information / layout dictionary</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">&quot;Sine Curves&quot;</span>,</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    xaxis <span class="op">=</span> <span class="bu">dict</span>(title <span class="op">=</span> <span class="st">&quot;Angle in Radian&quot;</span>),</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    yaxis <span class="op">=</span> <span class="bu">dict</span>(title <span class="op">=</span> <span class="st">&quot;Angle in Radian&quot;</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">### Pack all the traces to get a data list</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [trace1, trace2, trace3]</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">### Create a figure dictionary</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> <span class="bu">dict</span>(data <span class="op">=</span> data, layout <span class="op">=</span> layout)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="co">### Plot the figure in a html file</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>ply.plot(data, filename<span class="op">=</span><span class="st">&quot;plotly_test1.html&quot;</span>)</span></code></pre></div>
 
                 
             </div>
@@ -171,10 +175,7 @@
         
     </div>
 
-    <!-- McAfee Trust mark -->
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-
-<!-- D3Js library for plotting -->
+    <!-- D3Js library for plotting -->
 <!-- script src="https://d3js.org/d3.v5.min.js"></script-->
 
 <!-- Plotly.js for plotting -->
@@ -188,10 +189,11 @@
     Bokeh.set_log_level("info");
 </script>
 
+<!-- Commenting out this section, as KaTeX is working perfectly. -->
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script> -->
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
+<!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -212,7 +214,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}},
         linebreaks: { automatic: true }
     }
-});
+}); -->
 </script>
 
 
