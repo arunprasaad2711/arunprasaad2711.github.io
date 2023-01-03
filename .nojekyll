@@ -1,0 +1,5 @@
+exclude:
+  - "*.sh"
+  - .jekyll-cache
+  - "*.json"
+  - "*.md"
