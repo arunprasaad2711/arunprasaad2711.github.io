@@ -20,7 +20,7 @@ This document is made for self-reference.
     * Images for the theme and CSS
 
 ### FOLDER STRUCTURE
-* FluidicColours
+* Colours
     * articles, poems, short stories folders
 * Syntax
     * programming, software, web development folders and files
