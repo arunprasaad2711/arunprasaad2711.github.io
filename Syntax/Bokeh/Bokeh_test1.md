@@ -158,7 +158,17 @@ print(script)
   })();
 </script>
 
+## Rendered Output
+
 <div class="bk-root" id="f7e2854c-5286-4729-a2ce-5c13e9ac7a77" data-root-id="1002"></div>
+
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
 
 ## Status
 It works! A static plot works!

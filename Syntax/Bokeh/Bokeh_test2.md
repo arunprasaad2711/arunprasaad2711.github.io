@@ -162,5 +162,13 @@ print(div)
 
 <div class="bk-root" id="b84b3722-7f3c-4487-960d-82ade8fa290d" data-root-id="1045"></div>
 
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
 ## Status
 Success! It works! Next plan is to move towards 2D animation.
