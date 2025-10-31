@@ -1,0 +1,40 @@
+<!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        {% for social in socials %}
+                        <a 
+                            href="{{ social.href }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="{{ social.name }}"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="{{ social.icon }}" width="32" height="32"></iconify-icon>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">{{ site.title }}</span> | 
+                    <span class="font-semibold">{{ site.author }}</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>

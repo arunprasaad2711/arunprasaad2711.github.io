@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>a place far away | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,84 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="a-place-far-away">A place far away</h1>
+<div class="line-block">There is a place, far away,<br />
+I want to be there someday!<br />
+As I sail, on this wavy bay,<br />
+I can only hope and pray!<br />
+<br />
+I float now, on these blue waters,<br />
+With stories from many trotters,<br />
+With no place to call my quarters,<br />
+Moving with gems that matters.<br />
+<br />
+Travelling far and wide,<br />
+An emptiness lurks inside,<br />
+Casting all the happiness aside,<br />
+And giving me an emotional ride!<br />
+<br />
+There is this place, quite far away,<br />
+My heart yearns to be there every day,<br />
+The darkness in me, tells every day,<br />
+My trials don’t matter in any way.<br />
+<br />
+I started this voyage, full of hope,<br />
+And tied the masts with a strong rope,<br />
+Now I fear, if my voyage is a trope,<br />
+And I hope, that there is still hope!<br />
+<br />
+I sailed over regions left and right!<br />
+Yet the dream place was not in sight!<br />
+Will I get there before my eternal night?<br />
+This is a test: a test of my might!</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +303,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

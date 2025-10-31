@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>prayer to the universe part 1 | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,120 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="prayer-to-the-universe---part-1">Prayer to the Universe - Part
+1</h1>
+<div class="line-block">I address you because you are absolute,<br />
+And I believe that you are godly,<br />
+And so with all the will and faith,<br />
+I am asking you a lot gently listen.<br />
+<br />
+Thank you for your valuable lessons,<br />
+For teaching us various facets of life,<br />
+Thank you for your joys and pleasures,<br />
+Its a sign for our hopes being alive.<br />
+<br />
+Let the air fill with hope and spirit,<br />
+Millions and Millions are in desperate need,<br />
+Reflect back all the wishes and prayers,<br />
+For those who are worthy and deserving.<br />
+<br />
+Let science and literature expand more,<br />
+Let people know more about you,<br />
+Let people touch your string that connect,<br />
+Each and everyone and form a theory.<br />
+<br />
+When times are dark, and hopes are faint,<br />
+When good is rare, and faith is shaking,<br />
+Give people the strength to sail the storms,<br />
+Give them the courage to remain strong.<br />
+<br />
+Let poverty vanish from the world,<br />
+Let the hungry children get a good meal,<br />
+Give every being a happy family,<br />
+Make this world a better place to live.<br />
+<br />
+Please make man to realise his errors,<br />
+And all the blunders and faults he has caused,<br />
+Let him realise from this moment,<br />
+That he has to change and get remorse.<br />
+<br />
+Let the corruption to this beautiful planet,<br />
+Fade one by one till its fine once again,<br />
+Let every new soul born in this world,<br />
+Let it feel that this planet is a haven.<br />
+<br />
+Let the sky fill with flamboyant birds,<br />
+Let the world reach the ultimate limits of happiness,<br />
+Let all the suffering, corruption, and all things bad,<br />
+Let all of these feel that they have no bond with this world.<br />
+<br />
+Let each family have heaven within,<br />
+Let there be events to rejuvenate the happiness,<br />
+Does a butterfly need a license to fly?<br />
+Let the same be for the living and love.<br />
+<br />
+If all of this is hard to make soon,<br />
+Let it happen in its own pace,<br />
+But let it happen in a pace such that,<br />
+It keeps faith strong and always hopes up.<br />
+<br />
+If some of these are to be done by us,<br />
+Throw out signs, and please let us know,<br />
+Lend us the magic to set things right,<br />
+And bless us with your immaculate grace,<br />
+<br />
+Shower your rays of joy to all living souls,<br />
+Help them realise their roles in this cosmic existence,</div>
+<p>|, Unlike the birds that take shelter during rains, | Help us find
+the eagle in us to bask in the sunlight above the nimbus.</p>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +339,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>behind the gate | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,95 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="behind-the-gate">Behind the Gate</h1>
+<div class="line-block">In all my wanderings, in my one singular
+quest,<br />
+I sought knowledge, without any rest.<br />
+Little did I expect, for the truth to be so stark,<br />
+With infinite perspectives, like a storyline’s arc.<br />
+<br />
+The truth is a circle, without a beginning or end,<br />
+Still, Yet through its strokes, it has the knowledge to send.<br />
+The circle maintains a flow, and serves as a balance,<br />
+To let the energy flow, without any imbalance.<br />
+<br />
+In it there are markings, and exotic drawings,<br />
+And many obscure paintings, and prideful writings.<br />
+These myriad inscriptions, add colours to the truth,<br />
+Painting a picture of suffering, pain and ruth.<br />
+<br />
+Still, the truth set me free, gave me the power to be God,<br />
+I became arrogant and challenged God as a fraud.<br />
+In my naive foolishness, I tried to break the rules,<br />
+And the price I had to pay, I had no clues.<br />
+<br />
+The truth opened a gate, and pulled me inside,<br />
+Where I saw a being, without a form outside.<br />
+It’s a bone-chilling smile, I remember forever,<br />
+The darkest secrets of life, I remember forever.<br />
+<br />
+For my blatant errors, and my avarice,<br />
+I lost a lot, and it’s a painful sacrifice.<br />
+Still, the secrets I saw, and the lessons I learnt,<br />
+Do greatly help me, though I am burnt.<br />
+<br />
+That is when I realised: not all rules are lies,<br />
+Some maintain balance; without it, we’ll die like flies.<br />
+The universe has a flow that you must understand,<br />
+Before you deconstruct, you must comprehend.<br />
+<br />
+Only when you comprehend, can you understand,<br />
+To deconstruct and reconstruct, with your hand.<br />
+To use this power demands equivalent exchange,<br />
+And that is the truth, of this universe quite strange.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +314,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

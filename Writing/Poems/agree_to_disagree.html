@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>agree to disagree | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,85 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="agree-to-disagree">Agree to Disagree</h1>
+<div class="line-block">The world around us is not as simple as it
+seems,<br />
+Rarely it happens, just like our dreams.<br />
+For there are events, that are not in our hand,<br />
+Factors that are plenty, like the grains of sand.<br />
+<br />
+It is hard to keep going, all the time so strong,<br />
+When the choices we made, can go wrong.<br />
+Life is not so simple, and painted black and white,<br />
+It is messy and twisted, and hardly you are right.<br />
+<br />
+Even when facts are strong, you can go wrong,<br />
+And there is more to tell, about the tale so long.<br />
+There is always a limit, for you to comprehend,<br />
+Beyond that it is dubious, built on intend.<br />
+<br />
+We all look at events, and incidents in life,<br />
+And gather bit and pieces, and end up in strife,<br />
+For you would like to think, that you are quite right,<br />
+And me to be so wrong, to miss the truth in sight.<br />
+<br />
+All the bits we have, are parts of a bigger puzzle,<br />
+Although it seems perfect, it is in a tousle.<br />
+Sometimes you're lucky, to get the right piece,<br />
+Otherwise unfortunate, to find the wrong piece.<br />
+<br />
+In the world full of paint, in shades of grey,<br />
+Which shade is right, is quite hard to say.<br />
+You picked a shade, with a certain degree,<br />
+If it doesn't suit others, agree to disagree.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +304,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

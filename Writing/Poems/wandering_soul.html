@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>wandering soul | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,96 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="wandering-soul">Wandering Soul</h1>
+<div class="line-block">Between right and wrong,<br />
+Between madness and valour,<br />
+Between past and future,<br />
+A field of grey,<br />
+A surreal feeling,<br />
+A present moment,<br />
+<br />
+A singular moment,<br />
+Where I wish time froze still,<br />
+A conflicted feeling,<br />
+Where I wish to cry and smile,<br />
+A blurry field,<br />
+Where I hope I am right,<br />
+<br />
+Like the still waters of a deep lake,<br />
+The moon uses to admire its form,<br />
+Keep calm, and be hopeful,<br />
+Wherever I am, I'll find my way to you,<br />
+For I am a sailor, aboard on a voyage,<br />
+And you, my beloved, are my pole star,<br />
+<br />
+Like the bees that visit flowers,<br />
+I wander in search of a treasure,<br />
+Despite visiting many blossoms,<br />
+The bee knows its way to its hive,<br />
+Wherever I may go or be,<br />
+My heart will beat your name,<br />
+<br />
+In times when I was lost, broken or hopeless,<br />
+Drifting aimlessly on the tides of life,<br />
+Even when the moon refused to show itself,<br />
+I saw you twinkling on my night sky,<br />
+Guiding me to the nearest shore,<br />
+And you filled my heart with hope,<br />
+<br />
+I am a wanderer, venturing into the unknown,<br />
+Filled with fear and valour in equal measure,<br />
+But the bond I have with you,<br />
+Is stronger than the mountain and land,<br />
+Despite the uncertainty, one thing is clear,<br />
+Because of you, a wanderer like me is never truly lost,</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +315,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

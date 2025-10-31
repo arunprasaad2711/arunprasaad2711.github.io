@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Jinja2 Notes | Jinja | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="jinja2-notes">Jinja2 Notes</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p>Jinja is a template engine (it is like a language on its own) that
+helps to place strings in documents. Essentially, you have a document
+with placeholders or variables called template. The data to be placed is
+provided by another file or from user.</p>
+<p>Jinja takes the data from the user and places it at the placeholders
+in the template to give you the desired document.</p>
+<p>This is more powerful than the built-in string formatter of
+Python.</p>
+<p>It is used with Flask and Django web frameworks for making web
+pages.</p>
+<p>However, it is generic in nature and can be used in many ways.</p>
+<p>These notes are taken from <a
+href="https://www.youtube.com/watch?v=bxhXQG1qJPM">a YouTube Tutorial on
+Jinja2 by Jason Rigden</a></p>
+<h2 id="example">Example</h2>
+<p>Let’s say that the template file had a sentence like this:</p>
+<pre><code>{{name}} had a little {{animal}}</code></pre>
+<p>Here, <code>name</code> is a variable and it is placed within
+backticks. Same with <code>animal</code>. The curly brackets are
+placeholders for the variables.</p>
+<p>Suppose <code>name = 'Mary'</code> and <code>animal = 'Lamb'</code>
+are the values provided by the user.</p>
+<p>Then Jinja will take these values and replace the variables in the
+template to give this file:</p>
+<pre><code>Mary had a little Lamb</code></pre>
+<h2 id="where-is-it-used">Where is it used?</h2>
+<ul>
+<li>Websites.</li>
+<li>Making large text documents.</li>
+</ul>
+<h2 id="how-to-go-about-it">How to go about it?</h2>
+<ul>
+<li>Create a template document with placeholders.</li>
+<li>Write python code to generate the output file.</li>
+<li>Give data to the python file either as a text file or as direct
+input.</li>
+<li>Run the code to generate the output file.</li>
+</ul>
+<h2 id="how-to-start">How to start?</h2>
+<p>The following examples go from a simplistic case to an advanced case
+step-by-step.</p>
+<h3 id="example-1-read-and-print-a-text-file.">Example 1: Read and Print
+a text file.</h3>
+<p>Note: This is a preliminary “Hello, World!” program to sort out the
+basics!</p>
+<ul>
+<li>Open a Python file and write this line first in it.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span></code></pre></div>
+<ul>
+<li>Create a file loader variable and pass the folder name where the
+template files are present.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span></code></pre></div>
+<ul>
+<li><p>Note that the directory/folder name here can by
+anything!</p></li>
+<li><p>Create an enviroment variable and pass the file loader variable
+to it.</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li><p>Now, the environment is ready.</p></li>
+<li><p>Now, create an input text file and write contents into it. We’ll
+call it “hello_world.txt”</p></li>
+</ul>
+<pre><code>Hello, world!</code></pre>
+<ul>
+<li>In the python file, create a template variable and pass the text to
+it.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;hello_world.txt&#39;</span>)</span></code></pre></div>
+<ul>
+<li>Now, create an output variable by rendering the template variable
+and print it.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li><p>You can pass variables to the <code>render()</code> method. But,
+that is for a future example.</p></li>
+<li><p>Run the python file and the output will be:</p></li>
+</ul>
+<pre><code>Hello, World!</code></pre>
+<p>This is the full code:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a template variable via environment</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;hello_world.txt&#39;</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the template and create an output variable.</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render()</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print it out to see or export it to a new file as you see fit.</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<h3 id="example-2-adding-variables.">Example 2: Adding Variables.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Create a template file and place variables with curly bracket
+placeholders. Let’s call it <code>lamb.txt</code></li>
+</ul>
+<pre><code>{{name}} had a little {{animal}}.</code></pre>
+<ul>
+<li>Load the template and render it with variables.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a template variable via environment</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;lamb.txt&#39;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the template and create an output variable.</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(name<span class="op">=</span><span class="st">&#39;Mary&#39;</span>, animal<span class="op">=</span><span class="st">&#39;Lamb&#39;</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print it out to see or export it to a new file as you see fit.</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>The output is</li>
+</ul>
+<pre><code>Mary had a little Lamb.</code></pre>
+<h3 id="example-3-using-dictionaries">Example 3: Using Dictionaries</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Create a template file and place variables with curly bracket
+placeholders. Let’s call it <code>lamb.txt</code></li>
+</ul>
+<pre><code>{{data.name}} had a little {{data.animal}}.</code></pre>
+<ul>
+<li>Load the template and render it with a dictionary.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a template variable via environment</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;lamb.txt&#39;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dictionary</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {}</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>person[<span class="st">&#39;name&#39;</span>] <span class="op">=</span> <span class="st">&#39;Mary&#39;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>person[<span class="st">&#39;animal&#39;</span>] <span class="op">=</span> <span class="st">&#39;Lamb&#39;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the template and create an output variable.</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(data<span class="op">=</span>person)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print it out to see or export it to a new file as you see fit.</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>The output is</li>
+</ul>
+<pre><code>Mary had a little Lamb.</code></pre>
+<h3 id="example-4-using-if-else-statements.">Example 4: Using if-else
+statements.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Template file: <code>truth.txt</code></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>{<span class="op">%</span> <span class="cf">if</span> truth <span class="op">%</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    This <span class="kw">is</span> true</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>{<span class="op">%</span> <span class="cf">else</span> <span class="op">%</span>}</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    This <span class="kw">is</span> false</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>{<span class="op">%</span> endif <span class="op">%</span>}</span></code></pre></div>
+<ul>
+<li>Modifications 1: Set truth variable to be True</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;truth.txt&#39;</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(truth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>This is true</code></pre>
+<ul>
+<li>Modifications 2: Set truth variable to be False</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;truth.txt&#39;</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(truth<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>This is false</code></pre>
+<h3 id="example-5-for-loops-using-liststuples">Example 5: For loops
+using lists/tuples</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Template file: <code>rainbow.txt</code></li>
+</ul>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>{<span class="op">%</span> <span class="cf">for</span> colour <span class="kw">in</span> colours <span class="op">%</span>}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    {{colour}}</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>{<span class="op">%</span> endfor <span class="op">%</span>}</span></code></pre></div>
+<ul>
+<li>Modifications: Pass a list/tuple</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;rainbow.txt&#39;</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>colours <span class="op">=</span> [<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(colours<span class="op">=</span>colours)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>Output</li>
+</ul>
+<pre><code>red
+
+green
+
+blue</code></pre>
+<h3
+id="example-6-template-inheritance---combine-blocks-from-multiple-places.">Example
+6: Template inheritance - combine blocks from multiple places.</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Include file: <code>header.html</code> - Has the title. It will be
+included in the template.</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{{title}}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span></code></pre></div>
+<ul>
+<li>Base file: <code>base.html</code> - This is the base file.</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    {% include &#39;header.html&#39; %}</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<ul>
+<li>Modifications</li>
+</ul>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;base.html&#39;</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(title<span class="op">=</span><span class="st">&quot;Hey, there!&quot;</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>Output</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Hey, there!<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>Observation: Here, the <code>base.html</code> file automatically
+called <code>header.html</code> file. And inside it, the title variable
+was automatically placed.</p>
+<h3 id="example-7-template-rendering-placing-data-in-body-tag">Example
+7: Template rendering + Placing data in body tag</h3>
+<ul>
+<li>Prerequisite code</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the required methods</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jinja2 <span class="im">import</span> Environment, FileSystemLoader</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the template directory and environment </span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>file_loader <span class="op">=</span> FileSystemLoader(<span class="st">&#39;templates&#39;</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> Environment(loader<span class="op">=</span>file_loader)</span></code></pre></div>
+<ul>
+<li>Include file: <code>header.html</code> - Has the title. It will be
+included in the template.</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{{title}}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span></code></pre></div>
+<ul>
+<li>Base file: <code>base.html</code> - This is the base file with
+content!</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    {% include &#39;header.html&#39; %}</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    {% block content %}</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    {% endblock %}</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<ul>
+<li>Template file: <code>child.html</code> - Contents of this file fill
+be placed.</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>{% extends &quot;base.html&quot; %}</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        {{body}}</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code></pre></div>
+<ul>
+<li>Modifications</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> env.get_template(<span class="st">&#39;child.html&#39;</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> template.render(title<span class="op">=</span><span class="st">&quot;Hey, there!&quot;</span>, body<span class="op">=</span><span class="st">&quot;Brown cow!&quot;</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(output)</span></code></pre></div>
+<ul>
+<li>Output</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Hey, there!<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>            Brown cow!</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

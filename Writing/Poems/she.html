@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>she | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,95 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="she">She</h1>
+<div class="line-block">She was the angel, who made me cry and
+smile,<br />
+She is my princess, I asked all my life,<br />
+She made my lover a queen, and me a king,<br />
+She is my happiness and also my pride.<br />
+<br />
+She is competing, with me for attention,<br />
+She does console, when I cry or at loss,<br />
+She was there sharing, her childhood with me,<br />
+She is here to care, for me with all her heart.<br />
+<br />
+She was there with me, sharing a journey,<br />
+She was the support, I could rely on,<br />
+She is a rival, that I can never defeat,<br />
+She knocks sense to me, whenever I stray.<br />
+<br />
+She charmed her way to my heart,<br />
+She still dreams, for both our future,<br />
+She is my love and I’m her lover,<br />
+She stands with me through tough times.<br />
+<br />
+She smiled, when I cried for the first time,<br />
+She was there happy, when I took my first step,<br />
+She was anxious, for nine moons in life,<br />
+She is proud, and always there for me.<br />
+<br />
+She was the one, who taugh me the world,<br />
+She instilled me with hope, to achieve my dreams,<br />
+She poured into me her knowledge of many years,<br />
+She might forget me, but I can’t forget her.<br />
+<br />
+She gave my mother, a wonderful childhood,<br />
+She was a companion, and competition to her,<br />
+She is the confidant, to my mother even today,<br />
+She is there for me, as a second mother.<br />
+<br />
+She was the one who told me stories,<br />
+She poured into me her wisdom of ages,<br />
+She defended me from her daughter’s rules,<br />
+She was strong as steel, yet frail as a twig.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +314,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

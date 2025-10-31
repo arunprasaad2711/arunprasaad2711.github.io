@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>Introduction to Scientific Computation Using Python | Scientific_Computation_Using_Python | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,189 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1
+id="introduction-to-scientific-computation-using-python">Introduction to
+Scientific Computation Using Python</h1>
+<p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad
+Gunasekaran</a></p>
+<p>Video 4 : Operations Part 1</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<!-- TOC -->
+<ul>
+<li><a
+href="#introduction-to-scientific-computation-using-python">Introduction
+to Scientific Computation Using Python</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#basic-arithmetic-operations-in-python">Basic Arithmetic
+Operations in Python</a></li>
+<li><a href="#program-to-test-all-basic-operations">Program to test all
+Basic Operations</a></li>
+<li><a href="#output">Output</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="basic-arithmetic-operations-in-python">Basic Arithmetic
+Operations in Python</h2>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operator</th>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Operation</th>
+<th style="text-align: center;">Example</th>
+<th style="text-align: center;">Result</th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">Addition</td>
+<td style="text-align: center;"><code>a + b</code></td>
+<td style="text-align: center;">5 + 6</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">Normal Addition</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Subtraction</td>
+<td style="text-align: center;"><code>a - b</code></td>
+<td style="text-align: center;">5 - 6</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">Normal Subtraction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">Multiplication</td>
+<td style="text-align: center;"><code>a * b</code></td>
+<td style="text-align: center;">5 * 6</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">Normal Multiplication</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">Division</td>
+<td style="text-align: center;"><code>a / b</code></td>
+<td style="text-align: center;">6 / 4</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">Normal Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">//</td>
+<td style="text-align: center;">Floor Division</td>
+<td style="text-align: center;"><code>a // b</code></td>
+<td style="text-align: center;">15 // 4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Division + removes decimal part</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">%</td>
+<td style="text-align: center;">Modulus</td>
+<td style="text-align: center;"><code>a % b</code></td>
+<td style="text-align: center;">22 % 4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Returns the Remainder of Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">**</td>
+<td style="text-align: center;">Exponentiation</td>
+<td style="text-align: center;"><code>a ** b</code></td>
+<td style="text-align: center;">2 ** 4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">Same as <code>2*2*2*2</code>.
+Exponent</td>
+</tr>
+</tbody>
+</table>
+<h2 id="program-to-test-all-basic-operations">Program to test all Basic
+Operations</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a = &quot;</span>, a, <span class="st">&quot; and b = &quot;</span>, b)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a + b = &quot;</span>, a <span class="op">+</span> b)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtraction</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a - b = &quot;</span>, a <span class="op">-</span> b)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiplication</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a * b = &quot;</span>, a <span class="op">*</span> b)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Division</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a / b = &quot;</span>, a <span class="op">/</span> b)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Floor Division</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a // b = &quot;</span>, a <span class="op">//</span> b)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Modulus</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a % b = &quot;</span>, a <span class="op">%</span> b)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponentiation</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a ** b = &quot;</span>, a <span class="op">**</span> b)</span></code></pre></div>
+<h2 id="output">Output</h2>
+<pre><code>a =  11  and b =  2
+a + b =  13
+a - b =  9
+a * b =  22
+a / b =  5.5
+a // b =  5
+a % b =  1
+a ** b =  121</code></pre>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +408,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

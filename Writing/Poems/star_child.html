@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>star child | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,144 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="star-child">Star Child</h1>
+<div class="line-block">Days will come and days will go,<br />
+The trifles of life can weigh you down.<br />
+Hope may seem bleak and future uncertain, - yet,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+Your blissful solitude may turn to silence,<br />
+Your heart might prefer violence,<br />
+Amidst hardship, defeat and despair,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+When the myriad walls that keep you safe break,<br />
+Making you question your faith,<br />
+Keeping you pondering with sleepless nights,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+At these times, hope may seem faint,<br />
+You might feel well-off being a saint,<br />
+With trials and tribulations seemingly vain,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+When your lookout for love goes barren,<br />
+When drifting friendships make you sad,<br />
+When the gravity of reality weighs on you,<br />
+Don't settle for the dust, my star child.<br />
+<br />
+Days will go, but keep fighting,<br />
+The war will be won, despite a few battles,<br />
+Where is the chase when things go smooth?<br />
+Be strong and move on, my star child.<br />
+<br />
+Search your feelings in the cold silence,<br />
+You will know that there is no end to violence,<br />
+The harder you burn on the inside,<br />
+The brighter you shine to all my star child.<br />
+<br />
+Walls can crumble, but ideas cannot,<br />
+Test your faith; it strengthens your resolve,<br />
+Confront the storm with might, my dear,<br />
+You will emerge stronger, my star child.<br />
+<br />
+Flow like a stream my star child,<br />
+Forge your way, noble and brave.<br />
+All your efforts will come around,<br />
+You'll reap bounties far and wide.<br />
+<br />
+Pursue your passion my star child,<br />
+Lose your self and bask in its glory.<br />
+Your passion will find your lost self back,<br />
+Infinitely strong and wise you'll become,<br />
+<br />
+You are not alone, my star child,<br />
+There are many like you burning inside,<br />
+Amidst pain and suffering, they are bright,<br />
+A symbol they are, that all things not lost.<br />
+<br />
+Why do we fall? Tell me my star child,<br />
+To master the art of picking ourselves up.<br />
+The bigger you fall, the higher you rise,<br />
+Keep moving; you are in for a surprise.<br />
+<br />
+You might seem odd, unflagging all alone,<br />
+But your light guides the mortals in their nights.<br />
+Lost in the sea navigating on chunks of dust,<br />
+Finding their way home, in vast never-ending seas.<br />
+<br />
+Real friends are like stars, my star child,<br />
+Sometimes, they are far far away.<br />
+But they are always around you,<br />
+Even in your darkest night my dear.<br />
+<br />
+You are the child of sun my dear one,<br />
+Born to accomplish a higher purpose.<br />
+The gravity of it is unfathomable,<br />
+To other mortals who try to eclipse you.<br />
+<br />
+Your grandparents the cosmos, are there for you,<br />
+Looking after you, through thick and thin.<br />
+As we speak, they listen to your prayers,<br />
+And conspiring an angel for you.<br />
+<br />
+You will meet the angel from heaven,<br />
+Forged in hellfire, nourished by the elixir.<br />
+You will find love and the whole nine yards,<br />
+So do not be sad, soon, you'll be glad.<br />
+<br />
+You are the child of sun my dear one,<br />
+After every winter, you'll face a summer,<br />
+So don't settle for the dust, my star child,<br />
+For you are the substance that makes suns!</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +363,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

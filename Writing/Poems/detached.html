@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>detached | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="detached">Detached</h1>
+<div class="line-block">I started to run,<br />
+Even before I could walk,<br />
+There were needs, and time was short.<br />
+<br />
+The farther I went,<br />
+The finish line went even farther,<br />
+I ran faster, yet nothing in sight.<br />
+<br />
+My feet bled, sore from pain,<br />
+Everything else became a blur,<br />
+I turn back, and I was all alone.<br />
+<br />
+Time went fast and slow,<br />
+Days fleeted like minutes,<br />
+Went a long way, still feel I've learnt none.<br />
+<br />
+Some of my dreams came true,<br />
+But why do I feel so empty?<br />
+And not a smile on my face?<br />
+<br />
+While I see others, running and happy,<br />
+Can't help but feel raging envy.<br />
+Why didn't it happen to me?<br />
+<br />
+Did I go wrong? Take a wrong turn?<br />
+Everything seems out of place.<br />
+The irrational heart asked, why me?<br />
+<br />
+While I kept running, I forgot,<br />
+To see the scenery, city, and people,<br />
+The curse of never wandering.<br />
+<br />
+Am I the person I am?<br />
+I feel like an alien to myself.<br />
+Trapped in a world that speaks a foreign tongue.<br />
+<br />
+Trying to learn the rules of the game,<br />
+It is such a mess and drives me insane.<br />
+Feeling lost in this unending maze.<br />
+<br />
+Kept running all day, and I lost track,<br />
+Of other pursuits that keep life intact,<br />
+For once I felt I was ready to enact.<br />
+<br />
+The setting was different, and things were subtle,<br />
+I learnt the alphabets and tried to write,<br />
+The settings wanted prose instead.<br />
+<br />
+It is hard to keep the embers burning,<br />
+Realising my limits, yet pursuing,<br />
+In an ever-changing world, detached.<br />
+<br />
+I will keep my embers burning bright,<br />
+Forgo all the weight that pulled me back,<br />
+And I shall pause for a while, here and there.<br />
+<br />
+Like the ball that sinks in water,<br />
+Amidst all noise, I shall rise,<br />
+For I have many promises to keep.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

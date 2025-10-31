@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>HTML5 and CSS3 Tutorials. | HTML5_CSS3 | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,129 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="html5-and-css3-tutorials.">HTML5 and CSS3 Tutorials.</h1>
+<p>A beginner’s guide to front end web development.</p>
+<p>Arun Prasaad Gunasekaran</p>
+<h2 id="what-is-this-playlist-about">What is this playlist about?</h2>
+<ul>
+<li>Talks about the building blocks of HTML5 and CSS3.</li>
+<li>Further backed up by some neat close to real time application
+oriented examples.</li>
+<li>Intended for beginners.</li>
+</ul>
+<h2 id="uses">Uses</h2>
+<ul>
+<li>Making websites and webpages.</li>
+<li>Making internet applications.</li>
+<li>Front-end or GUI for software like editors, games.</li>
+</ul>
+<h2 id="youtube-video">YouTube Video</h2>
+<iframe width="540" height="315" src="https://www.youtube.com/embed/99jGZ7ynVUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h2 id="things-to-keep-in-mind">Things to keep in mind</h2>
+<ul>
+<li>HTML - Hyper Text Markup Language
+<ul>
+<li>Technically not a Programming Language.</li>
+<li>List of tags surrounding the contents of your webpage.</li>
+<li>Helps you to place contents in an orderly manner.</li>
+</ul></li>
+<li>CSS - Cascading Style Sheets.
+<ul>
+<li>Technically not a Programming Language.</li>
+<li>List of styles you want the webpage elements to follow.</li>
+<li>Helps you make the webpages pretty.</li>
+</ul></li>
+<li>JavaScript, PHP
+<ul>
+<li>Programming languages to assist programming functionality in
+websites.</li>
+</ul></li>
+</ul>
+<p><strong>We will be following HTML5 and CSS3 standards.</strong></p>
+<h2 id="what-you-need-to-get-started">What you need to get started
+…</h2>
+<ul>
+<li>Text-Editor/IDE</li>
+<li>Web Browser</li>
+</ul>
+<h2 id="my-setup">My Setup</h2>
+<ul>
+<li>Text-Editor/IDE : Microsoft Visual Studio Code (VSCode)
+<ul>
+<li>Fall back: Geany</li>
+</ul></li>
+<li>Web Browser : Google Chrome
+<ul>
+<li>Fall back: Mozilla Firefox</li>
+</ul></li>
+<li>Operating System - Ubuntu Linux
+<ul>
+<li>Use any OS that supports a web browser and a text editor</li>
+</ul></li>
+</ul>
+<h2 id="useful-extensions-when-using-vscode">Useful Extensions when
+using VSCode</h2>
+<ul>
+<li>Bracket Pair Colorizer,</li>
+<li>Emmet - for auto completion, (built-in in recent versions.)</li>
+<li>Live Server - to update and see your webpage instantly,</li>
+<li>IntelliSense for CSS class names in HTML - for auto completion,</li>
+</ul>
+<h4 id="optional">Optional</h4>
+<ul>
+<li>Live Sass Compiler - to autocompile Sass/Scss files,</li>
+<li>ESlint for JavaScript.</li>
+<li>vscode-icons - fancy icons for looks and style.</li>
+</ul>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +348,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

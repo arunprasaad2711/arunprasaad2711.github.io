@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>LaTeX | LaTeX | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="latex">LaTeX</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#latex">LaTeX</a>
+<ul>
+<li><a href="#symbols">Symbols:</a></li>
+<li><a href="#parenthesis">Parenthesis:</a></li>
+<li><a
+href="#document-basics-environment-commands-document-classes">Document
+Basics, Environment Commands, Document Classes</a></li>
+<li><a href="#document-sections-and-subsections">Document Sections and
+Subsections</a></li>
+<li><a href="#mathematical-notations">Mathematical Notations</a>
+<ul>
+<li><a href="#subscripts-and-superscripts">Subscripts and
+Superscripts:</a></li>
+</ul></li>
+<li><a href="#mathematical-notations-1">Mathematical Notations</a>
+<ul>
+<li><a href="#subscripts-and-super-scripts">Subscripts and
+Super-Scripts</a></li>
+<li><a href="#greek-symbols">Greek Symbols</a></li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#square-root-and-root">Square root and Root</a></li>
+<li><a href="#logarithms">Logarithms</a></li>
+<li><a href="#trigonometry">Trigonometry</a></li>
+<li><a href="#fractions-and-brackets">Fractions and Brackets</a></li>
+<li><a href="#other-symbols">Other Symbols</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#array-of-equations">Array of Equations</a></li>
+<li><a href="#equation-arrays">Equation Arrays</a></li>
+<li><a href="#letter-writing">Letter Writing</a></li>
+<li><a href="#letter-writing-1">Letter Writing</a></li>
+<li><a href="#tables">Tables</a>
+<ul>
+<li><a href="#table-command">Table Command</a></li>
+</ul></li>
+<li><a href="#tables-labels-captions">Tables, Labels, Captions</a></li>
+<li><a href="#text-and-page-formatting">Text and Page
+Formatting</a></li>
+<li><a href="#arrays-and-tabbing">Arrays and Tabbing</a>
+<ul>
+<li><a href="#arrays">Arrays:</a></li>
+<li><a href="#tabbing">Tabbing:</a></li>
+<li><a href="#creating-matrix">Creating Matrix</a></li>
+</ul></li>
+<li><a href="#figures">Figures</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<p>  <strong>Document Sections:</strong>   To create a section in the
+document is easy.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>use <span class="kw">\section</span>{section name}  to create a section in the document.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>use <span class="kw">\subsection</span>{}  to create a sub section</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>use <span class="kw">\subsubsection</span>{}  to create a sub sub section</span></code></pre></div>
+<p>Apparently, only 3 levels of hierarchy are allowed. Chapters are also
+allowed. That is a different category.</p>
+<p>The sizes of these sections are decreasing in size. All these
+sections are in bold.</p>
+<p>Multiple number of sections are allowed. They get automatically
+numbered.   using these sections is necessary for making the table of
+contents. They get numbered accordingly, based on the document type and
+their position within the document.</p>
+<h2 id="symbols">Symbols:</h2>
+<p>Symbols in LaTeX are pre-assigned. So, you cannot use them
+directly.</p>
+<p>Use backslash symbol to type the characters.</p>
+<p>eg: <code>\$ \% \&amp;</code></p>
+<h2 id="parenthesis">Parenthesis:</h2>
+<p>Circular/Round brackets do not have any meaning. <code>()</code>.
+Square brackets have meaning in commands, but they can stand alone.
+<code>[]</code>.</p>
+<p>But! flower/curly brackets are reserved. You cannot print them
+directly! <code>{}</code> To print them, use backslash
+<code>\{ \}.</code></p>
+<p>In commands, <code>[]</code> are used for filling optional
+arguments/instructions, whereas <code>\{\}</code> brackets are used for
+filling the command name.</p>
+<p>use package commands are used for including special packages into the
+file (they add more features to the document)</p>
+<h2 id="document-basics-environment-commands-document-classes">Document
+Basics, Environment Commands, Document Classes</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Documents are of many types, and they are defined by the class files. So, the default class is article.</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Other documents are reports, chapters, letters, beamer, papers, proposals, etc.,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>You have facility to create your own document class using the class files having the extension .cls</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>The default standard fonts in LaTeX are 10, 11, 12. However, short-range increase/decrease of fonts is possible.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>The user details are: author name, date, title, sub-title, institution, logo etc.,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>All of these come under the make title command. All these fields are not available for all class files. They vary for different class files.</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Commands and Environment commands:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Commands in LaTeX start with the backslash symbol. eg: today, maketitle, makeindex etc.,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>Environment commands start with backslash just like normal commands, but they occur in pairs. Environment commands create a region of special formats or special features within the document. They start with a begin and end with an end.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>eg: begin document - end document, </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<h2 id="document-sections-and-subsections">Document Sections and
+Subsections</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\tableofcontents</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\newpage</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Para1}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Para1:2}</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Para2}</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>I am in the second paragraph! <span class="fu">\\</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Para3}</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{para3:1}</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{para3:1:1} </span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>I am using TeXmaker for writing this document!<span class="fu">\\</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Para4}</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport!<span class="fu">\\</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Para5}</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>Hello everyone! LaTeX was made/created by Leslie Lamport! <span class="fu">\\</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<h2 id="mathematical-notations">Mathematical Notations</h2>
+<h3 id="subscripts-and-superscripts">Subscripts and Superscripts:</h3>
+<p>  This section includes how to use subscripts and superscripts.</p>
+<p><strong>Superscripts:</strong></p>
+<p>start the maths mode, (inline or display)</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x^4 will type it in proper mode.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x^45 will type x^4 properly and 5 in the same line and size of x.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>To avoid that, use {}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>x^{45} will type it in proper mode.</span></code></pre></div>
+<p>  Chain superscripts are possible. For that, the {} are to be used
+properly. Otherwise, it is not a big deal. Noticed upto 3 levels. May be
+more.   <strong>Subscripts:</strong>   start the maths mode, (inline or
+display)</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x_4 will type it in proper mode.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x_45 will type x subscript 4 properly and 5 in the same line and size of x.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>To avoid that, use {}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x_{45} will type it in proper mode.</span></code></pre></div>
+<p>  these are more {} sensitive than superscripts.</p>
+<p>Chain subscripts are possible. For that, the {} are to be used
+properly. Otherwise, it is not a big deal. Noticed upto 3 levels. May be
+more.   To include both subscripts and superscripts, use the above rules
+together and with proper use of {},^ and _   <strong>Greek
+Letters:</strong>   To type Greek letters,   go into maths mode (inline
+or display)</p>
+<p>type  followed by a simplified equivalent English pronunciation word
+for the letters.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="fu">\pi</span> for the Greek letter pi</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\alpha</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\beta</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\gamma</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\omega</span> and so on.</span></code></pre></div>
+<p>  if you do not know the proper one, you can always check it out in
+the insert symbols options.   After typing a Greek letter, leave a
+space. Or else, all the letters along with it will be taken as a big
+command.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="ss">$A = </span><span class="sc">\pi</span><span class="ss"> r^2$</span></span></code></pre></div>
+<p><span class="math inline">\(A = \pi r^2\)</span></p>
+<p><strong>Functions:</strong>   For trigonometric functions,   type
+<code>\</code> followed by the function name in English (exactly or
+equivalently depending on the case)</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eg <span class="fu">\cos</span>{} for the cosine function, <span class="fu">\cosh</span>{} for hyperbolic cosine. similar methods exist for other functions and inverse functions.</span></code></pre></div>
+<p><strong>For log functions</strong>:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>type <span class="fu">\log</span>{} for base 10 log function without 10 at the base</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>type <span class="fu">\ln</span>{} for natural log function without e at the base</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>type <span class="fu">\log</span>_{sub}{} for base sub log function with subscript eg: log base 3 or log base 4.5 etc.,</span></code></pre></div>
+<p><strong>for square roots and other roots,</strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>type <span class="fu">\sqrt</span>{} for regular square roots</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>type <span class="fu">\sqrt</span>[root]{} for other roots. eg: cube root, 4.5th root, etc.,</span></code></pre></div>
+<p>chain functions are possible. Use <code>{}</code> and endings
+properly.   similarly, definitions exists for other functions.  
+<strong>Fractions:</strong>   To type a fraction,   go to maths
+mode,</p>
+<p>use <code>\frac{Nr}{Dr}</code>   if used in the in-line maths mode,
+the fraction will look smaller in font.</p>
+<p>to avoid that, wrap the fraction within display style command.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="fu">\displaystyle</span>{<span class="fu">\frac</span>{Nr}{Dr}}</span></code></pre></div>
+<p><span class="math display">\[\displaystyle{\frac{Nr}{Dr}}\]</span>  
+chain fractions are possible. Also, commands and fractions nesting is
+also possible.</p>
+<p>space between two lines intentionally made in the script will give
+line break in the document.</p>
+<p>use tab for jumping between <code>{}</code> from left to right.</p>
+<p>use space between functions as you type them when you write a nested
+function statement.</p>
+<p>This space will not appear in the preview. this will ensure
+readability of the code.   eg:</p>
+<p>to type fractions:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\frac</span><span class="ss">{numerator}{denominator}$</span></span></code></pre></div>
+<p>eg:</p>
+<p><code>$\frac{2}{3}$</code> for 2/3 in fraction representation. this
+shrinks the fraction size to fit in-line</p>
+<p><span class="math display">\[\frac{2}{3}\]</span>  
+<code>$\displaystyle{\frac{2}{3}}$</code> will print the fraction to the
+original size.</p>
+<p><span class="math display">\[\displaystyle{\frac{2}{3}}\]</span></p>
+<p><code>$\frac{x}{x^2+2x+1}$</code></p>
+<p><span class="math display">\[\frac{x}{x^2+2x+1}\]</span></p>
+<p><code>$\frac{x}{\sqrt{x^2+2x+1}}$</code></p>
+<p><span class="math display">\[\frac{x}{\sqrt{x^2+2x+1}}\]</span>  
+fraction within a fraction</p>
+<p><code>$\frac{\frac{2}{3}}{\frac{5}{6}}$</code> will print (2/3)/(5/6)
+in proper format</p>
+<p><span class="math display">\[\frac{\frac{2}{3}}{\frac{5}{6}}\]</span>
+  <code>\displaystyle{content}</code> will print the entire content
+without size shrinking in a single line.   Symbols and Brackets:   (),
+[] are non-reserved brackets. so they can be used inside maths mode and
+inside text without any alterations.   {} are reserved brackets. they
+can be used only with commands, especially for coding.</p>
+<p>to use them without commands, use { and }   similarly, $ is a
+reserved symbol.</p>
+<p>To use it elsewhere, use $</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$3(</span><span class="sc">\frac</span><span class="ss">{2}{5})$$</span> will display 3*(2/5) with the () brackets being short.</span></code></pre></div>
+<p>to extend them, or enlarge them use and command in pairs</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="ss">$$3</span><span class="sc">\left</span><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{2}{5}</span><span class="sc">\right</span><span class="ss">)$$</span></span></code></pre></div>
+<p><span class="math display">\[3\left(\frac{2}{5}\right)\]</span></p>
+<p>applies for [] as well. when using {}, you need to put them as { or
+}</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="ss">$</span><span class="sc">\left\{</span><span class="ss">25</span><span class="sc">\right\}</span><span class="ss">$</span></span></code></pre></div>
+<p><span class="math inline">\(\left\{25\right\}\)</span>   and always
+should occur in pairs. you can change the brackets between and .</p>
+<p>if you do not want a bracket in the left or right, use a dot or
+period</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>eg: <span class="fu">\left</span>. or <span class="fu">\right</span>.</span></code></pre></div>
+<p>and can be used for enveloping other symbols as well, for instance
+the | symbol</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$3(1+[23])$$</span> will print 3(1+[23]).</span></code></pre></div>
+<p>except for curly brackets{}, inserting other brackets is not a
+problem and it is direct.   {} are reserved symbols in LaTeX options
+so,</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">${a,b,c}$</span> will print a,b,c alone without the brackets.</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>to solve this, use the backslash operator as follows,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\{</span><span class="ss">a,b,c</span><span class="sc">\}</span><span class="ss">$</span> will print {a,b,c} with brackets.</span></code></pre></div>
+<p>similarly $ symbol is a reserved in LaTeX so, to print a dollar
+symbol in LaTeX, use the $ notation.</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$3(</span><span class="sc">\frac</span><span class="ss">{2}{4})$</span> will print 3(2/4) but () brackets will be short and will not be printed to the size of the fraction.</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>to rectify this, use left and right functions as below</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ss">$3</span><span class="sc">\left</span><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{2}{4}</span><span class="sc">\right</span><span class="ss">)$</span> will print 3(2/4) but the () brackets will grow large enough to cover the fraction.</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>this function is available for [] brackets as well.</span></code></pre></div>
+<p>  for {} brackets, just as above, but use  symbol as shown below</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$3</span><span class="sc">\left\{\frac</span><span class="ss">{2}{4}</span><span class="sc">\right\}</span><span class="ss">$</span></span></code></pre></div>
+<p><span class="math display">\[3\left\{\frac{2}{4}\right\}\]</span>  
+this methodology works for all symbols as it is. LaTeX treats all
+symbols and brackets (except{}) alike</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$|</span><span class="sc">\frac</span><span class="ss">{x}{x+1}|$</span> will print x/x+1 in proper notation within absolute symbol, but the size of the absolute symbol will be short and will not cover the fraction.</span></code></pre></div>
+<p>use the same left and right function as with brackets to grow the
+symbol.   left and right functions work as a pair, meaning, if left is
+present, then right has to be present,   suppose you don’t want a
+bracket or a symbol that grows to fit the fraction either in the left or
+right, use the period (.) symbol to avoid it.</p>
+<p>eg:</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="sc">\left\{</span><span class="ss">x^2</span><span class="sc">\right\}</span><span class="ss">$$</span> will print {x^2} in proper notation.</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="sc">\left\{</span><span class="ss">x^2</span><span class="sc">\right</span><span class="ss">.$$</span> will print {x^2 in proper notation. It will ignore the need for }</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="sc">\left</span><span class="ss">.</span><span class="sc">\frac</span><span class="ss">{dy}{dx}</span><span class="sc">\right</span><span class="ss">|_x=0$$</span> will print dy/dx in full fraction with | fully covering the derivative on the right with x=0 at the subscript in proper notation.</span></code></pre></div>
+<p><span class="math display">\[\left\{x^2\right\}\]</span></p>
+<p><span class="math display">\[\left\{x^2\right.\]</span></p>
+<p><span class="math display">\[\left.\frac{dy}{dx}\right|_x=0\]</span>
+  on the same note, if you want one side of the brackets to be of the
+different bracket, then again it is possible. try this out!</p>
+<p>note that the commands must be executed in pair but the arguments or
+symbols they take need not be the same.   <strong>Other
+symbols</strong></p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\pm</span> symbol is used for plus or minus symbol</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\approx</span> is used for approximately equal symbol</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\ne</span> <span class="fu">\ge</span> <span class="fu">\le</span> is for not equal to, greater than or equal to, less than or equal to signs</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\gg</span> <span class="fu">\ll</span> is for greater, greater than and lesser, lesser than signs</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\rightarrow</span> <span class="fu">\leftarrow</span> <span class="fu">\leftrightarrow</span> are for arrow symbols</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\times</span> is for the large multiplication symbol</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\LaTeX</span> is for the LaTeX symbol</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\cdots</span>, <span class="fu">\rdots</span>, <span class="fu">\ldots</span> symbols for 3 continuous dots oriented in the centre, right and left.</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>Similarly there are <span class="fu">\vdots</span> and <span class="fu">\ddots</span> for vertical 3 dots and diagonal 3 dots</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\infty</span> for infinity symbol</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\sum</span> <span class="fu">\prod</span> for summation and product symbols</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\int</span> for integral symbol</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="fu">\bynsca</span> for 3 symbols of creative common license. Needs cclicense package to print them</span></code></pre></div>
+<p>  <strong>Special Mathematical Symbols:</strong></p>
+<p>Include package mathrsfs and use for getting the stylish/curly
+character symbols as in Laplace/Fourier Transforms.   A list of
+important symbols:
+http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols   This source is
+from wiki.</p>
+<h2 id="mathematical-notations-1">Mathematical Notations</h2>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>The heron&#39;s formulae for the area of a triangle is given by <span class="ss">$A = </span><span class="sc">\sqrt</span><span class="ss">{s(s-a)(s-b)(s-c)} $</span></span></code></pre></div>
+<p>$A = $</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>For a quadratic equation, <span class="ss">$ax^2 + bx + c = 0$</span>, the solution of x is given by the notation: <span class="ss">$$ x = </span><span class="sc">\frac</span><span class="ss">{-b </span><span class="sc">\pm</span><span class="ss"> </span><span class="sc">\sqrt</span><span class="ss">{b^2 -4ac}}{2a}$$</span></span></code></pre></div>
+<p>For a quadratic equation, <span class="math inline">\(ax^2 + bx + c =
+0\)</span>, the solution of x is given by the notation: <span
+class="math display">\[ x = \frac{-b \pm \sqrt{b^2
+-4ac}}{2a}\]</span></p>
+<h3 id="subscripts-and-super-scripts">Subscripts and Super-Scripts</h3>
+<p>The algebraic identities are very vital for evaluating arithmetic
+operations.</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ (a+b)^2 = a^2 + 2ab + b^2 $$</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$</span></span></code></pre></div>
+<p><span class="math display">\[ (a+b)^2 = a^2 + 2ab + b^2 \]</span>
+<span class="math display">\[ (a+b)^3 = a^3 + 3a^2b + 3ab^2 +
+b^3\]</span></p>
+<p>Taylor series expansion</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 + .... $$</span></span></code></pre></div>
+<p><span class="math display">\[ (1-x)^{-1} = 1 + x + x^2 + x^3 + x^4 +
+.... \]</span></p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$U^{235}_{92}$</span> is radio active and naturally unstable!</span></code></pre></div>
+<p><span class="math inline">\(U^{235}_{92}\)</span> is radio active and
+naturally unstable!</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ U^{35^{-45}}_{{45}_{-35}}$$</span></span></code></pre></div>
+<p><span class="math display">\[ U^{35^{-45}}_{{45}_{-35}}\]</span></p>
+<p>The FTBS FD scheme for Linear Advection equation is given as:</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ u_{i+1,j} = u_{i,j} - </span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x}[u_{i,j}-u_{i,j-1}]$$</span></span></code></pre></div>
+<p><span class="math display">\[ u_{i+1,j} = u_{i,j} - \frac{c\Delta
+t}{\Delta x}[u_{i,j}-u_{i,j-1}]\]</span></p>
+<h3 id="greek-symbols">Greek Symbols</h3>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\ \Delta\ \Gamma</span><span class="ss">$</span></span></code></pre></div>
+<p><span class="math inline">\(\alpha\ \beta\ \ \ \ \ \ \gamma\ \delta\
+\Delta\ \Gamma\)</span></p>
+<p>The area of a circle is:</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ A = </span><span class="sc">\pi</span><span class="ss"> r^2$$</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\Pi</span><span class="ss">$</span></span></code></pre></div>
+<p><span class="math display">\[ A = \pi r^2\]</span></p>
+<p><span class="math inline">\(\Pi\)</span></p>
+<h3 id="functions">Functions</h3>
+<h4 id="square-root-and-root">Square root and Root</h4>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="sc">\Delta</span><span class="ss"> = </span><span class="sc">\sqrt</span><span class="ss">{b^2 -4ac}$$</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ a = </span><span class="sc">\sqrt</span><span class="ss">[0.5]{b}$$</span></span></code></pre></div>
+<p><span class="math display">\[\Delta = \sqrt{b^2 -4ac}\]</span> <span
+class="math display">\[ a = \sqrt[0.5]{b}\]</span></p>
+<h4 id="logarithms">Logarithms</h4>
+<p>Base 10 log without 10 at the base</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\log</span><span class="ss">{b} $$</span></span></code></pre></div>
+<p><span class="math display">\[ \log{b} \]</span></p>
+<p>Natural Logarithm</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\ln</span><span class="ss">{b} $$</span></span></code></pre></div>
+<p><span class="math display">\[ \ln{b} \]</span></p>
+<p>Non-standard logarithm</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\log</span><span class="ss">_{8}{64} = 2 $$</span></span></code></pre></div>
+<p><span class="math display">\[ \log_{8}{64} = 2 \]</span></p>
+<h4 id="trigonometry">Trigonometry</h4>
+<p>Sine function</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$ sin(A+B) = sin(A)cos(B) + cos(A)sin(B)$</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\sin</span><span class="ss">(A+B) = </span><span class="sc">\sin</span><span class="ss">(A)</span><span class="sc">\cos</span><span class="ss">(B) + </span><span class="sc">\cos</span><span class="ss">(A)</span><span class="sc">\sin</span><span class="ss">(B)$</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\sin</span><span class="ss">{A+B} = </span><span class="sc">\sin</span><span class="ss">{A}</span><span class="sc">\cos</span><span class="ss">{B} + </span><span class="sc">\cos</span><span class="ss">{A}</span><span class="sc">\sin</span><span class="ss">{B}$</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\cosh</span><span class="ss">^2(A)$</span></span></code></pre></div>
+<p>$ sin(A+B) = sin(A)cos(B) + cos(A)sin(B)$</p>
+<p>$ (A+B) = (A)(B) + (A)(B)$</p>
+<p>$ = + $</p>
+<p><span class="math inline">\(\cosh^2(A)\)</span></p>
+<h4 id="fractions-and-brackets">Fractions and Brackets</h4>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\frac</span><span class="ss">{4}{5}$</span> means, you take 4 parts of something after it is divided into 5 equal parts.</span></code></pre></div>
+<p><span class="math inline">\(\frac45\)</span></p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\displaystyle</span><span class="ss">{</span><span class="sc">\frac</span><span class="ss">{4}{5}}$</span> means, you take 4 parts of something after it is divided into 5 equal parts.</span></code></pre></div>
+<p><span class="math inline">\(\displaystyle{\frac{4}{5}}\)</span></p>
+<p>The FTBS FD scheme for Linear Advection equation is given as:</p>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ u_{i+1,j} = u_{i,j} - </span><span class="sc">\left</span><span class="ss">[</span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x}</span><span class="sc">\right</span><span class="ss">][u_{i,j}-u_{i,j-1}]$$</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x} </span><span class="sc">\right</span><span class="ss">)$$</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\left</span><span class="ss">[ </span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x} </span><span class="sc">\right</span><span class="ss">)$$</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x} </span><span class="sc">\right</span><span class="ss">]$$</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\left</span><span class="ss">. </span><span class="sc">\frac</span><span class="ss">{c</span><span class="sc">\Delta</span><span class="ss"> t}{</span><span class="sc">\Delta</span><span class="ss"> x} </span><span class="sc">\right\rangle</span><span class="ss">$$</span></span></code></pre></div>
+<p><span class="math display">\[ u_{i+1,j} = u_{i,j} -
+\left[\frac{c\Delta t}{\Delta x}\right][u_{i,j}-u_{i,j-1}]\]</span></p>
+<p><span class="math display">\[ \left( \frac{c\Delta t}{\Delta x}
+\right)\]</span></p>
+<p><span class="math display">\[ \left[ \frac{c\Delta t}{\Delta x}
+\right)\]</span></p>
+<p><span class="math display">\[ \left( \frac{c\Delta t}{\Delta x}
+\right]\]</span></p>
+<p><span class="math display">\[ \left. \frac{c\Delta t}{\Delta x}
+\right\rangle\]</span></p>
+<p>The definition of a derivative:</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\left</span><span class="ss">.</span><span class="sc">\frac</span><span class="ss">{dy}{dx}</span><span class="sc">\right</span><span class="ss">|_{x</span><span class="sc">\rightarrow</span><span class="ss"> 0} = </span><span class="sc">\frac</span><span class="ss">{f(y+dy)-f(y)}{dx}$$</span></span></code></pre></div>
+<p><span class="math display">\[
+\left.\frac{dy}{dx}\right|_{x\rightarrow 0} =
+\frac{f(y+dy)-f(y)}{dx}\]</span></p>
+<h4 id="other-symbols">Other Symbols</h4>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\pm</span><span class="ss"> </span><span class="sc">\ \approx</span><span class="ss"> </span><span class="sc">\ \ne</span><span class="ss"> </span><span class="sc">\ \ge</span><span class="ss"> </span><span class="sc">\ \le</span><span class="ss"> $</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\cdots</span><span class="ss"> </span><span class="sc">\ \ldots</span><span class="ss"> </span><span class="sc">\ \vdots</span><span class="ss"> </span><span class="sc">\ \ddots</span><span class="ss"> $</span></span></code></pre></div>
+<p>$     $</p>
+<p>$    $</p>
+<h2 id="array-of-equations">Array of Equations</h2>
+<p>Equation Arrays using eqnarray</p>
+<p>To type a set of equations with equation numbers, the command use is
+eqnarray</p>
+<p><code>latex  \begin{eqnarray} equation 1 \\ equation 2 \\ ..... \end{eqnarray}</code>
+  this set of equations need not need the $$ sign. Once typed, it will
+generate the equation number automatically. To avoid numbers, use
+<code>\nonumber</code> command before \</p>
+<p>this will not align the equations with centre justification or having
+the equal signs in the exact middle.</p>
+<p>for that, use &amp; before and after the equal sign   example</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">eqnarray*</span>}</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ss">5x^2 + 3x &amp;=&amp; 7y^2 + 5y </span><span class="sc">\\</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3x &amp;=&amp; 5 </span><span class="sc">\\</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 &amp;</span><span class="sc">\approx</span><span class="ss">&amp; </span><span class="sc">\pm</span><span class="ss"> </span><span class="sc">\sqrt</span><span class="ss">{3}</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">eqnarray*</span>}</span></code></pre></div>
+<p>  this will print the 3 equations in proper format without equation
+numbers. the asterisk sign in eqnarray avoids the equation numbers.
+remove them to include eqn numbers.   <strong>Equation Arrays using
+align</strong></p>
+<p>This environment is used for writing equations  with equation
+numbers. This environment does not need dollar signs. The * prevents the
+equations being numbered. If removed, the equations will be numbered.
+Align environment cannot have blank lines. To include blank lines, put a
+% and leave the line empty</p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ss">Equation 1 </span><span class="sc">\\</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ss">Equation 2 ….</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span></code></pre></div>
+<p>  To align the equations, put &amp; infront of the equal sign.   If
+you have a very long equation, you can write it down in two or more
+lines using \ command. For alignment, you can use &amp; symbol. This
+will create multiple equation numbering. To avoid that, use the command
+before the \ command. If and symbols are used, then each line of
+equation needs a and command. Refer to the mathematical notations page
+for more details.   To introduce text in between the equations, use</p>
+<p>** No text can be written inside eqnarray or align. Even blank lines
+are not allowed. command is possible only inside align environment
+field**   To refer to an equation, create a
+<code>\label{ref_name}</code> and use <code>\ref{ref_name}</code> to
+refer to it in the document.</p>
+<h2 id="equation-arrays">Equation Arrays</h2>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">eqnarray</span>}</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 &amp;=&amp; (x+1)^2</span><span class="sc">\\</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x + 1 &amp;=&amp; </span><span class="sc">\nonumber</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co">% Use &amp; for manual alignment</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co">% The output will have the first equation numbered</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co">% The equations will be aligned properly!</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">eqnarray</span>}</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ x^2 + 2x + 1 = (x+1)^2 $$</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ x^3 + 3x^2 + 3x + 1 = (x+1)^3 $$</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">eqnarray</span>}</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 &amp;=&amp; (x+1)^2 </span><span class="sc">\\</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x + 1 &amp;=&amp; </span><span class="sc">\\</span></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3</span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="co">% The equation will not have numbers</span></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a><span class="co">% Proper alignment</span></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a><span class="co">% The second equation will be in 2 lines.</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">eqnarray</span>}</span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ x^2 + 2x + 1 = (x+1)^2 $$</span></span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ x^3 + 3x^2 + 3x + 1 = </span></span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3 $$</span></span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">eqnarray*</span>}</span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 = (x+1)^2</span><span class="sc">\\</span></span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x +1 = </span><span class="sc">\\</span></span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">[(x+1)^3</span><span class="sc">\right</span><span class="ss">]</span><span class="sc">\\</span></span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">[-(x+1)^3</span><span class="sc">\right</span><span class="ss">]</span><span class="sc">\\</span></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">[(x+1)^3</span><span class="sc">\right</span><span class="ss">]</span><span class="sc">\\</span></span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">eqnarray*</span>}</span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 = (x+1)^2  </span><span class="sc">\\</span></span>
+<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x +1 = </span><span class="sc">\nonumber</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb45-41"><a href="#cb45-41" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3</span><span class="sc">\\</span></span>
+<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a><span class="sc">\intertext</span>{This is a set of identities in algebra}</span>
+<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
+<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-45"><a href="#cb45-45" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb45-46"><a href="#cb45-46" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 &amp;=&amp; (x+1)^2</span><span class="sc">\\</span></span>
+<span id="cb45-47"><a href="#cb45-47" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x +1 &amp;=&amp; </span><span class="sc">\\</span></span>
+<span id="cb45-48"><a href="#cb45-48" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3</span></span>
+<span id="cb45-49"><a href="#cb45-49" aria-hidden="true" tabindex="-1"></a><span class="sc">\intertext</span>{This is a set of identities in algebra}</span>
+<span id="cb45-50"><a href="#cb45-50" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span>
+<span id="cb45-51"><a href="#cb45-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-52"><a href="#cb45-52" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb45-53"><a href="#cb45-53" aria-hidden="true" tabindex="-1"></a><span class="ss">x^2 + 2x + 1 = (x+1)^2</span><span class="sc">\\</span></span>
+<span id="cb45-54"><a href="#cb45-54" aria-hidden="true" tabindex="-1"></a><span class="ss">x^3 + 3x^2 + 3x +1 = </span><span class="sc">\nonumber\\</span></span>
+<span id="cb45-55"><a href="#cb45-55" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">[(x+1)^3</span></span>
+<span id="cb45-56"><a href="#cb45-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-(x+1)^3</span></span>
+<span id="cb45-57"><a href="#cb45-57" aria-hidden="true" tabindex="-1"></a><span class="ss">(x+1)^3</span><span class="sc">\right</span><span class="ss">]</span><span class="sc">\intertext</span>{This is a set of identities in algebra}</span>
+<span id="cb45-58"><a href="#cb45-58" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div>
+<p><span class="math display">\[\begin{eqnarray}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2\\
+%
+x^3 + 3x^2 + 3x + 1 &amp;=&amp; \nonumber \\
+(x+1)^3
+% Use &amp; for manual alignment
+% The output will have the first equation numbered
+% The equations will be aligned properly!
+\end{eqnarray}\]</span></p>
+<p><span class="math display">\[ x^2 + 2x + 1 = (x+1)^2 \]</span></p>
+<p><span class="math display">\[ x^3 + 3x^2 + 3x + 1 = (x+1)^3
+\]</span></p>
+<p><span class="math display">\[\begin{eqnarray}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2 \\
+%
+x^3 + 3x^2 + 3x + 1 &amp;=&amp; \\
+(x+1)^3
+% The equation will not have numbers
+% Proper alignment
+% The second equation will be in 2 lines.
+\end{eqnarray}\]</span></p>
+<p><span class="math display">\[ x^2 + 2x + 1 = (x+1)^2 \]</span></p>
+<p><span class="math display">\[ x^3 + 3x^2 + 3x + 1 =
+(x+1)^3 \]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+x^2 + 2x + 1 = (x+1)^2\\
+x^3 + 3x^2 + 3x +1 = \\
+\left[(x+1)^3\right]\\
+\left[-(x+1)^3\right]\\
+\left[(x+1)^3\right]\\
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x^2 + 2x + 1 = (x+1)^2  \\
+x^3 + 3x^2 + 3x +1 = \nonumber \\
+(x+1)^3\\
+\intertext{This is a set of identities in algebra}
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+x^2 + 2x + 1 &amp;=&amp; (x+1)^2\\
+x^3 + 3x^2 + 3x +1 &amp;=&amp; \\
+(x+1)^3
+\intertext{This is a set of identities in algebra}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x^2 + 2x + 1 = (x+1)^2\\
+x^3 + 3x^2 + 3x +1 = \nonumber\\
+\left[(x+1)^3
+-(x+1)^3
+(x+1)^3\right]\intertext{This is a set of identities in algebra}
+\end{align}\]</span></p>
+<h2 id="letter-writing">Letter Writing</h2>
+<p>to start a letter file, use the following format</p>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">letter</span>}</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\address</span>{all the contents of from address separated by <span class="fu">\\</span> for line breaks}</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{}</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\signature</span>{your name}</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="co">% All the above address and date are printed in the top right corner of the page. The signature comes below the body at the final greetings part.</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co">% The contents below become left justified. Empty address is allowed.</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">letter</span>}</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>Address of the person referred to.</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\opening</span>{Dear sir, madam, sir, Hello...etc.,}</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>Contents of the letter</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\closing</span>{yours sincerely, etc.,}</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\cc</span>{}  <span class="co">% if any</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">letter</span>}</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<h2 id="letter-writing-1">Letter Writing</h2>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[10pt, a4paper]{<span class="ex">letter</span>}</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[left=1in, right=1in, top=1in, bottom=1in]{<span class="ex">geometry</span>}</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\signature</span>{Arun Prasaad Gunasekaran}</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\address</span>{From: <span class="fu">\\</span> Arun Prasaad Gunasekaran <span class="fu">\\</span> Classified Address}</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{31 August 2001, Bangalore}</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">letter</span>}{To: <span class="fu">\\</span> John Doe <span class="fu">\\</span> Unknown place <span class="fu">\\</span> Unknown Street <span class="fu">\\</span> City <span class="fu">\\</span> Country}</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\opening</span>{Dear John Doe!}</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>Subject : Want to meet you!</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>I want to know who you are! Are you a real person? Are you anonymous? Are you a product of fiction? Why are you so famous?</span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>I want to meet you in person and have a chat!</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>If you get this letter, you know how to find me!</span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>See you!</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a><span class="fu">\closing</span>{Yours Anonymously,}</span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a><span class="fu">\ps</span>{PS: In case you are wondering, go to youtube and type my name! :p}</span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a><span class="fu">\encl</span>{I have enclosed a few documents!}</span>
+<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a><span class="fu">\cc</span>{To All youtube viewers} <span class="co">%Optional</span></span>
+<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">letter</span>}</span>
+<span id="cb47-39"><a href="#cb47-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<p>For more detailed sources :</p>
+<ul>
+<li>https://en.wikibooks.org/wiki/LaTeX/Letters</li>
+<li>http://texblog.org/2007/08/15/writing-a-letter-in-latex/</li>
+<li>http://tex.stackexchange.com/questions/133836/writing-an-official-letter</li>
+</ul>
+<h2 id="tables">Tables</h2>
+<p>to begin a table, tabular command is used.</p>
+<p><strong>Tabular Command</strong></p>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{args}</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code></pre></div>
+<p>  to start a table, a format is as follows</p>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{rlcrlc}</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>contents</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code></pre></div>
+<p>  tabular is the parameter for beginning a table. the {} after will
+decide how many columns to fit.</p>
+<p>this table has 6 columns with</p>
+<p>columns 1 and 4 right justified,</p>
+<p>columns 2 and 5 left justified, and</p>
+<p>columns 3 and 6 centre justified   to write the contents of the rows,
+type them naturally. the first content will go to row 1 column 1.</p>
+<p>Use ampersand symbol &amp; to swap columns from left to right.</p>
+<p>eg:</p>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>12345 &amp; 67890 will print 12345 in column 1 and 67890 in column 2.</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>use <span class="fu">\\</span> at the end of one line to go to the next column. <span class="fu">\\</span> will introduce a forced line break.</span></code></pre></div>
+<p>  <strong>note</strong>: if the content in a page reaches its end and
+if you add one more content that intuitively be half placed in one page
+and half in the other, LaTeX will either force shrink the page contents
+to accommodate the contents or shift the contents to the next page
+automatically with proper formatting.   this table command will not
+print any lines as it is. to make lines and to explain a proper table,
+see the example</p>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c|c|c|c|c|c|}</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$x$</span> <span class="op">&amp;</span> 1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3 <span class="op">&amp;</span> 4 <span class="op">&amp;</span> 5<span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="ss">$f(x)$</span> <span class="op">&amp;</span> 1 <span class="op">&amp;</span> 4 <span class="op">&amp;</span> 9 <span class="op">&amp;</span> 16 <span class="op">&amp;</span> 25<span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code></pre></div>
+<p>This will put all the lines to form a simple table as you intuitively
+think of. is for a horizontal line and | symbol in {} between letters is
+for the vertical line.   Multiple | lines can be placed. Also, multiple
+can be placed.   If you want a blank entry, just leave a space between
+the &amp; symbols. To merge cells, read the contents below,  
+<strong>Merging cells:</strong>   To merge cells along a row, use multi
+column command</p>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\multicolumn</span>{N}{A}{C}</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>N = number of columns in a particular row to be merged from the right to form a cell</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>A = cell content alignment with or without |</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>C = cell content</span></code></pre></div>
+<p>  To merge cells along a row, use empty entries and centre line
+command.</p>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\cline</span>{n1-n2}</span></code></pre></div>
+<p>This will draw a line between the current row and the row below, only
+between columns n1 and n2.</p>
+<p>** If n1 = n2, then the centre line will be drawn only for one cell**
+  To merge cells row and column wise, use the above methods in a
+combined manner properly.   ### Table Command</p>
+<p> This command is used to treat the table generated in the tabular
+command to behave as a single independent object instead of a symbol.  
+This is the format:</p>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>} <span class="co">% avoid this command in beamer class. Use tabular directly</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{name1} <span class="co">% caption is usually put on top of the table</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">name2</span>} <span class="co">% label should be below the caption as it is the one that creates the table number.</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>Contents</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code></pre></div>
+  is for centre justifying the table, while the label is for referencing
+purpose.
+<p>is for the title of the table. These are optional, but if included,
+will be better.</p>
+<h2 id="tables-labels-captions">Tables, Labels, Captions</h2>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>Table <span class="kw">\ref</span>{<span class="ex">Tab1</span>} has details of some houses in ASOIAF.</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[h]</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Details of Houses in ASOIAF}</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">Tab1</span>}</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|r|c|c|c|l|r|c|c|c|}</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>Sl.no <span class="op">&amp;</span> House <span class="op">&amp;</span> Kingdom <span class="op">&amp;</span> Sigil <span class="op">&amp;</span> Knightship <span class="op">&amp;</span> Leader <span class="op">&amp;</span> Weather <span class="op">&amp;</span> Origins <span class="op">&amp;</span> Capital <span class="fu">\\\hline</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>1. <span class="op">&amp;</span> Stark <span class="op">&amp;</span> North <span class="op">&amp;</span> Direwolf <span class="op">&amp;</span> None <span class="op">&amp;</span> Eddard <span class="op">&amp;</span> Cold <span class="op">&amp;</span> First men <span class="op">&amp;</span> Winterfell<span class="fu">\\\hline</span> <span class="fu">\hline</span></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>2. <span class="op">&amp;</span> Baratheon <span class="op">&amp;</span> Crownlands <span class="op">&amp;</span> Stag <span class="op">&amp;</span> Yes <span class="op">&amp;</span> Robert <span class="op">&amp;</span> Normal <span class="op">&amp;</span> Andals <span class="op">&amp;</span> King&#39;s Landing<span class="fu">\\\hline</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>Table <span class="kw">\ref</span>{<span class="ex">Tab1</span>} has details of some houses in ASOIAF. Table <span class="kw">\ref</span>{<span class="ex">Tab1</span>} has details of some houses in ASOIAF.Table <span class="kw">\ref</span>{<span class="ex">Tab1</span>} has details of some houses in ASOIAF.</span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[h]</span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|r|r|l|c|}</span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span></span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>Sl.no <span class="op">&amp;</span> House <span class="op">&amp;</span> Kingdom <span class="op">&amp;</span> Sigil <span class="fu">\\\hline</span></span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>1. <span class="op">&amp;</span> Stark <span class="op">&amp;</span> North <span class="op">&amp;</span> Direwolf <span class="fu">\\\hline</span></span>
+<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>2. <span class="op">&amp;</span> Baratheon <span class="op">&amp;</span> Crownlands <span class="op">&amp;</span> Stag <span class="fu">\\\hline</span></span>
+<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>3. <span class="op">&amp;</span> Blackfyre <span class="op">&amp;</span> <span class="fu">\multicolumn</span>{2}{c|}{Not Applicable}<span class="fu">\\\hline</span></span>
+<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>4. <span class="op">&amp;</span> Targeryen <span class="op">&amp;</span> Valyria <span class="op">&amp;</span> Dragon<span class="fu">\\</span></span>
+<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a><span class="fu">\cline</span>{3-3}</span>
+<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a> <span class="op">&amp;</span>  <span class="op">&amp;</span> Crownlands <span class="op">&amp;</span> <span class="fu">\\</span> <span class="fu">\hline</span> </span>
+<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span>
+<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c|c|c|c|c|}</span>
+<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span> </span>
+<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a>Sno <span class="op">&amp;</span> House <span class="op">&amp;</span> Leader <span class="op">&amp;</span> Captial <span class="op">&amp;</span> Sigil <span class="fu">\\</span> </span>
+<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span> </span>
+<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a>1 <span class="op">&amp;</span> Stark <span class="op">&amp;</span> Eddard <span class="op">&amp;</span> Winterfell <span class="op">&amp;</span> Direwolf <span class="fu">\\</span> </span>
+<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span> </span>
+<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a>2 <span class="op">&amp;</span> Martell <span class="op">&amp;</span> Doran <span class="op">&amp;</span> Dorne <span class="op">&amp;</span> Sun <span class="fu">\\</span> </span>
+<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a><span class="fu">\hline</span> </span>
+<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>} </span>
+<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-43"><a href="#cb55-43" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<h2 id="text-and-page-formatting">Text and Page Formatting</h2>
+<p><strong>Text:</strong></p>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>for italicized words use, <span class="fu">\textit</span>{word}</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>for bold face words use, <span class="fu">\textbf</span>{word}</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>for small cap words use, <span class="fu">\textsc</span>{word}</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>for typewriter font use, <span class="fu">\texttt</span>{word} ! specifically used to distinguish normal fonts with web-page links.</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>for making a word look little larger than normal font use, <span class="kw">\begin</span>{<span class="ex">large</span>} word(s) <span class="kw">\end</span>{<span class="ex">large</span>}</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>for making a word look little larger than large font use, <span class="kw">\begin</span>{<span class="ex">Large</span>} word(s) <span class="kw">\end</span>{<span class="ex">Large</span>}</span></code></pre></div>
+<p><code>latex  priority of sizes tiny&lt;small&lt;normal&lt;large&lt;Large&lt;huge&lt;Huge   for a single sentence to be justified use \begin{justification} sentence \begin{justification} justifications are center, flushleft, flushright. These can be used for tables, figures, a chunk of document etc.,   \tt{} \bf{} \sc{} \it{} works the same way as that of the top (looks like so)</code></p>
+<p><strong>Page and Line:</strong></p>
+<div class="sourceCode" id="cb57"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newpage</span> command for making a new page</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\newline</span> is used for a page break.</span></code></pre></div>
+<p>  <strong>Colouring:</strong></p>
+<div class="sourceCode" id="cb58"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Select/envelop a group of text using {} brackets and put <span class="fu">\color</span>{colour name} to change the colour of the enveloped text/content. Works well in beamer. (to be checked in documents). For this option to work, add <span class="bu">\usepackage</span>{<span class="ex">color</span>} at the preamble!</span></code></pre></div>
+<p>  <strong>Spacing</strong></p>
+<div class="sourceCode" id="cb59"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>Use <span class="fu">\quad</span> for tab spacing, <span class="fu">\qquad</span> for double tab spacing. Use them appropriately for extended spacing</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>Use <span class="fu">\hspace</span>{length} for horizontal spacing. Eg: <span class="fu">\hspace</span>{4cm}</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>To create a very small horizontal space, use <span class="fu">\,</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>Use <span class="fu">\vspace</span>{length} for vertical spacing. Eg: <span class="fu">\vspace</span>{1ex} = size of 1 ex character ?! (needs check)</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span> is used for filling the horizontal spaces</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>Paragraph and line indenting: Worst Case Situations:</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>Use <span class="fu">\&lt;</span>space&gt; <span class="fu">\newline</span> <span class="fu">\\</span> in proper order for manipulate spacing and tabbing. Crude method, but can act as a quick fix</span></code></pre></div>
+<p>Document and text formatting</p>
+<div class="sourceCode" id="cb60"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[10pt,a4paper]{<span class="ex">article</span>}</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[english]{<span class="ex">babel</span>}</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsfonts</span>}</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amssymb</span>}</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">color</span>}</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="co">% For colours</span></span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">latexsym</span>}</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="co">% for some special symbols</span></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\parindent</span>}{4em}</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a><span class="co">% Set the Paragraph indent</span></span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a><span class="co">% 1 em means the length of 1 letter &quot;m&quot; in the current font size.</span></span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\parskip</span>}{1em}</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="co">% Set the distance between paragraphs</span></span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\baselinestretch</span>}{2.0}</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a><span class="co">% Set the line spacing. 2 means twice the normal spacing</span></span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[left=2cm,right=2cm,top=2cm,bottom=2cm]{<span class="ex">geometry</span>}</span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Arun Prasaad Gunasekaran}</span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Text and Document Formatting}</span>
+<span id="cb60-25"><a href="#cb60-25" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb60-26"><a href="#cb60-26" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb60-27"><a href="#cb60-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-28"><a href="#cb60-28" aria-hidden="true" tabindex="-1"></a><span class="fu">\tableofcontents</span></span>
+<span id="cb60-29"><a href="#cb60-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-30"><a href="#cb60-30" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Text Styles}</span>
+<span id="cb60-31"><a href="#cb60-31" aria-hidden="true" tabindex="-1"></a><span class="co">%\slshape %slant font</span></span>
+<span id="cb60-32"><a href="#cb60-32" aria-hidden="true" tabindex="-1"></a><span class="co">%\textsl{} % for a small content</span></span>
+<span id="cb60-33"><a href="#cb60-33" aria-hidden="true" tabindex="-1"></a><span class="co">%\textup{} %default font</span></span>
+<span id="cb60-34"><a href="#cb60-34" aria-hidden="true" tabindex="-1"></a><span class="co">%\upshape</span></span>
+<span id="cb60-35"><a href="#cb60-35" aria-hidden="true" tabindex="-1"></a><span class="co">%\itshape %italic font</span></span>
+<span id="cb60-36"><a href="#cb60-36" aria-hidden="true" tabindex="-1"></a><span class="co">%\textit{}</span></span>
+<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-38"><a href="#cb60-38" aria-hidden="true" tabindex="-1"></a><span class="co">%\scshape % Capitalize</span></span>
+<span id="cb60-39"><a href="#cb60-39" aria-hidden="true" tabindex="-1"></a><span class="co">%\textsc{}</span></span>
+<span id="cb60-40"><a href="#cb60-40" aria-hidden="true" tabindex="-1"></a><span class="co">%\mdseries % default medium size</span></span>
+<span id="cb60-41"><a href="#cb60-41" aria-hidden="true" tabindex="-1"></a><span class="co">%\textmd</span></span>
+<span id="cb60-42"><a href="#cb60-42" aria-hidden="true" tabindex="-1"></a><span class="co">%\bfseries % Bold font</span></span>
+<span id="cb60-43"><a href="#cb60-43" aria-hidden="true" tabindex="-1"></a><span class="co">%\textbf{}</span></span>
+<span id="cb60-44"><a href="#cb60-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-45"><a href="#cb60-45" aria-hidden="true" tabindex="-1"></a><span class="co">%\rmfamily % Regular roman font</span></span>
+<span id="cb60-46"><a href="#cb60-46" aria-hidden="true" tabindex="-1"></a><span class="co">%\textrm{}</span></span>
+<span id="cb60-47"><a href="#cb60-47" aria-hidden="true" tabindex="-1"></a><span class="co">%\sffamily % Sans Serif Font</span></span>
+<span id="cb60-48"><a href="#cb60-48" aria-hidden="true" tabindex="-1"></a><span class="co">%\textsf{}</span></span>
+<span id="cb60-49"><a href="#cb60-49" aria-hidden="true" tabindex="-1"></a><span class="co">%\ttfamily % Type writer font</span></span>
+<span id="cb60-50"><a href="#cb60-50" aria-hidden="true" tabindex="-1"></a><span class="co">%\texttt{}</span></span>
+<span id="cb60-51"><a href="#cb60-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-52"><a href="#cb60-52" aria-hidden="true" tabindex="-1"></a><span class="co">%\rm %roman font</span></span>
+<span id="cb60-53"><a href="#cb60-53" aria-hidden="true" tabindex="-1"></a><span class="co">%\it % italic</span></span>
+<span id="cb60-54"><a href="#cb60-54" aria-hidden="true" tabindex="-1"></a><span class="co">%\em %emphasis</span></span>
+<span id="cb60-55"><a href="#cb60-55" aria-hidden="true" tabindex="-1"></a><span class="co">%\bf % bold</span></span>
+<span id="cb60-56"><a href="#cb60-56" aria-hidden="true" tabindex="-1"></a><span class="co">%\sl %slant </span></span>
+<span id="cb60-57"><a href="#cb60-57" aria-hidden="true" tabindex="-1"></a><span class="co">%\sc %small caps</span></span>
+<span id="cb60-58"><a href="#cb60-58" aria-hidden="true" tabindex="-1"></a><span class="co">%\sf %Sans serif font</span></span>
+<span id="cb60-59"><a href="#cb60-59" aria-hidden="true" tabindex="-1"></a><span class="co">%\tt % type writer font</span></span>
+<span id="cb60-60"><a href="#cb60-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-61"><a href="#cb60-61" aria-hidden="true" tabindex="-1"></a>Text emphasis is given using <span class="fu">\textbf</span>{Commands (Like this!)} and <span class="fu">\textit</span>{functions (Like this!)}. The purpose of <span class="fu">\textsc</span>{Commands and functions (Like This!)} here, is to enable certain contents <span class="fu">\textsf</span>{distinguished} from other contents. These commands <span class="fu">\textsl</span>{enhance reading} as they make contents <span class="fu">\texttt</span>{stand out} uniquely!</span>
+<span id="cb60-62"><a href="#cb60-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-63"><a href="#cb60-63" aria-hidden="true" tabindex="-1"></a><span class="fu">\emph</span>{This sentence is <span class="fu">\emph</span>{emphasized!}}</span>
+<span id="cb60-64"><a href="#cb60-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-65"><a href="#cb60-65" aria-hidden="true" tabindex="-1"></a><span class="fu">\color</span>{red}</span>
+<span id="cb60-66"><a href="#cb60-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-67"><a href="#cb60-67" aria-hidden="true" tabindex="-1"></a>This sentence is in red!</span>
+<span id="cb60-68"><a href="#cb60-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-69"><a href="#cb60-69" aria-hidden="true" tabindex="-1"></a><span class="fu">\color</span>{black}</span>
+<span id="cb60-70"><a href="#cb60-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-71"><a href="#cb60-71" aria-hidden="true" tabindex="-1"></a><span class="co">%\itshape</span></span>
+<span id="cb60-72"><a href="#cb60-72" aria-hidden="true" tabindex="-1"></a>You can change the text font as well. <span class="fu">\textup</span>{&quot;This&quot;} is the normal font! <span class="fu">\textmd</span>{&quot;This&quot;} is the medium size! <span class="fu">\textrm</span>{&quot;This&quot;} is the regular font family</span>
+<span id="cb60-73"><a href="#cb60-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-74"><a href="#cb60-74" aria-hidden="true" tabindex="-1"></a>Font sizes can be changed!<span class="fu">\\</span> </span>
+<span id="cb60-75"><a href="#cb60-75" aria-hidden="true" tabindex="-1"></a><span class="co">%\tiny Size\\ </span></span>
+<span id="cb60-76"><a href="#cb60-76" aria-hidden="true" tabindex="-1"></a><span class="co">%\scriptsize Size \\</span></span>
+<span id="cb60-77"><a href="#cb60-77" aria-hidden="true" tabindex="-1"></a><span class="co">%\footnotesize Size \\</span></span>
+<span id="cb60-78"><a href="#cb60-78" aria-hidden="true" tabindex="-1"></a><span class="co">%\small Size\\</span></span>
+<span id="cb60-79"><a href="#cb60-79" aria-hidden="true" tabindex="-1"></a><span class="co">%\normalsize Size\\</span></span>
+<span id="cb60-80"><a href="#cb60-80" aria-hidden="true" tabindex="-1"></a><span class="co">%\large Size\\</span></span>
+<span id="cb60-81"><a href="#cb60-81" aria-hidden="true" tabindex="-1"></a><span class="co">%\Large Size\\</span></span>
+<span id="cb60-82"><a href="#cb60-82" aria-hidden="true" tabindex="-1"></a><span class="co">%\LARGE Size\\</span></span>
+<span id="cb60-83"><a href="#cb60-83" aria-hidden="true" tabindex="-1"></a><span class="co">%\huge Size\\</span></span>
+<span id="cb60-84"><a href="#cb60-84" aria-hidden="true" tabindex="-1"></a><span class="co">%\Huge Size\\</span></span>
+<span id="cb60-85"><a href="#cb60-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-86"><a href="#cb60-86" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Special Symbols}</span>
+<span id="cb60-87"><a href="#cb60-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-88"><a href="#cb60-88" aria-hidden="true" tabindex="-1"></a><span class="fu">\$</span> <span class="fu">\%</span> <span class="fu">\#</span> <span class="fu">\{</span> <span class="fu">\&amp;</span> <span class="fu">\_</span> are special symbols. G<span class="fu">\&quot;</span>ottingen</span>
+<span id="cb60-89"><a href="#cb60-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-90"><a href="#cb60-90" aria-hidden="true" tabindex="-1"></a><span class="fu">\t</span>{oo}</span>
+<span id="cb60-91"><a href="#cb60-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-92"><a href="#cb60-92" aria-hidden="true" tabindex="-1"></a><span class="fu">\AA</span> <span class="fu">\oe</span> <span class="fu">\dag</span> <span class="fu">\ddag</span></span>
+<span id="cb60-93"><a href="#cb60-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-94"><a href="#cb60-94" aria-hidden="true" tabindex="-1"></a><span class="fu">\pounds</span>   <span class="fu">\copyright</span></span>
+<span id="cb60-95"><a href="#cb60-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-96"><a href="#cb60-96" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\pi</span><span class="ss"> </span><span class="sc">\ \Pi</span><span class="ss">$</span></span>
+<span id="cb60-97"><a href="#cb60-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-98"><a href="#cb60-98" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\sigma</span><span class="ss"> </span><span class="sc">\ \Sigma</span><span class="ss">$</span></span>
+<span id="cb60-99"><a href="#cb60-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-100"><a href="#cb60-100" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\Xi</span><span class="ss"> </span><span class="sc">\ \vartheta</span><span class="ss">$</span></span>
+<span id="cb60-101"><a href="#cb60-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-102"><a href="#cb60-102" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\mathcal</span><span class="ss">{F} </span><span class="sc">\mathcal</span><span class="ss">{L}$</span></span>
+<span id="cb60-103"><a href="#cb60-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-104"><a href="#cb60-104" aria-hidden="true" tabindex="-1"></a><span class="ss">$ x </span><span class="sc">\not</span><span class="ss"> </span><span class="sc">\ge</span><span class="ss"> y$</span></span>
+<span id="cb60-105"><a href="#cb60-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-106"><a href="#cb60-106" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\pm</span><span class="ss"> </span><span class="sc">\mp</span><span class="ss"> $</span></span>
+<span id="cb60-107"><a href="#cb60-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-108"><a href="#cb60-108" aria-hidden="true" tabindex="-1"></a><span class="ss">$ A </span><span class="sc">\cap</span><span class="ss"> B$</span></span>
+<span id="cb60-109"><a href="#cb60-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-110"><a href="#cb60-110" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\Delta</span><span class="ss"> ABC </span><span class="sc">\equiv</span><span class="ss"> </span><span class="sc">\Delta</span><span class="ss"> DEF$</span></span>
+<span id="cb60-111"><a href="#cb60-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-112"><a href="#cb60-112" aria-hidden="true" tabindex="-1"></a><span class="ss">$ A </span><span class="sc">\gg</span><span class="ss"> B </span><span class="sc">\ </span><span class="ss"> C </span><span class="sc">\propto</span><span class="ss"> D$</span></span>
+<span id="cb60-113"><a href="#cb60-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-114"><a href="#cb60-114" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\Longleftrightarrow</span><span class="ss"> $</span></span>
+<span id="cb60-115"><a href="#cb60-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-116"><a href="#cb60-116" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\nabla</span><span class="ss"> </span><span class="sc">\surd</span><span class="ss"> </span><span class="sc">\partial</span><span class="ss">$</span></span>
+<span id="cb60-117"><a href="#cb60-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-118"><a href="#cb60-118" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\Box</span><span class="ss"> </span><span class="sc">\ \Diamond</span><span class="ss">$</span></span>
+<span id="cb60-119"><a href="#cb60-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-120"><a href="#cb60-120" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\backslash</span><span class="ss"> $</span></span>
+<span id="cb60-121"><a href="#cb60-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-122"><a href="#cb60-122" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\clubsuit</span><span class="ss"> </span><span class="sc">\diamondsuit</span><span class="ss"> </span><span class="sc">\heartsuit</span><span class="ss"> </span><span class="sc">\spadesuit</span><span class="ss">$</span></span>
+<span id="cb60-123"><a href="#cb60-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-124"><a href="#cb60-124" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\int</span><span class="ss">^b_a $</span></span>
+<span id="cb60-125"><a href="#cb60-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-126"><a href="#cb60-126" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\displaystyle</span><span class="ss">{</span><span class="sc">\oint</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">^b_a}$</span></span>
+<span id="cb60-127"><a href="#cb60-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-128"><a href="#cb60-128" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\displaystyle</span><span class="ss">{</span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> 0} </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\sin</span><span class="ss">{x}}{x} = 1}$</span></span>
+<span id="cb60-129"><a href="#cb60-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-130"><a href="#cb60-130" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\vec</span><span class="ss">{A} = a_1</span><span class="sc">\vec</span><span class="ss">{i} + a_2</span><span class="sc">\vec</span><span class="ss">{j} + a_3</span><span class="sc">\vec</span><span class="ss">{k}$</span></span>
+<span id="cb60-131"><a href="#cb60-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-132"><a href="#cb60-132" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> 0} </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\sin</span><span class="ss">{x}}{x} = 1$</span></span>
+<span id="cb60-133"><a href="#cb60-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-134"><a href="#cb60-134" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\lg</span><span class="ss"> </span><span class="sc">\gcd</span><span class="ss">$</span></span>
+<span id="cb60-135"><a href="#cb60-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-136"><a href="#cb60-136" aria-hidden="true" tabindex="-1"></a><span class="ss">\( </span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{n </span><span class="sc">\rightarrow</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} \)</span></span>
+<span id="cb60-137"><a href="#cb60-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-138"><a href="#cb60-138" aria-hidden="true" tabindex="-1"></a><span class="ss">$ </span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{n </span><span class="sc">\rightarrow</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">}$</span></span>
+<span id="cb60-139"><a href="#cb60-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-140"><a href="#cb60-140" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{n </span><span class="sc">\rightarrow</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">}$$</span></span>
+<span id="cb60-141"><a href="#cb60-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-142"><a href="#cb60-142" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ </span><span class="sc">\lim</span><span class="ss"> </span><span class="sc">\limits</span><span class="ss">_{n </span><span class="sc">\rightarrow</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} \]</span></span>
+<span id="cb60-143"><a href="#cb60-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-144"><a href="#cb60-144" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span><span class="sc">\lim</span><span class="ss">_{n </span><span class="sc">\rightarrow</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} $$</span></span>
+<span id="cb60-145"><a href="#cb60-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-146"><a href="#cb60-146" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Document Formatting}</span>
+<span id="cb60-147"><a href="#cb60-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-148"><a href="#cb60-148" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Spacing}</span>
+<span id="cb60-149"><a href="#cb60-149" aria-hidden="true" tabindex="-1"></a>Spacing is possible using the backslash command. For instance, if you want to write something like Zuckerberg and co.<span class="fu">\ \ \ \ \ </span>and proceed writing, you might see an additional space.</span>
+<span id="cb60-150"><a href="#cb60-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-151"><a href="#cb60-151" aria-hidden="true" tabindex="-1"></a><span class="fu">\hspace</span>{5cm} hspace command is used for making a space horizontally. While <span class="fu">\vspace</span>{2cm} is used for making space vertically. </span>
+<span id="cb60-152"><a href="#cb60-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-153"><a href="#cb60-153" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span> Hfill command is used to fill the sentence accordingly, so that the right margin is fine!</span>
+<span id="cb60-154"><a href="#cb60-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-155"><a href="#cb60-155" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Document Symbols}</span>
+<span id="cb60-156"><a href="#cb60-156" aria-hidden="true" tabindex="-1"></a>Quotations are easy! Use &#39;&#39; for quotations &#39;like this one&#39; &quot;or this one&quot; For the quote to &quot;open&quot; and &quot;close&quot; properly, use reverse quotes ``Like this&quot;<span class="fu">\\</span></span>
+<span id="cb60-157"><a href="#cb60-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-158"><a href="#cb60-158" aria-hidden="true" tabindex="-1"></a>Use --- for a long dash! use <span class="fu">\TeX</span> and <span class="fu">\LaTeX</span> for TeX and LaTeX symbols.<span class="fu">\\</span></span>
+<span id="cb60-159"><a href="#cb60-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-160"><a href="#cb60-160" aria-hidden="true" tabindex="-1"></a>For underlining, use <span class="fu">\underline</span>{Underline command}. For overhead and under-head symbols, use <span class="ss">$</span><span class="sc">\overbrace</span><span class="ss">{O}  </span><span class="sc">\underbrace</span><span class="ss">{U}  </span><span class="sc">\overbrace</span><span class="ss">{</span><span class="sc">\underbrace</span><span class="ss">{B}} $</span></span>
+<span id="cb60-161"><a href="#cb60-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-162"><a href="#cb60-162" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Document sections}</span>
+<span id="cb60-163"><a href="#cb60-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-164"><a href="#cb60-164" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Foot notes}</span>
+<span id="cb60-165"><a href="#cb60-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-166"><a href="#cb60-166" aria-hidden="true" tabindex="-1"></a>To type a foot note, use &quot;footnote&quot; <span class="fu">\footnote</span>{This is a command for foot notes} option.</span>
+<span id="cb60-167"><a href="#cb60-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-168"><a href="#cb60-168" aria-hidden="true" tabindex="-1"></a>To write a paragraph, use paragraph command to name it</span>
+<span id="cb60-169"><a href="#cb60-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-170"><a href="#cb60-170" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Paragraphs and Subparagraphs}</span>
+<span id="cb60-171"><a href="#cb60-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-172"><a href="#cb60-172" aria-hidden="true" tabindex="-1"></a><span class="kw">\paragraph</span>{Paragraph1}</span>
+<span id="cb60-173"><a href="#cb60-173" aria-hidden="true" tabindex="-1"></a>This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. </span>
+<span id="cb60-174"><a href="#cb60-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-175"><a href="#cb60-175" aria-hidden="true" tabindex="-1"></a>To write a sub-paragraph use sub-paragraph command</span>
+<span id="cb60-176"><a href="#cb60-176" aria-hidden="true" tabindex="-1"></a><span class="kw">\subparagraph</span>{Subpara1}</span>
+<span id="cb60-177"><a href="#cb60-177" aria-hidden="true" tabindex="-1"></a>This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is <span class="fu">\par</span> paragraph1. This is paragraph1. This is paragraph1. This is paragraph1.</span>
+<span id="cb60-178"><a href="#cb60-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-179"><a href="#cb60-179" aria-hidden="true" tabindex="-1"></a><span class="kw">\subparagraph</span>{Subpara}This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1. This is paragraph1.</span>
+<span id="cb60-180"><a href="#cb60-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-181"><a href="#cb60-181" aria-hidden="true" tabindex="-1"></a>paragraph and subparagraph are just titles!</span>
+<span id="cb60-182"><a href="#cb60-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-183"><a href="#cb60-183" aria-hidden="true" tabindex="-1"></a>par command is used for producing a new paragraph on the run. The indentation and spacing are set by the commands</span>
+<span id="cb60-184"><a href="#cb60-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-185"><a href="#cb60-185" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Quotes}</span>
+<span id="cb60-186"><a href="#cb60-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-187"><a href="#cb60-187" aria-hidden="true" tabindex="-1"></a>To write a quote, use begin quote (for a small one) and begin quotation (for a large one) environment.</span>
+<span id="cb60-188"><a href="#cb60-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-189"><a href="#cb60-189" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">quote</span>}</span>
+<span id="cb60-190"><a href="#cb60-190" aria-hidden="true" tabindex="-1"></a>Brevity is the soul of wit</span>
+<span id="cb60-191"><a href="#cb60-191" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">quote</span>}</span>
+<span id="cb60-192"><a href="#cb60-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-193"><a href="#cb60-193" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">quotation</span>}</span>
+<span id="cb60-194"><a href="#cb60-194" aria-hidden="true" tabindex="-1"></a>I can write a very very very big quotation here!</span>
+<span id="cb60-195"><a href="#cb60-195" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">quotation</span>}</span>
+<span id="cb60-196"><a href="#cb60-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-197"><a href="#cb60-197" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Poetry}</span>
+<span id="cb60-198"><a href="#cb60-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-199"><a href="#cb60-199" aria-hidden="true" tabindex="-1"></a>To write a poetry, use begin verse environment.</span>
+<span id="cb60-200"><a href="#cb60-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-201"><a href="#cb60-201" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">verse</span>}</span>
+<span id="cb60-202"><a href="#cb60-202" aria-hidden="true" tabindex="-1"></a>TWO roads diverged in a yellow wood,<span class="fu">\\</span>  </span>
+<span id="cb60-203"><a href="#cb60-203" aria-hidden="true" tabindex="-1"></a>And sorry I could not travel both,<span class="fu">\\</span>    </span>
+<span id="cb60-204"><a href="#cb60-204" aria-hidden="true" tabindex="-1"></a>And be one traveller, long I stood,<span class="fu">\\</span>   </span>
+<span id="cb60-205"><a href="#cb60-205" aria-hidden="true" tabindex="-1"></a>And looked down one as far as I could,<span class="fu">\\</span>    </span>
+<span id="cb60-206"><a href="#cb60-206" aria-hidden="true" tabindex="-1"></a>To where it bent in the undergrowth;<span class="fu">\\</span></span>
+<span id="cb60-207"><a href="#cb60-207" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb60-208"><a href="#cb60-208" aria-hidden="true" tabindex="-1"></a>Then took the other, as just as fair,<span class="fu">\\</span> </span>
+<span id="cb60-209"><a href="#cb60-209" aria-hidden="true" tabindex="-1"></a>And having perhaps the better claim,<span class="fu">\\</span>  </span>
+<span id="cb60-210"><a href="#cb60-210" aria-hidden="true" tabindex="-1"></a>Because it was grassy and wanted wear;<span class="fu">\\</span>    </span>
+<span id="cb60-211"><a href="#cb60-211" aria-hidden="true" tabindex="-1"></a>Though as for that the passing there<span class="fu">\\</span>  </span>
+<span id="cb60-212"><a href="#cb60-212" aria-hidden="true" tabindex="-1"></a>Had worn them really about the same,<span class="fu">\\</span></span>
+<span id="cb60-213"><a href="#cb60-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-214"><a href="#cb60-214" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span> - Robert Frost</span>
+<span id="cb60-215"><a href="#cb60-215" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">verse</span>}</span>
+<span id="cb60-216"><a href="#cb60-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-217"><a href="#cb60-217" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Description}</span>
+<span id="cb60-218"><a href="#cb60-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-219"><a href="#cb60-219" aria-hidden="true" tabindex="-1"></a>To add a description, use begin description environment.</span>
+<span id="cb60-220"><a href="#cb60-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-221"><a href="#cb60-221" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">description</span>}</span>
+<span id="cb60-222"><a href="#cb60-222" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [stark] House with the sigil Direwolf</span>
+<span id="cb60-223"><a href="#cb60-223" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [lannister] House with the sigil Lion</span>
+<span id="cb60-224"><a href="#cb60-224" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [baratheon] House with the sigil Stag</span>
+<span id="cb60-225"><a href="#cb60-225" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">description</span>}</span>
+<span id="cb60-226"><a href="#cb60-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-227"><a href="#cb60-227" aria-hidden="true" tabindex="-1"></a>This is repeatable using enumerate as well, but there is a difference!</span>
+<span id="cb60-228"><a href="#cb60-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-229"><a href="#cb60-229" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb60-230"><a href="#cb60-230" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [<span class="fu">\textbf</span>{stark}] House with the sigil Direwolf</span>
+<span id="cb60-231"><a href="#cb60-231" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [<span class="fu">\textbf</span>{lannister}] House with the sigil Lion</span>
+<span id="cb60-232"><a href="#cb60-232" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> [<span class="fu">\textbf</span>{baratheon}] House with the sigil Stag</span>
+<span id="cb60-233"><a href="#cb60-233" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb60-234"><a href="#cb60-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-235"><a href="#cb60-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-236"><a href="#cb60-236" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<p>$ % # { &amp; _ are special symbols. G"ottingen</p>
+<p></p>
+<p></p>
+<p></p>
+<p><span class="math inline">\(\pi \ \Pi\)</span></p>
+<p><span class="math inline">\(\sigma \ \Sigma\)</span></p>
+<p>$  $</p>
+<p><span class="math inline">\(\mathcal{F} \mathcal{L}\)</span></p>
+<p>$ x y$</p>
+<p>$ $</p>
+<p>$ A B$</p>
+<p>$ ABC DEF$</p>
+<p>$ A B   C D$</p>
+<p>$ $</p>
+<p>$ $</p>
+<p>$  $</p>
+<p>$ $</p>
+<p>$ $</p>
+<p>$ ^b_a $</p>
+<p><span class="math inline">\(\displaystyle{\oint
+\limits^b_a}\)</span></p>
+<p>$ $</p>
+<p>$ = a_1 + a_2 + a_3$</p>
+<p>$ _{x } = 1$</p>
+<p><span class="math inline">\(\lg \gcd\)</span></p>
+<p>( _{n } )</p>
+<p>$ _{n }$</p>
+<p><span class="math display">\[ \lim \limits_{n \rightarrow
+\infty}\]</span></p>
+<p>[ _{n } ]</p>
+<p><span class="math display">\[ \lim_{n \rightarrow \infty}
+\]</span></p>
+<h2 id="arrays-and-tabbing">Arrays and Tabbing</h2>
+<h3 id="arrays">Arrays:</h3>
+<p>Arrays are similar to tables</p>
+<div class="sourceCode" id="cb61"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$ </span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">array</span>}<span class="ss">{clcr}</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="ss">1 &amp; 2 &amp; 3 &amp; 4 </span><span class="sc">\\</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="ss">5 &amp; 6 &amp; 7 &amp; 8</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">array</span>}</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<h3 id="tabbing">Tabbing:</h3>
+<p>Tabbing is again similar to tables.</p>
+<div class="sourceCode" id="cb62"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabbing</span>}</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>Column 1 <span class="fu">\=</span> Column 2 <span class="fu">\\</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\=</span> <span class="fu">\=</span> Column 5 </span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabbing</span>}</span></code></pre></div>
+<h3 id="creating-matrix">Creating Matrix</h3>
+<p>To create a matrix, use the following code</p>
+<div class="sourceCode" id="cb63"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="kw">\begin</span>{<span class="ex">matrix</span>}</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="ss">a &amp; b &amp; c </span><span class="sc">\\</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="ss">d &amp; e &amp; f &amp; g </span><span class="sc">\\</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">matrix</span>}<span class="ss">$$</span></span></code></pre></div>
+<p>  The above command will create a bracket less 2x4 matrix with a14
+being empty Using pmatrix will create a matrix with curved brackets,
+bmatrix will create a matrix with rectangular brackets. Bmatrix for
+curly bracket matrix   One complex example:</p>
+<div class="sourceCode" id="cb64"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span><span class="kw">\begin</span>{<span class="ex">pmatrix</span>}</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="ss">a &amp; a^2 &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; a^n </span><span class="sc">\\</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="ss">b &amp; b^2 &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; b^n </span><span class="sc">\\</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="sc">\vdots</span><span class="ss"> &amp; &amp; </span><span class="sc">\ddots</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="ss">n &amp; n^2 &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; n^n</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">pmatrix</span>}<span class="ss">$$</span></span></code></pre></div>
+<h2 id="figures">Figures</h2>
+<p>To include figures, use the package,</p>
+<div class="sourceCode" id="cb65"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span></code></pre></div>
+<p>To use .eps figures (Encapsulated Post Script), use the package,</p>
+<div class="sourceCode" id="cb66"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">eps2pdf</span>}</span></code></pre></div>
+<p>  To include a figure use  % do not use
+<code>\begin{figure} \end{figure}</code> in presentations. Use include
+graphics directly.</p>
+<div class="sourceCode" id="cb67"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[size parameters]{<span class="ex">figure_name.ext</span>}</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{figure title}  <span class="co">% for figures, the caption/title is given, usually after the figure</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">reference</span>}        <span class="co">% the label should be given after caption.</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+<p>  <code>\centering</code> centre justifies the figures. Wrapping the
+image with <code>\begin{center}</code> and <code>\end{center}</code>
+will also work. <code>\centering</code> will work within the entire
+begin field <code>\begin{figure} \end{figure}</code> is used to make the
+figure an independent whole object that can be moved around together, so
+that it does not act like alphabets or symbols or numbers.</p>
+<p><code>\label</code> is used to give a reference name to the file, so
+that it can be referred within the file at other places.</p>
+<p><code>\caption</code> is used to give the figure a title.</p>
+<p>Only a selected few formats can be placed, namely,</p>
+<pre><code>.png, .jpeg, .pdf, .eps, .giff, .jpg</code></pre>
+<p><strong>Size parameters </strong> are:</p>
+<p>Width or height = some value with unit.</p>
+<p>Eg:</p>
+<div class="sourceCode" id="cb69"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>Width=5in, width=0.5<span class="fu">\pagewidth</span>, 0.7<span class="fu">\pageheight</span>, 0.8<span class="fu">\linewidth</span> <span class="co">% page width and line width apparently works for documents and beamer (possibly) </span></span></code></pre></div>
+<p>Scale = value between (0,inf] if value greater than 1, then the image
+is magnified, else it is shrunked. If value equals 1, then same size.
+Eg: scale = 0.5, 0.05, 2   Angle = value between [0,360] rotates the
+image accordingly in ccw. Angle can be negative. Eg: angle = 45 All the
+figures must be in the same folder where the .tex file is kept. Also,
+the figure names should have no spaces.</p>
+<h2 id="multiple-figures-in-a-page">Multiple Figures in a Page</h2>
+<p>Source: http://tex.stackexchange.com/questions/119905/insert-multiple-figures-in-latex As
+on 12th May, 2015</p>
+<p>Below is how to insert two figures. Pls adapt this as per your needs.
+You need subcaption package.</p>
+<div class="sourceCode" id="cb70"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[demo]{<span class="ex">graphicx</span>}</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">subcaption</span>}</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">subfigure</span>}{.5<span class="fu">\textwidth</span>}</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=.8<span class="fu">\linewidth</span>]{<span class="ex">image1</span>}</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{1a}</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:sfig1</span>}</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">subfigure</span>}<span class="co">%</span></span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">subfigure</span>}{.5<span class="fu">\textwidth</span>}</span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=.8<span class="fu">\linewidth</span>]{<span class="ex">image2</span>}</span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{1b}</span>
+<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:sfig2</span>}</span>
+<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">subfigure</span>}</span>
+<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{plots of....}</span>
+<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:fig</span>}</span>
+<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
+<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<p>Other Source:</p>
+<p>Using subfloats and minipages</p>
+<p>http://texblog.org/2011/05/24/placing-figures-side-by-side-subfig/</p>
+<p>http://tex.stackexchange.com/questions/9584/how-to-put-subfigures-in-several-rows</p>
+<h2 id="minipages-and-boxes">Minipages and Boxes</h2>
+<p>Minipage divides the page into multiple pages width-wise. fbox is
+used for putting a box around contents. hfill ensures that the contents
+are nicely spaced out width-wise. A blank line pushes the minipage to
+the next line. A soft return retains the minipage on the same line,
+provided the dimensions of the page do not interfere.</p>
+<div class="sourceCode" id="cb71"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.48<span class="fu">\textwidth</span>}</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.4<span class="fu">\textwidth</span>}</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span></span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span></span>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-23"><a href="#cb71-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-24"><a href="#cb71-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-25"><a href="#cb71-25" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-26"><a href="#cb71-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-27"><a href="#cb71-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.25<span class="fu">\textwidth</span>}</span>
+<span id="cb71-28"><a href="#cb71-28" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-29"><a href="#cb71-29" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-30"><a href="#cb71-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-31"><a href="#cb71-31" aria-hidden="true" tabindex="-1"></a><span class="fu">\fbox</span></span>
+<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb71-33"><a href="#cb71-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.33<span class="fu">\textwidth</span>}</span>
+<span id="cb71-34"><a href="#cb71-34" aria-hidden="true" tabindex="-1"></a>    I am in a snowy city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-35"><a href="#cb71-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-36"><a href="#cb71-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-37"><a href="#cb71-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-38"><a href="#cb71-38" aria-hidden="true" tabindex="-1"></a><span class="fu">\fbox</span></span>
+<span id="cb71-39"><a href="#cb71-39" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb71-40"><a href="#cb71-40" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.33<span class="fu">\textwidth</span>}</span>
+<span id="cb71-41"><a href="#cb71-41" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-42"><a href="#cb71-42" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-43"><a href="#cb71-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-44"><a href="#cb71-44" aria-hidden="true" tabindex="-1"></a><span class="fu">\hfill</span></span>
+<span id="cb71-45"><a href="#cb71-45" aria-hidden="true" tabindex="-1"></a><span class="fu">\fbox</span></span>
+<span id="cb71-46"><a href="#cb71-46" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb71-47"><a href="#cb71-47" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">minipage</span>}[t]{0.33<span class="fu">\textwidth</span>}</span>
+<span id="cb71-48"><a href="#cb71-48" aria-hidden="true" tabindex="-1"></a>    I am in a Hot city, on top of a big mountain, with few trees, eating a banana on a starry evening, looking for a shooting star!</span>
+<span id="cb71-49"><a href="#cb71-49" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">minipage</span>}</span>
+<span id="cb71-50"><a href="#cb71-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="report-writing">Report Writing</h2>
+<p>Use the report class. It is similar to article class, except that,
+report class accepts chapters. Article class does not accept
+chapters.</p>
+<p>To include chapters on the run, use</p>
+<div class="sourceCode" id="cb72"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\chapter</span>{Chapter name}</span></code></pre></div>
+<p>If chapters are in a separate file, use</p>
+<div class="sourceCode" id="cb73"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\chapter</span>{Chapter name}</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\input</span>{Chapter file}</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Provided, the input file does not have a &quot;chapter&quot; command!</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">Chapter file</span>}</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co">% Provided, the input file has a &quot;chapter&quot; command</span></span></code></pre></div>
+<h2 id="writing-source-code">Writing Source Code</h2>
+<p>This is done in two ways:</p>
+<ul>
+<li>Using verbatim environment</li>
+<li>Using listing environment</li>
+</ul>
+<h3 id="verbatim-environment">Verbatim Environment</h3>
+<p>This is an easy way, but not much colourful. Write the contents
+within a verbatim environment</p>
+<div class="sourceCode" id="cb74"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">verbatim</span>}</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="vs">code ...</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">verbatim</span>}</span></code></pre></div>
+<p>The other way is to use listing environment.</p>
+<h3 id="listing-environment">Listing Environment</h3>
+<p>Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings</p>
+<p>This has more features.</p>
+<p>To use the package, you need:</p>
+<div class="sourceCode" id="cb75"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">listings</span>}</span></code></pre></div>
+<p>The listings package supports highlighting of all the most common
+languages and it is highly customizable. If you just want to write code
+within your document the package provides the lstlisting
+environment:</p>
+<div class="sourceCode" id="cb76"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">lstlisting</span>}</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="vs">Put your code here.</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">lstlisting</span>}</span></code></pre></div>
+<p>You can also import the source code, specify the language, starting
+and ending lines and a frame box.</p>
+<div class="sourceCode" id="cb77"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstinputlisting</span>[language=Python, firstline=37, lastline=45, frame=single]{source_filename.py}</span></code></pre></div>
+<p>You can modify several parameters that will affect how the code is
+shown. You can put the following code anywhere in the document (it
+doesn’t matter whether before or after <strong>\begin{document}
+</strong>), change it according to your needs. The meaning is explained
+next to any line.</p>
+<div class="sourceCode" id="cb78"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">listings</span>}</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">color</span>}</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\definecolor</span>{mygreen}{rgb}{0,0.6,0}</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\definecolor</span>{mygray}{rgb}{0.5,0.5,0.5}</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\definecolor</span>{mymauve}{rgb}{0.58,0,0.82}</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstset</span>{ <span class="co">%</span></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>  backgroundcolor=<span class="fu">\color</span>{white},   <span class="co">% choose the background color; you must add \usepackage{color} or \usepackage{xcolor}</span></span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>  basicstyle=<span class="fu">\footnotesize</span>,        <span class="co">% the size of the fonts that are used for the code</span></span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>  breakatwhitespace=false,         <span class="co">% sets if automatic breaks should only happen at whitespace</span></span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>  breaklines=true,                 <span class="co">% sets automatic line breaking</span></span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>  captionpos=b,                    <span class="co">% sets the caption-position to bottom</span></span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>  commentstyle=<span class="fu">\color</span>{mygreen},    <span class="co">% comment style</span></span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a>  deletekeywords={...},            <span class="co">% if you want to delete keywords from the given language</span></span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>  escapeinside={<span class="fu">\%</span>*}{*)},          <span class="co">% if you want to add LaTeX within your code</span></span>
+<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a>  extendedchars=true,              <span class="co">% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8</span></span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a>  frame=single,                    <span class="co">% adds a frame around the code</span></span>
+<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a>  keepspaces=true,                 <span class="co">% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)</span></span>
+<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a>  keywordstyle=<span class="fu">\color</span>{blue},       <span class="co">% keyword style</span></span>
+<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>  language=Octave,                 <span class="co">% the language of the code</span></span>
+<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a>  otherkeywords={*,...},            <span class="co">% if you want to add more keywords to the set</span></span>
+<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a>  numbers=left,                    <span class="co">% where to put the line-numbers; possible values are (none, left, right)</span></span>
+<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a>  numbersep=5pt,                   <span class="co">% how far the line-numbers are from the code</span></span>
+<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a>  numberstyle=<span class="fu">\tiny\color</span>{mygray}, <span class="co">% the style that is used for the line-numbers</span></span>
+<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>  rulecolor=<span class="fu">\color</span>{black},         <span class="co">% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))</span></span>
+<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a>  showspaces=false,                <span class="co">% show spaces everywhere adding particular underscores; it overrides &#39;showstringspaces&#39;</span></span>
+<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a>  showstringspaces=false,          <span class="co">% underline spaces within strings only</span></span>
+<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a>  showtabs=false,                  <span class="co">% show tabs within strings adding particular underscores</span></span>
+<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>  stepnumber=2,                    <span class="co">% the step between two line-numbers. If it&#39;s 1, each line will be numbered</span></span>
+<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>  stringstyle=<span class="fu">\color</span>{mymauve},     <span class="co">% string literal style</span></span>
+<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>  tabsize=2,                       <span class="co">% sets default tabsize to 2 spaces</span></span>
+<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a>  title=<span class="fu">\lstname</span>                   <span class="co">% show the filename of files included with \lstinputlisting; also try caption instead of title</span></span>
+<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Style definition inside the package lets you define multiple styles,
+i.e. profiles specifying a set of settings.</p>
+<div class="sourceCode" id="cb79"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstdefinestyle</span>{customc}{</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>  belowcaptionskip=1<span class="fu">\baselineskip</span>,</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>  breaklines=true,</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>  frame=L,</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  xleftmargin=<span class="fu">\parindent</span>,</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  language=C,</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  showstringspaces=false,</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>  basicstyle=<span class="fu">\footnotesize\ttfamily</span>,</span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>  keywordstyle=<span class="fu">\bfseries\color</span>{green!40!black},</span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>  commentstyle=<span class="fu">\itshape\color</span>{purple!40!black},</span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>  identifierstyle=<span class="fu">\color</span>{blue},</span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>  stringstyle=<span class="fu">\color</span>{orange},</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-16"><a href="#cb79-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstdefinestyle</span>{customasm}{</span>
+<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a>  belowcaptionskip=1<span class="fu">\baselineskip</span>,</span>
+<span id="cb79-18"><a href="#cb79-18" aria-hidden="true" tabindex="-1"></a>  frame=L,</span>
+<span id="cb79-19"><a href="#cb79-19" aria-hidden="true" tabindex="-1"></a>  xleftmargin=<span class="fu">\parindent</span>,</span>
+<span id="cb79-20"><a href="#cb79-20" aria-hidden="true" tabindex="-1"></a>  language=[x86masm]Assembler,</span>
+<span id="cb79-21"><a href="#cb79-21" aria-hidden="true" tabindex="-1"></a>  basicstyle=<span class="fu">\footnotesize\ttfamily</span>,</span>
+<span id="cb79-22"><a href="#cb79-22" aria-hidden="true" tabindex="-1"></a>  commentstyle=<span class="fu">\itshape\color</span>{purple!40!black},</span>
+<span id="cb79-23"><a href="#cb79-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb79-24"><a href="#cb79-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-25"><a href="#cb79-25" aria-hidden="true" tabindex="-1"></a><span class="co">% And use them separately</span></span>
+<span id="cb79-26"><a href="#cb79-26" aria-hidden="true" tabindex="-1"></a><span class="fu">\lstset</span>{escapechar=@,style=customc}</span></code></pre></div>
+<h3 id="minted-package">Minted Package</h3>
+<p>This is similar to listing package. It uses the <em>pygments</em>
+package and colouring scheme of python for colouring and styling code.
+You need to include this package in the document preamble.
+<strong>Python 2.5 and above should be installed in the system to use
+this package.</strong></p>
+<h2 id="bibliography-using-bibtex">Bibliography using BiBTeX</h2>
+<p>To make bibliography entries, you can use bib files. Bib Files have
+all the citation entries.</p>
+<ul>
+<li>Go to google scholar</li>
+<li>Type a paper name, click cite</li>
+<li>Get the bibtex citation code</li>
+<li>Paste it inside a bib file</li>
+<li>Do this for all the entries</li>
+</ul>
+<p>Once done, your bib file is ready.</p>
+<p>A sample citation entry looks like this:</p>
+<div class="sourceCode" id="cb80"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>@article{forget_1991,</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  title={Improved general circulation models of the Martian atmosphere from the surface to above 80 km},</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  author={Forget, Fran{<span class="fu">\c</span>{c}}ois and Hourdin, Fr{<span class="fu">\&#39;</span>e}d{<span class="fu">\&#39;</span>e}ric and Fournier, Richard and Hourdin, Christophe and Talagrand, Olivier and Collins, Matthew and Lewis, Stephen R and Read, Peter L and Huot, Jean-Paul},</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  journal={Journal of Geophysical Research: Planets (1991--2012)},</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  volume={104},</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  number={E10},</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>  pages={24155--24175},</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>  year={1999},</span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>  publisher={Wiley Online Library}</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>The first one is the keyword or the id of the article. All the others
+are the article properties. You can have articles, books, magazines,
+papers, url links, etc., You can create your own citation entry as you
+wish!</p>
+<p><strong>Citing in the Document</strong></p>
+<p>Include this line in the document preamble</p>
+<div class="sourceCode" id="cb81"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">apalike</span>} <span class="co">% This is a bibliography style</span></span></code></pre></div>
+<p>Include the bib file in the document with this line.</p>
+<div class="sourceCode" id="cb82"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">references</span>} <span class="co">% This is the reference file. bib extension not needed.</span></span></code></pre></div>
+<p>Cite the entries inside the document using
+<code>\cite{keyword} or \citep{keyword}</code> or equivalent.</p>
+<div class="sourceCode" id="cb83"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>There is a paper by a person named Forget <span class="kw">\citep</span>{<span class="ex">forget_1991</span>} on Martian Atmosphere GCM. Other papers, for instance, Gierasch <span class="kw">\citep</span>{<span class="ex">gierasch1968study</span>}, Conrath, <span class="kw">\cite</span>{<span class="ex">conrath1975thermal</span>} also explain some research topics on Mars.</span></code></pre></div>
+<p>And based on the styling chosen, the bibliography entries appear
+accordingly. <strong>Only the selected entries will be
+referenced!</strong></p>
+<p>Bibliography styles : plain, alpha, apalike, ieeetr, unsrt, acm
+etc.,</p>
+<p><strong>Natbib</strong></p>
+<p>Natbib is a separate bibliography style collection. It has several
+bibliography styles. <strong>apalike</strong> style under natbib is
+excellent.</p>
+<p>To include natbib, use the line</p>
+<div class="sourceCode" id="cb84"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">natbib</span>}</span></code></pre></div>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

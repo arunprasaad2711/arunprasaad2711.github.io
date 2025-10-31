@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>Installation and Setup of Visual Studio Code | HTML5_CSS3 | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,91 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="installation-and-setup-of-visual-studio-code">Installation and
+Setup of Visual Studio Code</h1>
+<p>Arun Prasaad Gunasekaran</p>
+<h2 id="about-vscode">About VScode</h2>
+<ul>
+<li>Supports multiple Programming Languages,</li>
+<li>Hundreds of Extensions,</li>
+<li>Cross Platform,</li>
+<li>Easy to use</li>
+</ul>
+<h2 id="alternatives-to-vscode">Alternatives to VSCode</h2>
+<ul>
+<li>Atom</li>
+<li>Sublime</li>
+<li>Brackets</li>
+<li>Notepad++</li>
+<li>Eclipse</li>
+<li>Netbeans</li>
+<li>….</li>
+</ul>
+<h2 id="youtube-video">YouTube Video</h2>
+<iframe width="540" height="315" src="https://www.youtube.com/embed/rDSKgpr9s1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h2 id="installation">Installation</h2>
+<ul>
+<li>Go to the website, (https://code.visualstudio.com/)</li>
+<li>Search for the correct version,</li>
+<li>Install it just like a regular software.</li>
+</ul>
+<h2 id="extensions">Extensions</h2>
+<ul>
+<li>Bracket Pair Colorizer,</li>
+<li>Emmet - for auto completion, (built-in in recent versions.)</li>
+<li>Live Server - to update and see your webpage instantly,</li>
+<li>IntelliSense for CSS class names in HTML - for auto completion,</li>
+<li>vscode-icons - fancy icons for looks and style</li>
+</ul>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +310,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

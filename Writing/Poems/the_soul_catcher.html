@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>the soul catcher | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="the-soul-catcher">The Soul Catcher</h1>
+<div class="line-block">Many days I walked, alone and restless,<br />
+Chasing my dreams, hard and endless,<br />
+Ever trying my best, to complete fullness,<br />
+Trying to fill a void, a deep emptiness.<br />
+<br />
+You don't speak a word, you sleep,<br />
+Your kind face forever, in my heart I'll keep,<br />
+You wipe my tears, whenever I weep,<br />
+Let me sing a song, for you to rest deep.<br />
+<br />
+Like the eyelids to the eye, I will be close to you,<br />
+Protecting you from harm, I shall be with you,<br />
+Till you break your rest, my eyes won't rest for you,<br />
+That is the least I can, always do for you.<br />
+<br />
+I asked the flowers: Is this a dream?<br />
+To have you in my life, in joy I scream!<br />
+Adding joy to my life, you are a stream,<br />
+Whenever we kiss, you taste like cream.<br />
+<br />
+I curse the autumn winds that give you the cold,<br />
+As you sleep in sickness, ill care for you until I'm old,<br />
+I bless the summer winds that made me so bold,<br />
+To meet you and tell, what my heart truly told.<br />
+<br />
+As you lie in my lap, I am reading a book,<br />
+A book so dear to you that I'll never overlook.<br />
+I wonder and ponder, what did it take,<br />
+Your precious little heart, to get such a hook?<br />
+<br />
+My heart once wandered, hither and thither,<br />
+Drifting in the wind, like a lonely feather,<br />
+Changing its emotions, just like the weather,<br />
+Until you came in and became my tether.<br />
+<br />
+You don't speak a word, my dear,<br />
+I feel your words, loud and clear,<br />
+Whatever happens, you don't fear,<br />
+I am strong now, and the troubles I can bear,<br />
+<br />
+As you sleep in peace, I'll touch you gently,<br />
+I'll comb your hair to ease, all its knots feebly.<br />
+Rest all you want; there is nothing so urgently,<br />
+I have to take care of them all, well and attentively.<br />
+<br />
+Even if you are far, my heart is close to you,<br />
+When I hear your voice, my eyes search for you,<br />
+In happiness and sadness, my heart is full of you,<br />
+I dared to jump the skies, to be with you.<br />
+<br />
+Once I was a storm chaser, running far and wide,<br />
+Till one storm caught me and tossed me aside.<br />
+Now I am a Stormbreaker, being a chaser's guide,<br />
+My catcher in the rye, my soon to be the bride!<br />
+<br />
+I ask the spring winds, for many beautiful days,<br />
+As we celebrate our wedding, with bliss and gay.<br />
+I ask for the winter winds, to keep the stars at bay,<br />
+To keep the clouds grey, for us to cuddle that way.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

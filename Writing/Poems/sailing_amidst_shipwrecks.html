@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>sailing amidst shipwrecks | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,85 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="sailing-amidst-shipwrecks">Sailing amidst Shipwrecks</h1>
+<div class="line-block">When your naive heart, sees the strong
+gale,<br />
+Decides to take a voyage, and let the ship sail.<br />
+But little did the heart see, what lied beyond the coast,<br />
+Of the rough tides, and the brewing storms.<br />
+<br />
+Shipwrecked often, I feel quite lost,<br />
+Frozen by the waters, and scorched by the heat.<br />
+Holding on to the embers, of hope at any cost,<br />
+I silently pray for help, to overcome defeat.<br />
+<br />
+Finding the inner strength is hard at this moment,<br />
+I feel weak and frail, to even face a gentle breeze.<br />
+The scars of the past, that kept you grounded,<br />
+Now weighs too much, for you to stay afloat.<br />
+<br />
+As I struggle to float, I'm counting my blessings,<br />
+Holding on tight, to the fast receding dreams.<br />
+My hands are bloody, and parched as well,<br />
+Being pushed to breathe, while underwater.<br />
+<br />
+Amidst all the turbulence, despite all the pain,<br />
+Amidst the icy cold, despite the blistering heat,<br />
+I am fighting all I can, with every ounce of strength,<br />
+Longing hard for the light, of that one guiding star.<br />
+<br />
+How long can I keep up, such a fight I don't know,<br />
+My naive heart still beats, for the joys of tomorrow.<br />
+Sailing amidst shipwrecks, I am mending my heart,<br />
+Stitching all the pieces, for a voyage once again.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +304,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

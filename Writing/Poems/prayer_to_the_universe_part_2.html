@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>prayer to the universe part 2 | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,106 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="prayer-to-the-universe---part-2">Prayer to the Universe - Part
+2</h1>
+<div class="line-block">With all of the humility, and full of
+pain,<br />
+I call upon you to hear me explain,<br />
+For you, the head of all our clan,<br />
+Please listen gently, and make a plan,<br />
+<br />
+With, the world going mad,<br />
+Millions, are very sad,<br />
+The weather is very bad,<br />
+And no one is truly glad,<br />
+<br />
+So many wars, and so many fights,<br />
+Thousands are helpless, to see these sights,<br />
+The days are fading, with peaceless nights,<br />
+People are running, fleeing many plights,<br />
+<br />
+Thousands are dying, with numerous disease,<br />
+Is there a way to cleanse this unease?<br />
+Wars of Faith, failing to cease,<br />
+I am powerless as if deceased,<br />
+<br />
+Lighting a lamp is a plain crime,<br />
+While a thousand crimes, do rhyme,<br />
+This " world" of humans, has lost it's prime,<br />
+Corrupting every day, as if there is time,<br />
+<br />
+Children are crying; People are lying,<br />
+Many are stealing; Many are killing,<br />
+None are changing; Morals are falling,<br />
+When the good are tying, no one is buying,<br />
+<br />
+I am powerless, bound by chains,<br />
+Becoming hopeless, with unheard claims,<br />
+Struggling to be fearless, despite heavy rains,<br />
+Soon will be tearless, with watery plains,<br />
+<br />
+Change this world, With women standing equals,<br />
+Change this world, With faith preaching morals,<br />
+Change this world, With children having meals,<br />
+Change this world, With people joining realms,<br />
+<br />
+With tearful eyes and burdened heart,<br />
+Finding it hard, to move in my cart,<br />
+Hoping to see a day, with a hopeful heart,<br />
+When all of these are truthfully sort!<br />
+<br />
+" I want revolution! Nothing else shall suffice!.”<br />
+"Please bring evolution! This species can't previse!.”<br />
+" World is an involution! With no cure to advice!.”<br />
+"It needs annihilation! This is the revise!"</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +325,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

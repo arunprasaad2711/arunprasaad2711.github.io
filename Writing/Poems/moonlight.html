@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>moonlight | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="moonlight">Moonlight</h1>
+<div class="line-block">One day, I looked at the mirror,<br />
+Then found, a hair quite silver,<br />
+Seemed yesterday; I started my journey,<br />
+Years passed, and I gathered memories.<br />
+<br />
+Behind me, I see many laurels,<br />
+Many goals; that I won trying,<br />
+Many defeats; that I lost trying,<br />
+Many lessons; that tempered me well.<br />
+<br />
+I'm surprised, for the paths crossed,<br />
+Never imagined, the place I'm now,<br />
+Did quit, on some ventures before,<br />
+Yet persisting, on many ventures still.<br />
+<br />
+I walked, past the cold streets,<br />
+The darkness, that tried luring me,<br />
+The burdens, that made me question,<br />
+The doubts, that pulled me back.<br />
+<br />
+I still, have doubts and burdens,<br />
+But then, the fog is clearing,<br />
+Through it, I see light streaks,<br />
+The darkness is now slowly receding.<br />
+<br />
+I struggled, to find myself clear,<br />
+My heart did break into pieces,<br />
+That's when, it fully opened up,<br />
+And I found myself quite clear.<br />
+<br />
+I was, once full of doubts,<br />
+I still, have a long road,<br />
+But slowly, I am finding strength,<br />
+And surprised, to tackle it well.<br />
+<br />
+The fog, that clouded my judgement,<br />
+Became thin, and started to fade,<br />
+Through it, I see light streaks,<br />
+Out came, the moon to guide.<br />
+<br />
+With time, it gave me peace,<br />
+Quite detached, from what is around,<br />
+Yet attached, to what I want,<br />
+Still cheerful, but calm and composed.<br />
+<br />
+Then I, realised in a moment,<br />
+The moon, that shined all night,<br />
+Did vanish, yet there was light,<br />
+I realised, the moonlight in me.<br />
+<br />
+Don't lose, the hope in yourself,<br />
+This pain shall also pass soon,<br />
+You strain, and break your muscles,<br />
+You rise, with more stronger muscles.<br />
+<br />
+You grow, at your own pace,<br />
+You break, your heart many times,<br />
+But still, mend your broken pieces,<br />
+What is, a moon without craters?</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

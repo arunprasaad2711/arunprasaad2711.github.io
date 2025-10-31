@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{ themes.default }}">
+{% include 'components/header.html' %}
+
+<body>
+    {% include 'components/menubar.html' %}
+
+    {% include 'components/banner.html' %}
+    
+    <main id="content">
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% include 'components/footer.html' %}
+
+    {% include 'components/jsfiles.html' %}
+
+</body>
+</html>

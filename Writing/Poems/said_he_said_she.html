@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>said he said she | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,134 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="said-he-said-she">Said He, Said She</h1>
+<div class="line-block">May I ask said he<br />
+You may said she<br />
+I like you said he<br />
+I can't said she<br />
+<br />
+May I ask said he<br />
+I'm broken said she<br />
+So am I said he<br />
+I'm scared said she<br />
+<br />
+I'm not insisting said he<br />
+I know that said she<br />
+You trust me said he<br />
+Yes I do said she<br />
+<br />
+Why scared said he<br />
+Of the past said she<br />
+It's different said he<br />
+Can't see it said she<br />
+<br />
+Have faith said he<br />
+It's hard said she<br />
+What isn't said he<br />
+I don't know said she<br />
+<br />
+Who am I said he<br />
+A good friend said she<br />
+I wanted more said he<br />
+I can't give said she<br />
+<br />
+I respect you said he<br />
+Thank you said she<br />
+I won't insist said he<br />
+You never did said she<br />
+<br />
+Want went wrong said he<br />
+Nothing was said she<br />
+Then what said he<br />
+I didn't feel said she<br />
+<br />
+It's hard said he<br />
+I know said she<br />
+I'm hurt said he<br />
+Me too said she<br />
+<br />
+Who are we said he<br />
+We are friend said she<br />
+Nothing more said he<br />
+Nothing less said she<br />
+<br />
+Should I wait said he<br />
+No move on said she<br />
+Why not said he<br />
+It's cruel said she<br />
+<br />
+If I moved said he<br />
+It's alright said she<br />
+I'll feel different said he<br />
+I'll be happy said she<br />
+<br />
+Am I bad said he<br />
+No you're not said she<br />
+I feel clueless said he<br />
+That's life said she<br />
+<br />
+It's awkward said he<br />
+Don't be said she<br />
+You're relaxed said he<br />
+I know you said she<br />
+<br />
+Is there hope said he<br />
+I don't know said she<br />
+If there is said he<br />
+I'll ask you said she<br />
+<br />
+I'm going said he<br />
+Why so said she<br />
+To heal said he<br />
+Come back said she</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +353,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

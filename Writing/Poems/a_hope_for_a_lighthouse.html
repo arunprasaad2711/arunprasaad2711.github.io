@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>a hope for a lighthouse | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,95 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="a-hope-for-a-lighthouse">A Hope for a Lighthouse</h1>
+<div class="line-block">It’s been years since I started this
+voyage,<br />
+Sailing among the currents, I’ve reached this far.<br />
+From where I am, I see no trace of land,<br />
+I am all alone, in a meadow of blue waves.<br />
+<br />
+I started this voyage, with so much optimism,<br />
+With a naivety so vast, the oceans were tiny.<br />
+Battered by waves, and many stormy nights,<br />
+I am now scarred, with skin burnt by the winds.<br />
+<br />
+Sailing all alone, I liked the comfort of the dark,<br />
+For it was gentle, and it hugged me like my mother.<br />
+And it showed me the stars, and their many tales,<br />
+A welcome escape, from the salted reality.<br />
+<br />
+Should I call myself weak? For accepting the hug,<br />
+I got quite attached, to the escape so much,<br />
+That I stand helpless when my nights ruined,<br />
+By the storms and waves, and the night’s cold fury.<br />
+<br />
+In the calm that follows, I remain in tatters,<br />
+Barely surviving the storm, grappling to any support.<br />
+I felt thirsty and searched for some water to drink,<br />
+That’s when the ocean, taught me what irony means.<br />
+<br />
+Was it my fault? For my sail to be odd?<br />
+With so much conflict, yet it moves on!<br />
+I often feel envious, for the fare journey others have,<br />
+They do have hardships, yet they reach the shore.<br />
+<br />
+How many times, can I search within me?<br />
+To scrap the remains of some hope that is there?<br />
+It’s hard to sustain, a burning fire against the wind,<br />
+Let alone the embers that are lingering for long.<br />
+<br />
+Every night when I sleep, in the cold dark emptiness,<br />
+I hope for a miracle, and I hope for the winds,<br />
+I hope for strength, and I hope for wisdom,<br />
+I hope for the shore, and I hope for a lighthouse.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +314,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

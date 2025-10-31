@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>at the top of the clouds | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,94 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="at-the-top-of-the-clouds">At the top of the clouds</h1>
+<div class="line-block">In a world, that never ceases to spin,<br />
+In a time, that forces you to always win,<br />
+You being content with where you are now,<br />
+Will earn you the name, as flaky as snow.<br />
+<br />
+It is always hard, to follow your dreams,<br />
+To make a living on your hopes and dreams.<br />
+It might mean, to have a simple living,<br />
+Away from the race, of abundant craving.<br />
+<br />
+It is always hard, to follow your dreams,<br />
+There are many voices, to silence your dreams,<br />
+A life that reflects, your values and principles,<br />
+It is in itself, a massive and noble feat.<br />
+<br />
+To move slowly with peace, and with grace,<br />
+In a world that demands you to run seems disgrace.<br />
+Let me remind you: that you are quite brave,<br />
+To avoid the temptations, and to follow your heart.<br />
+<br />
+When ambition is seen, only as an ascend on a ladder,<br />
+The eyes that see so, might see your work as fodder.<br />
+It takes guts to take an undemanding job,<br />
+To fully invest your soul in your true dream job.<br />
+<br />
+Ignore the nay sayers, for they are abundant in number,<br />
+They will come everyday, after you break every slumber.<br />
+If you don’t pursue hard, for what is your heart’s desire,<br />
+Can you expect anyone else, to do it for you my friend?<br />
+<br />
+There might be suffering, in pursuing what is right,<br />
+And there is a lot of pain, to swim against the stream.<br />
+A job and salary are mere means to end,<br />
+They do help your life, but they don’t define you my friend.<br />
+<br />
+You’ll be told in million ways, that you are wrong,<br />
+Be strong and bold, to not sell yourself out.<br />
+Get help when needed, and move onward and upward,<br />
+At the top of the clouds, lies the eternal sunshine!</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +313,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>message to the friendly care giver | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,156 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="message-to-the-friendly-care-giver">Message to the friendly care
+giver</h1>
+<div class="line-block">Turning another leaf, as you go around the
+sun,<br />
+You might wonder and ponder, what’s going on?<br />
+Your purpose in life, and what you’re doing with it,<br />
+The days that pass by and the days yet to come.<br />
+<br />
+A new leaf at this age can be quite taxing,<br />
+With the world in a pandemic, it is harder than usual.<br />
+While you work hard, to reach your dreams and goals,<br />
+What can I say to you, my friendly caregiver?<br />
+<br />
+This is no advice, as the world has it in suffice,<br />
+Just thoughts and words, that could be soothing.<br />
+Do reach out to them, when you’re in need,<br />
+I’ll be delighted to know if this helped you in some way.<br />
+<br />
+You are a dreamer, in this practical world,<br />
+And you might seem misplaced, and rightly so.<br />
+But the practical world, can’t exist at all,<br />
+If your kind was not born at all!<br />
+<br />
+That is the power, of dreams and visions,<br />
+It is the one, that can contort reality,<br />
+Into ways and means, the non-dreamers can’t see,<br />
+And makes the impossible, possible by good means.<br />
+<br />
+Dare to dream big, and dare to push your limits,<br />
+You don’t have to be, the dutiful adult you are,<br />
+Once in a while, listen to your inner child,<br />
+No one can be as selfless as an innocent child.<br />
+<br />
+An empath at heart, you care for animals more,<br />
+For you say, that they behave better than people.<br />
+While it is true, in many many accounts,<br />
+I request you to not, shut your door on people.<br />
+<br />
+Like the clouds that can hide the sun,<br />
+Many vices from humans, can hide humanity,<br />
+But do be strong, and notice humans more,<br />
+For there is still hope, and hope is not lost.<br />
+<br />
+While you are special, special in many ways,<br />
+Do keep in mind, that you are a human too,<br />
+You have your own many quirks and flaws,<br />
+That makes you unique, and one of a kind.<br />
+<br />
+Do show yourself a lot of kindness,<br />
+The same kindness you show to others.<br />
+Especially when you’re hurt and sad,<br />
+Especially when you feel inadequate.<br />
+<br />
+There is an abundance of goodness around us,<br />
+And there is an abundance of evil too!<br />
+It is a daily fight, to preserve the goodness in us,<br />
+And it is tough, to fight darkness every day.<br />
+<br />
+This fight is hard when your goals are different,<br />
+And even harder to convince, the unwilling hearts,<br />
+It is quite alright, to feel lost at these times,<br />
+With time and planning, you will surely win.<br />
+<br />
+It is quite painful when hurt by the ones you love,<br />
+It can be scary, to trust people back again,<br />
+Do take your time, to heal from the pain,<br />
+And ask help when needed, we can sort it out.<br />
+<br />
+When you feel down, sad, or lost,<br />
+Do take some time, and take it slow,<br />
+Give yourself time, to heal and recover,<br />
+Show yourself patience, to bounce back better.<br />
+<br />
+Ash turns to Diamond, amidst all the pressure,<br />
+With support, you will become a diamond too!<br />
+So aim high, and take the chances and risks,<br />
+We’re here to support you, you’ll be fine!<br />
+<br />
+Whenever you feel sad, and feel hopeless,<br />
+Do keep in mind, a simple metaphor in life,<br />
+Happiness and sadness comes in waves,<br />
+And as they say, waves don’t stay for long.<br />
+<br />
+You have the strength, and power within you,<br />
+Take your time, and harness it with conviction,<br />
+A person of substance, you’re one of a kind,<br />
+An infinite universe, in a finite human being.<br />
+<br />
+This is your life, my dear caregiver!<br />
+You have the right, to make it as you please!<br />
+Listen to your heart, for what is right and wrong,<br />
+And build the courage to follow it through.<br />
+<br />
+Do surround yourself, with people who love you,<br />
+For they can either, make you or break you,<br />
+You care for others a lot, despite your troubles,<br />
+Do let the ones you love, take care of you too?<br />
+<br />
+Don’t hesitate to shine, as radiant as the sun,<br />
+And dare to fill, the dark cosmos with light.<br />
+In your own pace, and in your own time,<br />
+For you are special, the child of the sun!</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +375,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

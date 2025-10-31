@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Introduction to Python | Python | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <!-- TOC -->
+<ul>
+<li><a href="#Introduction-to-Python">Introduction to Python</a>
+<ul>
+<li><a href="#Features-of-Python">Features of Python</a>
+<ul>
+<li><a href="#It-is-an-Interpreted-Programming-Language">It is an
+Interpreted Programming Language.</a></li>
+<li><a href="#It-is-a-general-purpose-programming-language">It is a
+general purpose programming language</a></li>
+<li><a href="#It-is-object-oriented">It is object oriented</a></li>
+<li><a href="#The-design-of-the-language-is-simple">The design of the
+language is simple</a></li>
+</ul></li>
+<li><a href="#Why-Python">Why Python?</a></li>
+<li><a href="#Is-it-undisputed">Is it undisputed?</a></li>
+<li><a href="#Different-Versions-of-Python">Different Versions of
+Python</a>
+<ul>
+<li><a href="#Python-2---Legacy">Python 2 - Legacy</a></li>
+<li><a href="#Python-3---Future">Python 3 - Future</a></li>
+</ul></li>
+<li><a href="#Which-one-should-I-use">Which one should I use?</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h1 id="introduction-to-python">Introduction to Python</h1>
+<p>Python is a programming language written by Dutch Programmer Guido
+van Rossum. Python as of 2019, is one of the most commonly used
+programming languages, having its reach expanded to a variety of
+fields.</p>
+<p>Learning Python can be quite useful for a variety of purposes. So, it
+is quite recommended.</p>
+<h2 id="features-of-python">Features of Python</h2>
+<p>Python programming language has a lot of features that make in
+versatile.</p>
+<h3 id="it-is-an-interpreted-programming-language.">It is an Interpreted
+Programming Language.</h3>
+<p>What this means is that each and every line of code written by the
+programmer is interpreted into its corresponding machine or assembly
+level programming immediately and executed immediately. The advantage of
+this kind of architecture is that the programmer can see if his/her code
+is working well on a line-by-line basis and execute each and every line
+on their own. So, this architecture is user-friendly to work with.
+However, this method is inefficient when it comes to using resources.
+Hence, the speed of execution is quite slow, often taking anywhere
+between 2-200+ times the speed of a code written in a compiled
+programming language like C or C++ for the same purpose. However, one of
+the pragmatic reasons such interpreted languages exist is because such
+languages are easier to learn and get things done on the fly. In
+comparison to compiled programming languages, the development time to
+generate a program for some purposes is quite small. So in a trade-off
+between Development time versus Execution time, if Execution time is not
+a big bother, speed is not a major requirement, and the freedom to run
+commands on the fly is more important, then in such places, Python and
+other interpreted programming languages are the clear winner. Learning
+programming using python or interpreted programming language is a
+gentler way to introduce people into programming by concentrating on the
+end goal without worrying about the specifics.</p>
+<p>Just for an example, look at the simple <code>hello, world</code>
+program looks like in <code>Java</code> - a compiled programming
+language vs <code>Python</code> - an interpreted programming language.
+The simplicity you see with Python is quite evident. Granted, this is a
+simple program and it might look like this example is nitpicked.
+However, when a programmer tries to write a program in a compiled
+programming language versus any other interpreted language, the latter
+one will usually look simpler and easy to read.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* This is a simple &quot;Hello, world&quot; program written in Java. */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> hello </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span> args<span class="op">[])</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Hello, World&quot;</span><span class="op">);</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a simple &quot;Hello, world&quot; program written in Python</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello, world&quot;</span>)</span></code></pre></div>
+<p>In contrast to this, we have compiled programming languages like C,
+C++, Java etc., in which the entire program gets converted into machine
+or assembly level programming at the end and executed together. This
+makes compiled programming languages fast and quite efficient. However,
+the architecture is not user-friendly. You don’t have the freedom to run
+each and every line one-by-one. So, this makes the programming difficult
+for the programmer. For the purpose of speed and efficiency, compiled
+programming languages take the cake by a land-slide. If execution time
+has to be as small as possible, and programming resources such as
+availability of processors, memory are of vital importance, then in
+these situations the compiled programming languages win. These reasons
+enable them to be used as the foundations of interpreted programming
+languages and even the architectures of operating systems. Due to the
+complexities involved, learning programming using such compiled
+programming languages is a harder way to introduce people to learn
+programming languages by enforcing the need for good programming
+practices and systematic thinking.</p>
+<h3 id="it-is-a-general-purpose-programming-language">It is a general
+purpose programming language</h3>
+<p>What this means is that the programming language can be used for a
+variety of purposes. Most programming languages can be used only for one
+or two applications. For instance, C, C++, are used for making OS and
+software. They are also used for scientific computation.</p>
+<p>Python is developed in such a manner that it can be used for any sort
+of programming. It can be used as a teaching tool, as a programming
+language for scientific computation, for web development, for making
+software, for making websites, etc., With time, the number of
+applications for the language will keep on increasing.</p>
+<p>Infact, the creator of Python, Guido van Rossum intended and created
+Python for the same reason: to be able to be used by anyone for any
+purpose.</p>
+<h3 id="it-is-object-oriented">It is object oriented</h3>
+<p>What this means is that the entire language is built on the concept
+of objects. In the context of a programming language, an object is an
+entity that has some data or information with it along with some
+procedures that work on these data. These data are often known as
+<code>attributes</code> and these procedures that work on these
+<code>attributes</code> is often known as <code>methods</code>.</p>
+<p>This feature can be quite difficult to comprehend for a beginner if
+not explained correctly. However, in the long run, for a user who is
+looking for better ways to handle data and make easier procedures, such
+<code>objects</code> in the language prove quite useful.</p>
+<p>As of now, the context is not well-established here to explain what
+<code>objects</code> fully mean. It will be established and explained
+quite well and in-detail in the subsequent pages.</p>
+<h3 id="the-design-of-the-language-is-simple">The design of the language
+is simple</h3>
+<p>The core philosophy of python is to make the programming experience
+simple for anyone who uses it. To summarize the philosophy behind the
+language in the best possible way, the Python Enhancement Proposal 20 -
+shortly known as <a
+href="https://www.python.org/dev/peps/pep-0020/">PEP-20</a> has a set of
+19 instructions listed down in the document - <a
+href="https://www.python.org/dev/peps/pep-0020/"><em>The Zen of
+Python</em></a>. To access this set of instructions, all one has to do
+is type the command:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> this</span></code></pre></div>
+<p>… in the terminal to get the instructions as shown.</p>
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!</code></pre>
+<h2 id="why-python">Why Python?</h2>
+<p>If you were to ask me “why should I learn Python when there are many
+many languages out there?” - I’ll simply list-out the following
+details.</p>
+<ul>
+<li>Simple to use,</li>
+<li>Free and Open Source,</li>
+<li>High Level Programming Language,</li>
+<li>Fast to learn and implement,</li>
+<li>Interoperatability with the linux and unix operating systems,</li>
+<li>Interoperatability with other programming languages,</li>
+<li>Used for General Purpose Programming, Software Development, GUI, Web
+Design, Scientific Computation, OS etc.,</li>
+</ul>
+<h2 id="is-it-undisputed">Is it undisputed?</h2>
+<p>By telling all the good parts of the language, It might seem that
+Python is an undisputed language triumphing over other languages.</p>
+<p>To answer the question, No! Python has its own fair share of
+advantages and disadvantages. Infact, every language has it’s ups and
+downs. Python is not a perfect programming language.</p>
+<h2 id="different-versions-of-python">Different Versions of Python</h2>
+<p>As of 2019, there are two versions of the Python Language: The Legacy
+2.x series and the future 3.x series. Python 3.x came to existence
+because the founder of Python, Guido van Rossum wanted to add more
+features to the language. The problem was that adding those features
+meant dismantling the major framework of Python 2.x and rewrite a
+significant portion of the language. Consequently, to make sure that the
+already exisiting programs work well and to make sure the new features
+get implemented, the old version of python, namely 2.x remained as it is
+for backward compatibility, while the newer version of python namely 3.x
+has the new features added to it.</p>
+<p>The result of this decision is the exisitence of 2 distinct versions
+of python with a lot of similarities on the top, with many differences
+underneath.</p>
+<h3 id="python-2---legacy">Python 2 - Legacy</h3>
+<ul>
+<li>Old version of Python</li>
+<li>Legacy Codes built on it</li>
+<li>No new version anymore</li>
+<li>Library Migration going on</li>
+</ul>
+<h3 id="python-3---future">Python 3 - Future</h3>
+<ul>
+<li>Newer version of Python</li>
+<li>The future of Python</li>
+<li>Revamped internal architecture - supports future technological
+implementations</li>
+<li>(Almost all) libraries are translated</li>
+</ul>
+<p>We are in the <strong>transition</strong> period wherein we have
+access to use both the versions of Python. In the future, Python 2 will
+be obsolete, and in this transition period, almost all the libraries are
+being converted from Python 2 to Python 3. Infact, new libraries are
+being made in Python 3 extensively.</p>
+<p>Consequently, as of 2019, Python 2.x series is stopping all major
+releases and releasing only sub releases for maintenance purposes. Other
+than that, the most active development is focussed on Python 3. The
+support and maintenance is only for people to transition from python 2.x
+to 3.x soon.</p>
+<h2 id="which-one-should-i-use">Which one should I use?</h2>
+<p>If you’re a beginner, do not worry about python 2.x. Go ahead with
+learning python from 3.x series. If you already have worked with Python
+2 for a while, then you can still use python 2, but do transition to
+python 3 soon to get all the features.</p>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

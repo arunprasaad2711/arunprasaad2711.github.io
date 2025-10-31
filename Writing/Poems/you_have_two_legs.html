@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>you have two legs | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,94 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="you-have-two-legs">You have two legs</h1>
+<div class="line-block">You searched all around the world,<br />
+Amidst trials and many tribulations,<br />
+It was not your fault to begin with,<br />
+For you were told it comes from outside.<br />
+<br />
+You were young, meek and timid,<br />
+A dreamly and naive cinnamon roll,<br />
+You thought the world will be like you,<br />
+When the reality hit, your heart shattered.<br />
+<br />
+With the rosy lens now shattered and gone,<br />
+You see the true shades of black and white.<br />
+Most people would have killed the child,<br />
+Yet you are stubborn to save the child.<br />
+<br />
+Amidst the critics, insults and injuries,<br />
+You refuse to lay low and chose to climb back,<br />
+It is when you realised that what you seek,<br />
+Was within you for your child to find.<br />
+<br />
+Can a broken jar hold any water?<br />
+Can a broken heart hold any love?<br />
+Unlike the jar that is broken when fallen,<br />
+You can stitch your shattered pieces of heart.<br />
+<br />
+You are stronger than what you see yourself,<br />
+For a tree with fruits gets pelted the most.<br />
+Ignore the morons who say you’re not enough,<br />
+For they think they are gods because of power.<br />
+<br />
+You have the strength to rise again and again,<br />
+Yet you must remember, you are still human.<br />
+It is not a sign of weakness to accept who you are,<br />
+It is a sign of strength to accept and move forward.<br />
+<br />
+When stuck with a crisis and met with an impasse,<br />
+It is human to feel pain and natural to grieve.<br />
+So after you feel remember that you have two legs,<br />
+Get up, stand, turn around and move forward.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +313,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

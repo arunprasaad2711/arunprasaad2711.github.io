@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Introduction to Scientific Computation Using Python | Scientific_Computation_Using_Python | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1
+id="introduction-to-scientific-computation-using-python">Introduction to
+Scientific Computation Using Python</h1>
+<p>by <a href="https://arunprasaad2711.github.io">Arun Prasaad
+Gunasekaran</a></p>
+<p>Video 2 : Meta Information and Basics</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<!-- TOC -->
+<ul>
+<li><a
+href="#introduction-to-scientific-computation-using-python">Introduction
+to Scientific Computation Using Python</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#benefits-of-these-videos">Benefits of these
+Videos</a></li>
+<li><a href="#why-python---funny-note">Why Python? - Funny Note</a></li>
+<li><a href="#why-python---serious-note">Why Python? - Serious
+note</a></li>
+<li><a href="#is-python-absolutely-advantageous">Is Python absolutely
+advantageous?</a></li>
+<li><a href="#different-versions-of-python">Different Versions of
+Python</a>
+<ul>
+<li><a href="#python-2---legacy">Python 2 - Legacy</a></li>
+<li><a href="#python-3---future">Python 3 - Future</a></li>
+</ul></li>
+<li><a href="#so-what-to-look-for-in-any-programming-language">So, what
+to look for in any programming language?</a></li>
+<li><a href="#lets-write-our-first-program">Let’s write our first
+program</a></li>
+<li><a
+href="#program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program
+to ask the name, temperature, and rainfall of a place and print
+it</a></li>
+<li><a href="#comments-and-docstrings">Comments and Docstrings</a></li>
+<li><a href="#input-command">Input Command</a></li>
+</ul></li>
+</ul>
+<!-- /TOC -->
+<h2 id="benefits-of-these-videos">Benefits of these Videos</h2>
+<ul>
+<li><strong>Short term benefits:</strong>
+<ul>
+<li>Useful for Assignments</li>
+<li>Learning programming in a simpler way</li>
+<li>Serves as an Icebreak to smoothen the class-to-research/application
+transition</li>
+<li>Gaining comfort and confidence</li>
+<li>Have a tool to solve simple and complex problems</li>
+</ul></li>
+<li><strong>Long term benefits:</strong>
+<ul>
+<li>Skills are directly applicable in research</li>
+<li>Helpful to cut-down pre-research timing (Finding fixes, looking for
+solutions etc.,)</li>
+<li>You have a solid foundation to proceed further</li>
+<li>You can almost all the fundamental tools</li>
+</ul></li>
+</ul>
+<p>All the examples here are chosen carefully so that you all get a
+broad exposure to a variety of programming tools and useful functions
+and libraries.</p>
+<h2 id="why-python---funny-note">Why Python? - Funny Note</h2>
+<p><img src="images/python.png" height="300" width="300"></p>
+<p>Source: http://xkcd.com/353/</p>
+<h2 id="why-python---serious-note">Why Python? - Serious note</h2>
+<ul>
+<li>Free, open source, cross platform</li>
+<li><strong>Object Oriented</strong>, <strong>modern</strong>,
+<strong>interpreted</strong> Programming Language</li>
+<li>Very flexible and has a wide variety of features</li>
+<li>Little overhead and pre-requisite</li>
+<li>Easy access to work with Unix/Linux Shells</li>
+<li>One great choice to learn programming from scratch to advanced
+levels</li>
+<li>Very friendly, <strong>intuitive</strong> and
+<strong>humane</strong></li>
+<li>Can combine this with other programming languages</li>
+<li>Plotting and visualization tools (1D, 2D, 3D) are great</li>
+<li>Can be used for making GUI apps, OS, web frame works etc.,</li>
+<li>Most importantly, you get to avoid <strong>Software Piracy
+Issues</strong></li>
+</ul>
+<h2 id="is-python-absolutely-advantageous">Is Python absolutely
+advantageous?</h2>
+<p><strong>No!</strong> Beacuse no programming language is perfect. Then
+why to choose Python?,</p>
+<ul>
+<li>You love programming in general and want to explore a lot,</li>
+<li>You like the language,</li>
+<li>You want to do a variety of programming with a single main language,
+<ul>
+<li>eg: Webcrawling, Machine Learning, Data Analysis, Software
+development, Web development etc.,</li>
+</ul></li>
+<li>Not many licensing restrictions,</li>
+<li>Work demands,</li>
+</ul>
+<p>Bottom line : Python is good, but not undisputed.</p>
+<p>Other programming languages that are good : R, Julia, Sage,
+Mathematica, Maple, Matlab, Fortran, C, C++, IDL, Java, JavaScript,
+etc,</p>
+<h2 id="different-versions-of-python">Different Versions of Python</h2>
+<p>As of 2019, there are two versions of the Python Language: The Legacy
+2.x series and the future 3.x series. Python 3.x came to existence
+because the founder of Python, Guido van Rossum wanted to add more
+features to the language. The problem was that adding those features
+meant dismantling the major framework of Python 2.x and rewrite a
+significant portion of the language. Consequently, to make sure that the
+already exisiting programs work well and to make sure the new features
+get implemented, the old version of python, namely 2.x remained as it is
+for backward compatibility, while the newer version of python namely 3.x
+has the new features added to it.</p>
+<p>The result of this decision is the exisitence of 2 distinct versions
+of python with a lot of similarities on the top, with many differences
+underneath.</p>
+<h3 id="python-2---legacy">Python 2 - Legacy</h3>
+<ul>
+<li>Old version of Python</li>
+<li>Legacy Codes built on it</li>
+<li>No new version anymore</li>
+<li>Library Migration going on</li>
+</ul>
+<h3 id="python-3---future">Python 3 - Future</h3>
+<ul>
+<li>Newer version of Python</li>
+<li>The future of Python</li>
+<li>Revamped internal architecture - supports future technological
+implementations</li>
+<li>(Almost all) libraries are translated</li>
+</ul>
+<p>We are in the <strong>transition</strong> period wherein we have
+access to use both the versions of Python. In the future, Python 2 will
+be obsolete, and in this transition period, almost all the libraries are
+being converted from Python 2 to Python 3. Infact, new libraries are
+being made in Python 3 extensively.</p>
+<p>Consequently, as of 2019, Python 2.x series is stopping all major
+releases and releasing only sub releases for maintenance purposes. Other
+than that, the most active development is focussed on Python 3. The
+support and maintenance is only for people to transition from python 2.x
+to 3.x soon.</p>
+<h2 id="so-what-to-look-for-in-any-programming-language">So, what to
+look for in any programming language?</h2>
+<p>This is a (personal) checklist to keep in mind to pick a programing
+language for scientific computation.</p>
+<ul>
+<li>Basic data types, data conversions,</li>
+<li>Machine Scalability,</li>
+<li>Inter-operatability with other programming languages,</li>
+<li>Variables, constants, sizes, precisions</li>
+<li>Operators,</li>
+<li>Input/Output statements,</li>
+<li>Data formatting</li>
+<li>Loops and decision making statements,</li>
+<li>Advanced data types like arrays, pointers, derived data types,</li>
+<li>Functions, Subroutines,</li>
+<li>Handling data files,</li>
+<li>Objects, classes,</li>
+<li>External libraries/packages/modules</li>
+<li>Executing multiple files simultaneously</li>
+<li>Plotting and visualization facility,</li>
+</ul>
+<h2 id="lets-write-our-first-program">Let’s write our first program</h2>
+<p>Open up a Text Editor and save a file with the extension
+<code>.py</code></p>
+<h2
+id="program-to-ask-the-name-temperature-and-rainfall-of-a-place-and-print-it">Program
+to ask the name, temperature, and rainfall of a place and print it</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">Program to ask the name, temperature, and rainfall of a place and print it.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a variable to save the place</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>place <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the name of the place:&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Rainfall variable</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>rainfall <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the rainfall recorded today in mm:&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature variable</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter the temperature recorded today in Celsius:&quot;</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print statement</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;In &quot;</span>, place, <span class="st">&quot; today it rained &quot;</span>, rainfall, <span class="st">&quot; mm  and the temperature is&quot;</span>, temperature, <span class="st">&quot; degree celsius&quot;</span>)</span></code></pre></div>
+<h2 id="comments-and-docstrings">Comments and Docstrings</h2>
+<p>Comment - Lines that are ignored when the program is run. Used for
+excluding codes and for including messages.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a single line comment</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Comment begins with a hash # symbol</span></span></code></pre></div>
+<p>Docstrings - Document strings. Multi-line comments. But more useful
+for including help/direction messages that appear when help utilities
+are called. In libraries, this is used as a documentation/help message
+for functions and classes.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    This is a Docstring. It starts and ends with </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    triple &quot; or triple &#39; quotes. Mix and match does not work!</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    This is also a DocString</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;</span></span></code></pre></div>
+<h2 id="input-command">Input Command</h2>
+<p>Input command - Used for getting input from user to a variable.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Enter the value for n&#39;</span>) <span class="co"># Default string input</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&#39;Enter the value for n&#39;</span>)) <span class="co"># Type casted input</span></span></code></pre></div>
+<ul>
+<li>Default string input - that is, the function assumes data type to be
+string automatically.</li>
+<li>Explicit type casting (manually changing the data type) is used to
+control data types.</li>
+</ul>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>vemoedalen | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="vemoedalen">Vemoedalen</h1>
+<div class="line-block">You worked with care,<br />
+And crafted it all day,<br />
+It is unique you swear,<br />
+And you shout in gay.<br />
+<br />
+The reality hits you hard,<br />
+When they say it's the same,<br />
+You try to explain very hard,<br />
+They still see it the same.<br />
+<br />
+It is scary this big fear,<br />
+Of your work already done,<br />
+By some unknown stranger,<br />
+Who did it first and won.<br />
+<br />
+It does make you question,<br />
+Are you truly special?<br />
+It leaves a big impression,<br />
+That you are not so special.<br />
+<br />
+Thus you strive to be unique,<br />
+To make something new,<br />
+By pushing away the antique,<br />
+In the attempt, you grew.<br />
+<br />
+In the race to make a difference,<br />
+Running hard to catch attention,<br />
+You do show a lot of indifference,<br />
+To the little things that need attention.<br />
+<br />
+But there is some comfort,<br />
+To accept that you are normal,<br />
+Do step out from the discomfort,<br />
+And do behave quite informal.<br />
+<br />
+There is some sameness in everything,<br />
+And what you do might be a repeat,<br />
+When the task is finished and done,<br />
+The experience you gained is a feat!<br />
+<br />
+Your existence alone is unique,<br />
+The universe conspired to make you live,<br />
+Although one day you'll be antique,<br />
+You mark with memories the time you live.<br />
+<br />
+The photo you took with care,<br />
+Might not be so unique,<br />
+For you, it is quite rare,<br />
+As that one is so unique.<br />
+<br />
+No matter what a hundred people feel,<br />
+What you will do is unique,<br />
+Your good work will make someone feel,<br />
+That your work is unique.<br />
+<br />
+So it is alright if you fell in love,<br />
+And spun a tale so cliched,<br />
+The journey you take is all above,<br />
+The jokes and tales so cliched.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

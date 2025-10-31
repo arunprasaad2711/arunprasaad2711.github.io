@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Life's Purpose | Articles | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="lifes-purpose">Life’s Purpose</h1>
+<p>What is a life’s Purpose?</p>
+<p>As humans, it is deeply ingrained in our lives to look for a purpose.
+So, let’s take a moment and try to answer it.</p>
+<p>So what is a purpose? Simply put, it is a utility. As the Proverb
+"Necessity is the Mother of Invention" rightly quotes, necessities drive
+us to accomplish a remarkable number of things in the world. Gifted with
+intelligence, we humans can put our mind into action to achieve wonders.
+Right from stone age till current times, this necessity remains with us,
+and it will probably live with us for the foreseeable future.</p>
+<p>We have wallets with us to carry money safely. We build homes to stay
+protected and comfortable. Likewise, everything we humans have made and
+kept has some purpose.</p>
+<p>That said, what is our purpose in our life? Why are we born in this
+life? What is the use of our existence?</p>
+<p>This question has been a philosophical question for aeons,
+manifesting itself in various religions throughout the world, a
+regularly debated topic of discussion in spirituality, literature,
+science, arts etc., Yet, with countless debates, treatises, etc., the
+question still alludes us for all the nuances it carries.</p>
+<p>So, is there a definite answer? No.</p>
+<p>Fine, is there any answer at all? Plenty.</p>
+<p>Many religions say that the purpose of a human's life is to serve the
+Almighty God. Some people say the meaning of life is to exist merely.
+Some say the purpose is to contribute something to the world we live.
+Many say money is the purpose of life.</p>
+<p>While all the purposes mentioned above are at the least, points
+towards an end goal, some argue that life has no meaning at all.</p>
+<p>We can sit in front of each other, and have lengthy debates as to
+whose statement is right or wrong, even try to disprove the other's
+comments.</p>
+<p>If we were to introspect into ourselves, we still stand in the same
+place. The purpose of the question of What is your life's Purpose? Will
+always be subjective.</p>
+<p>Now, let's take a detour here; what if we decide to live a life that
+has no purpose at all? What will happen to us? As tempting as it is, the
+whole world will collapse if each one of us stopped to pursue a
+purpose.</p>
+<p>Despite its mysteries and unknown, I suppose we all can agree one
+thing: Humans need a purpose. Without a goal, we have no motivation or
+drive to accomplish anything. It gives us meaning; it gives us a reason
+worthy of us to strive.</p>
+<p>Notice a peculiarity here: This purpose in life is something we all
+seek, and we do not fully comprehend, yet it is the drive for us to
+live. Without it, we cripple ourselves.</p>
+<p>It is human nature to assume everything has a purpose.</p>
+<p>The oddly sounding truth is: There need not be any purpose to actions
+as well.</p>
+<p>Once, I saw a man roaming in front of an ATM to draw money. He was
+not educated and hence did not know how to take out cash from his bank
+account. He requested me to help him. I obliged. I gestured him inside
+the room where the ATM is kept and typed the account number, and the PIN
+code to withdraw money. We got the money, and I gave it to him. The
+smile he had on his face was sincere, and he thanked me wholeheartedly.
+He was happy to get the money out for his needs, and I walked out of the
+ATM feeling happy for helping someone out.</p>
+<p>This person took the gamble and asked a total stranger to help him
+get money out of the ATM. He shared, assuming that I will be truthful,
+his confidential account details (bank account number and PIN) to me in
+the hopes to get his money out.</p>
+<p>What could I have done here? First, I might have refused to help him
+because I see no purpose in this for myself. Or, I could have behaved
+wickedly, and after assisting this man in, I could have swindled his
+money. Or I might have refused to consider his plea for help and moved
+on.</p>
+<p>I could have done any one of the above things here. So, why did I
+help this man? You may ask. He was struggling and asked several people
+to help him. Many refused. I was saddened to see him suffer like that.
+He might have needed that money for a variety of reasons. Him persisting
+in asking people to help him only implied that whatever purpose he had
+in his mind, it was for something of great importance.</p>
+<p>So, is this my purpose in life? That is to help a random stranger?
+Not necessarily.</p>
+<p>But, my actions have done some good for someone. That means
+something.</p>
+<p>It meant me a small token of happiness, although, for a fleeting
+moment, it might have been a life-saving grace for him. It might have
+been something too trivial, or something of urgent need. For him, my
+simple kind gesture might mean more than mine.</p>
+<p>The point I am driving through this example here is simple: Our
+actions, despite having a purpose or not have consequences. It can be
+good or bad. For now, that is irrelevant.</p>
+<p>Good actions cause goodness to everyone around us, bad actions
+bad.</p>
+<p>So, what if, we centre our lives around this simple rule? Do good
+without anticipating anything in return!</p>
+<p>You might argue with me that this rule is impractical as it is not
+applicable to all aspects of life. Partly I agree. Now, can you picture
+yourself in a situation where you can do good without anticipating
+anything in return? Yes? Good! That is a start!</p>
+<p>Knowingly or unknowingly, our actions disturb the fabric that
+intertwines our lives, like a drop of milk dropped on a calm cup of tea.
+Like the ripples that form, our actions travel and touch the lives of
+many people around us for the good or bad, for the better or worse.</p>
+<p>That said, let me say I have a so-called purpose in life. While I
+strive to achieve it and find meaning to it, is it not beautiful if we
+can touch other people's experiences with gentle acts of kindness?</p>
+<p>And that, if you pause and ponder, means a lot. Remember all the
+times you felt happy about getting a surprise? You might have been
+working hard, beating yourself up in disappointment when miraculously
+someone comes by and helps you fix it?</p>
+<p>Action and Purpose and Consequence are inter-connected. If our
+actions mean no or little consequences, then we tend to take them
+lightly. On the other hand, if our actions indicate no purpose, then we
+tend to avoid them.</p>
+<p>So, what do you aim? What should your life's purpose be?</p>
+<p>One answer I try my best is to seek happiness. And, it makes sense.
+Everyone in the world unanimously agrees and wants to be happy. Despite
+having all the riches or laurels or glory one might strive for, at the
+end of the day, regrettably, they mean nothing if one is not happy.</p>
+<p>Mathematics is a beautiful subject in many aspects. One of the
+reasons why is because it has strong foundations; a set of principles
+that are consistent, meaningful, and they make immense sense. These
+foundations are Axioms. Some of these axioms are so obviously true that
+you don't need to prove it; the moment you write it down, they make
+absolute sense. Some axioms are assumed to be true while proceeding
+further. If the assumed axioms alter, that gives rise to new branches in
+the field and questioning the assumptions is a fascinating topic
+altogether. A similar analogy holds good for science.</p>
+<p>Likewise, we build our lives based on some firm foundations. These
+foundations shape our attitude towards the world and determine how we
+perceive it. But unlike mathematics and science, there is no set of
+strong axioms or laws with us. We can forge it on our own. Some
+foundations are laid by us borrowing from the society, our parents, our
+family, friends, environments etc., Some we put it for ourselves.</p>
+<p>The foundations in Mathematics and Science helps us appreciate the
+beauty and meaning these fields offer to us. Likewise, the foundations
+we build our lives gives us meaning.</p>
+<p>This scenario is both good and bad.</p>
+<p>If our foundations are faulty, then not only are we unable to see it
+clearly but also unable to defend ourselves without seeing
+contradictions in the world and within ourselves. If these faulty
+premises are removed, something that we might have clung on for a
+lifetime, we are pushed into an existential crisis: something that gave
+meaning to our lives is now proved wrong, thereby we might start
+questioning ourselves as to what we are without it, what is the purpose
+of life without it? In our defence and denial, we might cling on to them
+even stronger, becoming increasingly hostile to any criticism trying to
+disprove it. Sometimes, the revelation breaks us, paralysing us as we
+fall into an endless abyss. The fall breaks these people, and they
+refuse to rise fearing defeat, while some musters up all the courage in
+the world to strive to either prove they are right or accept to build
+around a new foundation although cautiously, still tormented and haunted
+by the fall. Only a remarkable few rises are again breaking the
+constructs, becoming wiser and broader in mind like the endless sky.</p>
+<p>On the contrary, the ethical foundations help us grow and evolve and
+transform. It gives us a clear purpose and meaning. Even when beaten
+down, it serves us as an anchor to keep us unfailing in an ever-changing
+world, better, and it gives us the strength to rise again. The stronger
+our foundations are proved right, the stronger our will. It gives us
+peace, something to lean on, something to strive for, something to
+defend for, something to fight! It helps us to bring out the best and
+genuine version of ourselves.</p>
+<p>This idea is crucial! While there is no assurance that the
+foundations we learn from our environment are safe, being self-aware
+helps us to correct ourselves when we go wrong.</p>
+<p>And therein lies another quality we can strive for:
+self-improvement.</p>
+<p>If one were to strive for something big, something remarkable,
+something that can make a difference, something that can make one happy,
+it is worth pursuing. And in that pursuit, if one were to improve
+oneself continuously, and at the same time, touch people's lives for the
+better, everyone will be happy. The world will overflow with
+happiness.</p>
+<p><strong>This, in my opinion, is a higher purpose in life: continually
+improve yourself to be a better version, pursue something that gives you
+happiness, and through your actions spread the overflowing happiness to
+others as well.</strong></p>
+<p>While the aim might be too idealistic, there are indeed limitations,
+restrictions, and practicalities that hinder it. All things said and
+done, and instead of being a cynic to dismiss the possibility and thus
+fail by default, I would rather be an optimist and try failing.</p>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

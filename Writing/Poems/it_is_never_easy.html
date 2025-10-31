@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>it is never easy | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,115 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="it-is-never-easy">It is never easy</h1>
+<div class="line-block">It is quite a test, that pushes all your
+buttons,<br />
+Whenever he or she, asks those questions,<br />
+In their odd ways, they do quite care,<br />
+But in the process, they break and make you.<br />
+<br />
+It is quite easy, to take them as your enemy,<br />
+They do disagree, to a lot you say,<br />
+Most of us are, quite fortunate that,<br />
+They are not, indeed your enemies.<br />
+<br />
+They did give birth, to you in this world,<br />
+And for a long time, you didn't know any better,<br />
+So they took it upon, themselves to raise you,<br />
+And it is quite hard, for them to step back.<br />
+<br />
+And when you start to grow, the struggles begin.<br />
+And within a matter of time, you fight against them.<br />
+You have the youth, and resilience to spring back,<br />
+They have their wisdom and worldly caution.<br />
+<br />
+With time, in this changing world,<br />
+The struggle is real, to put forth your points.<br />
+Amidst many arguments, and many expectations,<br />
+In the heated debates, the egos clash.<br />
+<br />
+It is quite an irony, in the journey of life,<br />
+How often the people you love tend to hurt you.<br />
+But despite the fights, most of us are lucky,<br />
+As they are the ones, who love you the most.<br />
+<br />
+Raising kids was never an easy task,<br />
+With changing times, there were no rules,<br />
+As you grow up, you thought they knew it all,<br />
+As you mature, you see the plight they faced.<br />
+<br />
+While they do care, they have their demons,<br />
+Demons of expectations, fears and insecurities,<br />
+Some made sense and some will not,<br />
+Despite the obscurity, they love you truly.<br />
+<br />
+As you grow old, you start to empathise,<br />
+And try to reconcile, the differences you have,<br />
+You take a deep breath, and let go the anger,<br />
+In the moments of silence, you step in their shoes.<br />
+<br />
+You realise that it's long and hard learning,<br />
+You learnt a lot, and still, have a lot to learn.<br />
+You tread carefully, and sensibly as possible,<br />
+And in those moments, you feel their burden.<br />
+<br />
+You and them might be poles apart,<br />
+Both you and they care deeply for the other,<br />
+It is, however, the flaws in us and the words,<br />
+That pushes and pulls both you and them.<br />
+<br />
+Sometimes you wonder, can't it be easy?<br />
+It is in some cases; it isn't in some cases,<br />
+There is no winner in these fights all the time,<br />
+As long as no one is left helpless and alone.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +334,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

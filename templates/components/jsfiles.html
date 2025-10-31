@@ -1,0 +1,62 @@
+<!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+{% if site.dev_mode %}
+<script>
+(function() {
+    let lastModified = document.lastModified;
+    
+    setInterval(function() {
+        fetch(window.location.href, {
+            method: 'HEAD',
+            cache: 'no-store'
+        })
+        .then(response => {
+            const currentModified = response.headers.get('last-modified');
+            if (currentModified && currentModified !== lastModified) {
+                console.log('🔄 File changed, reloading...');
+                window.location.reload();
+            }
+        })
+        .catch(err => {
+            // Silently fail if server unavailable
+        });
+    }, 5000); // Check every second
+})();
+</script>
+{% endif %}

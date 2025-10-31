@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Realising the two Wolves inside us | Articles | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="realising-the-two-wolves-inside-us">Realising the two Wolves
+inside us</h1>
+<h2 id="are-we-missing-something"><strong>Are we missing
+something?</strong></h2>
+<p>From the very moment we, the humans began our existence in this
+world, we faced so many issues. While on the one hand, we are remarkably
+intelligent and we evolved far better than other species in this planet,
+the animal nature existing in ourselves, despite so much progressive
+development is hard to comprehend.</p>
+<p>Looking at human history, episodes of savage killings, sufferings,
+warfare, domination, oppression etc., are plenty. While nature and other
+external factors were responsible for the survival of species, for
+humans, however, the ironical situation was (and is) that our species
+was responsible for controlling our population. What is more ironic is
+that unlike other less intelligent species, we, the “intelligent”
+species are fighting among ourselves in manners that are sometimes more
+vicious, cruel and cold-blooded than what other species do. On paper,
+one would argue that intelligent species would live in harmony, with
+fewer quarrels. With this failing dramatically, it is evident that
+apparently, something else drives us deep down.</p>
+<h2 id="the-human-mind-and-its-conflicts.">The Human Mind and its
+conflicts.</h2>
+<p>Several people share the view that we humans are complex creatures
+emotionally. We all have wants and drives. One simplified way of looking
+at human behaviour is to understand that every human has an inner
+conflict. When the battle to deal with is simple, rationality, logic and
+emotions are well within control, and it is easy to make choices. It is
+when we deal with more significant, more complicated and convoluted
+conflicts, is when we realise that in such cases, the conflict and its
+connection with morality is weak; in such situation, the conflict is not
+about right or wrong, but rather what people feel it is right or wrong
+in their Point of View (POV), however right or wrong their POV might
+be.</p>
+<p>For instance, with all conditions ideal, the act of stealing is
+considered immoral. If one wants something or wants to achieve
+something, the ideal way to do is to earn the way through: work hard,
+work smart, plan well and reach the goal. This is a hard way no doubt.
+And the sincere efforts put by one in this process makes it a noble
+attempt, regardless of the outcome it can fetch. Another way to do is
+stealing. Although there are many ways, given these two options, why do
+some people chose to cheat, while some prefer the hard way? It is the
+consequence and the aftermaths and the compromises/sacrifices one has to
+make along the way. Added to that, <strong>*what drives even harder is
+the tenacity to deal with the consequences and aftermaths to be
+followed. It should not be surprising that the options we have, the
+alternatives we can, the price to be paid, the uncertainty, and how
+emotionally healthy we are all critical</strong>*.</p>
+<p>One Example:</p>
+<p>To explain this clearly, let narrate an episode in the US TV series
+called as House MD (House (TV Series 2004–2012)) Although this entire
+episode revolves around honesty and its virtue, it narrates the essence
+of the conflicting nature of our human mind, the choices we make, what
+we think is right/wrong in our POV, the consequences/aftermath one can
+face/will face, the price/sacrifice one has to make etc.,</p>
+<blockquote>
+<p>In one episode, a lady is brought to the hospital after a car
+accident. She was having some form of involuntary jerks in her hands and
+legs which caused the accident. At the end of the episode, it was found
+that the involuntary jerks that almost killed her, were a symptom of a
+more significant health issue that gradually developed due to her
+medications and habits. She was undergoing a steady physical and mental
+degradation.</p>
+<p>It turns out she was suffering from Ritalin abuse and hepatocellular
+adenoma.</p>
+<p>Although her disease is not the prime concern here, what is important
+is how she acquired it.</p>
+<p>She has a five-year-old daughter from a previous marriage. She
+divorced and married another person. With her new husband, she was a
+full-time housewife and a very active one. She had a lot of energy to
+take care of the house and do so many extra activities altogether that
+kept her thoroughly busy. The couple were loving each other truly, and
+they settle any issue they have peacefully. The guy was understanding
+and caring, and he treated and loved her daughter as his own.</p>
+<p>Sounds like a happy story so far right? Here comes the twist.</p>
+<p>The lady’s husband wants to have a biological child with her. (The
+guy is her husband, and so this is not wrong right?).</p>
+<p>So what did she do? She agreed to his request. And, since they were
+in their 30’s, they decided to take fertility treatments to increase the
+chances of conception. And, behind his back and intentionally, she was
+taking contraceptives to avoid conception at any cost.</p>
+<p>These polar opposite actions took a toll on her physically, and the
+guilt was wearing her mentally. To keep herself preoccupied so that she
+does not think about this, she became a Ritalin abuser. That gave her
+the energy to do so much stuff and kept her problems at bay. However,
+the combined actions of all three medications caused her physical and
+mental degradation and the hepatocellular adenoma.</p>
+<p>The doctors finally figured out all of this after so many painstaking
+efforts. When the doctors confronted her in person, she honestly
+confessed her emotions. Honestly, she was not willing to have another
+child at all!</p>
+<p>She was so happy to be married to her new husband. He was perfect,
+caring, understanding and a great guy. But, she was very firm and stern
+not to have any children with him or anyone else. She wanted that for
+her reason and also believed that having a biological child with him
+would make him care more for the new baby (since it will be his blood)
+and care less about her already existing daughter.</p>
+<p>But, she did not want to confront him and tell the truth. She feared
+that if she says so, then,</p>
+<ul>
+<li>They might fight, and the marriage might break apart</li>
+<li>He will not at all be happy and will never forgive her</li>
+<li>He might divorce her.</li>
+</ul>
+<p>She did not want to lose him, and at the same time, she did not want
+him to have another child. Hence, she agreed to his request to have
+another child and still intentionally did not grant him that wish.</p>
+<p>When the doctors asked her as to how long she intended to play along
+like this, she said that for a few more years till they both reach their
+40’s.</p>
+<p>Her rationalisation is as follows: Since they are in their thirties,
+they would try to get pregnant until they reach about forties. Beyond
+that, their fertility would drop gradually with age to the point that
+the fertility treatments would be of no use. Besides, she will reach
+menopause, and beyond that, it is of no use. She was willing to bet on
+the fact that, with the years of continuous failure to get pregnant
+would gradually put him down, curb his enthusiasm and eventually, he
+will accept the fact that they can’t have babies and stop trying
+altogether. And, in this process, the guilt of not having a child of his
+own would make him accept her daughter as his own more firmly because he
+was a great guy.</p>
+<p>Well, at this point, both the viewers and doctors were taken aback by
+her reasoning.</p>
+<p>The story for that episode ends with the lady persisting to her
+initial ideas despite the agony she suffered and pledging honestly to
+the doctors that she will not let her health degrade like this. The
+husband, on the other hand, is kept in the dark about the deception.</p>
+</blockquote>
+<p>Such is the complexity of some conflicts that runs in ourselves
+sometimes.</p>
+<p><strong>*Honesty is, sometimes, a bitter pill to
+swallow.</strong>*</p>
+<h2 id="dissecting-the-example">Dissecting the example:</h2>
+<p>If you look at the point of view of the lady in the story, she is
+partly right and partly wrong. The price she and her husband have to pay
+is a lot. Had she taken a leap of faith and confessed her true
+intentions, then yes, there is a chance that things would go bad as she
+feared. But then there is at least a probability that he would
+understand. Or, there was a chance that they could have a baby, and
+still, everything can end happily.</p>
+<p>On her part, she might feel that being dishonest is the best thing to
+do to keep the marriage safe. But, if she has to be dishonest to have
+the marriage stay strong, then she is not in a stable marriage in the
+first place.</p>
+<p>I felt sympathy for the character. By not confronting the situation
+(however bitter or sweet it might turn out to be), and following up with
+the deception, she is merely refusing to face reality. Her insecurity of
+her child may not be having a loving father genuinely out weighted an
+alternate reality wherein her husband would understand her. I felt that
+she should have opened the box to see if the Schrödinger's cat is alive
+or not instead of letting her insecurity overwhelm her to believe that
+the cat is dead.</p>
+<h2 id="the-power-of-negative-emotions">The power of negative
+emotions:</h2>
+<blockquote>
+<p>Luke: Come with me. Leave everything behind.</p>
+<p>Darth Vader: Obi-Wan once thought as you do. You don't know the power
+of the Dark Side. I must obey my master.</p>
+<p>-- Star Wars: Episode VI - Return of the Jedi (1983)</p>
+</blockquote>
+<p>We all have tough decisions to make in various stages of life.
+Negative drives such as fear of rejection/losing/embarrassment, have
+great convincing powers over our decisions. They tend to force, cheat,
+trick or manipulate you to do something as if the price one pays for it
+is nothing. They comfort us, feeds our insecurity, do gets us what we
+want sometimes. But in the process, it makes us unfit for the things we
+aimed. The things we get through these emotions do not last long. There
+is a strong irony with this. You get what you want, but you become unfit
+to have it. You get it, but you lose so many things knowingly or
+unknowingly in the long run. You get it, and you later might throw that
+away because you missed the importance, You might get the short-term
+benefit, but the long-term benefit is gone. It gives so many material
+things to you, but takes away your soul. By the time you realise the
+price you paid is too much, things would be way out of hand to turn
+back.</p>
+<h2 id="the-power-of-positive-emotions">The power of positive
+emotions:</h2>
+<p>The value of honesty, in contrast to the above, is that it respects
+your free will and makes you aware that one is accountable. It makes you
+stronger by letting you face your fears, pushing you out of your comfort
+zone by telling you the issues on your face and making you strive for
+those despite that. It gives you courage. There is no manipulation, just
+plain facts. It is not a significant driving force, but honesty is a
+quality that makes one appreciates his/her limits and capacities. It
+grows trust, compassion and reliability and makes strong connections
+within yourself and with the people around you. It helps you to
+eliminate bad influences and bad people. Most importantly, the most
+critical value of honesty is that it enables you to see the reality as
+it is, free from fantasies and delusions.</p>
+<p>That leads to another important concept: honesty alone is never
+sufficient. Honesty provides a foundation of trust and reliability.
+Aided by truth and other good qualities and strong positive motivation,
+life will be peaceful, no matter what happens in your life.</p>
+<h2 id="the-two-wolves">The two wolves:</h2>
+<p>This will concur with the teachings told throughout the world such as
+the Yin and Yang, The Teachings of Bhagavad Gita of Hinduism, etc.,</p>
+<p>The Two Wolves is a Cherokee legend which goes as below,</p>
+<blockquote>
+<p>An old Cherokee is teaching his grandson about life. “A fight is
+going on inside me,” he said to the boy.</p>
+<p>“It is a terrible fight, and it is between two wolves. One is evil –
+It is anger, envy, sorrow, regret, greed, arrogance, self-pity, guilt,
+resentment, inferiority, lies, false pride, superiority, and ego.” He
+continued, “The other is good – he is joy, peace, love, hope, serenity,
+humility, kindness, benevolence, empathy, generosity, truth, compassion,
+and faith. The same fight is going on inside you – and inside every
+other person, too.”</p>
+<p>The grandson thought about it for a minute and then asked his
+grandfather, “Which wolf will win?”</p>
+<p>The old Cherokee simply replied, “The one you feed.”</p>
+</blockquote>
+<p>Here, clearly “We” are the “Feeders” of the wolves.</p>
+<h2 id="why-we-need-it-more-than-ever">Why we need it more than
+ever?</h2>
+<p>Delving deeper into these lines and looking at all the worldly
+problems we face, all of them are because we feed the evil wolf among
+us.</p>
+<p>Unlike the world several years ago, the world is more connected and
+accessible today, and it will continue to be more of it in the future
+years. While this is good, it comes with a price. It has become more
+sensitive.</p>
+<p>A long time ago, the power vested in us humans is limited. Hence,
+when we had a massive flood or an outbreak of disease etc., we had
+nothing in our means to fight against them or do anything. All we could
+do is accept it as a bitter fact of life and move on.</p>
+<p>Now, with our every growing power, more and more of the constraints
+we faced earlier are vanishing. The authority and freedom vested in us
+is so large these days that it is near impossibility for humans several
+centuries ago. While the removal of constraints is good, it also causes
+significant ramifications because this can lead to the misuse of freedom
+and power if there is no moral support. Also, due to such a stance,
+having the power and yet not using it properly (or worse making a
+mistake) can be even more costly.</p>
+<p>As a consequence, in contrast to the past, it is easier to wage war,
+easier to offend, easier to get cheated etc., While the ever-growing
+powers make us comfortable and civilised, removing that makes many of us
+more barbaric and uncivilised in greater proportions than before due to
+the lack of morality.</p>
+<p>Who can forget the amount of destruction caused by World War II - the
+most expensive war (by the human lives lost, countries involved, money
+invested) of the human kind? Is it not much easier to form major
+terrorist groups in this era than before? Global warming could not be
+possible a long time ago, and now it is real!</p>
+<p>While the future is wide open with so many exciting possibilities and
+challenges, one can find it easy to imagine the lives of so many people
+can change for the worse at the press of a button. This is scary —
+terrifying, and it is sending chills down the spine.</p>
+<p>Let us all feed the good wolf inside us!</p>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Bokeh Notes | Bokeh | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="bokeh-notes">Bokeh Notes</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p>Bokeh is a python library useful for plotting and data visualisation.
+Unlike other libraries, bokeh creates the plot in a webpage. So, one of
+the main advantages of bokeh is that you can make plots that can be
+displayed on a website. This tutorial is taken from <a
+href="https://www.youtube.com/watch?v=2TR_6VaVSOs">Brad Traversy video
+on bokeh</a> from YouTube.</p>
+<p>Additional notes were taken from the YouTube tutorial on <a
+href="https://www.youtube.com/watch?v=GkysOB8_xsE">Bokeh: Interactive
+Web Plots &amp; Dashboards</a></p>
+<p>Bokeh is powerful in the sense, that it can be used to create poweful
+interactive graphics that can run with or without a server. It
+automatically generates JavaScript for you and so you can directly embed
+the script into other applications.</p>
+<h2 id="installation">Installation</h2>
+<p>Installing bokeh is quite easy. All you need is the <code>pip</code>
+installer of python.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install bokeh</span></code></pre></div>
+<h2 id="getting-started">Getting started</h2>
+<h3 id="simple-example">Simple example</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import figure - to create a figure object</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import output_file - to create a html file</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import show - to render the plot</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.plotting <span class="im">import</span> figure, output_file, show</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Import numpy for creating data sets</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataset for plot</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">2.0</span><span class="op">*</span>np.pi, <span class="dv">201</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span><span class="op">*</span>np.sin(x) <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an output html to render the plot.</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>output_file(<span class="st">&quot;Figure_sample1.html&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a figure object</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> figure(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">&quot;Sine curve&quot;</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">&quot;Angle in Radian&quot;</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">&quot;Magnitude&quot;</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the plot</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plot.line(x, y, legend<span class="op">=</span><span class="st">&#39;Sine Curve&#39;</span>, line_width<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Show results</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>show(plot)</span></code></pre></div>
+<h3 id="bar-graph-with-pandas">Bar graph with <code>pandas</code></h3>
+<p>In this example, we’ll use pandas to extract data from
+<code>csv</code> files and make a bar chart. The <code>csv</code> file
+is called <code>cars.csv</code> and the data in it is this:</p>
+<pre class="csv"><code>Car,Horsepower,Price,Image
+Hennessey Venom F5,1600,$1.6M,https://autowise.com/wp-content/uploads/2018/06/Hennessey-Venom-F5-15.jpg
+Koenigsegg Regera,1500,$2M,https://autowise.com/wp-content/uploads/2018/06/Regera_front_banner2.jpg
+Bugatti Chiron,1479, $3.4M,https://autowise.com/wp-content/uploads/2018/06/chiron-768x320.webp
+NIO EP9,1341,1.48M,https://autowise.com/wp-content/uploads/2018/06/nio-ep9-1.webp
+Rimac Concept One,1224,$1M,https://autowise.com/wp-content/uploads/2018/06/rimac.webp
+Aston Martin Valkyrie,1130,$3.2M,https://autowise.com/wp-content/uploads/2018/06/aston-martin-valkyrie-9-720x720.webp
+McLaren P1 LM,986,$3.7M,https://autowise.com/wp-content/uploads/2018/06/lanzante-p1-gtr-mclaren-2017-4.webp
+Ferrari LaFerrari,950,$1M,https://autowise.com/wp-content/uploads/2018/06/Ferrari-LaFerrari-three-quarter-1260x570.webp</code></pre>
+<p>Let’s open this file and plot it.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import figure - to create a figure object</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import output_file - to create a html file</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import show - to render the plot</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.plotting <span class="im">import</span> figure, output_file, show</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Import numpy and pandas for creating data sets</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in CSV</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;cars.csv&#39;</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>car <span class="op">=</span> df[<span class="st">&#39;Car&#39;</span>]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>hp <span class="op">=</span> df[<span class="st">&#39;Horsepower&#39;</span>]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> df[<span class="st">&#39;Price&#39;</span>]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an output html to render the plot.</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>output_file(<span class="st">&quot;Figure_sample2.html&quot;</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a figure object</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> figure(</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">&quot;Price of Cars with Horsepower&quot;</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    y_range<span class="op">=</span>car,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    plot_width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    plot_height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">&quot;Horse power&quot;</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">&quot;Car name&quot;</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    tools<span class="op">=</span><span class="st">&quot;&quot;</span> <span class="co"># this will remove all accessory features in the tool</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the plot</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plot.hbar(y<span class="op">=</span>car, right<span class="op">=</span>hp, left<span class="op">=</span><span class="dv">0</span>, height<span class="op">=</span><span class="fl">0.4</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, fill_alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Show results</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>show(plot)</span></code></pre></div>
+<h2 id="advanced-settings">Advanced settings</h2>
+<h3 id="tweaking-plot-tools">Tweaking plot tools</h3>
+<p>If you want only some tools in the graph, you can tweak them in the
+tools option.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> figure(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    tools<span class="op">=</span><span class="st">&quot;pan,box_select,zoom_in,zoom_out,save,reset&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<h3 id="using-column-data">Using column data</h3>
+<p><code>Column Data</code> is a method that converts data into column
+format. Once data is converted into this format, you can directly use it
+in the figure object with minor tweaks. This is quite useful to pass
+data to tool-tips.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.plotting <span class="im">import</span> ColumnDataSource</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> ColumnDataSource(df)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>car_list <span class="op">=</span> source.data[<span class="st">&#39;Car&#39;</span>].tolist() </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># this is needed as y_range in figure accepts list or arrays.</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a figure object</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> figure(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">&quot;Price of Cars with Horsepower&quot;</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    y_range<span class="op">=</span>car_list,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    plot_width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    plot_height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">&quot;Horse power&quot;</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">&quot;Car name&quot;</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># note that instead of the variable &quot;car&quot;, now you are using the column &#39;Car&#39; from </span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># the variable &quot;source&quot;. Same with &#39;Horsepower&#39;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plot.hbar(y<span class="op">=</span><span class="st">&#39;Car&#39;</span>, right<span class="op">=</span><span class="st">&#39;Horsepower&#39;</span>, left<span class="op">=</span><span class="dv">0</span>, height<span class="op">=</span><span class="fl">0.4</span>, </span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>          color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, fill_alpha<span class="op">=</span><span class="fl">0.5</span>, source<span class="op">=</span>source)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># For comparison, this is the old line</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># plot.hbar(y=car, right=hp, left=0, height=0.4, color=&#39;orange&#39;, fill_alpha=0.5)</span></span></code></pre></div>
+<h3 id="save-command">Save command</h3>
+<p>This command is used to save the data to the same <code>html</code>
+file. This way, the output instead of displaying on the screen will
+store in the <code>html</code> file. And if the <code>html</code> file
+is in a live server, the page will be instantly updated.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.plotting <span class="im">import</span> save</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This command will save the data to the html file.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>save(plot)</span></code></pre></div>
+<h3 id="tool-tips">Tool tips</h3>
+<p>This feature uses the column data source values to make content
+appear on the graph when the mouse cursor moves over.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.models.tools <span class="im">import</span> HoverTool</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>hover <span class="op">=</span> HoverTool()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>hover.tooltips <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;div&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;h3&gt;@Car&lt;/h3&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div&gt;&lt;strong&gt;Price:&lt;/strong&gt;@Price&lt;/div&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div&gt;&lt;strong&gt;Horse Power:&lt;/strong&gt;@Horsepower&lt;/div&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div&gt;&lt;img src=&quot;@Image&quot; alt=&quot;&quot; width=&quot;200&quot;/&gt;&lt;/div&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/div&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plot.add_tools(hover)</span></code></pre></div>
+<p>Alternatively, you can tweak the same tool tip as</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hover.tooltips <span class="op">=</span> [</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Car&quot;</span>, <span class="st">&quot;@Car&quot;</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;HP&quot;</span>, <span class="st">&quot;@Horsepower&quot;</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Price&quot;</span>, <span class="st">&quot;@Price&quot;</span>), </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Image&quot;</span>, <span class="st">&quot;&lt;div&gt;&lt;img src=</span><span class="ch">\&quot;</span><span class="st">@Image</span><span class="ch">\&quot;</span><span class="st"> alt=</span><span class="ch">\&quot;\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">200</span><span class="ch">\&quot;</span><span class="st">/&gt;&lt;/div&gt;&quot;</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p>For more tool-tips and plot tools, you can refer to <a
+href="https://bokeh.pydata.org/en/latest/docs/user_guide/tools.html">bokeh
+plot tools page</a></p>
+<h3 id="colour-maps">Colour maps</h3>
+<p>You can introduce colour maps/palettes in your file too. For more
+colour palettes, you can refer to <a
+href="https://bokeh.pydata.org/en/latest/docs/reference/palettes.html">bokeh
+colour palettes page</a></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is used to implement colourmaps based on certain factors.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.transform <span class="im">import</span> factor_cmap</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.palettes <span class="im">import</span> Blues8 <span class="co"># A sample blue palette</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plot.hbar(y<span class="op">=</span><span class="st">&#39;Car&#39;</span>, right<span class="op">=</span><span class="st">&#39;Horsepower&#39;</span>, left<span class="op">=</span><span class="dv">0</span>, height<span class="op">=</span><span class="fl">0.4</span>, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>          fill_color<span class="op">=</span>factor_cmap(<span class="st">&#39;Car&#39;</span>, palette<span class="op">=</span>Blues8, factors<span class="op">=</span>car_list), </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>          fill_alpha<span class="op">=</span><span class="fl">0.5</span>, source<span class="op">=</span>source)</span></code></pre></div>
+<h3 id="legend-for-plots">Legend for Plots</h3>
+<p>To add legend, there is a legend method.</p>
+<ul>
+<li>First, you need to specify the legend details.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot.legend.orientation <span class="op">=</span> <span class="st">&quot;vertical&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plot.legend.location <span class="op">=</span> <span class="st">&quot;top_right&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plot.legend.label_text_font_size <span class="op">=</span> <span class="st">&quot;10px&quot;</span></span></code></pre></div>
+<ul>
+<li>Second, you need to specify the legend in the <code>plot</code>
+command.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plot.hbar(y<span class="op">=</span><span class="st">&#39;Car&#39;</span>, right<span class="op">=</span><span class="st">&#39;Horsepower&#39;</span>, left<span class="op">=</span><span class="dv">0</span>, height<span class="op">=</span><span class="fl">0.4</span>, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>          fill_color<span class="op">=</span>factor_cmap(<span class="st">&#39;Car&#39;</span>, palette<span class="op">=</span>Blues8, factors<span class="op">=</span>car_list), </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          fill_alpha<span class="op">=</span><span class="fl">0.5</span>, source<span class="op">=</span>source, legend<span class="op">=</span><span class="st">&#39;Car&#39;</span>)</span></code></pre></div>
+<h3 id="components">Components</h3>
+<p>This is useful to extract the <code>script</code> and
+<code>div</code> components from the <code>html</code> file. With these
+data stored in variables, you can use them to export/embed the values
+into other files.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is used to extract script and div components</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.embed <span class="im">import</span> components</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract components</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>script, div <span class="op">=</span> components(plot)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(script)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(div)</span></code></pre></div>
+<h2 id="full-program-with-all-advanced-details">Full program with all
+advanced details</h2>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import figure - to create a figure object</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import output_file - to create a html file</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import show - to render the plot</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.plotting <span class="im">import</span> figure, output_file, show, save, ColumnDataSource</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.models.tools <span class="im">import</span> HoverTool</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># This is used to implement colourmaps based on certain factors.</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.transform <span class="im">import</span> factor_cmap</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  A sample blue palette</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.palettes <span class="im">import</span> Blues8</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This is used to extract script and div components</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.embed <span class="im">import</span> components</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Import numpy and pandas for creating data sets</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in CSV</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;cars.csv&#39;</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> ColumnDataSource(df)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>car_list <span class="op">=</span> source.data[<span class="st">&#39;Car&#39;</span>].tolist()</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># this is needed as y_range in figure accepts list or arrays.</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a figure object</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> figure(</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">&quot;Price of Cars with Horsepower&quot;</span>,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    y_range<span class="op">=</span>car_list,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    plot_width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    plot_height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">&quot;Horse power&quot;</span>,</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">&quot;Car name&quot;</span>,</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an output html to render the plot.</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>output_file(<span class="st">&quot;Figure_sample2.html&quot;</span>)</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="co"># note that instead of the variable &quot;car&quot;, now you are using the column &#39;Car&#39; from</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="co"># the variable &quot;source&quot;. Same with &#39;Horsepower&#39;</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>plot.hbar(y<span class="op">=</span><span class="st">&#39;Car&#39;</span>, right<span class="op">=</span><span class="st">&#39;Horsepower&#39;</span>, left<span class="op">=</span><span class="dv">0</span>, height<span class="op">=</span><span class="fl">0.4</span>,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            fill_color<span class="op">=</span>factor_cmap(<span class="st">&#39;Car&#39;</span>, palette<span class="op">=</span>Blues8, factors<span class="op">=</span>car_list),</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            fill_alpha<span class="op">=</span><span class="fl">0.9</span>, source<span class="op">=</span>source, legend<span class="op">=</span><span class="st">&#39;Car&#39;</span>)</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># For comparison, this is the old line</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="co"># plot.hbar(y=car, right=hp, left=0, height=0.4, color=&#39;orange&#39;, fill_alpha=0.5)</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Add hover details to the tool-tip</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>hover <span class="op">=</span> HoverTool()</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>hover.tooltips <span class="op">=</span> [</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Car&quot;</span>, <span class="st">&quot;@Car&quot;</span>),</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;HP&quot;</span>, <span class="st">&quot;@Horsepower&quot;</span>),</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Price&quot;</span>, <span class="st">&quot;@Price&quot;</span>),</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&quot;Image&quot;</span>, <span class="st">&quot;&lt;div&gt;&lt;img src=</span><span class="ch">\&quot;</span><span class="st">@Image</span><span class="ch">\&quot;</span><span class="st"> alt=</span><span class="ch">\&quot;\&quot;</span><span class="st"> width=</span><span class="ch">\&quot;</span><span class="st">200</span><span class="ch">\&quot;</span><span class="st">/&gt;&lt;/div&gt;&quot;</span>),</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="co"># hover.tooltips = &quot;&quot;&quot;</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div&gt;</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;h3&gt;@Car&lt;/h3&gt;</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;div&gt;&lt;strong&gt;Price:&lt;/strong&gt;@Price&lt;/div&gt;</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;div&gt;&lt;strong&gt;Horse Power:&lt;/strong&gt;@Horsepower&lt;/div&gt;</span></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;div&gt;&lt;img src=&quot;@Image&quot; alt=&quot;&quot; width=&quot;200&quot;/&gt;&lt;/div&gt;</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;/div&gt;</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;&quot;&quot;</span></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>plot.add_tools(hover)</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Show results</span></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>show(plot)</span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results</span></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>save(plot)</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract components</span></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>script, div <span class="op">=</span> components(plot)</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(script)</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(div)</span></code></pre></div>
+<p>For more details, you can refer <a
+href="https://bokeh.pydata.org/en/latest/docs/reference.html">Bokeh
+Online Reference</a></p>
+<h2 id="output-of-the-final-program">Output of the final program</h2>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">function</span>() {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> fn <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>      Bokeh<span class="op">.</span><span class="fu">safely</span>(<span class="kw">function</span>() {</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">function</span>(<span class="bu">root</span>) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>          <span class="kw">function</span> <span class="fu">embed_document</span>(<span class="bu">root</span>) {</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>          <span class="kw">var</span> docs_json <span class="op">=</span> <span class="st">&#39;{&quot;7b2a4bed-8ba5-403d-a5cd-7374babc8bc2&quot;:{&quot;roots&quot;:{&quot;references&quot;:[{&quot;attributes&quot;:{&quot;factors&quot;:[&quot;Hennessey Venom F5&quot;,&quot;Koenigsegg Regera&quot;,&quot;Bugatti Chiron&quot;,&quot;NIO EP9&quot;,&quot;Rimac Concept One&quot;,&quot;Aston Martin Valkyrie&quot;,&quot;McLaren P1 LM&quot;,&quot;Ferrari LaFerrari&quot;],&quot;palette&quot;:[&quot;#084594&quot;,&quot;#2171b5&quot;,&quot;#4292c6&quot;,&quot;#6baed6&quot;,&quot;#9ecae1&quot;,&quot;#c6dbef&quot;,&quot;#deebf7&quot;,&quot;#f7fbff&quot;]},&quot;id&quot;:&quot;1035&quot;,&quot;type&quot;:&quot;CategoricalColorMapper&quot;},{&quot;attributes&quot;:{&quot;below&quot;:[{&quot;id&quot;:&quot;1013&quot;,&quot;type&quot;:&quot;LinearAxis&quot;}],&quot;center&quot;:[{&quot;id&quot;:&quot;1017&quot;,&quot;type&quot;:&quot;Grid&quot;},{&quot;id&quot;:&quot;1021&quot;,&quot;type&quot;:&quot;Grid&quot;},{&quot;id&quot;:&quot;1047&quot;,&quot;type&quot;:&quot;Legend&quot;}],&quot;left&quot;:[{&quot;id&quot;:&quot;1018&quot;,&quot;type&quot;:&quot;CategoricalAxis&quot;}],&quot;plot_width&quot;:800,&quot;renderers&quot;:[{&quot;id&quot;:&quot;1039&quot;,&quot;type&quot;:&quot;GlyphRenderer&quot;}],&quot;title&quot;:{&quot;id&quot;:&quot;1003&quot;,&quot;type&quot;:&quot;Title&quot;},&quot;toolbar&quot;:{&quot;id&quot;:&quot;1028&quot;,&quot;type&quot;:&quot;Toolbar&quot;},&quot;x_range&quot;:{&quot;id&quot;:&quot;1005&quot;,&quot;type&quot;:&quot;DataRange1d&quot;},&quot;x_scale&quot;:{&quot;id&quot;:&quot;1009&quot;,&quot;type&quot;:&quot;LinearScale&quot;},&quot;y_range&quot;:{&quot;id&quot;:&quot;1007&quot;,&quot;type&quot;:&quot;FactorRange&quot;},&quot;y_scale&quot;:{&quot;id&quot;:&quot;1011&quot;,&quot;type&quot;:&quot;CategoricalScale&quot;}},&quot;id&quot;:&quot;1002&quot;,&quot;subtype&quot;:&quot;Figure&quot;,&quot;type&quot;:&quot;Plot&quot;},{&quot;attributes&quot;:{&quot;bottom_units&quot;:&quot;screen&quot;,&quot;fill_alpha&quot;:{&quot;value&quot;:0.5},&quot;fill_color&quot;:{&quot;value&quot;:&quot;lightgrey&quot;},&quot;left_units&quot;:&quot;screen&quot;,&quot;level&quot;:&quot;overlay&quot;,&quot;line_alpha&quot;:{&quot;value&quot;:1.0},&quot;line_color&quot;:{&quot;value&quot;:&quot;black&quot;},&quot;line_dash&quot;:[4,4],&quot;line_width&quot;:{&quot;value&quot;:2},&quot;render_mode&quot;:&quot;css&quot;,&quot;right_units&quot;:&quot;screen&quot;,&quot;top_units&quot;:&quot;screen&quot;},&quot;id&quot;:&quot;1046&quot;,&quot;type&quot;:&quot;BoxAnnotation&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1022&quot;,&quot;type&quot;:&quot;PanTool&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1058&quot;,&quot;type&quot;:&quot;Selection&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1023&quot;,&quot;type&quot;:&quot;WheelZoomTool&quot;},{&quot;attributes&quot;:{&quot;overlay&quot;:{&quot;id&quot;:&quot;1046&quot;,&quot;type&quot;:&quot;BoxAnnotation&quot;}},&quot;id&quot;:&quot;1024&quot;,&quot;type&quot;:&quot;BoxZoomTool&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1043&quot;,&quot;type&quot;:&quot;BasicTickFormatter&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1025&quot;,&quot;type&quot;:&quot;SaveTool&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1026&quot;,&quot;type&quot;:&quot;ResetTool&quot;},{&quot;attributes&quot;:{&quot;text&quot;:&quot;Price of Cars with Horsepower&quot;},&quot;id&quot;:&quot;1003&quot;,&quot;type&quot;:&quot;Title&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1027&quot;,&quot;type&quot;:&quot;HelpTool&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1009&quot;,&quot;type&quot;:&quot;LinearScale&quot;},{&quot;attributes&quot;:{&quot;callback&quot;:null,&quot;data&quot;:{&quot;Car&quot;:[&quot;Hennessey Venom F5&quot;,&quot;Koenigsegg Regera&quot;,&quot;Bugatti Chiron&quot;,&quot;NIO EP9&quot;,&quot;Rimac Concept One&quot;,&quot;Aston Martin Valkyrie&quot;,&quot;McLaren P1 LM&quot;,&quot;Ferrari LaFerrari&quot;],&quot;Horsepower&quot;:[1600,1500,1479,1341,1224,1130,986,950],&quot;Image&quot;:[&quot;https://autowise.com/wp-content/uploads/2018/06/Hennessey-Venom-F5-15.jpg&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/Regera_front_banner2.jpg&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/chiron-768x320.webp&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/nio-ep9-1.webp&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/rimac.webp&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/aston-martin-valkyrie-9-720x720.webp&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/lanzante-p1-gtr-mclaren-2017-4.webp&quot;,&quot;https://autowise.com/wp-content/uploads/2018/06/Ferrari-LaFerrari-three-quarter-1260x570.webp&quot;],&quot;Price&quot;:[&quot;$1.6M&quot;,&quot;$2M&quot;,&quot; $3.4M&quot;,&quot;$1.48M&quot;,&quot;$1M&quot;,&quot;$3.2M&quot;,&quot;$3.7M&quot;,&quot;$1M&quot;],&quot;index&quot;:[0,1,2,3,4,5,6,7]},&quot;selected&quot;:{&quot;id&quot;:&quot;1058&quot;,&quot;type&quot;:&quot;Selection&quot;},&quot;selection_policy&quot;:{&quot;id&quot;:&quot;1057&quot;,&quot;type&quot;:&quot;UnionRenderers&quot;}},&quot;id&quot;:&quot;1001&quot;,&quot;type&quot;:&quot;ColumnDataSource&quot;},{&quot;attributes&quot;:{&quot;active_drag&quot;:&quot;auto&quot;,&quot;active_inspect&quot;:&quot;auto&quot;,&quot;active_multi&quot;:null,&quot;active_scroll&quot;:&quot;auto&quot;,&quot;active_tap&quot;:&quot;auto&quot;,&quot;tools&quot;:[{&quot;id&quot;:&quot;1022&quot;,&quot;type&quot;:&quot;PanTool&quot;},{&quot;id&quot;:&quot;1023&quot;,&quot;type&quot;:&quot;WheelZoomTool&quot;},{&quot;id&quot;:&quot;1024&quot;,&quot;type&quot;:&quot;BoxZoomTool&quot;},{&quot;id&quot;:&quot;1025&quot;,&quot;type&quot;:&quot;SaveTool&quot;},{&quot;id&quot;:&quot;1026&quot;,&quot;type&quot;:&quot;ResetTool&quot;},{&quot;id&quot;:&quot;1027&quot;,&quot;type&quot;:&quot;HelpTool&quot;},{&quot;id&quot;:&quot;1049&quot;,&quot;type&quot;:&quot;HoverTool&quot;}]},&quot;id&quot;:&quot;1028&quot;,&quot;type&quot;:&quot;Toolbar&quot;},{&quot;attributes&quot;:{&quot;callback&quot;:null,&quot;factors&quot;:[&quot;Hennessey Venom F5&quot;,&quot;Koenigsegg Regera&quot;,&quot;Bugatti Chiron&quot;,&quot;NIO EP9&quot;,&quot;Rimac Concept One&quot;,&quot;Aston Martin Valkyrie&quot;,&quot;McLaren P1 LM&quot;,&quot;Ferrari LaFerrari&quot;]},&quot;id&quot;:&quot;1007&quot;,&quot;type&quot;:&quot;FactorRange&quot;},{&quot;attributes&quot;:{&quot;fill_alpha&quot;:{&quot;value&quot;:0.9},&quot;fill_color&quot;:{&quot;field&quot;:&quot;Car&quot;,&quot;transform&quot;:{&quot;id&quot;:&quot;1035&quot;,&quot;type&quot;:&quot;CategoricalColorMapper&quot;}},&quot;height&quot;:{&quot;value&quot;:0.4},&quot;line_color&quot;:{&quot;value&quot;:&quot;#1f77b4&quot;},&quot;right&quot;:{&quot;field&quot;:&quot;Horsepower&quot;},&quot;y&quot;:{&quot;field&quot;:&quot;Car&quot;}},&quot;id&quot;:&quot;1037&quot;,&quot;type&quot;:&quot;HBar&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1057&quot;,&quot;type&quot;:&quot;UnionRenderers&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1011&quot;,&quot;type&quot;:&quot;CategoricalScale&quot;},{&quot;attributes&quot;:{&quot;fill_alpha&quot;:{&quot;value&quot;:0.1},&quot;fill_color&quot;:{&quot;value&quot;:&quot;#1f77b4&quot;},&quot;height&quot;:{&quot;value&quot;:0.4},&quot;line_alpha&quot;:{&quot;value&quot;:0.1},&quot;line_color&quot;:{&quot;value&quot;:&quot;#1f77b4&quot;},&quot;right&quot;:{&quot;field&quot;:&quot;Horsepower&quot;},&quot;y&quot;:{&quot;field&quot;:&quot;Car&quot;}},&quot;id&quot;:&quot;1038&quot;,&quot;type&quot;:&quot;HBar&quot;},{&quot;attributes&quot;:{&quot;axis_label&quot;:&quot;Horse power&quot;,&quot;formatter&quot;:{&quot;id&quot;:&quot;1043&quot;,&quot;type&quot;:&quot;BasicTickFormatter&quot;},&quot;ticker&quot;:{&quot;id&quot;:&quot;1014&quot;,&quot;type&quot;:&quot;BasicTicker&quot;}},&quot;id&quot;:&quot;1013&quot;,&quot;type&quot;:&quot;LinearAxis&quot;},{&quot;attributes&quot;:{&quot;data_source&quot;:{&quot;id&quot;:&quot;1001&quot;,&quot;type&quot;:&quot;ColumnDataSource&quot;},&quot;glyph&quot;:{&quot;id&quot;:&quot;1037&quot;,&quot;type&quot;:&quot;HBar&quot;},&quot;hover_glyph&quot;:null,&quot;muted_glyph&quot;:null,&quot;nonselection_glyph&quot;:{&quot;id&quot;:&quot;1038&quot;,&quot;type&quot;:&quot;HBar&quot;},&quot;selection_glyph&quot;:null,&quot;view&quot;:{&quot;id&quot;:&quot;1040&quot;,&quot;type&quot;:&quot;CDSView&quot;}},&quot;id&quot;:&quot;1039&quot;,&quot;type&quot;:&quot;GlyphRenderer&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1014&quot;,&quot;type&quot;:&quot;BasicTicker&quot;},{&quot;attributes&quot;:{&quot;source&quot;:{&quot;id&quot;:&quot;1001&quot;,&quot;type&quot;:&quot;ColumnDataSource&quot;}},&quot;id&quot;:&quot;1040&quot;,&quot;type&quot;:&quot;CDSView&quot;},{&quot;attributes&quot;:{&quot;ticker&quot;:{&quot;id&quot;:&quot;1014&quot;,&quot;type&quot;:&quot;BasicTicker&quot;}},&quot;id&quot;:&quot;1017&quot;,&quot;type&quot;:&quot;Grid&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1045&quot;,&quot;type&quot;:&quot;CategoricalTickFormatter&quot;},{&quot;attributes&quot;:{&quot;axis_label&quot;:&quot;Car name&quot;,&quot;formatter&quot;:{&quot;id&quot;:&quot;1045&quot;,&quot;type&quot;:&quot;CategoricalTickFormatter&quot;},&quot;ticker&quot;:{&quot;id&quot;:&quot;1019&quot;,&quot;type&quot;:&quot;CategoricalTicker&quot;}},&quot;id&quot;:&quot;1018&quot;,&quot;type&quot;:&quot;CategoricalAxis&quot;},{&quot;attributes&quot;:{&quot;items&quot;:[{&quot;id&quot;:&quot;1048&quot;,&quot;type&quot;:&quot;LegendItem&quot;}]},&quot;id&quot;:&quot;1047&quot;,&quot;type&quot;:&quot;Legend&quot;},{&quot;attributes&quot;:{&quot;callback&quot;:null},&quot;id&quot;:&quot;1005&quot;,&quot;type&quot;:&quot;DataRange1d&quot;},{&quot;attributes&quot;:{},&quot;id&quot;:&quot;1019&quot;,&quot;type&quot;:&quot;CategoricalTicker&quot;},{&quot;attributes&quot;:{&quot;label&quot;:{&quot;field&quot;:&quot;Car&quot;},&quot;renderers&quot;:[{&quot;id&quot;:&quot;1039&quot;,&quot;type&quot;:&quot;GlyphRenderer&quot;}]},&quot;id&quot;:&quot;1048&quot;,&quot;type&quot;:&quot;LegendItem&quot;},{&quot;attributes&quot;:{&quot;dimension&quot;:1,&quot;ticker&quot;:{&quot;id&quot;:&quot;1019&quot;,&quot;type&quot;:&quot;CategoricalTicker&quot;}},&quot;id&quot;:&quot;1021&quot;,&quot;type&quot;:&quot;Grid&quot;},{&quot;attributes&quot;:{&quot;callback&quot;:null,&quot;tooltips&quot;:[[&quot;Car&quot;,&quot;@Car&quot;],[&quot;HP&quot;,&quot;@Horsepower&quot;],[&quot;Price&quot;,&quot;@Price&quot;],[&quot;Image&quot;,&quot;&amp;lt;div&amp;gt;&amp;lt;img src=</span><span class="sc">\\</span><span class="st">&quot;@Image</span><span class="sc">\\</span><span class="st">&quot; alt=</span><span class="sc">\\</span><span class="st">&quot;</span><span class="sc">\\</span><span class="st">&quot; width=</span><span class="sc">\\</span><span class="st">&quot;200</span><span class="sc">\\</span><span class="st">&quot;/&amp;gt;&amp;lt;/div&amp;gt;&quot;]]},&quot;id&quot;:&quot;1049&quot;,&quot;type&quot;:&quot;HoverTool&quot;}],&quot;root_ids&quot;:[&quot;1002&quot;]},&quot;title&quot;:&quot;Bokeh Application&quot;,&quot;version&quot;:&quot;1.3.0&quot;}}&#39;</span><span class="op">;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>          <span class="kw">var</span> render_items <span class="op">=</span> [{<span class="st">&quot;docid&quot;</span><span class="op">:</span><span class="st">&quot;7b2a4bed-8ba5-403d-a5cd-7374babc8bc2&quot;</span><span class="op">,</span><span class="st">&quot;roots&quot;</span><span class="op">:</span>{<span class="st">&quot;1002&quot;</span><span class="op">:</span><span class="st">&quot;4d4da52e-a4a4-4c80-ada2-34f05752165e&quot;</span>}}]<span class="op">;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>          <span class="bu">root</span><span class="op">.</span><span class="at">Bokeh</span><span class="op">.</span><span class="at">embed</span><span class="op">.</span><span class="fu">embed_items</span>(docs_json<span class="op">,</span> render_items)<span class="op">;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (<span class="bu">root</span><span class="op">.</span><span class="at">Bokeh</span> <span class="op">!==</span> <span class="kw">undefined</span>) {</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">embed_document</span>(<span class="bu">root</span>)<span class="op">;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>          } <span class="cf">else</span> {</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">var</span> attempts <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">var</span> timer <span class="op">=</span> <span class="pp">setInterval</span>(<span class="kw">function</span>(<span class="bu">root</span>) {</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>              <span class="cf">if</span> (<span class="bu">root</span><span class="op">.</span><span class="at">Bokeh</span> <span class="op">!==</span> <span class="kw">undefined</span>) {</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>                <span class="fu">embed_document</span>(<span class="bu">root</span>)<span class="op">;</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>                <span class="pp">clearInterval</span>(timer)<span class="op">;</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>              }</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>              attempts<span class="op">++;</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>              <span class="cf">if</span> (attempts <span class="op">&gt;</span> <span class="dv">100</span>) {</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>                <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing&quot;</span>)<span class="op">;</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>                <span class="pp">clearInterval</span>(timer)<span class="op">;</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>              }</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>            }<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="bu">root</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        })(<span class="bu">window</span>)<span class="op">;</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="bu">document</span><span class="op">.</span><span class="at">readyState</span> <span class="op">!=</span> <span class="st">&quot;loading&quot;</span>) <span class="fu">fn</span>()<span class="op">;</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&quot;DOMContentLoaded&quot;</span><span class="op">,</span> fn)<span class="op">;</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>  })()<span class="op">;</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bk-root&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;4d4da52e-a4a4-4c80-ada2-34f05752165e&quot;</span> <span class="er">data-root-id</span><span class="ot">=</span><span class="st">&quot;1002&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
+<h2 id="code-rendered">Code Rendered</h2>
+<script type="text/javascript">
+  (function() {
+    var fn = function() {
+      Bokeh.safely(function() {
+        (function(root) {
+          function embed_document(root) {
+            
+          var docs_json = '{"7b2a4bed-8ba5-403d-a5cd-7374babc8bc2":{"roots":{"references":[{"attributes":{"factors":["Hennessey Venom F5","Koenigsegg Regera","Bugatti Chiron","NIO EP9","Rimac Concept One","Aston Martin Valkyrie","McLaren P1 LM","Ferrari LaFerrari"],"palette":["#084594","#2171b5","#4292c6","#6baed6","#9ecae1","#c6dbef","#deebf7","#f7fbff"]},"id":"1035","type":"CategoricalColorMapper"},{"attributes":{"below":[{"id":"1013","type":"LinearAxis"}],"center":[{"id":"1017","type":"Grid"},{"id":"1021","type":"Grid"},{"id":"1047","type":"Legend"}],"left":[{"id":"1018","type":"CategoricalAxis"}],"plot_width":800,"renderers":[{"id":"1039","type":"GlyphRenderer"}],"title":{"id":"1003","type":"Title"},"toolbar":{"id":"1028","type":"Toolbar"},"x_range":{"id":"1005","type":"DataRange1d"},"x_scale":{"id":"1009","type":"LinearScale"},"y_range":{"id":"1007","type":"FactorRange"},"y_scale":{"id":"1011","type":"CategoricalScale"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1046","type":"BoxAnnotation"},{"attributes":{},"id":"1022","type":"PanTool"},{"attributes":{},"id":"1058","type":"Selection"},{"attributes":{},"id":"1023","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"1046","type":"BoxAnnotation"}},"id":"1024","type":"BoxZoomTool"},{"attributes":{},"id":"1043","type":"BasicTickFormatter"},{"attributes":{},"id":"1025","type":"SaveTool"},{"attributes":{},"id":"1026","type":"ResetTool"},{"attributes":{"text":"Price of Cars with Horsepower"},"id":"1003","type":"Title"},{"attributes":{},"id":"1027","type":"HelpTool"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{"callback":null,"data":{"Car":["Hennessey Venom F5","Koenigsegg Regera","Bugatti Chiron","NIO EP9","Rimac Concept One","Aston Martin Valkyrie","McLaren P1 LM","Ferrari LaFerrari"],"Horsepower":[1600,1500,1479,1341,1224,1130,986,950],"Image":["https://autowise.com/wp-content/uploads/2018/06/Hennessey-Venom-F5-15.jpg","https://autowise.com/wp-content/uploads/2018/06/Regera_front_banner2.jpg","https://autowise.com/wp-content/uploads/2018/06/chiron-768x320.webp","https://autowise.com/wp-content/uploads/2018/06/nio-ep9-1.webp","https://autowise.com/wp-content/uploads/2018/06/rimac.webp","https://autowise.com/wp-content/uploads/2018/06/aston-martin-valkyrie-9-720x720.webp","https://autowise.com/wp-content/uploads/2018/06/lanzante-p1-gtr-mclaren-2017-4.webp","https://autowise.com/wp-content/uploads/2018/06/Ferrari-LaFerrari-three-quarter-1260x570.webp"],"Price":["$1.6M","$2M"," $3.4M","$1.48M","$1M","$3.2M","$3.7M","$1M"],"index":[0,1,2,3,4,5,6,7]},"selected":{"id":"1058","type":"Selection"},"selection_policy":{"id":"1057","type":"UnionRenderers"}},"id":"1001","type":"ColumnDataSource"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1022","type":"PanTool"},{"id":"1023","type":"WheelZoomTool"},{"id":"1024","type":"BoxZoomTool"},{"id":"1025","type":"SaveTool"},{"id":"1026","type":"ResetTool"},{"id":"1027","type":"HelpTool"},{"id":"1049","type":"HoverTool"}]},"id":"1028","type":"Toolbar"},{"attributes":{"callback":null,"factors":["Hennessey Venom F5","Koenigsegg Regera","Bugatti Chiron","NIO EP9","Rimac Concept One","Aston Martin Valkyrie","McLaren P1 LM","Ferrari LaFerrari"]},"id":"1007","type":"FactorRange"},{"attributes":{"fill_alpha":{"value":0.9},"fill_color":{"field":"Car","transform":{"id":"1035","type":"CategoricalColorMapper"}},"height":{"value":0.4},"line_color":{"value":"#1f77b4"},"right":{"field":"Horsepower"},"y":{"field":"Car"}},"id":"1037","type":"HBar"},{"attributes":{},"id":"1057","type":"UnionRenderers"},{"attributes":{},"id":"1011","type":"CategoricalScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"value":0.4},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"Horsepower"},"y":{"field":"Car"}},"id":"1038","type":"HBar"},{"attributes":{"axis_label":"Horse power","formatter":{"id":"1043","type":"BasicTickFormatter"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1013","type":"LinearAxis"},{"attributes":{"data_source":{"id":"1001","type":"ColumnDataSource"},"glyph":{"id":"1037","type":"HBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1038","type":"HBar"},"selection_glyph":null,"view":{"id":"1040","type":"CDSView"}},"id":"1039","type":"GlyphRenderer"},{"attributes":{},"id":"1014","type":"BasicTicker"},{"attributes":{"source":{"id":"1001","type":"ColumnDataSource"}},"id":"1040","type":"CDSView"},{"attributes":{"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1017","type":"Grid"},{"attributes":{},"id":"1045","type":"CategoricalTickFormatter"},{"attributes":{"axis_label":"Car name","formatter":{"id":"1045","type":"CategoricalTickFormatter"},"ticker":{"id":"1019","type":"CategoricalTicker"}},"id":"1018","type":"CategoricalAxis"},{"attributes":{"items":[{"id":"1048","type":"LegendItem"}]},"id":"1047","type":"Legend"},{"attributes":{"callback":null},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1019","type":"CategoricalTicker"},{"attributes":{"label":{"field":"Car"},"renderers":[{"id":"1039","type":"GlyphRenderer"}]},"id":"1048","type":"LegendItem"},{"attributes":{"dimension":1,"ticker":{"id":"1019","type":"CategoricalTicker"}},"id":"1021","type":"Grid"},{"attributes":{"callback":null,"tooltips":[["Car","@Car"],["HP","@Horsepower"],["Price","@Price"],["Image","&lt;div&gt;&lt;img src=\\"@Image\\" alt=\\"\\" width=\\"200\\"/&gt;&lt;/div&gt;"]]},"id":"1049","type":"HoverTool"}],"root_ids":["1002"]},"title":"Bokeh Application","version":"1.3.0"}}';
+          var render_items = [{"docid":"7b2a4bed-8ba5-403d-a5cd-7374babc8bc2","roots":{"1002":"4d4da52e-a4a4-4c80-ada2-34f05752165e"}}];
+          root.Bokeh.embed.embed_items(docs_json, render_items);
+        
+          }
+          if (root.Bokeh !== undefined) {
+            embed_document(root);
+          } else {
+            var attempts = 0;
+            var timer = setInterval(function(root) {
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+                clearInterval(timer);
+              }
+              attempts++;
+              if (attempts > 100) {
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                clearInterval(timer);
+              }
+            }, 10, root)
+          }
+        })(window);
+      });
+    };
+    if (document.readyState != "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  })();
+</script>
+<div id="4d4da52e-a4a4-4c80-ada2-34f05752165e" class="bk-root"
+data-root-id="1002">
+
+</div>
+<!-- BokehJS-->
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.0.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

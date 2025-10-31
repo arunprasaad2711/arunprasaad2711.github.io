@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{ themes.default }}">
+{% include 'components/header.html' %}
+
+<body>
+    {% include 'components/menubar.html' %}
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    {% include 'components/jsfiles.html' %}
+
+    {% include 'components/footer.html' %}
+
+</body>
+</html>

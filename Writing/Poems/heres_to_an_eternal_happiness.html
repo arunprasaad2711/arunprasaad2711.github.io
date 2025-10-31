@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>heres to an eternal happiness | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,110 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="heres-to-an-eternal-happiness">Here’s to an Eternal
+Happiness</h1>
+<div class="line-block">When two such hearts filled with dreams,<br />
+Meet by chance, set-up by destiny,<br />
+It’s just time, a matter of time,<br />
+For the fire to kindle, and love to blossom.<br />
+<br />
+While it is true, that this is another story,<br />
+Of love and tussle and likes and pet peeves,<br />
+Yet this story is special, potent, and strong,<br />
+Caring and nurturing, patient and kind.<br />
+<br />
+It all started, with the ambi going blind,<br />
+Blind in love after talking to the ladki.<br />
+Yet he didn’t lose the light in his heart,<br />
+Nor his sight to do what is quite right.<br />
+<br />
+He gathered with might, all the good words,<br />
+And opened up his heart, and told his love.<br />
+Sadly the time was unkind, and even decieving,<br />
+For the ladki did not, reciprocate his love.<br />
+<br />
+For months there was, a lot of tussle,<br />
+There was friendship, and there was more,<br />
+To be or not to be, wondered the ladki,<br />
+To be and indefinitely said ambi hopefully!<br />
+<br />
+With time and with space, the ladki did see,<br />
+The kind and good heart, of this sweet ambi.<br />
+She who thought that this won’t be possible,<br />
+Got the courage to see, a union of two states.<br />
+<br />
+It was time for love, and love was in the air,<br />
+The air still does smell, with love to share.<br />
+A love that grew, patiently with time,<br />
+And planned it’s way for a better future.<br />
+<br />
+A love that took years, six years to build,<br />
+From friends to lovers to betrotheds to spouses.<br />
+Amidst all the distance, and oceans and timezones,<br />
+The hearts built together, a hopeful future.<br />
+<br />
+There was drama, there were fights,<br />
+These two although married, might still fight,<br />
+Yet amidst the fights, the love shall prevail,<br />
+And it will grow stronger and bind their hearts tighter.<br />
+<br />
+What can I give, this lovely little couple?<br />
+I only wish them, my thoughts and wishes!<br />
+Thoughts and wishes for a great grand life!<br />
+Filled with hope and joy and wonder!<br />
+<br />
+I am grateful for this lovely couple!<br />
+For they remind me, of what love can be!<br />
+For Ganesh and Sonal, I rise for a toast!<br />
+Here’s to the couple for an eternal happiness!</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +329,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

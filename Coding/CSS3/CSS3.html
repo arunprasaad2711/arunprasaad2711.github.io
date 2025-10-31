@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>CSS | CSS3 | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,102 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="css">CSS</h1>
+<h2 id="references">References</h2>
+<ul>
+<li>Traversy media - Brad Traversy youtube channel</li>
+<li>KhanAcademy</li>
+<li>w3schools</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>A Good Browser
+<ul>
+<li>Recommended
+<ul>
+<li>Chrome, Firefox, Safari,</li>
+</ul></li>
+<li>Others
+<ul>
+<li>Opera, Edge etc.,</li>
+</ul></li>
+</ul></li>
+<li>A text editor
+<ul>
+<li>Pick one you like!</li>
+<li>Simple ones:
+<ul>
+<li>Notepad, Notepad++, Leafpad, gedit, Kate, etc.,</li>
+</ul></li>
+<li>Fancy ones:
+<ul>
+<li>Atom, Sublime, Visual Studio Code, Webstorm etc.,</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Quick tip: You can view the source code of the webpage inside
+a web browser. Also, there are developer tools in Chrome (press
+<code>F12</code>) (console, elements tab, etc.,) that are particularly
+useful while developing webpages to look at the various parts of the
+webpage and also to catch errors while using and running JavaScript and
+or PHP code</strong></p>
+<h2 id="confusing-definitions">Confusing definitions</h2>
+<h3 id="border">Border:</h3>
+<p>A border is a line/enclosing around the element. Imagine it to be the
+fence or a compound wall around a building.</p>
+<h3 id="padding">Padding:</h3>
+<p>The space between the element and the border. Imagine it to be the
+space between the fence and the building.</p>
+<h3 id="margin">Margin:</h3>
+<p>The space around the border of an element.</p>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +321,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

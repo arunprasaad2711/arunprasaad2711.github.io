@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Writing | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Banner/Hero Section -->
+<div
+  class="hero min-h-screen"
+  style="background-image: url('images/WritingBanner.jpg');">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Writing & Reflections</h1>
+      <p class="mb-5">Thoughts, essays, and explorations</p>
+      <button 
+        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
+        class="btn btn-primary">
+        Explore
+      </button>
+    </div>
+  </div>
+</div>
+    
+    <main id="content">
+        
+<div class="container mx-auto max-w-7xl p-8">
+    <!-- Articles Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/enough_is_enough.html" class="link link-hover font-medium">Enough is Enough</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/enough_is_enough.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/in_the_shoes_of_a_gay_person.html" class="link link-hover font-medium">In the shoes of a Gay Person</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/in_the_shoes_of_a_gay_person.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/late_night_ride_and_coffee_with_a_friend.html" class="link link-hover font-medium">Late night ride and coffee with a friend</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/late_night_ride_and_coffee_with_a_friend.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/lessons_from_entropy.html" class="link link-hover font-medium">Lessons from Entropy</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/lessons_from_entropy.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/lessons_on_being_vulnerable.html" class="link link-hover font-medium">Lessons on being Vulnerable</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/lessons_on_being_vulnerable.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/life_s_purpose.html" class="link link-hover font-medium">Life's Purpose</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/life_s_purpose.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/monkeys_humans_modernlife_and_socialMedia.html" class="link link-hover font-medium">Monkeys, Humans, Modern Life, and Social Media</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/monkeys_humans_modernlife_and_socialMedia.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/paralysis_of_choice_the_modern_day_challenge.html" class="link link-hover font-medium">Paralysis of Choice - The Modern Day Challenge</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/paralysis_of_choice_the_modern_day_challenge.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/pda_and_changing_times.html" class="link link-hover font-medium">PDA and Changing times.</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/pda_and_changing_times.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/some_realisations_from_a_broken_finger.html" class="link link-hover font-medium">Some realisations from a broken finger</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/some_realisations_from_a_broken_finger.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/staying_foolish_and_writing.html" class="link link-hover font-medium">Staying Foolish and Writing</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/staying_foolish_and_writing.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/two_wolves.html" class="link link-hover font-medium">Realising the two Wolves inside us</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/two_wolves.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Articles/you_are_not_alone_dealing_with_loss.html" class="link link-hover font-medium">You are not alone! - Dealing with Loss</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Articles/you_are_not_alone_dealing_with_loss.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Poems Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Poems</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_dreamers_nightmare.html" class="link link-hover font-medium">A Dreamer's Nightmare</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_dreamers_nightmare.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_farewell_in_melancholy.html" class="link link-hover font-medium">A Farewell in Melancholy</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_farewell_in_melancholy.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_farewell_song.html" class="link link-hover font-medium">a farewell song</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_farewell_song.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_hope_for_a_lighthouse.html" class="link link-hover font-medium">a hope for a lighthouse</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_hope_for_a_lighthouse.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_place_far_away.html" class="link link-hover font-medium">a place far away</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_place_far_away.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_realists_regret.html" class="link link-hover font-medium">a realists regret</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_realists_regret.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_rider_s_journey.html" class="link link-hover font-medium">a rider s journey</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_rider_s_journey.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_song_of_blue_and_yellow.html" class="link link-hover font-medium">a song of blue and yellow</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_song_of_blue_and_yellow.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/a_sweet_voyage.html" class="link link-hover font-medium">a sweet voyage</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/a_sweet_voyage.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/acceptance.html" class="link link-hover font-medium">acceptance</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/acceptance.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/agree_to_disagree.html" class="link link-hover font-medium">agree to disagree</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/agree_to_disagree.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/at_the_top_of_the_clouds.html" class="link link-hover font-medium">at the top of the clouds</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/at_the_top_of_the_clouds.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/autumn_colours.html" class="link link-hover font-medium">autumn colours</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/autumn_colours.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/bane_of_trying.html" class="link link-hover font-medium">bane of trying</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/bane_of_trying.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/behind_the_door.html" class="link link-hover font-medium">behind the door</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/behind_the_door.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/behind_the_gate.html" class="link link-hover font-medium">behind the gate</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/behind_the_gate.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/behind_the_smile.html" class="link link-hover font-medium">behind the smile</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/behind_the_smile.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/being_brave.html" class="link link-hover font-medium">being brave</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/being_brave.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/believe_it.html" class="link link-hover font-medium">believe it</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/believe_it.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/blessed.html" class="link link-hover font-medium">blessed</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/blessed.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/blurred_lines.html" class="link link-hover font-medium">blurred lines</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/blurred_lines.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/blushing_bride.html" class="link link-hover font-medium">blushing bride</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/blushing_bride.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/breaking_rules.html" class="link link-hover font-medium">breaking rules</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/breaking_rules.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/brida.html" class="link link-hover font-medium">brida</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/brida.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/childish_dreams.html" class="link link-hover font-medium">childish dreams</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/childish_dreams.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/choices_and_chances.html" class="link link-hover font-medium">choices and chances</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/choices_and_chances.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/cold_fire.html" class="link link-hover font-medium">cold fire</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/cold_fire.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/concede.html" class="link link-hover font-medium">concede</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/concede.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/curse_of_being_strong.html" class="link link-hover font-medium">curse of being strong</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/curse_of_being_strong.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/cursed.html" class="link link-hover font-medium">cursed</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/cursed.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/dance_of_ecstasy.html" class="link link-hover font-medium">dance of ecstasy</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/dance_of_ecstasy.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/december_flowers.html" class="link link-hover font-medium">december flowers</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/december_flowers.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/depression.html" class="link link-hover font-medium">depression</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/depression.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/detached.html" class="link link-hover font-medium">detached</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/detached.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/ebb_and_flow.html" class="link link-hover font-medium">ebb and flow</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/ebb_and_flow.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/excelsior.html" class="link link-hover font-medium">excelsior</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/excelsior.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/far_cry.html" class="link link-hover font-medium">far cry</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/far_cry.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/feeling_infinite.html" class="link link-hover font-medium">feeling infinite</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/feeling_infinite.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/festival_of_lights.html" class="link link-hover font-medium">festival of lights</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/festival_of_lights.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/fighting_life.html" class="link link-hover font-medium">fighting life</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/fighting_life.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/flamboyant_dance_of_a_phoenix.html" class="link link-hover font-medium">flamboyant dance of a phoenix</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/flamboyant_dance_of_a_phoenix.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/fluidic_colours.html" class="link link-hover font-medium">fluidic colours</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/fluidic_colours.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/for_a_friend.html" class="link link-hover font-medium">for a friend</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/for_a_friend.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/future_of_the_past.html" class="link link-hover font-medium">future of the past</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/future_of_the_past.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/gamble_of_waiting.html" class="link link-hover font-medium">gamble of waiting</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/gamble_of_waiting.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/game_planner.html" class="link link-hover font-medium">game planner</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/game_planner.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/gold_need_not_glitter.html" class="link link-hover font-medium">gold need not glitter</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/gold_need_not_glitter.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/grace_in_defeat.html" class="link link-hover font-medium">grace in defeat</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/grace_in_defeat.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/heres_to_an_eternal_happiness.html" class="link link-hover font-medium">heres to an eternal happiness</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/heres_to_an_eternal_happiness.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/imperfectly_perfect.html" class="link link-hover font-medium">imperfectly perfect</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/imperfectly_perfect.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/in_search_of_a_unicorn.html" class="link link-hover font-medium">in search of a unicorn</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/in_search_of_a_unicorn.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/indra.html" class="link link-hover font-medium">indra</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/indra.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/inward_journey.html" class="link link-hover font-medium">inward journey</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/inward_journey.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/iron_queen.html" class="link link-hover font-medium">iron queen</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/iron_queen.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/it_is_never_easy.html" class="link link-hover font-medium">it is never easy</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/it_is_never_easy.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/its_time_for_spring.html" class="link link-hover font-medium">its time for spring</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/its_time_for_spring.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/keep_smiling.html" class="link link-hover font-medium">keep smiling</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/keep_smiling.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/lessons_from_entropy.html" class="link link-hover font-medium">lessons from entropy</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/lessons_from_entropy.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/let_it_go.html" class="link link-hover font-medium">let it go</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/let_it_go.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/little_joys.html" class="link link-hover font-medium">little joys</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/little_joys.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/love_under_the_stars.html" class="link link-hover font-medium">love under the stars</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/love_under_the_stars.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/magi.html" class="link link-hover font-medium">magi</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/magi.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/maybe_its_not_meant_to_be.html" class="link link-hover font-medium">maybe its not meant to be</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/maybe_its_not_meant_to_be.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/mental_health.html" class="link link-hover font-medium">mental health</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/mental_health.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/message_to_the_friendly_care_giver.html" class="link link-hover font-medium">message to the friendly care giver</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/message_to_the_friendly_care_giver.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/metamorphosis.html" class="link link-hover font-medium">metamorphosis</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/metamorphosis.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/midnight_dreams.html" class="link link-hover font-medium">midnight dreams</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/midnight_dreams.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/missing_words.html" class="link link-hover font-medium">missing words</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/missing_words.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/moonlight.html" class="link link-hover font-medium">moonlight</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/moonlight.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/more_than_what_meets_the_eye.html" class="link link-hover font-medium">more than what meets the eye</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/more_than_what_meets_the_eye.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/my_time_has_come.html" class="link link-hover font-medium">my time has come</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/my_time_has_come.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/nameday.html" class="link link-hover font-medium">nameday</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/nameday.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/nemesis_reborn.html" class="link link-hover font-medium">nemesis reborn</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/nemesis_reborn.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/new_beginnings.html" class="link link-hover font-medium">new beginnings</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/new_beginnings.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/no_one.html" class="link link-hover font-medium">no one</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/no_one.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/nymphadora.html" class="link link-hover font-medium">nymphadora</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/nymphadora.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/paint_the_town_red.html" class="link link-hover font-medium">paint the town red</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/paint_the_town_red.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/path_to_transcedence.html" class="link link-hover font-medium">path to transcedence</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/path_to_transcedence.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/perspective.html" class="link link-hover font-medium">perspective</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/perspective.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/prayer_to_the_universe_part_1.html" class="link link-hover font-medium">prayer to the universe part 1</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/prayer_to_the_universe_part_1.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/prayer_to_the_universe_part_2.html" class="link link-hover font-medium">prayer to the universe part 2</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/prayer_to_the_universe_part_2.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/raajali.html" class="link link-hover font-medium">raajali</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/raajali.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/rakshabandhan.html" class="link link-hover font-medium">rakshabandhan</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/rakshabandhan.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/reconcile.html" class="link link-hover font-medium">reconcile</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/reconcile.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/recursive_clock.html" class="link link-hover font-medium">recursive clock</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/recursive_clock.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/respect_is_not_love.html" class="link link-hover font-medium">respect is not love</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/respect_is_not_love.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/said_he_said_she.html" class="link link-hover font-medium">said he said she</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/said_he_said_she.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/sailing_amidst_shipwrecks.html" class="link link-hover font-medium">sailing amidst shipwrecks</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/sailing_amidst_shipwrecks.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/secret_santa.html" class="link link-hover font-medium">secret santa</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/secret_santa.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/she.html" class="link link-hover font-medium">she</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/she.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/silience.html" class="link link-hover font-medium">silience</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/silience.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/solitude.html" class="link link-hover font-medium">solitude</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/solitude.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/sonder.html" class="link link-hover font-medium">sonder</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/sonder.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/star_child.html" class="link link-hover font-medium">star child</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/star_child.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/still_waters.html" class="link link-hover font-medium">still waters</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/still_waters.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/storm_breaker.html" class="link link-hover font-medium">storm breaker</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/storm_breaker.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/the_completing_piece.html" class="link link-hover font-medium">the completing piece</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/the_completing_piece.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/the_soul_catcher.html" class="link link-hover font-medium">the soul catcher</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/the_soul_catcher.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/to_new_beginnings.html" class="link link-hover font-medium">to new beginnings</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/to_new_beginnings.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/to_try_or_to_wait.html" class="link link-hover font-medium">to try or to wait</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/to_try_or_to_wait.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/trip_around_the_sun.html" class="link link-hover font-medium">trip around the sun</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/trip_around_the_sun.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/uncharted_trails.html" class="link link-hover font-medium">uncharted trails</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/uncharted_trails.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/unopened_doors.html" class="link link-hover font-medium">unopened doors</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/unopened_doors.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/vemoedalen.html" class="link link-hover font-medium">vemoedalen</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/vemoedalen.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wandering_soul.html" class="link link-hover font-medium">wandering soul</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wandering_soul.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/when_two_poles_meet.html" class="link link-hover font-medium">when two poles meet</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/when_two_poles_meet.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/where_are_you.html" class="link link-hover font-medium">where are you</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/where_are_you.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wild_lily.html" class="link link-hover font-medium">wild lily</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wild_lily.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wise_panda.html" class="link link-hover font-medium">wise panda</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wise_panda.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wishes_to_a_budding_artist.html" class="link link-hover font-medium">wishes to a budding artist</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wishes_to_a_budding_artist.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wishes_to_a_noble_friend.html" class="link link-hover font-medium">wishes to a noble friend</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wishes_to_a_noble_friend.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/wishes_to_an_akikaze.html" class="link link-hover font-medium">wishes to an akikaze</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/wishes_to_an_akikaze.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/you_are_special.html" class="link link-hover font-medium">you are special</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/you_are_special.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/you_have_two_legs.html" class="link link-hover font-medium">you have two legs</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/you_have_two_legs.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Poems/you_will_reap.html" class="link link-hover font-medium">you will reap</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Poems/you_will_reap.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Short Stories Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Short Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ul class="list bg-base-200 rounded-box shadow-md">
+                <li class="list-row hover:bg-base-300 transition-colors">
+                    <div class="list-col-grow">
+                        <a href="/Writing/Short_Stories/the_innocent_questions.html" class="link link-hover font-medium">The Innocent Questions</a>
+                    </div>
+                    <button class="btn btn-square btn-ghost btn-sm" onclick="window.location.href='/Writing/Short_Stories/the_innocent_questions.html'">
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+    </main>
+    
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+</body>
+</html>

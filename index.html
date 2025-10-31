@@ -1,232 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
-
-	<head>
+<html lang="en" data-theme="business">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Meta additions to hold no cache in github. This makes the website reload fresh. -->
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <!-- KaTeX CSS and JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
     <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
         onload="renderMathInElement(document.body);">
     </script>
 
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
     
-	<link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
+        <title>Home | Fluidic Colours</title>
     
 
-    <title>Home | Fluidic Colours</title>
+</head>
 
-    </head>
-
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-		<!-- Header -->
-<header id="header" class="alt">
-	
-	
-		<a href="index.html" class="logo"><strong>Fluidic Colours</strong>  <span>by Arun</span></a>
-	
-	
-	<nav>
-		<a href="#menu">Menu</a>
-	</nav>
-</header>
-
-<!-- Menu -->
-<nav id="menu">
-	<ul class="links">
-		
-		<li><a href="./index.html">Home</a></li>
-		<li><a href="./blogs.html">Blogs</a></li>
-		<li><a href="./syntax.html">Coding and Software Notes</a></li>
-		<li><a href="./science.html">Science Notes</a></li>
-		<li><a href="./maths.html">Mathematics Notes</a></li>
-		<li><a href="./apps.html">Useful Apps</a></li>
-		<li><a href="./faq.html">FAQs</a></li>
-		
-	</ul>
-</nav>
-		
-		<!-- Banner -->
-		<section id="banner" class="major">
-			<div class="inner">
-				<span class="image">
-					<!-- <img src="images/syntax.jpg" alt="" /> -->
-					<img src="images/banner_01.jpg"" alt="" />
-				</span>
-				<header class="major">
-					<h1>Hi, my name is Arun!</h1>
-				</header>
-				<div class="content">
-					<p>Welcome to my website! You can read my blog posts, poems, articles, notes, from here.</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- One -->
-<section id="one" class="tiles">
-    <article>
-        <span class="image">
-            <!--img src="images/pic01.jpg" alt="" /-->
-            <img src="images/blog.png" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./blogs.html" class="link">Colours</a></h3>
-            <p>Collection of all my writings</p>
-        </header>
-    </article>
-    <article>
-        <span class="image">
-            <!--img src="images/pic02.jpg" alt="" /-->
-            <img src="images/syntax.png" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./syntax.html" class="link">Syntax</a></h3>
-            <p>My Software and Coding notes</p>
-        </header>
-    </article>
-    <article>
-        <span class="image">
-            <img src="images/pic03.jpg" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./science.html" class="link">Continuum</a></h3>
-            <p>My Science Notes</p>
-        </header>
-    </article>
-    <article>
-        <span class="image">
-            <img src="images/pic04.jpg" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./maths.html" class="link">Derivative</a></h3>
-            <p>My Mathematics Notes</p>
-        </header>
-    </article>
-    <article>
-        <span class="image">
-            <img src="images/pic05.jpg" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./apps.html" class="link">Useful Apps</a></h3>
-            <p>You'll thank me later :)</p>
-        </header>
-    </article>
-    <article>
-        <span class="image">
-            <!--img src="images/pic06.jpg" alt="" /-->
-            <img src="images/special_picture.jpg" alt="" />
-        </span>
-        <header class="major">
-            <h3><a href="./faq.html" class="link">FAQs</a></h3>
-            <p>Some questions you might ask.</p>
-        </header>
-    </article>
-</section>
-
-		<!-- Contact -->
-<section>
-	<div class="inner">
-		<section>
-			<div class="contact-method">
-				<span class="icon alt fa-exclamation-triangle"></span>
-				<h3>BEFORE CONTACTING ME ...</h3>
-				<p>
-					You can get all the codes from my <a href="https://www.github.com/arunprasaad2711" target="_blank">GitHub</a> account. 
-					For any announcement regarding my 
-					<a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank">YouTube</a> channel, 
-					you can just follow my YouTube channel and you won't miss anything. Don't worry, I won't spam you :D. 
-					You can mail me through my <a href="mailto:arunprasaad2711@gmail.com" target="_blank">Email</a> for your queries. Don't take it personal 
-					if I do not reply to your mails. I get quite a lot 
-					of them and it is hard to keep track. That said, if you
-					want me to teach you or a group, I'm open to that 
-					and your mails get high-priority. Feedbacks and 
-					suggestions and criticim are always welcome. I 
-					follow the <a href="https://www.quora.com/What-is-Quoras-Be-Nice-Be-Respectful-policy" target="_blank">
-					Be Nice, Be Respectful</a> policy of Quora seriously.
-					If you feel like donating, you can go to my <a href="https://www.patreon.com/FluidicColours" target="_blank">
-					Patreon Account.</a>
-				</p>
-			</div>
-		</section>
-	</div>
-</section>
-
-        <!-- Footer -->
-<footer id="footer" class="">
-	<div class="inner">
-		<ul class="icons">
-			<li><a href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran" target="_blank" class="icon alt fa-quora"><span class="label">Quora</span></a></li>
-			<li><a href="https://www.youtube.com/channel/UCUJFj-PXuWLRfFFHA44ZGYw" target="_blank" class="icon alt fa-youtube-play"><span class="label">YouTube</span></a></li>
-			<li><a href="https://github.com/arunprasaad2711" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-			<li><a href="https://www.instagram.com/fluidiccolours/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="mailto:arunprasaad2711@gmail.com" target="_blank" class="icon alt fa-envelope-o"><span class="label">Mail</span></a></li>
-		</ul>
-		<p>
-			Copyright &copy; 2018 - <script type="text/javascript">
-				document.write(new Date().getFullYear());
-			  </script> | Arun Prasaad Gunasekaran | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
-		</p>
-	</div>
-</footer>
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
         
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
+</nav>
 
-    <script type="text/javascript" language="javascript">
-const copyButtonLabel = "Copy Code";
+    <!-- Banner/Hero Section -->
+<div
+  class="hero min-h-screen"
+  style="background-image: url('images/HomeBanner.png');">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Welcome to Fluidic Colours</h1>
+      <p class="mb-5">Explore writings, notes, code, and interactive applications</p>
+      <button 
+        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
+        class="btn btn-primary">
+        Explore
+      </button>
+    </div>
+  </div>
+</div>
+    
+    <main id="content">
+        
+    </main>
+    
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
 
-// use a class selector if available
-let blocks = document.querySelectorAll("pre");
-
-blocks.forEach((block) => {
-    // only add button if browser supports Clipboard API
-    if (navigator.clipboard) {
-    let button = document.createElement("a");
-    button.className = "button primary small"
-
-    button.innerText = copyButtonLabel;
-    button.style.cssText = "align:right;"
-    block.appendChild(button);
-
-    button.addEventListener("click", async () => {
-        await copyCode(block);
-    });
-    }
-});
-
-async function copyCode(block) {
-    let code = block.querySelector("code");
-    let text = code.innerText;
-
-    await navigator.clipboard.writeText(text);
-}
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
 
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
 
 
-    
 </body>
 </html>

@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>unopened doors | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,204 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="unopened-doors">Unopened Doors</h1>
+<div class="line-block">There was a breeze,<br />
+It blew between trees,<br />
+Thawed my heart old,<br />
+Rusty and cold.<br />
+<br />
+Finding trust is very rare,<br />
+Earlier I didn't care,<br />
+I wandered here and there,<br />
+I couldn't find it anywhere.<br />
+<br />
+This breeze I saw,<br />
+Made my heart thaw,<br />
+I then had a light,<br />
+My future was bright.<br />
+<br />
+I was kind and warm,<br />
+Ever happy and calm,<br />
+Like a fruit with a worm,<br />
+My life had a storm.<br />
+<br />
+Navigating at all cost,<br />
+I found myself lost.<br />
+All the aims I dreamed,<br />
+Many got shipwrecked.<br />
+<br />
+I dig my thoughts deep,<br />
+On many nights I weep,<br />
+In that pain I became cold,<br />
+Unrelenting and bold.<br />
+<br />
+Amidst all deception,<br />
+I saw a conclusion.<br />
+The ridings were rough,<br />
+The tidings were tough.<br />
+<br />
+Without any digress,<br />
+I worked for progress,<br />
+My life turned around,<br />
+It became pretty sound.<br />
+<br />
+Amidst all the laughter,<br />
+There was a missing chapter,<br />
+That's when I saw you,<br />
+My heart beats for you.<br />
+<br />
+A feeling so gentle,<br />
+It blossomed to kindle,<br />
+I fancied a big duet,<br />
+And I became a poet.<br />
+<br />
+Oh, Gulmohar flower,<br />
+With your witty fervour,<br />
+Please don't kill me!<br />
+Please don't hang me!<br />
+<br />
+I mustered up my courage,<br />
+After days of forage,<br />
+And gave you a flower,<br />
+For you to be my lover.<br />
+<br />
+My heart stood like a rock,<br />
+Feelings I had felt a block,<br />
+I realised that you're a wall,<br />
+Built on rocks strong and tall.<br />
+<br />
+I thought you'd say yes,<br />
+And never did I guess,<br />
+You would say no,<br />
+My guts said so.<br />
+<br />
+I accepted in grace,<br />
+And gave you some space,<br />
+But I stayed in touch,<br />
+My feelings held in a clutch.<br />
+<br />
+In the distance I admired,<br />
+What your heart desired,<br />
+Watched your subtle grace,<br />
+The thoughts you embrace.<br />
+<br />
+Amidst a turbulent time,<br />
+My heart did rhyme,<br />
+And longed to say your name,<br />
+And stir a passionate flame.<br />
+<br />
+With patience, I waited,<br />
+My thoughts seated,<br />
+Having tested time,<br />
+Hoping your heart be mine.<br />
+<br />
+I gathered a lot of courage,<br />
+Than what I could forage,<br />
+I knocked on the door again,<br />
+Despite the pouring rain.<br />
+<br />
+The door didn't budge,<br />
+Not even a nudge,<br />
+But I gained a trust,<br />
+Firm and robust.<br />
+<br />
+I saw a glimpse,<br />
+The thoughts you eclipse,<br />
+A glimpse of many years,<br />
+Sum of many fears.<br />
+<br />
+I saw you up-close,<br />
+You're beautiful prose!<br />
+Many ups and downs,<br />
+Echoing many sounds.<br />
+<br />
+What can I honestly say?<br />
+If you don't feel that way?<br />
+I can't force you to sway,<br />
+But it's hard to move away!<br />
+<br />
+In the moments I feel sad,<br />
+Your thoughts drive me mad.<br />
+With my feelings unclad,<br />
+I felt terrible and bad.<br />
+<br />
+I prayed to the universe,<br />
+For you to find your verse,<br />
+For many a laurel,<br />
+And friends so loyal.<br />
+<br />
+With a heavy heart,<br />
+I take a fresh start,<br />
+I have been so hard,<br />
+On myself and scarred.<br />
+<br />
+You did not feel that way,<br />
+After all, I had to say,<br />
+Though my heart is in a sway,<br />
+I decided to move away.<br />
+<br />
+I see my heart in pain,<br />
+Of injuries deep and plain,<br />
+I drift away to heal,<br />
+And many voids to seal.<br />
+<br />
+I sail away far and wide,<br />
+I have many waves to ride,<br />
+I am always a riser,<br />
+I keep growing wiser.<br />
+<br />
+If you feel for me later,<br />
+Do write a big letter,<br />
+Come out and take a walk,<br />
+Let's meet out and talk.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +423,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

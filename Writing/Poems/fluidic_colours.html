@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>fluidic colours | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="fluidic-colours">Fluidic Colours</h1>
+<div class="line-block">When the cool winds caressed,<br />
+When the waning moon blessed,<br />
+The heart was full of colour,<br />
+What it meant I wonder.<br />
+<br />
+The colours came and went,<br />
+What emotions they sent?<br />
+For every thought, a colour emerged,<br />
+Thinking about you, my thoughts converged.<br />
+<br />
+Like the flowers that blossomed,<br />
+Spreading all the fragrance around,<br />
+My love for you blossomed,<br />
+Gradually and without any bound.<br />
+<br />
+Do we have a bond?<br />
+Then why do I hear your heart?<br />
+As if bound by a wand,<br />
+I remember your words by heart.<br />
+<br />
+Like the birds that sing sweet,<br />
+As sweet as honey a lovely treat,<br />
+I have a song for you quite upbeat,<br />
+True and sincere and hard to retreat.<br />
+<br />
+Sweet as nectar my heart feels joy,<br />
+On hearing your words, rejoiced this boy,<br />
+Our talks and words made no sense,<br />
+Yet we can't stop hearing this sweet nonsense.<br />
+<br />
+Like the leaf on a flowing stream,<br />
+The world is changing its scheme,<br />
+Amidst many aspirations and dreams,<br />
+Time is fleeting and changing its theme.<br />
+<br />
+What time holds in our future?<br />
+Regardless I shall always nurture,<br />
+The memories and moments with you persistent,<br />
+Change is not my only constant.<br />
+<br />
+Like the morning dew that rejuvenates,<br />
+Thinking of your love my heart scintillates,<br />
+In a mystical trance, it eternally oscillates,<br />
+Meanings of life it quietly resonates.<br />
+<br />
+All the sparrows and their flock,<br />
+Will come together and sing our song.<br />
+All the parrots and their flock,<br />
+Will come along and write our story long.<br />
+<br />
+I thank the universe for letting our lives cross,<br />
+Knitting our lives with moments like a floss,<br />
+I don't believe in any god or any faith,<br />
+But for you, I am ready to leap with faith.<br />
+<br />
+Traversing life riddle after riddle,<br />
+I don't know how it will unfold,<br />
+With you beside me, it will be gentle,<br />
+Together we shall pen a story never told.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

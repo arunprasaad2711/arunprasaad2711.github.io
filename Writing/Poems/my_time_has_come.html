@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>my time has come | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,95 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="my-time-has-come">My time has come</h1>
+<div class="line-block">The bow is stretched to the yielding
+limit,<br />
+The axe is now very sharp,<br />
+The wasted carbon was buried deep,<br />
+It was waiting for the grand day.<br />
+<br />
+The foes are clear, and their strategies are out,<br />
+The wait is over and my time has come,<br />
+All the joharis are now very clear,<br />
+The last few straws are now no more,<br />
+<br />
+Seneca's words came true now,<br />
+And all the fake masks are now torn,<br />
+My rules and religions are now strong,<br />
+Now they shall keep me safe,<br />
+<br />
+I was buried with a huge burden,<br />
+Which gave me the strength to bear the pain,<br />
+I was innocent to be played with deceit,<br />
+Which helped me learn to tear your mask,<br />
+<br />
+I wanted help when I suffered a crisis,<br />
+But I received subterfuges in return,<br />
+In the middle of all this rat race and poignancy,<br />
+I regained parts of my windy west childhood,<br />
+<br />
+The rules you have now,<br />
+Will slowly be shattered,<br />
+In the middle of the turbulence,<br />
+You will question back your faith.<br />
+<br />
+The arrow ready to fire,<br />
+The axe is ready to cut,<br />
+The carbon is now a diamond,<br />
+Now I shall write your fate!<br />
+<br />
+Can faint clouds block the sun?<br />
+Can trees obstruct a storm?<br />
+Will hyenas delight with all the fun,<br />
+When a furious lion hunts them?</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +314,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

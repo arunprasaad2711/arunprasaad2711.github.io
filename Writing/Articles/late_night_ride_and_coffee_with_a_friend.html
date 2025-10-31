@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <!-- Flavicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);">
+    </script>
+
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+    <!-- DaisyUI CSS FIRST -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind v4 AFTER DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Typography Styling -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <!-- Page Title -->
+    
+        <title>Late night ride and coffee with a friend | Articles | Fluidic Colours</title>
+    
+
+</head>
+
+<body>
+    <nav class="bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="navbar container mx-auto max-w-7xl">
+        <!-- Left: Logo + Mobile Menu -->
+        <div class="navbar-start">
+            <!-- Logo -->
+            <a href="/" class="btn btn-ghost text-xl">Fluidic Colours</a>
+        </div>
+        
+        <!-- Right: Theme Switcher -->
+        <div class="navbar-end gap-2">
+
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="cmyk" />
+                
+                <!-- Sun icon -->
+                <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                
+                <!-- Moon icon -->
+                <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
+
+            <!-- Mobile Hamburger -->
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                        class="inline-block h-5 w-5 stroke-current"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16">\
+                        </path>
+                    </svg>
+                </div>
+                <!-- <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> -->
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 [&_li>*]:rounded-none p-0 z-[1] mt-3 w-52 shadow">
+                    
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/writing.html">
+                            Writing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/notes.html">
+                            Notes
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/coding.html">
+                            CS and Programming
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resources.html">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/apps.html">
+                            My Apps
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/devblogs.html">
+                            Dev Blogs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="late-night-ride-and-coffee-with-a-friend">Late night ride and
+coffee with a friend</h1>
+<p>Life has its way of surprising you. One such incident happened last
+month and it was great.</p>
+<p>My friend Hari Ram is leaving for Sweden for his PhD in a few days.
+Since it is the last few days for him in campus, we decided to give him
+a proper farewell with a party and games and a cake.</p>
+<p>We had a good time playing Pictionary, ordering food, and laughing
+out loud making jokes and stuff.</p>
+<p>As the time approached for us to leave, he offered to drop me at my
+place outside the campus quite far away. He has this habit of long
+rides, and just for fun, he used to travel as far as Electronic City or
+the Airport.</p>
+<p>The actual magic began here.</p>
+<p>As we rode past the roads and all its turns in the middle of the
+night, the city was amazing, quite beautiful. I remember seeing many of
+the streets in broad daylight filled with cars and vehicles stuck in
+traffic now quite empty and abundantly spacious. And due to that, the
+drive was quite smooth and relaxing and free.</p>
+<p>It reminded me something: in life, in an odd way, don't we all expect
+the same thing? Some space in life? To go on with living in a smooth and
+relaxing manner and carefree as much as possible?</p>
+<p>Maybe it might be the long ride or the ambience of the coffee shop
+where we sat to chat for 2 hours straight, or both.</p>
+<p>In any case that was one perfect setting for a series of discussions
+about life, relationships, ideologies, philosophy, plans, careers
+etc.,</p>
+<p>Both of us were speaking freely and frankly about incidences that
+happened in our past, attempts in love and hobbies, the disappointments,
+the hardships, the experiences, the realisations and how both of us took
+decisions in life to attempt to recover and rebuild ourselves. Added to
+that, both of us gave each other advice we learnt from our lives in the
+hope that it will help the other.</p>
+<p>I won't go in detail and explain all the nitty-gritty details for
+privacy reasons. However, in our conversations, we both came to
+agreements and inferences on many issues in life that are worth
+pondering.</p>
+<ol type="1">
+<li>Having many friends is excellent. It is even more significant to
+know who among them you can rely on if you are in a crisis. If you have
+at least one of them, then you are fortunate.</li>
+<li>All of us need something to escape out of life for some time. Hari
+likes to ride; I like to read and write, you might like to travel, etc.,
+Now one might think that it is not necessary. But, it is a must. In
+times like now, wherein everyone is busy and stressed out with jobs and
+commitments, and these distractions make things bearable. And even
+recharge our batteries of optimism and motivation.</li>
+<li>Surrounding ourselves with people who motivate you and whom you can
+motivate is very underrated. Doing this has immense potential to your
+morale. Having an internal source of motivation is great, but it always
+helps to get some external motivation.</li>
+<li>[I am still processing this statement] You are indeed in love with a
+person if you like them regardless of their characteristics. Initially,
+you might want someone for being funny or sensitive or being attractive
+etc., but a love based on these attributes alone will falter if that
+attribute fades. In the process to know about the person, if you tend to
+love them for their true self regardless of their characteristics, then
+it will last longer and hopefully forever.</li>
+<li>Having a form of physical activity is quite helpful.</li>
+<li>Learning a form of martial art goes a long way. You learn them not
+only for self-defence but also for controlling your emotions and
+balance.</li>
+<li>Mastery of one's emotions and finding constructive ways to channel
+them is something everyone should work hard on. This skill gives you
+great peace of mind and helps you tackle situations in life in a better
+way.</li>
+<li>In relationships, finding one and being in one for the right reasons
+is more important than being in one for the sake of being in one.</li>
+<li>Experience and realisations are two different things. You can have a
+lot of failures in life, but you won't grow if you do not realise what
+you went through deeply. That's why sometimes many people repeat the
+same mistakes over and over. And in many cases, even realisations are
+not enough. Taking actions is necessary.</li>
+<li>Many things that bother in our life, for the most part, are quite
+trivial. We get quite fixated on that, and we lose the bigger picture
+and peace of mind. Learning to overcome issues peacefully and that too,
+not get affected by such issues on a long-term is helpful.</li>
+<li>Even the strongest person you know has doubts and uncertainties. So,
+if you think that you alone have a lot of problems, then you're wrong.
+Everyone has issues. An emotionally healthy person deals with it
+differently than others.</li>
+<li>There is nothing wrong in asking for help. People often say fortune
+favours the bold. I say fortune favours the ones who keep trying. Being
+brave, asking for help, taking attempts and putting yourself out there
+goes a long, long way for self-improvement. Only some are blessed to
+have everything made for them, as if like the universe conspired to give
+them what they want without them trying. For the rest of us, we have to
+ask and keep working. If we don't, we fail by default. If we try, at
+least you have some chances to get what you ask.</li>
+<li>Doing something you love, that keeps you happy, helps you support
+yourself in a reasonably decent manner financially, and helps you grow
+is a blessing. And in that process, if you can benefit society, then it
+is even more beautiful.</li>
+<li>People stop learning after they reach a point in their lives. It is
+a cardinal sin. Being in places that make you grow and develop is
+something more fundamentally important than being comfortable and
+luxurious.</li>
+<li>Growing old is natural. Growing up is an uneven process.
+Experiences, disappointments and suffering make you realise many things
+in life that you either did not notice or take for granted. If you learn
+from them well, you will understand that you grow wiser and mature by
+leaps and bounds in many cases.</li>
+<li>Having a set of personal rules and a code of conduct is essential.
+Find things that make you happy. Also, while doing things in life, try
+to find happiness in them. And live your life in your terms provided you
+don't ethically or morally hurt others.</li>
+<li>In work or with people, doing things for the sake of duty is a sure
+shot way to lose motivation. Yes, sometimes responsibilities are
+essential, and if not done, things are going to be chaotic. But doing
+them for the sake of duty won't make you happy in the long run. Doing
+things for happiness, for love, for passion etc., makes you happy and
+others around delighted as well.</li>
+<li>Each of us has two sides in us: a good side and a bad side. The good
+side has all the positive emotions while the bad side has all the
+negative emotions. There is a conflict between both the sides all the
+time. Channelising these emotions is the key. One cannot exist without
+the other. Learning to know when to let your good side or your bad side
+to take charge is crucial. Balance is the key.</li>
+<li>Venturing into uncharted territory is always a risk. So, for the
+sake of chances, if you stop doing things, nothing will happen. Take
+precautions and move on. You'll have a lot of stories to tell and many
+experiences to gain and learn.</li>
+<li>Living life in the paradigm of hope is better than the paradigm of
+expectations. When you expect something, you feel bad if that does bit
+happen. If you hope and it did not occur, you might not feel that bad.
+That does not mean you should expect less; you can expect things from
+people or yourself or situations. Can you handle them well if it does
+not occur in a way you prefer? That's the central question.</li>
+<li>And lastly, after a certain point, with some exceptions, the key to
+happiness is within you. Basing happiness on what others say about you
+will make you incomplete, and such a joy is short-lived. Happiness based
+on a more internal level is long lasting. So, keeping people's
+influences on your life in healthy limits is good. Learning from
+criticism is good as well. But trying to be your fake self for pleasing
+others or being deaf to blame is not going to help.</li>
+</ol>
+<p>If you managed to read all the way, thank you very much for your
+valuable time and care.</p>
+<p>At the end of our long chain of thoughts and conversations, both had
+a strong feeling of respect and trust for each other. And I am happy
+that such an enlightening and deep and profound conversation
+happened.</p>
+<p>Perhaps that's what you need in life sometimes: some space to relax
+and ponder and be free.</p>
+
+        </div>
+    </main>
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
+    <!-- Footer -->
+<footer class="bg-base-200 text-base-content border-t border-base-300">
+    <div class="container mx-auto max-w-7xl">
+        <div class="footer footer-center p-10">
+            <aside class="flex flex-col items-center gap-4">
+                <!-- Social Media Icons -->
+                <nav>
+                    <div class="flex justify-center gap-4">
+                        
+                        <a 
+                            href="https://github.com/arunprasaad2711"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://youtube.com/@fluidiccolours8091"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:youtube" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="mailto:arunprasaad2711@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:email" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:linkedin" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.instagram.com/fluidiccolours/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:instagram" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                        <a 
+                            href="https://www.quora.com/profile/Arun-Prasaad-Gunasekaran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Quora"
+                            class="hover:opacity-70 transition-opacity"
+                        >
+                            <iconify-icon icon="mdi:quora" width="32" height="32"></iconify-icon>
+                        </a>
+                        
+                    </div>
+                </nav>
+                
+                <!-- Copyright Text -->
+                <p class="text-sm">
+                    2018 - <span id="current-year"></span> | <span class="font-semibold">Fluidic Colours</span> | 
+                    <span class="font-semibold">Arun Prasaad Gunasekaran</span>
+                </p>
+                
+                <!-- Website Designed Text -->
+                <p class="text-xs opacity-70">
+                    Website Designed using Python + Jinja2 + Pandoc + DaisyUI
+                </p>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

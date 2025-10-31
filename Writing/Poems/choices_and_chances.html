@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>choices and chances | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,159 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="choices-and-chances">Choices and Chances</h1>
+<div class="line-block">It happened randomly, they all write,<br />
+As if the universe, conspired to make them meet.<br />
+It is an Illusion, is all it is,<br />
+Only a little truth, that's all there is.<br />
+<br />
+If love is random and happens by chance,<br />
+Will it matter if you try it or not?<br />
+What shall be, the difference it makes?<br />
+For those who pursue, and pour in their soul?<br />
+<br />
+Love, you are, a mystical enigma!<br />
+Despite a million tales, you are still elusive!<br />
+Source of awe, wonder, and peace,<br />
+Reason for disgust, disaster, and violence.<br />
+<br />
+You happen to many, at precarious times,<br />
+Breaking their hearts, and tainting their souls.<br />
+You happen, for some in odd times,<br />
+And thrive and flourish, in ways never thought.<br />
+<br />
+For some who seek, they get tested to the core,<br />
+For some, you come, taking their breath away.<br />
+For some who seek, end up all alone,<br />
+For some, you come, at the right moments.<br />
+<br />
+You tempt us all, with all that is rosy,<br />
+Showing us the tales, of many twin flames.<br />
+That's not the way; it happens to all,<br />
+Some who believe it, they break and fall.<br />
+<br />
+You make two souls meet, who are fitting pieces,<br />
+The flower doesn't blossom, and sees the day,<br />
+You make two souls meet, who are unfit pieces,<br />
+The flower blossoms, rots, and withers.<br />
+<br />
+You make two souls meet, who are fitting pieces,<br />
+For one it blossoms, for the other it doesn't,<br />
+And make the bloomers wonder, what's this sorcery?<br />
+Left with no answer, forced to find closure.<br />
+<br />
+For some, it happens, gradual and natural,<br />
+From unknown to friends to buddies to sweethearts.<br />
+Blurring the lines gracefully and smooth,<br />
+Nurtured and built, with time and space.<br />
+<br />
+For some, it happens, as if a fairy tale,<br />
+With many intimate moments and many fantasies,<br />
+It ends bitter, like a quenched hot steel,<br />
+The heart does shatter, like broken glass.<br />
+<br />
+Not all your tales have a happy ending.<br />
+Not all those who found you, cherish you till the end.<br />
+Some end what is theirs, for greener pastures,<br />
+While some change a lot, they don't fit anymore.<br />
+<br />
+It is a tragedy to see, a good broken heart,<br />
+A heart once full of hopes, stitching its pieces.<br />
+Filled with pain, and walls so high,<br />
+Scared to trust, and cautious than before.<br />
+<br />
+It is sad to see, a good heart so lonely,<br />
+A heart that yearns, for the joys of intimacy.<br />
+Feeling low and cold, and learning from falls,<br />
+Trying hard to be strong, despite the let downs.<br />
+<br />
+Are you that fickle? That you happen by chance?<br />
+And you are fragile, tender yet dangerous.<br />
+Are you so chaotic? That you are unpredictable?<br />
+After making us win, you break us to be humble?<br />
+<br />
+Despite the turbulence, you bring forth,<br />
+And amidst the chaos, you show us an order.<br />
+Despite the shipwrecks, you show us some joy,<br />
+Making our lives hard, with or without you.<br />
+<br />
+The stars do align, for some people proper,<br />
+With time and space, everything falls in place.<br />
+For some they make, the stars to align,<br />
+For they can't wait, as you never visited them.<br />
+<br />
+It takes courage, to fall in love hard,<br />
+To fall so madly, and fall so deeply.<br />
+It takes, even more, to pick your shattered heart,<br />
+And stitch it back in place, and move on.<br />
+<br />
+It takes strength to stay strong, and keep going on,<br />
+To find The One you yearned, all the way long.<br />
+Swimming up the river, against the cross-currents,<br />
+Trying not to drown, in the stream of life.<br />
+<br />
+All the love that formed, out of lies and disguise,<br />
+May start well at first, but it will break off.<br />
+Not long can you wear, a skin different from yours,<br />
+At the core of it lies, all the issues in disguise.<br />
+<br />
+Love once happened can wither with time as well,<br />
+And it can boom back, with the same soul or other.<br />
+A love formed of truth, built with trust and kindness,<br />
+With passion and maturity, is deep and beautiful.<br />
+<br />
+You do get to choose, whom you'll fall in love,<br />
+For reasons right or wrong, the choice is all yours.<br />
+Welcome to the real world, it is blurry and grey,<br />
+And love is quite messy, yet you want it anyway.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +378,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>

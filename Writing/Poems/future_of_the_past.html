@@ -38,7 +38,7 @@
 
     <!-- Page Title -->
     
-        <title>My Apps | Fluidic Colours</title>
+        <title>future of the past | Poems | Fluidic Colours</title>
     
 
 </head>
@@ -135,29 +135,114 @@
         </div>
     </div>
 </nav>
+    
+    <!-- Blog content (no banner!) -->
+    <main id="content" class="py-12">
+        <div class="prose prose-lg max-w-none mx-auto">
+            <h1 id="future-of-the-past">Future of the Past</h1>
+<div class="line-block">The promises I made in the past,<br />
+For a promising and bright future,<br />
+Now hold me tied to the past,<br />
+With the delusion of a certain future.<br />
+<br />
+I shouldn’t have made them first,<br />
+For they distort my dreams often.<br />
+With this heavy burden, I went forward,<br />
+Although I progressed, I wasn’t happy.<br />
+<br />
+I can’t be like you, and smile all the time,<br />
+You do act well, but I can’t fake it.<br />
+I may be cold for not smiling like you,<br />
+I thought I needed you, not anymore.<br />
+<br />
+I doubted myself and my eyes were dark,<br />
+And I walked slow weighed by the future.<br />
+Instead of being scared I chose to be bold,<br />
+And I chose to face the uncertain days.<br />
+<br />
+I withheld my tears and fought the pain,<br />
+I trusted you, and I let them flow.<br />
+You saw me weak for crying out loud,<br />
+You’ll never know the pain I endured.<br />
+<br />
+You have these rules and regulations,<br />
+And all these reasons and all these laws.<br />
+I don’t want them to know what is right,<br />
+I want to feel in my heart what is right!<br />
+<br />
+You say that I can’t fly; so let it be,<br />
+But I’ll never stop trying to touch the sky.<br />
+And I did reach out and basked in the blue,<br />
+From the clouds, I saw the whole world.<br />
+<br />
+Amidst the sea of this vast blue hue,<br />
+I felt peaceful all alone in the solitude.<br />
+The dam I made to hold back my pain,<br />
+I let it go, and it rained melancholy and joy.<br />
+<br />
+I’m done searching for the ever perfect song,<br />
+The one you promised that I would find.<br />
+In the quest for the song, I found a melody,<br />
+It is gentle and soothing, bitter and sweet.<br />
+<br />
+Amidst all this sadness and frustrations,<br />
+And in all these trials and tribulations,<br />
+I forged my own rules and my shield,<br />
+I got broken, and I emerged even stronger.<br />
+<br />
+If I learnt one lesson in this darkness,<br />
+Is that the light I seek is within me.<br />
+And all this pain and all this suffering,<br />
+Are all hurdles to test my resolve.<br />
+<br />
+So I am not scared not any more,<br />
+For the delusional future, I once envisioned.<br />
+I now walk free without any burden or pain,<br />
+And someday I will forge my future.</div>
 
-    <!-- Banner/Hero Section -->
-<div
-  class="hero min-h-screen"
-  style="background-image: url('images/AppsBanner.png');">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-3xl md:text-5xl font-bold">Interactive Apps & Solvers</h1>
-      <p class="mb-5">Exploring algorithms through interactive visualizations</p>
-      <button 
-        onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })"
-        class="btn btn-primary">
-        Explore
-      </button>
-    </div>
-  </div>
-</div>
-    
-    <main id="content">
-        
+        </div>
     </main>
-    
+
+    <!-- This script is to enable copy button in pre tags -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtonLabel = "Copy";
+
+    // Find all pre blocks
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+        // Only add button if browser supports Clipboard API
+        if (navigator.clipboard) {
+            let button = document.createElement("button");
+            button.className = "copy-code-button";
+            button.innerText = copyButtonLabel;
+            
+            // Make pre relative for absolute button positioning
+            block.style.position = "relative";
+            
+            block.appendChild(button);
+
+            button.addEventListener("click", async () => {
+                let code = block.querySelector("code");
+                let text = code.innerText;
+                
+                await navigator.clipboard.writeText(text);
+                
+                // Visual feedback
+                button.innerText = "Copied!";
+                setTimeout(() => {
+                    button.innerText = copyButtonLabel;
+                }, 2000);
+            });
+        }
+    });
+});
+</script>
+
+<!-- Auto-reload script for development -->
+
+
     <!-- Footer -->
 <footer class="bg-base-200 text-base-content border-t border-base-300">
     <div class="container mx-auto max-w-7xl">
@@ -248,46 +333,6 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
-
-    <!-- This script is to enable copy button in pre tags -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const copyButtonLabel = "Copy";
-
-    // Find all pre blocks
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // Only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let button = document.createElement("button");
-            button.className = "copy-code-button";
-            button.innerText = copyButtonLabel;
-            
-            // Make pre relative for absolute button positioning
-            block.style.position = "relative";
-            
-            block.appendChild(button);
-
-            button.addEventListener("click", async () => {
-                let code = block.querySelector("code");
-                let text = code.innerText;
-                
-                await navigator.clipboard.writeText(text);
-                
-                // Visual feedback
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = copyButtonLabel;
-                }, 2000);
-            });
-        }
-    });
-});
-</script>
-
-<!-- Auto-reload script for development -->
-
 
 </body>
 </html>
