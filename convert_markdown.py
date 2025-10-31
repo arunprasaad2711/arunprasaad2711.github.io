@@ -15,7 +15,12 @@ def convert_markdown_to_html(md_file: Path) -> str:
     try:
         # Run Pandoc to convert markdown to HTML
         result = subprocess.run(
-            ['pandoc', '--from=markdown', '--to=html5', '--mathjax', '--highlight-style=pygments', str(md_file)],
+            ['pandoc', 
+             '--from=markdown', 
+             '--to=html5', 
+             '--mathjax', 
+             '--highlight-style=pygments',
+             str(md_file)],
             capture_output=True,
             text=True,
             check=True
@@ -138,7 +143,10 @@ def convert_all_markdown_files(base_folders: list):
 
 
 if __name__ == '__main__':
+    # Load config
+    config = load_site_config()
+    
     # Folders to process
-    folders = ['Writing', 'Notes', 'Coding', 'Devblogs', 'Resources']
+    folders = config["blogfolders"]
     
     convert_all_markdown_files(folders)

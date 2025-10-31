@@ -1,5 +1,4 @@
-Blushing Bride
-==============
+# Blushing Bride
 
 | As the day nears, my heart overflows with joy,
 | My eyes express shyness, my lips speak my happiness,

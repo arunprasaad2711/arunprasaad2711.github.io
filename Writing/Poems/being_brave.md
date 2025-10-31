@@ -1,5 +1,4 @@
-Being Brave
-===========
+# Being Brave
 
 | In the tides of life,
 | It was easier to conform.

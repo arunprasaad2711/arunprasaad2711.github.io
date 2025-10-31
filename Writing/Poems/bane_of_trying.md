@@ -1,5 +1,4 @@
-Bane of Trying
-==============
+# Bane of Trying
 
 | Sitting calm and quiet, you hear the universe speak,
 | Of all the plans it has, for you quite sleek.

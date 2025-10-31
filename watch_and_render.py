@@ -14,7 +14,7 @@ class MarkdownWatcher:
         self.blog_template = self.env.get_template('blog_post.html')
         
         # Track folders to watch
-        self.watch_folders = ['Writing', 'Notes', 'Coding', 'Devblogs', 'Resources']
+        self.watch_folders = self.config["blogfolders"]
         
         # Track file hashes to detect changes
         self.file_hashes = {}

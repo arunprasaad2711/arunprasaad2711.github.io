@@ -1,5 +1,4 @@
-Believe It
-==========
+# Believe It
 
 | It is easy to discard, and say a goal is hard,
 | If everything is easy, then what does a goal mean?

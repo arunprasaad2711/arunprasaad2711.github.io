@@ -1,5 +1,4 @@
-A Sweet Voyage
-==============
+# A Sweet Voyage
 
 | I thought about the day when we first met,
 | It is not so vivid; the details were blurry,

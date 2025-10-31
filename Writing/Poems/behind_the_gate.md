@@ -1,5 +1,4 @@
-Behind the Gate
-================
+# Behind the Gate
 
 | In all my wanderings, in my one singular quest,
 | I sought knowledge, without any rest.

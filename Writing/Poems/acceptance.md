@@ -1,5 +1,4 @@
-Acceptance
-==========
+# Acceptance
 
 | In times of uncertainty,
 | I clutched tightly to the past,

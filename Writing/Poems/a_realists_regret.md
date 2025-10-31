@@ -1,5 +1,4 @@
-A Realist's Nightmare
-=====================
+# A Realist's Nightmare
 
 | Is this the dream life?
 | You ponder all the time.

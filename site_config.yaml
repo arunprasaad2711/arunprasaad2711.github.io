@@ -1,11 +1,25 @@
+# YAML file with configurations for the entire website
+
+## Overall Data for the website
+site:
+  author: Arun Prasaad Gunasekaran
+  description: Personal website featuring writings, notes, code, and interactive applications
+  dev_mode: false # Set this to false when deploying the website to GitHub
+  email: arunprasaad2711@gmail.com
+  title: Fluidic Colours
+  url: https://arunprasaad2711.github.io
+
+## Main Pages of the Website
 navigation:
+
 - banner:
     heading: Welcome to Fluidic Colours
     image: images/HomeBanner.png
     message: Explore writings, notes, code, and interactive applications
   file: index.html
-  folder: null
+  folder:
   label: Home
+
 - banner:
     heading: Writing & Reflections
     image: images/WritingBanner.jpg
@@ -13,6 +27,7 @@ navigation:
   file: writing.html
   folder: Writing
   label: Writing
+
 - banner:
     heading: Notes & Observations
     image: images/NotesBanner.png
@@ -20,6 +35,7 @@ navigation:
   file: notes.html
   folder: Notes
   label: Notes
+
 - banner:
     heading: Code & Development
     image: images/CodingBanner.png
@@ -27,6 +43,7 @@ navigation:
   file: coding.html
   folder: Coding
   label: CS and Programming
+
 - banner:
     heading: Resources & Tools
     image: images/ResourcesBanner.png
@@ -34,6 +51,7 @@ navigation:
   file: resources.html
   folder: Resources
   label: Resources
+
 - banner:
     heading: Interactive Apps & Solvers
     image: images/AppsBanner.png
@@ -41,6 +59,7 @@ navigation:
   file: apps.html
   folder: Apps
   label: My Apps
+
 - banner:
     heading: Development Journals
     image: images/DevBlogsBanner.png
@@ -48,39 +67,48 @@ navigation:
   file: devblogs.html
   folder: Devblogs
   label: Dev Blogs
+
 - banner:
     heading: About Me
     image: images/AboutBanner.png
     message: Join me on this journey of exploration and discovery
   file: about.html
-  folder: null
+  folder:
   label: About
-site:
-  author: Arun Prasaad Gunasekaran
-  description: Personal website featuring writings, notes, code, and interactive applications
-  dev_mode: false
-  email: arunprasaad2711@gmail.com
-  title: Fluidic Colours
-  url: https://arunprasaad2711.github.io
+
+## Social links and icons
 socials:
 - href: https://github.com/arunprasaad2711
   icon: mdi:github
   name: GitHub
+
 - href: https://youtube.com/@fluidiccolours8091
   icon: mdi:youtube
   name: YouTube
+
 - href: mailto:arunprasaad2711@gmail.com
   icon: mdi:email
   name: Email
+
 - href: https://linkedin.com/in/arun-prasaad-gunasekaran-547a59182/
   icon: mdi:linkedin
   name: LinkedIn
+
 - href: https://www.instagram.com/fluidiccolours/
   icon: mdi:instagram
   name: Instagram
+
 - href: https://www.quora.com/profile/Arun-Prasaad-Gunasekaran
   icon: mdi:quora
   name: Quora
+
+## Website Themes from DaisyUI
+## Deliberately using Dark Themes as default theme
 themes:
   default: business
   light: cmyk
+
+## Folders containing blogs/posts
+## All the markdown files inside these folders will be automatically
+## Rendered.
+blogfolders: [Devblogs, Writing, Coding, Notes, Resources]

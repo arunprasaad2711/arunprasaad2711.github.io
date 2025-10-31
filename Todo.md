@@ -6,7 +6,6 @@
 * Logo in the header/navbar
 * Favicon
 * Update README for myself and anyone
-* Deploy Website code fix
 * Delete Website code fix
 * 404 pages
 * Sitemap.xml
@@ -24,6 +23,8 @@
 
 ## Done
 * Code block styling + copy button
+* Deploy Website code fix
+* Auto-rendering markdown files in local/development
 
 ## Noticed bugs
 * ``code`` block has a border radius issue in light theme.

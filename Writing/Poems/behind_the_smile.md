@@ -1,5 +1,4 @@
-Behind the Smile
-================
+# Behind the Smile
 
 | When life hits you hard,
 | Breaks your heart into shards,

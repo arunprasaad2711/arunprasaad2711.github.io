@@ -12,7 +12,7 @@ Process:
 import subprocess
 import sys
 from pathlib import Path
-import yaml
+from ruamel.yaml import YAML
 
 def run_command(command, description):
     """Run a command and show output"""
@@ -29,13 +29,20 @@ def update_config(dev_mode_value):
     """Update dev_mode in site_config.yaml"""
     config_path = Path('site_config.yaml')
     
+    # Use ruamel.yaml to preserve comments
+    yaml = YAML()
+    # yaml.preserve_quotes = True
+    # yaml.default_flow_style = False
+    
     with open(config_path, 'r', encoding='utf-8') as f:
-        config = yaml.safe_load(f)
+        config = yaml.load(f)
     
     config['site']['dev_mode'] = dev_mode_value
     
+    # yaml.dump(config, sys.stdout)
+    
     with open(config_path, 'w', encoding='utf-8') as f:
-        yaml.dump(config, f, default_flow_style=False, allow_unicode=True)
+        yaml.dump(config, f)
     
     print(f"✅ Set dev_mode = {dev_mode_value}")
 

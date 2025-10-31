@@ -1,5 +1,4 @@
-A Rider\'s Journey
-==================
+# A Rider's Journey
 
 | Oh, mighty road! Take him to new places!
 | He has enough fuel, to lit all his dreams.

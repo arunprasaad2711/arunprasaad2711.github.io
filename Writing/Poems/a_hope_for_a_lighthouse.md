@@ -1,5 +1,4 @@
-A Hope for a Lighthouse
-=======================
+# A Hope for a Lighthouse
 
 | It's been years since I started this voyage,
 | Sailing among the currents, I've reached this far.

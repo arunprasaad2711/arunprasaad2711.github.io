@@ -1,49 +1,6 @@
 from pathlib import Path
 from typing import Dict, List
 
-# def generate_blog_listing_html(blog_structure: Dict[str, List[Path]], base_folder: str) -> str:
-#     """Generate HTML for blog listing
-    
-#     Args:
-#         blog_structure: Dict from scan_blog_folders()
-#         base_folder: Base folder name (e.g., 'Writing')
-    
-#     Returns:
-#         HTML string for the content section
-#     """
-#     if not blog_structure:
-#         return '<div class="container mx-auto max-w-7xl p-8"><p>No content available yet.</p></div>'
-    
-#     html_parts = ['<div class="container mx-auto max-w-7xl p-8">']
-    
-#     # Generate section for each category
-#     for category, files in blog_structure.items():
-#         html_parts.append(f'    <!-- {category} Section -->')
-#         html_parts.append(f'    <section class="mb-12">')
-#         html_parts.append(f'        <h2 class="text-3xl font-bold mb-6">{category}</h2>')
-#         html_parts.append(f'        <ul class="space-y-3">')
-        
-#         # Generate list item for each blog
-#         for md_file in files:
-#             title = get_blog_title(md_file)
-            
-#             # Generate relative path for the link
-#             # Example: Writing/Articles/blog1.md -> /Writing/Articles/blog1.html
-#             relative_path = md_file.relative_to(Path('.'))
-#             html_path = f"/{relative_path.with_suffix('.html')}"
-            
-#             html_parts.append(f'            <li>')
-#             html_parts.append(f'                <a href="{html_path}" class="link link-hover text-lg">{title}</a>')
-#             html_parts.append(f'            </li>')
-        
-#         html_parts.append(f'        </ul>')
-#         html_parts.append(f'    </section>')
-#         html_parts.append('')  # Empty line for readability
-    
-#     html_parts.append('</div>')
-    
-#     return '\n'.join(html_parts)
-
 def generate_blog_listing_html(blog_structure: Dict[str, List[Path]], base_folder: str) -> str:
     """Generate HTML for blog listing with DaisyUI list components
     
@@ -154,8 +111,11 @@ def get_blog_title(md_file: Path) -> str:
 
 
 if __name__ == '__main__':
-    # Test the scanner
-    folders = ['Writing', 'Notes', 'Coding', 'Devblogs', 'Resources']
+    # Load config
+    config = load_site_config()
+    
+    # Folders to process
+    folders = config["blogfolders"]
     
     for folder in folders:
         print(f"\n{folder}:")

@@ -1,5 +1,4 @@
-A Song of Blue and Yellow
-=========================
+# A Song of Blue and Yellow
 
 | On a rainless day,
 | We push and pull,

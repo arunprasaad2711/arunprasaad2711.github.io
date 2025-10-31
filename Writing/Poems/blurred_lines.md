@@ -1,5 +1,4 @@
-Blurred Line
-=================
+# Blurred Line
 
 | The mind wandered, between memories and dreams,
 | It's quite scattered, jumping between extremes.

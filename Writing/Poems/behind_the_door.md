@@ -1,5 +1,4 @@
-Behind the Door
-===============
+# Behind the Door
 
 | Behind the smile, lurked a melancholy,
 | The face with a smile can hide the pain away,

@@ -18,7 +18,7 @@ def render_all_pages():
     output_dir = Path('.')
     
     # Pages that need blog listings
-    blog_pages = ['Writing', 'Notes', 'Coding', 'Devblogs', 'Resources']
+    blog_pages = config["blogfolders"]
     
     # Render each page
     for page in config['navigation']:
